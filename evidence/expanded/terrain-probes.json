@@ -1,0 +1,128 @@
+{
+  "package_manifest_sha256": "5ba352b7540cab47bc45fbb532583dccdf6088d1c66cb1d319698aea9fbb8d84",
+  "probes": {
+    "breakable_tree": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=272.4879303617786,6.882704913546435,13.23588745575645,-90",
+        "--headless",
+        "--frames",
+        "500"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=500 ticks=1000 driver=hold diff=amateur phase=playing impacts=6 dropped=0 peak=17.6m/s travel=32.4m sim=8.33s resets=0 controls=760t/0b/0s finite=true moved=31m wheels=4/4 final=(304,5.6,11) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune bng=1584d/2a/0s/1b bng_ev=0a/0s/1b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "source_prop": {
+        "asset": "sthlm_tree",
+        "breakable": true,
+        "position": [
+          297.4879303617786,
+          4.756935009157352,
+          13.23588745575645
+        ],
+        "source": "node/6070327035"
+      }
+    },
+    "djurgarden": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=5610.470064978187,5.984426006912881,534.7788337708896,-68.48438128648895",
+        "--headless",
+        "--parked",
+        "--frames",
+        "180"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.5m/s travel=0.1m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=1m wheels=4/4 final=(5611,5.3,535) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+    },
+    "reset": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--headless",
+        "--frames",
+        "400",
+        "--reset-at",
+        "650"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=400 ticks=800 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=22.1m/s travel=43.3m sim=6.67s resets=1 controls=560t/0b/0s finite=true moved=3m wheels=4/4 final=(-29,3.9,138) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+    },
+    "restart": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--headless",
+        "--frames",
+        "400",
+        "--restart-at",
+        "650"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=400 ticks=144 rs=1 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=22.1m/s travel=43.0m sim=6.62s resets=0 controls=554t/0b/0s finite=true moved=2m wheels=4/4 final=(-29,3.9,138) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+    },
+    "sodermalm": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=1548.1477578144898,25.48178360060707,1891.538309097664,15.913994933607611",
+        "--headless",
+        "--parked",
+        "--frames",
+        "180"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.2m/s travel=0.1m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=1m wheels=4/4 final=(1548,24.8,1891) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+    },
+    "vasterbron": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-911.2963999725598,32.766755097177466,543.0665371799564,31.538584340818975",
+        "--headless",
+        "--frames",
+        "250"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=250 ticks=500 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=16.2m/s travel=17.1m sim=4.17s resets=0 controls=260t/0b/0s finite=true moved=17m wheels=4/4 final=(-920,32.1,529) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+    },
+    "west-kungsholmen": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-2722.0142788776634,18.62752242680302,-328.29231029789116,161.21776731811184",
+        "--headless",
+        "--parked",
+        "--frames",
+        "180"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.0m/s travel=0.1m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=1m wheels=4/4 final=(-2722,17.9,-328) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+    }
+  },
+  "status": "pass"
+}

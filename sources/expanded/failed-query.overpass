@@ -1,0 +1,9 @@
+[out:json][timeout:180];
+(way[highway](59.286,17.970,59.373,18.174);
+way[building](59.286,17.970,59.373,18.174);
+relation[building](59.286,17.970,59.373,18.174);
+way[natural=coastline](59.286,17.970,59.373,18.174);
+way[natural=water](59.286,17.970,59.373,18.174);
+relation[natural=water](59.286,17.970,59.373,18.174);
+way[landuse](59.286,17.970,59.373,18.174););
+(._;>;);out body;

@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "origin": [
+    18.045,
+    59.328
+  ],
+  "bounds": [
+    17.97,
+    59.286,
+    18.174,
+    59.373
+  ],
+  "seed": 20261003,
+  "road_y": 2.0,
+  "water_y": 0.0,
+  "road_width_default": 9.0,
+  "route_streets": [
+    "Norr M\u00e4larstrand",
+    "Ragnar \u00d6stbergs Plan",
+    "Hantverkargatan",
+    "Kungsholmstorg"
+  ],
+  "route_anchors": [
+    [
+      18.044445,
+      59.32676
+    ],
+    [
+      18.0530583,
+      59.3271613
+    ],
+    [
+      18.0531556,
+      59.3278476
+    ],
+    [
+      18.0433242,
+      59.328982
+    ],
+    [
+      18.042222,
+      59.3267829
+    ],
+    [
+      18.044445,
+      59.32676
+    ]
+  ],
+  "profile": "expanded"
+}

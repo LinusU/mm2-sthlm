@@ -1,0 +1,19 @@
+{
+  "supplied_bounds_wgs84": [
+    17.96,
+    59.285,
+    18.185,
+    59.375
+  ],
+  "tile_footprint_coverage_complete": true,
+  "projected_crs": "EPSG:3006",
+  "delivered_tile_bounds": [
+    660000.0,
+    6570000.0,
+    690000.0,
+    6590000.0
+  ],
+  "source_tiles": 6,
+  "check": "densified WGS84 rectangle transformed with pyproj3.8.0; checked against retained source TIFF pixel extents",
+  "raster_nodata_check": "Full 10 m target fixture has zero nodata cells; this footprint check does not assert 1 m validity for unused areas."
+}

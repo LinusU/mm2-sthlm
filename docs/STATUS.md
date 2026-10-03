@@ -1,8 +1,10 @@
-# Playable slice status
+# Original slice acceptance (historical)
 
-2026-10-03: all kickoff acceptance gates A–H are met for this small slice.
-No current integration blocker. The next action is interactive driving or a
-review of the focused engine PR; expanding the geographic scope is deferred.
+The original flat Stadshuset slice met all kickoff acceptance gates A–H on
+2026-10-03. The tables below describe that archived package and its engine
+revision. Current expanded terrain acceptance is recorded in
+[EXPANDED-STATUS.md](EXPANDED-STATUS.md); the default build now uses the expanded
+profile. Use `build --profile stadshuset` for a flat comparison generation.
 This is an independently generated custom map, tested against the **patched**
 engine revision below, not a claim about upstream main or retail MM2.
 

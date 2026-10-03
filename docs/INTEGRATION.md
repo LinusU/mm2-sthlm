@@ -1,3 +1,24 @@
+# Current expanded terrain integration
+
+The default package requires engine revision
+`392cc9be55a624f9c8cf64272103f987631c204d`, branch
+`codex/chunked-custom-cities`, [PR #2](https://github.com/LinusU/rust-mm2/pull/2).
+The generic multi-part loader is a separate engine commit, based on the prior
+motion-evidence revision `cf5d4741100f78fc372398d36e06b228a3c0e938`.
+`integration/rust-mm2/multi-part-cities.patch` retains its exact patch;
+`compatibility.json` records the patch SHA-256 and tested revision. Prepare
+with `scripts/prepare-engine` as below; it now selects this current revision.
+
+No Stockholm content or shared handling changes are in the engine. Normal map
+CI has no dependency on the engine. The expanded package uses 55 independent
+PSDL pools because the combined map exceeds the format's 16-bit vertex limit.
+CPVS visibility is rejected for this extension. Native breakable props use the
+engine's existing pathset/PKG/banger implementation.
+
+Current commands and evidence are in [EXPANDED-STATUS.md](EXPANDED-STATUS.md).
+The following original-slice report remains as historical evidence for its own
+package checksum and engine revision.
+
 # External engine integration
 
 Upstream base: `1a568de7996be6813d32ab4f50d2f3dc150f258c`.

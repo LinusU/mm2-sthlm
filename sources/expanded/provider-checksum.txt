@@ -1,0 +1,13 @@
+c8a67e017f54e899c3eed9f30ba8576e  Stockholm.osm.csv.xz
+56dabc4c58f1ad34c48355e7213fcab9  Stockholm.osm.garmin-onroad-latin1.zip
+4244997ac0e6fa9e38934e356e62fb50  Stockholm.osm.garmin-ontrail-latin1.zip
+0d6e359ebde318ba3c46a2330a7a9bfb  Stockholm.osm.garmin-opentopo-latin1.zip
+246a2ef5bdb7a356da5efa1f2ff3ecc8  Stockholm.osm.garmin-osm.zip
+04e647044fe4a7935612e3188e51936b  Stockholm.osm.geopackage.zip
+74d1d7a52a2590d5fa3e80c8cf789900  Stockholm.osm.gz
+abfb7ef74eaa31a0c07b50ec26f198de  Stockholm.osm.mapsforge-osm.zip
+b59fed72a95ec67d7c2557711b5ea4e5  Stockholm.osm.mbtiles-shortbread.zip
+cb67757f07915b2f91e743d604871ff9  Stockholm.osm.parquet.zip
+1c5d5f4c275b0ef0289345e69edddf86 Stockholm.osm.pbf
+2cdc921b4f5559f1e49b57788fd3c418  Stockholm.osm.pmtiles-shortbread.zip
+4cd137d2b8e19c507305fe7fd43ceff8  Stockholm.osm.shp.zip

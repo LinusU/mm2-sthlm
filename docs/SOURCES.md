@@ -70,3 +70,18 @@ reports a 106 m tower; its
 describes the three-crown symbol. `assets/landmarks/stadshuset.json` records
 references and proportions. The copper roof, open belfry and simplified gold
 crowns are authored approximations, not measured architectural reconstruction.
+
+## Expanded source and terrain
+
+The default profile uses the bounded September 26, 2026 BBBike Stockholm PBF
+snapshot in `sources/expanded/`, retaining complete lake membership from the
+original fixture. Its source manifest records provider URL, timestamp, PBF
+SHA-256/MD5, snapshot SHA-256 and incomplete source relation omissions.
+
+Six supplied Lantmäteriet 1 m ground-model tiles cover the target. Their
+SWEREF99 TM / RH2000 CRS, per-area survey dates/methods/accuracy, original tile
+SHA-256 values and sidecars are retained in `sources/terrain/`. The offline
+10 m fixture is bilinearly resampled; its checksum is verified before builds.
+It is CC BY 4.0, ©Lantmäteriet, under the supplied terms PDF. See TERRAIN.md for
+reproduction and exact processing. Bridge deck and water heights have separate
+explicit estimation rules; they are not claimed as measured terrain heights.

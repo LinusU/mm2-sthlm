@@ -1,0 +1,194 @@
+{
+  "driver": "GTiff",
+  "dtype": "float32",
+  "nodata": -9999.0,
+  "width": 10000,
+  "height": 10000,
+  "count": 1,
+  "crs": "EPSG:5845",
+  "transform": [
+    1.0,
+    0.0,
+    670000.0,
+    0.0,
+    -1.0,
+    6580000.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "blockxsize": 512,
+  "blockysize": 512,
+  "tiled": true,
+  "compress": "deflate",
+  "interleave": "band",
+  "projjson": {
+    "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+    "type": "CompoundCRS",
+    "name": "SWEREF99 TM + RH2000 height",
+    "components": [
+      {
+        "type": "ProjectedCRS",
+        "name": "SWEREF99 TM",
+        "base_crs": {
+          "type": "GeographicCRS",
+          "name": "SWEREF99",
+          "datum": {
+            "type": "GeodeticReferenceFrame",
+            "name": "SWEREF99",
+            "ellipsoid": {
+              "name": "GRS 1980",
+              "semi_major_axis": 6378137,
+              "inverse_flattening": 298.257222101
+            }
+          },
+          "coordinate_system": {
+            "subtype": "ellipsoidal",
+            "axis": [
+              {
+                "name": "Geodetic latitude",
+                "abbreviation": "Lat",
+                "direction": "north",
+                "unit": "degree"
+              },
+              {
+                "name": "Geodetic longitude",
+                "abbreviation": "Lon",
+                "direction": "east",
+                "unit": "degree"
+              }
+            ]
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 4619
+          }
+        },
+        "conversion": {
+          "name": "UTM zone 33N",
+          "method": {
+            "name": "Transverse Mercator",
+            "id": {
+              "authority": "EPSG",
+              "code": 9807
+            }
+          },
+          "parameters": [
+            {
+              "name": "Latitude of natural origin",
+              "value": 0,
+              "unit": "degree",
+              "id": {
+                "authority": "EPSG",
+                "code": 8801
+              }
+            },
+            {
+              "name": "Longitude of natural origin",
+              "value": 15,
+              "unit": "degree",
+              "id": {
+                "authority": "EPSG",
+                "code": 8802
+              }
+            },
+            {
+              "name": "Scale factor at natural origin",
+              "value": 0.9996,
+              "unit": "unity",
+              "id": {
+                "authority": "EPSG",
+                "code": 8805
+              }
+            },
+            {
+              "name": "False easting",
+              "value": 500000,
+              "unit": "metre",
+              "id": {
+                "authority": "EPSG",
+                "code": 8806
+              }
+            },
+            {
+              "name": "False northing",
+              "value": 0,
+              "unit": "metre",
+              "id": {
+                "authority": "EPSG",
+                "code": 8807
+              }
+            }
+          ]
+        },
+        "coordinate_system": {
+          "subtype": "Cartesian",
+          "axis": [
+            {
+              "name": "Northing",
+              "abbreviation": "",
+              "direction": "north",
+              "unit": "metre"
+            },
+            {
+              "name": "Easting",
+              "abbreviation": "",
+              "direction": "east",
+              "unit": "metre"
+            }
+          ]
+        }
+      },
+      {
+        "type": "VerticalCRS",
+        "name": "RH2000 height",
+        "datum": {
+          "type": "VerticalReferenceFrame",
+          "name": "Rikets hojdsystem 2000"
+        },
+        "coordinate_system": {
+          "subtype": "vertical",
+          "axis": [
+            {
+              "name": "Gravity-related height",
+              "abbreviation": "",
+              "direction": "up",
+              "unit": "metre"
+            }
+          ]
+        }
+      }
+    ],
+    "id": {
+      "authority": "EPSG",
+      "code": 5845
+    }
+  },
+  "lnglat": [
+    18.071463058327257,
+    59.277623496069985
+  ],
+  "bounds": [
+    670000.0,
+    6570000.0,
+    680000.0,
+    6580000.0
+  ],
+  "res": [
+    1.0,
+    1.0
+  ],
+  "shape": [
+    10000,
+    10000
+  ],
+  "indexes": [
+    1
+  ],
+  "units": [
+    "metre"
+  ],
+  "colorinterp": [
+    1
+  ]
+}
