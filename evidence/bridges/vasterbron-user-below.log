@@ -1,0 +1,35 @@
+mm2-smoke commit=b3d9804489bdcd576dd4b85b3f40fec75c545071
+2026-10-03T20:09:06.798451Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_2.water skipped=0
+2026-10-03T20:09:06.915877Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_2.water skipped=0
+2026-10-03T20:09:07.106082Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_2.water skipped=0
+2026-10-03T20:09:07.279546Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_1.water skipped=0
+2026-10-03T20:09:07.535909Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_1.water skipped=0
+2026-10-03T20:09:07.657416Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-03T20:09:07.657430Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-03T20:09:07.673926Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T20:09:07.673938Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T20:09:07.673942Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T20:09:07.673944Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T20:09:07.673945Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T20:09:07.673947Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T20:09:07.673947Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T20:09:07.673948Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T20:09:07.673949Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T20:09:07.673951Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T20:09:07.673952Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T20:09:07.674081Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T20:09:07.674085Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T20:09:07.674089Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-03T20:09:07.674090Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T20:09:07.900743Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+2026-10-03T20:09:07.945173Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 78517v0 with the <Enable the debug feature to see the name> component has a parent (78516v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T20:09:07.945191Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 78520v0 with the <Enable the debug feature to see the name> component has a parent (78519v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T20:09:07.945193Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 78523v0 with the <Enable the debug feature to see the name> component has a parent (78522v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T20:09:07.945196Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 78526v0 with the <Enable the debug feature to see the name> component has a parent (78525v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=evidence/bridges/vasterbron-user-below.png bytes=3548435 aud=0h/0v/0s/0l/0a
+2026-10-03T20:09:09.882488Z  WARN bevy_winit::state: Skipped event Destroyed for unknown winit Window Id WindowId(41629647488)
+

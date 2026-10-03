@@ -1,0 +1,149 @@
+{
+  "status": "pass",
+  "plan": {
+    "source_node": 4870445478,
+    "source_way": 41506833,
+    "source_road_name": "Fleminggatan",
+    "signal_position": [
+      -735.2310180664062,
+      18.410018920898438,
+      -718.961181640625
+    ],
+    "spawn": [
+      -751.5392189930312,
+      19.810018920898436,
+      -728.0560911954227,
+      -103.90978220071223
+    ],
+    "cameras": {
+      "reference": [
+        -744.4,
+        21.3,
+        -729.4,
+        -104,
+        -15
+      ],
+      "downlook": [
+        -744.4,
+        48,
+        -729.4,
+        -104,
+        -65
+      ],
+      "signal-close": [
+        -743.0027254318777,
+        21.610018920898437,
+        -720.8586970227701,
+        -103.72071697619563,
+        -2
+      ]
+    },
+    "decal_paths": 3,
+    "expected_native_quads": 21506,
+    "decal_points": 172036,
+    "signal_instances": 1743
+  },
+  "reports": {
+    "intersection-drive": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-751.5392189930312,19.810018920898436,-728.0560911954227,-103.90978220071223",
+        "--headless",
+        "--frames",
+        "240"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=240 ticks=480 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=15.4m/s travel=15.3m sim=4.00s resets=0 controls=240t/0b/0s finite=true moved=15m wheels=4/4 final=(-737,19.2,-724) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071"
+    },
+    "reference": {
+      "native_decal_counts": [
+        3,
+        21506
+      ],
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--parked",
+        "--frames",
+        "60",
+        "--cam=-744.4,21.3,-729.4,-104,-15",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/road-details/reference.png"
+      ],
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/road-details/reference.png bytes=3502354 aud=0h/0v/0s/0l/0a",
+      "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071"
+    },
+    "downlook": {
+      "native_decal_counts": [
+        3,
+        21506
+      ],
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--parked",
+        "--frames",
+        "60",
+        "--cam=-744.4,48,-729.4,-104,-65",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/road-details/downlook.png"
+      ],
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/road-details/downlook.png bytes=3606594 aud=0h/0v/0s/0l/0a",
+      "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071"
+    },
+    "signal-close": {
+      "native_decal_counts": [
+        3,
+        21506
+      ],
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--parked",
+        "--frames",
+        "60",
+        "--cam=-743.0027254318777,21.610018920898437,-720.8586970227701,-103.72071697619563,-2",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/road-details/signal-close.png"
+      ],
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/road-details/signal-close.png bytes=3190935 aud=0h/0v/0s/0l/0a",
+      "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071"
+    }
+  },
+  "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "package_checksums_sha256": "7dd648244283b13cee5271875e5ea3aa85db3e6b4d796a91f6229940756d55e2",
+  "screenshots": {
+    "reference.png": "9464ede876e0f7f66c058372eb6700a5d0f74c83e99b7cd916a7b264e6e15fce",
+    "downlook.png": "39d6c50591555255c71b6936a6941acc947feeca2cd905ebed0140b8fec77514",
+    "signal-close.png": "ccb409a2b6474775b59c4f0aaa13d280e1a42fae1e7d336048d24696d9e4075d"
+  },
+  "processing": "Unmodified native in-game screenshots; headless drive is physics evidence only. Signals are static visual props."
+}

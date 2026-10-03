@@ -1,3 +1,8 @@
+Current engine and acceptance results: [INTEGRATION.md](INTEGRATION.md).
+Bridge, seam, street-prop and road-paint evidence is under the corresponding
+`evidence/` directories. The report below retains the earlier expansion
+milestone's own revisions and package identities.
+
 # Expanded terrain acceptance
 
 2026-10-03: the independently generated Stockholm terrain package is playable

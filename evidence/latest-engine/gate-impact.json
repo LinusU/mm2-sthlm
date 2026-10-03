@@ -1,0 +1,32 @@
+{
+  "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "engine_binary_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "package_manifest_sha256": "7dd648244283b13cee5271875e5ea3aa85db3e6b4d796a91f6229940756d55e2",
+  "command": [
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+    "--mods",
+    "/Users/linus/coding/mm2-sthlm/dist",
+    "--city",
+    "stockholm",
+    "--no-profile",
+    "--spawn=-290.1543314297898,4.552698620071247,111.89132048675279,-15.449502179677902",
+    "--headless",
+    "--frames",
+    "500"
+  ],
+  "spawn": [
+    -290.1543314297898,
+    4.552698620071247,
+    111.89132048675279,
+    -15.449502179677902
+  ],
+  "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=500 ticks=1000 driver=hold diff=amateur phase=playing impacts=11 dropped=0 peak=28.2m/s travel=112.4m sim=8.33s resets=0 controls=760t/0b/0s finite=true moved=112m wheels=4/4 final=(-264,5.9,3) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3560d/2a/0s/1b bng_ev=0a/0s/1b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+  "assertions": {
+    "break_events": 1,
+    "active_debris": 2,
+    "finite": true,
+    "resets": 0,
+    "wheels": "4/4"
+  },
+  "log_sha256": "bf4bf6842d2c7d08d5dfa8ab2b2599041ab111f429c4b329150e26c2508a3829"
+}

@@ -1,0 +1,24 @@
+{
+  "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "package_manifest_sha256": "7dd648244283b13cee5271875e5ea3aa85db3e6b4d796a91f6229940756d55e2",
+  "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "processing": "Unmodified native GPU screenshots inspected visually. Headless records establish vehicle physics only.",
+  "limitations": "Bridge deck elevations, arches and bank transitions are authored estimates, not surveyed geometry. Short input-driven probes do not establish a complete bridge traversal or every city seam.",
+  "screenshots": [
+    {
+      "path": "ground-seam.png",
+      "sha256": "5df1ca837f20f57a3d2ccf298987b5280d7ae11db6de24b03ff1d811dc1faabd",
+      "review": "Road, paving and grass connect at the reported camera; the former blue wedge is closed."
+    },
+    {
+      "path": "sankt-eriksbron-underpass.png",
+      "sha256": "923723cad68ac29856829bab25d58b1cae6819353e9594cb8487f18db52bd392",
+      "review": "Lower street remains continuous beneath the raised approach; former paving roof and road wall are removed. Bank elevations remain an estimate."
+    },
+    {
+      "path": "vasterbron-entry.png",
+      "sha256": "121ea01aeaf4b6163df56ce8b17e0dc804e7628883a5ebb46891fb2351d0ab23",
+      "review": "The former blue paving wedge is closed. Road approach meets the raised bridge profile; road markings and rails are visible."
+    }
+  ]
+}

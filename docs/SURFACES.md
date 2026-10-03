@@ -18,9 +18,20 @@ wide-road shoulders, connector heights and independent underpass clearance.
 Actual engine checks, commands, revision and unmodified screenshots are in
 `evidence/surface-seams/acceptance.json`.
 
-The first acceptance run closes the reported ground crack and restores the
-lower Sankt Eriksbron street: its 107 m drive has no impacts or resets. The
-Västerbron connector drive covers 45 m with four wheels tracked. It also
-exposes a remaining steep Sankt Eriksbron approach: the full-throttle probe
-hits once and finishes airborne. That probe is not accepted as a smooth
-bridge transition; the source deck-end estimate still needs correction.
+Bridge ends now use the connected approach road's sampled height rather than
+letting a steep bank sample pull the deck down. The final 30 metres blend into
+the shared junction plane. Raised approaches are removed from the parent land
+surface while independent lower streets remain intact.
+
+The final acceptance run passes all 16 probes on engine
+`b3d9804489bdcd576dd4b85b3f40fec75c545071`. Five continuous drives cover 38 m
+and 67 m at Västerbron, 72 m on the Sankt Eriksbron connector, 107 m beneath
+Sankt Eriksbron, and 67 m at the Västerbron crown. Each has zero impacts or
+resets, finite state and four wheels tracked. This supersedes the initial
+failed Sankt Eriksbron connector probe retained in Git history.
+
+The remaining blue wedge was an engine winding bug: steep upward paving fans
+were classified as vertical walls. The generic fix is rust-mm2 PR #5, with
+its exact revision and patch under `integration/rust-mm2/`. Matching actual
+engine screenshots show both reported wedges closed. These local checks do
+not establish that every city seam or complete bridge span has been driven.

@@ -1,7 +1,7 @@
 {
-  "engine_revision": "039edc98bab91a36aede5e4a5d8eae729d47deab",
-  "engine_sha256": "cba1b0374cee36806cc682e313ad081234e01728769fa7b4e85661963271ddb8",
-  "package_manifest_sha256": "6efa1efd22e00ec9a3a30c161fbc72cea123a4d77b9ce6d69874320e4d70c011",
+  "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "package_manifest_sha256": "7dd648244283b13cee5271875e5ea3aa85db3e6b4d796a91f6229940756d55e2",
   "processing": "Unmodified engine GPU screenshots; headless records are actual vehicle physics only.",
   "probes": [
     {
@@ -22,7 +22,7 @@
         "180"
       ],
       "returncode": 0,
-      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.0m/s travel=0.1m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=1m wheels=4/4 final=(-1247,42.5,-874) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=1817d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.0m/s travel=0.1m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=1m wheels=4/4 final=(-1247,42.5,-874) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
       "checks": {
         "status=pass": true,
         "finite=true": true,
@@ -52,8 +52,8 @@
         "/Users/linus/coding/mm2-sthlm/evidence/surface-seams/ground-seam.png"
       ],
       "returncode": 0,
-      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/surface-seams/ground-seam.png bytes=3296302 aud=0h/0v/0s/0l/0a",
-      "image_sha256": "676e8132add773d4b875684085614703bf8dce85cd5c4dcdedfb7d71f2560d9c"
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/surface-seams/ground-seam.png bytes=3296561 aud=0h/0v/0s/0l/0a",
+      "image_sha256": "5df1ca837f20f57a3d2ccf298987b5280d7ae11db6de24b03ff1d811dc1faabd"
     },
     {
       "name": "sankt-eriksbron-underpass-parked",
@@ -73,7 +73,7 @@
         "180"
       ],
       "returncode": 0,
-      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.1m/s travel=0.0m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=1m wheels=4/4 final=(-625,4.8,-988) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=1817d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.1m/s travel=0.0m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=1m wheels=4/4 final=(-625,4.8,-988) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
       "checks": {
         "status=pass": true,
         "finite=true": true,
@@ -103,8 +103,8 @@
         "/Users/linus/coding/mm2-sthlm/evidence/surface-seams/sankt-eriksbron-underpass.png"
       ],
       "returncode": 0,
-      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/surface-seams/sankt-eriksbron-underpass.png bytes=3349815 aud=0h/0v/0s/0l/0a",
-      "image_sha256": "4812aa5d1a5d77728c388316cd72219f019792b8535e1cd13458379b3ae1603d"
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/surface-seams/sankt-eriksbron-underpass.png bytes=3376350 aud=0h/0v/0s/0l/0a",
+      "image_sha256": "923723cad68ac29856829bab25d58b1cae6819353e9594cb8487f18db52bd392"
     },
     {
       "name": "vasterbron-entry-parked",
@@ -124,7 +124,7 @@
         "180"
       ],
       "returncode": 0,
-      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.2m/s travel=0.1m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=0m wheels=4/4 final=(-1208,16.5,67) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=1817d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.2m/s travel=0.1m sim=3.00s resets=0 controls=0t/0b/0s finite=true moved=0m wheels=4/4 final=(-1208,16.5,67) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
       "checks": {
         "status=pass": true,
         "finite=true": true,
@@ -154,8 +154,8 @@
         "/Users/linus/coding/mm2-sthlm/evidence/surface-seams/vasterbron-entry.png"
       ],
       "returncode": 0,
-      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/surface-seams/vasterbron-entry.png bytes=2754754 aud=0h/0v/0s/0l/0a",
-      "image_sha256": "33e42be3b83fa6ac6674de0a3fe377b28254c241a955305a421aefe324fcd2ad"
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/surface-seams/vasterbron-entry.png bytes=2769675 aud=0h/0v/0s/0l/0a",
+      "image_sha256": "121ea01aeaf4b6163df56ce8b17e0dc804e7628883a5ebb46891fb2351d0ab23"
     },
     {
       "name": "vasterbron-connector-drive",
@@ -174,7 +174,7 @@
         "350"
       ],
       "returncode": 0,
-      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=350 ticks=700 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=21.7m/s travel=44.8m sim=5.83s resets=0 controls=460t/0b/0s finite=true moved=45m wheels=4/4 final=(-1159,12.2,143) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=1817d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=350 ticks=700 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=16.4m/s travel=38.0m sim=5.83s resets=0 controls=460t/0b/0s finite=true moved=38m wheels=4/4 final=(-1163,15.3,137) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
       "checks": {
         "status=pass": true,
         "finite=true": true,
@@ -182,7 +182,7 @@
         "wheels=4/4": true,
         "impacts=0": true
       },
-      "travel_m": 44.8
+      "travel_m": 38.0
     },
     {
       "name": "sankt-eriksbron-connector-drive",
@@ -201,15 +201,15 @@
         "400"
       ],
       "returncode": 0,
-      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=400 ticks=800 driver=hold diff=amateur phase=playing impacts=1 dropped=0 peak=21.0m/s travel=65.2m sim=6.67s resets=0 controls=560t/0b/0s finite=true moved=65m wheels=0/4 final=(-599,16.2,-991) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=1817d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=400 ticks=800 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=27.0m/s travel=71.8m sim=6.67s resets=0 controls=560t/0b/0s finite=true moved=72m wheels=4/4 final=(-597,17.6,-997) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
       "checks": {
         "status=pass": true,
         "finite=true": true,
         "resets=0": true,
-        "wheels=4/4": false,
-        "impacts=0": false
+        "wheels=4/4": true,
+        "impacts=0": true
       },
-      "travel_m": 65.2
+      "travel_m": 71.8
     },
     {
       "name": "sankt-eriksbron-lower-street-drive",
@@ -228,7 +228,7 @@
         "480"
       ],
       "returncode": 0,
-      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=480 ticks=960 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=29.2m/s travel=107.2m sim=8.00s resets=0 controls=720t/0b/0s finite=true moved=107m wheels=4/4 final=(-553,4.5,-965) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=1817d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=480 ticks=960 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=29.2m/s travel=107.2m sim=8.00s resets=0 controls=720t/0b/0s finite=true moved=107m wheels=4/4 final=(-553,4.5,-965) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
       "checks": {
         "status=pass": true,
         "finite=true": true,

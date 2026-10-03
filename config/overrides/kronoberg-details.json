@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "ramp": {"source": "way/99763084", "entrance_node": 1153261603, "end_node": 1153261605, "drop_m": 4.0, "width_m": 5.0, "shoulder_m": 3.0, "provenance": "Authored estimate from user photograph; not a surveyed DTM or underground continuation"},
+  "guard_hut": {"source": "way/390454703", "height_m": 3.0, "provenance": "User photograph: single-storey glazed control hut, white lower panels, dark roof fascia"},
+  "urinal": {"source": "way/127586369", "height_m": 2.3, "radius_m": 0.85, "mass_kg": 160.0, "provenance": "User photograph: narrow light-grey octagonal urinal, dark posts, shallow roof, small vent"}
+}

@@ -1,0 +1,215 @@
+{
+  "expected_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "results": [
+    {
+      "name": "vasterbron-user-below",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--cam=-1159.8,10.1,177.9,-139,-23",
+        "--parked",
+        "--no-hud",
+        "--frames",
+        "90",
+        "--screenshot",
+        "evidence/bridges/vasterbron-user-below.png"
+      ],
+      "returncode": 0,
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=evidence/bridges/vasterbron-user-below.png bytes=3548435 aud=0h/0v/0s/0l/0a",
+      "checks": {
+        "status=pass": true,
+        "engine_revision": true,
+        "exit_zero": true,
+        "screenshot_written": true
+      },
+      "kind": "native_visual"
+    },
+    {
+      "name": "vasterbron-side-overview",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--cam=-1590,105,620,-82,-9",
+        "--parked",
+        "--no-hud",
+        "--frames",
+        "90",
+        "--screenshot",
+        "evidence/bridges/vasterbron-side-overview.png"
+      ],
+      "returncode": 0,
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=evidence/bridges/vasterbron-side-overview.png bytes=3186571 aud=0h/0v/0s/0l/0a",
+      "checks": {
+        "status=pass": true,
+        "engine_revision": true,
+        "exit_zero": true,
+        "screenshot_written": true
+      },
+      "kind": "native_visual"
+    },
+    {
+      "name": "vasterbron-side-low",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--cam=-1320,8,540,-90,3",
+        "--parked",
+        "--no-hud",
+        "--frames",
+        "90",
+        "--screenshot",
+        "evidence/bridges/vasterbron-side-low.png"
+      ],
+      "returncode": 0,
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=evidence/bridges/vasterbron-side-low.png bytes=1854008 aud=0h/0v/0s/0l/0a",
+      "checks": {
+        "status=pass": true,
+        "engine_revision": true,
+        "exit_zero": true,
+        "screenshot_written": true
+      },
+      "kind": "native_visual"
+    },
+    {
+      "name": "vasterbron-deck-rail",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--cam=-1190,43,185,-155,-5",
+        "--parked",
+        "--no-hud",
+        "--frames",
+        "90",
+        "--screenshot",
+        "evidence/bridges/vasterbron-deck-rail.png"
+      ],
+      "returncode": 0,
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=evidence/bridges/vasterbron-deck-rail.png bytes=2509050 aud=0h/0v/0s/0l/0a",
+      "checks": {
+        "status=pass": true,
+        "engine_revision": true,
+        "exit_zero": true,
+        "screenshot_written": true
+      },
+      "kind": "native_visual"
+    },
+    {
+      "name": "vasterbron-entry-parked",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-1165.3434182345313,17.1160958009131,150.62763282725183,-148.09925827644096",
+        "--headless",
+        "--frames",
+        "120",
+        "--parked"
+      ],
+      "returncode": 0,
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=120 ticks=240 driver=parked diff=amateur phase=playing impacts=0 dropped=0 peak=0.1m/s travel=0.1m sim=2.00s resets=0 controls=0t/0b/0s finite=true moved=1m wheels=4/4 final=(-1165,16.4,151) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "checks": {
+        "status=pass": true,
+        "finite=true": true,
+        "resets=0": true,
+        "wheels=4/4": true,
+        "impacts=0": true,
+        "engine_revision": true,
+        "exit_zero": true
+      },
+      "kind": "physics_only"
+    },
+    {
+      "name": "vasterbron-entry-drive",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-1165.3434182345313,17.1160958009131,150.62763282725183,-148.09925827644096",
+        "--headless",
+        "--frames",
+        "400"
+      ],
+      "returncode": 0,
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=400 ticks=800 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=25.4m/s travel=66.8m sim=6.67s resets=0 controls=560t/0b/0s finite=true moved=65m wheels=4/4 final=(-1131,19.8,206) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "checks": {
+        "status=pass": true,
+        "finite=true": true,
+        "resets=0": true,
+        "wheels=4/4": true,
+        "impacts=0": true,
+        "engine_revision": true,
+        "exit_zero": true,
+        "travel_over_30m": true
+      },
+      "kind": "physics_only"
+    },
+    {
+      "name": "vasterbron-crown-drive",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--spawn=-1049.3152886835421,28.475319625224305,337.0292394539506,-148.09925827644076",
+        "--headless",
+        "--frames",
+        "400"
+      ],
+      "returncode": 0,
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=400 ticks=800 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=25.4m/s travel=66.8m sim=6.67s resets=0 controls=560t/0b/0s finite=true moved=65m wheels=4/4 final=(-1015,31.1,393) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "checks": {
+        "status=pass": true,
+        "finite=true": true,
+        "resets=0": true,
+        "wheels=4/4": true,
+        "impacts=0": true,
+        "engine_revision": true,
+        "exit_zero": true,
+        "travel_over_30m": true
+      },
+      "kind": "physics_only"
+    }
+  ]
+}

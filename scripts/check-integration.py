@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -36,14 +37,18 @@ def run(engine, args, cwd, log):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--engine", required=True, type=Path)
+    p.add_argument(
+        "--output", type=Path, help="Evidence directory; keeps historical runs separate"
+    )
     args = p.parse_args()
     engine = args.engine.resolve()
     package = sthlm.ROOT / "dist/stockholm"
     sthlm.validate(package)
     meta = json.loads((package / "map.json").read_text())
-    output = sthlm.ROOT / (
+    output = args.output or sthlm.ROOT / (
         "evidence/expanded" if meta.get("profile") == "expanded" else "evidence"
     )
+    output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="mm2-sthlm-portability-") as tmp:
         root = Path(tmp)
@@ -137,6 +142,11 @@ def main():
                 "source_tree_beside_package": False,
                 "package_manifest_sha256": sthlm.sha(package / "checksums.json"),
                 "engine": str(engine),
+                "engine_binary_sha256": sthlm.sha(engine),
+                "engine_revision": re.search(
+                    r"mm2-smoke commit=([^\s]+)",
+                    (output / "portability.log").read_text(),
+                ).group(1),
             },
         )
     print("portability=pass second-independent-city=pass")

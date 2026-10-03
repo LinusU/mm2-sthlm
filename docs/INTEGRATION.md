@@ -1,13 +1,28 @@
 # Current expanded terrain integration
 
-The default package requires engine revision
-`392cc9be55a624f9c8cf64272103f987631c204d`, branch
-`codex/chunked-custom-cities`, [PR #2](https://github.com/LinusU/rust-mm2/pull/2).
-The generic multi-part loader is a separate engine commit, based on the prior
-motion-evidence revision `cf5d4741100f78fc372398d36e06b228a3c0e938`.
-`integration/rust-mm2/multi-part-cities.patch` retains its exact patch;
-`compatibility.json` records the patch SHA-256 and tested revision. Prepare
-with `scripts/prepare-engine` as below; it now selects this current revision.
+The latest pulled upstream main is
+`46f351b9186ad2d4d955e9d0d0a1ef1240d2332f`; PRs #1–#3 are merged.
+The current tested package uses engine
+`b3d9804489bdcd576dd4b85b3f40fec75c545071`, adding two focused fixes:
+[PR #4](https://github.com/LinusU/rust-mm2/pull/4) gives intact movable props
+valid convex collision bodies, and [PR #5](https://github.com/LinusU/rust-mm2/pull/5)
+preserves upward winding for steep road/paving fans. PR #5 is stacked on #4.
+Exact patches, checksums, tested revisions and preparation commands are in
+`integration/rust-mm2/CONTRACT.md`. `scripts/prepare-engine` selects the tested
+revision in `compatibility.json`.
+
+The current ignored local binary is `.cache/engine/mm2`. Reproduce the latest
+portable-package check with:
+
+```sh
+.venv/bin/python scripts/check-integration.py --engine .cache/engine/mm2 --output evidence/latest-engine
+```
+
+It finishes all 102 checkpoints over 1,503.8 m with zero impacts or resets,
+finite state and four wheels. It also loads a second independent city and
+rejects a missing package chunk. The package is copied alone into a temporary
+mod root and launched from an empty working directory. Raw logs and identities
+are in `evidence/latest-engine/`.
 
 No Stockholm content or shared handling changes are in the engine. Normal map
 CI has no dependency on the engine. The expanded package uses 55 independent
@@ -58,7 +73,7 @@ repository. Alternatively obtain that revision's binary independently. The
 original local engine checkout was read-only during this work; development
 used `/private/tmp/mm2-sthlm-engine` with its own cloned build cache.
 
-The current local tested binary is:
+The original-slice local tested binary was:
 
 ```sh
 /private/tmp/mm2-sthlm-engine/target/debug/mm2

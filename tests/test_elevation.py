@@ -1,8 +1,9 @@
 import sys
+import math
 import unittest
 from pathlib import Path
 
-from shapely.geometry import LineString, Point, box, mapping
+from shapely.geometry import LineString, Point, box, mapping, shape
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from elevation import RoadField, apply, conforming_boundary
@@ -119,6 +120,44 @@ class ElevationTests(unittest.TestCase):
         self.assertTrue(raised.covers(Point(108, 0)))
         self.assertAlmostEqual(ground.ground(108, 0), 4)
         self.assertGreater(deck(108, 0), ground(108, 0) + 5)
+
+    def test_bridge_end_anchors_uphill_road_instead_of_bank_dtm(self):
+        class Bank:
+            metadata = {"datum": "synthetic shoreline dip"}
+
+            def height(self, x, n):
+                return 17 if abs(n) < 5 and (x <= 85 or x >= 315) else 4
+
+        roads = [
+            self.road(1, [1, 2], [(0, 0), (100, 0)]),
+            self.road(2, [2, 3, 4], [(100, 0), (200, 0), (300, 0)], True),
+            self.road(3, [4, 5], [(300, 0), (400, 0)]),
+            self.road(4, [6, 7], [(108, -100), (108, 100)]),
+        ]
+        city = {
+            "roads": roads,
+            "bridge_ways": [2],
+            "spawn": [0, 0, 0],
+            "route": [(0, 0)],
+            "buildings": [],
+            "bounds": mapping(box(-20, -120, 420, 120)),
+        }
+        ground, deck, base, _ = apply(city, Bank())
+        self.assertEqual(deck(100, 0), 17)
+        self.assertEqual(roads[0]["elevated_points"][-1][2], 17)
+        self.assertTrue(all(p[2] == 17 for p in roads[0]["elevated_points"]))
+        grades = [
+            abs(b[2] - a[2]) / math.dist(a[:2], b[:2])
+            for a, b in zip(
+                roads[0]["elevated_points"], roads[0]["elevated_points"][1:]
+            )
+        ]
+        self.assertLessEqual(max(grades), 0.08)
+        self.assertEqual(ground.ground(108, 0), 4)
+        self.assertTrue(base.covers(Point(108, 0)))
+        self.assertGreater(deck(108, 0), ground(108, 0) + 10)
+        self.assertTrue(shape(city["bridge_approach_surface"]).covers(Point(92, 0)))
+        self.assertFalse(shape(city["bridge_approach_surface"]).covers(Point(200, 0)))
 
     def test_height_surface_samples_inside_large_polygons(self):
         writer = PsdlWriter()

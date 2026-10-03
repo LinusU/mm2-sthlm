@@ -1,0 +1,20 @@
+{
+  "native_render_inspected": true,
+  "source_detail_nodes": 3880,
+  "node_highway_counts": {
+    "traffic_signals": 817,
+    "crossing": 3063
+  },
+  "screenshots": [
+    "reference.png",
+    "downlook.png",
+    "signal-close.png"
+  ],
+  "observations": [
+    "Original static red signal props visibly seated on mapped road verges, facing approaching view; yellow pole collars visible.",
+    "White dashed lane paint visible with separated strips and no visible long connector quads.",
+    "One foreground dash has a partial triangular footprint near lower-right reference and lower-center downlook; adjacent dashes are complete. Possible decal-plane intersection with rendered terrain; no claim of flawless paint conformity."
+  ],
+  "signal_control": "Static visual props; no timing or AI signal cycling verified.",
+  "drive_interpretation": "Real native vehicle drove 15.3 m on a source-road approach with finite state, four grounded wheels and zero resets; this short run does not prove complete junction traversal."
+}

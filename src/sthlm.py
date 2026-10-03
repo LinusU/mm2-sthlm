@@ -578,6 +578,12 @@ def build(output, minimal=False, profile="expanded"):
         from expanded import normalized
 
         city = normalized(source, cfg)
+        if not minimal:
+            from street_details import apply as apply_street_details
+            from road_details import normalized as normalize_road_details
+
+            apply_street_details(city)
+            city["road_details"] = normalize_road_details(source, cfg, city)
     else:
         city = normalize(source, cfg)
     out = output / "stockholm"
@@ -617,7 +623,15 @@ def build(output, minimal=False, profile="expanded"):
 
         terrain = TerrainGrid.from_project(ROOT, cfg["origin"])
         road_field, deck_field, base_roads, bridge_roads = apply(city, terrain)
+        if not minimal:
+            from street_details import wrap_field
+
+            road_field = wrap_field(road_field, city)
         ground_height = road_height = road_field.ground
+        if not minimal:
+            from road_details import surface_height
+
+            detail_height = surface_height(city, ground_height, deck_field)
         if minimal:
             base_roads = road
             bridge_roads = Polygon()
@@ -640,7 +654,9 @@ def build(output, minimal=False, profile="expanded"):
         print("Meshing shoulders", file=sys.stderr, flush=True)
         writer.surface(paving, ground_height if expanded else 2, "paving")
         land = (
-            shape(city["land"]).difference(road.union(paving))
+            shape(city["land"]).difference(
+                road.union(paving).union(shape(city["bridge_approach_surface"]))
+            )
             if expanded
             else bounds.difference(water).difference(road.union(paving))
         )
@@ -659,6 +675,8 @@ def build(output, minimal=False, profile="expanded"):
 
         for b in city["buildings"]:
             if expanded and b["id"] in {"way/24488933", "way/1049742528"}:
+                continue
+            if b.get("street_detail"):
                 continue
             index = int(hashlib.sha256(b["id"].encode()).hexdigest()[:8], 16) % 3
             manor_material = manor_material_for(b)
@@ -774,11 +792,23 @@ def build(output, minimal=False, profile="expanded"):
             from pavilion import export as export_pavilion
 
             city["waterfront_pavilion"] = export_pavilion(writer, city, out)
+            from street_details import render, write as write_street_details
+            from bridges import write as write_bridges
+            from road_details import write as write_road_details
+
+            render(writer, city, ground_height)
 
             city["props"] = placements(
                 city, land, shape(city["road_surface"]), ground_height
             )
             city["props"].extend(write_fences(out, city, ground_height, source))
+            city["props"].extend(write_street_details(out, city, ground_height))
+            city["props"].extend(write_bridges(out, city, deck_field))
+            city["props"].extend(
+                write_road_details(
+                    out, city, height=ground_height, road_height=detail_height
+                )
+            )
             write_props(out, city["props"])
             write_json(out / "normalized.json", city)
         # Original primitive tower at source footprint's southeastern corner.
@@ -1131,10 +1161,11 @@ def validate(package):
         if city["terrain"]["coverage_nodata_cells"] != 0:
             raise ValueError("terrain coverage gaps")
         if not all(
-            p["breakable"] and all(math.isfinite(v) for v in p["position"])
+            (p.get("breakable") or p.get("movable") or p.get("static"))
+            and all(math.isfinite(v) for v in p["position"])
             for p in city["props"]
         ):
-            raise ValueError("invalid breakable prop placement")
+            raise ValueError("invalid native prop placement")
         for path in [
             "geometry/sthlm_tree.pkg",
             "tune/banger/sthlm_tree.dgbangerdata",
@@ -1142,11 +1173,15 @@ def validate(package):
         ]:
             if path not in checks:
                 raise ValueError("missing native breakable tree asset")
+        if city.get("road_details"):
+            for path in ("city/stockholm/decals.pathset", "texture/sthlm_paint.png"):
+                if path not in checks:
+                    raise ValueError(f"missing native road paint resource: {path}")
         for prop in city["props"]:
-            for path in (
-                f"geometry/{prop['asset']}.pkg",
-                f"tune/banger/{prop['asset']}.dgbangerdata",
-            ):
+            paths = [f"geometry/{prop['asset']}.pkg"]
+            if not prop.get("static"):
+                paths.append(f"tune/banger/{prop['asset']}.dgbangerdata")
+            for path in paths:
                 if path not in checks:
                     raise ValueError(f"missing native prop asset: {path}")
     route = LineString(city["route"])

@@ -144,6 +144,23 @@ def apply(city, terrain):
         nid: p for r in city["roads"] for nid, p in zip(r["nodes"], r["points"])
     }
     heights = {nid: max(0.9, terrain.height(*p)) for nid, p in positions.items()}
+    # Bridge-end DTM can already fall down the bank beneath the deck. Anchor
+    # the estimated end to the attached roadway uphill instead of forcing the
+    # car down to that ground measurement then back onto the bridge.
+    bridge_nodes = {n for r in elevated for n in r["nodes"]}
+    for r in ordinary:
+        line = LineString(r["points"])
+        for index, node in [(0, r["nodes"][0]), (-1, r["nodes"][-1])]:
+            if node not in bridge_nodes:
+                continue
+            samples = []
+            for distance in [15, 20, 25]:
+                station = min(distance, line.length)
+                if index == -1:
+                    station = line.length - station
+                point = line.interpolate(station)
+                samples.append(terrain.height(point.x, point.y))
+            heights[node] = max(heights[node], float(np.median(samples)))
     groups = {}
     for r in elevated:
         groups.setdefault(r["tags"]["name"], []).append(r)
@@ -183,7 +200,7 @@ def apply(city, terrain):
         profiles.append(
             {
                 "name": name,
-                "height_rule": "estimated deck from DTM at ends; ramp <=8 percent above baseline",
+                "height_rule": "estimated deck from connected approach DTM; ramp <=8 percent above baseline",
                 "additional_clearance_m": clearance,
                 "source_ways": [r["id"] for r in roads],
             }
@@ -213,6 +230,28 @@ def apply(city, terrain):
                     h = max(0.9, float(np.median(samples)))
                 points.append([x, n, h])
         points.append([*r["points"][-1], heights[r["nodes"][-1]]])
+        if r["id"] not in bridges:
+            # Do not retain the shoreline DTM dip between the uphill anchor
+            # and its estimated bridge deck end. Keep the source endpoints
+            # shared, with a linear approach over the last thirty metres.
+            for reverse, node in [(False, r["nodes"][0]), (True, r["nodes"][-1])]:
+                if node not in bridge_nodes:
+                    continue
+                ordered = list(reversed(points)) if reverse else points
+                stations = [0.0]
+                for a, b in zip(ordered, ordered[1:]):
+                    stations.append(stations[-1] + math.dist(a[:2], b[:2]))
+                end = next(
+                    (i for i, distance in enumerate(stations) if distance >= 30),
+                    len(ordered) - 1,
+                )
+                distance = stations[end]
+                if not distance:
+                    continue
+                start_y, end_y = ordered[0][2], ordered[end][2]
+                for i in range(1, end):
+                    t = stations[i] / distance
+                    ordered[i][2] = start_y * (1 - t) + end_y * t
         r["elevated_points"] = points
     ground_segments, deck_segments, junctions, approaches = bridge_approaches(
         ordinary, elevated
@@ -268,6 +307,11 @@ def apply(city, terrain):
     ground_roads = ground_roads.difference(
         bridge_roads.intersection(connector_caps)
     ).union(unconnected_ground)
+    by_id = {r["id"]: r for r in ordinary}
+    approach_surface = surface(
+        [{**by_id[a["source_way"]], "elevated_points": a["points"]} for a in approaches]
+    ).intersection(bounds)
+    city["bridge_approach_surface"] = mapping(approach_surface)
     city["ground_road_surface"] = mapping(ground_roads)
     city["bridge_road_surface"] = mapping(bridge_roads)
     return road, deck, ground_roads, bridge_roads

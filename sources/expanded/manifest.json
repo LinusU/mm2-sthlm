@@ -1,10 +1,19 @@
 {
   "url": "https://data.bbbike.org/osm/bbbike/Stockholm/Stockholm.osm.pbf",
   "retrieved_utc": "2026-10-03T13:45:08.835900+00:00",
+  "snapshot_generated_utc": "2026-10-03T18:23:51.026172+00:00",
+  "retained_node_tags": [
+    "natural=tree",
+    "highway=traffic_signals",
+    "highway=crossing",
+    "crossing=*"
+  ],
   "source_timestamp": "2026-09-26T00:00:00Z",
   "pbf_sha256": "f35d7d58086b96b0fdc1f1aef98a4e72efbe95fe1a212dadb5465e1b86a63cbf",
   "pbf_md5": "1c5d5f4c275b0ef0289345e69edddf86",
-  "snapshot_sha256": "d7ca3b7cbbd4be03754ca7e1a668092b9f0f82470420cbd726f9b5c57146b603",
+  "provider_checksum_sha256": "8550b255c3d12cecb9afd5928efb2b9db077f2aede3345d113a14fcc144572e1",
+  "provider_md5_verified": true,
+  "snapshot_sha256": "18c1b3b750430d78bf3b6fb367856c14c3c43893172ee5f348a7c426caf82914",
   "license": "ODbL-1.0",
   "attribution": "© OpenStreetMap contributors; regional extract provided by BBBike.org",
   "bounds_buffer": [
@@ -13,7 +22,7 @@
     18.174,
     59.373
   ],
-  "elements": 798471,
+  "elements": 798474,
   "base_water_source": {
     "url": "https://overpass.kumi.systems/api/interpreter",
     "retrieved_utc": "2026-10-03T11:37:40.785166+00:00",
@@ -427,7 +436,5 @@
     "bounded kumi request timed out",
     "ready-made Stockholm regional PBF downloaded; only buffered geometry retained"
   ],
-  "privacy": "No contributor/user/changeset metadata retained",
-  "provider_checksum_sha256": "8550b255c3d12cecb9afd5928efb2b9db077f2aede3345d113a14fcc144572e1",
-  "provider_md5_verified": true
+  "privacy": "No contributor/user/changeset metadata retained"
 }

@@ -1,0 +1,330 @@
+{
+  "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "engine_binary_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "package_manifest_sha256": "7dd648244283b13cee5271875e5ea3aa85db3e6b4d796a91f6229940756d55e2",
+  "ramp": {
+    "elevated_points": [
+      [
+        -719.5258975004458,
+        466.2839510858147,
+        23.80910769997124
+      ],
+      [
+        -715.6369622497868,
+        466.53627526492863,
+        23.475774366637907
+      ],
+      [
+        -711.748026999128,
+        466.78859944404263,
+        23.14244103330457
+      ],
+      [
+        -707.8590917484692,
+        467.0409236231566,
+        22.80910769997124
+      ],
+      [
+        -703.9701564978102,
+        467.29324780227057,
+        22.475774366637907
+      ],
+      [
+        -700.0812212471512,
+        467.5455719813845,
+        22.14244103330457
+      ],
+      [
+        -696.1922859964924,
+        467.79789616049845,
+        21.80910769997124
+      ],
+      [
+        -692.3033507458335,
+        468.05022033961245,
+        21.475774366637907
+      ],
+      [
+        -688.4144154951746,
+        468.3025445187264,
+        21.14244103330457
+      ],
+      [
+        -684.5254802445156,
+        468.5548686978404,
+        20.80910769997124
+      ],
+      [
+        -680.6365449938568,
+        468.80719287695433,
+        20.475774366637907
+      ],
+      [
+        -676.7476097431979,
+        469.05951705606833,
+        20.14244103330457
+      ],
+      [
+        -672.858674492539,
+        469.31184123518227,
+        19.80910769997124
+      ]
+    ],
+    "height_override": {
+      "drop_m": 4.0,
+      "end_node": 1153261605,
+      "entrance_node": 1153261603,
+      "provenance": "Authored estimate from user photograph; not a surveyed DTM or underground continuation",
+      "shoulder_m": 3.0,
+      "source": "way/99763084",
+      "width_m": 5.0
+    },
+    "height_rule": "Authored estimate from user photograph; not a surveyed DTM or underground continuation",
+    "id": 99763084,
+    "nodes": [
+      1153261603,
+      1153261605
+    ],
+    "points": [
+      [
+        -719.5258975004458,
+        466.2839510858147
+      ],
+      [
+        -672.858674492539,
+        469.31184123518227
+      ]
+    ],
+    "street_detail": "descending_dead_end",
+    "tags": {
+      "access": "private",
+      "highway": "service",
+      "name": "Drottningholmsv\u00e4gen",
+      "wikidata": "Q10477000",
+      "wikipedia": "sv:Drottningholmsv\u00e4gen, Stockholm"
+    },
+    "width": 5.0
+  },
+  "urinal": {
+    "asset": "sthlm_kronoberg_urinal",
+    "breakable": false,
+    "dimensions_rule": "User photograph: narrow light-grey octagonal urinal, dark posts, shallow roof, small vent",
+    "kind": "urinal",
+    "movable": true,
+    "position": [
+      -642.8620543124241,
+      26.881518394356597,
+      -507.94161375704067
+    ],
+    "source": "way/127586369",
+    "source_geometry": {
+      "coordinates": [
+        [
+          [
+            -641.3023641670889,
+            506.37009971987646
+          ],
+          [
+            -641.3989013771297,
+            506.28104412778305
+          ],
+          [
+            -642.8583168446709,
+            505.72444667364005
+          ],
+          [
+            -644.4142695222529,
+            506.35896777066705
+          ],
+          [
+            -645.038922057075,
+            507.5723502210469
+          ],
+          [
+            -645.0673153540391,
+            507.917440641793
+          ],
+          [
+            -644.4256268409982,
+            509.4870454621283
+          ],
+          [
+            -642.8583168446709,
+            510.14383045836513
+          ],
+          [
+            -642.1711990564472,
+            510.03251096706197
+          ],
+          [
+            -641.2910068483436,
+            509.4870454621283
+          ],
+          [
+            -640.6493183353027,
+            507.917440641793
+          ],
+          [
+            -641.3023641670889,
+            506.37009971987646
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "source_tags": {
+      "access": "yes",
+      "amenity": "toilets",
+      "building": "yes",
+      "changing_table": "no",
+      "check_date": "2026-01-27",
+      "fee": "no",
+      "image": "https://commons.wikimedia.org/wiki/File:Stockholms_stads_offentliga_toalett_Kronobergsparken_01.jpg",
+      "image:license": "CC0",
+      "level": "0",
+      "male": "yes",
+      "name": "Urinoar Kronobergsgatan 11",
+      "opening_hours": "24/7",
+      "operator": "Stockholms stad",
+      "panoramax": "d2287397-8139-4d10-9610-87fa2ce31f05",
+      "panoramax:0": "624b29f0-3038-4545-9916-9ae5cd3cf173",
+      "supervised": "no",
+      "toilets:access": "yes",
+      "toilets:disposal": "flush",
+      "toilets:handwashing": "no",
+      "toilets:num_chambers": "1",
+      "toilets:position": "urinal",
+      "wheelchair": "no"
+    }
+  },
+  "probes": {
+    "ramp": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-716.5321922579988,25.052507452560775,-466.47819042617954,-86.2877050531088",
+        "--headless",
+        "--frames",
+        "600"
+      ],
+      "spawn": [
+        -716.5321922579988,
+        25.052507452560775,
+        -466.47819042617954,
+        -86.2877050531088
+      ],
+      "exit_code": 0,
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=600 ticks=1200 driver=hold diff=amateur phase=playing impacts=4 dropped=0 peak=23.2m/s travel=41.8m sim=10.00s resets=0 controls=960t/0b/0s finite=true moved=41m wheels=4/4 final=(-676,20.8,-468) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+    },
+    "urinal": {
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-642.8620543124241,27.293617749972338,-525.9416137570406,180",
+        "--headless",
+        "--frames",
+        "300"
+      ],
+      "spawn": [
+        -642.8620543124241,
+        27.293617749972338,
+        -525.9416137570406,
+        180
+      ],
+      "exit_code": 0,
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=300 ticks=600 driver=hold diff=amateur phase=playing impacts=4 dropped=0 peak=16.1m/s travel=26.9m sim=5.00s resets=0 controls=360t/0b/0s finite=true moved=25m wheels=4/4 final=(-644,28.3,-501) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3560d/1a/0s/0b bng_ev=1a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+    }
+  },
+  "visuals": [
+    {
+      "name": "ramp-hut",
+      "camera": [
+        -736.6,
+        25.9,
+        -466.2,
+        -93,
+        -12
+      ],
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--cam=-736.6,25.9,-466.2,-93,-12",
+        "--frames",
+        "60",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/street-details/ramp-hut.png",
+        "--parked"
+      ],
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/street-details/ramp-hut.png bytes=3211107 aud=0h/0v/0s/0l/0a"
+    },
+    {
+      "name": "urinal",
+      "camera": [
+        -658,
+        29,
+        -510.1,
+        -94,
+        -13
+      ],
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--cam=-658,29,-510.1,-94,-13",
+        "--frames",
+        "60",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/street-details/urinal.png",
+        "--parked"
+      ],
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/street-details/urinal.png bytes=2976892 aud=0h/0v/0s/0l/0a"
+    },
+    {
+      "name": "hut",
+      "camera": [
+        -760,
+        23,
+        -466.2,
+        -93,
+        -6
+      ],
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+        "--cam=-760,23,-466.2,-93,-6",
+        "--frames",
+        "60",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/street-details/hut.png",
+        "--parked"
+      ],
+      "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/street-details/hut.png bytes=3197938 aud=0h/0v/0s/0l/0a"
+    }
+  ],
+  "visual_review": {
+    "ramp-hut": "Descending closed access lane is visible; supplemental hut view shows low white/glass building.",
+    "urinal": "Original grey octagonal booth is visible. Intact activation is established by the separate headless physics log, not these parked captures."
+  }
+}

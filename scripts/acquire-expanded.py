@@ -21,7 +21,11 @@ class Extract(osmium.SimpleHandler):
 
     def node(self, n):
         if (
-            n.tags.get("natural") == "tree"
+            (
+                n.tags.get("natural") == "tree"
+                or n.tags.get("highway") in {"traffic_signals", "crossing"}
+                or n.tags.get("crossing")
+            )
             and BOUNDS[0] <= n.location.lon <= BOUNDS[2]
             and BOUNDS[1] <= n.location.lat <= BOUNDS[3]
         ):
@@ -87,7 +91,7 @@ def main():
         pbf.parent.mkdir(parents=True, exist_ok=True)
         with urllib.request.urlopen(URL, timeout=180) as r:
             pbf.write_bytes(r.read())
-    expected = ROOT / ".cache/Stockholm.CHECKSUM.txt"
+    expected = pbf.parent / "Stockholm.CHECKSUM.txt"
     md5 = hashlib.md5(pbf.read_bytes(), usedforsecurity=False).hexdigest()
     if expected.exists():
         entry = next(
@@ -160,9 +164,27 @@ def main():
         timestamp = reader.header().get("osmosis_replication_timestamp")
     if expected.exists():
         (out / "provider-checksum.txt").write_bytes(expected.read_bytes())
+    previous_manifest = out / "manifest.json"
+    previous = (
+        json.loads(previous_manifest.read_text()) if previous_manifest.exists() else {}
+    )
+    same_pbf = (
+        previous.get("pbf_sha256") == hashlib.sha256(pbf.read_bytes()).hexdigest()
+    )
     manifest = {
         "url": URL,
-        "retrieved_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "retrieved_utc": previous["retrieved_utc"]
+        if same_pbf
+        else datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "snapshot_generated_utc": datetime.datetime.now(
+            datetime.timezone.utc
+        ).isoformat(),
+        "retained_node_tags": [
+            "natural=tree",
+            "highway=traffic_signals",
+            "highway=crossing",
+            "crossing=*",
+        ],
         "source_timestamp": timestamp
         or "not in PBF header; download index reports 2026-09-26T19:27:50Z",
         "pbf_sha256": hashlib.sha256(pbf.read_bytes()).hexdigest(),
