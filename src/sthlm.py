@@ -374,7 +374,9 @@ class PsdlWriter:
         level = lru_cache(maxsize=None)(y) if varying else lambda x, n: y
         step = 100
         if varying:
-            geom = geom.segmentize(5 if road else 25)
+            from elevation import conforming_boundary
+
+            geom = conforming_boundary(geom)
         xmin, zmin, xmax, zmax = geom.bounds
         for x in range(
             math.floor(xmin / step) * step, math.ceil(xmax / step) * step, step
@@ -614,7 +616,7 @@ def build(output, minimal=False, profile="expanded"):
 
         terrain = TerrainGrid.from_project(ROOT, cfg["origin"])
         road_field, deck_field, base_roads, bridge_roads = apply(city, terrain)
-        ground_height, road_height = road_field.ground, road_field
+        ground_height = road_height = road_field.ground
         if minimal:
             base_roads = road
             bridge_roads = Polygon()

@@ -12,38 +12,67 @@ from shapely.ops import unary_union
 from shapely.strtree import STRtree
 
 
+def conforming_boundary(geom):
+    """Node shared material edges identically before clipping or tessellation.
+
+    Roads, paving and land must retain the same five-metre subdivisions. A
+    coarse shoulder edge otherwise bridges road vertices at a different
+    linear height, opening a crack despite identical XY coverage.
+    """
+    return geom.segmentize(5)
+
+
 class RoadField:
-    def __init__(self, roads, terrain, bridge=False):
+    def __init__(self, roads, terrain, bridge=False, junctions=()):
         self.terrain = terrain
         self.segments = []
         self.values = []
+        self.widths = []
         for r in roads:
             points = r["elevated_points"]
             for a, b in zip(points, points[1:]):
                 if math.dist(a[:2], b[:2]) > 0:
                     self.segments.append(LineString([a[:2], b[:2]]))
                     self.values.append((a[2], b[2]))
+                    self.widths.append(r["width"] / 2)
         self.tree = STRtree(self.segments)
         self.bridge = bridge
+        self.junctions = list(junctions)
+        self.junction_tree = STRtree([Point(x, n) for x, n, _, _ in self.junctions])
 
-    def nearest(self, x, n):
+    def _sample(self, x, n):
         p = Point(x, n)
         if not self.segments:
-            return self.terrain.height(x, n), math.inf
+            return self.terrain.height(x, n), math.inf, 0
         i = int(self.tree.nearest(p))
         segment = self.segments[i]
         t = segment.project(p, normalized=True)
         a, b = self.values[i]
-        return a + (b - a) * t, segment.distance(p)
+        height = a + (b - a) * t
+        if self.junctions:
+            j = int(self.junction_tree.nearest(p))
+            xj, nj, level, radius = self.junctions[j]
+            if math.hypot(x - xj, n - nj) <= radius:
+                height = level
+        return height, segment.distance(p), self.widths[i]
+
+    def nearest(self, x, n):
+        height, distance, _ = self._sample(x, n)
+        return height, distance
 
     def __call__(self, x, n):
         return self.nearest(x, n)[0]
 
     def ground(self, x, n):
-        raw = self.terrain.height(x, n)
-        road, distance = self.nearest(x, n)
+        if not self.segments:
+            return self.terrain.height(x, n)
+        road, distance, half_width = self._sample(x, n)
         # Match the roadway at its edge, then blend the shoulder into real land.
-        weight = max(0, min(1, (14 - distance) / 7))
+        shoulder_edge = half_width + 2
+        weight = max(0, min(1, (shoulder_edge + 7 - distance) / 7))
+        if weight == 1:
+            return road
+        raw = self.terrain.height(x, n)
         return raw * (1 - weight) + road * weight
 
 
@@ -61,6 +90,50 @@ def distances(graph, ends):
                 result[m] = nd
                 heapq.heappush(pending, (nd, m))
     return result
+
+
+def bridge_approaches(ordinary, elevated, length=20):
+    """Separate short raised approaches from the lower road height field.
+
+    OSM bridge tags often stop just beside an underpass. Keeping that last
+    approach in the ground field lets its high profile attract neighbouring
+    lower street vertices. Split only source-connected approach ends; an
+    unrelated crossing road retains its complete geometry and height profile.
+    """
+    bridge_nodes = {n for road in elevated for n in road["nodes"]}
+    ground, decks, junctions, metadata = [], list(elevated), [], []
+    for road in ordinary:
+        points = road["elevated_points"]
+        first, last = 0, len(points) - 1
+        portions = []
+        if road["nodes"][0] in bridge_nodes:
+            distance = 0.0
+            while first < last and distance < length:
+                distance += math.dist(points[first][:2], points[first + 1][:2])
+                first += 1
+            portions.append(points[: first + 1])
+        if road["nodes"][-1] in bridge_nodes:
+            distance = 0.0
+            while last > first and distance < length:
+                distance += math.dist(points[last][:2], points[last - 1][:2])
+                last -= 1
+            portions.append(points[last:])
+        if first < last:
+            ground.append({**road, "elevated_points": points[first : last + 1]})
+        for portion in portions:
+            if len(portion) < 2:
+                continue
+            decks.append({**road, "elevated_points": portion})
+            metadata.append({"source_way": road["id"], "points": portion})
+        # Both layer fields use a short common plane around their new seam.
+        # It covers the overlapping round caps and the complete road width.
+        if portions and first < last:
+            radius = road["width"] / 2 + 2
+            if first:
+                junctions.append((*points[first], radius))
+            if last < len(points) - 1:
+                junctions.append((*points[last], radius))
+    return ground, decks, junctions, metadata
 
 
 def apply(city, terrain):
@@ -141,8 +214,12 @@ def apply(city, terrain):
                 points.append([x, n, h])
         points.append([*r["points"][-1], heights[r["nodes"][-1]]])
         r["elevated_points"] = points
-    road = RoadField(ordinary, terrain)
-    deck = RoadField(elevated, terrain, bridge=True)
+    ground_segments, deck_segments, junctions, approaches = bridge_approaches(
+        ordinary, elevated
+    )
+    road = RoadField(ground_segments, terrain, junctions=junctions)
+    deck = RoadField(deck_segments, terrain, bridge=True, junctions=junctions)
+    city["bridge_approaches"] = approaches
     city["terrain"] = terrain.metadata
     city["elevation_rules"] = {
         "road_height_floor_m": 0.9,
@@ -167,7 +244,7 @@ def apply(city, terrain):
     def surface(rs):
         return unary_union(
             [
-                LineString(r["points"]).buffer(
+                LineString([p[:2] for p in r["elevated_points"]]).buffer(
                     r["width"] / 2, cap_style=1, join_style=2
                 )
                 for r in rs
@@ -177,8 +254,20 @@ def apply(city, terrain):
     from shapely.geometry import shape
 
     bounds = shape(city["bounds"])
-    ground_roads = surface(ordinary).intersection(bounds)
-    bridge_roads = surface(elevated).intersection(bounds)
+    ground_roads = surface(ground_segments).intersection(bounds)
+    bridge_roads = surface(deck_segments).intersection(bounds)
+    # Remove only approach/bridge cap overlap. Other lower streets must still
+    # pass under the deck with their original footprint intact.
+    approach_ids = {a["source_way"] for a in approaches}
+    unconnected_ground = surface(
+        [r for r in ground_segments if r["id"] not in approach_ids]
+    ).intersection(bounds)
+    connector_caps = unary_union(
+        [Point(x, n).buffer(radius) for x, n, _, radius in junctions]
+    )
+    ground_roads = ground_roads.difference(
+        bridge_roads.intersection(connector_caps)
+    ).union(unconnected_ground)
     city["ground_road_surface"] = mapping(ground_roads)
     city["bridge_road_surface"] = mapping(bridge_roads)
     return road, deck, ground_roads, bridge_roads

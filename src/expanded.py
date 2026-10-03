@@ -409,6 +409,11 @@ class ChunkedWriter:
     def surface(self, geom, y, texture, road=False, water=False):
         if geom.is_empty:
             return
+        # Node shared material edges before separate tile intersections.
+        from elevation import conforming_boundary
+
+        if callable(y):
+            geom = conforming_boundary(geom)
         # Bisect geometry before clipping individual tiles. Intersecting the
         # entire connected road/shoreline polygon for every tile is quadratic.
         x0, n0, x1, n1 = geom.bounds
