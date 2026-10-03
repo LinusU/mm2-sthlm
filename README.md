@@ -58,6 +58,12 @@ uses rust-mm2's existing Avian vehicle simulation. `--bot` drives through
 ordinary control inputs. Smoke results are evidence, not a substitute for
 interactive driving.
 
+The generated native minimap uses cyan water, beige land, green parks and
+cream-white roads, following the SF/London reference style. Tab cycles the
+corner map sizes/off; E zooms, F toggles rotation, and Q opens the full-screen
+pause map. Player and race markers use original generated assets. See
+[minimap generation and evidence](docs/MINIMAP.md).
+
 The package is `dist/stockholm/`. Copy that folder beneath an arbitrary mod
 parent and load it from any working directory:
 

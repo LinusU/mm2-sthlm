@@ -1,0 +1,30 @@
+{"binary": {"parts": 55, "rooms": 38112, "textures": 384, "triangles": 1232033, "vertices": 854773}, "building_route_overlaps": [], "minimal": false, "road_area": 4169318.161204158, "route_m": 1527.3475638275881, "spawn_clearance_m": 1.5, "status": "pass", "triangulated_area": null}
+engine_revision=74c60897ef8472aceafea0bb871f2e46615a095c © OpenStreetMap contributors (ODbL 1.0)
+engine=/Users/linus/coding/mm2-sthlm/.cache/engine/mm2 package=/Users/linus/coding/mm2-sthlm/dist/stockholm
+mm2-smoke commit=74c60897ef8472aceafea0bb871f2e46615a095c
+2026-10-03T18:11:14.812842Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_2.water skipped=0
+2026-10-03T18:11:14.862425Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_2.water skipped=0
+2026-10-03T18:11:14.940627Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_2.water skipped=0
+2026-10-03T18:11:15.018701Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_1.water skipped=0
+2026-10-03T18:11:15.133366Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_1.water skipped=0
+2026-10-03T18:11:15.181575Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-03T18:11:15.181586Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-03T18:11:15.197418Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T18:11:15.197431Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T18:11:15.197435Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T18:11:15.197437Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T18:11:15.197438Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T18:11:15.197439Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T18:11:15.197441Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T18:11:15.197442Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T18:11:15.197443Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T18:11:15.197444Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T18:11:15.197446Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T18:11:15.197483Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T18:11:15.197488Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T18:11:15.197490Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-03T18:11:15.197492Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T18:11:15.197520Z  WARN mm2_app::session: nav graph failed to load — opponent routes stay verbatim error=city/stockholm.bai: not found in the VFS
+2026-10-03T18:11:15.995539Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=22533 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1504.0m sim=187.78s resets=0 controls=8547t/13986b/3446s finite=true moved=12m wheels=4/4 final=(-19,3.9,138) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/103m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x
+stockholm-smoke acceptance=pass (complete continuous loop, no teleports)

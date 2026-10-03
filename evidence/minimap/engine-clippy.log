@@ -1,0 +1,9 @@
+   Compiling mm2_inspect v0.0.0 (/private/tmp/mm2-sthlm-minimap-engine/tools/mm2_inspect)
+    Checking mm2_assets v0.0.0 (/private/tmp/mm2-sthlm-minimap-engine/crates/mm2_assets)
+    Checking mm2_formats v0.0.0 (/private/tmp/mm2-sthlm-minimap-engine/crates/mm2_formats)
+    Checking mm2_net v0.0.0 (/private/tmp/mm2-sthlm-minimap-engine/crates/mm2_net)
+   Compiling mm2_app v0.0.0 (/private/tmp/mm2-sthlm-minimap-engine/crates/mm2_app)
+    Checking mm2_game v0.0.0 (/private/tmp/mm2-sthlm-minimap-engine/crates/mm2_game)
+    Checking mm2_vehicle v0.0.0 (/private/tmp/mm2-sthlm-minimap-engine/crates/mm2_vehicle)
+    Checking mm2_content v0.0.0 (/private/tmp/mm2-sthlm-minimap-engine/crates/mm2_content)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 13.19s

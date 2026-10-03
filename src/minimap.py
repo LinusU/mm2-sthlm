@@ -9,7 +9,7 @@ import math
 import struct
 
 from PIL import Image, ImageDraw
-from shapely.geometry import Polygon, shape
+from shapely.geometry import LineString, Polygon, shape
 from shapely.ops import unary_union
 
 from props import chunk, lp
@@ -129,7 +129,22 @@ def render(city, source=None, size=TEXTURE_SIZE):
         land = land.difference(shape(city["water"]))
     if land.is_empty:
         raise ValueError("minimap needs nonempty land")
-    roads = city["roads"]
+    # Source ways retain full nodes for provenance; collision/export clips
+    # them at the playable mask. Match it so cut streets do not extend at sea.
+    roads = []
+    boundary = shape(city["bounds"])
+    for road in city["roads"]:
+        clipped = LineString(road["points"]).intersection(boundary)
+        segments = (
+            [clipped]
+            if clipped.geom_type == "LineString"
+            else getattr(clipped, "geoms", [])
+        )
+        roads.extend(
+            {**road, "points": list(segment.coords)}
+            for segment in segments
+            if segment.geom_type == "LineString" and not segment.is_empty
+        )
     bounds = square_bounds(land, roads)
     parks, stats = park_geometry(city, source, land)
     large = size * SUPERSAMPLE

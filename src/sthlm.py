@@ -773,6 +773,9 @@ def build(output, minimal=False, profile="expanded"):
         "0.2\n" + "".join(f"{i}\n" for i in writer.water_rooms)
     )
     textures(out / "texture")
+    from minimap import write as write_minimap
+
+    write_json(out / "minimap.json", write_minimap(out, city, source))
     for index, tod in [(0, "morning"), (4, "noon")]:
         (out / f"city/stockholm.lt{index:02}").write_text(
             f"type: a\nclear-{tod} {{\n"
@@ -983,9 +986,20 @@ def validate(package):
         "map.json",
         "ATTRIBUTION.txt",
         "normalized.json",
+        "minimap.json",
+        "tune/stockholm.mmhudmap",
+        "geometry/hudmap_stockholm.pkg",
+        "geometry/hudmap_tri.pkg",
+        "geometry/hudmap_square.pkg",
     ]:
         if required not in checks:
             raise ValueError(f"package manifest missing {required}")
+    from minimap import validate as validate_minimap
+
+    minimap_meta = json.loads((package / "minimap.json").read_text())
+    if any(resource not in checks for resource in minimap_meta["resources"]):
+        raise ValueError("package manifest missing minimap asset")
+    validate_minimap(package)
     part_paths = ["city/stockholm.psdl"]
     chunk_manifest = package / "city/stockholm.chunks"
     if chunk_manifest.exists():

@@ -61,3 +61,15 @@ modifications are included in package attribution.
 Tree meshes are original PKG3 geometry, native pathset points and banger records
 with separate native BREAK parts. The existing engine prop physics handles
 their breakage; no vehicle or breakaway simulation lives in this repository.
+
+## Native HUD map
+
+Each package includes `tune/stockholm.mmhudmap`, a world-space XZ tile in
+`geometry/hudmap_stockholm.pkg`, a north-up PNG texture, and original
+`hudmap_tri.pkg` / `hudmap_square.pkg` marker meshes with the native paint slots.
+The tile's metre coordinates align directly with city/player coordinates;
+`minimap.json` records bounds, scale, palette and source park omissions.
+Package checksums include every HUD resource. No new engine support or retail
+map artwork is needed. The existing Tab/E/F/Q controls use the generated tune.
+The native resource names do not establish vanilla compatibility for the
+expanded city; its multi-part geometry still requires the separate loader.

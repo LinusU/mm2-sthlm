@@ -36,3 +36,25 @@ classes, equal scale, deterministic minimal-profile fallback, native resource
 palettes, world-plane UV correspondence and corrupt geometry rejection.
 Actual engine captures are a separate integration check, not replaced by the
 raster preview.
+
+## Reproduce the native HUD checks
+
+```sh
+./scripts/sthlm build --offline
+./scripts/sthlm validate
+.venv/bin/python scripts/check-minimap.py --engine "$PWD/.cache/engine/mm2" --capture
+```
+
+The script checks a cruise player marker, the circuit checkpoint markers, and
+map reloading after a session restart. Captures come from the actual game;
+headless records establish resource binding only. They are retained under
+`evidence/minimap/` with the package checksum and exact engine revision.
+
+The focused engine presentation fix is
+[rust-mm2 PR #3](https://github.com/LinusU/rust-mm2/pull/3), revision
+`74c60897ef8472aceafea0bb871f2e46615a095c`. Native map cameras bypass the world's
+tone curve and MSAA writeback so the authored palette stays exact and Ocean
+Color clears the map viewport. The inset still preserves the world around it.
+The patch and checksum are retained under `integration/rust-mm2/`.
+Earlier expanded terrain acceptance remains historical for its recorded
+package and engine revision; the new HUD evidence identifies this package.

@@ -79,6 +79,16 @@ class MinimapTests(unittest.TestCase):
             )
         self.assertEqual(stats["polygons"], 1)
 
+    def test_source_street_is_clipped_at_playable_boundary(self):
+        city = self.city()
+        city["roads"] = [{"points": [(500, 500), (500, 1800)], "width": 10}]
+        image, bounds, _ = render(city, size=512)
+        # The source way continues beyond the generated city; the map must
+        # end at the same playable boundary rather than drawing it at sea.
+        self.assertLess(bounds[3], 1800)
+        at = tuple(round(v) for v in to_pixel(500, 1150, bounds, size=512))
+        self.assertEqual(image.getpixel(at), PALETTE["water"])
+
     def test_real_park_relation_preserves_hole_and_clips_excluded_land(self):
         elements = source_polygon(
             1, [(100, 100), (1200, 100), (1200, 900), (100, 900)], {}
