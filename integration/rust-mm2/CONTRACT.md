@@ -73,3 +73,31 @@ Package checksums include every HUD resource. No new engine support or retail
 map artwork is needed. The existing Tab/E/F/Q controls use the generated tune.
 The native resource names do not establish vanilla compatibility for the
 expanded city; its multi-part geometry still requires the separate loader.
+
+## Current upstream integration
+
+Upstream main was fetched over SSH and built at
+`46f351b9186ad2d4d955e9d0d0a1ef1240d2332f`; the previous multipart and
+HUD-map PRs are merged there. Historical evidence keeps its original revisions.
+
+The current tested engine is `039edc98bab91a36aede5e4a5d8eae729d47deab`,
+based on that main revision. [PR #4](https://github.com/LinusU/rust-mm2/pull/4)
+and `intact-banger-collision.patch` provide a focused native movable-prop fix.
+Open, two-sided meshes now use convex collision when bound as bangers, avoiding
+invalid dynamic inertia. This fills concavities of bound props; unbound static
+INST/PKG structures retain exact triangle collision. Full engine formatting,
+strict clippy and workspace tests pass. Stockholm ramp and intact toilet impact
+probes pass with finite physics, four tracked wheels and no resets.
+
+Reproduce the engine build in a separate checkout:
+
+```sh
+git clone git@github.com:LinusU/rust-mm2.git /tmp/rust-mm2-stockholm
+cd /tmp/rust-mm2-stockholm
+git fetch origin codex/intact-banger-collision
+git checkout 039edc98bab91a36aede5e4a5d8eae729d47deab
+RUSTC_WRAPPER= cargo build -p mm2_app --bin mm2
+```
+
+Keep each checkout’s Cargo target directory separate. The generated package
+contains no engine checkout, collision simulation or vehicle physics.

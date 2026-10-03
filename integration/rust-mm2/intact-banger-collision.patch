@@ -1,0 +1,276 @@
+diff --git a/crates/mm2_app/src/city.rs b/crates/mm2_app/src/city.rs
+index ab056f5..ed06d66 100644
+--- a/crates/mm2_app/src/city.rs
++++ b/crates/mm2_app/src/city.rs
+@@ -2445,8 +2445,8 @@ fn break_index(stem: &str) -> Option<&str> {
+ }
+ 
+ /// Collision triangles accumulated over a whole prop (all best-LOD
+-/// geometries, every section). Props are static, so their collision is the
+-/// authored triangle mesh: a convex hull would seal the openings of the
++/// geometries, every section). Static placements keep the authored triangle
++/// mesh: a convex hull would seal the openings of the
+ /// concave props the city is full of — archways, bridge trusses, tunnel
+ /// mouths — turning them into invisible walls and floors.
+ #[derive(Default)]
+@@ -2456,10 +2456,17 @@ struct PropCollision {
+ }
+ 
+ impl PropCollision {
+-    fn into_collider(self) -> Option<Collider> {
++    fn into_collider(self, movable: bool) -> Option<Collider> {
+         if self.positions.is_empty() || self.tris.is_empty() {
+             return None;
+         }
++        if movable {
++            // Open or double-sided render meshes have no reliable signed
++            // volume. Their trimesh mass properties can produce NaN inertia
++            // when a dormant banger becomes dynamic. Like debris, intact
++            // movable props need a closed convex collision volume.
++            return Collider::convex_hull(self.positions);
++        }
+         Some(Collider::trimesh(self.positions, self.tris))
+     }
+ 
+@@ -2489,7 +2496,8 @@ struct FragmentModel {
+ }
+ 
+ /// Build renderable parts (best-LOD mesh per stem, grouped by shader) plus
+-/// one triangle-mesh collider covering the whole prop. `BREAK<NN>`
++/// one collider covering the whole prop (convex for movable bound props,
++/// authored triangles for static placements). `BREAK<NN>`
+ /// chunks are split out into [`FragmentModel`]s — they are the
+ /// authored breakaway pieces, not part of the dormant prop's surface
+ /// or collider (they only composed the same shape with duplicate
+@@ -2501,6 +2509,7 @@ fn pkg_to_parts(
+     missing_prims: &mut usize,
+     offset: Vec3,
+     paint: usize,
++    movable: bool,
+ ) -> PropModel {
+     let mut best: HashMap<String, (u8, &str)> = HashMap::new();
+     for (name, _geo) in pkg.geometries() {
+@@ -2584,7 +2593,7 @@ fn pkg_to_parts(
+     }
+     PropModel {
+         parts: out,
+-        collider: collision.into_collider(),
++        collider: collision.into_collider(movable),
+         fragments,
+     }
+ }
+@@ -2601,7 +2610,7 @@ pub(crate) fn pkg_paint_parts(
+     missing_prims: &mut usize,
+     paint: usize,
+ ) -> Vec<(Handle<Mesh>, Handle<StandardMaterial>)> {
+-    pkg_to_parts(pkg, mats, meshes, missing_prims, Vec3::ZERO, paint).parts
++    pkg_to_parts(pkg, mats, meshes, missing_prims, Vec3::ZERO, paint, false).parts
+ }
+ 
+ /// Emit one PKG strip into a builder; authored normals and UVs preserved.
+@@ -2758,6 +2767,7 @@ impl<'a> PropCache<'a> {
+                 return None;
+             }
+         };
++        let movable = matches!(offset, PropOffset::Bound(_));
+         let offset = match offset {
+             PropOffset::Verbatim => Vec3::ZERO,
+             PropOffset::Bound(v) => v,
+@@ -2770,6 +2780,7 @@ impl<'a> PropCache<'a> {
+             &mut self.missing_prims,
+             offset,
+             0,
++            movable,
+         );
+         if model.parts.is_empty() {
+             return None;
+diff --git a/crates/mm2_app/tests/banger.rs b/crates/mm2_app/tests/banger.rs
+index d967f5a..9fe01aa 100644
+--- a/crates/mm2_app/tests/banger.rs
++++ b/crates/mm2_app/tests/banger.rs
+@@ -1699,6 +1699,147 @@ fn centred_pkg() -> Vec<u8> {
+     d
+ }
+ 
++/// Open enclosure made from three zero-thickness, double-sided panels.
++/// Opposite winding on every triangle cancels signed volume/inertia;
++/// the render surface is suitable for static collision but not dynamic
++/// trimesh mass properties. Its vertices still enclose a solid hull.
++fn open_panel_pkg() -> Vec<u8> {
++    let points = [
++        [-0.5f32, -0.5, -0.5],
++        [0.5, -0.5, -0.5],
++        [-0.5, 0.5, -0.5],
++        [0.5, 0.5, -0.5],
++        [-0.5, -0.5, 0.5],
++        [0.5, -0.5, 0.5],
++        [-0.5, 0.5, 0.5],
++        [0.5, 0.5, 0.5],
++    ];
++    let faces = [
++        [0u16, 1, 2],
++        [1, 3, 2],
++        [0, 2, 4],
++        [2, 6, 4],
++        [1, 5, 3],
++        [3, 5, 7],
++    ];
++    let mut indices = Vec::new();
++    for [a, b, c] in faces {
++        indices.extend([a, b, c, c, b, a]);
++    }
++    let mut geo = Vec::new();
++    for n in [1u32, points.len() as u32, indices.len() as u32, 1, 0x112] {
++        geo.extend_from_slice(&n.to_le_bytes());
++    }
++    geo.extend_from_slice(&1u16.to_le_bytes());
++    geo.extend_from_slice(&0u16.to_le_bytes());
++    geo.extend_from_slice(&(-1i32).to_le_bytes());
++    geo.extend_from_slice(&3i32.to_le_bytes());
++    geo.extend_from_slice(&(points.len() as u32).to_le_bytes());
++    for point in points {
++        for value in point.into_iter().chain([0.0f32, 1.0, 0.0, 0.0, 0.0]) {
++            geo.extend_from_slice(&value.to_le_bytes());
++        }
++    }
++    geo.extend_from_slice(&(indices.len() as u32).to_le_bytes());
++    for index in indices {
++        geo.extend_from_slice(&index.to_le_bytes());
++    }
++    let mut pkg = b"PKG3FILE".to_vec();
++    pkg.push(10);
++    pkg.extend_from_slice(b"centred_h\0");
++    pkg.extend_from_slice(&(geo.len() as u32).to_le_bytes());
++    pkg.extend(geo);
++    pkg
++}
++
++#[test]
++fn double_sided_intact_banger_keeps_finite_inertia_after_a_vehicle_strike() {
++    let tmp = centred_install();
++    write(tmp.path(), "geometry/centred.pkg", open_panel_pkg());
++    write(tmp.path(), "geometry/plain.pkg", open_panel_pkg());
++    let mut vfs = Vfs::new();
++    vfs.mount_dir(tmp.path(), 0).unwrap();
++    let mut app = city_app(vfs);
++    app.update();
++    app.update();
++    let banger = app
++        .world_mut()
++        .query_filtered::<Entity, With<Banger>>()
++        .single(app.world())
++        .unwrap();
++    assert!(app.world().get::<BangerPieces>(banger).is_none());
++    let start = app.world().get::<Position>(banger).unwrap().0;
++    let inertia = app
++        .world()
++        .get::<Collider>(banger)
++        .unwrap()
++        .shape()
++        .mass_properties(1.0)
++        .principal_inertia();
++    assert!(inertia.is_finite());
++    assert!(inertia.cmpgt(Vec3::ZERO).all());
++
++    // The unbound copy keeps its open triangle mesh; a convex hull would
++    // turn its front opening into an invisible wall.
++    let static_collider = app
++        .world_mut()
++        .query::<(&Name, &Collider)>()
++        .iter(app.world())
++        .find(|(name, _)| name.as_str() == "pathset-plain-1-0-collider")
++        .unwrap()
++        .1;
++    assert!(static_collider.shape().as_trimesh().is_some());
++
++    let car = app
++        .world_mut()
++        .query_filtered::<Entity, With<mm2_vehicle::Vehicle>>()
++        .single(app.world())
++        .unwrap();
++    app.world_mut().entity_mut(car).insert((
++        Position(Vec3::new(0.0, 0.8, 8.0)),
++        LinearVelocity(Vec3::new(0.0, 0.0, 15.0)),
++    ));
++    let mut events = Vec::new();
++    let mut moved = false;
++    for _ in 0..FRAMES_PER_SECOND * 5 {
++        app.update();
++        events.extend(drain_transitions(&mut app));
++        let position = app.world().get::<Position>(banger).unwrap().0;
++        moved |= position.distance(start) > 0.1;
++        assert!(position.is_finite());
++        assert!(app.world().get::<Rotation>(banger).unwrap().0.is_finite());
++        assert!(
++            app.world()
++                .get::<LinearVelocity>(banger)
++                .unwrap()
++                .0
++                .is_finite()
++        );
++        assert!(
++            app.world()
++                .get::<AngularVelocity>(banger)
++                .unwrap()
++                .0
++                .is_finite()
++        );
++        assert!(
++            app.world()
++                .get::<ComputedAngularInertia>(banger)
++                .unwrap()
++                .inverse_tensor()
++                .is_finite()
++        );
++    }
++    assert_eq!(
++        events
++            .iter()
++            .filter(|event| event.phase == BangerPhase::Active)
++            .count(),
++        1
++    );
++    assert!(moved, "intact prop must still be knocked loose");
++}
++
+ /// A minimal `.inst` file stamping each `(name, location)` as a simple
+ /// placement — unit heading, scale 1.
+ fn inst_file(comps: &[(&str, [f32; 3])]) -> Vec<u8> {
+diff --git a/docs/original-rules.md b/docs/original-rules.md
+index d69d7a1..ca1a2b2 100644
+--- a/docs/original-rules.md
++++ b/docs/original-rules.md
+@@ -284,7 +284,7 @@ Retail install: `/Users/linus/coding/rust-mm2/retail`, enumerated
+ | DSN-7 | Runtime deadline semantics: `TimeLimit` binds as seconds → 120 Hz ticks on Blitz rows only (provisional, UNK-4); the constant values on Checkpoint/Circuit rows stay unbound. The deadline is inclusive — a finish crossing on the expiry tick counts because segments evaluate before the timeout check; expiry records one authoritative `TimedOut` result per unresolved participant. Remaining time displays `m:ss` from the same race clock. | `mm2_content::race_def`, `mm2_game::race`, `mm2_app::race` |
+ | DSN-8 | Navigation-arrow presentation (RACE-6): the arrow now binds the authored `hudarrow*` package — one sprite per paint job rasterized from the flat-XZ chevron mesh over its `s_hudarrow_*` tile, paint 0 ahead / paint 1 behind — so what remains designed is the on-screen reading (UNK-33): canvas size, the top-centre slot it keeps from the dev needle, and the authored origin centred on that node as the rotation pivot. It is hidden under `Ordered` rules per HUD-2's instrument list, and aims at the armed finish once every gate clears (inferred — RACE-6 names only checkpoints). Cycle keys are X/Z, not the original X/S (CTL-1): `S` is brake under this app's added WASD mapping — an input-map departure, not a rules one. | `mm2_game::race` nav functions, `mm2_app::navarrow` arrow |
+ | DSN-9 | Low-time warning cue: no documented original rule describes a Blitz low-time warning (HUD-2 lists only the countdown timer among race instruments), so the HUD pulses a `LOW TIME` banner once `time_remaining` reaches 10 s at the race tick rate, alternating bright/dim every 0.5 s of remaining time — derived from the same race ticks that judge the deadline, so it freezes with a pause and clears on resolution. Presentation policy, not an original-behavior claim; an audio cue stays impossible until F07 exists. | `mm2_app::race` `LOW_TIME_TICKS`/`update_race_warning` |
+-| DSN-10 | Banger runtime slice (F04-A.3 + F04-B.1): bound pathset stamps become one session-owned entity (collider + dormant `Banger` + `ObjectIdentity`/`AuthorityRole`, mesh parts as children) instead of the loose render/collider pair. `activate_bangers` compares the striker's kinetic energy `½·m·v²` (deepest manifold contact's approach speed, shared with the impact pipeline) against `ImpulseLimit2` — a provisional stand-in for the unknown original quantity (UNK-22), chosen because the authored limit ladder is quadratic in speed (F04-C.5 census, docs/research/banger.md). A qualifying edge flips `RigidBody` to dynamic once, replays the contact as a reduced-mass two-body transfer (the solver's static wall impulse is returned and `(1+e)·v·μ` paid instead — F04-C.4, implementation choice under UNK-22) plus a `Size`-derived spin kick, and emits `BangerStateChanged`; a ×32 `BangerPool` (the R4-recovered pool size) reclaims oldest-first; a slept body settles back to `RigidBody::Static` (`dgHitBangerInstance`-like, terminal for the session — the recovered `Timer` despawn is unimplemented). A placement carrying collidable `BREAK<NN>` chunks instead goes `Broken` at the same activation edge (provisional timing, UNK-22): parent collider + mesh children are removed and each piece spawns as its own `Active` fragment body (own `ObjectId`, own `<name>_break<NN>` record or the parent def, convex collider, render children) claiming pool slots — one `BangerStateChanged` per logical break. Predicted sessions never transition banger state. `BirthRule`, audio/flash/decal effects and replication stay deferred; prop-rule placements now stamp through the same dormant-banger path as pathset stamps (WLD-17/UNK-21). | `mm2_game::banger`, `mm2_app::banger`, `docs/research/banger.md` |
++| DSN-10 | Banger runtime slice (F04-A.3 + F04-B.1): bound pathset stamps become one session-owned entity (collider + dormant `Banger` + `ObjectIdentity`/`AuthorityRole`, mesh parts as children) instead of the loose render/collider pair. `activate_bangers` compares the striker's kinetic energy `½·m·v²` (deepest manifold contact's approach speed, shared with the impact pipeline) against `ImpulseLimit2` — a provisional stand-in for the unknown original quantity (UNK-22), chosen because the authored limit ladder is quadratic in speed (F04-C.5 census, docs/research/banger.md). A qualifying edge flips `RigidBody` to dynamic once, replays the contact as a reduced-mass two-body transfer (the solver's static wall impulse is returned and `(1+e)·v·μ` paid instead — F04-C.4, implementation choice under UNK-22) plus a `Size`-derived spin kick, and emits `BangerStateChanged`; a ×32 `BangerPool` (the R4-recovered pool size) reclaims oldest-first; a slept body settles back to `RigidBody::Static` (`dgHitBangerInstance`-like, terminal for the session — the recovered `Timer` despawn is unimplemented). A placement carrying collidable `BREAK<NN>` chunks instead goes `Broken` at the same activation edge (provisional timing, UNK-22): parent collider + mesh children are removed and each piece spawns as its own `Active` fragment body (own `ObjectId`, own `<name>_break<NN>` record or the parent def, convex collider, render children) claiming pool slots — one `BangerStateChanged` per logical break. Intact bound bangers use closed convex PKG hulls for finite dynamic inertia, including open/double-sided meshes; unbound/INST static props keep authored triangle meshes. This collision policy is designed, not recovered original shape selection (UNK-22). Predicted sessions never transition banger state. `BirthRule`, audio/flash/decal effects and replication stay deferred; prop-rule placements now stamp through the same dormant-banger path as pathset stamps (WLD-17/UNK-21). | `mm2_game::banger`, `mm2_app::banger`, `docs/research/banger.md` |
+ | DSN-11 | Results flow (UI-5, documented): the *local* participant's terminal resolution ends the playing session — `advance_race` transitions `Playing → Results` on the same step it records the `Finished`/`TimedOut` result, so the race clock and ledger freeze with the phase. A remote/AI participant resolving while the local driver still races changes nothing (AC03). `RacePhase::Complete` still waits for every participant to resolve; the Results phase surfaces outcome + place + recorded finish time on the HUD line (place per DSN-12) and, since F17-B.2, a session-owned results overlay presents the local outcome, the generation-scoped standings (unresolved participants listed as still racing, never placed), granted rewards, the persistence disposition from `SessionReport`, and Continue/Restart rows. | `mm2_app::race::advance_race`, `mm2_app::main::update_hud`, `mm2_app::results` |
+ | DSN-12 | Standings ordering (`ResultLedger::standings`): `Finished` outranks `TimedOut` regardless of times, `Finished` orders by the recorded `race_ticks`, and equal ticks order by `PlayerId` — an explicit, deterministic tie-break independent of recording/query order (no verified original placing rule exists; F14 spec demands an explicit tie policy). A participant with no recorded result is unplaced, not ranked last; DNF `TimedOut` ranks below every finish. The HUD shows `FINISHED {ord}[ of {n}]` from this ordering and the smoke record gains `place=`. | `mm2_game::result`, `mm2_app::main::update_hud`, `mm2_app::smoke` |
+ | DSN-13 | Live running order (`live_order`) — the place indicator's ordering while a race runs (HUD-2 names the instrument; no verified original rule describes it): `Finished` participants lead ordered by their recorded `race_ticks` (same key as DSN-12's standings, so the live order converges to it as everyone resolves), then active participants by progress — `Ordered` counts `(lap, next)`, `AnyOrder` counts cleared gates — progress ties break toward whoever is closer (straight-line XZ) to their *own* current objective (`checkpoints[next]` / `navigation_target`'s nearest remaining gate or armed finish), `TimedOut` trails by `race_ticks`, and every remaining tie orders by `PlayerId`. Straight-line distance is a heuristic, not course distance; results never consume this order — the ledger owns them. The HUD shows `{ord} of {n}` only with ≥2 participants (a place indicator is a competitive instrument); the smoke record reports `pos=` whenever the local participant has a standing. | `mm2_game::race::live_order`, `mm2_app::main::update_hud`, `mm2_app::smoke` |
+diff --git a/docs/research/banger.md b/docs/research/banger.md
+index 5591013..2076d44 100644
+--- a/docs/research/banger.md
++++ b/docs/research/banger.md
+@@ -597,6 +597,20 @@ channel (sf 5 927 total, london 6 271).
+ - Natural-pool (>32 simultaneous) reclaim remains unobserved —
+   unchanged; the dev bound exercises the same claim/reclaim path.
+ 
++## Intact movable collision volumes
++
++Designed engine policy: bound pathset/prop-rule bangers use a convex hull
++of the intact best-LOD PKG vertices, just as their dynamic BREAK pieces do.
++An open enclosure or double-sided panel mesh does not supply a valid signed
++volume for triangle-mesh inertia: activating such a trimesh can produce
++non-finite angular inertia and poison the physics pose. The closed hull
++keeps intact `NumParts 0` props knockable with finite mass properties.
++This may fill an intact banger's concavities; exact original bound shape
++selection remains unknown (UNK-22). Unbound static and INST placements
++retain authored triangle collision so archways and bridges remain open.
++A degenerate intact hull has no collider and follows the existing ordinary
++prop fallback; no volume or original collision primitive is fabricated.
++
+ ## Runtime consumption — what is not known
+ 
+ Parsed, bound and provisionally simulated. Everything below is UNK-22:

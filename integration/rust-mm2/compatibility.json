@@ -7,16 +7,20 @@
     "1a568de7996be6813d32ab4f50d2f3dc150f258c",
     "cf5d4741100f78fc372398d36e06b228a3c0e938",
     "392cc9be55a624f9c8cf64272103f987631c204d",
-    "74c60897ef8472aceafea0bb871f2e46615a095c"
+    "74c60897ef8472aceafea0bb871f2e46615a095c",
+    "46f351b9186ad2d4d955e9d0d0a1ef1240d2332f",
+    "039edc98bab91a36aede5e4a5d8eae729d47deab"
   ],
   "engine_changes": "Optional generic multi-part city loading with collision, unique room IDs and bounded per-part water. Includes prior continuous motion evidence fixes. Native HUD-map cameras preserve authored sRGB colors and opaque ocean backgrounds without writing back the world view.",
-  "tested_integration_revision": "74c60897ef8472aceafea0bb871f2e46615a095c",
+  "tested_integration_revision": "039edc98bab91a36aede5e4a5d8eae729d47deab",
   "patch_sha256": "fe255460e79e9621e4c910a1c66a91d85b094cd75ba0b72bc89566cd2750e36b",
   "engine_branch": "codex/chunked-custom-cities",
   "pull_request": "https://github.com/LinusU/rust-mm2/pull/1",
   "expanded_revisions": [
     "392cc9be55a624f9c8cf64272103f987631c204d",
-    "74c60897ef8472aceafea0bb871f2e46615a095c"
+    "74c60897ef8472aceafea0bb871f2e46615a095c",
+    "46f351b9186ad2d4d955e9d0d0a1ef1240d2332f",
+    "039edc98bab91a36aede5e4a5d8eae729d47deab"
   ],
   "loader_patch": "multi-part-cities.patch",
   "loader_patch_sha256": "97d289f5a1bb504447fec01d7ce0b50c0eb2feec91e0c5611b4dfabce75cb53a",
@@ -25,5 +29,12 @@
   "hudmap_branch": "codex/hudmap-presentation",
   "hudmap_patch": "hudmap-presentation.patch",
   "hudmap_patch_sha256": "6ba7f165061c386c3c14354eaea9e132270e8ae042eb22021273fc661ab34113",
-  "hudmap_pull_request": "https://github.com/LinusU/rust-mm2/pull/3"
+  "hudmap_pull_request": "https://github.com/LinusU/rust-mm2/pull/3",
+  "upstream_main_revision": "46f351b9186ad2d4d955e9d0d0a1ef1240d2332f",
+  "intact_prop_revision": "039edc98bab91a36aede5e4a5d8eae729d47deab",
+  "intact_prop_base": "46f351b9186ad2d4d955e9d0d0a1ef1240d2332f",
+  "intact_prop_branch": "codex/intact-banger-collision",
+  "intact_prop_patch": "intact-banger-collision.patch",
+  "intact_prop_patch_sha256": "0743d17d2dff65aff45164ae7ea7c28ab8e38c5f90b66efa32ad5b00cf966605",
+  "intact_prop_pull_request": "https://github.com/LinusU/rust-mm2/pull/4"
 }
