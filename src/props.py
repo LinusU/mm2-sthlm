@@ -162,17 +162,24 @@ def write(out, instances):
         (out / f"tune/banger/{name}.dgbangerdata").write_text(
             banger_record(mass, parts)
         )
-    # A single Points path stamps every real sourced tree; binding happens via
-    # props.pathset, not INST's static placement path in the tested engine.
-    data = (
-        b"PTH1"
-        + struct.pack("<II", 1, 0)
-        + b"sthlm_tree".ljust(32, b"\0")
-        + struct.pack("<II", len(instances), 0)
-    )
+    # Group native stamps by asset and path kind. Directed paths carry pairs:
+    # a placement followed by its heading endpoint (local +X faces that point).
+    groups = {}
     for item in instances:
-        data += struct.pack("<I3f", 0, *item["position"])
-    data += bytes(4)
+        kind = int("direction" in item)
+        groups.setdefault((item["asset"], kind), []).append(item)
+    data = b"PTH1" + struct.pack("<II", len(groups), 0)
+    for (asset, kind), items in groups.items():
+        name = asset.encode()
+        if len(name) > 31:
+            raise ValueError("native prop asset name exceeds 31 bytes")
+        data += name.ljust(32, b"\0")
+        data += struct.pack("<II", len(items) * (kind + 1), 0)
+        for item in items:
+            data += struct.pack("<I3f", 0, *item["position"])
+            if kind:
+                data += struct.pack("<I3f", 0, *item["direction"])
+        data += bytes([kind, 0, 0, 0])
     target = out / "city/stockholm/props.pathset"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_bytes(data)

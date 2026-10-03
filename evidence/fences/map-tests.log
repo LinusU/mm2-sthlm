@@ -1,0 +1,43 @@
+test_bridge_deck_matches_ends_without_flattening_underpass (test_elevation.ElevationTests.test_bridge_deck_matches_ends_without_flattening_underpass) ... ok
+test_height_surface_samples_inside_large_polygons (test_elevation.ElevationTests.test_height_surface_samples_inside_large_polygons) ... ok
+test_shared_road_junction_uses_one_height (test_elevation.ElevationTests.test_shared_road_junction_uses_one_height) ... ok
+test_trees_are_separate_grounded_breakable_assets (test_elevation.ElevationTests.test_trees_are_separate_grounded_breakable_assets) ... ok
+test_northern_limit_follows_e20_without_confusing_e18_20 (test_expanded.ExpandedBoundaryTests.test_northern_limit_follows_e20_without_confusing_e18_20) ... ok
+test_breakable_wooden_gate_fills_authored_gap (test_fences.FenceTests.test_breakable_wooden_gate_fills_authored_gap) ... ok
+test_city_outside_fence_has_no_instances (test_fences.FenceTests.test_city_outside_fence_has_no_instances) ... ok
+test_directed_grounded_panels_cover_only_fence_lines (test_fences.FenceTests.test_directed_grounded_panels_cover_only_fence_lines) ... ok
+test_emit_assets_without_overwriting_pathset (test_fences.FenceTests.test_emit_assets_without_overwriting_pathset) ... ok
+test_engine_yaw_preserves_grounded_source_endpoints (test_fences.FenceTests.test_engine_yaw_preserves_grounded_source_endpoints) ... ok
+test_missing_or_wrong_source_rejected (test_fences.FenceTests.test_missing_or_wrong_source_rejected) ... ok
+test_projection_matches_map_coordinates (test_fences.FenceTests.test_projection_matches_map_coordinates) ... ok
+test_source_open_ends_not_closed (test_fences.FenceTests.test_source_open_ends_not_closed) ... ok
+test_three_authored_openings_remain_clear (test_fences.FenceTests.test_three_authored_openings_remain_clear) ... ok
+test_minimal_profile_fallback_is_deterministic (test_minimap.MinimapTests.test_minimal_profile_fallback_is_deterministic) ... ok
+test_native_quad_uvs_match_north_up_texture_and_marker_paints (test_minimap.MinimapTests.test_native_quad_uvs_match_north_up_texture_and_marker_paints) ... ok
+test_north_up_is_uniform_scale_and_places_source_features (test_minimap.MinimapTests.test_north_up_is_uniform_scale_and_places_source_features) ... ok
+test_real_park_relation_preserves_hole_and_clips_excluded_land (test_minimap.MinimapTests.test_real_park_relation_preserves_hole_and_clips_excluded_land) ... ok
+test_source_street_is_clipped_at_playable_boundary (test_minimap.MinimapTests.test_source_street_is_clipped_at_playable_boundary) ... ok
+test_mixed_assets_keep_directed_pairs_separate_from_point_stamps (test_props.PropPathsetTests.test_mixed_assets_keep_directed_pairs_separate_from_point_stamps) ... ok
+test_incomplete_or_teleported_drive_is_rejected (test_sthlm.EvidenceTests.test_incomplete_or_teleported_drive_is_rejected) ... ok
+test_psdl_validator_rejects_missing_texture (test_sthlm.EvidenceTests.test_psdl_validator_rejects_missing_texture) ... ok
+test_coordinate_orientation_and_scale (test_sthlm.GeometryTests.test_coordinate_orientation_and_scale) ... ok
+test_grade_separated_crossing_is_disconnected (test_sthlm.GeometryTests.test_grade_separated_crossing_is_disconnected) ... ok
+test_height_rules_deterministic (test_sthlm.GeometryTests.test_height_rules_deterministic) ... ok
+test_joined_surface_has_no_overlapping_collision_layers (test_sthlm.GeometryTests.test_joined_surface_has_no_overlapping_collision_layers) ... ok
+test_malformed_missing_nodes (test_sthlm.GeometryTests.test_malformed_missing_nodes) ... ok
+test_package_rejects_corruption_and_path_escape (test_sthlm.GeometryTests.test_package_rejects_corruption_and_path_escape) ... ok
+test_polygon_hole_triangulation (test_sthlm.GeometryTests.test_polygon_hole_triangulation) ... ok
+test_real_snapshot_route_clearance (test_sthlm.GeometryTests.test_real_snapshot_route_clearance) ... ok
+test_shared_node_connects_junction (test_sthlm.GeometryTests.test_shared_node_connects_junction) ... ok
+test_writer_shared_seam_vertices_and_binary (test_sthlm.GeometryTests.test_writer_shared_seam_vertices_and_binary) ... ok
+test_advertised_fixture_checksum_is_enforced (test_terrain.TerrainGridTests.test_advertised_fixture_checksum_is_enforced) ... ok
+test_bilinear_interpolation_uses_east_and_north_axes (test_terrain.TerrainGridTests.test_bilinear_interpolation_uses_east_and_north_axes) ... ok
+test_fixture_shape_mismatch_is_rejected (test_terrain.TerrainGridTests.test_fixture_shape_mismatch_is_rejected) ... ok
+test_nodata_in_any_interpolation_cell_raises (test_terrain.TerrainGridTests.test_nodata_in_any_interpolation_cell_raises) ... ok
+test_out_of_coverage_and_nonfinite_coordinates_raise (test_terrain.TerrainGridTests.test_out_of_coverage_and_nonfinite_coordinates_raise) ... ok
+test_real_project_fixture_covers_target_with_finite_heights (test_terrain.TerrainGridTests.test_real_project_fixture_covers_target_with_finite_heights) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 8.265s
+
+OK

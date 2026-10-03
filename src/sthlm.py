@@ -709,10 +709,12 @@ def build(output, minimal=False, profile="expanded"):
                 )
         if expanded:
             from props import placements, write as write_props
+            from fences import write as write_fences
 
             city["props"] = placements(
                 city, land, shape(city["road_surface"]), ground_height
             )
+            city["props"].extend(write_fences(out, city, ground_height, source))
             write_props(out, city["props"])
             write_json(out / "normalized.json", city)
         # Original primitive tower at source footprint's southeastern corner.
@@ -1070,6 +1072,13 @@ def validate(package):
         ]:
             if path not in checks:
                 raise ValueError("missing native breakable tree asset")
+        for prop in city["props"]:
+            for path in (
+                f"geometry/{prop['asset']}.pkg",
+                f"tune/banger/{prop['asset']}.dgbangerdata",
+            ):
+                if path not in checks:
+                    raise ValueError(f"missing native prop asset: {path}")
     route = LineString(city["route"])
     if not meta.get("minimal") and not road.buffer(0.01).covers(route):
         raise ValueError("route leaves road surface")

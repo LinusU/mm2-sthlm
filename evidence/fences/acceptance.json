@@ -1,0 +1,80 @@
+{
+  "engine_revision": "74c60897ef8472aceafea0bb871f2e46615a095c",
+  "engine_binary_sha256": "e7b7dd340601ad0a22e80270a208d3cf04e0b62c13a0fcd17f4290ada0ee8ab1",
+  "package_manifest_sha256": "8804f25177a057f4fa4d02e15745ed2637439b9c7105d3e329c685f958b9b45c",
+  "gate": {
+    "asset": "sthlm_gate_482b5470280633f6",
+    "breakable": true,
+    "direction": [
+      -283.48244382666934,
+      3.0844588445595416,
+      97.13544315562378
+    ],
+    "endpoints": [
+      [
+        -288.30177187825876,
+        -95.80349828770947
+      ],
+      [
+        -283.48244382666934,
+        -97.13544315562378
+      ]
+    ],
+    "gate_node": 318607298,
+    "gate_width": 5.0,
+    "kind": "fence",
+    "mesh": {
+      "fence_type": "gate",
+      "height": 1.9,
+      "left_y": 0.025032633192368703,
+      "length": 5.0,
+      "plinth_height": 0,
+      "right_y": -0.029264757671887853,
+      "thickness": 0.16
+    },
+    "override": "norr-malarstrand-plank-fence",
+    "position": [
+      -285.89210785246405,
+      3.0844588445595416,
+      96.46947072166662
+    ],
+    "source": "way/28975067"
+  },
+  "spawn": [
+    -290.1543314297898,
+    4.552698620071247,
+    111.89132048675279,
+    -15.449502179677902
+  ],
+  "command": [
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+    "--mods",
+    "/Users/linus/coding/mm2-sthlm/dist",
+    "--city",
+    "stockholm",
+    "--no-profile",
+    "--spawn=-290.1543314297898,4.552698620071247,111.89132048675279,-15.449502179677902",
+    "--headless",
+    "--frames",
+    "500"
+  ],
+  "exit_code": 0,
+  "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=500 ticks=1000 driver=hold diff=amateur phase=playing impacts=18 dropped=0 peak=14.6m/s travel=36.2m sim=8.33s resets=0 controls=760t/0b/0s finite=true moved=29m wheels=4/4 final=(-286,3.7,83) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=1816d/2a/0s/1b bng_ev=0a/0s/1b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+  "assertions": {
+    "native_break_events": 1,
+    "active_gate_debris": 2,
+    "passed_gate_plane_m": 13.47,
+    "finite": true,
+    "wheels": "4/4",
+    "resets": 0,
+    "map_tests": 38
+  },
+  "screenshots": {
+    "iron-park.png": "110a07ec830b80e947f1f1615484c5151c5c9cd0acfea66d71f396e4b09d364a",
+    "wooden-gate.png": "25c4bf697af60423f3badac8bc5e63bc7222925c4e3bb7eb1dd738b84ec3de41"
+  },
+  "visual_commands": [
+    "./scripts/sthlm play --engine .cache/engine/mm2 -- --cam=-219.6,10.9,-92.0,38,-13 --parked --frames 60 --screenshot evidence/fences/iron-park.png",
+    "./scripts/sthlm play --engine .cache/engine/mm2 -- --cam=-296.1,5.0,137.4,-5,-9 --parked --frames 60 --screenshot evidence/fences/wooden-gate.png"
+  ]
+}

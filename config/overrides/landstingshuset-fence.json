@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "id": "landstingshuset-fence",
+  "provenance": "User annotated perimeter and photograph, 2026-10-03. Geometry follows OSM fence ways; opening widths are authored approximations, not OSM tags.",
+  "ways": [
+    28975066,
+    1013162648
+  ],
+  "openings": [
+    {
+      "node": 318607323,
+      "width": 10.0,
+      "name": "Pilgatan north entrance"
+    },
+    {
+      "node": 318607304,
+      "width": 8.0,
+      "name": "Hantverkargatan entrance"
+    },
+    {
+      "node": 4325198621,
+      "width": 6.0,
+      "name": "Sodra Agnegatan pedestrian entrance"
+    }
+  ],
+  "max_panel_length": 2.5,
+  "height": 1.9,
+  "plinth_height": 0.22,
+  "thickness": 0.22,
+  "wood": {
+    "schema": 1,
+    "id": "norr-malarstrand-plank-fence",
+    "provenance": "User photograph and annotated Norr Malarstrand frontage, 2026-10-03. Gate node is a sourced service drive junction; gate width and style are authored.",
+    "ways": [
+      28975067
+    ],
+    "way_nodes": {
+      "28975067": [
+        4325198572,
+        318607298,
+        9347241464,
+        9347241463,
+        318607131
+      ]
+    },
+    "openings": [
+      {
+        "node": 318607298,
+        "width": 5.0,
+        "name": "Breakable courtyard gate"
+      }
+    ],
+    "max_panel_length": 2.5,
+    "height": 1.9,
+    "plinth_height": 0.0,
+    "thickness": 0.16,
+    "fence_type": "wood"
+  }
+}
