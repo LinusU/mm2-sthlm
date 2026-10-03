@@ -1,8 +1,10 @@
 # Playable slice status
 
 2026-10-03: all kickoff acceptance gates A–H are met for this small slice.
-No current integration blocker. The next action is interactive driving or a
-review of the focused engine PR; expanding the geographic scope is deferred.
+No current integration blocker for the completed first slice. The next phase
+is elevation on this slice, followed by expansion inside the target extent
+recorded in BOUNDARY.md. Accurate terrain acquisition awaits Geotorget access
+or a supplied real ground model; no new elevation is claimed yet.
 This is an independently generated custom map, tested against the **patched**
 engine revision below, not a claim about upstream main or retail MM2.
 

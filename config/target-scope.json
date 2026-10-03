@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "boundary": "config/target-boundary.geojson",
+  "status": "planned; current playable slice stays in config/slice.json",
+  "acquisition_buffer_m": 1000,
+  "include": ["Kungsholmen", "Södermalm", "Djurgården", "Norrmalm south of E20", "Östermalm south of E20", "Gamla stan", "Riddarholmen", "Skeppsholmen", "Kastellholmen", "Långholmen", "Reimersholme"],
+  "exclude_content": ["Lilla Essingen", "Stora Essingen", "Hammarby sjöstad", "Lidingö"],
+  "optional_distant_scenery": [{"name": "Lidingö", "detail": "green silhouette only", "driveable": false}],
+  "blocked_crossings": ["Tranebergsbron", "Essingeleden toward Lilla Essingen", "Lidingöbron", "bridges leaving Södermalm southward"],
+  "boundary_policy": "Refine approximate polygon from source shorelines/E20. Explicit exclusions take precedence over the polygon. Keep legitimate internal bridge connections when expansion reaches them; do not flatten bridge decks onto water or ground.",
+  "assumptions": ["Tranebergsbron is the western limit (the request called it eastern).", "Smaller central islands, Långholmen and Reimersholme follow the drawing's enclosed area."]
+}

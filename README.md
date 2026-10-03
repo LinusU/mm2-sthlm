@@ -63,7 +63,8 @@ parent and load it from any working directory:
 See [integration and exact engine preparation](docs/INTEGRATION.md),
 [package contract](integration/rust-mm2/CONTRACT.md),
 [source provenance and approximations](docs/SOURCES.md), and
-[measured acceptance status](docs/STATUS.md). Screenshots and logs live in
+[measured acceptance status](docs/STATUS.md), and
+[planned full-map boundary and elevation sequence](docs/BOUNDARY.md). Screenshots and logs live in
 [evidence](evidence/). Generated output is deliberately ignored by Git.
 
 Code and original procedural artwork are MIT; OSM data and derived geographic
