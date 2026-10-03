@@ -1,0 +1,57 @@
+{
+  "engine_revision": "039edc98bab91a36aede5e4a5d8eae729d47deab",
+  "engine_binary_sha256": "cba1b0374cee36806cc682e313ad081234e01728769fa7b4e85661963271ddb8",
+  "package_manifest_sha256": "b479f1d4eee9c4a1be6456f2097a0c40794c63945d2d665977f6a3fbdd3fcb92",
+  "command": [
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+    "--mods",
+    "/Users/linus/coding/mm2-sthlm/dist",
+    "--city",
+    "stockholm",
+    "--no-profile",
+    "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+    "--cam=-537.1,21.8,1121.2,-106,-6",
+    "--parked",
+    "--frames",
+    "60",
+    "--screenshot",
+    "/Users/linus/coding/mm2-sthlm/evidence/church/scene.png"
+  ],
+  "camera": [
+    -537.1,
+    21.8,
+    1121.2,
+    -106,
+    -6
+  ],
+  "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/church/scene.png bytes=3480144 aud=0h/0v/0s/0l/0a",
+  "source_features": [
+    "relation/1257127",
+    "relation/17957127"
+  ],
+  "supplementary": {
+    "camera": [
+      -537.1,
+      28,
+      1121.2,
+      -106,
+      15
+    ],
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/coding/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+      "--cam=-537.1,28,1121.2,-106,15",
+      "--parked",
+      "--frames",
+      "60",
+      "--screenshot",
+      "/Users/linus/coding/mm2-sthlm/evidence/church/roof-tower.png"
+    ],
+    "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/church/roof-tower.png bytes=1938842 aud=0h/0v/0s/0l/0a"
+  }
+}

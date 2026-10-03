@@ -1,0 +1,58 @@
+{
+  "engine_revision": "039edc98bab91a36aede5e4a5d8eae729d47deab",
+  "engine_binary_sha256": "cba1b0374cee36806cc682e313ad081234e01728769fa7b4e85661963271ddb8",
+  "package_manifest_sha256": "b479f1d4eee9c4a1be6456f2097a0c40794c63945d2d665977f6a3fbdd3fcb92",
+  "command": [
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+    "--mods",
+    "/Users/linus/coding/mm2-sthlm/dist",
+    "--city",
+    "stockholm",
+    "--no-profile",
+    "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+    "--cam=-226,30.6,1072.1,-154,-9",
+    "--parked",
+    "--frames",
+    "60",
+    "--screenshot",
+    "/Users/linus/coding/mm2-sthlm/evidence/kristinehov/scene.png"
+  ],
+  "camera": [
+    -226,
+    30.6,
+    1072.1,
+    -154,
+    -9
+  ],
+  "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/kristinehov/scene.png bytes=3309480 aud=0h/0v/0s/0l/0a",
+  "source_features": [
+    "way/88413905",
+    "way/88413902",
+    "way/88413904"
+  ],
+  "supplementary": {
+    "camera": [
+      -226,
+      45,
+      1072.1,
+      -154,
+      -25
+    ],
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/coding/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+      "--cam=-226,45,1072.1,-154,-25",
+      "--parked",
+      "--frames",
+      "60",
+      "--screenshot",
+      "/Users/linus/coding/mm2-sthlm/evidence/kristinehov/roof-tower.png"
+    ],
+    "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/kristinehov/roof-tower.png bytes=3826464 aud=0h/0v/0s/0l/0a"
+  }
+}

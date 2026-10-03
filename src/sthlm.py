@@ -422,7 +422,20 @@ class PsdlWriter:
                         if water:
                             self.water_rooms.append(len(self.rooms))
 
-    def building(self, poly, height, texture, roof="roof", base=2.0):
+    def building(
+        self,
+        poly,
+        height,
+        texture,
+        roof="roof",
+        base=2.0,
+        *,
+        facade_repeat_width_m=4.0,
+        facade_repeat_height_m=None,
+    ):
+        repeat_height = facade_repeat_height_m or (
+            12 if texture == "tower_brick" else 5 if texture == "brick" else 3.2
+        )
         attrs = []
         hb, ht = self.height(base), self.height(base + height)
         for ring in [poly.exterior, *poly.interiors]:
@@ -437,20 +450,8 @@ class PsdlWriter:
                     0x5E,
                     hb,
                     ht,
-                    max(1, round(math.dist(a, b) / 4)),
-                    max(
-                        1,
-                        round(
-                            height
-                            / (
-                                12
-                                if texture == "tower_brick"
-                                else 5
-                                if texture == "brick"
-                                else 3.2
-                            )
-                        ),
-                    ),
+                    max(1, round(math.dist(a, b) / facade_repeat_width_m)),
+                    max(1, round(height / repeat_height)),
                     left,
                     right,
                 ]
@@ -652,10 +653,34 @@ def build(output, minimal=False, profile="expanded"):
             remaining_water = remaining_water.difference(area)
         writer.surface(remaining_water, 0, "water", water=True)
         print("Meshing buildings and props", file=sys.stderr, flush=True)
+        from church_materials import material_for as church_material_for
+
+        from manor_materials import material_for as manor_material_for
+
         for b in city["buildings"]:
-            if expanded and b["id"] == "way/24488933":
+            if expanded and b["id"] in {"way/24488933", "way/1049742528"}:
                 continue
             index = int(hashlib.sha256(b["id"].encode()).hexdigest()[:8], 16) % 3
+            manor_material = manor_material_for(b)
+            manor_repeat = (
+                {
+                    "facade_repeat_width_m": manor_material["width_repeat_m"],
+                    "facade_repeat_height_m": manor_material["height_repeat_m"],
+                }
+                if manor_material
+                else {}
+            )
+            if manor_material:
+                b["rendering"] = {"material_profile": manor_material}
+            church_material = church_material_for(b)
+            facade_repeat = (
+                {
+                    "facade_repeat_width_m": church_material["facade_repeat_width_m"],
+                    "facade_repeat_height_m": church_material["facade_repeat_height_m"],
+                }
+                if church_material
+                else {}
+            )
             for p in pieces(shape(b["geometry"])):
                 landmark = b["id"] == "relation/29368"
                 church = (
@@ -668,14 +693,33 @@ def build(output, minimal=False, profile="expanded"):
                     b["rendering"] = {
                         "rule": "schematic nave and narrow spire; source height is total height, not full-height office facade",
                         "nave_height_m": body_height,
+                        **(
+                            {"material_profile": church_material}
+                            if church_material
+                            else {}
+                        ),
                         "tower_position": "footprint representative point; not surveyed",
                     }
                 writer.building(
                     p,
                     24 if landmark else body_height,
-                    "brick" if landmark else ["ochre", "cream", "pink"][index],
-                    "copper" if landmark else "roof",
+                    church_material["textures"]["facade"]
+                    if church_material
+                    else manor_material["facade"]
+                    if manor_material
+                    else "brick"
+                    if landmark
+                    else ["ochre", "cream", "pink"][index],
+                    church_material["textures"]["roof"]
+                    if church_material
+                    else manor_material["roof"]
+                    if manor_material
+                    else "copper"
+                    if landmark
+                    else "roof",
                     base=b.get("base_y", 2.0),
+                    **manor_repeat,
+                    **facade_repeat,
                 )
                 if church:
                     base = b.get("base_y", 2.0)
@@ -688,12 +732,22 @@ def build(output, minimal=False, profile="expanded"):
                         writer.building(
                             shaft,
                             b["height"] - body_height - 16,
-                            "ochre",
-                            "copper",
+                            church_material["textures"]["tower"]
+                            if church_material
+                            else "ochre",
+                            church_material["textures"]["roof"]
+                            if church_material
+                            else "copper",
                             base=base + body_height,
+                            **facade_repeat,
                         )
                         writer.pyramid(
-                            shaft, base + b["height"] - 16, base + b["height"], "copper"
+                            shaft,
+                            base + b["height"] - 16,
+                            base + b["height"],
+                            church_material["textures"]["roof"]
+                            if church_material
+                            else "copper",
                         )
         outer = max(pieces(bounds), key=lambda p: p.area)
         for a, b in zip(list(outer.exterior.coords), list(outer.exterior.coords)[1:]):
@@ -717,6 +771,9 @@ def build(output, minimal=False, profile="expanded"):
             from courthouse import export as export_courthouse
 
             city["courthouse"] = export_courthouse(writer, city, out)
+            from pavilion import export as export_pavilion
+
+            city["waterfront_pavilion"] = export_pavilion(writer, city, out)
 
             city["props"] = placements(
                 city, land, shape(city["road_surface"]), ground_height
@@ -782,6 +839,12 @@ def build(output, minimal=False, profile="expanded"):
         "0.2\n" + "".join(f"{i}\n" for i in writer.water_rooms)
     )
     textures(out / "texture")
+    from manor_materials import write as write_manor_materials
+
+    write_manor_materials(out)
+    from church_materials import write as write_church_materials
+
+    write_church_materials(out)
     from minimap import write as write_minimap
 
     write_json(out / "minimap.json", write_minimap(out, city, source))

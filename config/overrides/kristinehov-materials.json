@@ -1,0 +1,13 @@
+{
+  "name": "Kristinehovs malmgård",
+  "source_features": ["way/88413902", "way/88413904", "way/88413905"],
+  "source": "Frozen sources/expanded/osm.json.gz: named main house way/88413905 plus the two immediate yellow plaster retail wings with matching one-level half-hipped-roof tags.",
+  "art_reference": "User-supplied courtyard photograph, 2026-10-03; palette and six-pane window proportions interpreted by ChatGPT. Original procedural art; no photograph pixels redistributed.",
+  "rule": "Explicit estate IDs: pale yellow plaster, muted gray-green window surrounds, aged warm clay roof tiles. Visual material interpretation only; source tags, height estimates and footprint geometry are preserved.",
+  "materials": {
+    "facade": "manor_facade",
+    "roof": "manor_tiles",
+    "width_repeat_m": 4.2,
+    "height_repeat_m": 4.2
+  }
+}

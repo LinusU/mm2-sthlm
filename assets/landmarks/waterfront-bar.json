@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "source_feature": "way/1049742528",
+  "description": "Simple green-framed glass bar with a central pitched pavilion and lower wings, guided by the user's photograph; authored silhouette estimates preserve the source footprint.",
+  "origin": [-1005.8, 67.4],
+  "rotation_degrees": -27.7,
+  "central_bounds": [-6.0, -25.0, 6.0, 25.0],
+  "central_height": 4.2,
+  "wing_height": 3.2,
+  "roof_rise": 2.0
+}
