@@ -1,4 +1,5 @@
 import json
+import gzip
 import math
 from pathlib import Path
 import struct
@@ -97,6 +98,131 @@ class BridgeTests(unittest.TestCase):
                 )
         self.assertEqual(set(found), set(expected))
 
+    def test_island_reference_anchors_retain_exact_source_bridge_topology(self):
+        root = Path(__file__).resolve().parents[1]
+        anchors = json.loads(
+            (root / "config/overrides/bridge-land-anchors.json").read_text()
+        )["anchors"]
+        with gzip.open(root / "sources/expanded/osm.json.gz") as stream:
+            source = json.load(stream)
+        ways = {e["id"]: e for e in source["elements"] if e["type"] == "way"}
+        nodes = {e["id"]: e for e in source["elements"] if e["type"] == "node"}
+        for anchor in anchors:
+            endpoint = anchor["island_bridge_endpoint"]
+            self.assertIn(endpoint, ways[anchor["island_road_way"]]["nodes"])
+            self.assertTrue(
+                any(endpoint in ways[wid]["nodes"] for wid in anchor["bridge_way_ids"])
+            )
+            for wid in anchor["bridge_way_ids"]:
+                self.assertEqual(ways[wid]["tags"].get("bridge"), "yes")
+            if "named_islet_way" in anchor:
+                way = ways[anchor["named_islet_way"]]
+                self.assertEqual(way["tags"]["name"], anchor["name"])
+                self.assertEqual(way["tags"]["place"], "islet")
+                poly = Polygon(
+                    [(nodes[n]["lon"], nodes[n]["lat"]) for n in way["nodes"]]
+                )
+                from shapely.geometry import Point
+
+                self.assertTrue(poly.covers(Point(anchor["reference_lonlat"])))
+
+    def test_crossing_constraints_preserve_source_connectivity(self):
+        roads = [
+            {
+                "id": 1,
+                "nodes": [11, 12],
+                "points": [(-50, 0), (50, 0)],
+                "width": 9,
+                "tags": {"layer": "2"},
+            },
+            {
+                "id": 2,
+                "nodes": [21, 22],
+                "points": [(0, -50), (0, 50)],
+                "width": 9,
+                "tags": {"layer": "1"},
+            },
+            {
+                "id": 3,
+                "nodes": [12, 31],
+                "points": [(50, 0), (50, 40)],
+                "width": 9,
+                "tags": {},
+            },
+        ]
+        probes = bridges.crossing_constraints(roads, [1, 2])
+        self.assertEqual(len(probes), 1)
+        self.assertEqual((probes[0]["upper"], probes[0]["lower"]), (1, 2))
+        self.assertEqual(probes[0]["position"], [0, 0])
+
+    def test_estimated_crossing_lift_blends_into_connected_approach(self):
+        roads = [
+            {
+                "id": 1,
+                "nodes": [11, 12],
+                "points": [(-150, 0), (150, 0)],
+                "width": 9,
+                "tags": {"layer": "1"},
+                "elevated_points": [[x, 0, 2] for x in range(-150, 151, 10)],
+            },
+            {
+                "id": 2,
+                "nodes": [21, 22],
+                "points": [(100, -50), (100, 50)],
+                "width": 9,
+                "tags": {},
+                "elevated_points": [[100, y, 2] for y in range(-50, 51, 10)],
+            },
+            {
+                "id": 3,
+                "nodes": [12, 31],
+                "points": [(150, 0), (300, 0)],
+                "width": 9,
+                "tags": {},
+                "elevated_points": [[x, 0, 2] for x in range(150, 301, 10)],
+            },
+        ]
+        report = bridges.enforce_crossing_clearance(roads, [1])
+        self.assertGreaterEqual(
+            report["probes"][0]["actual_vertical_separation_m"], 5.48
+        )
+        self.assertAlmostEqual(
+            roads[0]["elevated_points"][-1][2], roads[2]["elevated_points"][0][2]
+        )
+        self.assertAlmostEqual(roads[2]["elevated_points"][-1][2], 2)
+        # No introduced abrupt step along the approach's dense source samples.
+        points = roads[2]["elevated_points"]
+        self.assertLess(
+            max(abs(a[2] - b[2]) / 10 for a, b in zip(points, points[1:])), 0.065
+        )
+        self.assertEqual([p[2] for p in roads[1]["elevated_points"]], [2] * 11)
+
+    def test_bridge_railing_keeps_real_approach_portals_open(self):
+        road = {
+            "id": 1,
+            "nodes": [11, 12],
+            "points": [(0, 0), (100, 0)],
+            "width": 9,
+            "tags": {"name": "test"},
+        }
+        approach = {
+            "id": 2,
+            "nodes": [12, 13],
+            "points": [(100, 0), (140, 0)],
+            "width": 9,
+            "tags": {},
+        }
+        groups = bridges.corridor_mesh(
+            [road], {"roads": [road, approach]}, lambda x, n: 10, {"style": "girder"}
+        )
+        for _, mesh in groups:
+            for tri in mesh:
+                for x, y, z in tri:
+                    if y > 10:
+                        self.assertGreater(abs(z), 4.4)
+                        self.assertGreater(x, 9.9)
+                        self.assertLess(x, 90.1)
+
     def test_native_asset_world_mapping_and_chunk_limits(self):
         mesh = bridges.beam((-9, 4, 10), (12, 4, 10), 0.8)
         # More than one u16-safe native chunk must be generated.
@@ -165,4 +291,43 @@ class BridgeTests(unittest.TestCase):
             )
         self.assertTrue(
             all(math.isfinite(c) for _, m in groups for t in m for v in t for c in v)
+        )
+
+
+class InteriorBridgeJunctionTests(unittest.TestCase):
+    def test_clearance_lift_preserves_interior_shared_source_junction(self):
+        roads = [
+            {
+                "id": 1,
+                "nodes": [1, 2, 3],
+                "points": [(-100, 0), (0, 0), (100, 0)],
+                "elevated_points": [[-100, 0, 5], [0, 0, 5], [100, 0, 5]],
+                "tags": {"bridge": "yes", "layer": "1"},
+                "width": 8,
+            },
+            {
+                "id": 2,
+                "nodes": [5, 6],
+                "points": [(0, -50), (0, 50)],
+                "elevated_points": [[0, -50, 10], [0, 50, 10]],
+                "tags": {},
+                "width": 8,
+            },
+            {
+                "id": 3,
+                "nodes": [2, 7],
+                "points": [(0, 0), (50, 50)],
+                "elevated_points": [[0, 0, 5], [50, 50, 5]],
+                "tags": {},
+                "width": 8,
+            },
+        ]
+        report = bridges.enforce_crossing_clearance(roads, [1])
+        self.assertGreaterEqual(
+            report["probes"][0]["actual_vertical_separation_m"], 5.49
+        )
+        self.assertAlmostEqual(
+            roads[0]["elevated_points"][1][2],
+            roads[2]["elevated_points"][0][2],
+            places=6,
         )

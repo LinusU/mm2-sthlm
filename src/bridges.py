@@ -1,19 +1,30 @@
 """Original native static bridge structures; existing driveable deck unchanged."""
 
 import json
+import heapq
 import math
 import struct
 from pathlib import Path
 
 from PIL import Image
-from shapely.geometry import LineString, shape
+from shapely import line_merge
+from shapely.geometry import LineString, Point, shape
+from shapely.ops import unary_union
+from shapely.strtree import STRtree
 
 import props
 from sthlm import triangulate
 
 ROOT = Path(__file__).resolve().parents[1]
 OVERRIDE = ROOT / "config/overrides/vasterbron-structure.json"
-COLORS = {"bridge_concrete": (145, 146, 139), "bridge_steel": (109, 124, 121)}
+COLORS = {
+    "bridge_concrete": (145, 146, 139),
+    "bridge_steel": (109, 124, 121),
+    "bridge_stone": (161, 156, 144),
+    "bridge_dark": (61, 73, 66),
+    "bridge_gold": (167, 145, 77),
+    "bridge_timber": (106, 91, 71),
+}
 
 
 def beam(a, b, width, depth=None):
@@ -252,6 +263,353 @@ def landmark_mesh(roads, height, cfg):
     return [("bridge_concrete", concrete), ("bridge_steel", steel)]
 
 
+def crossing_constraints(roads, bridge_ids, minimum_clearance=5.5):
+    """Source crossing probes, excluding actual shared-node junctions.
+
+    Clearance is an authored gameplay envelope including the 0.7m slab,
+    not a survey. Source layers determine which deck is uppermost.
+    """
+    lines = [LineString(r["points"]) for r in roads]
+    tree = STRtree(lines)
+    bridges = set(bridge_ids)
+    result = []
+    for i, upper in enumerate(roads):
+        if upper["id"] not in bridges:
+            continue
+        layer = int(upper["tags"].get("layer", 1))
+        for j in tree.query(lines[i], predicate="intersects"):
+            lower = roads[int(j)]
+            if i == j or set(upper["nodes"]) & set(lower["nodes"]):
+                continue
+            lower_layer = int(lower["tags"].get("layer", 0))
+            if lower_layer >= layer:
+                continue
+            crossing = lines[i].intersection(lines[int(j)])
+            points = (
+                [crossing]
+                if crossing.geom_type == "Point"
+                else (
+                    list(crossing.geoms) if crossing.geom_type == "MultiPoint" else []
+                )
+            )
+            for point in points:
+                result.append(
+                    {
+                        "upper": upper["id"],
+                        "lower": lower["id"],
+                        "position": [point.x, point.y],
+                        "minimum_vertical_separation_m": minimum_clearance,
+                    }
+                )
+    return result
+
+
+def enforce_crossing_clearance(roads, bridge_ids, clearance=5.5):
+    """Lift decks with source-graph-distance envelopes, preserving junctions.
+
+    A per-way envelope restarted at every connecting node spreads a lift across
+    the whole city and leaves shared endpoints at different heights. Here each
+    genuine source node is one height variable. A lift fades with cumulative
+    road distance from its crossing, never reconnecting separate XY crossings.
+    """
+    probes = crossing_constraints(roads, bridge_ids, clearance)
+    keys, xy, levels, graph, chains, stations = {}, [], [], [], {}, {}
+    lookup = {r["id"]: r for r in roads}
+    lines = {r["id"]: LineString(r["points"]) for r in roads}
+    for road in roads:
+        source = {tuple(p): n for n, p in zip(road["nodes"], road["points"])}
+        chain = []
+        ds = []
+        for i, point in enumerate(road["elevated_points"]):
+            node = source.get(tuple(point[:2]))
+            key = ("node", node) if node is not None else (road["id"], i)
+            if key not in keys:
+                keys[key] = len(levels)
+                levels.append(point[2])
+                xy.append(point[:2])
+                graph.append({})
+            index = keys[key]
+            levels[index] = max(levels[index], point[2])
+            chain.append(index)
+            ds.append(lines[road["id"]].project(Point(point[:2])))
+        chains[road["id"]], stations[road["id"]] = chain, ds
+        for left, right in zip(chain, chain[1:]):
+            distance = math.dist(xy[left], xy[right])
+            if distance > 1e-6:
+                graph[left][right] = graph[right][left] = distance
+
+    def bracket(road_id, position):
+        ds, chain = stations[road_id], chains[road_id]
+        station = lines[road_id].project(Point(position))
+        for i in range(len(ds) - 1):
+            if ds[i] <= station <= ds[i + 1] and ds[i + 1] > ds[i]:
+                return (
+                    chain[i],
+                    chain[i + 1],
+                    (station - ds[i]) / (ds[i + 1] - ds[i]),
+                    station,
+                )
+        return chain[-1], chain[-1], 0.0, station
+
+    def sample(road_id, position):
+        left, right, t, _ = bracket(road_id, position)
+        return levels[left] * (1 - t) + levels[right] * t
+
+    adjustments = []
+    for _ in range(8):
+        changed = False
+        for probe in sorted(
+            probes, key=lambda p: int(lookup[p["upper"]]["tags"].get("layer", 1))
+        ):
+            upper, lower, position = probe["upper"], probe["lower"], probe["position"]
+            deficit = sample(lower, position) + clearance - sample(upper, position)
+            if deficit <= 0.02:
+                continue
+            left, right, t, _ = bracket(upper, position)
+            segment_length = math.dist(xy[left], xy[right])
+            radius = max(120, deficit * math.pi / 0.12)
+            distances = {left: t * segment_length, right: (1 - t) * segment_length}
+            pending = [(distance, node) for node, distance in distances.items()]
+            heapq.heapify(pending)
+            while pending:
+                distance, node = heapq.heappop(pending)
+                if distance != distances[node]:
+                    continue
+                for neighbour, length in graph[node].items():
+                    candidate = distance + length
+                    if candidate < radius and candidate < distances.get(
+                        neighbour, math.inf
+                    ):
+                        distances[neighbour] = candidate
+                        heapq.heappush(pending, (candidate, neighbour))
+            weights = {
+                node: (1 + math.cos(math.pi * distance / radius)) / 2
+                for node, distance in distances.items()
+                if distance < radius
+            }
+            low_a, low_b, low_t, _ = bracket(lower, position)
+            response = (
+                weights.get(left, 0) * (1 - t)
+                + weights.get(right, 0) * t
+                - weights.get(low_a, 0) * (1 - low_t)
+                - weights.get(low_b, 0) * low_t
+            )
+            if response <= 0.05:
+                # An extremely short connecting loop cannot support this
+                # estimated clearance without an implausibly large city lift.
+                continue
+            lift = deficit / response
+            for node, weight in weights.items():
+                levels[node] += lift * weight
+            changed = True
+            adjustments.append(
+                {**probe, "lift_m": round(lift, 3), "blend_radius_m": round(radius, 3)}
+            )
+        if not changed:
+            break
+    for road in roads:
+        road["elevated_points"] = [
+            [*point[:2], levels[node]]
+            for point, node in zip(road["elevated_points"], chains[road["id"]])
+        ]
+    for probe in probes:
+        probe["actual_vertical_separation_m"] = round(
+            sample(probe["upper"], probe["position"])
+            - sample(probe["lower"], probe["position"]),
+            3,
+        )
+    return {
+        "minimum_vertical_separation_m": clearance,
+        "provenance": "Original estimated gameplay clearance, not surveyed bridge elevations",
+        "adjustments": adjustments,
+        "probes": probes,
+        "unresolved": [
+            p for p in probes if p["actual_vertical_separation_m"] < clearance - 0.03
+        ],
+    }
+
+
+def crossing_report(city, road_height, deck_height):
+    """Record reproducible lower-road/deck samples with native XYZ positions."""
+    bridges = set(city["bridge_ways"])
+    probes = crossing_constraints(city["roads"], bridges)
+    for probe in probes:
+        x, n = probe["position"]
+        upper = (
+            deck_height.height_for_road(probe["upper"], x, n)
+            if hasattr(deck_height, "height_for_road")
+            else deck_height(x, n)
+        )
+        field = deck_height if probe["lower"] in bridges else road_height
+        lower = (
+            field.height_for_road(probe["lower"], x, n)
+            if hasattr(field, "height_for_road")
+            else field(x, n)
+        )
+        probe.update(
+            {
+                "deck_y": round(upper, 3),
+                "lower_road_y": round(lower, 3),
+                "underside_clearance_m": round(upper - 0.74 - lower, 3),
+                "native_position": [round(x, 3), round(lower, 3), round(-n, 3)],
+            }
+        )
+    return probes
+
+
+def source_height(roads, field):
+    """Keep structure levels attached to their source roads at deck crossings."""
+    if not hasattr(field, "height_for_road"):
+        return field
+    lines = [LineString(r["points"]) for r in roads]
+    tree = STRtree(lines)
+
+    def height(x, n):
+        road = roads[int(tree.nearest(Point(x, n)))]
+        return field.height_for_road(road, x, n)
+
+    return height
+
+
+def corridor_mesh(roads, city, height, cfg):
+    """Railings on sourced deck edges with openings at real connection nodes.
+
+    Each road follows its own alignment. Averaging unrelated parallel ramps
+    creates invented structure between them, so these meshes use the union
+    of source corridors and explicitly keep approach portals open.
+    """
+    lanes = unary_union(
+        [
+            LineString(r["points"]).buffer(r["width"] / 2, cap_style=2, join_style=2)
+            for r in roads
+        ]
+    )
+    bridge_ids = {r["id"] for r in roads}
+    nodes = {n for r in roads for n in r["nodes"]}
+    connections = {
+        n
+        for r in city["roads"]
+        if r["id"] not in bridge_ids
+        for n in r["nodes"]
+        if n in nodes
+    }
+    degree = {}
+    positions = {}
+    for r in roads:
+        positions.update(zip(r["nodes"], r["points"]))
+        for a, b in zip(r["nodes"], r["nodes"][1:]):
+            degree[a] = degree.get(a, 0) + 1
+            degree[b] = degree.get(b, 0) + 1
+    portals = [
+        Point(positions[n]).buffer(roads[0]["width"] + 2)
+        for n in nodes
+        if n in connections or degree.get(n) == 1
+    ]
+    openings = unary_union(portals)
+    rail = []
+    material = cfg.get("material", "bridge_steel")
+    polygons = [lanes] if lanes.geom_type == "Polygon" else list(lanes.geoms)
+    for poly in polygons:
+        for ring in [poly.exterior, *poly.interiors]:
+            edge = LineString(ring.coords).difference(openings)
+            parts = [edge] if edge.geom_type == "LineString" else list(edge.geoms)
+            for part in parts:
+                if part.is_empty:
+                    continue
+                count = max(1, math.ceil(part.length / 3))
+                for i in range(count):
+                    a, b = [
+                        part.interpolate(t / count, normalized=True) for t in (i, i + 1)
+                    ]
+                    aa, bb = (
+                        (a.x, height(a.x, a.y), -a.y),
+                        (b.x, height(b.x, b.y), -b.y),
+                    )
+                    for rise in (0.45, 1.12):
+                        rail += beam(
+                            (aa[0], aa[1] + rise, aa[2]),
+                            (bb[0], bb[1] + rise, bb[2]),
+                            0.065,
+                        )
+                    rail += beam(
+                        (aa[0], aa[1] + 0.05, aa[2]),
+                        (aa[0], aa[1] + 1.16, aa[2]),
+                        0.085,
+                    )
+    groups = [(material, rail)] if rail else []
+    lower_corridors = unary_union(
+        [
+            LineString(r["points"]).buffer(r["width"] / 2 + 3)
+            for r in city["roads"]
+            if r["id"] not in bridge_ids
+        ]
+    )
+    support = []
+    steel = []
+    axes = line_merge(unary_union([LineString(r["points"]) for r in roads]))
+    axes = [axes] if axes.geom_type == "LineString" else list(axes.geoms)
+    half = min(r["width"] for r in roads) / 2 - 0.8
+    for axis in axes:
+        if axis.length < 12:
+            continue
+
+        def point(t, side=0, y=None):
+            d = max(0, min(axis.length, t * axis.length))
+            p = axis.interpolate(d)
+            a, b = (
+                axis.interpolate(max(0, d - 0.5)),
+                axis.interpolate(min(axis.length, d + 0.5)),
+            )
+            dx, dn = b.x - a.x, b.y - a.y
+            length = math.hypot(dx, dn)
+            x, n = p.x - dn / length * side, p.y + dx / length * side
+            return (x, height(x, n) - 0.85 if y is None else y, -n)
+
+        def member(a, b, width, depth=None):
+            # Authored members must never fill a real lower roadway corridor.
+            if (
+                LineString([(a[0], -a[2]), (b[0], -b[2])])
+                .buffer(width / 2)
+                .intersects(lower_corridors)
+            ):
+                return []
+            return beam(a, b, width, depth)
+
+        count = max(1, math.ceil(axis.length / 4))
+        for side in (-half, half):
+            for i in range(count):
+                a, b = point(i / count, side), point((i + 1) / count, side)
+                steel += beam(a, b, 0.25, 0.38)
+        if cfg["style"] in {"stone_arch", "steel_arch"}:
+            spans = max(1, round(axis.length / cfg.get("span_length_estimate_m", 35)))
+            for span in range(spans):
+                start, end = span / spans, (span + 1) / spans
+                crown = point((start + end) / 2)[1] - 0.5
+                foot = min(crown - 0.5, 0.5)
+
+                def arch_y(t):
+                    u = (t - start) / (end - start)
+                    return foot + (crown - foot) * 4 * u * (1 - u)
+
+                for side in (-half, half):
+                    for i in range(20):
+                        t, tt = (
+                            start + (end - start) * i / 20,
+                            start + (end - start) * (i + 1) / 20,
+                        )
+                        a, b = point(t, side), point(tt, side)
+                        a = (a[0], min(a[1] - 0.3, arch_y(t)), a[2])
+                        b = (b[0], min(b[1] - 0.3, arch_y(tt)), b[2])
+                        support += member(
+                            a, b, 0.7 if cfg["style"] == "stone_arch" else 0.3, 0.7
+                        )
+    if steel:
+        groups.append(("bridge_steel", steel))
+    if support:
+        groups.append((cfg.get("support_material", "bridge_concrete"), support))
+    return groups
+
+
 def write_asset(out, name, groups, source):
     vertices = [v for _, triangles in groups for tri in triangles for v in tri]
     origin = [min(v[k] for v in vertices) for k in range(3)]
@@ -282,7 +640,7 @@ def write_asset(out, name, groups, source):
     }
 
 
-def write(out, city, deck_field):
+def write(out, city, deck_field, road_triangles=None):
     """Return static placement records for merging into props.write pathset."""
     cfg = json.loads(OVERRIDE.read_text())
     (out / "geometry").mkdir(parents=True, exist_ok=True)
@@ -291,9 +649,17 @@ def write(out, city, deck_field):
         Image.new("RGB", (16, 16), color).save(out / f"texture/{texture}.png")
     instances = []
     surface = shape(city["bridge_road_surface"])
-    for index, triangles in enumerate(
-        captured_decks(surface, deck_field, city["spawn"], cfg["deck_thickness_m"])
-    ):
+    # The road writer may use textured quads plus fans. Its emitted facets,
+    # including rounded native vertices and exact strip diagonals, are the
+    # authority for slabs. Retain the legacy capture only for older callers.
+    slabs = (
+        [native_slab_mesh(road_triangles, cfg["deck_thickness_m"])]
+        if road_triangles is not None and road_triangles
+        else []
+        if road_triangles is not None
+        else captured_decks(surface, deck_field, city["spawn"], cfg["deck_thickness_m"])
+    )
+    for index, triangles in enumerate(slabs):
         instances.append(
             write_asset(
                 out,
@@ -302,17 +668,44 @@ def write(out, city, deck_field):
                 "bridge deck underside",
             )
         )
-    roads = [
-        r
-        for r in city["roads"]
-        if r["id"] in city["bridge_ways"] and r["tags"].get("name") == cfg["name"]
-    ]
+    inventory = json.loads(
+        (ROOT / "config/overrides/bridge-structures.json").read_text()
+    )
+    grouped = {}
+    for road in city["roads"]:
+        if road["id"] in city["bridge_ways"]:
+            grouped.setdefault(
+                (
+                    road["tags"].get("name", "Unnamed viaduct"),
+                    int(road["tags"].get("layer", 1)),
+                ),
+                [],
+            ).append(road)
+    structures = []
+    for index, ((name, layer), source_roads) in enumerate(sorted(grouped.items())):
+        if name == cfg["name"]:
+            continue
+        rule = inventory["bridges"].get(name, inventory["default"])
+        local_height = source_height(source_roads, deck_field)
+        groups = corridor_mesh(source_roads, city, local_height, rule)
+        if groups:
+            asset = write_asset(out, f"sthlm_bridge_{index}", groups, name)
+            instances.append(asset)
+            structures.append(
+                {
+                    "name": name,
+                    "source_ways": [r["id"] for r in source_roads],
+                    "style": rule["style"],
+                    "asset": asset["asset"],
+                }
+            )
+    roads = grouped.get(cfg["name"], [])
     if roads:
         instances.append(
             write_asset(
                 out,
                 "sthlm_vasterbron",
-                landmark_mesh(roads, deck_field, cfg),
+                landmark_mesh(roads, source_height(roads, deck_field), cfg),
                 cfg["id"],
             )
         )
@@ -320,7 +713,10 @@ def write(out, city, deck_field):
         "provenance": cfg["provenance"],
         "deck_thickness_m": cfg["deck_thickness_m"],
         "driveable_deck_modified": False,
+        "native_facets_captured": road_triangles is not None,
         "placement": "unbound native PKG static triangle meshes; local minimum Y zero",
         "arch_stations": cfg["arch_stations"],
+        "inventory_provenance": inventory["provenance"],
+        "structures": structures,
     }
     return instances

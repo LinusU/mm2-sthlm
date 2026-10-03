@@ -22,23 +22,93 @@ def conforming_boundary(geom):
     return geom.segmentize(5)
 
 
+def junction_planes(roads):
+    """Fit one source-connected plane at a junction, preserving hillside grade.
+
+    No geometric proximity creates connectivity. A neighbouring underpass is
+    excluded unless it shares the exact OSM node with the upper carriageway.
+    """
+    owners = {}
+    for road in roads:
+        if "nodes" not in road:
+            continue
+        line = LineString([p[:2] for p in road["elevated_points"]])
+        for node, position in zip(road["nodes"], road["points"]):
+            if line.distance(Point(*position)) < 1e-6:
+                owners.setdefault(node, []).append((road, position))
+    planes = []
+    for records in owners.values():
+        if len({r["id"] for r, _ in records}) < 2:
+            continue
+        x, n = records[0][1]
+        centre = Point(x, n)
+        samples, joint_heights = [], []
+        for road, _ in records:
+            points = road["elevated_points"]
+            line = LineString([p[:2] for p in points])
+            station = line.project(centre)
+            stations = [0.0]
+            for a, b in zip(points, points[1:]):
+                stations.append(stations[-1] + math.dist(a[:2], b[:2]))
+            joint_heights.append(
+                float(np.interp(station, stations, [p[2] for p in points]))
+            )
+            for side in (-1, 1):
+                nearby = [
+                    (abs(d - station), p)
+                    for d, p in zip(stations, points)
+                    if 1e-5 < side * (d - station) <= 10
+                ]
+                if nearby:
+                    samples.append(min(nearby, key=lambda v: v[0])[1])
+        h = float(np.mean(joint_heights))
+        if len(samples) < 2:
+            continue
+        matrix = np.array([[p[0] - x, p[1] - n] for p in samples])
+        # Nearly parallel approaches do not constrain transverse gradient.
+        # Ridge regularization suppresses an invented steep bank in that axis.
+        ridge = max(1e-8, float(np.sum(matrix * matrix)) * 0.02)
+        gradient = np.linalg.solve(
+            matrix.T @ matrix + np.eye(2) * ridge,
+            matrix.T @ np.array([p[2] - h for p in samples]),
+        )
+        radius = max(r["width"] / 2 + 1 for r, _ in records)
+        planes.append(
+            (x, n, h, *map(float, gradient), radius, {r["id"] for r, _ in records})
+        )
+    return planes
+
+
 class RoadField:
     def __init__(self, roads, terrain, bridge=False, junctions=()):
         self.terrain = terrain
         self.segments = []
         self.values = []
         self.widths = []
+        self.by_road = {}
+        self._source_cache = {}
+        self.road_ids = []
         for r in roads:
             points = r["elevated_points"]
             for a, b in zip(points, points[1:]):
                 if math.dist(a[:2], b[:2]) > 0:
+                    self.by_road.setdefault(r.get("id"), []).append(len(self.segments))
                     self.segments.append(LineString([a[:2], b[:2]]))
                     self.values.append((a[2], b[2]))
+                    self.road_ids.append(r.get("id"))
                     self.widths.append(r["width"] / 2)
         self.tree = STRtree(self.segments)
+        self.planes = junction_planes(roads)
+        for seam in junctions:
+            if len(seam) == 7:
+                x, n, h, radius, owner, gx, gn = seam
+                self.planes.append((x, n, h, gx, gn, radius, {owner}))
+        self.planes_by_road = {}
+        for i, plane in enumerate(self.planes):
+            for owner in plane[-1]:
+                self.planes_by_road.setdefault(owner, []).append(i)
         self.bridge = bridge
         self.junctions = list(junctions)
-        self.junction_tree = STRtree([Point(x, n) for x, n, _, _ in self.junctions])
 
     def _sample(self, x, n):
         p = Point(x, n)
@@ -49,12 +119,69 @@ class RoadField:
         t = segment.project(p, normalized=True)
         a, b = self.values[i]
         height = a + (b - a) * t
-        if self.junctions:
-            j = int(self.junction_tree.nearest(p))
-            xj, nj, level, radius = self.junctions[j]
-            if math.hypot(x - xj, n - nj) <= radius:
-                height = level
+        height = self.planar_height(height, x, n, self.road_ids[i])
         return height, segment.distance(p), self.widths[i]
+
+    def planar_height(self, height, x, n, road_id):
+        candidates = self.planes_by_road.get(road_id, [])
+        if not candidates:
+            return height
+        j = min(
+            candidates,
+            key=lambda j: math.hypot(x - self.planes[j][0], n - self.planes[j][1]),
+        )
+        xj, nj, h, gx, gn, radius, _ = self.planes[j]
+        distance = math.hypot(x - xj, n - nj)
+        if distance > radius + 7:
+            return height
+        t = max(0.0, min(1.0, (distance - radius) / 7))
+        weight = 1 - t * t * (3 - 2 * t)
+        plane = h + gx * (x - xj) + gn * (n - nj)
+        return plane * weight + height * (1 - weight)
+
+    def _profile(self, road):
+        points = road["elevated_points"]
+        key = road.get("id", id(road))
+        cached = self._source_cache.get(key)
+        if cached is None or cached[0] is not points:
+            line = LineString([p[:2] for p in points])
+            stations = [0.0]
+            for a, b in zip(points, points[1:]):
+                stations.append(stations[-1] + math.dist(a[:2], b[:2]))
+            cached = (
+                points,
+                line,
+                np.array(stations),
+                np.array([p[2] for p in points]),
+            )
+            self._source_cache[key] = cached
+        return cached
+
+    def height_at_station(self, road, station):
+        """Height for both corners of a flat native road cross section."""
+        _, _, stations, heights = self._profile(road)
+        return float(np.interp(station, stations, heights))
+
+    def height_for_road(self, road_id, x, n):
+        """Flat cross section projected onto one source profile.
+
+        Passing the road record also preserves post-elevation authored ramps.
+        """
+        if isinstance(road_id, dict):
+            _, line, stations, heights = self._profile(road_id)
+            station = line.project(Point(x, n))
+            h = float(np.interp(station, stations, heights))
+            if road_id.get("height_override"):
+                return h
+            return h
+        indices = self.by_road.get(road_id, [])
+        if not indices:
+            raise KeyError(f"road {road_id} is absent from this height layer")
+        p = Point(x, n)
+        i = min(indices, key=lambda i: self.segments[i].distance(p))
+        t = self.segments[i].project(p, normalized=True)
+        a, b = self.values[i]
+        return a + (b - a) * t
 
     def nearest(self, x, n):
         height, distance, _ = self._sample(x, n)
@@ -129,10 +256,21 @@ def bridge_approaches(ordinary, elevated, length=20):
         # It covers the overlapping round caps and the complete road width.
         if portions and first < last:
             radius = road["width"] / 2 + 2
-            if first:
-                junctions.append((*points[first], radius))
-            if last < len(points) - 1:
-                junctions.append((*points[last], radius))
+            for index in ([first] if first else []) + (
+                [last] if last < len(points) - 1 else []
+            ):
+                a, b = (
+                    points[max(0, index - 1)],
+                    points[min(len(points) - 1, index + 1)],
+                )
+                dx, dn = b[0] - a[0], b[1] - a[1]
+                square = dx * dx + dn * dn
+                gx, gn = (
+                    ((b[2] - a[2]) * dx / square, (b[2] - a[2]) * dn / square)
+                    if square
+                    else (0, 0)
+                )
+                junctions.append((*points[index], radius, road.get("id"), gx, gn))
     return ground, decks, junctions, metadata
 
 
@@ -161,11 +299,33 @@ def apply(city, terrain):
                 point = line.interpolate(station)
                 samples.append(terrain.height(point.x, point.y))
             heights[node] = max(heights[node], float(np.median(samples)))
-    groups = {}
-    for r in elevated:
-        groups.setdefault(r["tags"]["name"], []).append(r)
+    # Source-connected components, never street-name buckets: parallel
+    # decks and unnamed internal viaducts have independent endpoint anchors.
+    by_node = {}
+    for i, r in enumerate(elevated):
+        for node in r["nodes"]:
+            by_node.setdefault(node, []).append(i)
+    remaining = set(range(len(elevated)))
+    groups = []
+    while remaining:
+        pending, component = [min(remaining)], []
+        while pending:
+            i = pending.pop()
+            if i not in remaining:
+                continue
+            remaining.remove(i)
+            component.append(elevated[i])
+            pending.extend(
+                j
+                for node in elevated[i]["nodes"]
+                for j in by_node[node]
+                if j in remaining
+            )
+        groups.append(component)
     profiles = []
-    for name, roads in groups.items():
+    for roads in groups:
+        names = sorted({r["tags"].get("name", "") for r in roads} - {""})
+        name = " / ".join(names) or f"bridge way/{min(r['id'] for r in roads)}"
         graph = {}
         for r in roads:
             for a, b in zip(r["nodes"], r["nodes"][1:]):
@@ -181,7 +341,7 @@ def apply(city, terrain):
         # deck from the two nearest shoreline ends rather than those samples.
         endpoints = list(sorted(ends))
         endpoint_distances = {n: distances(graph, [n]) for n in endpoints}
-        clearance = 20.0 if name in {"Västerbron", "Lilla Västerbron"} else 6.0
+        clearance = 20.0 if set(names) & {"Västerbron", "Lilla Västerbron"} else 6.0
         for n in graph:
             if n in ends:
                 continue
@@ -253,6 +413,16 @@ def apply(city, terrain):
                     t = stations[i] / distance
                     ordered[i][2] = start_y * (1 - t) + end_y * t
         r["elevated_points"] = points
+    from road_profiles import smooth
+
+    city["road_profile_diagnostics"] = smooth(
+        ordinary, terrain, {n: heights[n] for n in bridge_nodes}
+    )
+    from bridges import enforce_crossing_clearance
+    from road_profiles import diagnostics
+
+    city["bridge_clearance"] = enforce_crossing_clearance(city["roads"], bridges)
+    city["road_profile_diagnostics_after_clearance"] = diagnostics(ordinary)
     ground_segments, deck_segments, junctions, approaches = bridge_approaches(
         ordinary, elevated
     )
@@ -262,7 +432,9 @@ def apply(city, terrain):
     city["terrain"] = terrain.metadata
     city["elevation_rules"] = {
         "road_height_floor_m": 0.9,
-        "rule": "terrain-derived road beds, shared source junction heights, 10 m centreline intervals with 3-sample median; minimum road height clears nominal water reference",
+        "rule": "source-connected 5 m road profiles; longitudinal median and 25 m fairing footprint; 16 percent grade and 0.003 per metre vertical curvature targets; bridge anchors fixed",
+        "max_grade_target": 0.16,
+        "max_vertical_curvature_target_per_m": 0.003,
         "ground_source_modified": False,
         "bridge_decks": "estimated separately; not DTM measurements",
     }
@@ -302,7 +474,7 @@ def apply(city, terrain):
         [r for r in ground_segments if r["id"] not in approach_ids]
     ).intersection(bounds)
     connector_caps = unary_union(
-        [Point(x, n).buffer(radius) for x, n, _, radius in junctions]
+        [Point(seam[0], seam[1]).buffer(seam[3]) for seam in junctions]
     )
     ground_roads = ground_roads.difference(
         bridge_roads.intersection(connector_caps)

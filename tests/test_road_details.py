@@ -137,8 +137,8 @@ class RoadDetailsTests(unittest.TestCase):
             self.assertEqual(road_details.write(out, city), [])
             data = (out / "city/stockholm/decals.pathset").read_bytes()
             self.assertEqual(data[:4], b"PTH1")
-            self.assertGreater(struct.unpack_from("<I", data, 4)[0], 0)
-            self.assertEqual(data[-4:], bytes([2, 20, 0, 0]))
+            self.assertEqual(struct.unpack_from("<I", data, 4)[0], 0)
+            self.assertEqual(len(data), 12)
             self.assertEqual(shared.read_bytes(), b"shared")
             self.assertEqual(
                 (out / "geometry/sthlm_signal.pkg").read_bytes()[:4], b"PKG3"
@@ -200,7 +200,7 @@ class RoadDetailsTests(unittest.TestCase):
             road_details.write(out, {"roads": []})
             data = (out / "city/stockholm/decals.pathset").read_bytes()
             count, current = struct.unpack_from("<II", data, 4)
-            self.assertEqual((count, current), (3, 0))
+            self.assertEqual((count, current), (0, 0))
             cursor = 12
             for _ in range(count):
                 self.assertEqual(

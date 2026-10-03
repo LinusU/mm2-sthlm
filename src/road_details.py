@@ -1,4 +1,4 @@
-"""Source-tagged static signals and native render-only road paint ribbons."""
+"""Native movable static signal props; legacy ribbon helpers for old evidence."""
 
 import math
 import struct
@@ -297,8 +297,10 @@ def grouped_ribbons(paint, max_points=65536):
 
 def write(out, city, instances=None, height=lambda x, n: 2.0, *, road_height=None):
     """Write art/decal file; return instances for the caller's shared props.pathset."""
+    from road_surfaces import signal_placements
+
     instances = (
-        placements(city, height, road_height=road_height)
+        signal_placements(city, height, road_height=road_height)
         if instances is None
         else instances
     )
@@ -322,7 +324,7 @@ def write(out, city, instances=None, height=lambda x, n: 2.0, *, road_height=Non
     }
     for name, color in colors.items():
         Image.new("RGBA", (4, 4), color).save(out / f"texture/{name}.png")
-    paint = grouped_ribbons(ribbons(city, height, road_height=road_height))
+    paint = []  # Markings are embedded in native driveable road textures.
     data = b"PTH1" + struct.pack("<II", len(paint), 0)
     for item in paint:
         data += item["asset"].encode().ljust(32, b"\0") + struct.pack(

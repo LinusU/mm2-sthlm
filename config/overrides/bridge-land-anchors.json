@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "provenance": "Anchors derive from checked-in coastline/water land components containing source bridge island endpoints; identities cross-checked with Stockholm city project references, 2026-10-03. No shoreline redrawn.",
+  "anchors": [
+    {
+      "name": "Beckholmen",
+      "reference_lonlat": [
+        18.100005,
+        59.32076
+      ],
+      "island_bridge_endpoint": 35970109,
+      "bridge_way_ids": [
+        5173793
+      ],
+      "island_road_way": 5173795,
+      "reference": "https://vaxer.stockholm/projekt/djurgarden/beckholmen/",
+      "source_land_area_m2_estimate": 60647
+    },
+    {
+      "name": "Strömsborg",
+      "reference_lonlat": [
+        18.063056,
+        59.327113
+      ],
+      "island_bridge_endpoint": 180940,
+      "bridge_way_ids": [
+        5120305,
+        386722952
+      ],
+      "island_road_way": 109578671,
+      "named_islet_way": 4879618,
+      "reference": "https://vaxer.stockholm/projekt/norrmalm/forstarkning-av-vasabron/",
+      "source_land_area_m2_estimate": 2276
+    }
+  ]
+}

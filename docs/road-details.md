@@ -1,5 +1,11 @@
 # Source-driven road details
 
+**Historical implementation:** the current production export uses
+[authored driveable asphalt textures](road-surfaces.md) and graph-inferred
+movable static signals. The source-node placement and PTH ribbon helpers
+described below remain only for old evidence and compatibility tests.
+Production `road_details.write` emits a valid empty decal pathset.
+
 The bounded source importer retains `highway=traffic_signals`,
 `highway=crossing`, and crossing tags on nodes, including standalone nodes.
 The snapshot is regenerated offline from the same cached regional PBF;

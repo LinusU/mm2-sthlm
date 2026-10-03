@@ -29,6 +29,21 @@ class ElevationTests(unittest.TestCase):
             "tags": {"name": "Stadshusbron" if bridge else "road"},
         }
 
+    def test_approach_seam_belongs_only_to_its_source_road(self):
+        upper = self.road(1, [1, 2], [(0, 0), (100, 0)], True)
+        lower = self.road(2, [3, 4], [(0, 2), (100, 2)], True)
+        upper["elevated_points"] = [[0, 0, 18], [100, 0, 23]]
+        lower["elevated_points"] = [[0, 2, 8], [100, 2, 8]]
+        # Nearby upper approach patch must neither lift nor flatten the lower road.
+        field = RoadField(
+            [upper, lower],
+            Plane(),
+            bridge=True,
+            junctions=[(50, 0, 20.5, 8, 1, 0.05, 0)],
+        )
+        self.assertAlmostEqual(field(50, 2), 8)
+        self.assertAlmostEqual(field(53, 0), 20.65)
+
     def test_shared_road_junction_uses_one_height(self):
         roads = [
             self.road(1, [1, 2], [(0, 0), (100, 0)]),
@@ -46,7 +61,7 @@ class ElevationTests(unittest.TestCase):
         self.assertEqual(
             roads[0]["elevated_points"][-1], roads[1]["elevated_points"][0]
         )
-        self.assertAlmostEqual(field(100, 0), 3)
+        self.assertLess(abs(field(100, 0) - 3), 0.25)
         self.assertAlmostEqual(field.ground(100, 3), field(100, 3))
         self.assertEqual(city["spawn"][1], 3.5)
 

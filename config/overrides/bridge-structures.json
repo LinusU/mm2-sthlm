@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "provenance": "Original source-aligned simplified bridge meshes. OSM snapshot supplies alignments and topology. Colour, girder dimensions, rail heights and arch span lengths are visual estimates, not surveyed measurements. No reference photograph pixels copied. Lower-road corridors suppress arch members; piers are not invented in underpasses.",
+  "default": {
+    "style": "girder",
+    "material": "bridge_steel"
+  },
+  "bridges": {
+    "Norrbro": {
+      "style": "stone_arch",
+      "material": "bridge_stone",
+      "span_length_estimate_m": 28,
+      "support_material": "bridge_stone",
+      "reference": "https://stockholmskallan.stockholm.se/teman/Stockholmsplatser/norrbro/"
+    },
+    "Vasabron": {
+      "style": "steel_arch",
+      "material": "bridge_dark",
+      "span_length_estimate_m": 27,
+      "reference": "https://vaxer.stockholm/projekt/norrmalm/forstarkning-av-vasabron/"
+    },
+    "Djurgårdsbron": {
+      "style": "steel_arch",
+      "material": "bridge_dark",
+      "span_length_estimate_m": 20,
+      "reference": "https://stockholmskallan.stockholm.se/post/2560"
+    },
+    "Skeppsholmsbron": {
+      "style": "girder",
+      "material": "bridge_dark",
+      "reference": "https://www.sfv.se/uppdraget/byggprojekt/grundforstarkning-av-skeppsholmsbron-i-stockholm"
+    },
+    "Slussbron": {
+      "style": "girder",
+      "material": "bridge_gold"
+    },
+    "Beckholmsbron": {
+      "style": "girder",
+      "material": "bridge_timber"
+    },
+    "Djurgårdsbrunnsbron": {
+      "style": "girder",
+      "material": "bridge_dark",
+      "reference": "https://stockholmskallan.stockholm.se/post/29442"
+    },
+    "Långholmsbron": {
+      "style": "girder",
+      "material": "bridge_dark"
+    },
+    "Kastellholmsbron": {
+      "style": "girder",
+      "material": "bridge_dark"
+    },
+    "Pålsundsbron": {
+      "style": "girder",
+      "material": "bridge_dark"
+    }
+  }
+}

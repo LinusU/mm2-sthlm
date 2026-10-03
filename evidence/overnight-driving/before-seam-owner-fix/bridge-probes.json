@@ -1,0 +1,74 @@
+[
+  {
+    "way": 233761058,
+    "name": "centralbron-upper",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/sthlm-bridge-courses-e0orblaf",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=780.1859963143696,18.69698750566454,-120.19809356857068,-76.59178349822915",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "6",
+      "--headless",
+      "--frames",
+      "1200"
+    ],
+    "start_station": 44.51469027037892,
+    "end_station": 119.51469027037892,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1200 ticks=2040 driver=scripted diff=amateur phase=playing impacts=1 dropped=0 peak=6.2m/s travel=80.2m sim=17.00s resets=0 controls=1168t/872b/1960s finite=true moved=66m wheels=1/4 final=(832,17.7,-81) race=Running cp=15/16 results=0 lap=1/1 pos=1/1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/17m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3270d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+  },
+  {
+    "way": 4802608,
+    "name": "vattugatan-lower",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/sthlm-bridge-courses-e0orblaf",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=828.518661406942,14.26845252855169,-145.4082163207156,135.6036320777846",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "6",
+      "--headless",
+      "--frames",
+      "1200"
+    ],
+    "start_station": 84.08399315999104,
+    "end_station": 159.08399315999105,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1200 ticks=2040 driver=scripted diff=amateur phase=playing impacts=4 dropped=0 peak=6.9m/s travel=65.5m sim=17.00s resets=0 controls=990t/1050b/1984s finite=true moved=56m wheels=3/4 final=(818,8.1,-91) race=Running cp=13/17 results=0 lap=1/1 pos=1/1 p_rec=0r/2e env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/18m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3270d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+  },
+  {
+    "way": 30678772,
+    "name": "tryckerigatan-steep",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/sthlm-bridge-courses-e0orblaf",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=1074.5764300210392,6.186862653172269,235.10726635548363,133.68417027311605",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "6",
+      "--headless",
+      "--frames",
+      "1200"
+    ],
+    "start_station": 1,
+    "end_station": 64.21544084679579,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1200 ticks=2040 driver=scripted diff=amateur phase=playing impacts=1 dropped=0 peak=6.1m/s travel=77.4m sim=17.00s resets=0 controls=1328t/712b/1132s finite=true moved=63m wheels=4/4 final=(1036,14.2,284) race=Running cp=13/14 results=0 lap=1/1 pos=1/1 p_rec=0r/1e env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/15m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3270d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+  }
+]

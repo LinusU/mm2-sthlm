@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "source_base_revision": "3724732a9a0c8fea9ac79bcce4569a852211f467",
+  "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "native_layers": 55,
+  "native_import_rejected_attributes": 0,
+  "native_import_missing_textures": 0,
+  "render_only_paint_ribbons": 0,
+  "material_counts": {
+    "base": {
+      "junctions": 3798,
+      "marked_area": 1467822.5041383763,
+      "remainder_area": 2649559.257373623,
+      "signal_junctions": 795,
+      "strips": 16372,
+      "surface_area": 4117381.7615119712
+    },
+    "bridge": {
+      "junctions": 3798,
+      "marked_area": 29388.797901994163,
+      "remainder_area": 26640.647767353345,
+      "signal_junctions": 795,
+      "strips": 328,
+      "surface_area": 56029.44566934782
+    }
+  },
+  "movable_static_signal_props": 1419,
+  "checks": {
+    "unit_tests": 97,
+    "ruff_format": "pass",
+    "ruff_check": "pass",
+    "offline_build": "pass",
+    "validate": {
+      "binary": {
+        "parts": 55,
+        "rooms": 55288,
+        "textures": 906,
+        "triangles": 1987857,
+        "vertices": 1227110
+      },
+      "building_route_overlaps": [],
+      "minimal": false,
+      "road_area": 4169119.66793496,
+      "route_m": 1527.3475638275881,
+      "spawn_clearance_m": 1.5,
+      "status": "pass",
+      "triangulated_area": null
+    }
+  },
+  "stockholm_visual": {
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-road-surfaces/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=-751.5392189930312,19.810018920898436,-728.0560911954227,-103.90978220071223",
+      "--parked",
+      "--no-hud",
+      "--cam=-744.4,48,-729.4,-104,-65",
+      "--frames",
+      "30",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-road-surfaces/mm2-sthlm/evidence/road-surfaces/stockholm-road-surfaces.png"
+    ],
+    "log": "stockholm-road-surfaces.log",
+    "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-road-surfaces/mm2-sthlm/evidence/road-surfaces/stockholm-road-surfaces.png bytes=5754741 aud=0h/0v/0s/0l/0a",
+    "inspection": "Actual normal game import with vehicle physics parked. Aggregate asphalt, lane divider, zebra and stop line align with roadway. Prior fan/strip blue edge gaps are no longer visible at the inspected camera. Signals stand on verges; former crossing-road pole is removed."
+  },
+  "stockholm_vehicle": {
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-road-surfaces/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=-751.5392189930312,19.810018920898436,-728.0560911954227,-103.90978220071223",
+      "--headless",
+      "--frames",
+      "240"
+    ],
+    "log": "stockholm-drive-final.log",
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=240 ticks=480 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=15.3m/s travel=15.1m sim=4.00s resets=0 controls=240t/0b/0s finite=true moved=15m wheels=4/4 final=(-737,19.2,-724) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3237d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "limits": "15.1m/4s straight approach, not a complete junction crossing or city driving tour."
+  },
+  "synthetic_native_visual": {
+    "file": "native-crossroads-asphalt.png",
+    "log": "native-crossroads-asphalt.log",
+    "limits": "Synthetic flat crossroads proves native UV orientation only; not Stockholm geographic evidence."
+  },
+  "art": {
+    "asset": "assets/materials/roads/asphalt-original.png",
+    "provenance": "assets/materials/roads/provenance.json",
+    "generator": "Original built-in image_gen output, persisted offline; deterministic Pillow paint overlays."
+  },
+  "files": {
+    "stockholm-road-surfaces.png": "eb995dbbc0fdd50b9ed958f6573f344bbad9bfedd27f7dfaa804fc4682484989",
+    "stockholm-road-surfaces.log": "cc6b2c2d5340b9ee010bd4705915c15854d71a3dd41b4731b5d466a938afa46b",
+    "stockholm-drive-final.log": "2f5b5d4cac90fe69a61f1025089dcfb6587ed9e5b9ccb56b218a39c666508e0b",
+    "native-crossroads-asphalt.png": "032e0db1b9e27136e3066ecbdec53cee6a0cc051102d1f81c1218d70c1925703",
+    "native-crossroads-asphalt.log": "960b83ad91f8e9bf6d3f3e35e02b406a9ee802038222637ede5e69968abf48cd",
+    "unittest.log": "cf7736d56157c7fec0e8660e0de3fad73a2923ac8d1132b5f7e0ce0b575abf1e",
+    "validation.log": "6227c5776e20dbc35672280dbe28ed3090813675e2bed9ab68d79a276cdc51a7",
+    "build.log": "1e55aac68bd67182a87b58896074a2756acdb45259436e98de20825201bf8c5f"
+  }
+}

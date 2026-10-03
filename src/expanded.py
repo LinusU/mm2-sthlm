@@ -19,8 +19,9 @@ INCLUDED = {
     "Kastellholmen": (18.088, 59.322),
     "Långholmen": (18.029, 59.321),
     "Reimersholme": (18.024, 59.318),
-    "Helgeandsholmen": (18.071, 59.327),
-    "Beckholmen": (18.096, 59.324),
+    "Helgeandsholmen": (18.0686, 59.3284),
+    "Beckholmen": (18.100005, 59.320760),
+    "Strömsborg": (18.063056, 59.327113),
 }
 EXCLUDED = {
     "Lilla Essingen": (17.997, 59.323),
@@ -62,6 +63,55 @@ BLOCKED = {
     "Skanstullsbron",
     "Johanneshovsbron",
 }
+
+
+def internal_bridge_ways(ways, nodes, cfg, playable_mask):
+    """Retain sourced internal motor bridges, including unnamed viaducts.
+
+    A name whitelist misses split carriageways and trunk bridges. Only complete
+    centreline geometry within the approved mask is accepted; explicitly blocked
+    outward connections remain blocked even if the drawn mask covers a portion.
+    Underground roads are a separate export problem and are not raised decks.
+    """
+    motor_classes = {
+        "motorway",
+        "motorway_link",
+        "trunk",
+        "trunk_link",
+        "primary",
+        "primary_link",
+        "secondary",
+        "secondary_link",
+        "tertiary",
+        "tertiary_link",
+        "unclassified",
+        "residential",
+        "service",
+        "living_street",
+    }
+    mask = playable_mask.buffer(1)
+    allowed = []
+    for wid, way in sorted(ways.items()):
+        tags = way.get("tags", {})
+        if (
+            tags.get("bridge") in (None, "no")
+            or tags.get("tunnel") not in (None, "no")
+            or tags.get("highway") not in motor_classes
+            or tags.get("name") in BLOCKED
+            or tags.get("motor_vehicle") == "no"
+            or len(way["nodes"]) < 2
+            or any(n not in nodes for n in way["nodes"])
+        ):
+            continue
+        line = LineString(
+            [
+                sthlm.project(nodes[n]["lon"], nodes[n]["lat"], cfg["origin"])
+                for n in way["nodes"]
+            ]
+        )
+        if mask.covers(line):
+            allowed.append(wid)
+    return allowed
 
 
 def coast_water(source, cfg):
@@ -240,24 +290,16 @@ def normalized(source, cfg):
         if selected.distance(point) < 20:
             raise ValueError(f"excluded land leaked: {name}")
     playable_mask = target.difference(land.difference(selected))
-    allowed = []
-    for w in ways.values():
-        tags = w.get("tags", {})
-        name = tags.get("name", "")
-        if tags.get("bridge") not in (None, "no") and name in BRIDGES:
-            line = LineString(
-                [
-                    sthlm.project(nodes[n]["lon"], nodes[n]["lat"], cfg["origin"])
-                    for n in w["nodes"]
-                ]
-            )
-            if playable_mask.buffer(1).covers(line):
-                allowed.append(w["id"])
+    allowed = internal_bridge_ways(ways, nodes, cfg, playable_mask)
     settings = {
         **cfg,
         "report_bad_buildings": True,
         "allowed_bridge_ways": allowed,
         "road_classes": [
+            "motorway",
+            "motorway_link",
+            "trunk",
+            "trunk_link",
             "primary",
             "primary_link",
             "secondary",

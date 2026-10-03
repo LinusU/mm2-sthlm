@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "asset": "asphalt-original.png",
+  "origin": "Original built-in image_gen generation",
+  "generated_utc_date": "2026-10-03",
+  "source_file": "exec-32fb90c0-61a5-4db4-b3d3-2d158593e4e0.png",
+  "prompt": "Use case: stylized-concept. Asset type: original seamless asphalt albedo tile for a Stockholm street-driving game with a coherent late-1990s/early-2000s PC racing game art direction. Generate one square, edge-to-edge, orthographic top-down asphalt surface texture, with no perspective or lighting baked in. Weathered Swedish urban asphalt: neutral cool dark-mid grey, compact fine aggregate and tiny pale stone flecks, restrained broad irregular wear and faint patch tones, subtle old porous tarmac. Readable rich material variation at street level, understated at distance, not a photograph of a road scene. Seamless periodic tile boundaries with equal luminance on all four edges. No lane paint, no road markings, no tyre tracks, no potholes, no major long cracks, no curbs, no sidewalk, no objects, no letters, no logos or watermark. Keep contrast controlled; mean neutral asphalt brightness about RGB 58/61/64, maximum broad patches below RGB90. The raster is an original art source for the project; deterministic offline square crops/resizing and original code-authored lane/zebra/stop-line paint overlays will be applied afterward.",
+  "processing": "Source PNG preserved byte-for-byte. Generator resizes to 512x512 using Pillow Lanczos, then applies original deterministic paint masks. No runtime network, imagegen, or external content dependency.",
+  "external_images": [],
+  "sha256": "77f10c81b1608befe7c856a2f05e9e78f59267ddabe9ed243078776955f9c7ff"
+}

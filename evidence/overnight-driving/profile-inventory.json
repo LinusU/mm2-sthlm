@@ -1,0 +1,1897 @@
+{
+  "road_count": 7739,
+  "ordinary_abs_displacement_percentiles_m": {
+    "p50": 0.08067573135409933,
+    "p90": 0.39030002067009617,
+    "p95": 0.5771064592173646,
+    "p99": 1.3054043424688513,
+    "max": 13.971275632069414
+  },
+  "representative_hills": {
+    "Bastugatan": {
+      "raw_terrain_range_m": [
+        8.017766947224256,
+        42.4332322275365
+      ],
+      "smoothed_profile_range_m": [
+        9.057426545737014,
+        41.759140090303276
+      ]
+    },
+    "Br\u00e4nnkyrkagatan": {
+      "raw_terrain_range_m": [
+        9.57212454910439,
+        33.33073434690169
+      ],
+      "smoothed_profile_range_m": [
+        11.876966377740821,
+        33.33073434690169
+      ]
+    },
+    "Fleminggatan": {
+      "raw_terrain_range_m": [
+        5.7483830964941465,
+        23.307973113619227
+      ],
+      "smoothed_profile_range_m": [
+        5.983301181617109,
+        23.294610368867648
+      ]
+    },
+    "Hantverkargatan": {
+      "raw_terrain_range_m": [
+        1.5865137075822626,
+        28.66845224451866
+      ],
+      "smoothed_profile_range_m": [
+        3.3330609105289044,
+        28.382565356917336
+      ]
+    },
+    "Sankt Eriksgatan": {
+      "raw_terrain_range_m": [
+        7.188258632293843,
+        26.246610098205508
+      ],
+      "smoothed_profile_range_m": [
+        7.331112807659179,
+        26.164715335308635
+      ]
+    },
+    "Erstagatan": {
+      "raw_terrain_range_m": [
+        22.270981125306083,
+        31.595400160902496
+      ],
+      "smoothed_profile_range_m": [
+        22.304467797432718,
+        31.782012210645
+      ]
+    },
+    "Hornsgatan": {
+      "raw_terrain_range_m": [
+        11.048655676011885,
+        29.071363684007967
+      ],
+      "smoothed_profile_range_m": [
+        11.253058617544433,
+        28.72234584552174
+      ]
+    }
+  },
+  "ordinary_grade_above_16_01_percent": 5,
+  "ordinary_curvature_above_0_0031_per_m": 203,
+  "max_shared_source_node_difference_m": 0.0,
+  "worst_grade": [
+    {
+      "source_way": 1127370512,
+      "name": "S\u00f6dra Klarabergskopplet",
+      "max_grade": 0.8994419682823932,
+      "max_vertical_curvature_per_m": 0.3714186781983703,
+      "height_range_m": [
+        10.355709768932456,
+        13.545479559826909
+      ],
+      "sampled_surface_max_grade": 0.8994419682823932,
+      "sampled_surface_max_vertical_curvature_per_m": 0.3714186781983703,
+      "max_same_segment_quad_warp_m": 0.0840689575717235,
+      "max_crossfall": 4.9343245538895844e-15,
+      "max_crossfall_change_per_m": 2.0373652111298633e-15
+    },
+    {
+      "source_way": 664853131,
+      "name": "Norra L\u00e4nken",
+      "max_grade": 0.32859417146668796,
+      "max_vertical_curvature_per_m": 0.049651514684520455,
+      "height_range_m": [
+        21.98879109125679,
+        25.739967458600134
+      ],
+      "sampled_surface_max_grade": 0.32859417146668796,
+      "sampled_surface_max_vertical_curvature_per_m": 0.049651514684520455,
+      "max_same_segment_quad_warp_m": 0.07050139747668638,
+      "max_crossfall": 3.947459643111668e-15,
+      "max_crossfall_change_per_m": 8.298914924621983e-16
+    },
+    {
+      "source_way": 97785688,
+      "name": "Tomtebodav\u00e4gen",
+      "max_grade": 0.27823569266035986,
+      "max_vertical_curvature_per_m": 2.2928670293291585e-15,
+      "height_range_m": [
+        17.125798523349648,
+        20.493892576697682
+      ],
+      "sampled_surface_max_grade": 0.27823569266035986,
+      "sampled_surface_max_vertical_curvature_per_m": 2.2928670293291585e-15,
+      "max_same_segment_quad_warp_m": 1.4210854715202004e-14,
+      "max_crossfall": 3.552713678800501e-15,
+      "max_crossfall_change_per_m": 5.217546306740129e-16
+    },
+    {
+      "source_way": 31097195,
+      "name": "Fredh\u00e4llsp\u00e5farten",
+      "max_grade": 0.23536100133527588,
+      "max_vertical_curvature_per_m": 1.9234514978593426e-16,
+      "height_range_m": [
+        11.750381489493686,
+        15.418364010989949
+      ],
+      "sampled_surface_max_grade": 0.23536100133527588,
+      "sampled_surface_max_vertical_curvature_per_m": 1.9234514978593426e-16,
+      "max_same_segment_quad_warp_m": 3.552713678800501e-15,
+      "max_crossfall": 3.552713678800501e-15,
+      "max_crossfall_change_per_m": 1.2664701220473037e-16
+    },
+    {
+      "source_way": 4647975,
+      "name": "Mariebergsbron",
+      "max_grade": 0.2275808594817543,
+      "max_vertical_curvature_per_m": 5.902757966983042e-16,
+      "height_range_m": [
+        0.9,
+        15.581996190568635
+      ],
+      "sampled_surface_max_grade": 0.2275808594817543,
+      "sampled_surface_max_vertical_curvature_per_m": 5.902757966983042e-16,
+      "max_same_segment_quad_warp_m": 2.1316282072803006e-14,
+      "max_crossfall": 4.736951571734001e-15,
+      "max_crossfall_change_per_m": 2.302209456510392e-16
+    },
+    {
+      "source_way": 658854113,
+      "name": "Norra l\u00e4nken",
+      "max_grade": 0.2262575515882445,
+      "max_vertical_curvature_per_m": 0.011953378944196083,
+      "height_range_m": [
+        9.943859419278256,
+        12.757332948309145
+      ],
+      "sampled_surface_max_grade": 0.2262575515882445,
+      "sampled_surface_max_vertical_curvature_per_m": 0.011953378944196083,
+      "max_same_segment_quad_warp_m": 0.15976576946919785,
+      "max_crossfall": 3.157967714489334e-15,
+      "max_crossfall_change_per_m": 7.411796125385147e-16
+    },
+    {
+      "source_way": 40589981,
+      "name": "L\u00f6gebodav\u00e4gen",
+      "max_grade": 0.21691562354235086,
+      "max_vertical_curvature_per_m": 0.02010114854570354,
+      "height_range_m": [
+        13.605910236155989,
+        16.283234110911415
+      ],
+      "sampled_surface_max_grade": 0.21691562354235086,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02010114854570354,
+      "max_same_segment_quad_warp_m": 0.02865402746264145,
+      "max_crossfall": 6.5133084111342514e-15,
+      "max_crossfall_change_per_m": 4.795815067947068e-16
+    },
+    {
+      "source_way": 31105185,
+      "name": "Fredh\u00e4llsavfarten",
+      "max_grade": 0.19981271946816986,
+      "max_vertical_curvature_per_m": 0.018496348747896192,
+      "height_range_m": [
+        16.08046999709879,
+        22.514643442153023
+      ],
+      "sampled_surface_max_grade": 0.19981271946816986,
+      "sampled_surface_max_vertical_curvature_per_m": 0.018496348747896192,
+      "max_same_segment_quad_warp_m": 0.1565014681773853,
+      "max_crossfall": 1.578983857244667e-15,
+      "max_crossfall_change_per_m": 4.773946025769675e-16
+    },
+    {
+      "source_way": 199929057,
+      "name": "Norra l\u00e4nken",
+      "max_grade": 0.1967614933032824,
+      "max_vertical_curvature_per_m": 0.024700224015903632,
+      "height_range_m": [
+        10.560147464416287,
+        13.163923239983244
+      ],
+      "sampled_surface_max_grade": 0.1967614933032824,
+      "sampled_surface_max_vertical_curvature_per_m": 0.024700224015903632,
+      "max_same_segment_quad_warp_m": 0.059126965928314235,
+      "max_crossfall": 5.329070518200751e-15,
+      "max_crossfall_change_per_m": 4.597482865023692e-16
+    },
+    {
+      "source_way": 34387766,
+      "name": "Blekholmstorget",
+      "max_grade": 0.19605021088843036,
+      "max_vertical_curvature_per_m": 0.062516311275862,
+      "height_range_m": [
+        12.821034616975236,
+        13.475890553985955
+      ],
+      "sampled_surface_max_grade": 0.19605021088843036,
+      "sampled_surface_max_vertical_curvature_per_m": 0.062516311275862,
+      "max_same_segment_quad_warp_m": 0.3269679705396964,
+      "max_crossfall": 1.1842378929335002e-15,
+      "max_crossfall_change_per_m": 4.488022854959152e-16
+    },
+    {
+      "source_way": 269310433,
+      "name": "",
+      "max_grade": 0.1860757205374651,
+      "max_vertical_curvature_per_m": 0.018466282599421766,
+      "height_range_m": [
+        12.134844642089961,
+        20.308843874826334
+      ],
+      "sampled_surface_max_grade": 0.1860757205374651,
+      "sampled_surface_max_vertical_curvature_per_m": 0.018466282599421766,
+      "max_same_segment_quad_warp_m": 0.2204283476565152,
+      "max_crossfall": 2.3684757858670005e-15,
+      "max_crossfall_change_per_m": 5.85801047722317e-16
+    },
+    {
+      "source_way": 27343707,
+      "name": "S\u00f6dra Klarabergskopplet",
+      "max_grade": 0.18575028443914185,
+      "max_vertical_curvature_per_m": 0.02260330922827488,
+      "height_range_m": [
+        9.222776035573743,
+        13.322982671224672
+      ],
+      "sampled_surface_max_grade": 0.18575028443914185,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02260330922827488,
+      "max_same_segment_quad_warp_m": 0.15129571484783355,
+      "max_crossfall": 2.1711028037114174e-15,
+      "max_crossfall_change_per_m": 2.837537859019124e-16
+    },
+    {
+      "source_way": 30678772,
+      "name": "Tryckerigatan",
+      "max_grade": 0.17653670103471153,
+      "max_vertical_curvature_per_m": 0.0036860796366437803,
+      "height_range_m": [
+        4.572351880717613,
+        13.441325048256068
+      ],
+      "sampled_surface_max_grade": 0.17653670103471153,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0036860796366437803,
+      "max_same_segment_quad_warp_m": 0.32974251730564497,
+      "max_crossfall": 3.552713678800501e-15,
+      "max_crossfall_change_per_m": 9.36435464684666e-16
+    },
+    {
+      "source_way": 120346762,
+      "name": "Riddarholmsbron",
+      "max_grade": 0.1758244395836409,
+      "max_vertical_curvature_per_m": 0.001925965530249329,
+      "height_range_m": [
+        15.74504695386018,
+        17.694212111346737
+      ],
+      "sampled_surface_max_grade": 0.1758244395836409,
+      "sampled_surface_max_vertical_curvature_per_m": 0.001925965530249329,
+      "max_same_segment_quad_warp_m": 0.0,
+      "max_crossfall": 2.3684757858670005e-15,
+      "max_crossfall_change_per_m": 6.898416071824519e-17
+    },
+    {
+      "source_way": 4491179,
+      "name": "Kungsbron",
+      "max_grade": 0.17555437080588338,
+      "max_vertical_curvature_per_m": 0.02178944238924271,
+      "height_range_m": [
+        10.37735751505745,
+        12.029514283714352
+      ],
+      "sampled_surface_max_grade": 0.17555437080588338,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02178944238924271,
+      "max_same_segment_quad_warp_m": 0.0009655987010841471,
+      "max_crossfall": 7.894919286223335e-16,
+      "max_crossfall_change_per_m": 9.797885267658258e-17
+    },
+    {
+      "source_way": 41179347,
+      "name": "S\u00f6dermalmsavfarten",
+      "max_grade": 0.16940817832325408,
+      "max_vertical_curvature_per_m": 0.026077855206184795,
+      "height_range_m": [
+        23.24184209430788,
+        24.43033036221754
+      ],
+      "sampled_surface_max_grade": 0.16940817832325408,
+      "sampled_surface_max_vertical_curvature_per_m": 0.026077855206184795,
+      "max_same_segment_quad_warp_m": 0.36202198817720443,
+      "max_crossfall": 1.973729821555834e-15,
+      "max_crossfall_change_per_m": 5.455439689718489e-16
+    },
+    {
+      "source_way": 311472910,
+      "name": "",
+      "max_grade": 0.16593153776600475,
+      "max_vertical_curvature_per_m": 0.016094912090003684,
+      "height_range_m": [
+        9.382501362473239,
+        18.667116894132466
+      ],
+      "sampled_surface_max_grade": 0.165931537766005,
+      "sampled_surface_max_vertical_curvature_per_m": 0.016094912090003684,
+      "max_same_segment_quad_warp_m": 0.0794662163246258,
+      "max_crossfall": 4.144832625267251e-15,
+      "max_crossfall_change_per_m": 5.181696570636704e-16
+    },
+    {
+      "source_way": 97785682,
+      "name": "",
+      "max_grade": 0.16298919414296112,
+      "max_vertical_curvature_per_m": 0.013492575405120322,
+      "height_range_m": [
+        11.915756537293996,
+        20.36498591249349
+      ],
+      "sampled_surface_max_grade": 0.16298919414296112,
+      "sampled_surface_max_vertical_curvature_per_m": 0.013492575405120322,
+      "max_same_segment_quad_warp_m": 0.22188801459097007,
+      "max_crossfall": 0.013861653582134537,
+      "max_crossfall_change_per_m": 0.007183375305295723
+    },
+    {
+      "source_way": 1279721807,
+      "name": "L\u00e4stmakargatan",
+      "max_grade": 0.16078935808886125,
+      "max_vertical_curvature_per_m": 0.0035518635747043338,
+      "height_range_m": [
+        5.492177280931798,
+        7.1339969126496685
+      ],
+      "sampled_surface_max_grade": 0.16078935808886125,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0035518635747043338,
+      "max_same_segment_quad_warp_m": 0.0,
+      "max_crossfall": 1.3322676295501878e-15,
+      "max_crossfall_change_per_m": 8.464888980276688e-17
+    },
+    {
+      "source_way": 225954336,
+      "name": "",
+      "max_grade": 0.16062094025568252,
+      "max_vertical_curvature_per_m": 0.00444743667748191,
+      "height_range_m": [
+        2.723302115200431,
+        10.679152023903049
+      ],
+      "sampled_surface_max_grade": 0.16062094025568252,
+      "sampled_surface_max_vertical_curvature_per_m": 0.00444743667748191,
+      "max_same_segment_quad_warp_m": 0.7402652974072339,
+      "max_crossfall": 5.131697536045168e-15,
+      "max_crossfall_change_per_m": 2.4692683498619035e-15
+    }
+  ],
+  "worst_curvature": [
+    {
+      "source_way": 1127370512,
+      "name": "S\u00f6dra Klarabergskopplet",
+      "max_grade": 0.8994419682823932,
+      "max_vertical_curvature_per_m": 0.3714186781983703,
+      "height_range_m": [
+        10.355709768932456,
+        13.545479559826909
+      ],
+      "sampled_surface_max_grade": 0.8994419682823932,
+      "sampled_surface_max_vertical_curvature_per_m": 0.3714186781983703,
+      "max_same_segment_quad_warp_m": 0.0840689575717235,
+      "max_crossfall": 4.9343245538895844e-15,
+      "max_crossfall_change_per_m": 2.0373652111298633e-15
+    },
+    {
+      "source_way": 34387766,
+      "name": "Blekholmstorget",
+      "max_grade": 0.19605021088843036,
+      "max_vertical_curvature_per_m": 0.062516311275862,
+      "height_range_m": [
+        12.821034616975236,
+        13.475890553985955
+      ],
+      "sampled_surface_max_grade": 0.19605021088843036,
+      "sampled_surface_max_vertical_curvature_per_m": 0.062516311275862,
+      "max_same_segment_quad_warp_m": 0.3269679705396964,
+      "max_crossfall": 1.1842378929335002e-15,
+      "max_crossfall_change_per_m": 4.488022854959152e-16
+    },
+    {
+      "source_way": 664853131,
+      "name": "Norra L\u00e4nken",
+      "max_grade": 0.32859417146668796,
+      "max_vertical_curvature_per_m": 0.049651514684520455,
+      "height_range_m": [
+        21.98879109125679,
+        25.739967458600134
+      ],
+      "sampled_surface_max_grade": 0.32859417146668796,
+      "sampled_surface_max_vertical_curvature_per_m": 0.049651514684520455,
+      "max_same_segment_quad_warp_m": 0.07050139747668638,
+      "max_crossfall": 3.947459643111668e-15,
+      "max_crossfall_change_per_m": 8.298914924621983e-16
+    },
+    {
+      "source_way": 1126693172,
+      "name": "Munkbroleden",
+      "max_grade": 0.12454869099043739,
+      "max_vertical_curvature_per_m": 0.03321639263195413,
+      "height_range_m": [
+        2.0461422140855245,
+        14.627772514170758
+      ],
+      "sampled_surface_max_grade": 0.12454869099043739,
+      "sampled_surface_max_vertical_curvature_per_m": 0.03321639263195413,
+      "max_same_segment_quad_warp_m": 0.26052576314813436,
+      "max_crossfall": 1.8750433304780422e-15,
+      "max_crossfall_change_per_m": 6.671228547003977e-16
+    },
+    {
+      "source_way": 8048909,
+      "name": "Birger Jarls Torg",
+      "max_grade": 0.13350884533007717,
+      "max_vertical_curvature_per_m": 0.030942537272805014,
+      "height_range_m": [
+        10.375961801159109,
+        18.541733611778852
+      ],
+      "sampled_surface_max_grade": 0.13350884533007717,
+      "sampled_surface_max_vertical_curvature_per_m": 0.030942537272805014,
+      "max_same_segment_quad_warp_m": 0.2504644973546224,
+      "max_crossfall": 0.03770622014177051,
+      "max_crossfall_change_per_m": 0.015678246767277172
+    },
+    {
+      "source_way": 252124526,
+      "name": "Riddarhustorget",
+      "max_grade": 0.07975950646419283,
+      "max_vertical_curvature_per_m": 0.03046256107342002,
+      "height_range_m": [
+        7.476315361102731,
+        10.032067514678037
+      ],
+      "sampled_surface_max_grade": 0.07975950646419283,
+      "sampled_surface_max_vertical_curvature_per_m": 0.03046256107342002,
+      "max_same_segment_quad_warp_m": 0.07063542077288254,
+      "max_crossfall": 7.894919286223335e-16,
+      "max_crossfall_change_per_m": 2.6624353759093295e-16
+    },
+    {
+      "source_way": 31096668,
+      "name": "Lindhagensplan",
+      "max_grade": 0.09679429181195441,
+      "max_vertical_curvature_per_m": 0.029087700510846342,
+      "height_range_m": [
+        10.502616991179803,
+        11.592106724933636
+      ],
+      "sampled_surface_max_grade": 0.09679429181195441,
+      "sampled_surface_max_vertical_curvature_per_m": 0.029087700510846342,
+      "max_same_segment_quad_warp_m": 0.06375087921800571,
+      "max_crossfall": 1.1842378929335002e-15,
+      "max_crossfall_change_per_m": 2.7957334446371935e-16
+    },
+    {
+      "source_way": 35477774,
+      "name": "Centralbron",
+      "max_grade": 0.15983851657653553,
+      "max_vertical_curvature_per_m": 0.027568279439563366,
+      "height_range_m": [
+        15.953445925472757,
+        18.89225194025171
+      ],
+      "sampled_surface_max_grade": 0.15983851657653553,
+      "sampled_surface_max_vertical_curvature_per_m": 0.027568279439563366,
+      "max_same_segment_quad_warp_m": 0.09332656377960902,
+      "max_crossfall": 3.9474596431116675e-16,
+      "max_crossfall_change_per_m": 7.596842739080727e-17
+    },
+    {
+      "source_way": 1354772071,
+      "name": "Munkbron",
+      "max_grade": 0.08592713668375294,
+      "max_vertical_curvature_per_m": 0.027359001492220404,
+      "height_range_m": [
+        5.7974338120354645,
+        6.122802348372943
+      ],
+      "sampled_surface_max_grade": 0.08592713668375294,
+      "sampled_surface_max_vertical_curvature_per_m": 0.027359001492220404,
+      "max_same_segment_quad_warp_m": 1.7763568394002505e-15,
+      "max_crossfall": 2.9605947323337506e-16,
+      "max_crossfall_change_per_m": 7.818685577101182e-17
+    },
+    {
+      "source_way": 41179347,
+      "name": "S\u00f6dermalmsavfarten",
+      "max_grade": 0.16940817832325408,
+      "max_vertical_curvature_per_m": 0.026077855206184795,
+      "height_range_m": [
+        23.24184209430788,
+        24.43033036221754
+      ],
+      "sampled_surface_max_grade": 0.16940817832325408,
+      "sampled_surface_max_vertical_curvature_per_m": 0.026077855206184795,
+      "max_same_segment_quad_warp_m": 0.36202198817720443,
+      "max_crossfall": 1.973729821555834e-15,
+      "max_crossfall_change_per_m": 5.455439689718489e-16
+    },
+    {
+      "source_way": 1354772061,
+      "name": "Riddarhustorget",
+      "max_grade": 0.0759514393593767,
+      "max_vertical_curvature_per_m": 0.025002908107215744,
+      "height_range_m": [
+        14.401942037217136,
+        15.315277086675664
+      ],
+      "sampled_surface_max_grade": 0.0759514393593767,
+      "sampled_surface_max_vertical_curvature_per_m": 0.025002908107215744,
+      "max_same_segment_quad_warp_m": 0.09396798050081046,
+      "max_crossfall": 7.894919286223335e-16,
+      "max_crossfall_change_per_m": 3.4631272702035877e-16
+    },
+    {
+      "source_way": 199929057,
+      "name": "Norra l\u00e4nken",
+      "max_grade": 0.1967614933032824,
+      "max_vertical_curvature_per_m": 0.024700224015903632,
+      "height_range_m": [
+        10.560147464416287,
+        13.163923239983244
+      ],
+      "sampled_surface_max_grade": 0.1967614933032824,
+      "sampled_surface_max_vertical_curvature_per_m": 0.024700224015903632,
+      "max_same_segment_quad_warp_m": 0.059126965928314235,
+      "max_crossfall": 5.329070518200751e-15,
+      "max_crossfall_change_per_m": 4.597482865023692e-16
+    },
+    {
+      "source_way": 34344431,
+      "name": "Klarabergsviadukten",
+      "max_grade": 0.08145480550549235,
+      "max_vertical_curvature_per_m": 0.02309731548507312,
+      "height_range_m": [
+        11.3463258458929,
+        12.210905096764456
+      ],
+      "sampled_surface_max_grade": 0.08145480550549235,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02309731548507312,
+      "max_same_segment_quad_warp_m": 0.00016537379305958666,
+      "max_crossfall": 1.9737298215558337e-16,
+      "max_crossfall_change_per_m": 3.854984181397385e-17
+    },
+    {
+      "source_way": 27343707,
+      "name": "S\u00f6dra Klarabergskopplet",
+      "max_grade": 0.18575028443914185,
+      "max_vertical_curvature_per_m": 0.02260330922827488,
+      "height_range_m": [
+        9.222776035573743,
+        13.322982671224672
+      ],
+      "sampled_surface_max_grade": 0.18575028443914185,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02260330922827488,
+      "max_same_segment_quad_warp_m": 0.15129571484783355,
+      "max_crossfall": 2.1711028037114174e-15,
+      "max_crossfall_change_per_m": 2.837537859019124e-16
+    },
+    {
+      "source_way": 4491179,
+      "name": "Kungsbron",
+      "max_grade": 0.17555437080588338,
+      "max_vertical_curvature_per_m": 0.02178944238924271,
+      "height_range_m": [
+        10.37735751505745,
+        12.029514283714352
+      ],
+      "sampled_surface_max_grade": 0.17555437080588338,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02178944238924271,
+      "max_same_segment_quad_warp_m": 0.0009655987010841471,
+      "max_crossfall": 7.894919286223335e-16,
+      "max_crossfall_change_per_m": 9.797885267658258e-17
+    },
+    {
+      "source_way": 31097197,
+      "name": "Fredh\u00e4llsp\u00e5farten",
+      "max_grade": 0.12851161206756906,
+      "max_vertical_curvature_per_m": 0.020472491242955495,
+      "height_range_m": [
+        13.401760545733897,
+        17.103394379606037
+      ],
+      "sampled_surface_max_grade": 0.12851161206756906,
+      "sampled_surface_max_vertical_curvature_per_m": 0.020472491242955495,
+      "max_same_segment_quad_warp_m": 0.11480452414788367,
+      "max_crossfall": 1.973729821555834e-15,
+      "max_crossfall_change_per_m": 3.1324483534655903e-16
+    },
+    {
+      "source_way": 40589981,
+      "name": "L\u00f6gebodav\u00e4gen",
+      "max_grade": 0.21691562354235086,
+      "max_vertical_curvature_per_m": 0.02010114854570354,
+      "height_range_m": [
+        13.605910236155989,
+        16.283234110911415
+      ],
+      "sampled_surface_max_grade": 0.21691562354235086,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02010114854570354,
+      "max_same_segment_quad_warp_m": 0.02865402746264145,
+      "max_crossfall": 6.5133084111342514e-15,
+      "max_crossfall_change_per_m": 4.795815067947068e-16
+    },
+    {
+      "source_way": 23089363,
+      "name": "Malmskillnadsgatan",
+      "max_grade": 0.08232365275938817,
+      "max_vertical_curvature_per_m": 0.01993209041410676,
+      "height_range_m": [
+        22.69030254276219,
+        23.886590428556207
+      ],
+      "sampled_surface_max_grade": 0.08232365275938817,
+      "sampled_surface_max_vertical_curvature_per_m": 0.01993209041410676,
+      "max_same_segment_quad_warp_m": 0.009239042987559287,
+      "max_crossfall": 1.1842378929335002e-15,
+      "max_crossfall_change_per_m": 1.6179918801801287e-16
+    },
+    {
+      "source_way": 1545096524,
+      "name": "Krukmakargatan",
+      "max_grade": 0.0316989110293812,
+      "max_vertical_curvature_per_m": 0.0198259681578639,
+      "height_range_m": [
+        23.864991481630558,
+        24.292842755744502
+      ],
+      "sampled_surface_max_grade": 0.0316989110293812,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0198259681578639,
+      "max_same_segment_quad_warp_m": 0.087422459977752,
+      "max_crossfall": 0.013342292527206152,
+      "max_crossfall_change_per_m": 0.009715521326220151
+    },
+    {
+      "source_way": 19876367,
+      "name": "",
+      "max_grade": 0.13382547033933714,
+      "max_vertical_curvature_per_m": 0.01957398659510921,
+      "height_range_m": [
+        14.272881961871555,
+        19.470783767426283
+      ],
+      "sampled_surface_max_grade": 0.13382547033933714,
+      "sampled_surface_max_vertical_curvature_per_m": 0.01957398659510921,
+      "max_same_segment_quad_warp_m": 0.07263806110060855,
+      "max_crossfall": 3.157967714489334e-15,
+      "max_crossfall_change_per_m": 4.320713948498268e-16
+    }
+  ],
+  "worst_sampled_grade": [
+    {
+      "source_way": 1127370512,
+      "name": "S\u00f6dra Klarabergskopplet",
+      "max_grade": 0.8994419682823932,
+      "max_vertical_curvature_per_m": 0.3714186781983703,
+      "height_range_m": [
+        10.355709768932456,
+        13.545479559826909
+      ],
+      "sampled_surface_max_grade": 0.8994419682823932,
+      "sampled_surface_max_vertical_curvature_per_m": 0.3714186781983703,
+      "max_same_segment_quad_warp_m": 0.0840689575717235,
+      "max_crossfall": 4.9343245538895844e-15,
+      "max_crossfall_change_per_m": 2.0373652111298633e-15
+    },
+    {
+      "source_way": 664853131,
+      "name": "Norra L\u00e4nken",
+      "max_grade": 0.32859417146668796,
+      "max_vertical_curvature_per_m": 0.049651514684520455,
+      "height_range_m": [
+        21.98879109125679,
+        25.739967458600134
+      ],
+      "sampled_surface_max_grade": 0.32859417146668796,
+      "sampled_surface_max_vertical_curvature_per_m": 0.049651514684520455,
+      "max_same_segment_quad_warp_m": 0.07050139747668638,
+      "max_crossfall": 3.947459643111668e-15,
+      "max_crossfall_change_per_m": 8.298914924621983e-16
+    },
+    {
+      "source_way": 97785688,
+      "name": "Tomtebodav\u00e4gen",
+      "max_grade": 0.27823569266035986,
+      "max_vertical_curvature_per_m": 2.2928670293291585e-15,
+      "height_range_m": [
+        17.125798523349648,
+        20.493892576697682
+      ],
+      "sampled_surface_max_grade": 0.27823569266035986,
+      "sampled_surface_max_vertical_curvature_per_m": 2.2928670293291585e-15,
+      "max_same_segment_quad_warp_m": 1.4210854715202004e-14,
+      "max_crossfall": 3.552713678800501e-15,
+      "max_crossfall_change_per_m": 5.217546306740129e-16
+    },
+    {
+      "source_way": 31097195,
+      "name": "Fredh\u00e4llsp\u00e5farten",
+      "max_grade": 0.23536100133527588,
+      "max_vertical_curvature_per_m": 1.9234514978593426e-16,
+      "height_range_m": [
+        11.750381489493686,
+        15.418364010989949
+      ],
+      "sampled_surface_max_grade": 0.23536100133527588,
+      "sampled_surface_max_vertical_curvature_per_m": 1.9234514978593426e-16,
+      "max_same_segment_quad_warp_m": 3.552713678800501e-15,
+      "max_crossfall": 3.552713678800501e-15,
+      "max_crossfall_change_per_m": 1.2664701220473037e-16
+    },
+    {
+      "source_way": 4647975,
+      "name": "Mariebergsbron",
+      "max_grade": 0.2275808594817543,
+      "max_vertical_curvature_per_m": 5.902757966983042e-16,
+      "height_range_m": [
+        0.9,
+        15.581996190568635
+      ],
+      "sampled_surface_max_grade": 0.2275808594817543,
+      "sampled_surface_max_vertical_curvature_per_m": 5.902757966983042e-16,
+      "max_same_segment_quad_warp_m": 2.1316282072803006e-14,
+      "max_crossfall": 4.736951571734001e-15,
+      "max_crossfall_change_per_m": 2.302209456510392e-16
+    },
+    {
+      "source_way": 658854113,
+      "name": "Norra l\u00e4nken",
+      "max_grade": 0.2262575515882445,
+      "max_vertical_curvature_per_m": 0.011953378944196083,
+      "height_range_m": [
+        9.943859419278256,
+        12.757332948309145
+      ],
+      "sampled_surface_max_grade": 0.2262575515882445,
+      "sampled_surface_max_vertical_curvature_per_m": 0.011953378944196083,
+      "max_same_segment_quad_warp_m": 0.15976576946919785,
+      "max_crossfall": 3.157967714489334e-15,
+      "max_crossfall_change_per_m": 7.411796125385147e-16
+    },
+    {
+      "source_way": 40589981,
+      "name": "L\u00f6gebodav\u00e4gen",
+      "max_grade": 0.21691562354235086,
+      "max_vertical_curvature_per_m": 0.02010114854570354,
+      "height_range_m": [
+        13.605910236155989,
+        16.283234110911415
+      ],
+      "sampled_surface_max_grade": 0.21691562354235086,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02010114854570354,
+      "max_same_segment_quad_warp_m": 0.02865402746264145,
+      "max_crossfall": 6.5133084111342514e-15,
+      "max_crossfall_change_per_m": 4.795815067947068e-16
+    },
+    {
+      "source_way": 31105185,
+      "name": "Fredh\u00e4llsavfarten",
+      "max_grade": 0.19981271946816986,
+      "max_vertical_curvature_per_m": 0.018496348747896192,
+      "height_range_m": [
+        16.08046999709879,
+        22.514643442153023
+      ],
+      "sampled_surface_max_grade": 0.19981271946816986,
+      "sampled_surface_max_vertical_curvature_per_m": 0.018496348747896192,
+      "max_same_segment_quad_warp_m": 0.1565014681773853,
+      "max_crossfall": 1.578983857244667e-15,
+      "max_crossfall_change_per_m": 4.773946025769675e-16
+    },
+    {
+      "source_way": 199929057,
+      "name": "Norra l\u00e4nken",
+      "max_grade": 0.1967614933032824,
+      "max_vertical_curvature_per_m": 0.024700224015903632,
+      "height_range_m": [
+        10.560147464416287,
+        13.163923239983244
+      ],
+      "sampled_surface_max_grade": 0.1967614933032824,
+      "sampled_surface_max_vertical_curvature_per_m": 0.024700224015903632,
+      "max_same_segment_quad_warp_m": 0.059126965928314235,
+      "max_crossfall": 5.329070518200751e-15,
+      "max_crossfall_change_per_m": 4.597482865023692e-16
+    },
+    {
+      "source_way": 34387766,
+      "name": "Blekholmstorget",
+      "max_grade": 0.19605021088843036,
+      "max_vertical_curvature_per_m": 0.062516311275862,
+      "height_range_m": [
+        12.821034616975236,
+        13.475890553985955
+      ],
+      "sampled_surface_max_grade": 0.19605021088843036,
+      "sampled_surface_max_vertical_curvature_per_m": 0.062516311275862,
+      "max_same_segment_quad_warp_m": 0.3269679705396964,
+      "max_crossfall": 1.1842378929335002e-15,
+      "max_crossfall_change_per_m": 4.488022854959152e-16
+    },
+    {
+      "source_way": 269310433,
+      "name": "",
+      "max_grade": 0.1860757205374651,
+      "max_vertical_curvature_per_m": 0.018466282599421766,
+      "height_range_m": [
+        12.134844642089961,
+        20.308843874826334
+      ],
+      "sampled_surface_max_grade": 0.1860757205374651,
+      "sampled_surface_max_vertical_curvature_per_m": 0.018466282599421766,
+      "max_same_segment_quad_warp_m": 0.2204283476565152,
+      "max_crossfall": 2.3684757858670005e-15,
+      "max_crossfall_change_per_m": 5.85801047722317e-16
+    },
+    {
+      "source_way": 27343707,
+      "name": "S\u00f6dra Klarabergskopplet",
+      "max_grade": 0.18575028443914185,
+      "max_vertical_curvature_per_m": 0.02260330922827488,
+      "height_range_m": [
+        9.222776035573743,
+        13.322982671224672
+      ],
+      "sampled_surface_max_grade": 0.18575028443914185,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02260330922827488,
+      "max_same_segment_quad_warp_m": 0.15129571484783355,
+      "max_crossfall": 2.1711028037114174e-15,
+      "max_crossfall_change_per_m": 2.837537859019124e-16
+    },
+    {
+      "source_way": 30678772,
+      "name": "Tryckerigatan",
+      "max_grade": 0.17653670103471153,
+      "max_vertical_curvature_per_m": 0.0036860796366437803,
+      "height_range_m": [
+        4.572351880717613,
+        13.441325048256068
+      ],
+      "sampled_surface_max_grade": 0.17653670103471153,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0036860796366437803,
+      "max_same_segment_quad_warp_m": 0.32974251730564497,
+      "max_crossfall": 3.552713678800501e-15,
+      "max_crossfall_change_per_m": 9.36435464684666e-16
+    },
+    {
+      "source_way": 120346762,
+      "name": "Riddarholmsbron",
+      "max_grade": 0.1758244395836409,
+      "max_vertical_curvature_per_m": 0.001925965530249329,
+      "height_range_m": [
+        15.74504695386018,
+        17.694212111346737
+      ],
+      "sampled_surface_max_grade": 0.1758244395836409,
+      "sampled_surface_max_vertical_curvature_per_m": 0.001925965530249329,
+      "max_same_segment_quad_warp_m": 0.0,
+      "max_crossfall": 2.3684757858670005e-15,
+      "max_crossfall_change_per_m": 6.898416071824519e-17
+    },
+    {
+      "source_way": 4491179,
+      "name": "Kungsbron",
+      "max_grade": 0.17555437080588338,
+      "max_vertical_curvature_per_m": 0.02178944238924271,
+      "height_range_m": [
+        10.37735751505745,
+        12.029514283714352
+      ],
+      "sampled_surface_max_grade": 0.17555437080588338,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02178944238924271,
+      "max_same_segment_quad_warp_m": 0.0009655987010841471,
+      "max_crossfall": 7.894919286223335e-16,
+      "max_crossfall_change_per_m": 9.797885267658258e-17
+    },
+    {
+      "source_way": 41179347,
+      "name": "S\u00f6dermalmsavfarten",
+      "max_grade": 0.16940817832325408,
+      "max_vertical_curvature_per_m": 0.026077855206184795,
+      "height_range_m": [
+        23.24184209430788,
+        24.43033036221754
+      ],
+      "sampled_surface_max_grade": 0.16940817832325408,
+      "sampled_surface_max_vertical_curvature_per_m": 0.026077855206184795,
+      "max_same_segment_quad_warp_m": 0.36202198817720443,
+      "max_crossfall": 1.973729821555834e-15,
+      "max_crossfall_change_per_m": 5.455439689718489e-16
+    },
+    {
+      "source_way": 311472910,
+      "name": "",
+      "max_grade": 0.16593153776600475,
+      "max_vertical_curvature_per_m": 0.016094912090003684,
+      "height_range_m": [
+        9.382501362473239,
+        18.667116894132466
+      ],
+      "sampled_surface_max_grade": 0.165931537766005,
+      "sampled_surface_max_vertical_curvature_per_m": 0.016094912090003684,
+      "max_same_segment_quad_warp_m": 0.0794662163246258,
+      "max_crossfall": 4.144832625267251e-15,
+      "max_crossfall_change_per_m": 5.181696570636704e-16
+    },
+    {
+      "source_way": 97785682,
+      "name": "",
+      "max_grade": 0.16298919414296112,
+      "max_vertical_curvature_per_m": 0.013492575405120322,
+      "height_range_m": [
+        11.915756537293996,
+        20.36498591249349
+      ],
+      "sampled_surface_max_grade": 0.16298919414296112,
+      "sampled_surface_max_vertical_curvature_per_m": 0.013492575405120322,
+      "max_same_segment_quad_warp_m": 0.22188801459097007,
+      "max_crossfall": 0.013861653582134537,
+      "max_crossfall_change_per_m": 0.007183375305295723
+    },
+    {
+      "source_way": 1279721807,
+      "name": "L\u00e4stmakargatan",
+      "max_grade": 0.16078935808886125,
+      "max_vertical_curvature_per_m": 0.0035518635747043338,
+      "height_range_m": [
+        5.492177280931798,
+        7.1339969126496685
+      ],
+      "sampled_surface_max_grade": 0.16078935808886125,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0035518635747043338,
+      "max_same_segment_quad_warp_m": 0.0,
+      "max_crossfall": 1.3322676295501878e-15,
+      "max_crossfall_change_per_m": 8.464888980276688e-17
+    },
+    {
+      "source_way": 225954336,
+      "name": "",
+      "max_grade": 0.16062094025568252,
+      "max_vertical_curvature_per_m": 0.00444743667748191,
+      "height_range_m": [
+        2.723302115200431,
+        10.679152023903049
+      ],
+      "sampled_surface_max_grade": 0.16062094025568252,
+      "sampled_surface_max_vertical_curvature_per_m": 0.00444743667748191,
+      "max_same_segment_quad_warp_m": 0.7402652974072339,
+      "max_crossfall": 5.131697536045168e-15,
+      "max_crossfall_change_per_m": 2.4692683498619035e-15
+    }
+  ],
+  "worst_sampled_curvature": [
+    {
+      "source_way": 1127370512,
+      "name": "S\u00f6dra Klarabergskopplet",
+      "max_grade": 0.8994419682823932,
+      "max_vertical_curvature_per_m": 0.3714186781983703,
+      "height_range_m": [
+        10.355709768932456,
+        13.545479559826909
+      ],
+      "sampled_surface_max_grade": 0.8994419682823932,
+      "sampled_surface_max_vertical_curvature_per_m": 0.3714186781983703,
+      "max_same_segment_quad_warp_m": 0.0840689575717235,
+      "max_crossfall": 4.9343245538895844e-15,
+      "max_crossfall_change_per_m": 2.0373652111298633e-15
+    },
+    {
+      "source_way": 34387766,
+      "name": "Blekholmstorget",
+      "max_grade": 0.19605021088843036,
+      "max_vertical_curvature_per_m": 0.062516311275862,
+      "height_range_m": [
+        12.821034616975236,
+        13.475890553985955
+      ],
+      "sampled_surface_max_grade": 0.19605021088843036,
+      "sampled_surface_max_vertical_curvature_per_m": 0.062516311275862,
+      "max_same_segment_quad_warp_m": 0.3269679705396964,
+      "max_crossfall": 1.1842378929335002e-15,
+      "max_crossfall_change_per_m": 4.488022854959152e-16
+    },
+    {
+      "source_way": 664853131,
+      "name": "Norra L\u00e4nken",
+      "max_grade": 0.32859417146668796,
+      "max_vertical_curvature_per_m": 0.049651514684520455,
+      "height_range_m": [
+        21.98879109125679,
+        25.739967458600134
+      ],
+      "sampled_surface_max_grade": 0.32859417146668796,
+      "sampled_surface_max_vertical_curvature_per_m": 0.049651514684520455,
+      "max_same_segment_quad_warp_m": 0.07050139747668638,
+      "max_crossfall": 3.947459643111668e-15,
+      "max_crossfall_change_per_m": 8.298914924621983e-16
+    },
+    {
+      "source_way": 1126693172,
+      "name": "Munkbroleden",
+      "max_grade": 0.12454869099043739,
+      "max_vertical_curvature_per_m": 0.03321639263195413,
+      "height_range_m": [
+        2.0461422140855245,
+        14.627772514170758
+      ],
+      "sampled_surface_max_grade": 0.12454869099043739,
+      "sampled_surface_max_vertical_curvature_per_m": 0.03321639263195413,
+      "max_same_segment_quad_warp_m": 0.26052576314813436,
+      "max_crossfall": 1.8750433304780422e-15,
+      "max_crossfall_change_per_m": 6.671228547003977e-16
+    },
+    {
+      "source_way": 8048909,
+      "name": "Birger Jarls Torg",
+      "max_grade": 0.13350884533007717,
+      "max_vertical_curvature_per_m": 0.030942537272805014,
+      "height_range_m": [
+        10.375961801159109,
+        18.541733611778852
+      ],
+      "sampled_surface_max_grade": 0.13350884533007717,
+      "sampled_surface_max_vertical_curvature_per_m": 0.030942537272805014,
+      "max_same_segment_quad_warp_m": 0.2504644973546224,
+      "max_crossfall": 0.03770622014177051,
+      "max_crossfall_change_per_m": 0.015678246767277172
+    },
+    {
+      "source_way": 252124526,
+      "name": "Riddarhustorget",
+      "max_grade": 0.07975950646419283,
+      "max_vertical_curvature_per_m": 0.03046256107342002,
+      "height_range_m": [
+        7.476315361102731,
+        10.032067514678037
+      ],
+      "sampled_surface_max_grade": 0.07975950646419283,
+      "sampled_surface_max_vertical_curvature_per_m": 0.03046256107342002,
+      "max_same_segment_quad_warp_m": 0.07063542077288254,
+      "max_crossfall": 7.894919286223335e-16,
+      "max_crossfall_change_per_m": 2.6624353759093295e-16
+    },
+    {
+      "source_way": 31096668,
+      "name": "Lindhagensplan",
+      "max_grade": 0.09679429181195441,
+      "max_vertical_curvature_per_m": 0.029087700510846342,
+      "height_range_m": [
+        10.502616991179803,
+        11.592106724933636
+      ],
+      "sampled_surface_max_grade": 0.09679429181195441,
+      "sampled_surface_max_vertical_curvature_per_m": 0.029087700510846342,
+      "max_same_segment_quad_warp_m": 0.06375087921800571,
+      "max_crossfall": 1.1842378929335002e-15,
+      "max_crossfall_change_per_m": 2.7957334446371935e-16
+    },
+    {
+      "source_way": 35477774,
+      "name": "Centralbron",
+      "max_grade": 0.15983851657653553,
+      "max_vertical_curvature_per_m": 0.027568279439563366,
+      "height_range_m": [
+        15.953445925472757,
+        18.89225194025171
+      ],
+      "sampled_surface_max_grade": 0.15983851657653553,
+      "sampled_surface_max_vertical_curvature_per_m": 0.027568279439563366,
+      "max_same_segment_quad_warp_m": 0.09332656377960902,
+      "max_crossfall": 3.9474596431116675e-16,
+      "max_crossfall_change_per_m": 7.596842739080727e-17
+    },
+    {
+      "source_way": 1354772071,
+      "name": "Munkbron",
+      "max_grade": 0.08592713668375294,
+      "max_vertical_curvature_per_m": 0.027359001492220404,
+      "height_range_m": [
+        5.7974338120354645,
+        6.122802348372943
+      ],
+      "sampled_surface_max_grade": 0.08592713668375294,
+      "sampled_surface_max_vertical_curvature_per_m": 0.027359001492220404,
+      "max_same_segment_quad_warp_m": 1.7763568394002505e-15,
+      "max_crossfall": 2.9605947323337506e-16,
+      "max_crossfall_change_per_m": 7.818685577101182e-17
+    },
+    {
+      "source_way": 41179347,
+      "name": "S\u00f6dermalmsavfarten",
+      "max_grade": 0.16940817832325408,
+      "max_vertical_curvature_per_m": 0.026077855206184795,
+      "height_range_m": [
+        23.24184209430788,
+        24.43033036221754
+      ],
+      "sampled_surface_max_grade": 0.16940817832325408,
+      "sampled_surface_max_vertical_curvature_per_m": 0.026077855206184795,
+      "max_same_segment_quad_warp_m": 0.36202198817720443,
+      "max_crossfall": 1.973729821555834e-15,
+      "max_crossfall_change_per_m": 5.455439689718489e-16
+    },
+    {
+      "source_way": 1354772061,
+      "name": "Riddarhustorget",
+      "max_grade": 0.0759514393593767,
+      "max_vertical_curvature_per_m": 0.025002908107215744,
+      "height_range_m": [
+        14.401942037217136,
+        15.315277086675664
+      ],
+      "sampled_surface_max_grade": 0.0759514393593767,
+      "sampled_surface_max_vertical_curvature_per_m": 0.025002908107215744,
+      "max_same_segment_quad_warp_m": 0.09396798050081046,
+      "max_crossfall": 7.894919286223335e-16,
+      "max_crossfall_change_per_m": 3.4631272702035877e-16
+    },
+    {
+      "source_way": 199929057,
+      "name": "Norra l\u00e4nken",
+      "max_grade": 0.1967614933032824,
+      "max_vertical_curvature_per_m": 0.024700224015903632,
+      "height_range_m": [
+        10.560147464416287,
+        13.163923239983244
+      ],
+      "sampled_surface_max_grade": 0.1967614933032824,
+      "sampled_surface_max_vertical_curvature_per_m": 0.024700224015903632,
+      "max_same_segment_quad_warp_m": 0.059126965928314235,
+      "max_crossfall": 5.329070518200751e-15,
+      "max_crossfall_change_per_m": 4.597482865023692e-16
+    },
+    {
+      "source_way": 34344431,
+      "name": "Klarabergsviadukten",
+      "max_grade": 0.08145480550549235,
+      "max_vertical_curvature_per_m": 0.02309731548507312,
+      "height_range_m": [
+        11.3463258458929,
+        12.210905096764456
+      ],
+      "sampled_surface_max_grade": 0.08145480550549235,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02309731548507312,
+      "max_same_segment_quad_warp_m": 0.00016537379305958666,
+      "max_crossfall": 1.9737298215558337e-16,
+      "max_crossfall_change_per_m": 3.854984181397385e-17
+    },
+    {
+      "source_way": 27343707,
+      "name": "S\u00f6dra Klarabergskopplet",
+      "max_grade": 0.18575028443914185,
+      "max_vertical_curvature_per_m": 0.02260330922827488,
+      "height_range_m": [
+        9.222776035573743,
+        13.322982671224672
+      ],
+      "sampled_surface_max_grade": 0.18575028443914185,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02260330922827488,
+      "max_same_segment_quad_warp_m": 0.15129571484783355,
+      "max_crossfall": 2.1711028037114174e-15,
+      "max_crossfall_change_per_m": 2.837537859019124e-16
+    },
+    {
+      "source_way": 4491179,
+      "name": "Kungsbron",
+      "max_grade": 0.17555437080588338,
+      "max_vertical_curvature_per_m": 0.02178944238924271,
+      "height_range_m": [
+        10.37735751505745,
+        12.029514283714352
+      ],
+      "sampled_surface_max_grade": 0.17555437080588338,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02178944238924271,
+      "max_same_segment_quad_warp_m": 0.0009655987010841471,
+      "max_crossfall": 7.894919286223335e-16,
+      "max_crossfall_change_per_m": 9.797885267658258e-17
+    },
+    {
+      "source_way": 31097197,
+      "name": "Fredh\u00e4llsp\u00e5farten",
+      "max_grade": 0.12851161206756906,
+      "max_vertical_curvature_per_m": 0.020472491242955495,
+      "height_range_m": [
+        13.401760545733897,
+        17.103394379606037
+      ],
+      "sampled_surface_max_grade": 0.12851161206756906,
+      "sampled_surface_max_vertical_curvature_per_m": 0.020472491242955495,
+      "max_same_segment_quad_warp_m": 0.11480452414788367,
+      "max_crossfall": 1.973729821555834e-15,
+      "max_crossfall_change_per_m": 3.1324483534655903e-16
+    },
+    {
+      "source_way": 40589981,
+      "name": "L\u00f6gebodav\u00e4gen",
+      "max_grade": 0.21691562354235086,
+      "max_vertical_curvature_per_m": 0.02010114854570354,
+      "height_range_m": [
+        13.605910236155989,
+        16.283234110911415
+      ],
+      "sampled_surface_max_grade": 0.21691562354235086,
+      "sampled_surface_max_vertical_curvature_per_m": 0.02010114854570354,
+      "max_same_segment_quad_warp_m": 0.02865402746264145,
+      "max_crossfall": 6.5133084111342514e-15,
+      "max_crossfall_change_per_m": 4.795815067947068e-16
+    },
+    {
+      "source_way": 23089363,
+      "name": "Malmskillnadsgatan",
+      "max_grade": 0.08232365275938817,
+      "max_vertical_curvature_per_m": 0.01993209041410676,
+      "height_range_m": [
+        22.69030254276219,
+        23.886590428556207
+      ],
+      "sampled_surface_max_grade": 0.08232365275938817,
+      "sampled_surface_max_vertical_curvature_per_m": 0.01993209041410676,
+      "max_same_segment_quad_warp_m": 0.009239042987559287,
+      "max_crossfall": 1.1842378929335002e-15,
+      "max_crossfall_change_per_m": 1.6179918801801287e-16
+    },
+    {
+      "source_way": 1545096524,
+      "name": "Krukmakargatan",
+      "max_grade": 0.0316989110293812,
+      "max_vertical_curvature_per_m": 0.0198259681578639,
+      "height_range_m": [
+        23.864991481630558,
+        24.292842755744502
+      ],
+      "sampled_surface_max_grade": 0.0316989110293812,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0198259681578639,
+      "max_same_segment_quad_warp_m": 0.087422459977752,
+      "max_crossfall": 0.013342292527206152,
+      "max_crossfall_change_per_m": 0.009715521326220151
+    },
+    {
+      "source_way": 19876367,
+      "name": "",
+      "max_grade": 0.13382547033933714,
+      "max_vertical_curvature_per_m": 0.01957398659510921,
+      "height_range_m": [
+        14.272881961871555,
+        19.470783767426283
+      ],
+      "sampled_surface_max_grade": 0.13382547033933714,
+      "sampled_surface_max_vertical_curvature_per_m": 0.01957398659510921,
+      "max_same_segment_quad_warp_m": 0.07263806110060855,
+      "max_crossfall": 3.157967714489334e-15,
+      "max_crossfall_change_per_m": 4.320713948498268e-16
+    }
+  ],
+  "worst_quad_warp": [
+    {
+      "source_way": 50065330,
+      "name": "",
+      "max_grade": 0.12348220768815404,
+      "max_vertical_curvature_per_m": 0.0030000000000012326,
+      "height_range_m": [
+        25.03176368955384,
+        32.726366896885025
+      ],
+      "sampled_surface_max_grade": 0.12348220768815404,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000012326,
+      "max_same_segment_quad_warp_m": 1.007447284473706,
+      "max_crossfall": 0.08085788464451069,
+      "max_crossfall_change_per_m": 0.03320794633631579
+    },
+    {
+      "source_way": 144548743,
+      "name": "",
+      "max_grade": 0.09609013049953963,
+      "max_vertical_curvature_per_m": 0.0030000000000116223,
+      "height_range_m": [
+        16.72687269881256,
+        22.83229093100474
+      ],
+      "sampled_surface_max_grade": 0.09609013049953963,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000116223,
+      "max_same_segment_quad_warp_m": 0.7946601215132176,
+      "max_crossfall": 0.04789276336746519,
+      "max_crossfall_change_per_m": 0.03846775480034691
+    },
+    {
+      "source_way": 225954336,
+      "name": "",
+      "max_grade": 0.16062094025568252,
+      "max_vertical_curvature_per_m": 0.00444743667748191,
+      "height_range_m": [
+        2.723302115200431,
+        10.679152023903049
+      ],
+      "sampled_surface_max_grade": 0.16062094025568252,
+      "sampled_surface_max_vertical_curvature_per_m": 0.00444743667748191,
+      "max_same_segment_quad_warp_m": 0.7402652974072339,
+      "max_crossfall": 5.131697536045168e-15,
+      "max_crossfall_change_per_m": 2.4692683498619035e-15
+    },
+    {
+      "source_way": 25666158,
+      "name": "M\u00e4larvarvsbacken",
+      "max_grade": 0.16000000000000075,
+      "max_vertical_curvature_per_m": 0.0030016265765223666,
+      "height_range_m": [
+        4.31677878184389,
+        21.344072822893246
+      ],
+      "sampled_surface_max_grade": 0.16000000000000034,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030016265765219915,
+      "max_same_segment_quad_warp_m": 0.7371099629016946,
+      "max_crossfall": 0.01325984722103494,
+      "max_crossfall_change_per_m": 0.0033125119230660582
+    },
+    {
+      "source_way": 89070531,
+      "name": "",
+      "max_grade": 0.08782732283846881,
+      "max_vertical_curvature_per_m": 0.0032103641909079377,
+      "height_range_m": [
+        18.306331083854758,
+        24.53983769057652
+      ],
+      "sampled_surface_max_grade": 0.08782732283846881,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0032103641909079377,
+      "max_same_segment_quad_warp_m": 0.7101558714171219,
+      "max_crossfall": 0.09496046480959525,
+      "max_crossfall_change_per_m": 0.03375921025281424
+    },
+    {
+      "source_way": 1050021955,
+      "name": "",
+      "max_grade": 0.10634574893935922,
+      "max_vertical_curvature_per_m": 0.0030000000000002737,
+      "height_range_m": [
+        11.08454926362698,
+        13.467368827105291
+      ],
+      "sampled_surface_max_grade": 0.10634574893935922,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000002737,
+      "max_same_segment_quad_warp_m": 0.7044704258709942,
+      "max_crossfall": 0.06719426271850931,
+      "max_crossfall_change_per_m": 0.03020389908306039
+    },
+    {
+      "source_way": 94117158,
+      "name": "",
+      "max_grade": 0.07168612127734617,
+      "max_vertical_curvature_per_m": 0.003394952373136578,
+      "height_range_m": [
+        38.493359860143514,
+        39.98495902089753
+      ],
+      "sampled_surface_max_grade": 0.07168612127734617,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003394952373136578,
+      "max_same_segment_quad_warp_m": 0.6534883817574766,
+      "max_crossfall": 0.047010027146334385,
+      "max_crossfall_change_per_m": 0.015492761587230612
+    },
+    {
+      "source_way": 141477991,
+      "name": "",
+      "max_grade": 0.16002730061808085,
+      "max_vertical_curvature_per_m": 0.0030056620980173712,
+      "height_range_m": [
+        10.343110372754916,
+        13.19601853004162
+      ],
+      "sampled_surface_max_grade": 0.16002730061808085,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030056620980173712,
+      "max_same_segment_quad_warp_m": 0.6495174386582576,
+      "max_crossfall": 4.342205607422835e-15,
+      "max_crossfall_change_per_m": 1.472272384747233e-15
+    },
+    {
+      "source_way": 1088368016,
+      "name": "",
+      "max_grade": 0.07359305604709661,
+      "max_vertical_curvature_per_m": 0.0030000000000010626,
+      "height_range_m": [
+        17.537377228368115,
+        20.56941494907604
+      ],
+      "sampled_surface_max_grade": 0.07359305604709661,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000010626,
+      "max_same_segment_quad_warp_m": 0.5797266539705639,
+      "max_crossfall": 0.04941089751171725,
+      "max_crossfall_change_per_m": 0.023578095802169744
+    },
+    {
+      "source_way": 4700216,
+      "name": "Slupskjulsv\u00e4gen",
+      "max_grade": 0.16000000000000045,
+      "max_vertical_curvature_per_m": 0.003006006727465515,
+      "height_range_m": [
+        2.5745340024871277,
+        9.99690371220895
+      ],
+      "sampled_surface_max_grade": 0.16000000000000045,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003006006727465515,
+      "max_same_segment_quad_warp_m": 0.5720014986446769,
+      "max_crossfall": 3.947459643111668e-15,
+      "max_crossfall_change_per_m": 1.671798537031041e-15
+    },
+    {
+      "source_way": 762362351,
+      "name": "",
+      "max_grade": 0.12877990717060148,
+      "max_vertical_curvature_per_m": 0.0030000000000150653,
+      "height_range_m": [
+        29.672714446656325,
+        37.04831091806252
+      ],
+      "sampled_surface_max_grade": 0.12877990717060148,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000150653,
+      "max_same_segment_quad_warp_m": 0.5668555848799244,
+      "max_crossfall": 0.04455252346019497,
+      "max_crossfall_change_per_m": 0.023298226621554688
+    },
+    {
+      "source_way": 34344430,
+      "name": "",
+      "max_grade": 0.12277277567602532,
+      "max_vertical_curvature_per_m": 0.002884334866691158,
+      "height_range_m": [
+        4.6828471787096895,
+        12.507389124810313
+      ],
+      "sampled_surface_max_grade": 0.12277277567602532,
+      "sampled_surface_max_vertical_curvature_per_m": 0.002884334866691158,
+      "max_same_segment_quad_warp_m": 0.5512224881373973,
+      "max_crossfall": 0.10934320486625351,
+      "max_crossfall_change_per_m": 0.014461782835799472
+    },
+    {
+      "source_way": 318219861,
+      "name": "",
+      "max_grade": 0.0962798761526029,
+      "max_vertical_curvature_per_m": 0.0030000516633014117,
+      "height_range_m": [
+        25.22529660269581,
+        30.148608235036836
+      ],
+      "sampled_surface_max_grade": 0.0962798761526029,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000516633014117,
+      "max_same_segment_quad_warp_m": 0.5372645287717148,
+      "max_crossfall": 0.023207694924605466,
+      "max_crossfall_change_per_m": 0.00910110688045837
+    },
+    {
+      "source_way": 153467453,
+      "name": "Marmorgatan",
+      "max_grade": 0.09091849575295022,
+      "max_vertical_curvature_per_m": 0.0030011341474989297,
+      "height_range_m": [
+        31.915146245364127,
+        37.004791891740716
+      ],
+      "sampled_surface_max_grade": 0.09091849575295022,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030011341474989297,
+      "max_same_segment_quad_warp_m": 0.5223466031781783,
+      "max_crossfall": 0.04310964160839129,
+      "max_crossfall_change_per_m": 0.021519599952787228
+    },
+    {
+      "source_way": 50062663,
+      "name": "",
+      "max_grade": 0.1512789923746602,
+      "max_vertical_curvature_per_m": 0.0031232107823365735,
+      "height_range_m": [
+        4.890914310651658,
+        13.32842671386202
+      ],
+      "sampled_surface_max_grade": 0.1512789923746602,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0031232107823365735,
+      "max_same_segment_quad_warp_m": 0.4951692550278999,
+      "max_crossfall": 0.06404073775047792,
+      "max_crossfall_change_per_m": 0.016372971089515055
+    },
+    {
+      "source_way": 15740584,
+      "name": "",
+      "max_grade": 0.12328535957362803,
+      "max_vertical_curvature_per_m": 0.00300508289272122,
+      "height_range_m": [
+        2.7054341947003464,
+        7.951246227916757
+      ],
+      "sampled_surface_max_grade": 0.12328535957362803,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003005082892721251,
+      "max_same_segment_quad_warp_m": 0.48309998842404944,
+      "max_crossfall": 0.06954306837513939,
+      "max_crossfall_change_per_m": 0.03133459074727327
+    },
+    {
+      "source_way": 28791961,
+      "name": "",
+      "max_grade": 0.07448980384246956,
+      "max_vertical_curvature_per_m": 0.003000000000004023,
+      "height_range_m": [
+        17.01723895342284,
+        25.35292377135974
+      ],
+      "sampled_surface_max_grade": 0.07448980384246956,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003000000000004023,
+      "max_same_segment_quad_warp_m": 0.4783620730219518,
+      "max_crossfall": 0.052602248048832304,
+      "max_crossfall_change_per_m": 0.022537172410370093
+    },
+    {
+      "source_way": 1490593047,
+      "name": "",
+      "max_grade": 0.08689665225485524,
+      "max_vertical_curvature_per_m": 0.00300000000006346,
+      "height_range_m": [
+        13.697039595461742,
+        18.219666415834975
+      ],
+      "sampled_surface_max_grade": 0.08689665225485524,
+      "sampled_surface_max_vertical_curvature_per_m": 0.00300000000006346,
+      "max_same_segment_quad_warp_m": 0.46571087046478965,
+      "max_crossfall": 0.055080469056751014,
+      "max_crossfall_change_per_m": 0.04453171465554192
+    },
+    {
+      "source_way": 50554700,
+      "name": "",
+      "max_grade": 0.12061442690012775,
+      "max_vertical_curvature_per_m": 0.003000000000001317,
+      "height_range_m": [
+        4.121751451917848,
+        14.920560623476902
+      ],
+      "sampled_surface_max_grade": 0.12061442690012775,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003000000000001317,
+      "max_same_segment_quad_warp_m": 0.46520231468194595,
+      "max_crossfall": 0.05259999591354278,
+      "max_crossfall_change_per_m": 0.022698501673983934
+    },
+    {
+      "source_way": 41599246,
+      "name": "",
+      "max_grade": 0.0628470743333029,
+      "max_vertical_curvature_per_m": 0.0026860288450691956,
+      "height_range_m": [
+        33.22555888596316,
+        37.21350481257582
+      ],
+      "sampled_surface_max_grade": 0.0628470743333029,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0026860288450691956,
+      "max_same_segment_quad_warp_m": 0.46488117922841354,
+      "max_crossfall": 0.04014466743480148,
+      "max_crossfall_change_per_m": 0.018525792079107737
+    }
+  ],
+  "worst_twist": [
+    {
+      "source_way": 1490593047,
+      "name": "",
+      "max_grade": 0.08689665225485524,
+      "max_vertical_curvature_per_m": 0.00300000000006346,
+      "height_range_m": [
+        13.697039595461742,
+        18.219666415834975
+      ],
+      "sampled_surface_max_grade": 0.08689665225485524,
+      "sampled_surface_max_vertical_curvature_per_m": 0.00300000000006346,
+      "max_same_segment_quad_warp_m": 0.46571087046478965,
+      "max_crossfall": 0.055080469056751014,
+      "max_crossfall_change_per_m": 0.04453171465554192
+    },
+    {
+      "source_way": 144548743,
+      "name": "",
+      "max_grade": 0.09609013049953963,
+      "max_vertical_curvature_per_m": 0.0030000000000116223,
+      "height_range_m": [
+        16.72687269881256,
+        22.83229093100474
+      ],
+      "sampled_surface_max_grade": 0.09609013049953963,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000116223,
+      "max_same_segment_quad_warp_m": 0.7946601215132176,
+      "max_crossfall": 0.04789276336746519,
+      "max_crossfall_change_per_m": 0.03846775480034691
+    },
+    {
+      "source_way": 20682705,
+      "name": "",
+      "max_grade": 0.045036580373046656,
+      "max_vertical_curvature_per_m": 0.0030468498284934417,
+      "height_range_m": [
+        32.46174343838183,
+        33.98404026878828
+      ],
+      "sampled_surface_max_grade": 0.045036580373046656,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030468498284934417,
+      "max_same_segment_quad_warp_m": 0.3719383723705363,
+      "max_crossfall": 0.044449087562740255,
+      "max_crossfall_change_per_m": 0.03563017096264154
+    },
+    {
+      "source_way": 89070531,
+      "name": "",
+      "max_grade": 0.08782732283846881,
+      "max_vertical_curvature_per_m": 0.0032103641909079377,
+      "height_range_m": [
+        18.306331083854758,
+        24.53983769057652
+      ],
+      "sampled_surface_max_grade": 0.08782732283846881,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0032103641909079377,
+      "max_same_segment_quad_warp_m": 0.7101558714171219,
+      "max_crossfall": 0.09496046480959525,
+      "max_crossfall_change_per_m": 0.03375921025281424
+    },
+    {
+      "source_way": 50065330,
+      "name": "",
+      "max_grade": 0.12348220768815404,
+      "max_vertical_curvature_per_m": 0.0030000000000012326,
+      "height_range_m": [
+        25.03176368955384,
+        32.726366896885025
+      ],
+      "sampled_surface_max_grade": 0.12348220768815404,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000012326,
+      "max_same_segment_quad_warp_m": 1.007447284473706,
+      "max_crossfall": 0.08085788464451069,
+      "max_crossfall_change_per_m": 0.03320794633631579
+    },
+    {
+      "source_way": 15740584,
+      "name": "",
+      "max_grade": 0.12328535957362803,
+      "max_vertical_curvature_per_m": 0.00300508289272122,
+      "height_range_m": [
+        2.7054341947003464,
+        7.951246227916757
+      ],
+      "sampled_surface_max_grade": 0.12328535957362803,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003005082892721251,
+      "max_same_segment_quad_warp_m": 0.48309998842404944,
+      "max_crossfall": 0.06954306837513939,
+      "max_crossfall_change_per_m": 0.03133459074727327
+    },
+    {
+      "source_way": 1050021955,
+      "name": "",
+      "max_grade": 0.10634574893935922,
+      "max_vertical_curvature_per_m": 0.0030000000000002737,
+      "height_range_m": [
+        11.08454926362698,
+        13.467368827105291
+      ],
+      "sampled_surface_max_grade": 0.10634574893935922,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000002737,
+      "max_same_segment_quad_warp_m": 0.7044704258709942,
+      "max_crossfall": 0.06719426271850931,
+      "max_crossfall_change_per_m": 0.03020389908306039
+    },
+    {
+      "source_way": 753920250,
+      "name": "",
+      "max_grade": 0.10740140697130919,
+      "max_vertical_curvature_per_m": 0.0030000000000003544,
+      "height_range_m": [
+        29.20286887010258,
+        34.33641572224417
+      ],
+      "sampled_surface_max_grade": 0.10740140697130919,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000003544,
+      "max_same_segment_quad_warp_m": 0.4310445853249547,
+      "max_crossfall": 0.06889925744234422,
+      "max_crossfall_change_per_m": 0.029138957335154644
+    },
+    {
+      "source_way": 810664939,
+      "name": "",
+      "max_grade": 0.07008841872013528,
+      "max_vertical_curvature_per_m": 0.00300000000000269,
+      "height_range_m": [
+        11.999721265182991,
+        16.934007293761546
+      ],
+      "sampled_surface_max_grade": 0.07008841872013528,
+      "sampled_surface_max_vertical_curvature_per_m": 0.00300000000000269,
+      "max_same_segment_quad_warp_m": 0.3533461912564224,
+      "max_crossfall": 0.055182211442236256,
+      "max_crossfall_change_per_m": 0.02822574768431208
+    },
+    {
+      "source_way": 1434811567,
+      "name": "",
+      "max_grade": 0.127800505195341,
+      "max_vertical_curvature_per_m": 0.004587962747551992,
+      "height_range_m": [
+        3.053443173759897,
+        5.948819699323078
+      ],
+      "sampled_surface_max_grade": 0.127800505195341,
+      "sampled_surface_max_vertical_curvature_per_m": 0.004587962747551992,
+      "max_same_segment_quad_warp_m": 0.43200706448604054,
+      "max_crossfall": 0.06391112785236588,
+      "max_crossfall_change_per_m": 0.026098859912105244
+    },
+    {
+      "source_way": 1118361687,
+      "name": "",
+      "max_grade": 0.05789346548533368,
+      "max_vertical_curvature_per_m": 0.003000000000001424,
+      "height_range_m": [
+        18.08639647824378,
+        19.42650444305522
+      ],
+      "sampled_surface_max_grade": 0.05789346548533368,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003000000000001424,
+      "max_same_segment_quad_warp_m": 0.3255071914556531,
+      "max_crossfall": 0.054455792200563735,
+      "max_crossfall_change_per_m": 0.024877094855457166
+    },
+    {
+      "source_way": 28547949,
+      "name": "Kungsklippan",
+      "max_grade": 0.07081038408518396,
+      "max_vertical_curvature_per_m": 0.003000000000013925,
+      "height_range_m": [
+        22.532301066535833,
+        25.459446242194822
+      ],
+      "sampled_surface_max_grade": 0.07081038408518396,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003000000000013925,
+      "max_same_segment_quad_warp_m": 0.3804232411463033,
+      "max_crossfall": 0.04187281618454561,
+      "max_crossfall_change_per_m": 0.024020737283434755
+    },
+    {
+      "source_way": 37978846,
+      "name": "Oxtorget",
+      "max_grade": 0.09677600815927234,
+      "max_vertical_curvature_per_m": 0.0035407351145416454,
+      "height_range_m": [
+        17.392696972426304,
+        21.81569058171066
+      ],
+      "sampled_surface_max_grade": 0.09677600815927234,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0035407351145416454,
+      "max_same_segment_quad_warp_m": 0.3288219456730168,
+      "max_crossfall": 0.04357365295432006,
+      "max_crossfall_change_per_m": 0.023905356951734104
+    },
+    {
+      "source_way": 1088368016,
+      "name": "",
+      "max_grade": 0.07359305604709661,
+      "max_vertical_curvature_per_m": 0.0030000000000010626,
+      "height_range_m": [
+        17.537377228368115,
+        20.56941494907604
+      ],
+      "sampled_surface_max_grade": 0.07359305604709661,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000010626,
+      "max_same_segment_quad_warp_m": 0.5797266539705639,
+      "max_crossfall": 0.04941089751171725,
+      "max_crossfall_change_per_m": 0.023578095802169744
+    },
+    {
+      "source_way": 486779430,
+      "name": "Lustg\u00e5rdsgatan",
+      "max_grade": 0.09194159133149998,
+      "max_vertical_curvature_per_m": 0.0030000000000052723,
+      "height_range_m": [
+        14.407595217712252,
+        22.98738810696925
+      ],
+      "sampled_surface_max_grade": 0.09194159133149998,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000052723,
+      "max_same_segment_quad_warp_m": 0.3026574775284665,
+      "max_crossfall": 0.03791115233739993,
+      "max_crossfall_change_per_m": 0.023313971339670825
+    },
+    {
+      "source_way": 762362351,
+      "name": "",
+      "max_grade": 0.12877990717060148,
+      "max_vertical_curvature_per_m": 0.0030000000000150653,
+      "height_range_m": [
+        29.672714446656325,
+        37.04831091806252
+      ],
+      "sampled_surface_max_grade": 0.12877990717060148,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000150653,
+      "max_same_segment_quad_warp_m": 0.5668555848799244,
+      "max_crossfall": 0.04455252346019497,
+      "max_crossfall_change_per_m": 0.023298226621554688
+    },
+    {
+      "source_way": 163966738,
+      "name": "",
+      "max_grade": 0.08444044899113846,
+      "max_vertical_curvature_per_m": 0.0030000000000241635,
+      "height_range_m": [
+        22.09143943422885,
+        29.85615915844224
+      ],
+      "sampled_surface_max_grade": 0.08444044899113846,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000241635,
+      "max_same_segment_quad_warp_m": 0.30072149008731586,
+      "max_crossfall": 0.03528374737077852,
+      "max_crossfall_change_per_m": 0.022758533856067943
+    },
+    {
+      "source_way": 50554700,
+      "name": "",
+      "max_grade": 0.12061442690012775,
+      "max_vertical_curvature_per_m": 0.003000000000001317,
+      "height_range_m": [
+        4.121751451917848,
+        14.920560623476902
+      ],
+      "sampled_surface_max_grade": 0.12061442690012775,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003000000000001317,
+      "max_same_segment_quad_warp_m": 0.46520231468194595,
+      "max_crossfall": 0.05259999591354278,
+      "max_crossfall_change_per_m": 0.022698501673983934
+    },
+    {
+      "source_way": 28791961,
+      "name": "",
+      "max_grade": 0.07448980384246956,
+      "max_vertical_curvature_per_m": 0.003000000000004023,
+      "height_range_m": [
+        17.01723895342284,
+        25.35292377135974
+      ],
+      "sampled_surface_max_grade": 0.07448980384246956,
+      "sampled_surface_max_vertical_curvature_per_m": 0.003000000000004023,
+      "max_same_segment_quad_warp_m": 0.4783620730219518,
+      "max_crossfall": 0.052602248048832304,
+      "max_crossfall_change_per_m": 0.022537172410370093
+    },
+    {
+      "source_way": 30678771,
+      "name": "Birger Jarls Torg",
+      "max_grade": 0.0953791136194422,
+      "max_vertical_curvature_per_m": 0.0030000000000002937,
+      "height_range_m": [
+        7.136980006563077,
+        13.644849730759603
+      ],
+      "sampled_surface_max_grade": 0.0953791136194422,
+      "sampled_surface_max_vertical_curvature_per_m": 0.0030000000000002937,
+      "max_same_segment_quad_warp_m": 0.3663097889854541,
+      "max_crossfall": 0.05116121633618419,
+      "max_crossfall_change_per_m": 0.022283664079359642
+    }
+  ]
+}

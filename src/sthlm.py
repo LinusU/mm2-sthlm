@@ -617,6 +617,7 @@ def build(output, minimal=False, profile="expanded"):
     def road_height(x, n):
         return cfg["road_y"]
 
+    bridge_native_triangles = []
     if expanded:
         from terrain import TerrainGrid
         from elevation import apply
@@ -636,8 +637,29 @@ def build(output, minimal=False, profile="expanded"):
             base_roads = road
             bridge_roads = Polygon()
         print("Meshing terrain-conforming roads", file=sys.stderr, flush=True)
-        writer.surface(base_roads, road_height, "road", road=True)
-        writer.surface(bridge_roads, deck_field, "road", road=True)
+        if minimal:
+            writer.surface(base_roads, road_height, "road", road=True)
+            writer.surface(bridge_roads, deck_field, "road", road=True)
+        else:
+            from road_surfaces import render as render_road_surfaces
+            from road_surfaces import render_bridge_layers
+
+            city["road_materials"] = {
+                "base": render_road_surfaces(
+                    writer,
+                    city,
+                    base_roads,
+                    road_height,
+                    road_height=lambda r, x, n: road_field.height_for_road(r, x, n),
+                    station_height=road_field.height_at_station,
+                ),
+                "bridge": render_bridge_layers(
+                    writer,
+                    city,
+                    terrain,
+                    triangle_sink=bridge_native_triangles,
+                ),
+            }
         road = base_roads
     else:
         writer.surface(road, cfg["road_y"], "road", road=True)
@@ -803,7 +825,11 @@ def build(output, minimal=False, profile="expanded"):
             )
             city["props"].extend(write_fences(out, city, ground_height, source))
             city["props"].extend(write_street_details(out, city, ground_height))
-            city["props"].extend(write_bridges(out, city, deck_field))
+            city["props"].extend(
+                write_bridges(
+                    out, city, deck_field, road_triangles=bridge_native_triangles
+                )
+            )
             city["props"].extend(
                 write_road_details(
                     out, city, height=ground_height, road_height=detail_height
@@ -869,6 +895,10 @@ def build(output, minimal=False, profile="expanded"):
         "0.2\n" + "".join(f"{i}\n" for i in writer.water_rooms)
     )
     textures(out / "texture")
+    if expanded and not minimal:
+        from road_surfaces import write_textures as write_road_textures
+
+        write_road_textures(out / "texture", city)
     from manor_materials import write as write_manor_materials
 
     write_manor_materials(out)
@@ -1035,6 +1065,11 @@ def inspect_psdl(path, package):
                 index = read("H")[0] + 256 * subtype - 1
                 if not 0 <= index < len(names):
                     raise ValueError("invalid PSDL texture index")
+            elif kind == 2 and subtype == 2:
+                refs = read("4H")
+                if any(v >= len(vertices) for v in refs):
+                    raise ValueError("invalid PSDL road strip index")
+                triangles += 2
             elif kind in [5, 6] and subtype == 1:
                 refs = read("3H")
                 if any(v >= len(vertices) for v in refs):
@@ -1151,10 +1186,11 @@ def validate(package):
         shared = {}
         for r in city["roads"]:
             elevated = r["elevated_points"]
-            for nid, point in [
-                (r["nodes"][0], elevated[0]),
-                (r["nodes"][-1], elevated[-1]),
-            ]:
+            source_nodes = {tuple(p): nid for nid, p in zip(r["nodes"], r["points"])}
+            for point in elevated:
+                nid = source_nodes.get(tuple(point[:2]))
+                if nid is None:
+                    continue
                 if nid in shared and abs(shared[nid] - point[2]) > 1e-5:
                     raise ValueError("road junction elevation mismatch")
                 shared[nid] = point[2]

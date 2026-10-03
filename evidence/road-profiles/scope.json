@@ -1,0 +1,15 @@
+{
+  "agent_revision": "168e285",
+  "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "package_manifest_sha256": "762f53de09bca08175d7b5f0f7037c1218f1c375acde01556d39a9c03e3fc936",
+  "scope": "Isolated source-profile RoadFan package before root road-texture/expanded bridge integration. Pustegrand final zero wheel contacts is unresolved; do not count as grounded acceptance.",
+  "files": {
+    "smoothing-native-brannkyrka.png": "a1097ca79498b1cc168b7c5221f69a333d42cb981671fcafd9cbb39dc4b785c5",
+    "smoothing-drive-pustegrand-final.log": "eaa794c561e2747d680cb29d69a644e52b3a874b1f4d8f73d1c37acd2b00a555",
+    "smoothing-native-tomteboda.log": "0a9b7e754b34784db5b3bbd6480129d3627cbabd6d13509a2a7bc1d71b4acb61",
+    "smoothing-native-tomteboda.png": "b02e2abb4a4ad218f42d095ca60f3b142ae9c9032f55f6b13dff221705bcbb41",
+    "smoothing-drive-brannkyrka-final.log": "07135bd3ead127c3f79b1cf748214055dc9e7c5b3fcdb3c78baeaff0b47ca24e",
+    "smoothing-native-brannkyrka.log": "ea75a196751a19415067dee00c4d2201cf4462e1d2c10f8a55c99e9666029eaf",
+    "smoothing-drive-tomteboda-final.log": "a262ee0118616a371028fffd8a9c479f727717885523414f79601d97190dc6ea"
+  }
+}
