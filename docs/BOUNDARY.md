@@ -21,10 +21,11 @@ points are authored approximations of the request, not fabricated OSM data.
   included from the drawing; keep this explicit for later refinement.
 
 The polygon's role is to bound terrain/source acquisition with a 1 km buffer.
-Refine the final clip from actual acquired shorelines and the northern road
-corridor before generating the expanded city. Preserve open water, exclude
+The normalizer refines the clip using actual acquired shorelines and the
+shared-node E20 alignment, with a 100 m corridor margin. Preserve open water, exclude
 island roads/assets explicitly and cap external bridges at sensible locations.
-The project does not yet claim full-boundary OSM or terrain coverage.
+The expanded profile now uses real OSM coastlines and complete source terrain
+coverage. See EXPANDED.md and TERRAIN.md for the interpretation and evidence.
 
 ## Implementation order
 
@@ -50,5 +51,5 @@ configuration or environment, never the repository or chat.
 is an ordered product with a tariff. It is not a silently available source.
 A coarse public surface DEM is an alternative only if explicitly chosen: it
 may contain buildings/vegetation and cannot be described as measured street
-heights. Real terrain acquisition is pending the data-access choice. No
+heights. Supplied Lantmäteriet ground tiles are now integrated (TERRAIN.md). No
 invented hills or synthetic terrain is presented as Stockholm elevation.

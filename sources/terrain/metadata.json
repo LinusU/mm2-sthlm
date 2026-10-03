@@ -1,0 +1,91 @@
+{
+  "buffer_m": 20.0,
+  "builder_versions": {
+    "numpy": "2.5.3",
+    "pyproj": "3.8.0",
+    "rasterio": "1.5.2"
+  },
+  "coverage_bounds_wgs84": [
+    17.97,
+    59.286,
+    18.174,
+    59.373
+  ],
+  "coverage_nodata_cells": 0,
+  "coverage_total_cells": 1131599,
+  "coverage_valid_cells": 1131599,
+  "dataset": "Lantmäteriet Markhöjdmodell Nedladdning, grid 1+ (source tile metadata identifies 1 m cells; exact service product label should be reconciled with acquisition receipt)",
+  "dataset_identity": "Lantmäteriet height-model grid tiles m657_66 through m658_68; exact product catalogue title is not stated in supplied tile sidecars and remains to be confirmed.",
+  "fixture_resolution_m": 10,
+  "fixture_sampling": "10 m local-grid cell spacing, bilinear resampling from source 1 m grids; grid includes a 20 m buffer around requested geographic bounds.",
+  "fixture_sha256": "a776639c90c0b828bf20c67e3bbf3f722c0402a1bf9b5665a585ec2bc8b7f6bf",
+  "height": 973,
+  "horizontal_crs": "EPSG:3006 SWEREF99 TM",
+  "license": {
+    "copyright": "© Lantmäteriet",
+    "name": "Creative Commons Attribution 4.0 International",
+    "requirements": "Attribute product name and © Lantmäteriet, identify modifications, link CC BY 4.0.",
+    "spdx_id": "CC-BY-4.0",
+    "terms_sha256": "8017fed096569198001949a259d96a95d9aa2f09e1a974df7acb14c0a7d6216d",
+    "terms_url": "https://www.lantmateriet.se/globalassets/geodata/geodataprodukter/anvandningsvillkor_for_vardefulla_datamangder.pdf",
+    "terms_version": "v1.0, 2025-02-01, DNR LM2025/009266"
+  },
+  "local_crs": "+proj=eqc +lat_ts=59.328 +lat_0=59.328 +lon_0=18.045 +datum=WGS84 +units=m +no_defs +type=crs",
+  "local_transform": [
+    -4280.0,
+    10.0,
+    0,
+    5030.0,
+    0,
+    -10.0
+  ],
+  "measurement_date_range": [
+    "2020-02-19",
+    "2023-05-09"
+  ],
+  "modifications": "Clipped to expanded Stockholm bounds plus 20 m; bilinearly resampled from 1 m to 10 m in the project local equirectangular frame and compressed as NPZ.",
+  "nodata": -9999.0,
+  "origin_wgs84": [
+    18.045,
+    59.328
+  ],
+  "provenance_note": "Acquisition dates/methods and stated height accuracy are tile-specific polygons in upstream *_ursprung.json and were not reduced to a single scene date. Elevations are absolute RH2000 heights and are not game water-relative values.",
+  "resampling": "Rasterio/GDAL bilinear warp from 1 m source to 10 m local equirectangular grid; source values retained in RH2000 metres",
+  "schema": 1,
+  "source": "Lantmäteriet",
+  "source_compound_crs": "EPSG:5845",
+  "source_dtype": "Float32",
+  "source_metadata_files": {
+    "anvandningsvillkor_for_vardefulla_datamangder.pdf": "8017fed096569198001949a259d96a95d9aa2f09e1a974df7acb14c0a7d6216d",
+    "m657_66_info.json": "9aebf1344366b585ca7f407bd80c08c46e32cc357b5d4099709fa27da2c469fe",
+    "m657_66_ursprung.json": "8c9f92eb598e3cd8e0293242c4ab9adf36418ebca617c66a49b89b8a7a204d11",
+    "m657_67_info.json": "48b2d5aaf8767361e6b2db5a3e53552ede4f30d97c4e9b433e906ecfbd01c005",
+    "m657_67_ursprung.json": "e36c4a9d90448bda7c0909c092206c83623df54ee9017516b35a2dff0115a9aa",
+    "m657_68_info.json": "93e34c4140f4a5b242dec042ae683e8bec98c4784882a1488ded2fb5e8bbeaf4",
+    "m657_68_ursprung.json": "ed3454afa08e0a3a00f64ec6dc626e135fbdbc7ea9365ebb360f4b2fc55203a6",
+    "m658_66_info.json": "4710adc53e73d1048ef8b0b96e1e451c8593e937ec16e2c283204cd6da06f4ee",
+    "m658_66_ursprung.json": "564940f3f1c921a532f955aae675f1811b3122fc924d40b1a8718826ae8a1a34",
+    "m658_67_info.json": "f704b26c666d5f02d37151e00e927e0d4856aaa28eaf813725d2db6779b7b8d1",
+    "m658_67_ursprung.json": "389927f47647769e99659e065a7b27804070ec01dd6515ec92e2a4514c955845",
+    "m658_68_info.json": "ff659ac1e3569f5ebdf99d7a7d5431d4816696a629e0e02b10bc496d43f56400",
+    "m658_68_ursprung.json": "59f76ff6c71c0215dff4314d668d69beaf2bab619827a9f65ddb620fa4314725"
+  },
+  "source_methods": [
+    "Luftburen laserskanning",
+    "Flygfotografering bildmatchning"
+  ],
+  "source_nodata": -9999.0,
+  "source_resolution_m": 1,
+  "source_tiles": {
+    "m657_66.tif": "7382e4e6108aec96728d0869c5b4f23df8a5e56ef8087b203da1ab96a1c1365f",
+    "m657_67.tif": "3f3b8bce0ee314abe0047e9117ece9f16b41394490748ee7c1ed8d994f3403ee",
+    "m657_68.tif": "9af4bb2f4fa056548b82fba145192562ea043d6563da3e16b8079a40e01c4bf4",
+    "m658_66.tif": "a8c4838ec524d2a982290616b8eca18406c3eed3794735adeb5a317345831f19",
+    "m658_67.tif": "f536905744c4d5c2bf280b06c69628c0fb6f88980ce2a8d91c6dbc503e02485e",
+    "m658_68.tif": "5b47d2b9333518309b6b6f120c19c55340727b6d44fd30df1abf6bb8b964c4a1"
+  },
+  "source_vertical_reference": "RH2000 height, gravity-related metres upward (source compound CRS EPSG:5845)",
+  "vertical_crs": "RH2000 (EPSG: [vertical component encoded in source compound EPSG:5845])",
+  "vertical_datum_note": "Values remain absolute RH2000 elevations; no subtraction of sea level/game water and no game-physics interpretation.",
+  "width": 1163
+}

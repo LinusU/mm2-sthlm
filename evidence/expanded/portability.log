@@ -1,0 +1,27 @@
+mm2-smoke commit=392cc9be55a624f9c8cf64272103f987631c204d
+2026-10-03T15:30:41.695798Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_2.water skipped=0
+2026-10-03T15:30:41.759041Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_2.water skipped=0
+2026-10-03T15:30:41.856868Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_2.water skipped=0
+2026-10-03T15:30:41.955578Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_1.water skipped=0
+2026-10-03T15:30:42.095610Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_1.water skipped=0
+2026-10-03T15:30:42.159475Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-03T15:30:42.159570Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-03T15:30:42.159580Z  WARN mm2_app::hudmap: hud map spec unavailable path=tune/stockholm.mmhudmap error=asset not found: tune/stockholm.mmhudmap
+2026-10-03T15:30:42.159585Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T15:30:42.159596Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T15:30:42.159600Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T15:30:42.159601Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T15:30:42.159602Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T15:30:42.159604Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T15:30:42.159605Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T15:30:42.159606Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T15:30:42.159607Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T15:30:42.159608Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T15:30:42.159610Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T15:30:42.159679Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T15:30:42.159693Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T15:30:42.159696Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-03T15:30:42.159698Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T15:30:42.159748Z  WARN mm2_app::session: nav graph failed to load — opponent routes stay verbatim error=city/stockholm.bai: not found in the VFS
+2026-10-03T15:30:43.096708Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=22533 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1504.0m sim=187.78s resets=0 controls=8547t/13986b/3446s finite=true moved=12m wheels=4/4 final=(-19,3.9,138) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune ind=absent:missing-pkg tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x

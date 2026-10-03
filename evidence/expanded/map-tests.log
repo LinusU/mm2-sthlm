@@ -1,0 +1,28 @@
+test_bridge_deck_matches_ends_without_flattening_underpass (test_elevation.ElevationTests.test_bridge_deck_matches_ends_without_flattening_underpass) ... ok
+test_height_surface_samples_inside_large_polygons (test_elevation.ElevationTests.test_height_surface_samples_inside_large_polygons) ... ok
+test_shared_road_junction_uses_one_height (test_elevation.ElevationTests.test_shared_road_junction_uses_one_height) ... ok
+test_trees_are_separate_grounded_breakable_assets (test_elevation.ElevationTests.test_trees_are_separate_grounded_breakable_assets) ... ok
+test_northern_limit_follows_e20_without_confusing_e18_20 (test_expanded.ExpandedBoundaryTests.test_northern_limit_follows_e20_without_confusing_e18_20) ... ok
+test_incomplete_or_teleported_drive_is_rejected (test_sthlm.EvidenceTests.test_incomplete_or_teleported_drive_is_rejected) ... ok
+test_psdl_validator_rejects_missing_texture (test_sthlm.EvidenceTests.test_psdl_validator_rejects_missing_texture) ... ok
+test_coordinate_orientation_and_scale (test_sthlm.GeometryTests.test_coordinate_orientation_and_scale) ... ok
+test_grade_separated_crossing_is_disconnected (test_sthlm.GeometryTests.test_grade_separated_crossing_is_disconnected) ... ok
+test_height_rules_deterministic (test_sthlm.GeometryTests.test_height_rules_deterministic) ... ok
+test_joined_surface_has_no_overlapping_collision_layers (test_sthlm.GeometryTests.test_joined_surface_has_no_overlapping_collision_layers) ... ok
+test_malformed_missing_nodes (test_sthlm.GeometryTests.test_malformed_missing_nodes) ... ok
+test_package_rejects_corruption_and_path_escape (test_sthlm.GeometryTests.test_package_rejects_corruption_and_path_escape) ... ok
+test_polygon_hole_triangulation (test_sthlm.GeometryTests.test_polygon_hole_triangulation) ... ok
+test_real_snapshot_route_clearance (test_sthlm.GeometryTests.test_real_snapshot_route_clearance) ... ok
+test_shared_node_connects_junction (test_sthlm.GeometryTests.test_shared_node_connects_junction) ... ok
+test_writer_shared_seam_vertices_and_binary (test_sthlm.GeometryTests.test_writer_shared_seam_vertices_and_binary) ... ok
+test_advertised_fixture_checksum_is_enforced (test_terrain.TerrainGridTests.test_advertised_fixture_checksum_is_enforced) ... ok
+test_bilinear_interpolation_uses_east_and_north_axes (test_terrain.TerrainGridTests.test_bilinear_interpolation_uses_east_and_north_axes) ... ok
+test_fixture_shape_mismatch_is_rejected (test_terrain.TerrainGridTests.test_fixture_shape_mismatch_is_rejected) ... ok
+test_nodata_in_any_interpolation_cell_raises (test_terrain.TerrainGridTests.test_nodata_in_any_interpolation_cell_raises) ... ok
+test_out_of_coverage_and_nonfinite_coordinates_raise (test_terrain.TerrainGridTests.test_out_of_coverage_and_nonfinite_coordinates_raise) ... ok
+test_real_project_fixture_covers_target_with_finite_heights (test_terrain.TerrainGridTests.test_real_project_fixture_covers_target_with_finite_heights) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.557s
+
+OK

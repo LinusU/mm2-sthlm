@@ -5,11 +5,18 @@
   "upstream_base": "1a568de7996be6813d32ab4f50d2f3dc150f258c",
   "compatible_revisions": [
     "1a568de7996be6813d32ab4f50d2f3dc150f258c",
-    "cf5d4741100f78fc372398d36e06b228a3c0e938"
+    "cf5d4741100f78fc372398d36e06b228a3c0e938",
+    "392cc9be55a624f9c8cf64272103f987631c204d"
   ],
-  "engine_changes": "Continuous physics-step travel metrics plus optional --bot-speed input ceiling. No world loader or shared handling changes.",
-  "tested_integration_revision": "cf5d4741100f78fc372398d36e06b228a3c0e938",
+  "engine_changes": "Optional generic multi-part city loading with collision, unique room IDs and bounded per-part water. Includes prior continuous motion evidence fixes.",
+  "tested_integration_revision": "392cc9be55a624f9c8cf64272103f987631c204d",
   "patch_sha256": "fe255460e79e9621e4c910a1c66a91d85b094cd75ba0b72bc89566cd2750e36b",
-  "engine_branch": "codex/smoke-motion-evidence",
-  "pull_request": "https://github.com/LinusU/rust-mm2/pull/1"
+  "engine_branch": "codex/chunked-custom-cities",
+  "pull_request": "https://github.com/LinusU/rust-mm2/pull/1",
+  "expanded_revisions": [
+    "392cc9be55a624f9c8cf64272103f987631c204d"
+  ],
+  "loader_patch": "multi-part-cities.patch",
+  "loader_patch_sha256": "97d289f5a1bb504447fec01d7ce0b50c0eb2feec91e0c5611b4dfabce75cb53a",
+  "loader_pull_request": "https://github.com/LinusU/rust-mm2/pull/2"
 }

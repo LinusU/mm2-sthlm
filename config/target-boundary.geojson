@@ -7,7 +7,7 @@
         "id": "stockholm-target",
         "status": "draft-acquisition-envelope",
         "source": "Linus's 2026-10-03 description and annotated drawing; approximate authored WGS84 control points",
-        "precision": "Planning only. Refine against acquired OSM shorelines and E20 before export. Not a surveyed or playable boundary.",
+        "precision": "Planning water envelope. Normalizer refines shoreline exclusions and the northern edge using acquired OSM E20 nodes with a100 m corridor margin; not a cadastral survey.",
         "north": "Värtahamnen west along E20 to Karlbergs slott",
         "west": "Water under Tranebergsbron; bridge impassable; all Kungsholmen included",
         "south": "Water south of Södermalm; Hammarby sjöstad excluded",
@@ -15,18 +15,122 @@
       },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [18.111, 59.356], [18.096, 59.359], [18.079, 59.355],
-          [18.056, 59.358], [18.032, 59.363], [18.018, 59.358],
-          [18.009, 59.350], [18.001, 59.349], [17.994, 59.341],
-          [17.982, 59.336], [17.983, 59.329], [17.995, 59.324],
-          [18.010, 59.322], [18.012, 59.314], [18.025, 59.311],
-          [18.036, 59.303], [18.050, 59.299], [18.062, 59.296],
-          [18.083, 59.302], [18.098, 59.307], [18.106, 59.316],
-          [18.126, 59.317], [18.147, 59.316], [18.160, 59.320],
-          [18.162, 59.335], [18.146, 59.345], [18.126, 59.350],
-          [18.111, 59.356]
-        ]]
+        "coordinates": [
+          [
+            [
+              18.111,
+              59.356
+            ],
+            [
+              18.096,
+              59.359
+            ],
+            [
+              18.079,
+              59.355
+            ],
+            [
+              18.056,
+              59.358
+            ],
+            [
+              18.032,
+              59.363
+            ],
+            [
+              18.018,
+              59.358
+            ],
+            [
+              18.009,
+              59.35
+            ],
+            [
+              18.001,
+              59.349
+            ],
+            [
+              17.994,
+              59.341
+            ],
+            [
+              17.982,
+              59.336
+            ],
+            [
+              17.983,
+              59.329
+            ],
+            [
+              17.995,
+              59.324
+            ],
+            [
+              18.01,
+              59.322
+            ],
+            [
+              18.012,
+              59.314
+            ],
+            [
+              18.025,
+              59.311
+            ],
+            [
+              18.036,
+              59.303
+            ],
+            [
+              18.05,
+              59.299
+            ],
+            [
+              18.062,
+              59.296
+            ],
+            [
+              18.083,
+              59.302
+            ],
+            [
+              18.098,
+              59.307
+            ],
+            [
+              18.106,
+              59.316
+            ],
+            [
+              18.126,
+              59.317
+            ],
+            [
+              18.147,
+              59.316
+            ],
+            [
+              18.16,
+              59.32
+            ],
+            [
+              18.162,
+              59.335
+            ],
+            [
+              18.146,
+              59.345
+            ],
+            [
+              18.126,
+              59.35
+            ],
+            [
+              18.111,
+              59.356
+            ]
+          ]
+        ]
       }
     }
   ]

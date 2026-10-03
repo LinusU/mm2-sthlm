@@ -1,0 +1,26 @@
+{
+  "engine_revision": "392cc9be55a624f9c8cf64272103f987631c204d",
+  "final_package_manifest_sha256": "5ba352b7540cab47bc45fbb532583dccdf6088d1c66cb1d319698aea9fbb8d84",
+  "final_capture_options": {
+    "mods": "/Users/linus/coding/mm2-sthlm/dist",
+    "city": "stockholm",
+    "spawn": [
+      -31.488166412776778,
+      4.589773907788908,
+      138.05843248238915,
+      -90.69759070561142
+    ],
+    "time_of_day": 1,
+    "no_profile": true
+  },
+  "views": {
+    "map-overview.png": "--cam=1500,3300,4200,0,-35 --frames30",
+    "stadshuset-terrain.png": "--cam=340,50,420,-65,-10 --frames30",
+    "tanto-terrain.png": "--cam=-400,45,2130,-50,-2 --frames30",
+    "sodermalm-drive.png": "spawn from terrain-probes.json sodermalm command, --parked --frames60, default chase camera",
+    "sodermalm-terrain.png": "historical local aerial capture before northern clip refinement; not current acceptance",
+    "stadshuset-terrain-initial.png": "initial exported scene before church-height correction",
+    "tanto-terrain-initial.png": "initial exported scene showing excluded-shore building remnant; fixed by included-land filter"
+  },
+  "processing": "Original in-engine PNGs; no pixel edits."
+}

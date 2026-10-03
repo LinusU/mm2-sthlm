@@ -1,0 +1,10 @@
+{
+  "engine": "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+  "missing_chunk_rejected": true,
+  "package_manifest_sha256": "5ba352b7540cab47bc45fbb532583dccdf6088d1c66cb1d319698aea9fbb8d84",
+  "second_map_record": "smoke=headless-physics world=city/triangle.psdl status=pass updates=800 ticks=1600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=44.8m/s travel=317.9m sim=13.33s resets=0 controls=1360t/0b/0s finite=true moved=318m wheels=4/4 final=(-0,2.8,-318) env=lt00(fallback) fog=none sky=none map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+  "source_tree_beside_package": false,
+  "status": "pass",
+  "stockholm_record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=22533 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1504.0m sim=187.78s resets=0 controls=8547t/13986b/3446s finite=true moved=12m wheels=4/4 final=(-19,3.9,138) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=absent:missing-tune ind=absent:missing-pkg tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=1585d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+  "working_directory": "empty temporary directory"
+}

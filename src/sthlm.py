@@ -9,6 +9,7 @@ import json
 import math
 import os
 import re
+import shutil
 from pathlib import Path
 import struct
 import subprocess
@@ -16,7 +17,8 @@ import sys
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
-from shapely import constrained_delaunay_triangles
+from functools import lru_cache
+from shapely import constrained_delaunay_triangles, prepare
 from shapely.geometry import LineString, Point, Polygon, box, mapping, shape
 from shapely.ops import polygonize_full, unary_union
 from PIL import Image, ImageDraw
@@ -51,11 +53,9 @@ def project(lon, lat, origin):
 def pieces(geom):
     if geom.is_empty:
         return []
-    return (
-        [geom]
-        if geom.geom_type == "Polygon"
-        else [p for p in geom.geoms if p.geom_type == "Polygon"]
-    )
+    if geom.geom_type == "Polygon":
+        return [geom]
+    return [p for child in getattr(geom, "geoms", []) for p in pieces(child)]
 
 
 def triangulate(geom):
@@ -91,7 +91,7 @@ def estimated_height(tags, feature_id, area=None):
     ) * 3.2, "estimated"
 
 
-def assemble_relation(rel, ways, nodes, origin):
+def assemble_relation(rel, ways, nodes, origin, local_bounds=None):
     rings = {}
     for role in ["outer", "inner"]:
         segments = []
@@ -117,8 +117,12 @@ def assemble_relation(rel, ways, nodes, origin):
         polygons, cuts, dangles, invalid = polygonize_full(segments)
         # Mälaren contains two distant non-ring inner members; reject if
         # any malformed fragment can affect this slice, retain them in source.
-        local = box(
-            *project(18.0295, 59.3235, origin), *project(18.0605, 59.3345, origin)
+        local = (
+            local_bounds
+            if local_bounds is not None
+            else box(
+                *project(18.0295, 59.3235, origin), *project(18.0605, 59.3345, origin)
+            )
         )
         for bad in [cuts, dangles, invalid]:
             if bad.intersects(local):
@@ -150,12 +154,17 @@ def shortest(graph, start, end):
     raise ValueError(f"route disconnected: {start} → {end}")
 
 
-def normalize(source, cfg):
+def normalize(source, cfg, boundary=None, water_override=None):
     nodes = {e["id"]: e for e in source["elements"] if e["type"] == "node"}
     ways = {e["id"]: e for e in source["elements"] if e["type"] == "way"}
     origin = cfg["origin"]
     w, s, e, n = cfg["bounds"]
-    bounds = box(*project(w, s, origin), *project(e, n, origin))
+    bounds = (
+        boundary
+        if boundary is not None
+        else box(*project(w, s, origin), *project(e, n, origin))
+    )
+    prepare(bounds)
     roads, buildings, waters, omitted = [], [], [], []
     relations = [e for e in source["elements"] if e["type"] == "relation"]
     consumed = {
@@ -169,7 +178,17 @@ def normalize(source, cfg):
         tags = rel.get("tags", {})
         if not (tags.get("building") or tags.get("natural") == "water"):
             continue
-        poly = assemble_relation(rel, ways, nodes, origin).intersection(bounds)
+        if tags.get("natural") == "water" and water_override is not None:
+            continue
+        try:
+            poly = assemble_relation(rel, ways, nodes, origin, bounds).intersection(
+                bounds
+            )
+        except ValueError as exc:
+            if tags.get("building") and cfg.get("report_bad_buildings"):
+                omitted.append({"id": rel["id"], "reason": str(exc), "tags": tags})
+                continue
+            raise
         if tags.get("building") and not poly.is_empty:
             h, rule = estimated_height(tags, f"relation/{rel['id']}", poly.area)
             buildings.append(
@@ -194,19 +213,22 @@ def normalize(source, cfg):
         line = LineString(pts)
         if not line.intersects(bounds):
             continue
-        if tags.get("highway") in [
-            "residential",
-            "tertiary",
-            "unclassified",
-            "secondary",
-            "service",
-            "living_street",
-        ]:
+        if tags.get("highway") in cfg.get(
+            "road_classes",
+            [
+                "residential",
+                "tertiary",
+                "unclassified",
+                "secondary",
+                "service",
+                "living_street",
+            ],
+        ):
             if (
                 tags.get("bridge") not in (None, "no")
                 or tags.get("tunnel") not in (None, "no")
                 or tags.get("layer", "0") != "0"
-            ):
+            ) and wid not in cfg.get("allowed_bridge_ways", []):
                 omitted.append(
                     {"id": wid, "reason": "grade-separated road excluded", "tags": tags}
                 )
@@ -235,7 +257,7 @@ def normalize(source, cfg):
             if not poly.is_valid:
                 omitted.append({"id": wid, "reason": "invalid building polygon"})
                 continue
-            poly = poly.intersection(bounds)
+            poly = poly if bounds.covers(poly) else poly.intersection(bounds)
             h, rule = estimated_height(tags, f"way/{wid}", poly.area)
             buildings.append(
                 {
@@ -248,7 +270,11 @@ def normalize(source, cfg):
             )
         if tags.get("natural") == "water" and way["nodes"][0] == way["nodes"][-1]:
             waters.append(Polygon(pts).intersection(bounds))
-    water = unary_union(waters).intersection(bounds)
+    water = (
+        water_override
+        if water_override is not None
+        else unary_union(waters).intersection(bounds)
+    )
     if water.area < 10000:
         raise ValueError("waterfront missing: no complete usable water polygon")
     road_surface = unary_union(
@@ -344,19 +370,48 @@ class PsdlWriter:
         # Tile meshes spatially; one shared vertex pool means identical seams.
         if geom.is_empty:
             return
+        varying = callable(y)
+        level = lru_cache(maxsize=None)(y) if varying else lambda x, n: y
+        step = 100
+        if varying:
+            geom = geom.segmentize(5 if road else 25)
         xmin, zmin, xmax, zmax = geom.bounds
-        for x in range(math.floor(xmin / 100) * 100, math.ceil(xmax / 100) * 100, 100):
+        for x in range(
+            math.floor(xmin / step) * step, math.ceil(xmax / step) * step, step
+        ):
             for z in range(
-                math.floor(zmin / 100) * 100, math.ceil(zmax / 100) * 100, 100
+                math.floor(zmin / step) * step, math.ceil(zmax / step) * step, step
             ):
-                tile = geom.intersection(box(x, z, x + 100, z + 100))
+                tile = geom.intersection(box(x, z, x + step, z + step))
                 for poly in pieces(tile):
                     attrs = self.texture(texture)
-                    for tri in triangulate(poly):
-                        refs = [self.vertex((a, y, b)) for a, b in tri]
+                    patches = [poly]
+                    if varying:
+                        patches = [
+                            patch
+                            for sx in range(x, x + step, 25)
+                            for sn in range(z, z + step, 25)
+                            for patch in pieces(
+                                poly.intersection(box(sx, sn, sx + 25, sn + 25))
+                            )
+                        ]
+                    emitted_area = 0.0
+                    for tri in (tri for patch in patches for tri in triangulate(patch)):
+                        a, b, c = tri
+                        emitted_area += (
+                            abs(
+                                (b[0] - a[0]) * (c[1] - a[1])
+                                - (b[1] - a[1]) * (c[0] - a[0])
+                            )
+                            / 2
+                        )
+                        refs = [self.vertex((a, level(a, b), b)) for a, b in tri]
                         attrs.extend([0x80 | (0x28 if road else 0x30) | 1, *refs])
+                    if abs(emitted_area - poly.area) > max(1e-4, poly.area * 1e-8):
+                        raise ValueError("surface triangulation area mismatch")
                     perimeter = [
-                        self.vertex((a, y, b)) for a, b in poly.exterior.coords[:-1]
+                        self.vertex((a, level(a, b), b))
+                        for a, b in poly.exterior.coords[:-1]
                     ]
                     if len(attrs) > 2:
                         self.rooms.append(
@@ -503,17 +558,35 @@ def textures(dest):
         img.save(dest / (name + ".png"))
 
 
-def build(output, minimal=False):
-    cfg = json.loads((ROOT / "config/slice.json").read_text())
-    with gzip.open(ROOT / "sources/osm.json.gz", "rt") as f:
+def build(output, minimal=False, profile="expanded"):
+    expanded = profile == "expanded"
+    cfg = json.loads(
+        (
+            ROOT / ("config/expanded.json" if expanded else "config/slice.json")
+        ).read_text()
+    )
+    source_dir = ROOT / ("sources/expanded" if expanded else "sources")
+    with gzip.open(source_dir / "osm.json.gz", "rt") as f:
         source = json.load(f)
-    manifest = json.loads((ROOT / "sources/manifest.json").read_text())
-    if sha(ROOT / "sources/osm.json.gz") != manifest["snapshot_sha256"]:
+    manifest = json.loads((source_dir / "manifest.json").read_text())
+    if sha(source_dir / "osm.json.gz") != manifest["snapshot_sha256"]:
         raise ValueError("source snapshot checksum mismatch")
-    city = normalize(source, cfg)
+    if expanded:
+        from expanded import normalized
+
+        city = normalized(source, cfg)
+    else:
+        city = normalize(source, cfg)
     out = output / "stockholm"
+    if out.exists():
+        shutil.rmtree(out)
     out.mkdir(parents=True, exist_ok=True)
-    writer = PsdlWriter()
+    if expanded:
+        from expanded import ChunkedWriter
+
+        writer = ChunkedWriter(city["spawn"])
+    else:
+        writer = PsdlWriter()
     road = shape(city["road_surface"])
     water = shape(city["water"])
     bounds = shape(city["bounds"])
@@ -528,7 +601,29 @@ def build(output, minimal=False):
     if minimal:
         city["road_surface"] = mapping(road)
     write_json(out / "normalized.json", city)
-    writer.surface(road, cfg["road_y"], "road", road=True)
+
+    def ground_height(x, n):
+        return 2.0
+
+    def road_height(x, n):
+        return cfg["road_y"]
+
+    if expanded:
+        from terrain import TerrainGrid
+        from elevation import apply
+
+        terrain = TerrainGrid.from_project(ROOT, cfg["origin"])
+        road_field, deck_field, base_roads, bridge_roads = apply(city, terrain)
+        ground_height, road_height = road_field.ground, road_field
+        if minimal:
+            base_roads = road
+            bridge_roads = Polygon()
+        print("Meshing terrain-conforming roads", file=sys.stderr, flush=True)
+        writer.surface(base_roads, road_height, "road", road=True)
+        writer.surface(bridge_roads, deck_field, "road", road=True)
+        road = base_roads
+    else:
+        writer.surface(road, cfg["road_y"], "road", road=True)
     if not minimal:
         # Partition collision surfaces instead of stacking a ground plane beneath roads.
         quay = water.buffer(2).difference(water).intersection(bounds)
@@ -539,21 +634,65 @@ def build(output, minimal=False):
             .difference(water)
             .intersection(bounds)
         )
-        writer.surface(paving, 2, "paving")
-        land = bounds.difference(water).difference(road.union(paving))
-        writer.surface(land, 2, "grass")
-        writer.surface(water, 0, "water", water=True)
+        print("Meshing shoulders", file=sys.stderr, flush=True)
+        writer.surface(paving, ground_height if expanded else 2, "paving")
+        land = (
+            shape(city["land"]).difference(road.union(paving))
+            if expanded
+            else bounds.difference(water).difference(road.union(paving))
+        )
+        print("Meshing land", file=sys.stderr, flush=True)
+        writer.surface(land, ground_height if expanded else 2, "grass")
+        remaining_water = water
+        for region in city.get("water_regions", []):
+            area = shape(region["geometry"]).intersection(remaining_water)
+            writer.surface(area, region["height_m"], "water", water=True)
+            remaining_water = remaining_water.difference(area)
+        writer.surface(remaining_water, 0, "water", water=True)
+        print("Meshing buildings and props", file=sys.stderr, flush=True)
         for b in city["buildings"]:
             index = int(hashlib.sha256(b["id"].encode()).hexdigest()[:8], 16) % 3
             for p in pieces(shape(b["geometry"])):
                 landmark = b["id"] == "relation/29368"
+                church = (
+                    b["tags"].get("building")
+                    in {"church", "cathedral", "chapel", "religious"}
+                    and b["height"] > 35
+                )
+                body_height = min(18.0, b["height"] - 20) if church else b["height"]
+                if church:
+                    b["rendering"] = {
+                        "rule": "schematic nave and narrow spire; source height is total height, not full-height office facade",
+                        "nave_height_m": body_height,
+                        "tower_position": "footprint representative point; not surveyed",
+                    }
                 writer.building(
                     p,
-                    24 if landmark else b["height"],
+                    24 if landmark else body_height,
                     "brick" if landmark else ["ochre", "cream", "pink"][index],
                     "copper" if landmark else "roof",
+                    base=b.get("base_y", 2.0),
                 )
-        for a, b in zip(list(bounds.exterior.coords), list(bounds.exterior.coords)[1:]):
+                if church:
+                    base = b.get("base_y", 2.0)
+                    point = p.representative_point()
+                    half = min(4, math.sqrt(p.area) / 8)
+                    tower = box(
+                        point.x - half, point.y - half, point.x + half, point.y + half
+                    ).intersection(p)
+                    for shaft in pieces(tower):
+                        writer.building(
+                            shaft,
+                            b["height"] - body_height - 16,
+                            "ochre",
+                            "copper",
+                            base=base + body_height,
+                        )
+                        writer.pyramid(
+                            shaft, base + b["height"] - 16, base + b["height"], "copper"
+                        )
+        outer = max(pieces(bounds), key=lambda p: p.area)
+        for a, b in zip(list(outer.exterior.coords), list(outer.exterior.coords)[1:]):
             wall = (
                 LineString([a, b])
                 .buffer(0.4, cap_style=2)
@@ -561,28 +700,26 @@ def build(output, minimal=False):
                 .difference(water)
             )
             for p in pieces(wall):
-                writer.building(p, 1.2, "paving", "paving")
-        # Original simple quay trees, kept clear of the real road and buildings.
-        shoreline = water.boundary.intersection(bounds.buffer(-4))
-        occupied = unary_union([shape(b["geometry"]) for b in city["buildings"]])
-        for distance in range(0, int(shoreline.length), 45):
-            point = shoreline.interpolate(distance)
-            for dx, dz in [(0, 6), (6, 0), (-6, 0), (0, -6)]:
-                centre = Point(point.x + dx, point.y + dz)
-                if (
-                    land.covers(centre.buffer(3))
-                    and centre.distance(road) > 5
-                    and centre.distance(occupied) > 4
-                ):
-                    writer.building(centre.buffer(0.35, quad_segs=2), 4, "wood", "wood")
-                    writer.building(
-                        centre.buffer(2.3, quad_segs=2), 2, "foliage", "foliage", base=5
-                    )
-                    writer.pyramid(centre.buffer(2.5, quad_segs=2), 7, 10, "foliage")
-                    break
+                writer.building(
+                    p,
+                    1.2,
+                    "paving",
+                    "paving",
+                    base=ground_height(p.centroid.x, p.centroid.y),
+                )
+        if expanded:
+            from props import placements, write as write_props
+
+            city["props"] = placements(
+                city, land, shape(city["road_surface"]), ground_height
+            )
+            write_props(out, city["props"])
+            write_json(out / "normalized.json", city)
         # Original primitive tower at source footprint's southeastern corner.
         landmark = next(b for b in city["buildings"] if b["id"] == "relation/29368")
         poly = shape(landmark["geometry"])
+        landmark_base = landmark.get("base_y", 2.0)
+        landmark_delta = landmark_base - 2.0
         x0, z0, x1, z1 = poly.bounds
         art = json.loads((ROOT / "assets/landmarks/stadshuset.json").read_text())
         tx, tz = (
@@ -595,6 +732,7 @@ def build(output, minimal=False):
             art["tower_shaft_height"],
             "tower_brick",
             "copper",
+            base=landmark_base,
         )
         # Open belfry on the shaft: four corner pillars, no giant apartment stack.
         for dx in [-8, 6]:
@@ -604,12 +742,16 @@ def build(output, minimal=False):
                     art["belfry_height"],
                     "tower_brick",
                     "copper",
-                    base=78,
+                    base=78 + landmark_delta,
                 )
         cap = box(tx - 9, tz - 9, tx + 9, tz + 9)
-        writer.pyramid(cap, 90, 104, "copper")
+        writer.pyramid(cap, 90 + landmark_delta, 104 + landmark_delta, "copper")
         writer.building(
-            box(tx - 0.4, tz - 0.4, tx + 0.4, tz + 0.4), 3, "gold", "gold", base=104
+            box(tx - 0.4, tz - 0.4, tx + 0.4, tz + 0.4),
+            3,
+            "gold",
+            "gold",
+            base=104 + landmark_delta,
         )
         for dx, dz in [(-2, 0), (2, 0), (0, 2)]:
             writer.building(
@@ -617,14 +759,15 @@ def build(output, minimal=False):
                 0.6,
                 "gold",
                 "gold",
-                base=107,
+                base=107 + landmark_delta,
             )
         # A modest original copper pitched roof silhouette on each large wing.
         wing = box(x0 + 2, z0 + 5, x0 + 19, z1 - 6).intersection(poly)
         for p in pieces(wing):
-            writer.pyramid(p, 26, 31, "copper")
+            writer.pyramid(p, 26 + landmark_delta, 31 + landmark_delta, "copper")
     # Bounds center also directs the existing engine's default RoadFan spawn.
-    center = [city["spawn"][0], 2, city["spawn"][2]]
+    center = [city["spawn"][0], city["spawn"][1] - 1.5, city["spawn"][2]]
+    print("Writing independent PSDL parts", file=sys.stderr, flush=True)
     writer.write(out / "city/stockholm.psdl", center)
     (out / "city/stockholm.water").write_text(
         "0.2\n" + "".join(f"{i}\n" for i in writer.water_rooms)
@@ -669,7 +812,10 @@ def build(output, minimal=False):
     )
     (race / "circuit0waypoints.csv").write_text(
         "x,y,z,a,poly count,frame rate,state changes,texture changes,msg\n"
-        + "".join(f"{x:.5f},2,{-z:.5f},0,5,0,0,0,\n" for x, z in route[:-1])
+        + "".join(
+            f"{x:.5f},{road_height(x, z):.5f},{-z:.5f},0,5,0,0,0,\n"
+            for x, z in route[:-1]
+        )
     )
     # Data-provided spawn resets through the existing generic CLI.
     write_json(
@@ -683,15 +829,26 @@ def build(output, minimal=False):
             "engine_base": "1a568de7996be6813d32ab4f50d2f3dc150f258c",
             "compatible_revisions": json.loads(
                 (ROOT / "integration/rust-mm2/compatibility.json").read_text()
-            )["compatible_revisions"],
+            )["expanded_revisions" if expanded else "compatible_revisions"],
             "time_of_day": 1,
             "weather": 0,
             "route_length_m": city["route_length"],
             "minimal": minimal,
+            "profile": profile,
         },
+    )
+    write_json(out / "normalized.json", city)
+    terrain_attribution = (
+        "Terrain: Lantmäteriet Markhöjdmodell (1 m source grid), ©Lantmäteriet, CC BY 4.0.\n"
+        "Modified: bilinear resampling to 10 m local grid, interpolation, road/shoulder profiles and terrain mesh simplification.\n"
+        "https://creativecommons.org/licenses/by/4.0/\n"
+        "https://www.lantmateriet.se/globalassets/geodata/geodataprodukter/anvandningsvillkor_for_vardefulla_datamangder.pdf\n"
+        if expanded
+        else ""
     )
     (out / "ATTRIBUTION.txt").write_text(
         "Geodata © OpenStreetMap contributors, ODbL 1.0.\nhttps://www.openstreetmap.org/copyright\nhttps://opendatacommons.org/licenses/odbl/1-0/\nOSM-derived database: normalized.json; source and generator: https://github.com/LinusU/mm2-sthlm\nOriginal procedural artwork and code: MIT. No retail assets.\n"
+        + terrain_attribution
     )
     write_json(
         out / "checksums.json",
@@ -829,9 +986,76 @@ def validate(package):
     ]:
         if required not in checks:
             raise ValueError(f"package manifest missing {required}")
-    binary = inspect_psdl(package / "city/stockholm.psdl", package)
+    part_paths = ["city/stockholm.psdl"]
+    chunk_manifest = package / "city/stockholm.chunks"
+    if chunk_manifest.exists():
+        lines = chunk_manifest.read_text().splitlines()
+        if not lines or lines[0] != "MM2_CHUNKS 1":
+            raise ValueError("unsupported city chunk manifest")
+        for relative in lines[1:]:
+            if (
+                relative not in checks
+                or Path(relative).is_absolute()
+                or ".." in Path(relative).parts
+                or relative in part_paths
+            ):
+                raise ValueError("invalid or unverified city part")
+            part_paths.append(relative)
+    reports = [inspect_psdl(package / p, package) for p in part_paths]
+    binary = {key: sum(r[key] for r in reports) for key in reports[0]}
+    binary["parts"] = len(reports)
     city = json.loads((package / "normalized.json").read_text())
     road = shape(city["road_surface"])
+    if city.get("expanded") and not meta.get("minimal"):
+        from expanded import EXCLUDED, INCLUDED, BLOCKED
+
+        land = shape(city["land"])
+        building_land = land.buffer(1)
+        prepare(building_land)
+        if any(
+            not building_land.intersects(shape(b["geometry"]))
+            or b["tags"].get("building") == "ship"
+            for b in city["buildings"]
+        ):
+            raise ValueError(
+                "building has no included-land contact or is an unmodeled ship"
+            )
+        if set(INCLUDED) != set(city["coverage"]):
+            raise ValueError("missing included-island coverage")
+        for name, ll in EXCLUDED.items():
+            if land.distance(Point(project(*ll, city["origin"]))) < 20:
+                raise ValueError(f"excluded island contains generated land: {name}")
+        if any(r["tags"].get("name") in BLOCKED for r in city["roads"]):
+            raise ValueError("external bridge was made driveable")
+        for name, coverage in city["connected_routes"].items():
+            if coverage["endpoint_distance_m"] > 200 or not road.buffer(0.01).covers(
+                LineString(coverage["points"])
+            ):
+                raise ValueError(f"coverage route disconnected: {name}")
+        shared = {}
+        for r in city["roads"]:
+            elevated = r["elevated_points"]
+            for nid, point in [
+                (r["nodes"][0], elevated[0]),
+                (r["nodes"][-1], elevated[-1]),
+            ]:
+                if nid in shared and abs(shared[nid] - point[2]) > 1e-5:
+                    raise ValueError("road junction elevation mismatch")
+                shared[nid] = point[2]
+        if city["terrain"]["coverage_nodata_cells"] != 0:
+            raise ValueError("terrain coverage gaps")
+        if not all(
+            p["breakable"] and all(math.isfinite(v) for v in p["position"])
+            for p in city["props"]
+        ):
+            raise ValueError("invalid breakable prop placement")
+        for path in [
+            "geometry/sthlm_tree.pkg",
+            "tune/banger/sthlm_tree.dgbangerdata",
+            "city/stockholm/props.pathset",
+        ]:
+            if path not in checks:
+                raise ValueError("missing native breakable tree asset")
     route = LineString(city["route"])
     if not meta.get("minimal") and not road.buffer(0.01).covers(route):
         raise ValueError("route leaves road surface")
@@ -844,10 +1068,14 @@ def validate(package):
             overlaps.append(b["id"])
     if overlaps:
         raise ValueError(f"buildings obstruct benchmark route: {overlaps}")
-    triangles = list(triangulate(road))
-    area = sum(Polygon(t).area for t in triangles)
-    if abs(area - road.area) > 0.01:
-        raise ValueError("road triangulation area mismatch")
+    # Expanded export checks every bounded patch during emission. Avoid a
+    # second global triangulation of the complete connected city road polygon.
+    area = None
+    if not city.get("expanded"):
+        triangles = list(triangulate(road))
+        area = sum(Polygon(t).area for t in triangles)
+        if abs(area - road.area) > 0.01:
+            raise ValueError("road triangulation area mismatch")
     print(
         json.dumps(
             {
@@ -870,6 +1098,9 @@ def main():
     parser.add_argument(
         "command", choices=["fetch", "build", "validate", "play", "smoke"]
     )
+    parser.add_argument(
+        "--profile", choices=["expanded", "stadshuset"], default="expanded"
+    )
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--minimal", action="store_true")
     parser.add_argument("--output", type=Path, default=ROOT / "dist")
@@ -877,7 +1108,7 @@ def main():
     args, forward = parser.parse_known_args()
     package = args.output.resolve() / "stockholm"
     if args.command == "build":
-        build(args.output.resolve(), args.minimal)
+        build(args.output.resolve(), args.minimal, args.profile)
     elif args.command == "validate":
         validate(package)
     elif args.command == "fetch":

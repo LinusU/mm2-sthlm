@@ -5,10 +5,12 @@ and drive it in a **separately built** [rust-mm2](https://github.com/LinusU/rust
 No retail MM2 assets are needed. This repository contains no engine checkout
 or vehicle physics.
 
-The first slice covers Stadshuset, eastern Norr Mälarstrand, Kungsholmstorg
-and Hantverkargatan. It includes 407 sourced building footprints, a 1.53 km
-connected benchmark loop, the actual waterfront, an original schematic
-Stadshuset model, shared facade/material textures and physical edge barriers.
+The default map covers Kungsholmen, Södermalm, Djurgården and the central
+Stockholm mainland within the agreed boundary. It contains 7,422 sourced road
+ways, 10,741 building footprints, real RH2000 terrain, internal bridge decks,
+and 1,585 independent breakable tree props. The original 1.53 km waterfront
+benchmark remains available. `--profile stadshuset` builds the original flat
+comparison slice.
 
 Bootstrap once with Python 3.14:
 
@@ -28,7 +30,11 @@ Generate and validate the checked-in OSM fixture **offline**:
 Optional explicit source refresh (changes the source manifest and generation):
 
 ```sh
-./scripts/sthlm fetch
+.venv/bin/pip install -r requirements-acquisition.txt
+.venv/bin/python scripts/acquire-expanded.py
+.venv/bin/python scripts/acquire-terrain.py
+# Original small OSM fixture only:
+./scripts/sthlm fetch --profile stadshuset
 ```
 
 Launch the independently built engine:
@@ -57,17 +63,19 @@ parent and load it from any working directory:
 
 ```sh
 /absolute/path/to/mm2 --mods /tmp/my-maps --city stockholm --no-profile \
-  --spawn=-31.4881664128,3.5,138.0584324824,-90.6975907056
+  --spawn=-31.4881664128,4.5897098965,138.0584324824,-90.6975907056
 ```
 
 See [integration and exact engine preparation](docs/INTEGRATION.md),
 [package contract](integration/rust-mm2/CONTRACT.md),
 [source provenance and approximations](docs/SOURCES.md), and
-[measured acceptance status](docs/STATUS.md), and
-[planned full-map boundary and elevation sequence](docs/BOUNDARY.md). Screenshots and logs live in
+[measured expanded acceptance](docs/EXPANDED-STATUS.md), and
+[expanded-map generation](docs/EXPANDED.md), [terrain provenance](docs/TERRAIN.md),
+and [the agreed boundary](docs/BOUNDARY.md). Screenshots and logs live in
 [evidence](evidence/). Generated output is deliberately ignored by Git.
 
-Code and original procedural artwork are MIT; OSM data and derived geographic
+Terrain data is CC BY 4.0, ©Lantmäteriet, with resampling and mesh modifications
+described in the package attribution. Code and original procedural artwork are MIT; OSM data and derived geographic
 database/geometry are ODbL 1.0, © OpenStreetMap contributors. The package carries
 its own attribution notice and reusable normalized database. No retail assets,
 Google/Apple imagery or downloaded third-party landmark meshes are included.

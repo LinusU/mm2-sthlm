@@ -1,0 +1,18 @@
+mm2-smoke commit=392cc9be55a624f9c8cf64272103f987631c204d
+2026-10-03T15:31:43.863480Z ERROR mm2_app::session: city failed to load error=city data missing: city/triangle.parts/north.psdl: asset not found: city/triangle.parts/north.psdl
+2026-10-03T15:31:43.863502Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T15:31:43.863515Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T15:31:43.863522Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T15:31:43.863527Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T15:31:43.863528Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T15:31:43.863529Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T15:31:43.863529Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T15:31:43.863538Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T15:31:43.863542Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T15:31:43.863543Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T15:31:43.863546Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T15:31:43.863571Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T15:31:43.863575Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T15:31:43.863577Z  WARN mm2_app::audio: audio: aud/cardata/player/trianglepolicesiren.csv: asset not found: aud/cardata/player/trianglepolicesiren.csv
+2026-10-03T15:31:43.863578Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+smoke=headless-physics world=city/triangle.psdl status=fail load: city data missing: city/triangle.parts/north.psdl: asset not found: city/triangle.parts/north.psdl
