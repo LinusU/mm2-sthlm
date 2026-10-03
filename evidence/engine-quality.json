@@ -1,0 +1,13 @@
+{
+  "engine_base": "1a568de7996be6813d32ab4f50d2f3dc150f258c",
+  "engine_revision": "cf5d4741100f78fc372398d36e06b228a3c0e938",
+  "checks": {
+    "cargo_fmt": "pass",
+    "cargo_clippy_workspace_all_targets_all_features_deny_warnings": "pass",
+    "cargo_test_workspace": "pass"
+  },
+  "test_suites": 92,
+  "tests_passed": 1771,
+  "tests_ignored": 0,
+  "note": "Full tests ran with loopback permission. An initial sandbox attempt failed a local TCP bind; subsequent complete run passed. No source bypass or unrelated fix."
+}

@@ -1,0 +1,386 @@
+From a7015aa594791f28c830f9ca2157b41082348558 Mon Sep 17 00:00:00 2001
+From: Codex <noreply@openai.com>
+Date: Sat, 3 Oct 2026 14:00:45 +0200
+Subject: [PATCH 1/2] Support measured custom-map driving probes
+
+---
+ README.md                             |  12 +++
+ crates/mm2_app/src/lib.rs             |   2 +
+ crates/mm2_app/src/main.rs            |  14 ++++
+ crates/mm2_app/src/motion_evidence.rs | 101 ++++++++++++++++++++++++++
+ crates/mm2_app/src/scripted.rs        |  39 ++++++++++
+ crates/mm2_app/src/smoke.rs           |  22 +++++-
+ crates/mm2_game/src/config.rs         |   2 +
+ 7 files changed, 190 insertions(+), 2 deletions(-)
+ create mode 100644 crates/mm2_app/src/motion_evidence.rs
+
+diff --git a/README.md b/README.md
+index f077023..b7660c1 100644
+--- a/README.md
++++ b/README.md
+@@ -250,3 +250,15 @@ cargo test --workspace
+ *Midtown Madness 2* is © Microsoft/Angel Studios. This project is an
+ unofficial, non-commercial reimplementation effort; it ships no copyrighted
+ material and requires users to supply their own game data.
++
++Headless smoke reports also include `travel=<metres>`, `sim=<seconds>`,
++`resets=<count>`, `controls=<throttle steps>t/<brake steps>b/<steer steps>s`
++and `finite=<bool>`. Travel is planar solver displacement sampled at 120 Hz;
++reset teleports and session-generation changes break the segment. `moved=`
++remains displacement from spawn. These metrics describe evidence, not a
++claim that the whole course was completed; read `cp=` and the race result.
++
++`--bot --bot-speed 8` limits the evidence driver to approximately 8 m/s
++through its ordinary throttle/brake inputs. The optional ceiling preserves
++steering, reverse recoveries, vehicle tuning and the default driver behavior.
++It works in windowed and headless sessions; useful for narrow custom streets.
+diff --git a/crates/mm2_app/src/lib.rs b/crates/mm2_app/src/lib.rs
+index eb5be2a..906203a 100644
+--- a/crates/mm2_app/src/lib.rs
++++ b/crates/mm2_app/src/lib.rs
+@@ -49,3 +49,5 @@ pub mod texel_fx;
+ pub mod traffic;
+ pub mod water;
+ pub mod wheel_fx;
++
++pub(crate) mod motion_evidence;
+diff --git a/crates/mm2_app/src/main.rs b/crates/mm2_app/src/main.rs
+index 974c532..93a2077 100644
+--- a/crates/mm2_app/src/main.rs
++++ b/crates/mm2_app/src/main.rs
+@@ -282,6 +282,10 @@ struct Cli {
+     #[arg(long)]
+     bot: bool,
+ 
++    /// Limit the evidence driver's forward speed (m/s), using throttle/brake inputs.
++    #[arg(long, requires = "bot", value_parser = parse_bot_speed)]
++    bot_speed: Option<f32>,
++
+     /// Stationary control: the player vehicle holds its handbrake for
+     /// the whole session — it never races, so an event run measures what
+     /// the opponents do with no competing local driver (the isolation
+@@ -842,6 +846,7 @@ fn main() {
+             restart: cli.restart,
+             restart_at: cli.restart_at,
+             reset_at: cli.reset_at,
++            bot_speed: cli.bot_speed,
+             no_pvs: cli.no_pvs,
+             horn: cli.horn,
+             cockpit: cli.cockpit,
+@@ -2104,3 +2109,12 @@ fn print_roster(catalog: &VehicleCatalog, garage: &mm2_game::GarageTable) {
+         }
+     }
+ }
++
++fn parse_bot_speed(value: &str) -> Result<f32, String> {
++    let speed: f32 = value.parse().map_err(|_| "expected a speed in m/s")?;
++    if speed.is_finite() && (2.0..=40.0).contains(&speed) {
++        Ok(speed)
++    } else {
++        Err("bot speed must be finite and within 2..=40 m/s".into())
++    }
++}
+diff --git a/crates/mm2_app/src/motion_evidence.rs b/crates/mm2_app/src/motion_evidence.rs
+new file mode 100644
+index 0000000..c9d67cc
+--- /dev/null
++++ b/crates/mm2_app/src/motion_evidence.rs
+@@ -0,0 +1,101 @@
++//! Physics-step evidence for smoke runs. Measures travel, never teleports.
++use avian3d::prelude::{LinearVelocity, Position, Rotation};
++use bevy::prelude::*;
++use mm2_game::{PlayerVehicle, Session};
++use mm2_vehicle::{Teleported, VehicleInput};
++
++#[derive(Resource, Default)]
++pub(crate) struct MotionEvidence {
++    last: Option<(u64, Vec3)>,
++    pub distance: f32,
++    pub steps: u64,
++    pub resets: u64,
++    pub throttle_steps: u64,
++    pub brake_steps: u64,
++    pub steer_steps: u64,
++    pub finite: bool,
++    initialized: bool,
++}
++
++impl MotionEvidence {
++    fn sample(&mut self, generation: u64, pos: Vec3, valid: bool, teleported: bool) {
++        if !self.initialized {
++            self.finite = true;
++            self.initialized = true;
++        }
++        self.finite &= valid && pos.is_finite();
++        self.steps += 1;
++        if teleported {
++            self.resets += 1;
++        } else if let Some((old_generation, old_pos)) = self.last
++            && generation == old_generation
++            && valid
++            && old_pos.is_finite()
++            && pos.is_finite()
++        {
++            self.distance += (pos.xz() - old_pos.xz()).length();
++        }
++        self.last = Some((generation, pos));
++    }
++}
++
++type MotionPlayers<'w, 's> = Query<
++    'w,
++    's,
++    (
++        &'static Position,
++        &'static Rotation,
++        &'static LinearVelocity,
++        &'static VehicleInput,
++        Has<Teleported>,
++    ),
++    With<PlayerVehicle>,
++>;
++
++/// Runs after the solver, before the race consumer removes `Teleported`.
++pub(crate) fn sample_motion(
++    session: Res<Session>,
++    mut report: ResMut<MotionEvidence>,
++    player: MotionPlayers<'_, '_>,
++) {
++    if !session.is_playing() {
++        return;
++    }
++    for (pos, rot, vel, input, teleported) in &player {
++        report.sample(
++            session.generation(),
++            pos.0,
++            rot.0.is_finite() && vel.0.is_finite(),
++            teleported,
++        );
++        report.throttle_steps += u64::from(input.throttle > 0.1);
++        report.brake_steps += u64::from(input.brake > 0.1);
++        report.steer_steps += u64::from(input.steering.abs() > 0.1);
++    }
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++    #[test]
++    fn excludes_resets_and_new_sessions() {
++        let mut report = MotionEvidence::default();
++        report.sample(1, Vec3::ZERO, true, false);
++        report.sample(1, Vec3::X * 10.0, true, false);
++        report.sample(1, Vec3::X * 1000.0, true, true);
++        report.sample(1, Vec3::X * 1005.0, true, false);
++        report.sample(2, Vec3::ZERO, true, false);
++        assert_eq!(report.distance, 15.0);
++        assert_eq!(report.resets, 1);
++        assert!(report.finite);
++    }
++    #[test]
++    fn retains_nonfinite_failure() {
++        let mut report = MotionEvidence::default();
++        report.sample(1, Vec3::ZERO, true, false);
++        report.sample(1, Vec3::splat(f32::NAN), false, false);
++        report.sample(1, Vec3::X, true, false);
++        assert!(!report.finite);
++        assert_eq!(report.distance, 0.0);
++    }
++}
+diff --git a/crates/mm2_app/src/scripted.rs b/crates/mm2_app/src/scripted.rs
+index 3405826..f951186 100644
+--- a/crates/mm2_app/src/scripted.rs
++++ b/crates/mm2_app/src/scripted.rs
+@@ -737,5 +737,44 @@ pub fn scripted_drive(
+         }
+         let bearing = relative_bearing(yaw, pos.0, target);
+         *input = scripted_input(bot, bearing, vstate.forward_speed, vstate.grounded);
++        if let Some(limit) = session.config().and_then(|c| c.dev.bot_speed) {
++            limit_evidence_speed(&mut input, vstate.forward_speed, limit);
++        }
++    }
++}
++
++/// An explicit probe ceiling changes inputs only, preserving the shared handling.
++fn limit_evidence_speed(input: &mut VehicleInput, speed: f32, limit: f32) {
++    if speed > limit {
++        input.throttle = 0.0;
++        input.brake = input.brake.max(0.35);
++    }
++}
++
++#[cfg(test)]
++mod speed_limit_tests {
++    use super::*;
++    #[test]
++    fn speed_ceiling_brakes_without_changing_steering() {
++        let mut input = VehicleInput {
++            throttle: 1.0,
++            steering: -0.5,
++            ..default()
++        };
++        limit_evidence_speed(&mut input, 12.0, 8.0);
++        assert_eq!(input.throttle, 0.0);
++        assert_eq!(input.brake, 0.35);
++        assert_eq!(input.steering, -0.5);
++    }
++    #[test]
++    fn reverse_recovery_is_preserved() {
++        let mut input = VehicleInput {
++            brake: 1.0,
++            steering: 1.0,
++            ..default()
++        };
++        limit_evidence_speed(&mut input, -5.0, 8.0);
++        assert_eq!(input.brake, 1.0);
++        assert_eq!(input.steering, 1.0);
+     }
+ }
+diff --git a/crates/mm2_app/src/smoke.rs b/crates/mm2_app/src/smoke.rs
+index f17c309..7ce3dff 100644
+--- a/crates/mm2_app/src/smoke.rs
++++ b/crates/mm2_app/src/smoke.rs
+@@ -787,6 +787,13 @@ fn run_headless(
+         }
+         RunSource::Session(_) => {}
+     }
++    app.init_resource::<crate::motion_evidence::MotionEvidence>()
++        .add_systems(
++            FixedLast,
++            crate::motion_evidence::sample_motion
++                .after(crate::contracts::publish_vehicle_telemetry)
++                .before(crate::race::reanchor_teleported_participants),
++        );
+     app.finish();
+     app.cleanup();
+ 
+@@ -1914,9 +1921,20 @@ fn run_headless(
+     // field like `driver=`, printed unconditionally so an evidence
+     // record is self-describing about which authored parameter block
+     // (DRV-2/DRV-3) and aimap variant (RACE-11) selected its content.
++    let motion = world_ecs.resource::<crate::motion_evidence::MotionEvidence>();
++    let motion_detail = format!(
++        " travel={:.1}m sim={:.2}s resets={} controls={}t/{}b/{}s finite={}",
++        motion.distance,
++        motion.steps as f64 / 120.0,
++        motion.resets,
++        motion.throttle_steps,
++        motion.brake_steps,
++        motion.steer_steps,
++        motion.finite,
++    );
+     let detail = |extra: &str| {
+         format!(
+-            "updates={frames} ticks={ticks}{rs_detail} driver={} diff={} phase={} impacts={impacts} dropped={dropped} peak={peak_speed:.1}m/s {pose_detail}{race_detail}{p_rec_detail}{nav_detail}{env_detail}{pvs_detail}{wtr_detail}{map_detail}{dash_detail}{trk_detail}{mir_detail}{ind_detail}{hud_detail}{tmr_detail}{arr_detail}{sta_detail}{traf_detail}{bng_detail}{dmg_detail}{vsk_detail}{brk_detail}{gyr_detail}{rcv_detail}{ptx_detail}{imp_detail}{spk_detail}{ppt_detail}{wfx_detail}{txl_detail}{surf_detail}{aud_detail}{traction_detail}{profile_detail}{seq_detail}{mp_detail}{net_detail}{extra}",
++            "updates={frames} ticks={ticks}{rs_detail} driver={} diff={} phase={} impacts={impacts} dropped={dropped} peak={peak_speed:.1}m/s{motion_detail} {pose_detail}{race_detail}{p_rec_detail}{nav_detail}{env_detail}{pvs_detail}{wtr_detail}{map_detail}{dash_detail}{trk_detail}{mir_detail}{ind_detail}{hud_detail}{tmr_detail}{arr_detail}{sta_detail}{traf_detail}{bng_detail}{dmg_detail}{vsk_detail}{brk_detail}{gyr_detail}{rcv_detail}{ptx_detail}{imp_detail}{spk_detail}{ppt_detail}{wfx_detail}{txl_detail}{surf_detail}{aud_detail}{traction_detail}{profile_detail}{seq_detail}{mp_detail}{net_detail}{extra}",
+             driver.as_str(),
+             rec_config.difficulty.as_str(),
+             session.phase().name(),
+@@ -1950,7 +1968,7 @@ fn run_headless(
+         || (pos.is_some_and(|p| p.is_finite())
+             && vel.is_some_and(|v| v.is_finite())
+             && rot.is_some_and(|r| r.is_finite()));
+-    if !finite {
++    if !finite || (motion.steps > 0 && !motion.finite) {
+         return record(&end_world, SmokeStatus::Fail, detail(" non-finite pose"));
+     }
+     if !saw_grounded {
+diff --git a/crates/mm2_game/src/config.rs b/crates/mm2_game/src/config.rs
+index d27a096..eca6e3b 100644
+--- a/crates/mm2_game/src/config.rs
++++ b/crates/mm2_game/src/config.rs
+@@ -652,6 +652,8 @@ pub struct DevOverrides {
+     /// session-legal parameter). One-shot; like `finish`/`restart` it
+     /// changes the run's course, so it IS in `record_eligibility`.
+     pub reset_at: Option<u64>,
++    /// Optional evidence-driver speed ceiling in m/s; never changes vehicle handling.
++    pub bot_speed: Option<f32>,
+     /// `--no-pvs`: disable the authored `.cpvs` room-PVS render culling
+     /// (F18-A.5) — the retail `cityLevel::EnablePVS(false)` counterpart
+     /// and the escape hatch for comparing culled vs unculled captures.
+-- 
+2.50.1 (Apple Git-155)
+
+
+From cf5d4741100f78fc372398d36e06b228a3c0e938 Mon Sep 17 00:00:00 2001
+From: Codex <noreply@openai.com>
+Date: Sat, 3 Oct 2026 14:08:27 +0200
+Subject: [PATCH 2/2] Count cruise teleports once in motion evidence
+
+---
+ crates/mm2_app/src/motion_evidence.rs |  4 +--
+ crates/mm2_app/tests/smoke.rs         | 39 +++++++++++++++++++++++++++
+ 2 files changed, 41 insertions(+), 2 deletions(-)
+
+diff --git a/crates/mm2_app/src/motion_evidence.rs b/crates/mm2_app/src/motion_evidence.rs
+index c9d67cc..96523de 100644
+--- a/crates/mm2_app/src/motion_evidence.rs
++++ b/crates/mm2_app/src/motion_evidence.rs
+@@ -47,7 +47,7 @@ type MotionPlayers<'w, 's> = Query<
+         &'static Rotation,
+         &'static LinearVelocity,
+         &'static VehicleInput,
+-        Has<Teleported>,
++        Option<Ref<'static, Teleported>>,
+     ),
+     With<PlayerVehicle>,
+ >;
+@@ -66,7 +66,7 @@ pub(crate) fn sample_motion(
+             session.generation(),
+             pos.0,
+             rot.0.is_finite() && vel.0.is_finite(),
+-            teleported,
++            teleported.is_some_and(|marker| marker.is_changed()),
+         );
+         report.throttle_steps += u64::from(input.throttle > 0.1);
+         report.brake_steps += u64::from(input.brake > 0.1);
+diff --git a/crates/mm2_app/tests/smoke.rs b/crates/mm2_app/tests/smoke.rs
+index b708f54..84e91e6 100644
+--- a/crates/mm2_app/tests/smoke.rs
++++ b/crates/mm2_app/tests/smoke.rs
+@@ -615,3 +615,42 @@ fn record_lines_distinguish_kinds_and_statuses() {
+     assert_eq!(SmokeStatus::Fail.exit_code(), 3);
+     assert_eq!(SmokeStatus::Unavailable.exit_code(), 4);
+ }
++
++#[test]
++fn a_cruise_reset_is_counted_once_with_later_travel_preserved() {
++    let config = SessionConfig {
++        world: WorldMode::DevWorld,
++        dev: DevOverrides {
++            reset_at: Some(650),
++            ..DevOverrides::default()
++        },
++        ..SessionConfig::default()
++    };
++    let record = smoke::headless_smoke(
++        &config,
++        Vfs::new(),
++        SelectedCar {
++            def: None,
++            paint: 0,
++        },
++        &VehicleConfig::default(),
++        500,
++        smoke::Driver::Hold,
++        None,
++    );
++    assert_eq!(record.status, SmokeStatus::Pass, "{}", record.detail);
++    assert!(record.detail.contains("resets=1 "), "{}", record.detail);
++    let distance: f32 = record
++        .detail
++        .split_whitespace()
++        .find_map(|v| v.strip_prefix("travel="))
++        .unwrap()
++        .trim_end_matches('m')
++        .parse()
++        .unwrap();
++    assert!(
++        distance > 45.0,
++        "travel after reset must be counted: {}",
++        record.detail
++    );
++}
+-- 
+2.50.1 (Apple Git-155)
+

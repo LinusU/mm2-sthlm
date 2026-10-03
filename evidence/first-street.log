@@ -1,0 +1,25 @@
+{"building_route_overlaps": [], "road_area": 136708.74049245787, "route_m": 1527.3475638275881, "spawn_clearance_m": 1.5, "status": "pass", "triangulated_area": 136708.74049245758}
+engine=/Users/linus/coding/rust-mm2/target/debug/mm2 package=/Users/linus/coding/mm2-sthlm/dist/stockholm
+mm2-smoke commit=1a568de7996be6813d32ab4f50d2f3dc150f258c
+2026-10-03T11:39:38.123436Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.water skipped=0
+2026-10-03T11:39:38.123468Z  WARN mm2_app::environment: lighting preset unavailable path=city/stockholm.lt00 error=asset not found: city/stockholm.lt00
+2026-10-03T11:39:38.123478Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-03T11:39:38.123481Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-03T11:39:38.123485Z  WARN mm2_app::hudmap: hud map spec unavailable path=tune/stockholm.mmhudmap error=asset not found: tune/stockholm.mmhudmap
+2026-10-03T11:39:38.123489Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T11:39:38.123495Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T11:39:38.123500Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T11:39:38.123502Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T11:39:38.123505Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T11:39:38.123507Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T11:39:38.123508Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T11:39:38.123510Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T11:39:38.123511Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T11:39:38.123513Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T11:39:38.123515Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T11:39:38.123533Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T11:39:38.123536Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T11:39:38.123539Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-03T11:39:38.123541Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T11:39:38.124006Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+smoke=headless-physics world=city/stockholm.psdl status=pass updates=400 ticks=800 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=27.1m/s moved=72m wheels=4/4 final=(41,2.8,139) env=lt00(fallback) fog=none sky=none map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x

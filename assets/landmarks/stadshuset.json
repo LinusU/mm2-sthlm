@@ -1,0 +1,13 @@
+{
+  "source_feature": "relation/29368",
+  "reference": "https://stadshuset.stockholm/en/visit-stockholm-city-hall/city-hall-tower/",
+  "reference_architecture": "https://stadshuset.stockholm/en/explore-the-city-hall/architecture/",
+  "description": "Original schematic model. Real footprint/courtyard; southeast tower; brick shaft, open belfry, tapered copper crown, three gold crown symbols.",
+  "body_height": 24,
+  "tower_shaft_height": 76,
+  "belfry_height": 12,
+  "copper_top_height": 102,
+  "total_height": 106,
+  "tower_offset_from_southeast": [-14, 13],
+  "tower_width": 20
+}

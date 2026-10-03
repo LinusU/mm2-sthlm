@@ -1,0 +1,33 @@
+{"binary": {"rooms": 1464, "textures": 14, "triangles": 25033, "vertices": 18945}, "building_route_overlaps": [], "minimal": false, "road_area": 139186.11774424522, "route_m": 1527.3475638275881, "spawn_clearance_m": 1.5, "status": "pass", "triangulated_area": 139186.11774424504}
+engine_revision=cf5d4741100f78fc372398d36e06b228a3c0e938 © OpenStreetMap contributors (ODbL 1.0)
+engine=/Users/linus/coding/mm2-sthlm/.cache/engine/mm2 package=/Users/linus/coding/mm2-sthlm/dist/stockholm
+mm2-smoke commit=cf5d4741100f78fc372398d36e06b228a3c0e938
+2026-10-03T12:19:25.404165Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-03T12:19:25.404244Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-03T12:19:25.404253Z  WARN mm2_app::hudmap: hud map spec unavailable path=tune/stockholm.mmhudmap error=asset not found: tune/stockholm.mmhudmap
+2026-10-03T12:19:25.404260Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T12:19:25.404270Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T12:19:25.404278Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T12:19:25.404282Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T12:19:25.404284Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T12:19:25.404287Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T12:19:25.404290Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T12:19:25.404292Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T12:19:25.404294Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T12:19:25.404296Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T12:19:25.404299Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T12:19:25.404325Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T12:19:25.404329Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T12:19:25.404332Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-03T12:19:25.404334Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T12:19:25.411284Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+2026-10-03T12:19:25.415756Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 3872v0 with the <Enable the debug feature to see the name> component has a parent (3871v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T12:19:25.415787Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 3875v0 with the <Enable the debug feature to see the name> component has a parent (3874v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T12:19:25.415792Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 3878v0 with the <Enable the debug feature to see the name> component has a parent (3877v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T12:19:25.415796Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 3881v0 with the <Enable the debug feature to see the name> component has a parent (3880v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/coding/mm2-sthlm/evidence/aerial.png bytes=3887079 aud=0h/0v/0s/0l/0a
+2026-10-03T12:19:29.328448Z  WARN bevy_winit::state: Skipped event Destroyed for unknown winit Window Id WindowId(35493511808)

@@ -1,0 +1,9 @@
+{
+  "engine": "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+  "package_manifest_sha256": "e6df4dbc5b99cfd93be480a60b75c306f0fe559f0c15f453ce895c60d07d6a0c",
+  "second_map_record": "smoke=headless-physics world=city/triangle.psdl status=pass updates=400 ticks=800 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=27.1m/s travel=72.3m sim=6.67s resets=0 controls=560t/0b/0s finite=true moved=72m wheels=4/4 final=(0,2.8,-72) env=lt00(fallback) fog=none sky=none map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+  "source_tree_beside_package": false,
+  "status": "pass",
+  "stockholm_record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=22521 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1503.7m sim=187.68s resets=0 controls=8536t/13985b/3490s finite=true moved=17m wheels=4/4 final=(-15,2.8,139) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/83r map=absent:missing-tune ind=absent:missing-pkg tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+  "working_directory": "empty temporary directory"
+}

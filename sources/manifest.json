@@ -1,0 +1,16 @@
+{
+  "url": "https://overpass.kumi.systems/api/interpreter",
+  "retrieved_utc": "2026-10-03T11:37:40.785166+00:00",
+  "source_timestamp": "2026-06-01T08:52:28Z",
+  "snapshot_sha256": "1a16eea75c03047543a8af44ac34ceb8498ff537c3430593868130eae193a94d",
+  "query_sha256": "c4db245b458f587763de9d86ea98bf15b624836bdaf24fc41aa6bf5818a213f3",
+  "license": "ODbL-1.0",
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "bounds_buffer": [
+    18.0295,
+    59.3235,
+    18.0605,
+    59.3345
+  ],
+  "note": "Complete relation recursion includes M\u00e4laren members outside query buffer. Contributor identity metadata not requested."
+}

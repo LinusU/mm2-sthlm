@@ -1,0 +1,24 @@
+{"building_route_overlaps": [], "road_area": 138361.74141324044, "route_m": 1527.3475638275881, "spawn_clearance_m": 1.5, "status": "pass", "triangulated_area": 138361.7414132403}
+engine_revision=1a568de7996be6813d32ab4f50d2f3dc150f258c © OpenStreetMap contributors (ODbL 1.0)
+engine=/Users/linus/coding/rust-mm2/target/debug/mm2 package=/Users/linus/coding/mm2-sthlm/dist/stockholm
+mm2-smoke commit=1a568de7996be6813d32ab4f50d2f3dc150f258c
+2026-10-03T11:57:11.264266Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-03T11:57:11.264747Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-03T11:57:11.264756Z  WARN mm2_app::hudmap: hud map spec unavailable path=tune/stockholm.mmhudmap error=asset not found: tune/stockholm.mmhudmap
+2026-10-03T11:57:11.264764Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T11:57:11.264777Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T11:57:11.264789Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T11:57:11.264792Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T11:57:11.264796Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T11:57:11.264799Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T11:57:11.264804Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T11:57:11.264820Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T11:57:11.264829Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T11:57:11.264840Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T11:57:11.264845Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T11:57:11.264871Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T11:57:11.264880Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T11:57:11.264885Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-03T11:57:11.264888Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T11:57:11.270744Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+smoke=headless-physics world=city/stockholm.psdl status=pass updates=1000 ticks=2000 driver=hold diff=amateur phase=playing impacts=2 dropped=0 peak=32.0m/s moved=58m wheels=0/4 final=(0,1.9,196) env=lt04(clear-noon) fog=none sky=none wtr=0.2/83r map=absent:missing-tune rcv=1w/0f/1r wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x

@@ -1,0 +1,3 @@
+{"binary": {"rooms": 1464, "textures": 14, "triangles": 25033, "vertices": 18945}, "building_route_overlaps": [], "minimal": false, "road_area": 139186.11774424522, "route_m": 1527.3475638275881, "spawn_clearance_m": 1.5, "status": "pass", "triangulated_area": 139186.11774424504}
+{"binary": {"rooms": 1464, "textures": 14, "triangles": 25033, "vertices": 18945}, "building_route_overlaps": [], "minimal": false, "road_area": 139186.11774424522, "route_m": 1527.3475638275881, "spawn_clearance_m": 1.5, "status": "pass", "triangulated_area": 139186.11774424504}
+portability=pass second-independent-city=pass

@@ -1,0 +1,43 @@
+{
+  "engine_revision": "cf5d4741100f78fc372398d36e06b228a3c0e938",
+  "package_manifest_sha256": "e6df4dbc5b99cfd93be480a60b75c306f0fe559f0c15f453ce895c60d07d6a0c",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0 geographic data/geometry; original artwork MIT",
+  "captures": [
+    {
+      "image": "evidence/waterfront.png",
+      "sha256": "2bec92f879716b64f33d001033bb31cb4a94fee9e13addffe18acf21fc7e7e51",
+      "resolution": [
+        2560,
+        1440
+      ],
+      "camera": "default chase at map spawn",
+      "command": "./scripts/sthlm play --engine \"$MM2_ENGINE\" -- --frames 90 --screenshot \"$PWD/evidence/waterfront.png\" --no-hud",
+      "inspected": true,
+      "source": "actual rust-mm2 GPU screenshot, unedited"
+    },
+    {
+      "image": "evidence/stadshuset.png",
+      "sha256": "2acba22c1f9c99f9498b9a2f84d5b9ee60bc62557b1cce51f8a9cf5b536c4672",
+      "resolution": [
+        2560,
+        1440
+      ],
+      "camera": "320,45,240,-65,0",
+      "command": "./scripts/sthlm play --engine \"$MM2_ENGINE\" -- --frames 90 --screenshot \"$PWD/evidence/stadshuset.png\" --no-hud --cam=320,45,240,-65,0",
+      "inspected": true,
+      "source": "actual rust-mm2 GPU screenshot, unedited"
+    },
+    {
+      "image": "evidence/aerial.png",
+      "sha256": "75ed13f570a27432ed03dd2ad1b36c55d8c2cea6f6efd538f23b446133416b0e",
+      "resolution": [
+        2560,
+        1440
+      ],
+      "camera": "0,620,500,-25,-55",
+      "command": "./scripts/sthlm play --engine \"$MM2_ENGINE\" -- --frames 90 --screenshot \"$PWD/evidence/aerial.png\" --no-hud --cam=0,620,500,-25,-55",
+      "inspected": true,
+      "source": "actual rust-mm2 GPU screenshot, unedited"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{"binary": {"rooms": 1464, "textures": 14, "triangles": 25033, "vertices": 18945}, "building_route_overlaps": [], "minimal": false, "road_area": 139186.11774424522, "route_m": 1527.3475638275881, "spawn_clearance_m": 1.5, "status": "pass", "triangulated_area": 139186.11774424504}
+engine_revision=cf5d4741100f78fc372398d36e06b228a3c0e938 © OpenStreetMap contributors (ODbL 1.0)
+engine=/Users/linus/coding/mm2-sthlm/.cache/engine/mm2 package=/Users/linus/coding/mm2-sthlm/dist/stockholm
+mm2-smoke commit=cf5d4741100f78fc372398d36e06b228a3c0e938
+2026-10-03T12:17:18.927422Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-03T12:17:18.927436Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-03T12:17:18.927448Z  WARN mm2_app::hudmap: hud map spec unavailable path=tune/stockholm.mmhudmap error=asset not found: tune/stockholm.mmhudmap
+2026-10-03T12:17:18.927452Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T12:17:18.927457Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T12:17:18.927462Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T12:17:18.927464Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T12:17:18.927465Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T12:17:18.927466Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T12:17:18.927467Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T12:17:18.927467Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T12:17:18.927468Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T12:17:18.927470Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T12:17:18.927471Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T12:17:18.927495Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T12:17:18.927498Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T12:17:18.927500Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-03T12:17:18.927501Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T12:17:18.927535Z  WARN mm2_app::session: nav graph failed to load — opponent routes stay verbatim error=city/stockholm.bai: not found in the VFS
+2026-10-03T12:17:18.934292Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=22521 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1503.7m sim=187.68s resets=0 controls=8536t/13985b/3490s finite=true moved=17m wheels=4/4 final=(-15,2.8,139) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/83r map=absent:missing-tune ind=absent:missing-pkg tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x
+stockholm-smoke acceptance=pass (complete continuous loop, no teleports)

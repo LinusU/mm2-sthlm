@@ -1,0 +1,26 @@
+#!/bin/sh
+# Explicit external-engine preparation; never called by build or play.
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+if [ "$#" -ne 1 ]; then
+  echo 'usage: ./scripts/prepare-engine /absolute/new/external/checkout' >&2
+  exit 2
+fi
+checkout=$1
+case "$checkout" in
+  /*) ;;
+  *) echo 'engine checkout must be an absolute path' >&2; exit 2 ;;
+esac
+# Resolve before comparing so ../ and symlinks cannot embed an engine here.
+"$root/.venv/bin/python" - "$root" "$checkout" <<'PY'
+import sys
+from pathlib import Path
+root,target=map(lambda p:Path(p).resolve(),sys.argv[1:])
+if target.is_relative_to(root) or target.exists():
+    sys.exit('choose a new directory outside mm2-sthlm; existing checkouts are preserved')
+PY
+revision=$("$root/.venv/bin/python" -c 'import json,sys; print(json.load(open(sys.argv[1]))["tested_integration_revision"])' "$root/integration/rust-mm2/compatibility.json")
+git clone https://github.com/LinusU/rust-mm2.git "$checkout"
+git -C "$checkout" checkout --detach "$revision"
+(cd "$checkout" && cargo build --locked -p mm2_app --bin mm2)
+printf 'Engine ready: %s/target/debug/mm2 (revision %s)\n' "$checkout" "$revision"

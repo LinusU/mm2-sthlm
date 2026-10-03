@@ -1,0 +1,15 @@
+{
+  "package_schema": 1,
+  "format": "PSD0/PSDL mod + map.json wrapper metadata",
+  "upstream_repository": "https://github.com/LinusU/rust-mm2",
+  "upstream_base": "1a568de7996be6813d32ab4f50d2f3dc150f258c",
+  "compatible_revisions": [
+    "1a568de7996be6813d32ab4f50d2f3dc150f258c",
+    "cf5d4741100f78fc372398d36e06b228a3c0e938"
+  ],
+  "engine_changes": "Continuous physics-step travel metrics plus optional --bot-speed input ceiling. No world loader or shared handling changes.",
+  "tested_integration_revision": "cf5d4741100f78fc372398d36e06b228a3c0e938",
+  "patch_sha256": "fe255460e79e9621e4c910a1c66a91d85b094cd75ba0b72bc89566cd2750e36b",
+  "engine_branch": "codex/smoke-motion-evidence",
+  "pull_request": "https://github.com/LinusU/rust-mm2/pull/1"
+}
