@@ -651,6 +651,8 @@ def build(output, minimal=False, profile="expanded"):
         writer.surface(remaining_water, 0, "water", water=True)
         print("Meshing buildings and props", file=sys.stderr, flush=True)
         for b in city["buildings"]:
+            if expanded and b["id"] == "way/24488933":
+                continue
             index = int(hashlib.sha256(b["id"].encode()).hexdigest()[:8], 16) % 3
             for p in pieces(shape(b["geometry"])):
                 landmark = b["id"] == "relation/29368"
@@ -710,6 +712,9 @@ def build(output, minimal=False, profile="expanded"):
         if expanded:
             from props import placements, write as write_props
             from fences import write as write_fences
+            from courthouse import export as export_courthouse
+
+            city["courthouse"] = export_courthouse(writer, city, out)
 
             city["props"] = placements(
                 city, land, shape(city["road_surface"]), ground_height

@@ -1,0 +1,21 @@
+{
+  "source_feature": "way/24488933",
+  "description": "Original schematic Stockholm Court House reconstruction from Linus's two reference photographs; all dimensions and courtyard layout are estimates, not surveyed data.",
+  "origin": [-110.0, 270.0],
+  "rotation_degrees": -15.6,
+  "body_height": 14.5,
+  "stone_base_height": 1.8,
+  "roof_rise": 6.0,
+  "courtyards": [[-9, 11, 13, 38], [-9, 54, 13, 83]],
+  "roof_wings": [
+    {"bounds": [-23, -20, -9, 113], "ridge_axis": "v"},
+    {"bounds": [13, -20, 29, 113], "ridge_axis": "v"},
+    {"bounds": [-9, -20, 13, 11], "ridge_axis": "u"},
+    {"bounds": [-9, 38, 13, 54], "ridge_axis": "u"},
+    {"bounds": [-9, 83, 13, 113], "ridge_axis": "u"}
+  ],
+  "tower_bounds": [-22, 38, -4, 54],
+  "tower_shaft_height": 28.0,
+  "tower_cap_levels": [[28.5, 1.0], [31.0, 0.95], [36.5, 0.55], [42.0, 0.55], [46.0, 0.33], [49.0, 0.22]],
+  "finial_height": 3.0
+}

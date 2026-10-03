@@ -1,0 +1,112 @@
+{
+  "engine_revision": "74c60897ef8472aceafea0bb871f2e46615a095c",
+  "engine_binary_sha256": "e7b7dd340601ad0a22e80270a208d3cf04e0b62c13a0fcd17f4290ada0ee8ab1",
+  "package_manifest_sha256": "ba3fb09d9ec744fceda1d8a5592df8a9efda9849dbfa7b351f1a6b23d412d8cd",
+  "model": {
+    "authored_courtyard_voids": {
+      "coordinates": [
+        [
+          [
+            [
+              -115.71034507441101,
+              283.01506662031164
+            ],
+            [
+              -108.44950991779884,
+              309.02045592384843
+            ],
+            [
+              -87.25993344825035,
+              303.10421987031253
+            ],
+            [
+              -94.52076860486252,
+              277.09883056677575
+            ],
+            [
+              -115.71034507441101,
+              283.01506662031164
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              -104.14679278795458,
+              324.43105699261093
+            ],
+            [
+              -96.34811799011187,
+              352.362771429743
+            ],
+            [
+              -75.15854152056339,
+              346.4465353762072
+            ],
+            [
+              -82.9572163184061,
+              318.5148209390751
+            ],
+            [
+              -104.14679278795458,
+              324.43105699261093
+            ]
+          ]
+        ]
+      ],
+      "type": "MultiPolygon"
+    },
+    "body_height_m": 14.5,
+    "materials": [
+      "sand rough plaster",
+      "rough stone base",
+      "red clay tiles",
+      "patinated copper",
+      "blue glass with brown frames"
+    ],
+    "rule": "Original schematic Stockholm Court House reconstruction from Linus's two reference photographs; all dimensions and courtyard layout are estimates, not surveyed data.",
+    "source_feature": "way/24488933",
+    "total_height_m": 53.0,
+    "tower_footprint": {
+      "coordinates": [
+        [
+          [
+            -120.97062328616839,
+            312.51641359184686
+          ],
+          [
+            -116.66790615632414,
+            327.9270146606094
+          ],
+          [
+            -99.33097995396628,
+            323.0864578895346
+          ],
+          [
+            -103.63369708381053,
+            307.6758568207721
+          ],
+          [
+            -108.44950991779884,
+            309.02045592384843
+          ],
+          [
+            -120.97062328616839,
+            312.51641359184686
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    }
+  },
+  "offline_tests": 44,
+  "screenshots": {
+    "courthouse.png": "64768076ec37e41374a3c15ad95c0ed25ed6237971011ff7f130621885b6ce8e",
+    "tower.png": "576b845f582ce4b72bab890f0f7d08475bd93f5215d76fdda6a5b18b1930db6b"
+  },
+  "commands": [
+    "./scripts/sthlm play --engine .cache/engine/mm2 -- --cam=-203.0,15.4,-327.2,-99,-14 --parked --frames 60 --screenshot evidence/courthouse/courthouse.png",
+    "./scripts/sthlm play --engine .cache/engine/mm2 -- --cam=-180,32,-327.2,-99,8 --parked --frames 60 --screenshot evidence/courthouse/tower.png"
+  ],
+  "inspection": "Arched facade, clay roofs, dormers and complete stepped copper tower visible; constant-width copper stage no longer culled."
+}
