@@ -43,7 +43,7 @@ an optional bot input speed ceiling. Shared vehicle physics is unchanged.
 The clean patch replay reproduced that exact revision. See INTEGRATION.md
 and `integration/rust-mm2/compatibility.json` for the patch/base/checksum.
 Map source commits and fresh-checkout proof are recorded in
-`evidence/fresh-checkout.json` once committed; `git rev-parse HEAD` identifies
+`evidence/fresh-checkout.json`; `git rev-parse HEAD` identifies
 the checkout containing this report.
 
 ## Acceptance evidence

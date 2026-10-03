@@ -1,0 +1,31 @@
+{
+  "status": "pass",
+  "source_revision": "2d4778d3c10f212dd2ffef07d0623a2cde82b438",
+  "branch": "codex/stadshuset-slice",
+  "checkout": "/private/tmp/mm2-sthlm-fresh-check",
+  "clone": "git clone --no-local --branch codex/stadshuset-slice /Users/linus/coding/mm2-sthlm /private/tmp/mm2-sthlm-fresh-check",
+  "dependencies": "Reused the already installed pinned Python dependency environment via an explicit .venv symlink; no engine checkout or binary was present in the fresh checkout. Dependency bootstrap is a separate prerequisite.",
+  "commands": [
+    "./scripts/sthlm build --offline",
+    "./scripts/sthlm validate",
+    ".venv/bin/python -m unittest discover -s tests -v",
+    ".venv/bin/ruff format --check src tests scripts/check-integration.py",
+    ".venv/bin/ruff check src tests scripts/check-integration.py",
+    "cmp dist/stockholm/checksums.json /Users/linus/coding/mm2-sthlm/dist/stockholm/checksums.json"
+  ],
+  "unit_tests_passed": 12,
+  "format": "pass",
+  "lint": "pass",
+  "offline_build": "pass",
+  "validation": "pass",
+  "package_manifest_sha256": "e6df4dbc5b99cfd93be480a60b75c306f0fe559f0c15f453ce895c60d07d6a0c",
+  "identical_to_original_package": true,
+  "engine_needed": false,
+  "tracked_changes": false,
+  "patch_replay": {
+    "engine_base": "1a568de7996be6813d32ab4f50d2f3dc150f258c",
+    "reproduced_revision": "cf5d4741100f78fc372398d36e06b228a3c0e938",
+    "checkout": "/private/tmp/mm2-sthlm-patch-check",
+    "status": "pass"
+  }
+}
