@@ -80,7 +80,7 @@ Upstream main was fetched over SSH and built at
 `46f351b9186ad2d4d955e9d0d0a1ef1240d2332f`; the previous multipart and
 HUD-map PRs are merged there. Historical evidence keeps its original revisions.
 
-The current tested engine is `039edc98bab91a36aede5e4a5d8eae729d47deab`,
+The intact-prop engine fix is `039edc98bab91a36aede5e4a5d8eae729d47deab`,
 based on that main revision. [PR #4](https://github.com/LinusU/rust-mm2/pull/4)
 and `intact-banger-collision.patch` provide a focused native movable-prop fix.
 Open, two-sided meshes now use convex collision when bound as bangers, avoiding
@@ -94,10 +94,20 @@ Reproduce the engine build in a separate checkout:
 ```sh
 git clone git@github.com:LinusU/rust-mm2.git /tmp/rust-mm2-stockholm
 cd /tmp/rust-mm2-stockholm
-git fetch origin codex/intact-banger-collision
-git checkout 039edc98bab91a36aede5e4a5d8eae729d47deab
+git fetch origin codex/sloped-city-fans
+git checkout b3d9804489bdcd576dd4b85b3f40fec75c545071
 RUSTC_WRAPPER= cargo build -p mm2_app --bin mm2
 ```
 
 Keep each checkout’s Cargo target directory separate. The generated package
 contains no engine checkout, collision simulation or vehicle physics.
+
+The current tested engine is `b3d9804489bdcd576dd4b85b3f40fec75c545071`.
+[PR #5](https://github.com/LinusU/rust-mm2/pull/5) stacks on PR #4 and
+`sloped-city-fans.patch` applies after the intact-prop patch. It restricts
+the native perimeter-facing heuristic to effectively vertical surfaces; steep
+upward paving/terrain no longer gets flipped downward and culled. True vertical
+walls keep their outward-facing behavior. The meaningful slope regression
+fails with the old cutoff; full engine formatting, strict clippy and workspace
+tests pass. The actual Västerbron camera comparison closes the blue wedge
+without changing its map polygons.

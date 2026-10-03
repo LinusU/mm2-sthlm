@@ -9,10 +9,11 @@
     "392cc9be55a624f9c8cf64272103f987631c204d",
     "74c60897ef8472aceafea0bb871f2e46615a095c",
     "46f351b9186ad2d4d955e9d0d0a1ef1240d2332f",
-    "039edc98bab91a36aede5e4a5d8eae729d47deab"
+    "039edc98bab91a36aede5e4a5d8eae729d47deab",
+    "b3d9804489bdcd576dd4b85b3f40fec75c545071"
   ],
   "engine_changes": "Optional generic multi-part city loading with collision, unique room IDs and bounded per-part water. Includes prior continuous motion evidence fixes. Native HUD-map cameras preserve authored sRGB colors and opaque ocean backgrounds without writing back the world view.",
-  "tested_integration_revision": "039edc98bab91a36aede5e4a5d8eae729d47deab",
+  "tested_integration_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
   "patch_sha256": "fe255460e79e9621e4c910a1c66a91d85b094cd75ba0b72bc89566cd2750e36b",
   "engine_branch": "codex/chunked-custom-cities",
   "pull_request": "https://github.com/LinusU/rust-mm2/pull/1",
@@ -20,7 +21,8 @@
     "392cc9be55a624f9c8cf64272103f987631c204d",
     "74c60897ef8472aceafea0bb871f2e46615a095c",
     "46f351b9186ad2d4d955e9d0d0a1ef1240d2332f",
-    "039edc98bab91a36aede5e4a5d8eae729d47deab"
+    "039edc98bab91a36aede5e4a5d8eae729d47deab",
+    "b3d9804489bdcd576dd4b85b3f40fec75c545071"
   ],
   "loader_patch": "multi-part-cities.patch",
   "loader_patch_sha256": "97d289f5a1bb504447fec01d7ce0b50c0eb2feec91e0c5611b4dfabce75cb53a",
@@ -36,5 +38,11 @@
   "intact_prop_branch": "codex/intact-banger-collision",
   "intact_prop_patch": "intact-banger-collision.patch",
   "intact_prop_patch_sha256": "0743d17d2dff65aff45164ae7ea7c28ab8e38c5f90b66efa32ad5b00cf966605",
-  "intact_prop_pull_request": "https://github.com/LinusU/rust-mm2/pull/4"
+  "intact_prop_pull_request": "https://github.com/LinusU/rust-mm2/pull/4",
+  "sloped_fan_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "sloped_fan_base": "039edc98bab91a36aede5e4a5d8eae729d47deab",
+  "sloped_fan_branch": "codex/sloped-city-fans",
+  "sloped_fan_patch": "sloped-city-fans.patch",
+  "sloped_fan_patch_sha256": "12038790e6dfdfe14b2c5b9d2469fa21b8b5a62c2ed8a8d53800f78c5271c03e",
+  "sloped_fan_pull_request": "https://github.com/LinusU/rust-mm2/pull/5"
 }
