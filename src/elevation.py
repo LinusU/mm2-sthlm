@@ -131,18 +131,31 @@ class RoadField:
         candidates = self.planes_by_road.get(road_id, [])
         if not candidates:
             return height
-        j = min(
-            candidates,
-            key=lambda j: math.hypot(x - self.planes[j][0], n - self.planes[j][1]),
-        )
-        xj, nj, h, gx, gn, radius, _ = self.planes[j]
-        distance = math.hypot(x - xj, n - nj)
-        if distance > radius + 7:
-            return height
-        t = max(0.0, min(1.0, (distance - radius) / 7))
-        weight = 1 - t * t * (3 - 2 * t)
-        plane = h + gx * (x - xj) + gn * (n - nj)
-        return plane * weight + height * (1 - weight)
+        # Tangent fits from nearby source joins can have overlapping fades.
+        # Choosing just the closest fit makes a vertical step at their Voronoi
+        # boundary. Blend the active fits over a three-metre distance band.
+        # A supplied complete shared-layer fit precedes a local partial fit
+        # at the same origin and must retain that established precedence.
+        unique = {}
+        for j in candidates:
+            unique.setdefault(self.planes[j][:2], j)
+        distances = {
+            j: math.hypot(x - self.planes[j][0], n - self.planes[j][1])
+            for j in unique.values()
+        }
+        nearest = min(distances.values())
+        total = weighted = 0.0
+        for j, distance in distances.items():
+            influence = max(0.0, 1 - (distance - nearest) / 3) ** 2
+            if not influence:
+                continue
+            xj, nj, h, gx, gn, radius, _ = self.planes[j]
+            t = max(0.0, min(1.0, (distance - radius) / 7))
+            fade = 1 - t * t * (3 - 2 * t)
+            plane = h + gx * (x - xj) + gn * (n - nj)
+            weighted += (plane * fade + height * (1 - fade)) * influence
+            total += influence
+        return weighted / total
 
     def _profile(self, road):
         points = road["elevated_points"]
