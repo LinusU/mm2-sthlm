@@ -1,0 +1,20 @@
+{
+  "scope": "Validated254-test coherent export. Individual race physical acceptance is running, with separate remaining Str\u00f6mbron and tunnel-junction diagnostics.",
+  "package_checksums_sha256": "f02d3bb6f52236bedf7633e91e8a420ead0568c8eca73f849c2eaf80196e8004",
+  "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_binary_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "changes": [
+    "same physical bridge exterior railing boundaries",
+    "compatible whole and segmented bridge carriageway upper profiles",
+    "shared source-junction lifts only when owning profiles disagree",
+    "preserved fixed ordinary-road anchors",
+    "Circuit4 continuous Nybroplan and Stallgatan block flow"
+  ],
+  "checksums": {
+    "bridge-final-root-build.log": "ad862932e0855f2f7c2f0d20a4321edbd0e9ffbf528adc879e8150d002bf33c6",
+    "bridge-final-root-tests.log": "4af0e85e3a46e854bbaef2ef64914783ffdbd3da0ad7bc5a6ddb464236f0e038",
+    "bridge-final-root-validate.log": "b99cb6d710e8bea53a1194128fa164bad66c3489372fdcc4386a04f17fddda7b",
+    "circuit4-source-flow-audit.json": "dfdc0b6926338180441b790196831b98138a01d6caab629d5146883d5af16860",
+    "circuit4-native-export-audit.json": "1513283345b805b26e5a647c9ca380f4efd802691f42d2b33cc8d027cfc96251"
+  }
+}

@@ -148,6 +148,34 @@ class CircuitDesignTests(unittest.TestCase):
                     (ids[index], ids[b], distance, turn, other),
                 )
 
+    def test_city_crown_harbour_block_avoids_the_median_fold(self):
+        event = self.config["events"][4]
+        ids = [a["node_id"] for a in event["route_via"]]
+        start, end = ids.index(1741554633), ids.index(11898209234)
+        self.assertNotIn(161025, ids[start:end], "unnecessary 139-degree median fold")
+        segment = ids[start - 1 : end + 2]
+        coords = [
+            project(self.nodes[n]["lon"], self.nodes[n]["lat"], [18.045, 59.328])
+            for n in segment
+        ]
+        for a, b in zip(segment[1:-1], segment[2:]):
+            owners = self.edge_owners[frozenset((a, b))]
+            legal = []
+            for way in owners:
+                forward = (a, b) in set(zip(way["nodes"], way["nodes"][1:]))
+                direction = way.get("tags", {}).get("oneway", "no")
+                legal.append(
+                    direction not in {"yes", "1", "true", "-1"}
+                    or (forward if direction != "-1" else not forward)
+                )
+            self.assertTrue(any(legal), (a, b))
+        for a, b, c in zip(coords, coords[1:], coords[2:]):
+            u, v = (b[0] - a[0], b[1] - a[1]), (c[0] - b[0], c[1] - b[1])
+            turn = math.degrees(
+                math.atan2(u[0] * v[1] - u[1] * v[0], u[0] * v[0] + u[1] * v[1])
+            )
+            self.assertLess(abs(turn), 120)
+
     def test_native_params_keep_circuits_free_of_cops_or_traffic(self):
         for event in self.config["events"]:
             for difficulty in ("amateur", "professional"):

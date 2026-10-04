@@ -4273,73 +4273,68 @@
           "label": "Nybroplan"
         },
         {
-          "node_id": 6321948527,
-          "way_id": 176240974,
-          "label": "Nybroplan"
-        },
-        {
-          "node_id": 1649379384,
-          "way_id": 176240974,
-          "label": "Nybroplan"
-        },
-        {
-          "node_id": 11830115094,
-          "way_id": 1286532782,
-          "label": "Nybroplan"
-        },
-        {
-          "node_id": 161025,
-          "way_id": 1274037775,
+          "node_id": 7328599619,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 369970662,
-          "way_id": 1274037775,
+          "node_id": 1741554632,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 1649379312,
-          "way_id": 1274037775,
+          "node_id": 11834446219,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 11895745713,
-          "way_id": 1274037775,
+          "node_id": 1741554628,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 10022713159,
-          "way_id": 1279895964,
+          "node_id": 10022713165,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 11881119165,
-          "way_id": 1279895964,
+          "node_id": 12142179745,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 1649379209,
-          "way_id": 1279895966,
+          "node_id": 11834446218,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 11830115106,
-          "way_id": 1279895966,
+          "node_id": 1741554626,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 11830115092,
-          "way_id": 1279895966,
+          "node_id": 11830115110,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 11830115107,
-          "way_id": 1279895966,
+          "node_id": 11830115102,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
-          "node_id": 11830115101,
-          "way_id": 1279895966,
+          "node_id": 11830115109,
+          "way_id": 162222847,
+          "label": "Nybrohamnen"
+        },
+        {
+          "node_id": 11830115103,
+          "way_id": 162222847,
+          "label": "Nybrohamnen"
+        },
+        {
+          "node_id": 11830115108,
+          "way_id": 162222847,
           "label": "Nybrohamnen"
         },
         {
@@ -4394,36 +4389,166 @@
         },
         {
           "node_id": 161010,
-          "way_id": 4082569,
-          "label": "Stallgatan"
+          "way_id": 1276512449,
+          "label": "Nybrokajen"
         },
         {
-          "node_id": 6924914217,
-          "way_id": 4082569,
-          "label": "Stallgatan"
+          "node_id": 1649378210,
+          "way_id": 1276512449,
+          "label": "Nybrokajen"
         },
         {
-          "node_id": 1406078552,
-          "way_id": 4082569,
-          "label": "Stallgatan"
+          "node_id": 11850963687,
+          "way_id": 40290089,
+          "label": "Nybrokajen"
         },
         {
-          "node_id": 6924914214,
-          "way_id": 4082569,
-          "label": "Stallgatan"
+          "node_id": 6924914215,
+          "way_id": 40290089,
+          "label": "Nybrokajen"
         },
         {
-          "node_id": 486080371,
-          "way_id": 4082569,
-          "label": "Stallgatan"
+          "node_id": 11850963688,
+          "way_id": 1276512450,
+          "label": "Nybrokajen"
         },
         {
-          "node_id": 161002,
-          "way_id": 4082569,
-          "label": "Stallgatan"
+          "node_id": 11850963689,
+          "way_id": 1276512451,
+          "label": "Nybrokajen"
         },
         {
-          "node_id": 12811776015,
+          "node_id": 161008,
+          "way_id": 1276512451,
+          "label": "Nybrokajen"
+        },
+        {
+          "node_id": 11870095555,
+          "way_id": 1278635620,
+          "label": "Nybrokajen"
+        },
+        {
+          "node_id": 11850786017,
+          "way_id": 1278635622,
+          "label": "Nybrokajen"
+        },
+        {
+          "node_id": 11870095560,
+          "way_id": 1276490114,
+          "label": "Nybrokajen"
+        },
+        {
+          "node_id": 11850786019,
+          "way_id": 1276490116,
+          "label": "Nybrokajen"
+        },
+        {
+          "node_id": 11850786018,
+          "way_id": 1276490117,
+          "label": "Nybrokajen"
+        },
+        {
+          "node_id": 161001,
+          "way_id": 175770613,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 11850786023,
+          "way_id": 1276490121,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 11850786020,
+          "way_id": 1276490118,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 11850786021,
+          "way_id": 1276490119,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 11850786022,
+          "way_id": 1276490120,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 21665569,
+          "way_id": 4082577,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 160998,
+          "way_id": 4082577,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 1423389086,
+          "way_id": 4082577,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 486040060,
+          "way_id": 1276490126,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241602,
+          "way_id": 1276490126,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 11850786028,
+          "way_id": 1276490127,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241606,
+          "way_id": 1276490127,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241600,
+          "way_id": 761447798,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241607,
+          "way_id": 761447798,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241608,
+          "way_id": 1278635618,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 11850786029,
+          "way_id": 1278635616,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 11870095546,
+          "way_id": 1276490128,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 160994,
+          "way_id": 40009287,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 6205911719,
+          "way_id": 40009287,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 1423389134,
+          "way_id": 40009287,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 159961,
           "way_id": 4082569,
           "label": "Stallgatan"
         },
@@ -4433,28 +4558,148 @@
           "label": "Stallgatan"
         },
         {
+          "node_id": 12811776015,
+          "way_id": 4082569,
+          "label": "Stallgatan"
+        },
+        {
+          "node_id": 161002,
+          "way_id": 51511993,
+          "label": "Blasieholmsgatan"
+        },
+        {
+          "node_id": 1863239019,
+          "way_id": 1277761978,
+          "label": "Blasieholmsgatan"
+        },
+        {
+          "node_id": 11881336873,
+          "way_id": 1279911327,
+          "label": "Blasieholmsgatan"
+        },
+        {
+          "node_id": 11861638978,
+          "way_id": 1277761977,
+          "label": "Blasieholmsgatan"
+        },
+        {
+          "node_id": 11861638977,
+          "way_id": 175770610,
+          "label": "Blasieholmsgatan"
+        },
+        {
+          "node_id": 11871237193,
+          "way_id": 1278724857,
+          "label": "Blasieholmsgatan"
+        },
+        {
+          "node_id": 21665568,
+          "way_id": 1277761976,
+          "label": "Blasieholmsgatan"
+        },
+        {
+          "node_id": 21665569,
+          "way_id": 4082577,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 160998,
+          "way_id": 4082577,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 1423389086,
+          "way_id": 4082577,
+          "label": "Hovslagargatan"
+        },
+        {
+          "node_id": 486040060,
+          "way_id": 1276490126,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241602,
+          "way_id": 1276490126,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 11850786028,
+          "way_id": 1276490127,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241606,
+          "way_id": 1276490127,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241600,
+          "way_id": 761447798,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241607,
+          "way_id": 761447798,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 7114241608,
+          "way_id": 1278635618,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 11850786029,
+          "way_id": 1278635616,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 11870095546,
+          "way_id": 1276490128,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 160994,
+          "way_id": 40009287,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 6205911719,
+          "way_id": 40009287,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 1423389134,
+          "way_id": 40009287,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
           "node_id": 159961,
-          "way_id": 41486462,
+          "way_id": 4968750,
           "label": "Södra Blasieholmshamnen"
         },
         {
-          "node_id": 6205911717,
-          "way_id": 41486462,
+          "node_id": 32913368,
+          "way_id": 4968750,
           "label": "Södra Blasieholmshamnen"
         },
         {
-          "node_id": 486005213,
-          "way_id": 40009278,
+          "node_id": 32913367,
+          "way_id": 4968750,
           "label": "Södra Blasieholmshamnen"
         },
         {
-          "node_id": 1349071756,
-          "way_id": 40009278,
+          "node_id": 6139696806,
+          "way_id": 4968750,
           "label": "Södra Blasieholmshamnen"
         },
         {
-          "node_id": 6139696802,
-          "way_id": 40009278,
+          "node_id": 1349093295,
+          "way_id": 4968750,
+          "label": "Södra Blasieholmshamnen"
+        },
+        {
+          "node_id": 8066180432,
+          "way_id": 4968750,
           "label": "Södra Blasieholmshamnen"
         },
         {
@@ -4888,10 +5133,10 @@
       },
       "design": {
         "theme": "Central avenues lead past the Royal Palace before a source-connected river crossing closes the lap.",
-        "flow": "Follow the sourced loop in order; the final leg returns to the same start node.",
+        "flow": "A source-connected Blasieholmen block uses the forward Nybrohamnen, Nybrokajen, Hovslagargatan and Södra Blasieholmshamnen carriageways before Stallgatan. Stallgatan continues in its source direction through Blasieholmsgatan and returns via Strömbron and Skeppsbron to Slottskajen; all three ordered gates remain fixed.",
         "route_choice": "Circuit geometry has one authored itinerary. Visible gates mark progress; the dense source-node itinerary guides navigation between them.",
         "shortcut_policy": "No mandatory jumps, invented water crossings or reversal spurs. Alternate drivable lines between consecutive gates remain possible, but every ordered gate is required.",
-        "progression": "Event 5/10: 5.79 km per lap, 2 amateur / 2 professional laps.",
+        "progression": "Event 5/10: 6.57 km per lap, 2 amateur / 2 professional laps.",
         "landmarks": [
           "Vasagatan",
           "Odengatan",
@@ -4901,7 +5146,7 @@
           "Norrbro",
           "Vasabron"
         ],
-        "reference_length_m": 5792.3
+        "reference_length_m": 6574.97
       }
     },
     {

@@ -12,7 +12,7 @@ junction. These designs contain no copied retail race coordinates or artwork.
 | 1 | Vasaparken Lap | 1.70 | 2 / 3 | 7 |
 | 2 | SoFo Squares | 5.05 | 2 / 3 | 11 |
 | 3 | Royal Rectangle | 3.55 | 2 / 3 | 10 |
-| 4 | City Crown | 5.79 | 2 / 2 | 14 |
+| 4 | City Crown | 6.57 | 2 / 2 | 14 |
 | 5 | Djurgården Sweep | 6.40 | 2 / 2 | 14 |
 | 6 | Söder Summit | 11.49 | 1 / 2 | 22 |
 | 7 | Four Districts | 14.40 | 1 / 1 | 25 |
@@ -93,3 +93,5 @@ completed two laps and all twelve native waypoint rows without player resets or
 recoveries; all three actual rivals finished, with six rival escapes disclosed.
 Professional exposed a separate Ringvägen corner-controller hotspot and remains
 pending. This source-flow result does not certify the final repaired package.
+
+The City Crown harbour approach follows the forward Nybrohamnen and Nybrokajen carriageways around a Blasieholmen block through Hovslagargatan and Södra Blasieholmshamnen. Its ordered Nybroplan and Stallgatan gates, grid, laps and rivals stay fixed. The blocks add 782.67 m per lap (6.575 km total), remove a nonessential 139.5-degree median fold, then continue in the source Stallgatan direction through Blasieholmsgatan, Strömbron and Skeppsbron before the fixed Slottskajen gate. This source-flow correction still requires native acceptance together with the separate Vasabron profile repair.

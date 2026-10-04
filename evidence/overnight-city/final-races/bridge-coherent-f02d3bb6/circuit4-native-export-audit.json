@@ -1,0 +1,161 @@
+{
+  "guide_plane_sweeps": {
+    "a": [
+      {
+        "gate": 0,
+        "segment": 87,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 1,
+        "segment": 183,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 2,
+        "segment": 265,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 3,
+        "segment": 354,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 4,
+        "segment": 446,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 5,
+        "segment": 523,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 6,
+        "segment": 598,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 7,
+        "segment": 692,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 8,
+        "segment": 779,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 9,
+        "segment": 867,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 10,
+        "segment": 1038,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 11,
+        "segment": 1231,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 12,
+        "segment": 1317,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 13,
+        "segment": 1406,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 14,
+        "segment": 1491,
+        "lateral_m": 0.0
+      }
+    ],
+    "p": [
+      {
+        "gate": 0,
+        "segment": 87,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 1,
+        "segment": 183,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 2,
+        "segment": 265,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 3,
+        "segment": 354,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 4,
+        "segment": 446,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 5,
+        "segment": 523,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 6,
+        "segment": 598,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 7,
+        "segment": 692,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 8,
+        "segment": 779,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 9,
+        "segment": 867,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 10,
+        "segment": 1038,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 11,
+        "segment": 1231,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 12,
+        "segment": 1317,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 13,
+        "segment": 1406,
+        "lateral_m": 0.0
+      },
+      {
+        "gate": 14,
+        "segment": 1491,
+        "lateral_m": 0.0
+      }
+    ]
+  },
+  "native_gates_grid_params_byteidentical": true,
+  "scope": "Circuit-onlyQAmetadata; frozen261nativegeometry unchanged; not physicalraceacceptance",
+  "manifest_sha256": "6eb72c3eb6dcfa2a39a33c85b5b6d37e6b2ff24402352a0dd5462f9b004baac0"
+}
