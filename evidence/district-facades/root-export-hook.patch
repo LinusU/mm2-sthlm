@@ -1,0 +1,27 @@
+diff --git a/src/sthlm.py b/src/sthlm.py
+index 4700f80..61afd95 100644
+--- a/src/sthlm.py
++++ b/src/sthlm.py
+@@ -674,0 +675,7 @@ def build(output, minimal=False, profile="expanded"):
++        from district_facades import (
++            StreetFrontages,
++            export as export_district,
++            material_for as district_material_for,
++        )
++
++        district_frontages = StreetFrontages(city, road_height)
+@@ -720,0 +728,10 @@ def build(output, minimal=False, profile="expanded"):
++                district_material = (
++                    district_material_for(b, city["origin"])
++                    if not (landmark or church or church_material or manor_material)
++                    else None
++                )
++                if district_material:
++                    b["rendering"] = export_district(
++                        writer, p, b, district_frontages, district_material
++                    )
++                    continue
+@@ -874,0 +892,3 @@ def build(output, minimal=False, profile="expanded"):
++    from district_facades import write as write_district_materials
++
++    write_district_materials(out)

@@ -1,0 +1,47 @@
+{
+  "engine_binary_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "package_manifest_sha256": "7bc5fa66ebf3c9e120083292be2bffe51cd6c114975ef8eea431f407103e35e3",
+  "scope": "Actual source basin crossings with authored shallow depth. Hold driver, zero steering; final position beyond far bank. Normal map CI does not require this engine.",
+  "results": [
+    {
+      "source_id": "way/219139744",
+      "water_level_m": 2.4457497250078384,
+      "depth_m": 0.2,
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--headless",
+        "--frames",
+        "600",
+        "--spawn=1460.2599200533741,4.0457497250078385,-449.08899758578923,270"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=600 ticks=1200 driver=hold diff=amateur phase=playing impacts=7 dropped=0 peak=20.4m/s travel=63.4m sim=10.00s resets=0 controls=960t/0b/0s finite=true moved=63m wheels=4/4 final=(1523,3.8,-451) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3241d/2a/0s/1b bng_ev=0a/0s/1b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "far_bank_exit": true,
+      "passed": false
+    },
+    {
+      "source_id": "way/28165044",
+      "water_level_m": 2.062551405861555,
+      "depth_m": 0.2,
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--headless",
+        "--frames",
+        "800",
+        "--spawn=-187.63303302607116,3.662551405861555,-847.1082855519375,270"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=800 ticks=1600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=17.5m/s travel=69.1m sim=13.33s resets=0 controls=1360t/0b/0s finite=true moved=69m wheels=4/4 final=(-119,2.6,-848) env=lt00(clear-morning) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+      "far_bank_exit": true,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "storkyrkobrinken-eastbound",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1356.1953518564483,11.326963133505927,251.65847310809397,-79.37227150135658",
+      "--headless",
+      "--frames",
+      "300"
+    ],
+    "returncode": 0,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=300 ticks=600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=17.7m/s travel=27.6m sim=5.00s resets=0 controls=360t/0b/0s finite=true moved=26m wheels=4/4 final=(1382,12.9,247) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3259d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "engine_revision_matches": true,
+    "section": {
+      "street": "Storkyrkobrinken",
+      "grade": 0.08777611459321588,
+      "chord_m": 38.63017062582381,
+      "start_local": [
+        1354.2296594361926,
+        -252.0273271563964,
+        9.651410904319496
+      ],
+      "end_local": [
+        1392.1971762323767,
+        -244.90287974542207,
+        13.042217187927289
+      ]
+    },
+    "checks": {
+      "exit_zero": true,
+      "engine_revision": true,
+      "status_pass": true,
+      "finite": true,
+      "grounded": true,
+      "zero_resets": true,
+      "zero_impacts": true
+    }
+  },
+  {
+    "name": "storkyrkobrinken-westbound",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1390.231483812121,14.366664958740857,245.2717337937245,100.62772849864342",
+      "--headless",
+      "--frames",
+      "300"
+    ],
+    "returncode": 0,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=300 ticks=600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=22.4m/s travel=37.7m sim=5.00s resets=0 controls=360t/0b/0s finite=true moved=38m wheels=4/4 final=(1353,10.3,252) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3259d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "engine_revision_matches": true,
+    "section": {
+      "street": "Storkyrkobrinken",
+      "grade": 0.08777611459321588,
+      "chord_m": 38.63017062582381,
+      "start_local": [
+        1392.1971762323767,
+        -244.90287974542207,
+        13.042217187927289
+      ],
+      "end_local": [
+        1354.2296594361926,
+        -252.0273271563964,
+        9.651410904319496
+      ]
+    },
+    "checks": {
+      "exit_zero": true,
+      "engine_revision": true,
+      "status_pass": true,
+      "finite": true,
+      "grounded": true,
+      "zero_resets": true,
+      "zero_impacts": true
+    }
+  }
+]

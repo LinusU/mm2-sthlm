@@ -57,6 +57,10 @@ def main():
         shutil.copytree(package, relocated)
         # Verify without sources/config/generator next to the copied package.
         sthlm.validate(relocated)
+        fixture = relocated / "qa/waterfront"
+        if fixture.exists():
+            # Replace only the temporary copy's event zero for this benchmark.
+            shutil.copytree(fixture, relocated / "race/stockholm", dirs_exist_ok=True)
         spawn = "--spawn=" + ",".join(str(v) for v in meta["spawn"])
         drive = run(
             engine,
@@ -140,6 +144,7 @@ def main():
                 "missing_chunk_rejected": True,
                 "working_directory": "empty temporary directory",
                 "source_tree_beside_package": False,
+                "race_fixture": "qa/waterfront copied into temporary event zero",
                 "package_manifest_sha256": sthlm.sha(package / "checksums.json"),
                 "engine": str(engine),
                 "engine_binary_sha256": sthlm.sha(engine),

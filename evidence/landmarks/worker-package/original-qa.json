@@ -1,0 +1,326 @@
+{
+  "baseline_git_revision": "3724732a9a0c8fea9ac79bcce4569a852211f467",
+  "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "tested_source_sha256": {
+    "src/landmarks.py": "898102ab65e9aa6809bc2263604abe3c4e46017ea5438ba1cb3b639d7dd4c19b",
+    "assets/landmarks/stockholm-thirty.json": "f122a603630b1cfb907e3ca74235d813ebc17515f1b06269e1d1cbee6c2ed93d",
+    "tests/test_landmarks.py": "1e55031270644344627731fe48656a9f8e6068901b6968271663eef152d50b05",
+    ".cache/landmarks-sthlm-hook.patch": "7104108691a10e9c59e93b5e695800b38fbaee3a2e9f7d8dbe926eb6571b6389"
+  },
+  "gates": {
+    "ruff_format": "pass, 31 files",
+    "ruff_check": "pass",
+    "unittest": "pass, 94 tests",
+    "offline_build": "pass",
+    "validate": {
+      "binary": {
+        "parts": 55,
+        "rooms": 40406,
+        "textures": 460,
+        "triangles": 1829152,
+        "vertices": 1101424
+      },
+      "building_route_overlaps": [],
+      "minimal": false,
+      "road_area": 4169119.66793496,
+      "route_m": 1527.3475638275881,
+      "spawn_clearance_m": 1.5,
+      "status": "pass",
+      "triangulated_area": null
+    }
+  },
+  "native_drive": {
+    "engine": "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+    "engine_binary_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+    "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+    "missing_chunk_rejected": true,
+    "package_manifest_sha256": "25fd86e47fd069f92db2d2522f7aebc5cecd5035c26a371c9184b91dc37e2a61",
+    "second_map_record": "smoke=headless-physics world=city/triangle.psdl status=pass updates=800 ticks=1600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=44.8m/s travel=317.9m sim=13.33s resets=0 controls=1360t/0b/0s finite=true moved=318m wheels=4/4 final=(-0,2.8,-318) env=lt00(fallback) fog=none sky=none map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "source_tree_beside_package": false,
+    "status": "pass",
+    "stockholm_record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=22532 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1503.8m sim=187.77s resets=0 controls=8598t/13934b/3518s finite=true moved=12m wheels=4/4 final=(-20,3.9,138) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/103m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3561d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "working_directory": "empty temporary directory"
+  },
+  "native_visual_captures": [
+    {
+      "name": "hogalid",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=-500,110,1350,-26,-14",
+        "--screenshot",
+        ".cache/landmarks-hogalid.png"
+      ],
+      "screenshot_sha256": "83bc3920b9f6f7c7db2f7dc20a2fe444a1f9513fe586e627e9e117680590c014",
+      "log_sha256": "545a0ee68ee936e98263bc49eaf2fde3382d8e093df58711296e777c3ae416b3",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "old-town",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=850,170,1000,-38,-7",
+        "--screenshot",
+        ".cache/landmarks-old-town.png"
+      ],
+      "screenshot_sha256": "449a667ed33019c5034a2379647fa35161232ced22b858f7b6e0a3c4f58fb0b8",
+      "log_sha256": "ea683beeaf366475d0fc33915f95bd7d0d36f54dd31d14fb1a6586b8a3d70c44",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "city",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=450,160,-50,-41,-10",
+        "--screenshot",
+        ".cache/landmarks-city.png"
+      ],
+      "screenshot_sha256": "966f6d77ecb3b7d460bb2b3b58e12b91959ef75d6d58734c203bf32105c6387f",
+      "log_sha256": "3fa9310584a5ed700657c34e18945129ba49d03d565d9893f4486cced1fd1e5f",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "library",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=300,100,-1400,-34,-7",
+        "--screenshot",
+        ".cache/landmarks-library.png"
+      ],
+      "screenshot_sha256": "3cdb51f80a7e747890c0476075494cf2fca1f1e6240637d88998ee970c279eab",
+      "log_sha256": "c23d7adeac2dfad73713fc0e2e26434a85c31e90ea14cbf3efbe334009c49c00",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "cultural-waterfront",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=1650,125,300,-24,-6",
+        "--screenshot",
+        ".cache/landmarks-cultural-waterfront.png"
+      ],
+      "screenshot_sha256": "096aa062f9cb6c02e4c3e9425c40ac2b8eb598586ff71be4b4b7ad4478850007",
+      "log_sha256": "f2fdc6fc8a174692069adf7dde4b9e9ae54df94d48004ded54fa4e4617e0529f",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "djurgarden",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=2350,120,300,-45,-8",
+        "--screenshot",
+        ".cache/landmarks-djurgarden.png"
+      ],
+      "screenshot_sha256": "a9eeca2101838313c897858b43ce789c49ee70380c227a970298f8ebbad4207c",
+      "log_sha256": "b71c45f74f30cd6217f168728067bcc27b048f3caf8419193707c902e98c21e0",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "sodermalm",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=1250,200,2200,-37,-9",
+        "--screenshot",
+        ".cache/landmarks-sodermalm.png"
+      ],
+      "screenshot_sha256": "a6c8fc88df1e354c0c213262deaa43ee13ddd7fc2aeec4bdc72125f70d09a64e",
+      "log_sha256": "c3e18f10d1a1efa838359b234b094ea5e9f10dc9ea126ed687e35973c552c558",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "western-landmarks",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=-2100,190,600,-35,-8",
+        "--screenshot",
+        ".cache/landmarks-western-landmarks.png"
+      ],
+      "screenshot_sha256": "6a4b2c7b0ebdc0ad3fb8c11e80a4703ea6963d8c3b6df2b127dd4a595f8cb030",
+      "log_sha256": "27672d53e58c6fc43a59680c14a91969db7548ca14eba19a5a3658f135ff0e7d",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "karlberg",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=-1360,60,-1200,-9,-3",
+        "--screenshot",
+        ".cache/landmarks-karlberg.png"
+      ],
+      "screenshot_sha256": "1ac52bbf763b3bdcec698e9c47192b12a92e343195d425a4a4c8284d2d71691a",
+      "log_sha256": "42cbdf9fb0ad2778e33691e23d463874322128b3bb3e8a9334f184da90d6a5fa",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "preserved-civic",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=180,140,500,-8,-6",
+        "--screenshot",
+        ".cache/landmarks-preserved-civic.png"
+      ],
+      "screenshot_sha256": "414de4f01aff3e9ff312bbb3b95edd1c9a9e045bc91ff9c34f89bcb6853e23c2",
+      "log_sha256": "840b2d968ccee01ff50a15cc4912c29ba3b40c3f7559af236486e7f860d2f7d0",
+      "engine_status": "pass",
+      "source_stage": "inspection before final tower-position/portico refinement"
+    },
+    {
+      "name": "konserthuset-accepted",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=960,38,-720,-37,0",
+        "--screenshot",
+        ".cache/landmarks-konserthuset-accepted.png"
+      ],
+      "screenshot_sha256": "52426806bfb2d56ce5ba0d623367e8b89fe07223d7f78f05efc85f0d862925f4",
+      "log_sha256": "9e2d4734127bab4cae382f870782ff9f83c759ab60c107a8928c91de1fcd19d7",
+      "engine_status": "pass",
+      "source_stage": "final"
+    },
+    {
+      "name": "hogalid-door-accepted",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--no-hud",
+        "--no-pvs",
+        "--frames",
+        "45",
+        "--cam=-490,37,1175,-91,-2",
+        "--screenshot",
+        ".cache/landmarks-hogalid-door-accepted.png"
+      ],
+      "screenshot_sha256": "8eabc5f2bf12f37ffc2c58c3d5a3a1749a5b2d4f7f9bf76d35fae8f6b41d505c",
+      "log_sha256": "7530a2285f86aee0b9c00cbb5b02add7ff6c405c3fbac3ca902a7f75497aba9b",
+      "engine_status": "pass",
+      "source_stage": "final"
+    }
+  ],
+  "inspection_findings": [
+    "H\u00f6galid nested generic third spire suppressed; original twin octagonal eastern towers visible.",
+    "Konserthuset final carved porch visibly exposes ten columns.",
+    "Church tall arches use one quiet masonry repeat, without apartment floor tiling.",
+    "Ground wood door geometry exists; H\u00f6galid doorway visibility was not confirmed in final close camera, with rising terrain foreground.",
+    "Remaining existing four landmark assets retain their earlier dedicated exporter."
+  ],
+  "integration_command": ".venv/bin/python scripts/check-integration.py --engine /Users/linus/coding/mm2-sthlm/.cache/engine/mm2 --output .cache/landmarks-integration",
+  "artifact_root": "/Users/linus/.codex/worktrees/overnight-landmarks/mm2-sthlm",
+  "gate_logs": [
+    ".cache/landmarks-tests-accepted.log",
+    ".cache/landmarks-build-accepted.log",
+    ".cache/landmarks-validation-accepted.json",
+    ".cache/landmarks-integration.log"
+  ]
+}

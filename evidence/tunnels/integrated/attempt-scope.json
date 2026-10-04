@@ -1,0 +1,11 @@
+{
+  "accepted": false,
+  "scope": "First coordinator tunnel integration on bd7566b. Three interior source courses pass; street-to-Klara portal fails9impacts. Native views reveal upper caps/paving across exposed ramp and floor-wall edge gaps. Rejected as complete tunnel acceptance. Corrected combined package will have separate evidence.",
+  "engine_revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+  "package_manifest_sha256": "386dbd0674c5e6ea5b8cd6923fe2eabcaa25cfa88d451d1f91e21b2bfc953090",
+  "source_hashes": {
+    "src/tunnels.py": "db2dc7f3037e3e1a101f21857bfa1df256c6420b497ec2cb2064b12db803dd4d",
+    "src/elevation.py": "e7720ef0871d9343b547e7d36a6bbdddeee30d340b36535c06beccbe186eb917"
+  },
+  "source_hash_scope": "Only unchanged elevation/tunnel modules recorded. Shared exporter and road rendering hooks were modified afterward; initial package checksum is authoritative."
+}

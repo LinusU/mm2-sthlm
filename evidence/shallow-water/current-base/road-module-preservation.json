@@ -1,0 +1,22 @@
+{
+  "src/road_surfaces.py": {
+    "requested_base_blob": "2c3c17c6e2b45f959c7d23fcaaa206e1715a3e33",
+    "current_worktree_blob": "2c3c17c6e2b45f959c7d23fcaaa206e1715a3e33",
+    "unchanged": true
+  },
+  "src/road_profiles.py": {
+    "requested_base_blob": "2d0f5e5adc4963689ace5aca4eb0f5b73825ecd2",
+    "current_worktree_blob": "2d0f5e5adc4963689ace5aca4eb0f5b73825ecd2",
+    "unchanged": true
+  },
+  "src/elevation.py": {
+    "requested_base_blob": "dac48a206d5cd2a25eb50459a57c3024436e9e6a",
+    "current_worktree_blob": "dac48a206d5cd2a25eb50459a57c3024436e9e6a",
+    "unchanged": true
+  },
+  "src/bridges.py": {
+    "requested_base_blob": "9e1c2accf5110febd8de0c82c189efac35c704e5",
+    "current_worktree_blob": "9e1c2accf5110febd8de0c82c189efac35c704e5",
+    "unchanged": true
+  }
+}

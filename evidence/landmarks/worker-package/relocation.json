@@ -1,0 +1,22 @@
+{
+  "scope": "Isolated worker package; original commands/hashes retained in original-qa.json. Coordinator combined package requires separate acceptance.",
+  "original_paths": {
+    ".cache/landmarks-build-accepted.log": "evidence/landmarks/worker-package/landmarks-build-accepted.log",
+    ".cache/landmarks-city.png": "evidence/landmarks/worker-package/landmarks-city.png",
+    ".cache/landmarks-cultural-waterfront.png": "evidence/landmarks/worker-package/landmarks-cultural-waterfront.png",
+    ".cache/landmarks-djurgarden.png": "evidence/landmarks/worker-package/landmarks-djurgarden.png",
+    ".cache/landmarks-hogalid-door-accepted.png": "evidence/landmarks/worker-package/landmarks-hogalid-door-accepted.png",
+    ".cache/landmarks-hogalid.png": "evidence/landmarks/worker-package/landmarks-hogalid.png",
+    ".cache/landmarks-integration.log": "evidence/landmarks/worker-package/landmarks-integration.log",
+    ".cache/landmarks-karlberg.png": "evidence/landmarks/worker-package/landmarks-karlberg.png",
+    ".cache/landmarks-konserthuset-accepted.png": "evidence/landmarks/worker-package/landmarks-konserthuset-accepted.png",
+    ".cache/landmarks-library.png": "evidence/landmarks/worker-package/landmarks-library.png",
+    ".cache/landmarks-old-town.png": "evidence/landmarks/worker-package/landmarks-old-town.png",
+    ".cache/landmarks-preserved-civic.png": "evidence/landmarks/worker-package/landmarks-preserved-civic.png",
+    ".cache/landmarks-sodermalm.png": "evidence/landmarks/worker-package/landmarks-sodermalm.png",
+    ".cache/landmarks-sthlm-hook.patch": "evidence/landmarks/worker-package/landmarks-sthlm-hook.patch",
+    ".cache/landmarks-tests-accepted.log": "evidence/landmarks/worker-package/landmarks-tests-accepted.log",
+    ".cache/landmarks-validation-accepted.json": "evidence/landmarks/worker-package/landmarks-validation-accepted.json",
+    ".cache/landmarks-western-landmarks.png": "evidence/landmarks/worker-package/landmarks-western-landmarks.png"
+  }
+}

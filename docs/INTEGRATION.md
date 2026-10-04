@@ -1,6 +1,28 @@
-# Current expanded terrain integration
+# Race integration in progress
 
-The latest pulled upstream main is
+Upstream main was pulled and built at `069768a11af7d2ff37546e77aea2baef49f58fe7`.
+The original map engine fixes are now available in that upstream tree. The
+isolated `codex/stockholm-race-integration` branch adds a reusable explicit bot
+route input in [PR #6](https://github.com/LinusU/rust-mm2/pull/6); the first tested
+revision is `2cca18d595d711b47d82bde531e5706a67b47ea2`. It supplies normal steering,
+throttle and braking to the existing vehicle simulation. Native checkpoint,
+lap, clock and opponent behavior remain authoritative. Guided evidence runs
+are ineligible for player records.
+
+`.cache/engine/mm2-races` is the separately built upstream binary;
+`.cache/engine/mm2-race-guide` is the initial PR binary. The older
+`.cache/engine/mm2` is preserved for historical comparisons. Exact identities
+and the reusable patch are under `integration/rust-mm2/`. A controller follow-up
+and the full thirty-course driving matrix are still in progress. Initial race
+runs requiring resets or recovery moves are diagnostics, not clean acceptance.
+
+The combined city uses 90 PSDL pools. The map remains portable and contains no
+engine checkout. The following reports describe earlier packages at their
+recorded hashes; they do not certify the final race package.
+
+# Earlier expanded terrain integration
+
+The earlier pulled upstream main was
 `46f351b9186ad2d4d955e9d0d0a1ef1240d2332f`; PRs #1–#3 are merged.
 The current tested package uses engine
 `b3d9804489bdcd576dd4b85b3f40fec75c545071`, adding two focused fixes:

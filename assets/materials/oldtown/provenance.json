@@ -1,0 +1,14 @@
+{
+  "author": "Codex procedural original",
+  "method": "oldtown.texture: deterministic 50-course running bond granite setts, muted grey beige palette, bevels and integer grit",
+  "source_pixels": "none",
+  "seed": "integer formulas in src/oldtown.py",
+  "texture_sha256": "b43582ee8ff3bcc6d2ca994efea3d2215de515394ad3960f6c8327b57043d90d",
+  "reference_links": [
+    "https://professionals.visitstockholm.com/documents/226/QUIZ_Stadsdelar_ENG_2023.pdf",
+    "https://www.visitstockholm.com/o/stortorget/",
+    "https://start.stockholm/globalassets/start/om-stockholms-stad/sa-arbetar-staden/natur-parker-och-gronomraden/parkplan-sodermalm-del-2---fickparker-och-tappor.pdf"
+  ],
+  "license": "project original artwork",
+  "uv_repeat_m": 10.0
+}

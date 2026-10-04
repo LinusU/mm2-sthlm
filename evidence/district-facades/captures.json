@@ -1,0 +1,272 @@
+[
+  {
+    "district": "kungsholmen",
+    "building": "way/39467140",
+    "material": {
+      "bay_width_m": 4.2,
+      "district": "kungsholmen",
+      "door": "district_kungsholmen_1_door",
+      "floor_height_m": 3.3,
+      "ground": "district_kungsholmen_1_ground",
+      "roof": "district_roof_iron",
+      "upper": "district_kungsholmen_1_upper",
+      "variant": 1
+    },
+    "entrance": {
+      "bottom_m": 19.65504704982668,
+      "edge": 1,
+      "repeat_u": 1,
+      "repeat_v": 1,
+      "road_point": [
+        -925.7136204858598,
+        491.31327968131444
+      ],
+      "top_m": 22.955047049826682
+    },
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--parked",
+      "--no-hud",
+      "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+      "--cam=-925.7136204858598,21.85504704982668,-491.31327968131444,64.42830295581899,-6",
+      "--frames",
+      "30",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/evidence/district-facades/stockholm-kungsholmen.png"
+    ],
+    "exit_code": 0,
+    "capture_bytes": 3365600
+  },
+  {
+    "district": "gamla_stan",
+    "building": "way/1097581338",
+    "material": {
+      "bay_width_m": 3.6,
+      "district": "gamla_stan",
+      "door": "district_gamla_stan_1_door",
+      "floor_height_m": 3.1,
+      "ground": "district_gamla_stan_1_ground",
+      "roof": "district_roof_iron",
+      "upper": "district_gamla_stan_1_upper",
+      "variant": 1
+    },
+    "entrance": {
+      "bottom_m": 3.0618003016404325,
+      "edge": 1,
+      "repeat_u": 1,
+      "repeat_v": 1,
+      "road_point": [
+        1445.5704921171364,
+        -602.7148329534778
+      ],
+      "top_m": 6.161800301640433
+    },
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--parked",
+      "--no-hud",
+      "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+      "--cam=1441.840114541296,5.261800301640433,581.622133326961,10.029412612144508,-6",
+      "--frames",
+      "30",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/evidence/district-facades/stockholm-gamla_stan.png"
+    ],
+    "exit_code": 0,
+    "capture_bytes": 3473588
+  },
+  {
+    "district": "ostermalm",
+    "building": "way/1359515884",
+    "material": {
+      "bay_width_m": 4.0,
+      "district": "ostermalm",
+      "door": "district_ostermalm_3_door",
+      "floor_height_m": 3.6,
+      "ground": "district_ostermalm_3_ground",
+      "roof": "district_roof_copper",
+      "upper": "district_ostermalm_3_upper",
+      "variant": 3
+    },
+    "entrance": {
+      "bottom_m": 14.872510919124721,
+      "edge": 2,
+      "repeat_u": 1,
+      "repeat_v": 1,
+      "road_point": [
+        1983.6501571840088,
+        1322.6349186446205
+      ],
+      "top_m": 18.472510919124723
+    },
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--parked",
+      "--no-hud",
+      "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+      "--cam=1983.6501571840088,17.07251091912472,-1322.6349186446205,-22.157633040089088,-6",
+      "--frames",
+      "30",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/evidence/district-facades/stockholm-ostermalm.png"
+    ],
+    "exit_code": 0,
+    "capture_bytes": 3376233
+  },
+  {
+    "district": "sodermalm",
+    "building": "way/113505863",
+    "material": {
+      "bay_width_m": 4.0,
+      "district": "sodermalm",
+      "door": "district_sodermalm_2_door",
+      "floor_height_m": 3.2,
+      "ground": "district_sodermalm_2_ground",
+      "roof": "district_roof_iron",
+      "upper": "district_sodermalm_2_upper",
+      "variant": 2
+    },
+    "entrance": {
+      "bottom_m": 24.942609571837334,
+      "edge": 3,
+      "repeat_u": 1,
+      "repeat_v": 1,
+      "road_point": [
+        1504.6232751749678,
+        -1562.9701785345528
+      ],
+      "top_m": 28.142609571837333
+    },
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--parked",
+      "--no-hud",
+      "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+      "--cam=1505.140039546071,27.142609571837333,1554.5206721098757,-3.4998001611986824,-6",
+      "--frames",
+      "30",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/evidence/district-facades/stockholm-sodermalm.png"
+    ],
+    "exit_code": 0,
+    "capture_bytes": 3542955
+  },
+  {
+    "district": "norrmalm",
+    "building": "way/1369846008",
+    "material": {
+      "bay_width_m": 4.8,
+      "district": "norrmalm",
+      "door": "district_norrmalm_0_door",
+      "floor_height_m": 3.5,
+      "ground": "district_norrmalm_0_ground",
+      "roof": "district_roof_iron",
+      "upper": "district_norrmalm_0_upper",
+      "variant": 0
+    },
+    "entrance": {
+      "bottom_m": 7.195104981526682,
+      "edge": 18,
+      "repeat_u": 1,
+      "repeat_v": 1,
+      "road_point": [
+        777.6650781116313,
+        763.8780888488556
+      ],
+      "top_m": 10.695104981526683
+    },
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--parked",
+      "--no-hud",
+      "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+      "--cam=779.0047071820059,9.395104981526682,-761.1851256974253,26.44829677692053,-6",
+      "--frames",
+      "30",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/evidence/district-facades/stockholm-norrmalm.png"
+    ],
+    "exit_code": 0,
+    "capture_bytes": 3322227
+  },
+  {
+    "district": "djurgarden",
+    "building": "way/33485731",
+    "material": {
+      "bay_width_m": 3.8,
+      "district": "djurgarden",
+      "door": "district_djurgarden_0_door",
+      "floor_height_m": 3.2,
+      "ground": "district_djurgarden_0_ground",
+      "roof": "district_roof_clay",
+      "upper": "district_djurgarden_0_upper",
+      "variant": 0
+    },
+    "entrance": {
+      "bottom_m": 35.26935077526315,
+      "edge": 0,
+      "repeat_u": 1,
+      "repeat_v": 1,
+      "road_point": [
+        3465.969769147234,
+        -357.936690696912
+      ],
+      "top_m": 38.46935077526315
+    },
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--parked",
+      "--no-hud",
+      "--spawn=-31.488166412776778,4.589773907788908,138.05843248238915,-90.69759070561142",
+      "--cam=3468.855849135086,37.46935077526315,355.6140336325275,-51.1736132360374,-6",
+      "--frames",
+      "30",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/evidence/district-facades/stockholm-djurgarden.png"
+    ],
+    "exit_code": 0,
+    "capture_bytes": 3107521
+  }
+]

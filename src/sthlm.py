@@ -14,6 +14,7 @@ from pathlib import Path
 import struct
 import subprocess
 import sys
+import tempfile
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -223,12 +224,21 @@ def normalize(source, cfg, boundary=None, water_override=None):
                 "service",
                 "living_street",
             ],
-        ):
+        ) or wid in cfg.get("allowed_surface_ways", {}):
             if (
-                tags.get("bridge") not in (None, "no")
-                or tags.get("tunnel") not in (None, "no")
-                or tags.get("layer", "0") != "0"
-            ) and wid not in cfg.get("allowed_bridge_ways", []):
+                (
+                    tags.get("bridge") not in (None, "no")
+                    or tags.get("tunnel") not in (None, "no")
+                    or tags.get("layer", "0") != "0"
+                )
+                and wid not in cfg.get("allowed_bridge_ways", [])
+                and wid not in cfg.get("allowed_tunnel_ways", [])
+                and not (
+                    cfg.get("allow_internal_open_cuts")
+                    and tags.get("tunnel") in (None, "no")
+                    and tags.get("bridge") in (None, "no")
+                )
+            ):
                 omitted.append(
                     {"id": wid, "reason": "grade-separated road excluded", "tags": tags}
                 )
@@ -240,7 +250,11 @@ def normalize(source, cfg, boundary=None, water_override=None):
                 pass
             if not math.isfinite(width) or width <= 0:
                 raise ValueError(f"road {wid}: invalid width")
-            width = max(5, min(width, 14))
+            width = (
+                cfg["allowed_surface_ways"][wid]
+                if wid in cfg.get("allowed_surface_ways", {})
+                else max(5, min(width, 14))
+            )
             roads.append(
                 {
                     "id": wid,
@@ -586,6 +600,10 @@ def build(output, minimal=False, profile="expanded"):
             city["road_details"] = normalize_road_details(source, cfg, city)
     else:
         city = normalize(source, cfg)
+    if expanded and not minimal:
+        from oldtown import apply as apply_oldtown
+
+        apply_oldtown(source, cfg, city)
     out = output / "stockholm"
     if out.exists():
         shutil.rmtree(out)
@@ -624,6 +642,10 @@ def build(output, minimal=False, profile="expanded"):
 
         terrain = TerrainGrid.from_project(ROOT, cfg["origin"])
         road_field, deck_field, base_roads, bridge_roads = apply(city, terrain)
+        import tunnels
+
+        tunnels.prepare(city, terrain)
+        tunnels.write_roads(writer, city, terrain)
         if not minimal:
             from street_details import wrap_field
 
@@ -636,6 +658,8 @@ def build(output, minimal=False, profile="expanded"):
         if minimal:
             base_roads = road
             bridge_roads = Polygon()
+        base_roads = tunnels.clip_surface(base_roads, city)
+        city["ground_road_surface"] = mapping(base_roads)
         print("Meshing terrain-conforming roads", file=sys.stderr, flush=True)
         if minimal:
             writer.surface(base_roads, road_height, "road", road=True)
@@ -663,6 +687,13 @@ def build(output, minimal=False, profile="expanded"):
         road = base_roads
     else:
         writer.surface(road, cfg["road_y"], "road", road=True)
+    pond_records = []
+    pond_area = Polygon()
+    if expanded and not minimal:
+        from ponds import prepare as prepare_ponds, partition_geometry
+
+        pond_records = prepare_ponds(city, terrain, ground_height)
+        pond_area = partition_geometry(pond_records)
     if not minimal:
         # Partition collision surfaces instead of stacking a ground plane beneath roads.
         quay = water.buffer(2).difference(water).intersection(bounds)
@@ -673,17 +704,38 @@ def build(output, minimal=False, profile="expanded"):
             .difference(water)
             .intersection(bounds)
         )
+        if expanded:
+            paving = tunnels.clip_surface(paving, city)
         print("Meshing shoulders", file=sys.stderr, flush=True)
+        from oldtown import MATERIAL as oldtown_material
+        from oldtown import partition as partition_oldtown
+
+        paving = paving.difference(pond_area)
+        stone_paving, paving = partition_oldtown(paving, city)
+        writer.surface(stone_paving, ground_height if expanded else 2, oldtown_material)
         writer.surface(paving, ground_height if expanded else 2, "paving")
         land = (
             shape(city["land"]).difference(
-                road.union(paving).union(shape(city["bridge_approach_surface"]))
+                road.union(paving)
+                .union(stone_paving)
+                .union(shape(city["bridge_approach_surface"]))
             )
             if expanded
-            else bounds.difference(water).difference(road.union(paving))
+            else bounds.difference(water).difference(
+                road.union(paving).union(stone_paving)
+            )
         )
+        if expanded:
+            land = land.difference(shape(city["tunnel_terrain_cutout"]))
         print("Meshing land", file=sys.stderr, flush=True)
+        land = land.difference(pond_area)
+        stone_land, land = partition_oldtown(land, city)
+        writer.surface(stone_land, ground_height if expanded else 2, oldtown_material)
         writer.surface(land, ground_height if expanded else 2, "grass")
+        if pond_records:
+            from ponds import write_mesh as write_pond_mesh
+
+            write_pond_mesh(writer, pond_records, ground_height)
         remaining_water = water
         for region in city.get("water_regions", []):
             area = shape(region["geometry"]).intersection(remaining_water)
@@ -694,8 +746,21 @@ def build(output, minimal=False, profile="expanded"):
         from church_materials import material_for as church_material_for
 
         from manor_materials import material_for as manor_material_for
+        from district_facades import (
+            StreetFrontages,
+            export as export_district,
+            material_for as district_material_for,
+        )
+
+        district_frontages = StreetFrontages(city, road_height)
+
+        from landmarks import replaces as landmark_replaces, export as export_landmarks
+
+        import additional_landmarks
 
         for b in city["buildings"]:
+            if expanded and (landmark_replaces(b) or additional_landmarks.replaces(b)):
+                continue
             if expanded and b["id"] in {"way/24488933", "way/1049742528"}:
                 continue
             if b.get("street_detail"):
@@ -740,6 +805,16 @@ def build(output, minimal=False, profile="expanded"):
                         ),
                         "tower_position": "footprint representative point; not surveyed",
                     }
+                district_material = (
+                    district_material_for(b, city["origin"])
+                    if not (landmark or church or church_material or manor_material)
+                    else None
+                )
+                if district_material:
+                    b["rendering"] = export_district(
+                        writer, p, b, district_frontages, district_material
+                    )
+                    continue
                 writer.building(
                     p,
                     24 if landmark else body_height,
@@ -810,6 +885,8 @@ def build(output, minimal=False, profile="expanded"):
             from fences import write as write_fences
             from courthouse import export as export_courthouse
 
+            export_landmarks(writer, city, out)
+            additional_landmarks.export(writer, city, out)
             city["courthouse"] = export_courthouse(writer, city, out)
             from pavilion import export as export_pavilion
 
@@ -830,11 +907,15 @@ def build(output, minimal=False, profile="expanded"):
                     out, city, deck_field, road_triangles=bridge_native_triangles
                 )
             )
+            city["props"].extend(tunnels.write(out, city))
             city["props"].extend(
                 write_road_details(
                     out, city, height=ground_height, road_height=detail_height
                 )
             )
+            from ponds import write as write_ponds
+
+            write_ponds(out, city)
             write_props(out, city["props"])
             write_json(out / "normalized.json", city)
         # Original primitive tower at source footprint's southeastern corner.
@@ -898,20 +979,32 @@ def build(output, minimal=False, profile="expanded"):
     if expanded and not minimal:
         from road_surfaces import write_textures as write_road_textures
 
+        from oldtown import write_textures as write_oldtown_textures
+
+        write_oldtown_textures(out / "texture")
         write_road_textures(out / "texture", city)
     from manor_materials import write as write_manor_materials
 
     write_manor_materials(out)
+    from district_facades import write as write_district_materials
+
+    write_district_materials(out)
     from church_materials import write as write_church_materials
 
     write_church_materials(out)
     from minimap import write as write_minimap
 
     write_json(out / "minimap.json", write_minimap(out, city, source))
-    for index, tod in [(0, "morning"), (4, "noon")]:
+    for index, tod in [(0, "morning"), (4, "noon"), (5, "cloudy-noon"), (8, "evening")]:
+        key_pitch = -0.2 if index == 8 else -0.9
+        key_color = (
+            "0.85 0.50 0.30"
+            if index == 8
+            else ("0.55 0.58 0.62" if index == 5 else "0.85 0.82 0.75")
+        )
         (out / f"city/stockholm.lt{index:02}").write_text(
-            f"type: a\nclear-{tod} {{\n"
-            "KeyHeading 2.2\nKeyPitch -0.9\nKeyColor 0.85 0.82 0.75\n"
+            f"type: a\n{tod} {{\n"
+            f"KeyHeading 2.2\nKeyPitch {key_pitch}\nKeyColor {key_color}\n"
             "Fill1Heading 0.0\nFill1Pitch -0.2\nFill1Color 0.16 0.18 0.22\n"
             "Fill2Heading 3.14\nFill2Pitch -0.3\nFill2Color 0.1 0.1 0.1\n"
             "Ambient -3355444\n}\n"
@@ -921,7 +1014,7 @@ def build(output, minimal=False, profile="expanded"):
         '[mod]\nid = "stockholm"\nname = "Stockholm — Stadshuset"\nversion = "0.1.0"\nauthor = "mm2-sthlm contributors"\n'
     )
     route = city["drive_gates"]
-    race = out / "race/stockholm"
+    race = out / "qa/waterfront"
     race.mkdir(parents=True, exist_ok=True)
     (race / "circuit0.aimap").write_text("[Density]\n0\n[Police]\n0\n[Opponent]\n0\n")
     params = [
@@ -948,10 +1041,24 @@ def build(output, minimal=False, profile="expanded"):
     (race / "circuit0waypoints.csv").write_text(
         "x,y,z,a,poly count,frame rate,state changes,texture changes,msg\n"
         + "".join(
-            f"{x:.5f},{road_height(x, z):.5f},{-z:.5f},0,5,0,0,0,\n"
-            for x, z in route[:-1]
+            f"{x:.5f},{road_height(x, z):.5f},{-z:.5f},"
+            f"{math.degrees(math.atan2(-(route[i + 1][0] - x), -(route[i + 1][1] - z))):.5f},"
+            "5,0,0,0,\n"
+            for i, (x, z) in enumerate(route[:-1])
         )
     )
+    # Keep the dense waterfront circuit as a copied integration fixture.
+    # Authored player events own all ten Circuit slots.
+    if expanded and not minimal and (ROOT / "config/races/circuit.json").exists():
+        from races import write as write_races
+        from race_vehicle import write as write_race_vehicle
+        from race_hud import write_race_hud
+
+        write_race_vehicle(out)
+        write_race_hud(out)
+        write_races(out, city)
+    else:
+        shutil.copytree(race, out / "race/stockholm", dirs_exist_ok=True)
     # Data-provided spawn resets through the existing generic CLI.
     write_json(
         out / "map.json",
@@ -1104,6 +1211,41 @@ def inspect_psdl(path, package):
     }
 
 
+CITY_PART_LIMIT = 129
+
+
+def validated_city_parts(package, checks):
+    """Reject manifests outside the pinned native engine's import envelope."""
+    parts = ["city/stockholm.psdl"]
+    manifest = package / "city/stockholm.chunks"
+    if not manifest.exists():
+        return parts
+    lines = [
+        line.strip()
+        for line in manifest.read_text().splitlines()
+        if line.strip() and not line.strip().startswith("#")
+    ]
+    if not lines or lines[0] != "MM2_CHUNKS 1":
+        raise ValueError("unsupported city chunk manifest")
+    if len(lines) == 1:
+        raise ValueError("city chunk manifest lists no additional parts")
+    if len(lines) > CITY_PART_LIMIT:
+        raise ValueError("city chunk count exceeds native 129-part limit")
+    for relative in lines[1:]:
+        if (
+            relative not in checks
+            or not relative.startswith("city/")
+            or not relative.endswith(".psdl")
+            or "\\" in relative
+            or ":" in relative
+            or any(p in {"", ".", ".."} for p in relative.split("/"))
+            or relative in parts
+        ):
+            raise ValueError("invalid or unverified city part")
+        parts.append(relative)
+    return parts
+
+
 def validate(package):
     checks = json.loads((package / "checksums.json").read_text())
     for relative, digest in checks.items():
@@ -1137,21 +1279,7 @@ def validate(package):
     if any(resource not in checks for resource in minimap_meta["resources"]):
         raise ValueError("package manifest missing minimap asset")
     validate_minimap(package)
-    part_paths = ["city/stockholm.psdl"]
-    chunk_manifest = package / "city/stockholm.chunks"
-    if chunk_manifest.exists():
-        lines = chunk_manifest.read_text().splitlines()
-        if not lines or lines[0] != "MM2_CHUNKS 1":
-            raise ValueError("unsupported city chunk manifest")
-        for relative in lines[1:]:
-            if (
-                relative not in checks
-                or Path(relative).is_absolute()
-                or ".." in Path(relative).parts
-                or relative in part_paths
-            ):
-                raise ValueError("invalid or unverified city part")
-            part_paths.append(relative)
+    part_paths = validated_city_parts(package, checks)
     reports = [inspect_psdl(package / p, package) for p in part_paths]
     binary = {key: sum(r[key] for r in reports) for key in reports[0]}
     binary["parts"] = len(reports)
@@ -1353,9 +1481,18 @@ def main():
                 parser.error(
                     "continuous-drive smoke forbids teleport/reset overrides; use play -- --headless for separate probes"
                 )
-            result = subprocess.run(
-                cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
-            )
+            with tempfile.TemporaryDirectory(prefix="sthlm-smoke-") as tmp:
+                relocated = Path(tmp) / "stockholm"
+                shutil.copytree(package, relocated)
+                fixture = relocated / "qa/waterfront"
+                if fixture.exists():
+                    shutil.copytree(
+                        fixture, relocated / "race/stockholm", dirs_exist_ok=True
+                    )
+                cmd[cmd.index("--mods") + 1] = tmp
+                result = subprocess.run(
+                    cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
+                )
             print(result.stdout, end="", flush=True)
             if result.returncode:
                 sys.exit(result.returncode)

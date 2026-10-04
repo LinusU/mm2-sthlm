@@ -1,0 +1,1507 @@
+{
+  "schema": 1,
+  "family": "race",
+  "native_rule": "AnyOrder",
+  "events": [
+    {
+      "id": "checkpoint-01",
+      "index": 0,
+      "name": "City Hall Shuffle",
+      "difficulty_rank": 1,
+      "start": {
+        "label": "Stadshuset start",
+        "node_id": 4372203152,
+        "way_id": 439570812,
+        "street": "Norr Mälarstrand",
+        "east_north_m": [
+          318.749,
+          -132.37
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Waterfront gate",
+          "node_id": 9343975897,
+          "way_id": 1259514204,
+          "street": "Norr Mälarstrand",
+          "east_north_m": [
+            -144.369,
+            -137.491
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Courthouse approach",
+          "node_id": 6314324909,
+          "way_id": 177560538,
+          "street": "Hantverkargatan",
+          "east_north_m": [
+            -213.177,
+            140.185
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "City Hall finish",
+        "node_id": 410612936,
+        "way_id": 377337318,
+        "street": "Hantverkargatan",
+        "east_north_m": [
+          334.541,
+          -3.039
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        0,
+        1
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 4,
+        "Cops": 0,
+        "Ambient": 0.08,
+        "Peds": 0.04,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 4,
+        "Cops": 0,
+        "Ambient": 0.18,
+        "Peds": 0.04,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 15.0,
+        "professional": 18.0
+      },
+      "suggested_route_length_m": 1425,
+      "design": {
+        "theme": "City Hall Shuffle",
+        "route_choice": "Read the map before following the nearest arrow. Two gates invite either waterfront-first or courthouse-first; returning uphill costs more braking.",
+        "flow": "A compact welcome near Stadshuset and Rådhuset, generous asphalt and just two route decisions.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 1; 2 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        1425,
+        1678
+      ]
+    },
+    {
+      "id": "checkpoint-02",
+      "index": 1,
+      "name": "Kungsholmen Calling",
+      "difficulty_rank": 2,
+      "start": {
+        "label": "Pavilion start",
+        "node_id": 1551579462,
+        "way_id": 252557001,
+        "street": "Norr Mälarstrand",
+        "east_north_m": [
+          -976.298,
+          129.665
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Waterfront promenade",
+          "node_id": 9347241459,
+          "way_id": 28981549,
+          "street": "Norr Mälarstrand",
+          "east_north_m": [
+            -254.853,
+            -120.114
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Courthouse",
+          "node_id": 9002206734,
+          "way_id": 28495618,
+          "street": "Scheelegatan",
+          "east_north_m": [
+            -20.25,
+            403.778
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Kronoberg flank",
+          "node_id": 1901193047,
+          "way_id": 1078778720,
+          "street": "Fleminggatan",
+          "east_north_m": [
+            -544.004,
+            681.932
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "Sankt Erik finish",
+        "node_id": 1673767269,
+        "way_id": 41123416,
+        "street": "Sankt Eriksgatan",
+        "east_north_m": [
+          -779.413,
+          483.973
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        0,
+        1,
+        2
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 4,
+        "Cops": 0,
+        "Ambient": 0.098,
+        "Peds": 0.048,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 4,
+        "Cops": 0,
+        "Ambient": 0.198,
+        "Peds": 0.048,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 15.4,
+        "professional": 18.5
+      },
+      "suggested_route_length_m": 2545,
+      "design": {
+        "theme": "Kungsholmen Calling",
+        "route_choice": "The south waterfront and north grid can be collected clockwise or counterclockwise. Save the northern gate for a clean arrival at the finish.",
+        "flow": "Adds a third gate, uphill braking and a rectangular street grid while remaining on Kungsholmen.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 1; 3 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        2545
+      ]
+    },
+    {
+      "id": "checkpoint-03",
+      "index": 2,
+      "name": "City Lights",
+      "difficulty_rank": 3,
+      "start": {
+        "label": "Central station start",
+        "node_id": 10463630,
+        "way_id": 137341440,
+        "street": "Vasagatan",
+        "east_north_m": [
+          677.833,
+          580.876
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Kungsgatan west",
+          "node_id": 11873745972,
+          "way_id": 1279023743,
+          "street": "Kungsgatan",
+          "east_north_m": [
+            804.859,
+            717.432
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Sveavägen north",
+          "node_id": 1431277418,
+          "way_id": 122041454,
+          "street": "Sveavägen",
+          "east_north_m": [
+            798.51,
+            1377.245
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Opera approach",
+          "node_id": 2459905183,
+          "way_id": 212085619,
+          "street": "Hamngatan",
+          "east_north_m": [
+            1390.318,
+            524.025
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "Nybro finish",
+        "node_id": 1482940821,
+        "way_id": 215489613,
+        "street": "Strandvägen",
+        "east_north_m": [
+          1955.588,
+          448.217
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        0,
+        1,
+        2
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 4,
+        "Cops": 0,
+        "Ambient": 0.116,
+        "Peds": 0.056,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 4,
+        "Cops": 0,
+        "Ambient": 0.216,
+        "Peds": 0.056,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 15.8,
+        "professional": 19.0
+      },
+      "suggested_route_length_m": 2857,
+      "design": {
+        "theme": "City Lights",
+        "route_choice": "The tempting nearest Kungsgatan gate should be weighed against clearing the long Sveavägen arm first; Hamngatan is the natural last gate.",
+        "flow": "A first Norrmalm fan with boulevard speed interrupted by three distinct turning zones.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 1; 3 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        2857,
+        3416
+      ]
+    },
+    {
+      "id": "checkpoint-04",
+      "index": 3,
+      "name": "Royal Appointment",
+      "difficulty_rank": 4,
+      "start": {
+        "label": "Opera start",
+        "node_id": 846210750,
+        "way_id": 212085619,
+        "street": "Hamngatan",
+        "east_north_m": [
+          1450.608,
+          529.246
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Royal waterfront",
+          "node_id": 1262150300,
+          "way_id": 766761483,
+          "street": "Skeppsbron",
+          "east_north_m": [
+            1732.758,
+            -397.856
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Old Town west",
+          "node_id": 486067715,
+          "way_id": 1354772071,
+          "street": "Munkbron",
+          "east_north_m": [
+            1234.683,
+            -351.591
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "City Hall shore",
+          "node_id": 11888690008,
+          "way_id": 1280821702,
+          "street": "Norr Mälarstrand",
+          "east_north_m": [
+            138.656,
+            -134.719
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Central station",
+          "node_id": 9300440263,
+          "way_id": 35477782,
+          "street": "Vasagatan",
+          "east_north_m": [
+            612.267,
+            740.052
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "Royal finish",
+        "node_id": 11882982382,
+        "way_id": 1280091719,
+        "street": "Skeppsbron",
+        "east_north_m": [
+          1656.976,
+          -135.676
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 5,
+        "Cops": 0,
+        "Ambient": 0.134,
+        "Peds": 0.064,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 5,
+        "Cops": 0,
+        "Ambient": 0.234,
+        "Peds": 0.064,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 16.2,
+        "professional": 19.5
+      },
+      "suggested_route_length_m": 5151,
+      "design": {
+        "theme": "Royal Appointment",
+        "route_choice": "Collect the Old Town pair together before changing islands. Clearing City Hall first can put a useful fast return through Norrmalm ahead of the finish.",
+        "flow": "Introduces island transfer and a short cobbled section; broad perimeter roads stay the preferred option.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 2; 4 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          1,
+          0
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        5151,
+        5944
+      ]
+    },
+    {
+      "id": "checkpoint-05",
+      "index": 4,
+      "name": "Museum Mile",
+      "difficulty_rank": 5,
+      "start": {
+        "label": "Nybro start",
+        "node_id": 1649379183,
+        "way_id": 26625899,
+        "street": "Strandvägen",
+        "east_north_m": [
+          1887.393,
+          470.804
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Djurgården bridge",
+          "node_id": 9970689131,
+          "way_id": 215480625,
+          "street": "Djurgårdsbron",
+          "east_north_m": [
+            2769.056,
+            376.416
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Karlaplan approach",
+          "node_id": 1716393599,
+          "way_id": 4700241,
+          "street": "Karlavägen",
+          "east_north_m": [
+            2796.217,
+            968.847
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Stureplan approach",
+          "node_id": 9562823802,
+          "way_id": 37988913,
+          "street": "Kungsgatan",
+          "east_north_m": [
+            1457.042,
+            902.768
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Library boulevard",
+          "node_id": 1755176153,
+          "way_id": 138481203,
+          "street": "Karlavägen",
+          "east_north_m": [
+            1203.376,
+            1760.585
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Odengatan edge",
+          "node_id": 1518435326,
+          "way_id": 43022634,
+          "street": "Odengatan",
+          "east_north_m": [
+            870.238,
+            1923.233
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "Strandvägen finish",
+        "node_id": 5565382988,
+        "way_id": 215489613,
+        "street": "Strandvägen",
+        "east_north_m": [
+          2461.04,
+          419.741
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        2,
+        4,
+        3,
+        1,
+        0
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 5,
+        "Cops": 0,
+        "Ambient": 0.152,
+        "Peds": 0.072,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 5,
+        "Cops": 0,
+        "Ambient": 0.252,
+        "Peds": 0.072,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 16.6,
+        "professional": 20.0
+      },
+      "suggested_route_length_m": 5246,
+      "design": {
+        "theme": "Museum Mile",
+        "route_choice": "Djurgårdsbron is an intentional out-and-back spur rather than a fake island jump. The northern gate pair rewards a single loop rather than chasing the nearest arrow.",
+        "flow": "Five gates contrast the museum waterfront with Östermalm boulevards and a northern turn back.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 2; 5 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          2,
+          4,
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          4,
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          4,
+          1,
+          0
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        5246,
+        6075,
+        5458
+      ]
+    },
+    {
+      "id": "checkpoint-06",
+      "index": 5,
+      "name": "South Side Story",
+      "difficulty_rank": 6,
+      "start": {
+        "label": "Zinkensdamm start",
+        "node_id": 4856371872,
+        "way_id": 151884975,
+        "street": "Hornsgatan",
+        "east_north_m": [
+          -464.741,
+          -1381.931
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Söder waterfront",
+          "node_id": 4314024764,
+          "way_id": 106080045,
+          "street": "Söder Mälarstrand",
+          "east_north_m": [
+            225.863,
+            -773.003
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Slussen approach",
+          "node_id": 7359030638,
+          "way_id": 388474864,
+          "street": "Hornsgatan",
+          "east_north_m": [
+            1119.667,
+            -978.465
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Medborgarplatsen",
+          "node_id": 1546340615,
+          "way_id": 1288178518,
+          "street": "Götgatan",
+          "east_north_m": [
+            1635.102,
+            -1614.455
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Tantolunden approach",
+          "node_id": 7704400166,
+          "way_id": 109764446,
+          "street": "Ringvägen",
+          "east_north_m": [
+            727.01,
+            -1896.728
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "Hornstull finish",
+        "node_id": 7904872968,
+        "way_id": 1243253622,
+        "street": "Hornsgatan",
+        "east_north_m": [
+          -601.001,
+          -1408.013
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 5,
+        "Cops": 0,
+        "Ambient": 0.17,
+        "Peds": 0.08,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 5,
+        "Cops": 0,
+        "Ambient": 0.27,
+        "Peds": 0.08,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 17.0,
+        "professional": 20.5
+      },
+      "suggested_route_length_m": 7313,
+      "design": {
+        "theme": "South Side Story",
+        "route_choice": "Choose whether to clear the waterfront before descending through Söder or keep it for the return; the diagonal grid shortcuts save distance but add junctions.",
+        "flow": "Four gates span Södermalm hills, waterfront recovery straights and a western finish.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 2; 4 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          1,
+          2,
+          0
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        7313,
+        7607,
+        7881
+      ]
+    },
+    {
+      "id": "checkpoint-07",
+      "index": 6,
+      "name": "Northern Exposure",
+      "difficulty_rank": 7,
+      "start": {
+        "label": "Kungsholmen start",
+        "node_id": 1901193101,
+        "way_id": 179695931,
+        "street": "Fleminggatan",
+        "east_north_m": [
+          -691.524,
+          719.825
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Sankt Eriksbron",
+          "node_id": 27531891,
+          "way_id": 4491048,
+          "street": "Sankt Eriksbron",
+          "east_north_m": [
+            -548.655,
+            1113.674
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Vasastan west",
+          "node_id": 1676127010,
+          "way_id": 155195598,
+          "street": "Sankt Eriksgatan",
+          "east_north_m": [
+            -289.475,
+            1976.889
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Library",
+          "node_id": 1518435015,
+          "way_id": 138481227,
+          "street": "Odengatan",
+          "east_north_m": [
+            650.962,
+            1799.19
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Valhalla east",
+          "node_id": 197391228,
+          "way_id": 19050469,
+          "street": "Valhallavägen",
+          "east_north_m": [
+            2735.893,
+            1405.153
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Östermalm south",
+          "node_id": 5565382988,
+          "way_id": 215489613,
+          "street": "Strandvägen",
+          "east_north_m": [
+            2461.04,
+            419.741
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "City centre",
+          "node_id": 1363066772,
+          "way_id": 121752189,
+          "street": "Sveavägen",
+          "east_north_m": [
+            1084.266,
+            760.256
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "Station finish",
+        "node_id": 11871530182,
+        "way_id": 291464527,
+        "street": "Vasagatan",
+        "east_north_m": [
+          848.625,
+          221.893
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 6,
+        "Cops": 0,
+        "Ambient": 0.188,
+        "Peds": 0.088,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 1,
+        "Weather": 0,
+        "Opponents": 6,
+        "Cops": 1,
+        "Ambient": 0.288,
+        "Peds": 0.088,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 17.4,
+        "professional": 21.0
+      },
+      "suggested_route_length_m": 8997,
+      "design": {
+        "theme": "Northern Exposure",
+        "route_choice": "The western bridge and northern gate are a natural pair. The long eastern arm should be cleared before the centre; driving the arrow directly causes avoidable retracing.",
+        "flow": "Six gates demand a plan across Kungsholmen, Vasastan and Östermalm; no E20 tunnel gate is forced.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 3; 6 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          5,
+          3,
+          4
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        8997,
+        10113,
+        9730
+      ]
+    },
+    {
+      "id": "checkpoint-08",
+      "index": 7,
+      "name": "Two Banks",
+      "difficulty_rank": 8,
+      "start": {
+        "label": "Söder shore start",
+        "node_id": 119033,
+        "way_id": 1300,
+        "street": "Söder Mälarstrand",
+        "east_north_m": [
+          -517.184,
+          -899.884
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Söder east shore",
+          "node_id": 8059584605,
+          "way_id": 744152233,
+          "street": "Söder Mälarstrand",
+          "east_north_m": [
+            1045.668,
+            -764.72
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "City Hall bank",
+          "node_id": 4318566014,
+          "way_id": 377337321,
+          "street": "Norr Mälarstrand",
+          "east_north_m": [
+            257.198,
+            -128.696
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Kungsholmen west",
+          "node_id": 1551579462,
+          "way_id": 252557001,
+          "street": "Norr Mälarstrand",
+          "east_north_m": [
+            -976.298,
+            129.665
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Kronoberg north",
+          "node_id": 1901193035,
+          "way_id": 154922227,
+          "street": "Fleminggatan",
+          "east_north_m": [
+            -545.503,
+            675.676
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Hornstull south",
+          "node_id": 4856378959,
+          "way_id": 1243253622,
+          "street": "Hornsgatan",
+          "east_north_m": [
+            -587.071,
+            -1404.997
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "Söder shore finish",
+        "node_id": 7005008823,
+        "way_id": 106080045,
+        "street": "Söder Mälarstrand",
+        "east_north_m": [
+          25.298,
+          -809.148
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 2,
+        "Weather": 0,
+        "Opponents": 6,
+        "Cops": 0,
+        "Ambient": 0.206,
+        "Peds": 0.096,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 2,
+        "Weather": 0,
+        "Opponents": 6,
+        "Cops": 1,
+        "Ambient": 0.306,
+        "Peds": 0.096,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 17.8,
+        "professional": 21.5
+      },
+      "suggested_route_length_m": 9297,
+      "design": {
+        "theme": "Two Banks",
+        "route_choice": "Two banks offer opposite sweep directions. Route through sourced Västerbron or the central crossings; collect same-bank gates together to avoid extra water crossings.",
+        "flow": "Bridge strategy becomes decisive with five gates and a return finish on the southern bank.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 3; 5 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          4,
+          2,
+          3,
+          1,
+          0
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        9297,
+        10397,
+        9491
+      ]
+    },
+    {
+      "id": "checkpoint-09",
+      "index": 8,
+      "name": "Island Hopping",
+      "difficulty_rank": 9,
+      "start": {
+        "label": "City Hall start",
+        "node_id": 4318566014,
+        "way_id": 377337321,
+        "street": "Norr Mälarstrand",
+        "east_north_m": [
+          257.198,
+          -128.696
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Kungsholmen west",
+          "node_id": 1551579462,
+          "way_id": 252557001,
+          "street": "Norr Mälarstrand",
+          "east_north_m": [
+            -976.298,
+            129.665
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Hornstull",
+          "node_id": 1647249319,
+          "way_id": 151884975,
+          "street": "Hornsgatan",
+          "east_north_m": [
+            -554.589,
+            -1404.318
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "South ring",
+          "node_id": 1639252177,
+          "way_id": 198727728,
+          "street": "Ringvägen",
+          "east_north_m": [
+            1150.326,
+            -2203.057
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Söder east",
+          "node_id": 1501760143,
+          "way_id": 1282193551,
+          "street": "Folkungagatan",
+          "east_north_m": [
+            2538.338,
+            -1382.599
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Old Town quay",
+          "node_id": 159918,
+          "way_id": 766761481,
+          "street": "Skeppsbron",
+          "east_north_m": [
+            1711.003,
+            -546.256
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Museum bridge",
+          "node_id": 9970689131,
+          "way_id": 215480625,
+          "street": "Djurgårdsbron",
+          "east_north_m": [
+            2769.056,
+            376.416
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Östermalm north",
+          "node_id": 1716951508,
+          "way_id": 4700178,
+          "street": "Karlavägen",
+          "east_north_m": [
+            2264.519,
+            1209.687
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "Opera finish",
+        "node_id": 6034517162,
+        "way_id": 1102226821,
+        "street": "Hamngatan",
+        "east_north_m": [
+          1484.453,
+          530.76
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 2,
+        "Weather": 0,
+        "Opponents": 6,
+        "Cops": 0,
+        "Ambient": 0.224,
+        "Peds": 0.104,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 2,
+        "Weather": 0,
+        "Opponents": 6,
+        "Cops": 1,
+        "Ambient": 0.324,
+        "Peds": 0.104,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 18.2,
+        "professional": 22.0
+      },
+      "suggested_route_length_m": 14899,
+      "design": {
+        "theme": "Island Hopping",
+        "route_choice": "Choose a western-first island sweep or clear Östermalm before the southern loop. The finish favours reserving the northeast pair for last.",
+        "flow": "Seven gates form a citywide itinerary with bridge ownership, southern hills and the museum bridge spur.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 3; 7 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          3,
+          2,
+          1,
+          0,
+          6,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        14899,
+        17688,
+        14928
+      ]
+    },
+    {
+      "id": "checkpoint-10",
+      "index": 9,
+      "name": "Stockholm Grand Tour",
+      "difficulty_rank": 10,
+      "start": {
+        "label": "City Hall start",
+        "node_id": 266272278,
+        "way_id": 151653373,
+        "street": "Norr Mälarstrand",
+        "east_north_m": [
+          299.527,
+          -137.101
+        ],
+        "road_width_m": 9.0
+      },
+      "checkpoints": [
+        {
+          "label": "Kungsholmen far shore",
+          "node_id": 4227067875,
+          "way_id": 4672570,
+          "street": "Norr Mälarstrand",
+          "east_north_m": [
+            -1152.143,
+            249.011
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Vasastan north",
+          "node_id": 1579713952,
+          "way_id": 144432621,
+          "street": "Sankt Eriksgatan",
+          "east_north_m": [
+            -236.34,
+            2253.296
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Library",
+          "node_id": 538958138,
+          "way_id": 41208825,
+          "street": "Odengatan",
+          "east_north_m": [
+            815.336,
+            1894.391
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Eastern boulevard",
+          "node_id": 3133957592,
+          "way_id": 176751894,
+          "street": "Valhallavägen",
+          "east_north_m": [
+            3056.555,
+            1232.529
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Museum bridge",
+          "node_id": 9970689131,
+          "way_id": 215480625,
+          "street": "Djurgårdsbron",
+          "east_north_m": [
+            2769.056,
+            376.416
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Old Town",
+          "node_id": 11896705096,
+          "way_id": 1281941063,
+          "street": "Skeppsbron",
+          "east_north_m": [
+            1709.316,
+            -524.649
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Söder east",
+          "node_id": 1323470825,
+          "way_id": 136886853,
+          "street": "Folkungagatan",
+          "east_north_m": [
+            2758.608,
+            -1396.358
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Söder south",
+          "node_id": 266473484,
+          "way_id": 250434513,
+          "street": "Ringvägen",
+          "east_north_m": [
+            1198.566,
+            -2188.218
+          ],
+          "road_width_m": 9.0
+        },
+        {
+          "label": "Hornstull",
+          "node_id": 7904872968,
+          "way_id": 1243253622,
+          "street": "Hornsgatan",
+          "east_north_m": [
+            -601.001,
+            -1408.013
+          ],
+          "road_width_m": 9.0
+        }
+      ],
+      "finish": {
+        "label": "City Hall finish",
+        "node_id": 410612936,
+        "way_id": 377337318,
+        "street": "Hantverkargatan",
+        "east_north_m": [
+          334.541,
+          -3.039
+        ],
+        "road_width_m": 9.0
+      },
+      "suggested_order": [
+        0,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "amateur": {
+        "CarType": 0,
+        "TimeofDay": 2,
+        "Weather": 0,
+        "Opponents": 7,
+        "Cops": 0,
+        "Ambient": 0.242,
+        "Peds": 0.112,
+        "NumLaps": 3,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "professional": {
+        "CarType": 0,
+        "TimeofDay": 2,
+        "Weather": 0,
+        "Opponents": 7,
+        "Cops": 1,
+        "Ambient": 0.342,
+        "Peds": 0.112,
+        "NumLaps": 4,
+        "TimeLimit": 0,
+        "Difficulty": 1
+      },
+      "target_speed_mps": {
+        "amateur": 18.6,
+        "professional": 22.5
+      },
+      "suggested_route_length_m": 21446,
+      "design": {
+        "theme": "Stockholm Grand Tour",
+        "route_choice": "The citywide gate cloud allows clockwise, counterclockwise or a northern-first split. Water crossings are scarce resources: group gates by island and save a familiar approach for the hidden finish.",
+        "flow": "Nine gates revisit every learned district; long straights alternate with technical southern junctions, making route planning more important than brute speed.",
+        "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
+        "progression": "Set 4; 9 any-order gates. Opponent pressure and route planning increase with catalog rank."
+      },
+      "opponent_orders": [
+        [
+          0,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "opponent_order_lengths_m": [
+        21446,
+        21700,
+        21729
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "provenance": "Observed native engine records retained from tool transcript; initial full logs overwritten by shorter rerun. Both runs used frames540, driver=hold and the same longest source segment.",
+  "attempts": [
+    {
+      "direction": "westbound (initially labelled eastbound)",
+      "impacts": 1,
+      "travel_m": 141.9,
+      "resets": 0,
+      "wheels": "4/4",
+      "finite": true
+    },
+    {
+      "direction": "eastbound (initially labelled westbound)",
+      "impacts": 2,
+      "travel_m": 68.9,
+      "resets": 0,
+      "wheels": "4/4",
+      "finite": true
+    }
+  ]
+}

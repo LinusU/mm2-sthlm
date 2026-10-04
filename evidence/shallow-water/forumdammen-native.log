@@ -1,0 +1,40 @@
+mm2-smoke commit=b3d9804489bdcd576dd4b85b3f40fec75c545071
+2026-10-03T22:34:19.164497Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_0.water skipped=0
+2026-10-03T22:34:19.190695Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_2.water skipped=0
+2026-10-03T22:34:19.304323Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_2.water skipped=0
+2026-10-03T22:34:19.348590Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_-2.water skipped=0
+2026-10-03T22:34:19.447274Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_1.water skipped=0
+2026-10-03T22:34:19.477873Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_2.water skipped=0
+2026-10-03T22:34:19.645347Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_1.water skipped=0
+2026-10-03T22:34:19.671387Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_2.water skipped=0
+2026-10-03T22:34:19.803975Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_1.water skipped=0
+2026-10-03T22:34:19.823416Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_2.water skipped=0
+2026-10-03T22:34:19.893388Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_1.water skipped=0
+2026-10-03T22:34:20.013024Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-03T22:34:20.013049Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-03T22:34:20.028403Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T22:34:20.028435Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T22:34:20.028444Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T22:34:20.028449Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T22:34:20.028453Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T22:34:20.028459Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T22:34:20.028462Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T22:34:20.028467Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T22:34:20.028471Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T22:34:20.028475Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T22:34:20.028480Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T22:34:20.028618Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T22:34:20.028626Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T22:34:20.028633Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-03T22:34:20.028638Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T22:34:20.253270Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+2026-10-03T22:34:20.296692Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 78770v0 with the <Enable the debug feature to see the name> component has a parent (78769v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T22:34:20.296735Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 78773v0 with the <Enable the debug feature to see the name> component has a parent (78772v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T22:34:20.296740Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 78776v0 with the <Enable the debug feature to see the name> component has a parent (78775v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T22:34:20.296744Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 78779v0 with the <Enable the debug feature to see the name> component has a parent (78778v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=evidence/shallow-water/forumdammen-native.png bytes=3752405 aud=0h/0v/0s/0l/0a
+2026-10-03T22:34:22.327965Z  WARN bevy_winit::state: Skipped event Destroyed for unknown winit Window Id WindowId(51896271488)

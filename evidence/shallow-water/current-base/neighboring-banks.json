@@ -1,0 +1,10 @@
+{
+  "source_snapshot_only_geometry_check": true,
+  "affected_source_ids": [
+    "way/141431783",
+    "way/141431787",
+    "way/141431791"
+  ],
+  "bank_overlap_onto_other_basin_after_fix": [],
+  "bank_field": "single union, inverse-square local-level weights fading to zero at 4 m, smoothstep blend to final ground"
+}

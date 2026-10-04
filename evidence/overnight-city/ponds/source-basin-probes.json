@@ -1,0 +1,47 @@
+{
+  "engine_binary_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "package_manifest_sha256": "dc82b4b9a4c4b445e4c3d0ad35610de193570181d16a1b65f574d67da70ec158",
+  "scope": "Actual source basin crossings with authored shallow depth. Hold driver, zero steering; final position beyond far bank. Normal map CI does not require this engine.",
+  "results": [
+    {
+      "source_id": "way/219139744",
+      "water_level_m": 2.4457497250078384,
+      "depth_m": 0.2,
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--headless",
+        "--frames",
+        "410",
+        "--spawn=1460.2599200533741,4.0457497250078385,-449.08899758578923,270"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=fail load: city data malformed: invalid or duplicate city chunk: city/stockholm.parts/part_6_-3.psdl",
+      "far_bank_exit": false,
+      "passed": false
+    },
+    {
+      "source_id": "way/28165044",
+      "water_level_m": 2.062551405861555,
+      "depth_m": 0.2,
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--headless",
+        "--frames",
+        "800",
+        "--spawn=-187.63303302607116,3.662551405861555,-847.1082855519375,270"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=fail load: city data malformed: invalid or duplicate city chunk: city/stockholm.parts/part_6_-3.psdl",
+      "far_bank_exit": false,
+      "passed": false
+    }
+  ]
+}

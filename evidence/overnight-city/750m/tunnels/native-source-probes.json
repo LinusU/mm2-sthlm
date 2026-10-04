@@ -1,0 +1,123 @@
+[
+  {
+    "source_way": 432147270,
+    "course_sources": [
+      432147270
+    ],
+    "approach_m": 0,
+    "course_length_m": 488.2414108514223,
+    "minimum_travel_m": 129.6,
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/stockholm-tunnel-probes-kiznjfn5",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=1410.4959362177337,8.07324811374796,-723.5410510208302,36.949459265413644",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "6",
+      "--headless",
+      "--frames",
+      "1800"
+    ],
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1800 ticks=3240 driver=scripted diff=amateur phase=playing impacts=0 dropped=0 peak=6.2m/s travel=160.7m sim=27.00s resets=0 controls=1130t/2110b/1052s finite=true moved=155m wheels=4/4 final=(1256,0.4,-732) race=Running cp=33/99 results=0 lap=1/1 pos=1/1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/100m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "passed": true,
+    "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+    "package_manifest_sha256": "7bc5fa66ebf3c9e120083292be2bffe51cd6c114975ef8eea431f407103e35e3"
+  },
+  {
+    "source_way": 20278071,
+    "course_sources": [
+      20278071
+    ],
+    "approach_m": 0,
+    "course_length_m": 302.84517663288057,
+    "minimum_travel_m": 129.6,
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/stockholm-tunnel-probes-kiznjfn5",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=492.640136110001,3.4086230707394307,-239.65103103160396,31.131455259683516",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "6",
+      "--headless",
+      "--frames",
+      "1800"
+    ],
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1800 ticks=3240 driver=scripted diff=amateur phase=playing impacts=0 dropped=0 peak=6.2m/s travel=160.7m sim=27.00s resets=0 controls=1140t/2100b/226s finite=true moved=162m wheels=4/4 final=(422,-3.5,-385) race=Running cp=33/62 results=0 lap=1/1 pos=1/1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/63m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "passed": true,
+    "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+    "package_manifest_sha256": "7bc5fa66ebf3c9e120083292be2bffe51cd6c114975ef8eea431f407103e35e3"
+  },
+  {
+    "source_way": 151884980,
+    "course_sources": [
+      151884980
+    ],
+    "approach_m": 0,
+    "course_length_m": 1316.9289093019204,
+    "minimum_travel_m": 129.6,
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/stockholm-tunnel-probes-kiznjfn5",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=1702.6018844748005,17.980049306513102,2293.8534887774745,12.443858885865826",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "6",
+      "--headless",
+      "--frames",
+      "1800"
+    ],
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1800 ticks=3240 driver=scripted diff=amateur phase=playing impacts=0 dropped=0 peak=6.2m/s travel=160.6m sim=27.00s resets=0 controls=1098t/2142b/0s finite=true moved=162m wheels=4/4 final=(1667,7.9,2136) race=Running cp=33/265 results=0 lap=1/1 pos=1/1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/266m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "passed": true,
+    "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+    "package_manifest_sha256": "7bc5fa66ebf3c9e120083292be2bffe51cd6c114975ef8eea431f407103e35e3"
+  },
+  {
+    "source_way": 4700200,
+    "course_sources": [
+      4700199,
+      4700200
+    ],
+    "approach_m": 40,
+    "course_length_m": 154.6145882281179,
+    "minimum_travel_m": 111.68,
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/stockholm-tunnel-probes-kiznjfn5",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=1133.5486176217964,11.44678324176676,-622.6421928089785,-162.8721453054245",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "6",
+      "--headless",
+      "--frames",
+      "1576"
+    ],
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1576 ticks=2792 driver=scripted diff=amateur phase=playing impacts=0 dropped=0 peak=6.2m/s travel=138.1m sim=23.27s resets=0 controls=956t/1836b/0s finite=true moved=140m wheels=4/4 final=(1171,2.5,-488) race=Running cp=28/32 results=0 lap=1/1 pos=1/1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/33m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "passed": true,
+    "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+    "package_manifest_sha256": "7bc5fa66ebf3c9e120083292be2bffe51cd6c114975ef8eea431f407103e35e3"
+  }
+]

@@ -6,10 +6,11 @@ No retail MM2 assets are needed. This repository contains no engine checkout
 or vehicle physics.
 
 The default map covers Kungsholmen, Södermalm, Djurgården and the central
-Stockholm mainland within the agreed boundary. It contains 7,422 sourced road
-ways, 10,741 building footprints, real RH2000 terrain, internal bridge decks,
-and 1,585 independent breakable tree props. The original 1.53 km waterfront
-benchmark remains available. `--profile stadshuset` builds the original flat
+Stockholm mainland within the agreed boundary. It contains 8,025 sourced road
+ways, 10,770 building footprints, real RH2000 terrain, internal bridge decks,
+and 1,585 independent breakable tree props. The original waterfront
+benchmark remains available as a separate QA fixture. The source now includes
+100 simplified landmarks, tunnels, local shallow ponds and district facades. `--profile stadshuset` builds the original flat
 comparison slice.
 
 Bootstrap once with Python 3.14:
@@ -63,6 +64,19 @@ cream-white roads, following the SF/London reference style. Tab cycles the
 corner map sizes/off; E zooms, F toggles rotation, and Q opens the full-screen
 pause map. Player and race markers use original generated assets. See
 [minimap generation and evidence](docs/MINIMAP.md).
+
+Thirty native races are generated: ten each of Checkpoint, Blitz and Circuit,
+ordered from shorter introductions to longer city tours. The final Circuit is
+an in-boundary route inspired by the Stockholm Marathon. Race driving and timer
+calibration are still in progress; see [race export](docs/races/EXPORT.md),
+[Checkpoint designs](docs/races/CHECKPOINT.md), [Blitz designs](docs/races/BLITZ.md)
+and [Circuit designs](docs/races/CIRCUIT.md).
+
+```sh
+/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --event blitz:0
+/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --event checkpoint:0
+/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --event circuit:0
+```
 
 The package is `dist/stockholm/`. Copy that folder beneath an arbitrary mod
 parent and load it from any working directory:

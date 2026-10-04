@@ -1,0 +1,33 @@
+[
+  {
+    "source_way": 388628833,
+    "course_sources": [
+      103850706,
+      388628833
+    ],
+    "approach_m": 40,
+    "course_length_m": 50.252717484341055,
+    "minimum_travel_m": 28.159999999999997,
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/stockholm-tunnel-probes-sbhp1n0o",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=1241.2094683767773,11.450151531323199,853.6106205292185,-108.06138023212429",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "6",
+      "--headless",
+      "--frames",
+      "532"
+    ],
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=fail load: city data malformed: invalid or duplicate city chunk: city/stockholm.parts/part_6_-3.psdl",
+    "passed": false,
+    "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+    "package_manifest_sha256": "dc82b4b9a4c4b445e4c3d0ad35610de193570181d16a1b65f574d67da70ec158"
+  }
+]

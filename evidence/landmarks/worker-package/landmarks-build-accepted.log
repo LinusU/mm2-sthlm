@@ -1,0 +1,6 @@
+Meshing terrain-conforming roads
+Meshing shoulders
+Meshing land
+Meshing buildings and props
+Writing independent PSDL parts
+{"buildings": 10740, "package": "/Users/linus/.codex/worktrees/overnight-landmarks/mm2-sthlm/dist/stockholm", "roads": 7422, "rooms": 40406, "route_m": 1527, "vertices": 1101424}

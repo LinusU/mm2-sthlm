@@ -291,8 +291,17 @@ def normalized(source, cfg):
             raise ValueError(f"excluded land leaked: {name}")
     playable_mask = target.difference(land.difference(selected))
     allowed = internal_bridge_ways(ways, nodes, cfg, playable_mask)
+    from tunnels import internal_tunnel_ways
+
+    tunnel_ids = internal_tunnel_ways(ways, nodes, cfg, playable_mask, BLOCKED)
+    from oldtown import eligible_pedestrian_ways
+
+    oldtown_alleys = eligible_pedestrian_ways(source, cfg, land=selected)
     settings = {
         **cfg,
+        "allowed_surface_ways": oldtown_alleys,
+        "allowed_tunnel_ways": tunnel_ids,
+        "allow_internal_open_cuts": True,
         "report_bad_buildings": True,
         "allowed_bridge_ways": allowed,
         "road_classes": [
@@ -334,6 +343,7 @@ def normalized(source, cfg):
         if (
             not road_masks[r["width"]].intersects(LineString(r["points"]))
             and r["id"] not in allowed
+            and r["id"] not in tunnel_ids
         ):
             continue
         roads.append(r)
@@ -375,11 +385,17 @@ def normalized(source, cfg):
             ]
         ).intersection(playable_mask)
     )
-    city["land"] = mapping(selected)
+    from ponds import normalized as normalize_ponds, footprint as pond_footprint
+
+    city["shallow_water"] = normalize_ponds(source, cfg, playable_mask, coast=waters[0])
+    shallow = pond_footprint(city)
+    city["water"] = mapping(shape(city["water"]).difference(shallow))
+    city["land"] = mapping(selected.union(shallow))
     city["water_regions"] = lake_levels
     city["coverage"] = coverage
     city["north_boundary"] = north_metadata
     city["bridge_ways"] = allowed
+    city["tunnel_ways"] = tunnel_ids
     city["expanded"] = True
     city["source"] = json.loads(
         (sthlm.ROOT / "sources/expanded/manifest.json").read_text()
@@ -436,14 +452,23 @@ def normalized(source, cfg):
 
 
 class ChunkedWriter:
-    """Independent per-1 km PSDL vertex pools; shared global coordinates."""
+    """Independent 750 m PSDL vertex pools; shared global coordinates.
+
+    Dense facades use multiple vertical texture bands. A 1 km central-city
+    pool can exceed the native 16-bit vertex limit when combined with roads.
+    """
+
+    PART_SIZE_M = 750
 
     def __init__(self, spawn):
         self.parts = {}
-        self.primary = (math.floor(spawn[0] / 1000), math.floor(-spawn[2] / 1000))
+        self.primary = (
+            math.floor(spawn[0] / self.PART_SIZE_M),
+            math.floor(-spawn[2] / self.PART_SIZE_M),
+        )
 
     def part(self, x, n):
-        key = (math.floor(x / 1000), math.floor(n / 1000))
+        key = (math.floor(x / self.PART_SIZE_M), math.floor(n / self.PART_SIZE_M))
         if key not in self.parts:
             self.parts[key] = sthlm.PsdlWriter()
         return self.parts[key]
@@ -528,6 +553,8 @@ class ChunkedWriter:
         return self.parts[self.primary].water_rooms
 
     def write(self, path, center):
+        if len(self.parts) > sthlm.CITY_PART_LIMIT:
+            raise ValueError("city chunk count exceeds native 129-part limit")
         paths = []
         for key, part in sorted(
             self.parts.items(), key=lambda kv: (kv[0] != self.primary, kv[0])

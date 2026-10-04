@@ -1,0 +1,519 @@
+{
+  "schema": 1,
+  "reference_checked": "2026-10-04",
+  "entries": [
+    {
+      "source_id": "relation/29368",
+      "name": "Stockholms stadshus",
+      "kind": "existing",
+      "body_height_m": 24,
+      "total_height_m": 106,
+      "palette": "brick",
+      "reference_url": "https://stadshuset.stockholm/en/",
+      "reference_image_page": "https://stadshuset.stockholm/en/",
+      "silhouette": "three crowns tower",
+      "anchor_east_north_m": [
+        523.28,
+        -56.31
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "reference_status": "Existing dedicated source art preserved; see local artifact and original user photograph provenance."
+    },
+    {
+      "source_id": "way/24488933",
+      "name": "Rådhuset",
+      "kind": "existing",
+      "body_height_m": 14.5,
+      "total_height_m": 53,
+      "palette": "sand",
+      "reference_url": "https://domstol.se/stockholms-tingsratt/",
+      "reference_image_page": "User-supplied Rådhuset reference photographs; not redistributed",
+      "silhouette": "courtyard civic building with copper lantern",
+      "anchor_east_north_m": [
+        -96.63,
+        307.73
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "reference_status": "Existing dedicated source art preserved; see local artifact and original user photograph provenance."
+    },
+    {
+      "source_id": "way/1049742528",
+      "name": "Green waterfront pavilion (user photo landmark)",
+      "kind": "existing",
+      "body_height_m": 4.2,
+      "total_height_m": 6.2,
+      "palette": "green",
+      "reference_url": "assets/landmarks/waterfront-bar.json",
+      "reference_image_page": "User-supplied waterfront bar reference photograph; not redistributed",
+      "silhouette": "green glass waterfront pavilion",
+      "anchor_east_north_m": [
+        -1005.78,
+        67.41
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "reference_status": "Existing dedicated source art preserved; see local artifact and original user photograph provenance."
+    },
+    {
+      "source_id": "way/88413905",
+      "name": "Kristinehovs malmgård",
+      "kind": "existing",
+      "body_height_m": 6,
+      "total_height_m": 10,
+      "palette": "ochre",
+      "reference_url": "https://kristinehovsmalmgard.se/",
+      "reference_image_page": "https://kristinehovsmalmgard.se/",
+      "silhouette": "yellow manor and wing roofs",
+      "anchor_east_north_m": [
+        -211.61,
+        -1109.71
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "reference_status": "Existing dedicated source art preserved; see local artifact and original user photograph provenance."
+    },
+    {
+      "source_id": "relation/34394",
+      "name": "Stockholms slott",
+      "kind": "palace",
+      "body_height_m": 30,
+      "total_height_m": 39,
+      "palette": "sand",
+      "reference_url": "https://kungligaslotten.se/english/royal-palaces-and-sites/the-royal-palace.html",
+      "reference_image_page": "https://kungligaslotten.se/english/royal-palaces-and-sites/the-royal-palace.html",
+      "silhouette": "quadrangular palace, roof parapet and corner blocks",
+      "anchor_east_north_m": [
+        1429.01,
+        -119.37
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/11144024",
+      "name": "Karlbergs slott",
+      "kind": "palace",
+      "body_height_m": 15,
+      "total_height_m": 22,
+      "palette": "cream",
+      "reference_url": "https://www.forsvarsmakten.se/mhsk/",
+      "reference_image_page": "https://www.forsvarsmakten.se/mhsk/",
+      "silhouette": "white palace wings and central roof lantern",
+      "anchor_east_north_m": [
+        -1230.0,
+        1453.67
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/8049504",
+      "name": "Storkyrkan",
+      "kind": "baroque",
+      "body_height_m": 22,
+      "total_height_m": 63,
+      "palette": "ochre",
+      "reference_url": "https://www.svenskakyrkan.se/stockholmsdomkyrkoforsamling/renovering",
+      "reference_image_page": "https://www.svenskakyrkan.se/stockholmsdomkyrkoforsamling/renovering",
+      "silhouette": "ochre baroque tower with restored deep red lantern",
+      "anchor_east_north_m": [
+        1441.81,
+        -249.32
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "roof_palette": "red"
+    },
+    {
+      "source_id": "way/8049509",
+      "name": "Tyska kyrkan",
+      "kind": "gothic",
+      "body_height_m": 20,
+      "total_height_m": 96,
+      "palette": "brick",
+      "reference_url": "https://www.svenskakyrkan.se/deutschegemeinde",
+      "reference_image_page": "https://www.svenskakyrkan.se/deutschegemeinde",
+      "silhouette": "red brick tower with green needle spire",
+      "anchor_east_north_m": [
+        1515.81,
+        -432.41
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/23841420",
+      "name": "Riddarholmskyrkan",
+      "kind": "lattice",
+      "body_height_m": 20,
+      "total_height_m": 87,
+      "palette": "brick",
+      "reference_url": "https://kungligaslotten.se/vara-besoksmal/riddarholmskyrkan.html",
+      "reference_image_page": "https://kungligaslotten.se/vara-besoksmal/riddarholmskyrkan.html",
+      "silhouette": "open dark iron spire above brick nave",
+      "anchor_east_north_m": [
+        1112.97,
+        -369.45
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/1257127",
+      "name": "Högalidskyrkan",
+      "kind": "twin",
+      "body_height_m": 20,
+      "total_height_m": 68.5,
+      "palette": "brick",
+      "reference_url": "https://www.svenskakyrkan.se/hogalid/lokaler",
+      "reference_image_page": "https://www.svenskakyrkan.se/bilder/IMG_1422.JPG?DoProcessing=&w=654",
+      "silhouette": "paired octagonal towers flanking the east choir, stepped copper crowns, low north columbarium",
+      "anchor_east_north_m": [
+        -414.61,
+        -1151.53
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "source_aliases": [
+        "relation/17957127"
+      ],
+      "tower_centres_east_north_m": [
+        [
+          -408.5,
+          -1159
+        ],
+        [
+          -405.5,
+          -1178
+        ]
+      ],
+      "tower_radius_m": 5
+    },
+    {
+      "source_id": "way/37079169",
+      "name": "Katarina kyrka",
+      "kind": "dome",
+      "body_height_m": 20,
+      "total_height_m": 64.5,
+      "palette": "ochre",
+      "reference_url": "https://www.svenskakyrkan.se/filer/502017/Guide-KatarinaKyrka-WWW.pdf",
+      "reference_image_page": "https://www.svenskakyrkan.se/filer/502017/Guide-KatarinaKyrka-WWW.pdf",
+      "silhouette": "central octagonal dome and lantern on yellow cross-plan church",
+      "anchor_east_north_m": [
+        1881.35,
+        -1217.32
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "roof_palette": "dark"
+    },
+    {
+      "source_id": "way/1350868500",
+      "name": "Sofia kyrka",
+      "kind": "gothic",
+      "body_height_m": 23,
+      "total_height_m": 78,
+      "palette": "stone",
+      "reference_url": "https://svenskakyrkan.se/sofia/sofia-kyrka",
+      "reference_image_page": "https://svenskakyrkan.se/sofia/sofia-kyrka",
+      "silhouette": "pale stone central tower and dark steep spire",
+      "anchor_east_north_m": [
+        2459.35,
+        -1749.28
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "tower_positions": [
+        [
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "source_id": "way/163637452",
+      "name": "Klara kyrka",
+      "kind": "gothic",
+      "body_height_m": 23,
+      "total_height_m": 116,
+      "palette": "brick",
+      "reference_url": "https://www.svenskakyrkan.se/stockholmsdomkyrkoforsamling/sta-clara-kyrka",
+      "reference_image_page": "https://www.svenskakyrkan.se/stockholmsdomkyrkoforsamling/sta-clara-kyrka",
+      "silhouette": "very tall narrow copper spire on red brick nave",
+      "anchor_east_north_m": [
+        940.47,
+        354.86
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "tower_positions": [
+        [
+          0.82,
+          0.5
+        ]
+      ]
+    },
+    {
+      "source_id": "way/21572801",
+      "name": "Engelbrektskyrkan",
+      "kind": "gothic",
+      "body_height_m": 25,
+      "total_height_m": 65,
+      "palette": "brick",
+      "reference_url": "https://svenskakyrkan.se/engelbrekt/engelbrektskyrkan",
+      "reference_image_page": "https://svenskakyrkan.se/engelbrekt/engelbrektskyrkan",
+      "silhouette": "offset square brick tower and green cap",
+      "anchor_east_north_m": [
+        1282.69,
+        1792.41
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/31990167",
+      "name": "Stockholms stadsbibliotek",
+      "kind": "rotunda",
+      "body_height_m": 13,
+      "total_height_m": 24,
+      "palette": "ochre",
+      "reference_url": "https://biblioteket.stockholm.se/about-the-stockholm-public-library-by-gunnar-asplund",
+      "reference_image_page": "https://biblioteket.stockholm.se/about-the-stockholm-public-library-by-gunnar-asplund",
+      "silhouette": "orange cube surrounding tall flat-roof cylinder",
+      "anchor_east_north_m": [
+        553.96,
+        1707.82
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/18779818",
+      "name": "Konserthuset",
+      "kind": "columns",
+      "body_height_m": 19,
+      "total_height_m": 24,
+      "palette": "blue",
+      "reference_url": "https://konserthuset.se/om-oss/byggnaden/",
+      "reference_image_page": "https://konserthuset.se/om-oss/byggnaden/",
+      "silhouette": "blue temple facade with ten tall columns",
+      "anchor_east_north_m": [
+        1032.33,
+        786.07
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/24210110",
+      "name": "Dramaten",
+      "kind": "theatre",
+      "body_height_m": 20,
+      "total_height_m": 29,
+      "palette": "cream",
+      "reference_url": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/kulturinstitutioner/dramaten/",
+      "reference_image_page": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/kulturinstitutioner/dramaten/",
+      "silhouette": "pale curved theatre frontage and gold roof details",
+      "anchor_east_north_m": [
+        1817.88,
+        588.89
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/16108358",
+      "name": "Operahuset",
+      "kind": "theatre",
+      "body_height_m": 27,
+      "total_height_m": 41.5,
+      "palette": "sand",
+      "reference_url": "https://operan.se/om-operan/",
+      "reference_image_page": "https://operan.se/om-operan/",
+      "silhouette": "sandstone opera block with dark mansard roof and central crown",
+      "anchor_east_north_m": [
+        1447.35,
+        194.77
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/24968329",
+      "name": "Nationalmuseum",
+      "kind": "museum",
+      "body_height_m": 25,
+      "total_height_m": 33.5,
+      "palette": "stone",
+      "reference_url": "https://nationalmuseum.se/en/byggnadens-historia",
+      "reference_image_page": "https://nationalmuseum.se/en/byggnadens-historia",
+      "silhouette": "pale Renaissance museum with corner pavilions",
+      "anchor_east_north_m": [
+        1882.35,
+        54.73
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/348345482",
+      "name": "Nordiska museet",
+      "kind": "nordic",
+      "body_height_m": 29,
+      "total_height_m": 64,
+      "palette": "sand",
+      "reference_url": "https://nordiskamuseet.se/en/about-us/the-history-of-the-building/",
+      "reference_image_page": "https://nordiskamuseet.se/en/about-us/the-history-of-the-building/",
+      "silhouette": "long steep green roof, tall end gables and corner turrets",
+      "anchor_east_north_m": [
+        2776.3,
+        127.62
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/27288534",
+      "name": "Vasamuseet",
+      "kind": "vasa",
+      "body_height_m": 22,
+      "total_height_m": 49,
+      "palette": "red",
+      "reference_url": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/museer/vasamuseet",
+      "reference_image_page": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/museer/vasamuseet",
+      "silhouette": "angular copper museum roof, muted colored timber facades, three roof masts",
+      "anchor_east_north_m": [
+        2633.09,
+        16.17
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions.",
+      "roof_palette": "copper"
+    },
+    {
+      "source_id": "way/40859302",
+      "name": "Kulturhuset",
+      "kind": "glass",
+      "body_height_m": 21,
+      "total_height_m": 23,
+      "palette": "glass",
+      "reference_url": "https://kulturhusetstadsteatern.se/kulturhuset-stadsteatern/kulturhuset-stadsteaterns-historia",
+      "reference_image_page": "https://kulturhusetstadsteatern.se/kulturhuset-stadsteatern/kulturhuset-stadsteaterns-historia",
+      "silhouette": "wide low glass strip facade with flat roof",
+      "anchor_east_north_m": [
+        1139.58,
+        450.23
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/247981011",
+      "name": "DN-skrapan",
+      "kind": "slab",
+      "body_height_m": 80,
+      "total_height_m": 84,
+      "palette": "white",
+      "reference_url": "https://www.areim.se/properties/trangkaren-7/",
+      "reference_image_page": "https://www.areim.se/properties/trangkaren-7/",
+      "silhouette": "white slab with narrow window strips and rooftop mast",
+      "anchor_east_north_m": [
+        -1629.91,
+        2.86
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/37046494",
+      "name": "Skatteskrapan",
+      "kind": "slab",
+      "body_height_m": 82,
+      "total_height_m": 85.5,
+      "palette": "sand",
+      "reference_url": "https://www.skrapan.se/hitta-hit/",
+      "reference_image_page": "https://www.skrapan.se/hitta-hit/",
+      "silhouette": "tall rectilinear stone office tower",
+      "anchor_east_north_m": [
+        1620.59,
+        -1778.63
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/35275663",
+      "name": "Gustaf Vasa kyrka",
+      "kind": "dome",
+      "body_height_m": 22,
+      "total_height_m": 60,
+      "palette": "cream",
+      "reference_url": "https://www.svenskakyrkan.se/gustav-vasa-forsamling/gustaf-vasa-kyrka",
+      "reference_image_page": "https://www.svenskakyrkan.se/gustav-vasa-forsamling/gustaf-vasa-kyrka",
+      "silhouette": "large white church central green dome",
+      "anchor_east_north_m": [
+        148.44,
+        1615.4
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/42038493",
+      "name": "Adolf Fredriks kyrka",
+      "kind": "dome",
+      "body_height_m": 18,
+      "total_height_m": 43.5,
+      "palette": "cream",
+      "reference_url": "https://www.svenskakyrkan.se/adolffredrik/in-english",
+      "reference_image_page": "https://www.svenskakyrkan.se/adolffredrik/in-english",
+      "silhouette": "white cross-plan church with black dome and lantern",
+      "anchor_east_north_m": [
+        858.08,
+        1103.54
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/27741605",
+      "name": "Hedvig Eleonora kyrka",
+      "kind": "dome",
+      "body_height_m": 20,
+      "total_height_m": 59,
+      "palette": "ochre",
+      "reference_url": "https://www.svenskakyrkan.se/hedvigeleonoraoscars/hedvig-eleonora-kyrka",
+      "reference_image_page": "https://www.svenskakyrkan.se/hedvigeleonoraoscars/hedvig-eleonora-kyrka",
+      "silhouette": "ochre octagonal drum supporting rounded copper dome",
+      "anchor_east_north_m": [
+        2021.33,
+        804.36
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/32137548",
+      "name": "Oscarskyrkan",
+      "kind": "gothic",
+      "body_height_m": 23,
+      "total_height_m": 76,
+      "palette": "stone",
+      "reference_url": "https://www.svenskakyrkan.se/hedvigeleonoraoscars/oscarskyrkan",
+      "reference_image_page": "https://www.svenskakyrkan.se/hedvigeleonoraoscars/oscarskyrkan",
+      "silhouette": "pale stone Gothic church with slender green western tower",
+      "anchor_east_north_m": [
+        2752.97,
+        609.41
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/15803083",
+      "name": "Kungliga biblioteket",
+      "kind": "museum",
+      "body_height_m": 18,
+      "total_height_m": 26,
+      "palette": "sand",
+      "reference_url": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/oevrigt/kungliga-biblioteket",
+      "reference_image_page": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/oevrigt/kungliga-biblioteket",
+      "silhouette": "long ochre library with central entrance pavilion",
+      "anchor_east_north_m": [
+        1527.15,
+        1143.82
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/34590009",
+      "name": "Wrangelska palatset",
+      "kind": "round",
+      "body_height_m": 23,
+      "total_height_m": 32.5,
+      "palette": "cream",
+      "reference_url": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/riddarholmen/wrangelska-palatset",
+      "reference_image_page": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/riddarholmen/wrangelska-palatset",
+      "silhouette": "white palace with two round waterfront corner towers",
+      "anchor_east_north_m": [
+        1009.98,
+        -323.97
+      ],
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from OSM snapshot. Not surveyed dimensions."
+    }
+  ]
+}

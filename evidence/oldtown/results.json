@@ -1,0 +1,42 @@
+[
+  {
+    "name": "storkyrkobrinken-eastbound",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1418.6500143631113,16.174084756929524,231.93907654852157,-71.65115043299667",
+      "--headless",
+      "--frames",
+      "300"
+    ],
+    "returncode": 0,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=300 ticks=600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=19.5m/s travel=30.8m sim=5.00s resets=0 controls=360t/0b/0s finite=true moved=30m wheels=4/4 final=(1447,16.1,223) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3259d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "engine_revision_matches": true
+  },
+  {
+    "name": "storkyrkobrinken-westbound",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1463.6217116431972,16.958845705356786,217.02356176993024,108.34884956700334",
+      "--headless",
+      "--frames",
+      "300"
+    ],
+    "returncode": 0,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=300 ticks=600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=20.5m/s travel=32.8m sim=5.00s resets=0 controls=360t/0b/0s finite=true moved=33m wheels=4/4 final=(1432,15.8,227) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3259d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "engine_revision_matches": true
+  }
+]

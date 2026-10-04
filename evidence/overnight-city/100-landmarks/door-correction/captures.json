@@ -1,0 +1,41 @@
+{
+  "engine_binary_sha256": "bebd5a27c4bb81845891a69954aab29c2b8e9071b2eaa4d68a4da0a97615ec92",
+  "package_manifest_sha256": "72d00d00cc2457c6c2261af0c15591a1544a75b5c1831d99fb22a4cbc51adc0f",
+  "scope": "Actual native game captures. Inspection is a separate recorded step; vehicle driving evidence is separate.",
+  "results": [
+    {
+      "name": "door-gamla_stan",
+      "camera": [
+        1441.840114541296,
+        5.261800301640433,
+        581.622133326961,
+        10.029412612144508,
+        -6.0
+      ],
+      "scope": "Ground-floor native facade door and upper window repeat",
+      "source_id": "way/1097581338",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--parked",
+        "--no-hud",
+        "--spawn=-31.488166412776778,4.75469158322535,138.05843248238915,-90.69759070561142",
+        "--cam=1441.840114541296,5.261800301640433,581.622133326961,10.029412612144508,-6.0",
+        "--frames",
+        "30",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/overnight-city/100-landmarks/door-correction/door-gamla_stan.png"
+      ],
+      "exit_code": 0,
+      "captured": true,
+      "visually_inspected": false,
+      "screenshot_sha256": "5665deeeb1c5b2e696d11ae1827ac7aa46d7291972df2cc0006390e361a505ad"
+    }
+  ]
+}

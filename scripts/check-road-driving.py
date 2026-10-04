@@ -44,6 +44,10 @@ def main():
     with tempfile.TemporaryDirectory(prefix="sthlm-road-probes-") as tmp:
         package = Path(tmp) / "stockholm"
         shutil.copytree(original, package)
+        fixture = package / "qa/waterfront"
+        if fixture.exists():
+            # Isolated zero-opponent probe, independent of authored player races.
+            shutil.copytree(fixture, package / "race/stockholm", dirs_exist_ok=True)
         race = package / "race/stockholm/circuit0waypoints.csv"
         for case in args.case:
             way, start, end = case.split(":")
@@ -69,7 +73,12 @@ def main():
             ]
             csv = (
                 "x,y,z,a,poly count,frame rate,state changes,texture changes,msg\n"
-                + "".join(f"{x:.5f},{y:.5f},{z:.5f},0,5,0,0,0,\n" for x, y, z in gates)
+                + "".join(
+                    f"{x:.5f},{y:.5f},{z:.5f},"
+                    f"{math.degrees(math.atan2(-(gates[min(i + 1, len(gates) - 1)][0] - gates[max(0, i - 1)][0]), gates[min(i + 1, len(gates) - 1)][2] - gates[max(0, i - 1)][2])):.5f},"
+                    "5,0,0,0,\n"
+                    for i, (x, y, z) in enumerate(gates)
+                )
             )
             race.write_text(csv)
             command = [
@@ -102,6 +111,7 @@ def main():
             )
             passed = (
                 travel is not None
+                and ("p_rec=" not in record or "p_rec=0r/0e" in record)
                 and float(travel[1]) >= minimum_travel
                 and result.returncode == 0
                 and all(

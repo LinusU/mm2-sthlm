@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "profile": "oldtown-granite-setts",
+  "island_references_wgs84": {
+    "Stadsholmen": [18.0712, 59.3245],
+    "Riddarholmen": [18.0633, 59.3256],
+    "Helgeandsholmen": [18.0686, 59.3284]
+  },
+  "preserve_leisure": ["park", "garden", "playground"],
+  "preserve_landuse": ["grass", "flowerbed", "forest", "railway"],
+  "preserve_natural": ["water", "wood", "scrub", "grassland"],
+  "asphalt_highways": ["motorway", "motorway_link", "trunk", "trunk_link", "primary", "primary_link", "secondary", "secondary_link"],
+  "asphalt_streets": ["Skeppsbron", "Munkbroleden", "Centralbron", "Munkbrogatan"],
+  "references": [
+    "https://professionals.visitstockholm.com/documents/226/QUIZ_Stadsdelar_ENG_2023.pdf",
+    "https://www.visitstockholm.com/o/stortorget/",
+    "https://start.stockholm/globalassets/start/om-stockholms-stad/sa-arbetar-staden/natur-parker-och-gronomraden/parkplan-sodermalm-del-2---fickparker-och-tappor.pdf"
+  ],
+  "note": "Approximate authored coverage on sourced island land; all complete source green polygons preserved. Not a surveyed material inventory."
+}

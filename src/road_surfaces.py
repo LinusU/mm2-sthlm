@@ -35,6 +35,10 @@ def classification(road):
     )
     if tags.get("highway") in {"service", "living_street", "pedestrian"}:
         marked = False
+    from oldtown import material_for as oldtown_material
+
+    if oldtown_material(road):
+        marked = False
     return {
         "lanes": lanes,
         "oneway": oneway,
@@ -48,6 +52,8 @@ def junctions(city):
     arms = defaultdict(dict)
     positions = {}
     for road in sorted(city.get("roads", []), key=lambda r: r["id"]):
+        if road["id"] in city.get("tunnel_ways", []):
+            continue
         nodes, points = road["nodes"], road["points"]
         for node, point in zip(nodes, points):
             positions[node] = point
@@ -110,7 +116,11 @@ def junctions(city):
 
 def signal_placements(city, height=lambda x, n: 2.0, *, road_height=None):
     """Deterministic verge signals facing arriving traffic; movable native props."""
-    roads = {r["id"]: r for r in city.get("roads", [])}
+    roads = {
+        r["id"]: r
+        for r in city.get("roads", [])
+        if r["id"] not in city.get("tunnel_ways", [])
+    }
     boundary = None
     if city.get("bounds"):
         boundary = shape(city["bounds"])
@@ -293,6 +303,8 @@ def render(
     accepted = defaultdict(list)
     prepare(geom)
     for road in sorted(city.get("roads", []), key=lambda r: r["id"]):
+        if road["id"] in city.get("tunnel_ways", []):
+            continue
         if (road["id"] in bridges) != bridge:
             continue
         spec = classification(road)
@@ -415,9 +427,17 @@ def render(
     covered = unary_union(footprints)
     # Fan leftovers preserve the entire source footprint without lifting paint.
     remaining = geom.difference(covered)
-    writer.surface(
-        remaining, seam_height if strips else height, "sthlm_asphalt", road=True
+    from oldtown import MATERIAL as oldtown_material
+    from oldtown import road_partition
+
+    # Keep elevated layer/color groups and their triangle sink unchanged.
+    # Source bridge approach groups are asphalt even above Old Town stone land.
+    stone, asphalt = (
+        (Polygon(), remaining) if bridge else road_partition(remaining, city)
     )
+    fan_height = seam_height if strips else height
+    writer.surface(stone, fan_height, oldtown_material, road=True)
+    writer.surface(asphalt, fan_height, "sthlm_asphalt", road=True)
     if triangle_sink is not None:
         parts = writer.parts.items() if hasattr(writer, "parts") else [(None, writer)]
         for key, part in parts:
@@ -469,7 +489,11 @@ def render_bridge_layers(writer, city, terrain, *, triangle_sink=None):
     bridge_ids = set(city.get("bridge_ways", []))
     by_id = {r["id"]: r for r in city["roads"]}
     elevated = [r for r in city["roads"] if r["id"] in bridge_ids]
-    ordinary = [r for r in city["roads"] if r["id"] not in bridge_ids]
+    ordinary = [
+        r
+        for r in city["roads"]
+        if r["id"] not in bridge_ids and r["id"] not in city.get("tunnel_ways", [])
+    ]
     _, pieces, seams, _ = bridge_approaches(ordinary, elevated)
     node_layers = defaultdict(set)
     positions = {}

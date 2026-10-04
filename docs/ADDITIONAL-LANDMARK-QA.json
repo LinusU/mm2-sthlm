@@ -1,0 +1,597 @@
+{
+  "schema": 1,
+  "checked": "2026-10-04",
+  "base_commit": "bd7566b",
+  "packing_commit": "3d963ef",
+  "engine": {
+    "revision": "b3d9804489bdcd576dd4b85b3f40fec75c545071",
+    "binary": "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+    "binary_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6"
+  },
+  "snapshot_sha256": "18c1b3b750430d78bf3b6fb367856c14c3c43893172ee5f348a7c426caf82914",
+  "source_sha256": {
+    "assets/landmarks/stockholm-seventy.json": "70b711abd03b96b0483927e8f3491faf1fa9fd0af44860e589191271d1db3b55",
+    "src/additional_landmarks.py": "f1945fdb1e906d1cb106fdf22d1c744917bddc58110c079ee11bb33542a79021",
+    "assets/landmarks/stockholm-thirty.json": "f122a603630b1cfb907e3ca74235d813ebc17515f1b06269e1d1cbee6c2ed93d",
+    "src/landmarks.py": "898102ab65e9aa6809bc2263604abe3c4e46017ea5438ba1cb3b639d7dd4c19b"
+  },
+  "package": {
+    "path": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist/stockholm",
+    "checksums_sha256": "38abd4b1b8f83cd1b417cc717bd774b8c4076fb918208583994b61c774dbaa01",
+    "map_sha256": "cfce8f6ec13039178f992f38a281b4b05a1970087784237cc47962d237c72d20",
+    "normalized_sha256": "934534330497f287e97a05b2caaea575a3e2e8745e91a9f3280f060520422dd4",
+    "landmarks": 100,
+    "parts": 90,
+    "maximum_part_vertices": 36188
+  },
+  "gates": {
+    "ruff_format": "pass",
+    "ruff_check": "pass",
+    "unittest": {
+      "status": "pass",
+      "tests": 133
+    },
+    "offline_build": "pass",
+    "offline_validate": {
+      "binary": {
+        "parts": 90,
+        "rooms": 62853,
+        "textures": 1539,
+        "triangles": 2057225,
+        "vertices": 1291409
+      },
+      "building_route_overlaps": [],
+      "minimal": false,
+      "road_area": 4397515.99272913,
+      "route_m": 1527.3475638275881,
+      "spawn_clearance_m": 1.5,
+      "status": "pass",
+      "triangulated_area": null
+    }
+  },
+  "native_visual": {
+    "coverage": "12 representative additional landmarks; all 70 generated and source/geometry tested, not individually visually inspected",
+    "captures": [
+      {
+        "name": "Schantzska huset",
+        "source_feature": "way/406181935",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=1385.884,57.916,396.339,-45.0,-26.068",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_406181935.png"
+        ],
+        "camera": [
+          1385.884,
+          57.916,
+          396.339,
+          -45.0,
+          -26.068
+        ],
+        "target": [
+          1434.884291011639,
+          24.01627635640032,
+          347.3393255847268
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_406181935.png bytes=3975807 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_406181935.png",
+        "screenshot_sha256": "ecaa1624a33fb9f49244dadfd12cdc3f946e70ce2fd51fd2f6b5b4b364bd830e",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Red stepped-gable house visible in source footprint; surrounding urban context remains schematic."
+      },
+      {
+        "name": "Östermalms Saluhall",
+        "source_feature": "way/120023281",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=1791.954,56.988,-818.16,-45.0,-22.783",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_120023281.png"
+        ],
+        "camera": [
+          1791.954,
+          56.988,
+          -818.16,
+          -45.0,
+          -22.783
+        ],
+        "target": [
+          1857.163477339522,
+          18.253644274423426,
+          -883.369824512268
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_120023281.png bytes=4267008 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_120023281.png",
+        "screenshot_sha256": "e1bbdb08808663f569c7a290e811ce017b3efa46741a467d78d29bd31012b10f",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Brick hall and two lanterns visible; flat source outline retained."
+      },
+      {
+        "name": "Biologiska museet",
+        "source_feature": "way/33114307",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=2943.75,45.349,147.151,-45.0,-23.825",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_33114307.png"
+        ],
+        "camera": [
+          2943.75,
+          45.349,
+          147.151,
+          -45.0,
+          -23.825
+        ],
+        "target": [
+          2992.7501839377564,
+          14.749032181827982,
+          98.15066836519829
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_33114307.png bytes=4553834 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_33114307.png",
+        "screenshot_sha256": "6c18b9138d9099b499accc65281242b55d92d932e7ffce84c6c15bca690384d2",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Brown stepped steep roofs visible; timber decoration simplified."
+      },
+      {
+        "name": "Waldemarsuddes oljekvarn",
+        "source_feature": "way/34838584",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=3989.994,46.196,928.082,-45.0,-23.444",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_34838584.png"
+        ],
+        "camera": [
+          3989.994,
+          46.196,
+          928.082,
+          -45.0,
+          -23.444
+        ],
+        "target": [
+          4038.9935809160143,
+          16.146126984881818,
+          879.0820630230135
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_34838584.png bytes=3776976 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_34838584.png",
+        "screenshot_sha256": "928b0cb6654fb78d1c03c13ed303991e85d38ebf91ce2193f551912e5510c090",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Compact oil-mill mass with tall hipped roof visible; no sails authored."
+      },
+      {
+        "name": "Hällestadsstapeln",
+        "source_feature": "way/33485731",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=3433.441,88.498,398.265,-45.0,-29.103",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_33485731.png"
+        ],
+        "camera": [
+          3433.441,
+          88.498,
+          398.265,
+          -45.0,
+          -29.103
+        ],
+        "target": [
+          3482.440720757698,
+          49.92348673563722,
+          349.264902364035
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_33485731.png bytes=4505389 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_33485731.png",
+        "screenshot_sha256": "ed0270ed91b399553a414fbc26efa5b029b906ca734c895c3a91d6dcd71e1f0d",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Open four-leg base, bell stage and needle visible; timber textures schematic."
+      },
+      {
+        "name": "Kastellet",
+        "source_feature": "way/49744847",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=2516.018,53.373,650.546,-45.0,-23.825",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_49744847.png"
+        ],
+        "camera": [
+          2516.018,
+          53.373,
+          650.546,
+          -45.0,
+          -23.825
+        ],
+        "target": [
+          2565.018367205888,
+          22.772941945200873,
+          601.5455985100264
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_49744847.png bytes=3973956 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_49744847.png",
+        "screenshot_sha256": "6d4d4c23adc733e7bb66998fe4681fb7e863eb1392ef2e388db0e68c1f24212e",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Round brick tower, flat wings and white parapet visible."
+      },
+      {
+        "name": "Sportpalatset",
+        "source_feature": "way/1356201195",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=-638.067,89.482,-870.553,-45.0,-31.082",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_1356201195.png"
+        ],
+        "camera": [
+          -638.067,
+          89.482,
+          -870.553,
+          -45.0,
+          -31.082
+        ],
+        "target": [
+          -567.5710761698061,
+          29.38391152853454,
+          -941.0489140805073
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_1356201195.png bytes=4988370 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_1356201195.png",
+        "screenshot_sha256": "21a8bcad224cf09b4cbcc9ff1ead49ffd7a714eb50de1edff74038d3cbd21187",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Mint stepped tiers and copper dome visible; courtyard retained."
+      },
+      {
+        "name": "Sven-Harrys konstmuseum",
+        "source_feature": "way/137165681",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=-110.648,60.354,-1241.337,-45.0,-24.957",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_137165681.png"
+        ],
+        "camera": [
+          -110.648,
+          60.354,
+          -1241.337,
+          -45.0,
+          -24.957
+        ],
+        "target": [
+          -61.64824013452074,
+          28.104455407412843,
+          -1290.336887858999
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_137165681.png bytes=4270772 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_137165681.png",
+        "screenshot_sha256": "673bda48d26db4f41898da2a49c0a4649c27cf728d49832488173ca69bc22ca0",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Gold body and rooftop house visible; detailed glass finish simplified."
+      },
+      {
+        "name": "Stockholms gamla observatorium",
+        "source_feature": "way/771856432",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=499.911,77.159,-1456.74,-45.0,-21.895",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_771856432.png"
+        ],
+        "camera": [
+          499.911,
+          77.159,
+          -1456.74,
+          -45.0,
+          -21.895
+        ],
+        "target": [
+          548.9112296940798,
+          49.308504727519875,
+          -1505.740102212933
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_771856432.png bytes=4163735 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_771856432.png",
+        "screenshot_sha256": "f2655314a0fb3c17e025b11e6b6b264c9709851519a6c1280868439a32473df5",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Ochre curved frontage and copper dome visible."
+      },
+      {
+        "name": "Sankt Johannes kyrka",
+        "source_feature": "way/42037293",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=1043.212,144.927,-1188.27,-45.0,-36.029",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_42037293.png"
+        ],
+        "camera": [
+          1043.212,
+          144.927,
+          -1188.27,
+          -45.0,
+          -36.029
+        ],
+        "target": [
+          1118.899116601183,
+          67.07712982962553,
+          -1263.9571599071755
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_42037293.png bytes=4789556 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_42037293.png",
+        "screenshot_sha256": "4b45c8e548ac0ab9b52c80ba8bd0d9530130bde576c20f5b7bef28939eee1c3a",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Red brick church, lancet texture and tall dark spire visible."
+      },
+      {
+        "name": "Maria Magdalena kyrka",
+        "source_feature": "way/156840831",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=1211.546,89.667,1053.534,-45.0,-32.307",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_156840831.png"
+        ],
+        "camera": [
+          1211.546,
+          89.667,
+          1053.534,
+          -45.0,
+          -32.307
+        ],
+        "target": [
+          1261.6195953683534,
+          44.88741775500728,
+          1003.4599158164559
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_156840831.png bytes=4540219 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_156840831.png",
+        "screenshot_sha256": "32928e1a4f6e7339482dade79eef871f95f8aa065f1299be8b275b6875c333a9",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Ochre church and copper crown visible; sculpted lantern omitted."
+      },
+      {
+        "name": "Söder Torn",
+        "source_feature": "way/37299689",
+        "command": [
+          "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+          "--mods",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+          "--city",
+          "stockholm",
+          "--no-profile",
+          "--no-hud",
+          "--no-pvs",
+          "--time-of-day",
+          "1",
+          "--parked",
+          "--cam=1325.82,134.348,1521.923,-45.0,-36.029",
+          "--frames",
+          "30",
+          "--screenshot",
+          "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_37299689.png"
+        ],
+        "camera": [
+          1325.82,
+          134.348,
+          1521.923,
+          -45.0,
+          -36.029
+        ],
+        "target": [
+          1401.069982503092,
+          56.948382941256234,
+          1446.672951796215
+        ],
+        "exit_code": 0,
+        "smoke_records": [
+          "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_37299689.png bytes=4699846 aud=0h/0v/0s/0l/0a"
+        ],
+        "screenshot": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_37299689.png",
+        "screenshot_sha256": "5cb4a29a17bdf54f8829f25dc062d14fb41d0a6aec5e0f46586bd5739fc764c9",
+        "inspection": "passed representative silhouette/material inspection",
+        "inspection_note": "Rounded tall slab and repeated dark glazing bands visible."
+      }
+    ]
+  },
+  "native_driving": {
+    "wrapper_command": [
+      "./scripts/sthlm",
+      "smoke",
+      "--engine",
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2"
+    ],
+    "engine_command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=-31.488166412776778,4.75469158322535,138.05843248238915,-90.69759070561142",
+      "--headless",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "8",
+      "--frames",
+      "15000"
+    ],
+    "log": "/private/tmp/more-landmark-drive.log",
+    "log_sha256": "030891e041bf5e6915bfdecc0b0005cfbbad86aef73efca9826ba919807b9a65",
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=22529 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1503.6m sim=187.74s resets=0 controls=8606t/13923b/3416s finite=true moved=18m wheels=4/4 final=(-14,4.0,138) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/103m ind=on/0m/0b tmr=absent:missing-glyphs arr=absent:missing-pkg sta=absent:missing-glyphs bng=3284d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "acceptance": "stockholm-smoke acceptance=pass (complete continuous loop, no teleports)"
+  },
+  "limits": [
+    "Evidence applies to isolated first30 + additional70 package, before root combined integration.",
+    "Heights and roof forms are authored approximate silhouettes; footprint and courtyards are source anchored.",
+    "Native physics acceptance is separate from native screenshot visual inspection.",
+    "Retail audio, nav graph and HUD glyph resources are absent; engine log reports those asset warnings.",
+    "Raw native captures and logs remain local evidence paths and are not committed bitmap assets."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "authored_basins": [],
+  "retain_deep_source_ids": [
+    "way/1291160189",
+    "way/1291160190"
+  ],
+  "deep_retention_reason": "Slussen coastal navigation channels: small area and missing water subtype do not make ponds."
+}

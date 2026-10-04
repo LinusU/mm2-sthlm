@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "views": [
+    {
+      "name": "hogalid",
+      "camera": [
+        -500.0,
+        110.0,
+        1350.0,
+        -26.0,
+        -14.0
+      ],
+      "scope": "Researched landmark silhouette; native city geometry"
+    },
+    {
+      "name": "library",
+      "camera": [
+        300.0,
+        100.0,
+        -1400.0,
+        -34.0,
+        -7.0
+      ],
+      "scope": "Researched landmark silhouette; native city geometry"
+    },
+    {
+      "name": "cultural-waterfront",
+      "camera": [
+        1650.0,
+        125.0,
+        300.0,
+        -24.0,
+        -6.0
+      ],
+      "scope": "Researched landmark silhouette; native city geometry"
+    },
+    {
+      "name": "konserthuset-accepted",
+      "camera": [
+        960.0,
+        38.0,
+        -720.0,
+        -37.0,
+        0.0
+      ],
+      "scope": "Researched landmark silhouette; native city geometry"
+    },
+    {
+      "name": "door-kungsholmen",
+      "camera": [
+        -925.7136204858598,
+        21.85504704982668,
+        -491.31327968131444,
+        64.42830295581899,
+        -6.0
+      ],
+      "scope": "Ground-floor native facade door and upper window repeat",
+      "source_id": "way/39467140"
+    },
+    {
+      "name": "door-gamla_stan",
+      "camera": [
+        1425.7464080351133,
+        5.222772697610614,
+        569.5948056667297,
+        -51.25835128512179,
+        -6
+      ],
+      "scope": "Entrance-facing camera derived from current normalized source exterior edge; native lower/upper facade bands",
+      "source_id": "way/1097581338"
+    },
+    {
+      "name": "door-ostermalm",
+      "camera": [
+        1983.6501571840088,
+        17.07251091912472,
+        -1322.6349186446205,
+        -22.157633040089088,
+        -6.0
+      ],
+      "scope": "Ground-floor native facade door and upper window repeat",
+      "source_id": "way/1359515884"
+    },
+    {
+      "name": "stortorget",
+      "camera": [
+        1465.0941270417281,
+        63.25581942243919,
+        305.09042145953026,
+        180.0,
+        -50.0
+      ],
+      "scope": "Historic cobblestone or protected green park"
+    },
+    {
+      "name": "junotappan",
+      "camera": [
+        1534.9416377497205,
+        55.815837176629486,
+        455.37173403069255,
+        180.0,
+        -50.0
+      ],
+      "scope": "Historic cobblestone or protected green park"
+    },
+    {
+      "name": "forumdammen",
+      "camera": [
+        1496,
+        8,
+        -449,
+        90,
+        -22
+      ],
+      "scope": "Local shallow basin; drive acceptance is separate",
+      "source_id": "way/219139744"
+    }
+  ]
+}

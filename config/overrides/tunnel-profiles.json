@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "sample_spacing_m": 5,
+  "burial_depth_m": 8,
+  "portal_ramp_length_m": 140,
+  "clearance_m": 5.2,
+  "roof_thickness_m": 0.5,
+  "fairing_iterations": 800,
+  "datum": "Map-relative metres; authored estimates, not surveyed tunnel levels",
+  "provenance": "OSM shared-node corridor geometry from checked-in snapshot. Stockholm city Klaratunneln renovation description confirms two tubes and branch topology. Wall/roof appearance is original simplified concrete art."
+}

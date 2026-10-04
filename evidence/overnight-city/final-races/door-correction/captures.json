@@ -1,0 +1,42 @@
+{
+  "engine_binary_sha256": "c0b731463dd2568ffd74e42fde54be102fdd6705450121290b254264f40bc1b8",
+  "package_manifest_sha256": "4cdd3f0ec92f9ba04343410951c2b2506755ee4a75488f9aabfd35802e81e457",
+  "scope": "Actual native game captures. Inspection is a separate recorded step; vehicle driving evidence is separate.",
+  "results": [
+    {
+      "name": "door-gamla_stan",
+      "camera": [
+        1425.7464080351133,
+        5.222772697610614,
+        569.5948056667297,
+        -51.25835128512179,
+        -6
+      ],
+      "scope": "Entrance-facing camera derived from current normalized source exterior edge; native lower/upper facade bands",
+      "source_id": "way/1097581338",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-planned",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--parked",
+        "--no-hud",
+        "--spawn=-31.488166412776778,4.75469158322535,138.05843248238915,-90.69759070561142",
+        "--cam=1425.7464080351133,5.222772697610614,569.5948056667297,-51.25835128512179,-6",
+        "--frames",
+        "30",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/overnight-city/final-races/door-correction/door-gamla_stan.png"
+      ],
+      "exit_code": 0,
+      "captured": true,
+      "visually_inspected": true,
+      "screenshot_sha256": "cb3abb3806e18a9f03fa5ea951d7ece8422aa16d200bfb25c34caed1d2ab5fa2",
+      "inspection": "Entrance visible above stone pavement, door panels/handle/window surround readable. Actual native game frame."
+    }
+  ]
+}

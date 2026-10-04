@@ -2,10 +2,10 @@ import sys
 import unittest
 from pathlib import Path
 
-from shapely.geometry import Point, box
+from shapely.geometry import Point, Polygon, box
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from expanded import internal_bridge_ways, northern_corridor
+from expanded import ChunkedWriter, internal_bridge_ways, northern_corridor
 from sthlm import project
 
 
@@ -80,3 +80,25 @@ class InternalBridgeTests(unittest.TestCase):
         self.assertEqual(
             internal_bridge_ways({9: way}, {}, cfg, box(-100, -100, 100, 100)), []
         )
+
+
+class NativeChunkTests(unittest.TestCase):
+    def test_dense_city_chunk_boundary_keeps_complete_ground_and_exact_seams(self):
+        writer = ChunkedWriter([695, 5, -20])
+        geom = box(690, 10, 710, 30)
+        writer.surface(geom, lambda x, n: 2 + x * 0.02 + n * 0.01, "road", road=True)
+        self.assertEqual(set(writer.parts), {(0, 0), (1, 0)})
+        edges = []
+        area = 0
+        for part in writer.parts.values():
+            edges.append({(y, z) for x, y, z in part.vertices if x == 700})
+            area += sum(
+                Polygon(
+                    [(part.vertices[i][0], part.vertices[i][2]) for i in border]
+                ).area
+                for border, _, _ in part.rooms
+            )
+        self.assertTrue(edges[0])
+        self.assertEqual(edges[0], edges[1])
+        self.assertAlmostEqual(area, geom.area)
+        self.assertIsNot(writer.part(250, 20), writer.part(750, 20))

@@ -1,0 +1,14 @@
+{
+  "bug": "Stone paving was emitted a second time as stone land after paving variable reassignment.",
+  "regression": "Actual sthlm.build ground-emission capture; full paved coverage and pairwise disjoint physical surfaces.",
+  "before_emitted_area_m2": 1542.2730969810918,
+  "fixture_land_area_m2": 1400.0,
+  "after_emitted_area_m2": 1400.0,
+  "focused_tests_pass": 3,
+  "scope": "Expanded and slice ground subtraction only; no source helper, elevation, layer group, seam, station or triangle sink changes.",
+  "full_export_status": "Previous full build/validate/native evidence predates correction. Coordinator combined rebuild pending; no worker broad rebuild requested.",
+  "full_offline_tests_pass": 125,
+  "ruff_format": "pass",
+  "ruff_check": "pass",
+  "corrected_hook_sha256": "f16046c25090203737aa9239f422c736b31654b04e66c6a765be9d9721c978b0"
+}

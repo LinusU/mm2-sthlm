@@ -1,0 +1,33 @@
+[
+  {
+    "source_way": 388628833,
+    "course_sources": [
+      103850706,
+      388628833
+    ],
+    "approach_m": 40,
+    "course_length_m": 50.252717484341055,
+    "minimum_travel_m": 37.800000000000004,
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide",
+      "--mods",
+      "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/stockholm-tunnel-probes-_u5v31_c",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--spawn=1241.2094683767773,11.450151531323199,853.6106205292185,-108.06138023212429",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-speed",
+      "3.0",
+      "--headless",
+      "--frames",
+      "1125"
+    ],
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1125 ticks=1890 driver=scripted diff=amateur phase=playing impacts=1 dropped=0 peak=3.2m/s travel=41.8m sim=15.75s resets=0 controls=872t/1018b/756s finite=true moved=40m wheels=4/4 final=(1280,10.2,863) race=Running cp=8/12 results=0 lap=1/1 pos=1/1 p_rec=0r/1e env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/13m ind=on/0m/0b tmr=22g/0:15:75 arr=hudarrow01/off sta=10g/-/l1of1/c8of12 bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+13x",
+    "passed": false,
+    "engine_sha256": "bebd5a27c4bb81845891a69954aab29c2b8e9071b2eaa4d68a4da0a97615ec92",
+    "package_manifest_sha256": "72d00d00cc2457c6c2261af0c15591a1544a75b5c1831d99fb22a4cbc51adc0f"
+  }
+]

@@ -1,0 +1,1409 @@
+{
+  "deadly_water_refs": false,
+  "features": [
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 23.90265764004057,
+      "id": "relation/6995886",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Ankdamm",
+      "tags": {
+        "name": "Ankdamm",
+        "natural": "water",
+        "source:lake": "Review by So9q using LM Topographic Map",
+        "type": "multipolygon",
+        "water": "pond"
+      },
+      "water_level_m": 24.10265764004057,
+      "source_area_m2": 142.063,
+      "bounds_local_east_north_m": [
+        1282.2015435159976,
+        -1921.9644043937035,
+        1303.4681229959074,
+        -1908.69512109111
+      ],
+      "centroid_local_east_north_m": [
+        1293.1073179339326,
+        -1915.8625215659765
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 42.81466930246567,
+      "id": "way/1047953815",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 43.01466930246567,
+      "source_area_m2": 34.637,
+      "bounds_local_east_north_m": [
+        3495.7600163972056,
+        -121.21579352549429,
+        3503.6249596760076,
+        -114.89284644810623
+      ],
+      "centroid_local_east_north_m": [
+        3499.376110829106,
+        -118.33210686547484
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 0.339452490895979,
+      "id": "way/10499402",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "note": "seasonal fluctuation",
+        "source": "survey;Bing",
+        "source:lake": "Review by So9q using LM Topographic Map",
+        "water": "lake"
+      },
+      "water_level_m": 0.539452490895979,
+      "source_area_m2": 4705.066,
+      "bounds_local_east_north_m": [
+        5533.552623308402,
+        -188.76446053884237,
+        5664.354864092583,
+        -99.230194093172
+      ],
+      "centroid_local_east_north_m": [
+        5587.524848490478,
+        -148.19897376985455
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 8.971843381612242,
+      "id": "way/1066385876",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 9.171843381612241,
+      "source_area_m2": 1309.031,
+      "bounds_local_east_north_m": [
+        4859.166389435448,
+        521.9436964819264,
+        4905.924470993922,
+        556.6642456603272
+      ],
+      "centroid_local_east_north_m": [
+        4881.699282305397,
+        538.8542843430616
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 8.428203581137481,
+      "id": "way/1102809143",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "natural": "water"
+      },
+      "water_level_m": 8.62820358113748,
+      "source_area_m2": 21.603,
+      "bounds_local_east_north_m": [
+        -31.760742064276865,
+        273.01105117015385,
+        -26.479588815655767,
+        278.276463084512
+      ],
+      "centroid_local_east_north_m": [
+        -29.122964909105754,
+        275.6325404863064
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 8.429691922460691,
+      "id": "way/1102809144",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "natural": "water"
+      },
+      "water_level_m": 8.62969192246069,
+      "source_area_m2": 21.62,
+      "bounds_local_east_north_m": [
+        -25.68457649864602,
+        295.1079700929884,
+        -20.40342325002492,
+        300.3845139565559
+      ],
+      "centroid_local_east_north_m": [
+        -23.048850488019088,
+        297.7369124246676
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 24.09585382259467,
+      "id": "way/1102810480",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain"
+      },
+      "water_level_m": 24.29585382259467,
+      "source_area_m2": 22.377,
+      "bounds_local_east_north_m": [
+        -1064.4760631871409,
+        735.2986325364556,
+        -1059.1210873661714,
+        740.6642319929074
+      ],
+      "centroid_local_east_north_m": [
+        -1061.814737692399,
+        737.9765275135674
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 15.206843498917936,
+      "id": "way/1145211941",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "intermittent": "no",
+        "natural": "water",
+        "water": "basin"
+      },
+      "water_level_m": 15.406843498917935,
+      "source_area_m2": 18.885,
+      "bounds_local_east_north_m": [
+        1219.6908607622274,
+        342.0291354617435,
+        1224.625615787202,
+        346.92719305693674
+      ],
+      "centroid_local_east_north_m": [
+        1222.1465501178316,
+        344.4748896689882
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 15.611693885440701,
+      "id": "way/1145211943",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "intermittent": "no",
+        "natural": "water",
+        "water": "basin"
+      },
+      "water_level_m": 15.8116938854407,
+      "source_area_m2": 18.884,
+      "bounds_local_east_north_m": [
+        1208.804870678829,
+        363.38021379624786,
+        1213.7396257036014,
+        368.28940333985946
+      ],
+      "centroid_local_east_north_m": [
+        1211.260455057295,
+        365.83399156138296
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 19.602818875859782,
+      "id": "way/1189947557",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "intermittent": "yes",
+        "natural": "water"
+      },
+      "water_level_m": 19.80281887585978,
+      "source_area_m2": 389.26,
+      "bounds_local_east_north_m": [
+        904.5820502601599,
+        -1169.8565287471906,
+        926.8480737955026,
+        -1147.4256513520286
+      ],
+      "centroid_local_east_north_m": [
+        915.7711989022981,
+        -1158.6663117759736
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 22.309465504268644,
+      "id": "way/1189983980",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "seasonal": "summer"
+      },
+      "water_level_m": 22.509465504268643,
+      "source_area_m2": 163.399,
+      "bounds_local_east_north_m": [
+        1480.4719367164132,
+        -1855.6847795752005,
+        1493.6009972656173,
+        -1834.8235070003739
+      ],
+      "centroid_local_east_north_m": [
+        1487.036466991015,
+        -1845.254143287787
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 9.885168635761932,
+      "id": "way/1254635531",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain"
+      },
+      "water_level_m": 10.085168635761931,
+      "source_area_m2": 23.569,
+      "bounds_local_east_north_m": [
+        3066.334113369861,
+        2416.9019924083927,
+        3072.5919960366264,
+        2426.475468616964
+      ],
+      "centroid_local_east_north_m": [
+        3069.4634771086066,
+        2421.6873778768886
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 6.287027226783299,
+      "id": "way/129977774",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "wikidata": "Q10577966",
+        "wikimedia_commons": "Category:Maskrosbollen"
+      },
+      "water_level_m": 6.487027226783299,
+      "source_area_m2": 92.93,
+      "bounds_local_east_north_m": [
+        620.4560054833763,
+        817.1073263201708,
+        631.3306382480297,
+        828.0277683672617
+      ],
+      "centroid_local_east_north_m": [
+        625.942709253176,
+        822.6171978117942
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 21.099598270321614,
+      "id": "way/1328552572",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain"
+      },
+      "water_level_m": 21.299598270321614,
+      "source_area_m2": 35.076,
+      "bounds_local_east_north_m": [
+        -494.45791055789346,
+        2286.8251674166113,
+        -487.8706656457,
+        2294.261309401495
+      ],
+      "centroid_local_east_north_m": [
+        -491.1662175921726,
+        2290.5413537017225
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 27.164093580084618,
+      "id": "way/1353633081",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Industrimonumentet",
+      "tags": {
+        "alt_name": "Millespottan",
+        "amenity": "fountain",
+        "area": "yes",
+        "name": "Industrimonumentet",
+        "start_date": "1926",
+        "wikidata": "Q10535315",
+        "wikimedia_commons": "Category:Industrimonumentet",
+        "wikipedia": "sv:Industrimonumentet"
+      },
+      "water_level_m": 27.364093580084617,
+      "source_area_m2": 76.804,
+      "bounds_local_east_north_m": [
+        1580.8024911216708,
+        2037.625355326977,
+        1590.7571810623094,
+        2047.5327900078757
+      ],
+      "centroid_local_east_north_m": [
+        1585.7687009310646,
+        2042.6057677426165
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 6.834840710668706,
+      "id": "way/139097604",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "source:lake": "Review by So9q using LM Topographic Map",
+        "water": "lake"
+      },
+      "water_level_m": 7.034840710668706,
+      "source_area_m2": 3194.661,
+      "bounds_local_east_north_m": [
+        5410.38817942711,
+        431.7971728376478,
+        5524.648485358054,
+        496.8856791041899
+      ],
+      "centroid_local_east_north_m": [
+        5481.705900520175,
+        463.4782196939666
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 13.471133237293227,
+      "id": "way/140574188",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "fixme": "Change to fountain when rendered, if ever.",
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 13.671133237293226,
+      "source_area_m2": 1061.917,
+      "bounds_local_east_north_m": [
+        2540.7117199857507,
+        1059.3496702353902,
+        2577.7195433420093,
+        1096.2298175358978
+      ],
+      "centroid_local_east_north_m": [
+        2559.174900332566,
+        1077.6971977159446
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 45.68841265792082,
+      "id": "way/141431783",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "check_date": "2019-12-23",
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 45.888412657920824,
+      "source_area_m2": 494.492,
+      "bounds_local_east_north_m": [
+        3501.9043258757106,
+        -35.5665773088248,
+        3528.4861305604777,
+        -2.126202274478383
+      ],
+      "centroid_local_east_north_m": [
+        3514.001998544519,
+        -19.309796574286068
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 42.63986048096384,
+      "id": "way/141431787",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "check_date": "2019-12-23",
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 42.83986048096384,
+      "source_area_m2": 55.361,
+      "bounds_local_east_north_m": [
+        3538.3897125666617,
+        -9.985358324573543,
+        3548.8952324697743,
+        -0.07792364367494224
+      ],
+      "centroid_local_east_north_m": [
+        3543.699770245225,
+        -5.041385210601307
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 41.72126550645208,
+      "id": "way/141431791",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "check_date": "2019-12-23",
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 41.92126550645208,
+      "source_area_m2": 361.775,
+      "bounds_local_east_north_m": [
+        3508.38367625932,
+        -4.4973074284000365,
+        3544.937206862944,
+        16.219249808286282
+      ],
+      "centroid_local_east_north_m": [
+        3525.4854740470646,
+        7.401471138603651
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 34.40335291518738,
+      "id": "way/1426205867",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water"
+      },
+      "water_level_m": 34.60335291518738,
+      "source_area_m2": 25.016,
+      "bounds_local_east_north_m": [
+        1471.4201536213684,
+        2118.1984027634758,
+        1477.0817770502756,
+        2124.0092801827673
+      ],
+      "centroid_local_east_north_m": [
+        1474.249208287917,
+        2121.103540023944
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 4.322638954628226,
+      "id": "way/1432135082",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "water": "basin"
+      },
+      "water_level_m": 4.522638954628226,
+      "source_area_m2": 296.447,
+      "bounds_local_east_north_m": [
+        -2534.8740581153843,
+        -410.29024721737557,
+        -2507.9799271632064,
+        -390.8761280223715
+      ],
+      "centroid_local_east_north_m": [
+        -2521.501918890349,
+        -400.2707239194579
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 12.766689282873749,
+      "id": "way/145404016",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "check_date": "2020-01-27",
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 12.966689282873748,
+      "source_area_m2": 222.372,
+      "bounds_local_east_north_m": [
+        3203.2806636325477,
+        -367.3654515673425,
+        3221.571625582842,
+        -349.72131227686134
+      ],
+      "centroid_local_east_north_m": [
+        3211.613799456761,
+        -358.3043720086478
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 33.67987368890755,
+      "id": "way/145405450",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "source:lake": "Review by So9q using LM Topographic Map",
+        "water": "lake"
+      },
+      "water_level_m": 33.87987368890755,
+      "source_area_m2": 134.585,
+      "bounds_local_east_north_m": [
+        3300.260808987578,
+        -16.731319466382626,
+        3313.969092796422,
+        -1.9146952418723888
+      ],
+      "centroid_local_east_north_m": [
+        3305.996344673009,
+        -9.802924805252905
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 1.688568589190232,
+      "id": "way/156847023",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "barrier": "wall"
+      },
+      "water_level_m": 1.888568589190232,
+      "source_area_m2": 22.368,
+      "bounds_local_east_north_m": [
+        602.528477734948,
+        -114.49209628131307,
+        607.9686334470113,
+        -109.04857318118626
+      ],
+      "centroid_local_east_north_m": [
+        605.2306507575385,
+        -111.70849353572069
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 1.6720715724529054,
+      "id": "way/156847025",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "barrier": "wall"
+      },
+      "water_level_m": 1.8720715724529053,
+      "source_area_m2": 19.992,
+      "bounds_local_east_north_m": [
+        548.9957555038739,
+        -121.7501270812185,
+        554.112227629781,
+        -116.64056245341932
+      ],
+      "centroid_local_east_north_m": [
+        551.5215614484717,
+        -119.15195247970792
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 18.03211090700796,
+      "id": "way/158140306",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Tessinparkens plaskdamm",
+      "tags": {
+        "amenity": "public_bath",
+        "bath:open_air": "yes",
+        "bath:sand_bath": "no",
+        "check_date": "2024-05-06",
+        "covered": "no",
+        "name": "Tessinparkens plaskdamm",
+        "natural": "water",
+        "water": "basin"
+      },
+      "water_level_m": 18.23211090700796,
+      "source_area_m2": 393.076,
+      "bounds_local_east_north_m": [
+        2877.399436234937,
+        1741.9273919330085,
+        2906.3208485955506,
+        1765.805422707993
+      ],
+      "centroid_local_east_north_m": [
+        2892.677329514164,
+        1754.7006007508248
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 15.17808291653036,
+      "id": "way/158140310",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "covered": "no",
+        "source": "survey"
+      },
+      "water_level_m": 15.37808291653036,
+      "source_area_m2": 396.384,
+      "bounds_local_east_north_m": [
+        2798.2446027588207,
+        1595.2194350161471,
+        2820.766165967646,
+        1617.7282360549843
+      ],
+      "centroid_local_east_north_m": [
+        2809.5060627146718,
+        1606.474161647362
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 12.73382802742044,
+      "id": "way/163989308",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Orpheusgruppen",
+      "tags": {
+        "amenity": "fountain",
+        "artist_name": "Carl Milles",
+        "artwork_type": "sculpture",
+        "material": "bronze",
+        "name": "Orpheusgruppen",
+        "start_date": "1936",
+        "tourism": "artwork",
+        "wikidata": "Q2029723",
+        "wikimedia_commons": "Category:Orfeusgruppen",
+        "wikipedia": "sv:Orfeusgruppen"
+      },
+      "water_level_m": 12.93382802742044,
+      "source_area_m2": 15.052,
+      "bounds_local_east_north_m": [
+        992.3286954192131,
+        781.5073531645088,
+        997.695028558928,
+        786.5835219446797
+      ],
+      "centroid_local_east_north_m": [
+        995.0128984834089,
+        784.0456471822321
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 2.245749725007838,
+      "id": "way/219139744",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Forumdammen",
+      "tags": {
+        "amenity": "fountain",
+        "name": "Forumdammen",
+        "natural": "water",
+        "water": "pond",
+        "wikidata": "Q123353416"
+      },
+      "water_level_m": 2.4457497250078384,
+      "source_area_m2": 732.762,
+      "bounds_local_east_north_m": [
+        1463.2599200533741,
+        421.67823112493414,
+        1491.8633274871029,
+        476.50308034062215
+      ],
+      "centroid_local_east_north_m": [
+        1477.5607436216774,
+        449.08899758578923
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 9.961219538891509,
+      "id": "way/233436216",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain"
+      },
+      "water_level_m": 10.161219538891508,
+      "source_area_m2": 80.338,
+      "bounds_local_east_north_m": [
+        1632.5577929583187,
+        -328.33683809472876,
+        1639.525508051,
+        -312.050796591977
+      ],
+      "centroid_local_east_north_m": [
+        1636.0847192717351,
+        -319.9388998264563
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 1.862551405861555,
+      "id": "way/28165044",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Grubbensdammen",
+      "tags": {
+        "name": "Grubbensdammen",
+        "natural": "water",
+        "water": "basin"
+      },
+      "water_level_m": 2.062551405861555,
+      "source_area_m2": 743.148,
+      "bounds_local_east_north_m": [
+        -179.63303302607116,
+        834.3618473930683,
+        -141.65415891114162,
+        860.0209900209945
+      ],
+      "centroid_local_east_north_m": [
+        -160.73633636002717,
+        847.1082855519375
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 13.514865741141822,
+      "id": "way/33084074",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "covered": "no",
+        "natural": "water",
+        "source": "Bing",
+        "water": "basin"
+      },
+      "water_level_m": 13.714865741141821,
+      "source_area_m2": 239.749,
+      "bounds_local_east_north_m": [
+        2333.5485461539347,
+        1863.599595369761,
+        2351.123997018839,
+        1881.1435471189393
+      ],
+      "centroid_local_east_north_m": [
+        2342.3628141661206,
+        1872.3414544633376
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 24.66018861866169,
+      "id": "way/338452356",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "description:en": "Shallow paddling pool for very young children.",
+        "man_made": "basin",
+        "natural": "water",
+        "source": "survey",
+        "water": "basin"
+      },
+      "water_level_m": 24.860188618661688,
+      "source_area_m2": 77.702,
+      "bounds_local_east_north_m": [
+        503.6743747754505,
+        1087.112751239376,
+        516.7750420278925,
+        1095.6398242341263
+      ],
+      "centroid_local_east_north_m": [
+        510.3467578511863,
+        1091.5610686146545
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 31.26265855827211,
+      "id": "way/348318604",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "source:lake": "Review by So9q using LM Topographic Map",
+        "water": "lake"
+      },
+      "water_level_m": 31.46265855827211,
+      "source_area_m2": 208.527,
+      "bounds_local_east_north_m": [
+        3612.893723988251,
+        -370.3488139206633,
+        3634.642989517558,
+        -356.1221829971334
+      ],
+      "centroid_local_east_north_m": [
+        3623.7059773361307,
+        -362.2171423177783
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 16.041839406957198,
+      "id": "way/34835611",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "source": "Yahoo",
+        "source:lake": "Review by So9q using LM Topographic Map",
+        "water": "lake"
+      },
+      "water_level_m": 16.241839406957197,
+      "source_area_m2": 95.9,
+      "bounds_local_east_north_m": [
+        4020.0933540959622,
+        -175.86253155541357,
+        4032.211613270786,
+        -164.10719332789907
+      ],
+      "centroid_local_east_north_m": [
+        4025.873465203757,
+        -169.435788142785
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 2.1707175189053123,
+      "id": "way/358567561",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "natural": "water",
+        "source": "Bing",
+        "start_date": "1930s",
+        "water": "reflecting_pool"
+      },
+      "water_level_m": 2.3707175189053125,
+      "source_area_m2": 77.972,
+      "bounds_local_east_north_m": [
+        1443.8389048809672,
+        29.49966506008942,
+        1461.5392862528765,
+        42.10103141802789
+      ],
+      "centroid_local_east_north_m": [
+        1452.6890955669219,
+        35.800348239058664
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 4.527524676273446,
+      "id": "way/358604385",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "source": "survey",
+        "water": "reflecting_pool"
+      },
+      "water_level_m": 4.727524676273446,
+      "source_area_m2": 23.014,
+      "bounds_local_east_north_m": [
+        2760.2600499844175,
+        285.54562583362684,
+        2771.9013017691163,
+        292.770260785904
+      ],
+      "centroid_local_east_north_m": [
+        2764.5341876315733,
+        289.14866668555607
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 11.378436156229949,
+      "id": "way/40095637",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Sergelfontänen",
+      "tags": {
+        "amenity": "fountain",
+        "check_date": "2019-12-19",
+        "covered": "no",
+        "name": "Sergelfontänen",
+        "name:fi": "Sergelinlähde",
+        "name:ko": "세르겔(세르옐) 분수",
+        "name:sv": "Sergelfontänen",
+        "natural": "water",
+        "source": "Bing",
+        "water": "basin",
+        "wikidata": "Q10666210",
+        "wikimedia_commons": "Category:Sergelfontänen",
+        "wikipedia": "sv:Sergelfontänen"
+      },
+      "water_level_m": 11.578436156229948,
+      "source_area_m2": 1471.997,
+      "bounds_local_east_north_m": [
+        1123.8294113103627,
+        487.7847819329988,
+        1169.5392298780941,
+        530.3802908822
+      ],
+      "centroid_local_east_north_m": [
+        1146.7377942640508,
+        508.9856804353213
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 22.721402142822452,
+      "id": "way/40465181",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "check_date": "2019-12-29",
+        "drinking_water": "no"
+      },
+      "water_level_m": 22.92140214282245,
+      "source_area_m2": 50.282,
+      "bounds_local_east_north_m": [
+        2170.1735150104505,
+        -1734.2574790178912,
+        2178.2939979627354,
+        -1724.672870860902
+      ],
+      "centroid_local_east_north_m": [
+        2174.2349168695164,
+        -1729.4646116106449
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 4.148464259179886,
+      "id": "way/440218402",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Molins fontän",
+      "tags": {
+        "amenity": "fountain",
+        "material": "bronze",
+        "name": "Molins fontän",
+        "start_date": "1873",
+        "wikidata": "Q11989823",
+        "wikimedia_commons": "Category:Molins fontän",
+        "wikipedia": "sv:Molins fontän"
+      },
+      "water_level_m": 4.348464259179886,
+      "source_area_m2": 89.068,
+      "bounds_local_east_north_m": [
+        1514.5552504779141,
+        303.8910779163915,
+        1525.7592454881974,
+        315.13434648660063
+      ],
+      "centroid_local_east_north_m": [
+        1520.112409352095,
+        309.5291162056518
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 6.626461220180844,
+      "id": "way/465887564",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Wenner-Gren Center Fountain",
+      "tags": {
+        "amenity": "fountain",
+        "check_date": "2020-01-13",
+        "drinking_water": "no",
+        "name": "Wenner-Gren Center Fountain"
+      },
+      "water_level_m": 6.826461220180844,
+      "source_area_m2": 495.389,
+      "bounds_local_east_north_m": [
+        165.7600680943117,
+        2601.480840092744,
+        190.9619585431573,
+        2626.8171561975523
+      ],
+      "centroid_local_east_north_m": [
+        178.45943925395358,
+        2614.1484141078267
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 16.651438721028363,
+      "id": "way/469775574",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "source:lake": "Review by So9q using LM Topographic Map",
+        "water": "lake"
+      },
+      "water_level_m": 16.851438721028362,
+      "source_area_m2": 15.554,
+      "bounds_local_east_north_m": [
+        2467.04247149688,
+        1545.1145322106745,
+        2471.5115764502725,
+        1549.6007076890742
+      ],
+      "centroid_local_east_north_m": [
+        2469.272155022578,
+        1547.3530137745647
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 9.860166113689473,
+      "id": "way/497276107",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "natural": "water",
+        "water": "reflecting_pool"
+      },
+      "water_level_m": 10.060166113689473,
+      "source_area_m2": 135.73,
+      "bounds_local_east_north_m": [
+        -14.844015690430242,
+        588.5461478235477,
+        -1.2038757944616119,
+        614.1273668077989
+      ],
+      "centroid_local_east_north_m": [
+        -8.307617057444938,
+        599.1358203872954
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 36.60881122774453,
+      "id": "way/5192316",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "water": "pond",
+        "wikidata": "Q60677660",
+        "wikimedia_commons": "Category:Skogsholmsdammen, Skansen"
+      },
+      "water_level_m": 36.808811227744535,
+      "source_area_m2": 578.109,
+      "bounds_local_east_north_m": [
+        3352.447688939169,
+        -326.5223303949502,
+        3395.1171357245366,
+        -307.687072553299
+      ],
+      "centroid_local_east_north_m": [
+        3373.268967221183,
+        -316.9486169876066
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 38.076006720073366,
+      "id": "way/5192320",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Svandammen",
+      "tags": {
+        "name": "Svandammen",
+        "name:en": "Swan Pond",
+        "natural": "water",
+        "source:lake": "Review by So9q using LM Topographic Map",
+        "water": "lake",
+        "website": "http://www.skansen.se/sv/f%C3%A5geldammarna",
+        "wikidata": "Q60677688",
+        "wikimedia_commons": "Category:Svandammen, Skansen"
+      },
+      "water_level_m": 38.27600672007337,
+      "source_area_m2": 1062.264,
+      "bounds_local_east_north_m": [
+        3359.6595863861853,
+        -138.96012035727824,
+        3402.073493498271,
+        -92.21706617350083
+      ],
+      "centroid_local_east_north_m": [
+        3379.3041691604712,
+        -117.23604777848377
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 21.254735685179067,
+      "id": "way/665693601",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "barrier": "wall",
+        "check_date": "2019-12-19"
+      },
+      "water_level_m": 21.454735685179067,
+      "source_area_m2": 205.675,
+      "bounds_local_east_north_m": [
+        1007.8200782819562,
+        -1100.949763946113,
+        1021.7782231046077,
+        -1080.4669776396606
+      ],
+      "centroid_local_east_north_m": [
+        1014.8234592571318,
+        -1090.6464468451823
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 26.047008031957123,
+      "id": "way/697302459",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "description:en": "Shallow paddling pool for very small children.",
+        "leisure": "paddling_pool",
+        "natural": "water",
+        "water": "basin"
+      },
+      "water_level_m": 26.247008031957122,
+      "source_area_m2": 96.54,
+      "bounds_local_east_north_m": [
+        507.63807904175394,
+        1102.5082368164483,
+        521.5564732486961,
+        1112.0928449734374
+      ],
+      "centroid_local_east_north_m": [
+        514.1419775439517,
+        1107.3066193402537
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 15.134555415742003,
+      "id": "way/706700679",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "check_date": "2019-12-09"
+      },
+      "water_level_m": 15.334555415742003,
+      "source_area_m2": 7.008,
+      "bounds_local_east_north_m": [
+        501.5903067730871,
+        1700.972951270104,
+        504.58296028071976,
+        1703.967445572634
+      ],
+      "centroid_local_east_north_m": [
+        503.08727547700397,
+        1702.478432805981
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 10.338434397577387,
+      "id": "way/754272988",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "check_date": "2019-12-27",
+        "natural": "water",
+        "noname": "yes",
+        "start_date": "1932",
+        "water": "pond"
+      },
+      "water_level_m": 10.538434397577387,
+      "source_area_m2": 1710.831,
+      "bounds_local_east_north_m": [
+        602.1820795110993,
+        1597.6239360176971,
+        658.9573162638155,
+        1676.5828508370225
+      ],
+      "centroid_local_east_north_m": [
+        631.8130762991289,
+        1637.6106073910635
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 14.638478391959154,
+      "id": "way/755411696",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain",
+        "natural": "water"
+      },
+      "water_level_m": 14.838478391959153,
+      "source_area_m2": 676.44,
+      "bounds_local_east_north_m": [
+        2823.219346831551,
+        768.5497644366149,
+        2899.1203084672798,
+        805.6636826665653
+      ],
+      "centroid_local_east_north_m": [
+        2861.17713745288,
+        787.1060238856774
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 23.630084360644055,
+      "id": "way/767521452",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Eastmanfontänen",
+      "tags": {
+        "amenity": "fountain",
+        "check_date": "2020-01-28",
+        "name": "Eastmanfontänen",
+        "start_date": "1936",
+        "water": "basin",
+        "wikidata": "Q10478920",
+        "wikimedia_commons": "Category:Eastmanfontänen"
+      },
+      "water_level_m": 23.830084360644054,
+      "source_area_m2": 50.258,
+      "bounds_local_east_north_m": [
+        89.77960522676044,
+        1372.5470575824907,
+        97.94551745422815,
+        1380.6845123596572
+      ],
+      "centroid_local_east_north_m": [
+        93.87748561936944,
+        1376.6212269314287
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 2.582981267007855,
+      "id": "way/809185902",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "check_date": "2020-06-01",
+        "natural": "water",
+        "water": "basin"
+      },
+      "water_level_m": 2.7829812670078553,
+      "source_area_m2": 201.812,
+      "bounds_local_east_north_m": [
+        -1162.1035757146863,
+        19.414119194213075,
+        -1145.8626098103182,
+        35.689028747755465
+      ],
+      "centroid_local_east_north_m": [
+        -1154.0372549653334,
+        27.555438539239738
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 2.652360065246383,
+      "id": "way/815745133",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 2.852360065246383,
+      "source_area_m2": 421.63,
+      "bounds_local_east_north_m": [
+        2604.5114584248745,
+        2440.5907800491905,
+        2648.021346802435,
+        2463.8565536255674
+      ],
+      "centroid_local_east_north_m": [
+        2627.536566151089,
+        2450.446621285988
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 2.8436421104488216,
+      "id": "way/815745134",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "natural": "water",
+        "water": "pond"
+      },
+      "water_level_m": 3.043642110448822,
+      "source_area_m2": 427.01,
+      "bounds_local_east_north_m": [
+        2529.445259721864,
+        2495.2820458759475,
+        2568.2645754291884,
+        2536.626104757227
+      ],
+      "centroid_local_east_north_m": [
+        2548.0844047822056,
+        2517.018665344552
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 32.71468414399758,
+      "id": "way/831365253",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "Fontän Borggården KTH",
+      "tags": {
+        "amenity": "fountain",
+        "name": "Fontän Borggården KTH",
+        "natural": "water"
+      },
+      "water_level_m": 32.91468414399758,
+      "source_area_m2": 52.436,
+      "bounds_local_east_north_m": [
+        1630.5929768034869,
+        2161.1899901071833,
+        1640.7237051857862,
+        2168.9934864120223
+      ],
+      "centroid_local_east_north_m": [
+        1635.3064925339377,
+        2164.7209738536903
+      ]
+    },
+    {
+      "depth_m": 0.2,
+      "floor_level_m": 17.303727988884027,
+      "id": "way/964357684",
+      "level_rule": "median local bank ground minus 0.04m; gameplay estimate, not surveyed",
+      "name": "",
+      "tags": {
+        "amenity": "fountain"
+      },
+      "water_level_m": 17.503727988884027,
+      "source_area_m2": 49.3,
+      "bounds_local_east_north_m": [
+        1319.061721727761,
+        -1496.779609308143,
+        1329.6353855439502,
+        -1489.877800878984
+      ],
+      "centroid_local_east_north_m": [
+        1324.2992834940735,
+        -1493.3859622899186
+      ]
+    }
+  ],
+  "native_floor_drag": 0.119,
+  "schema": 1,
+  "water_decal_triangles": 765
+}

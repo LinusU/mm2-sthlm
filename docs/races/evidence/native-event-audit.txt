@@ -1,0 +1,39 @@
+mounted mod stockholm
+== event sweep: stockholm ==
+  race/stockholm/mmracedata.csv  10 rows (0 row diagnostics)
+  race/stockholm/mmblitzdata.csv 10 rows (0 row diagnostics)
+  race/stockholm/mmcircuitdata.csv 10 rows (0 row diagnostics)
+  race/stockholm/mmcrashdata.csv  0 rows (0 row diagnostics)
+  checkpoint  0 race0        ready                    12 records   defs ok/ok   rosters ok/ok
+  checkpoint  1 race1        ready                    12 records   defs ok/ok   rosters ok/ok
+  checkpoint  2 race2        ready                    12 records   defs ok/ok   rosters ok/ok
+  checkpoint  3 race3        ready                    14 records   defs ok/ok   rosters ok/ok
+  checkpoint  4 race4        ready                    14 records   defs ok/ok   rosters ok/ok
+  checkpoint  5 race5        ready                    14 records   defs ok/ok   rosters ok/ok
+  checkpoint  6 race6        ready                    16 records   defs ok/ok   rosters ok/ok
+  checkpoint  7 race7        ready                    16 records   defs ok/ok   rosters ok/ok
+  checkpoint  8 race8        ready                    16 records   defs ok/ok   rosters ok/ok
+  checkpoint  9 race9        ready                    18 records   defs ok/ok   rosters ok/ok
+  blitz       0 blitz0       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       1 blitz1       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       2 blitz2       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       3 blitz3       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       4 blitz4       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       5 blitz5       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       6 blitz6       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       7 blitz7       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       8 blitz8       ready                     4 records   defs ok/ok   rosters ok/ok
+  blitz       9 blitz9       ready                     4 records   defs ok/ok   rosters ok/ok
+  circuit     0 circuit0     ready                     9 records   defs ok/ok   rosters ok/ok
+  circuit     1 circuit1     ready                     9 records   defs ok/ok   rosters ok/ok
+  circuit     2 circuit2     ready                    11 records   defs ok/ok   rosters ok/ok
+  circuit     3 circuit3     ready                    11 records   defs ok/ok   rosters ok/ok
+  circuit     4 circuit4     ready                    13 records   defs ok/ok   rosters ok/ok
+  circuit     5 circuit5     ready                    13 records   defs ok/ok   rosters ok/ok
+  circuit     6 circuit6     ready                    15 records   defs ok/ok   rosters ok/ok
+  circuit     7 circuit7     ready                    15 records   defs ok/ok   rosters ok/ok
+  circuit     8 circuit8     ready                    17 records   defs ok/ok   rosters ok/ok
+  circuit     9 circuit9     ready                    17 records   defs ok/ok   rosters ok/ok
+  stockholm: 30 events — 30 ready, 0 incomplete, 0 strict failures (0 extra stems not cataloged)
+  note: race/stockholm/stockholm_rewards.csv: no rewards table (mods may legitimately omit it)
+

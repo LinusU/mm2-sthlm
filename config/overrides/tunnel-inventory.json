@@ -1,0 +1,1229 @@
+{
+  "schema": 1,
+  "source": "sources/expanded/osm.json.gz",
+  "selected_count": 97,
+  "closures": [
+    415311702,
+    415313276,
+    3199866450,
+    3199972195
+  ],
+  "roads": [
+    {
+      "source_way": 4700200,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        0.3674953506268803,
+        9.742265929502567
+      ],
+      "max_grade": 0.10431519632517766,
+      "shared_source_portal_nodes": [
+        1263133246
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 432147270,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        -0.3925839838373655,
+        7.375948341692682
+      ],
+      "max_grade": 0.08775919596487486,
+      "shared_source_portal_nodes": [
+        4313106734
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 676101236,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        -0.6398238336677791,
+        5.83171878783579
+      ],
+      "max_grade": 0.07807775654930257,
+      "shared_source_portal_nodes": [
+        10466426
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 4802613,
+      "name": "Söderledstunneln",
+      "height_range_m": [
+        5.798537956307378,
+        18.966744126441615
+      ],
+      "max_grade": 0.12255716430291251,
+      "shared_source_portal_nodes": [
+        30819892
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 34964424,
+      "name": "Skansbroavfarten",
+      "height_range_m": [
+        6.065765907757594,
+        15.861731139837534
+      ],
+      "max_grade": 0.10213712291972242,
+      "shared_source_portal_nodes": [
+        410318144
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 530757298,
+      "name": "Söderledstunneln",
+      "height_range_m": [
+        4.576464502405818,
+        7.442383904606405
+      ],
+      "max_grade": 0.054288610826179584,
+      "shared_source_portal_nodes": [
+        30819871
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 586120314,
+      "name": "Söderledstunneln",
+      "height_range_m": [
+        5.334307048380271,
+        5.798537956307378
+      ],
+      "max_grade": 0.010101827725125833,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 5173753,
+      "name": "Blekholmstunneln",
+      "height_range_m": [
+        -5.379140012623698,
+        2.9978443496349736
+      ],
+      "max_grade": 0.0920390034229144,
+      "shared_source_portal_nodes": [
+        35969477
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 5173754,
+      "name": "Norra Klarabergskopplet",
+      "height_range_m": [
+        1.6811564665910854,
+        2.4182482399043868
+      ],
+      "max_grade": 0.04774723286321082,
+      "shared_source_portal_nodes": [
+        35969478
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1278829926,
+      "name": "Blekholmstunneln",
+      "height_range_m": [
+        -1.0317612815769754,
+        1.6811564665910854
+      ],
+      "max_grade": 0.08712035338265602,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1340099689,
+      "name": "Blekholmstunneln",
+      "height_range_m": [
+        1.6811564665910854,
+        2.4913238906124002
+      ],
+      "max_grade": 0.04523180520828288,
+      "shared_source_portal_nodes": [
+        214893653
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 15807581,
+      "name": "Drakenbergsgatan",
+      "height_range_m": [
+        12.55344688520827,
+        12.600879030460316
+      ],
+      "max_grade": 0.007839935120980975,
+      "shared_source_portal_nodes": [
+        158824840,
+        659044153
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 17151920,
+      "name": "Söderledstunneln",
+      "height_range_m": [
+        13.90768050016281,
+        20.9646744745678
+      ],
+      "max_grade": 0.09693113067729528,
+      "shared_source_portal_nodes": [
+        262602624
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 983884572,
+      "name": "Södermalmsavfarten",
+      "height_range_m": [
+        19.90292240740133,
+        23.24184209430788
+      ],
+      "max_grade": 0.09243423409592334,
+      "shared_source_portal_nodes": [
+        1275850022
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 20156379,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        -0.35144471577355585,
+        7.3292156017852985
+      ],
+      "max_grade": 0.08890847739441284,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 41274652,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        -0.6205572682119502,
+        5.883533610600542
+      ],
+      "max_grade": 0.07821083025969483,
+      "shared_source_portal_nodes": [
+        504630022
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 676101238,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        0.37744152503938455,
+        9.698307616811004
+      ],
+      "max_grade": 0.1037709689066799,
+      "shared_source_portal_nodes": [
+        1272003703
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 689217947,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        7.3292156017852985,
+        7.626195810330706
+      ],
+      "max_grade": 0.0250310872633767,
+      "shared_source_portal_nodes": [
+        6465599365
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1349059053,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        7.3292156017852985,
+        7.484972855209297
+      ],
+      "max_grade": 0.020897946880020703,
+      "shared_source_portal_nodes": [
+        514863793
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1349059054,
+      "name": "Klaratunneln",
+      "height_range_m": [
+        -0.26989917751731163,
+        0.37744152503938455
+      ],
+      "max_grade": 0.04040447206661577,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 20278071,
+      "name": "Blekholmstunneln",
+      "height_range_m": [
+        -4.381088604859532,
+        3.1320614635785713
+      ],
+      "max_grade": 0.08534998389289482,
+      "shared_source_portal_nodes": [
+        214890496,
+        2647210929
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 34344429,
+      "name": "Blekholmskopplet",
+      "height_range_m": [
+        0.6274833330267846,
+        7.47260753218742
+      ],
+      "max_grade": 0.12592887634968886,
+      "shared_source_portal_nodes": [
+        393945722
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 259323347,
+      "name": "Blekholmsfaret",
+      "height_range_m": [
+        0.32714479512748307,
+        2.517161895285369
+      ],
+      "max_grade": 0.1052165307797557,
+      "shared_source_portal_nodes": [
+        214890496
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 259323349,
+      "name": "Blekholmstunneln",
+      "height_range_m": [
+        -3.9962795912413376,
+        3.4117052575298437
+      ],
+      "max_grade": 0.10004891708302001,
+      "shared_source_portal_nodes": [
+        214890498
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 467760756,
+      "name": "Blekholmsfaret",
+      "height_range_m": [
+        2.721148601792119,
+        3.07022022280026
+      ],
+      "max_grade": 0.06119543466259023,
+      "shared_source_portal_nodes": [
+        2647210934
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 891331903,
+      "name": "",
+      "height_range_m": [
+        2.9981428560654306,
+        3.7481849353949546
+      ],
+      "max_grade": 0.053095720014361934,
+      "shared_source_portal_nodes": [
+        11887369793
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1198956508,
+      "name": "Blekholmsfaret",
+      "height_range_m": [
+        -1.0193802634339537,
+        2.9981428560654306
+      ],
+      "max_grade": 0.11464807771268135,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 23161284,
+      "name": "Riddarfjärdspåfarten",
+      "height_range_m": [
+        4.293193853717562,
+        6.912986004369638
+      ],
+      "max_grade": 0.11918055414803998,
+      "shared_source_portal_nodes": [
+        60191237,
+        250315448
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 23161298,
+      "name": "Riddarfjärdsavfarten",
+      "height_range_m": [
+        0.34986957439180877,
+        7.448408972761622
+      ],
+      "max_grade": 0.11323233905845771,
+      "shared_source_portal_nodes": [
+        1030293746
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1271392980,
+      "name": "Riddarfjärdsavfarten",
+      "height_range_m": [
+        0.34986957439180877,
+        1.6531529959625408
+      ],
+      "max_grade": 0.07092067624734281,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1271392981,
+      "name": "Riddarfjärdsavfarten",
+      "height_range_m": [
+        1.6531529959625408,
+        4.267993901869872
+      ],
+      "max_grade": 0.07337638271803877,
+      "shared_source_portal_nodes": [
+        250315653
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 27351663,
+      "name": "Söderledstunneln",
+      "height_range_m": [
+        13.727916568980769,
+        25.05351253766548
+      ],
+      "max_grade": 0.10630675756891832,
+      "shared_source_portal_nodes": [
+        247204819
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1244140460,
+      "name": "Söderledstunneln",
+      "height_range_m": [
+        16.493391298035306,
+        19.426788861278112
+      ],
+      "max_grade": 0.0713622537494266,
+      "shared_source_portal_nodes": [
+        262602634
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 28473472,
+      "name": "Gambrinusgatan",
+      "height_range_m": [
+        17.229204554495794,
+        17.323341268130477
+      ],
+      "max_grade": 0.014958092033188904,
+      "shared_source_portal_nodes": [
+        312803345,
+        312803346
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 30678336,
+      "name": "Skaraborgsgatan",
+      "height_range_m": [
+        28.661201196362914,
+        29.050858706556046
+      ],
+      "max_grade": 0.051335090004708386,
+      "shared_source_portal_nodes": [
+        21761578,
+        389537335
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 30842539,
+      "name": "Nordenflychtsvägen",
+      "height_range_m": [
+        13.113227278272577,
+        13.914839447484624
+      ],
+      "max_grade": 0.054096148639699616,
+      "shared_source_portal_nodes": [
+        33338437,
+        343075153
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 31062848,
+      "name": "Hundra Knutars Backe",
+      "height_range_m": [
+        1.920198293426978,
+        14.329542107029386
+      ],
+      "max_grade": 0.1264006729712944,
+      "shared_source_portal_nodes": [
+        676748,
+        310499299
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 31062851,
+      "name": "Hundra Knutars Backe",
+      "height_range_m": [
+        2.3772653762706764,
+        15.144691284257906
+      ],
+      "max_grade": 0.12918582366414463,
+      "shared_source_portal_nodes": [
+        32917517,
+        32917519
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 34963935,
+      "name": "Skansbrogatan",
+      "height_range_m": [
+        16.944361408635977,
+        22.16897564678523
+      ],
+      "max_grade": 0.12848798010215814,
+      "shared_source_portal_nodes": [
+        146895456,
+        853578847
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 35403657,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243541148787287,
+        4.2435411487873935
+      ],
+      "max_grade": 7.338074939414184e-15,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 35403689,
+      "name": "Måntunneln",
+      "height_range_m": [
+        4.243542355296672,
+        13.163923239983244
+      ],
+      "max_grade": 0.09540146631142284,
+      "shared_source_portal_nodes": [
+        415312306
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 158573182,
+      "name": "Norrtullsavfarten",
+      "height_range_m": [
+        4.2518582086455545,
+        12.487826974812675
+      ],
+      "max_grade": 0.09112042380853216,
+      "shared_source_portal_nodes": [
+        1396762220
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 277998859,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.244150040698905,
+        4.2458590508819665
+      ],
+      "max_grade": 6.332923073544331e-05,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 313954247,
+      "name": "Komettunneln",
+      "height_range_m": [
+        4.243541148787287,
+        4.243541148787287
+      ],
+      "max_grade": 0.0,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 314965154,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243541148818874,
+        4.243542355296672
+      ],
+      "max_grade": 5.5536027210640696e-08,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 314965270,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243541148787287,
+        4.243541148787287
+      ],
+      "max_grade": 0.0,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 315214570,
+      "name": "Rymdtunneln",
+      "height_range_m": [
+        1.6824504617254625,
+        4.243541148775956
+      ],
+      "max_grade": 0.0799260103158976,
+      "shared_source_portal_nodes": [
+        415316365
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 315216744,
+      "name": "Karolinertunneln",
+      "height_range_m": [
+        4.243541148787287,
+        4.2435411487873935
+      ],
+      "max_grade": 7.351492677105206e-15,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 334469512,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        5.488827815469775,
+        17.16636853237148
+      ],
+      "max_grade": 0.12045906847630233,
+      "shared_source_portal_nodes": [
+        2649666626
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 407955996,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        5.488827815469775,
+        16.717136535043565
+      ],
+      "max_grade": 0.11892455737830544,
+      "shared_source_portal_nodes": [
+        4099769870
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 407978478,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243852218638143,
+        5.488827815469775
+      ],
+      "max_grade": 0.043618496574617166,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 664696163,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243541148787287,
+        4.243541148818874
+      ],
+      "max_grade": 1.89721032934815e-12,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 664696164,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243541148787283,
+        4.243541148787287
+      ],
+      "max_grade": 3.553981231219767e-16,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 664696165,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243541148775956,
+        4.243541148787283
+      ],
+      "max_grade": 7.757703774122165e-13,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 664710127,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.2435411487873935,
+        4.2518582086455545
+      ],
+      "max_grade": 0.00019013330961861484,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 664853149,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243541148789223,
+        4.243542355296672
+      ],
+      "max_grade": 5.7146374857197986e-08,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 758198683,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243705644716275,
+        4.244150040698905
+      ],
+      "max_grade": 1.778117599278047e-05,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 758212769,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.2458590508819665,
+        4.248666340330249
+      ],
+      "max_grade": 0.00013283615484131582,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 758218620,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.248666340330249,
+        4.2518582086455545
+      ],
+      "max_grade": 0.0002377971378100142,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1093977860,
+      "name": "Galaxtunneln",
+      "height_range_m": [
+        4.243541148787287,
+        4.243541148787287
+      ],
+      "max_grade": 0.0,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1093977861,
+      "name": "Gärdestunneln",
+      "height_range_m": [
+        4.243541148787287,
+        4.243541148789223
+      ],
+      "max_grade": 1.2342509538554328e-13,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 35403703,
+      "name": "Hjorthagsvägen",
+      "height_range_m": [
+        1.157945087302895,
+        3.484908807731327
+      ],
+      "max_grade": 0.07920707730896318,
+      "shared_source_portal_nodes": [
+        5891409880
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 530366460,
+      "name": "Hjorthagsvägen",
+      "height_range_m": [
+        -4.307478137721846,
+        2.634262000016287
+      ],
+      "max_grade": 0.09328890795585876,
+      "shared_source_portal_nodes": [
+        2055270581
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 623906434,
+      "name": "Hamnpåfarten",
+      "height_range_m": [
+        1.157945087302895,
+        3.7506670038808436
+      ],
+      "max_grade": 0.08247383155589187,
+      "shared_source_portal_nodes": [
+        5891409879
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 35403986,
+      "name": "Stjärntunneln",
+      "height_range_m": [
+        3.9467859535015037,
+        12.757332948309145
+      ],
+      "max_grade": 0.0955864668678589,
+      "shared_source_portal_nodes": [
+        415314681
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 96847890,
+      "name": "Kosmostunneln",
+      "height_range_m": [
+        1.6814985011482766,
+        3.9467859508413454
+      ],
+      "max_grade": 0.08370323888278275,
+      "shared_source_portal_nodes": [
+        415315915
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 119099805,
+      "name": "Klarastrandsleden",
+      "height_range_m": [
+        6.00318300245614,
+        17.471641482161736
+      ],
+      "max_grade": 0.12401558886709307,
+      "shared_source_portal_nodes": [
+        6223118808
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 211816653,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        3.9467859510309857,
+        3.9467859510309893
+      ],
+      "max_grade": 3.848906994392337e-16,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 226083086,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        3.946082859469154,
+        6.00318300245614
+      ],
+      "max_grade": 0.07095332650378151,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 231242525,
+      "name": "Soltunneln",
+      "height_range_m": [
+        3.9467859510309893,
+        3.9467859510309893
+      ],
+      "max_grade": 0.0,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 244240291,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        6.00318300245614,
+        16.980087059992464
+      ],
+      "max_grade": 0.12126852683815359,
+      "shared_source_portal_nodes": [
+        6223118809
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 244924026,
+      "name": "Norrtullspåfarten",
+      "height_range_m": [
+        3.8193900027611765,
+        10.871695311515378
+      ],
+      "max_grade": 0.0830765474931132,
+      "shared_source_portal_nodes": [
+        2521970667
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 277998860,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        3.946082859469154,
+        3.9467859510309857
+      ],
+      "max_grade": 2.556515368071047e-05,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 315196049,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        3.9467859508413454,
+        3.9467859510309857
+      ],
+      "max_grade": 1.1344151302261708e-11,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 664696166,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        3.9467859510309893,
+        3.946785951031373
+      ],
+      "max_grade": 2.512360672175146e-14,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 664696167,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        3.946785951031373,
+        3.9467859535015037
+      ],
+      "max_grade": 1.863750701988742e-10,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 664696168,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        3.9467859510309893,
+        3.9467859535015037
+      ],
+      "max_grade": 1.324249607397923e-10,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 703438538,
+      "name": "Norrtullstunneln",
+      "height_range_m": [
+        3.9467859510309857,
+        3.9467859510309893
+      ],
+      "max_grade": 3.6310862733624727e-16,
+      "shared_source_portal_nodes": [],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 39236690,
+      "name": "Klockstapelsbacken",
+      "height_range_m": [
+        10.564923652561475,
+        13.88770855761379
+      ],
+      "max_grade": 0.1236631316753387,
+      "shared_source_portal_nodes": [
+        469983484,
+        469983487
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 43082764,
+      "name": "Reimersholmsgatan",
+      "height_range_m": [
+        2.72277711762662,
+        2.8194527399107305
+      ],
+      "max_grade": 0.012135550997831868,
+      "shared_source_portal_nodes": [
+        9718227,
+        539747372
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 51548731,
+      "name": "Drakenbergsgatan",
+      "height_range_m": [
+        12.03815598995613,
+        12.195947524039846
+      ],
+      "max_grade": 0.0168358397809553,
+      "shared_source_portal_nodes": [
+        158824839,
+        659044152
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 151083839,
+      "name": "Skansbrogatan",
+      "height_range_m": [
+        17.537515599507593,
+        18.892921689956594
+      ],
+      "max_grade": 0.11953388805385182,
+      "shared_source_portal_nodes": [
+        1639251996
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1243218619,
+      "name": "Skansbrogatan",
+      "height_range_m": [
+        18.892921689956594,
+        22.146231502393555
+      ],
+      "max_grade": 0.11489745760564027,
+      "shared_source_portal_nodes": [
+        1639252022
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 151884980,
+      "name": "Söderledstunneln",
+      "height_range_m": [
+        6.402848436493567,
+        18.0871509637114
+      ],
+      "max_grade": 0.10778099574261261,
+      "shared_source_portal_nodes": [
+        1647249198
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 530757297,
+      "name": "Söderledstunneln",
+      "height_range_m": [
+        5.71525726495852,
+        8.928207318554492
+      ],
+      "max_grade": 0.048915402814699575,
+      "shared_source_portal_nodes": [
+        30819882
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 689006796,
+      "name": "Söderleden",
+      "height_range_m": [
+        8.388761547578378,
+        18.342590891317794
+      ],
+      "max_grade": 0.10992945994282309,
+      "shared_source_portal_nodes": [
+        6463077423
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 195027206,
+      "name": "Hjorthagsvägen",
+      "height_range_m": [
+        -4.616731484956821,
+        3.4164777185817843
+      ],
+      "max_grade": 0.09279694754206615,
+      "shared_source_portal_nodes": [
+        2055270519,
+        5891409883
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 223466738,
+      "name": "Tomtebodatunneln",
+      "height_range_m": [
+        11.385763870427578,
+        14.099689112049518
+      ],
+      "max_grade": 0.09346181407414272,
+      "shared_source_portal_nodes": [
+        2323689256,
+        2323689258
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 269884265,
+      "name": "Hjorthagsrampen",
+      "height_range_m": [
+        0.7401149756937198,
+        3.207074666363768
+      ],
+      "max_grade": 0.0825301665183383,
+      "shared_source_portal_nodes": [
+        2549878075,
+        2750076982
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 765215212,
+      "name": "Södra Järngraven",
+      "height_range_m": [
+        1.0991061271840938,
+        2.3330354037375076
+      ],
+      "max_grade": 0.06183615803947671,
+      "shared_source_portal_nodes": [
+        1529713341
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1392220232,
+      "name": "Stadsgårdsleden",
+      "height_range_m": [
+        -4.975200988355239,
+        1.6708931742853013
+      ],
+      "max_grade": 0.09272016312907162,
+      "shared_source_portal_nodes": [
+        12887646267
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 777502511,
+      "name": "",
+      "height_range_m": [
+        2.8171403518248948,
+        3.164543316577827
+      ],
+      "max_grade": 0.032202710744067796,
+      "shared_source_portal_nodes": [
+        7255728195,
+        7255728204
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 805544002,
+      "name": "Solnabroavfarten",
+      "height_range_m": [
+        22.032061704526008,
+        23.875388556286044
+      ],
+      "max_grade": 0.07970238273603815,
+      "shared_source_portal_nodes": [
+        7533756463,
+        7533756464
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 864689784,
+      "name": "Södra Järngraven",
+      "height_range_m": [
+        0.9418382777553682,
+        2.399760189917483
+      ],
+      "max_grade": 0.06581499283259021,
+      "shared_source_portal_nodes": [
+        8059584585
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 1392220233,
+      "name": "Stadsgårdsleden",
+      "height_range_m": [
+        -4.299262386323489,
+        2.572584875933558
+      ],
+      "max_grade": 0.09048794043300498,
+      "shared_source_portal_nodes": [
+        12887646266
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 891331900,
+      "name": "Karlbergstunneln",
+      "height_range_m": [
+        0.996164812129563,
+        7.556607245122747
+      ],
+      "max_grade": 0.09410580882500631,
+      "shared_source_portal_nodes": [
+        150490,
+        246114428
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    },
+    {
+      "source_way": 891331901,
+      "name": "Karlbergstunneln",
+      "height_range_m": [
+        1.4797113204899421,
+        7.624558942727633
+      ],
+      "max_grade": 0.09528265126135908,
+      "shared_source_portal_nodes": [
+        27612050,
+        8284486710
+      ],
+      "profile_rule": "authored underground estimate; source-connected surface portals"
+    }
+  ]
+}

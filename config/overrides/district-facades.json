@@ -1,0 +1,449 @@
+{
+  "schema": 1,
+  "provenance": "Original procedural art, colors authored from city architectural references; no photograph/retail pixels. Polygons are approximate artistic district boundaries, not administrative or cadastral data.",
+  "regions": [
+    {
+      "profile": "gamla_stan",
+      "polygon": [
+        [
+          18.055,
+          59.319
+        ],
+        [
+          18.079,
+          59.319
+        ],
+        [
+          18.079,
+          59.329
+        ],
+        [
+          18.064,
+          59.329
+        ],
+        [
+          18.055,
+          59.326
+        ],
+        [
+          18.055,
+          59.319
+        ]
+      ]
+    },
+    {
+      "profile": "kungsholmen",
+      "polygon": [
+        [
+          17.97,
+          59.322
+        ],
+        [
+          18.048,
+          59.322
+        ],
+        [
+          18.061,
+          59.329
+        ],
+        [
+          18.036,
+          59.346
+        ],
+        [
+          17.97,
+          59.346
+        ],
+        [
+          17.97,
+          59.322
+        ]
+      ]
+    },
+    {
+      "profile": "sodermalm",
+      "polygon": [
+        [
+          17.99,
+          59.29
+        ],
+        [
+          18.115,
+          59.29
+        ],
+        [
+          18.115,
+          59.317
+        ],
+        [
+          18.08,
+          59.322
+        ],
+        [
+          18.047,
+          59.323
+        ],
+        [
+          17.99,
+          59.321
+        ],
+        [
+          17.99,
+          59.29
+        ]
+      ]
+    },
+    {
+      "profile": "djurgarden",
+      "polygon": [
+        [
+          18.09,
+          59.317
+        ],
+        [
+          18.174,
+          59.317
+        ],
+        [
+          18.174,
+          59.338
+        ],
+        [
+          18.101,
+          59.338
+        ],
+        [
+          18.091,
+          59.33
+        ],
+        [
+          18.09,
+          59.317
+        ]
+      ]
+    },
+    {
+      "profile": "ostermalm",
+      "polygon": [
+        [
+          18.071,
+          59.332
+        ],
+        [
+          18.093,
+          59.328
+        ],
+        [
+          18.174,
+          59.338
+        ],
+        [
+          18.174,
+          59.373
+        ],
+        [
+          18.071,
+          59.373
+        ],
+        [
+          18.071,
+          59.332
+        ]
+      ]
+    },
+    {
+      "profile": "norrmalm",
+      "polygon": [
+        [
+          18.036,
+          59.329
+        ],
+        [
+          18.064,
+          59.329
+        ],
+        [
+          18.071,
+          59.332
+        ],
+        [
+          18.071,
+          59.373
+        ],
+        [
+          18.015,
+          59.373
+        ],
+        [
+          18.036,
+          59.329
+        ]
+      ]
+    }
+  ],
+  "profiles": {
+    "gamla_stan": {
+      "colors": [
+        [
+          193,
+          140,
+          65
+        ],
+        [
+          164,
+          92,
+          60
+        ],
+        [
+          222,
+          183,
+          103
+        ],
+        [
+          194,
+          160,
+          115
+        ]
+      ],
+      "trim": [
+        222,
+        211,
+        179
+      ],
+      "door": [
+        73,
+        67,
+        44
+      ],
+      "window": "tall",
+      "roof": "iron",
+      "bay_width_m": 3.6,
+      "floor_height_m": 3.1
+    },
+    "kungsholmen": {
+      "colors": [
+        [
+          205,
+          192,
+          156
+        ],
+        [
+          194,
+          158,
+          112
+        ],
+        [
+          209,
+          173,
+          149
+        ],
+        [
+          167,
+          158,
+          135
+        ]
+      ],
+      "trim": [
+        225,
+        217,
+        191
+      ],
+      "door": [
+        61,
+        75,
+        65
+      ],
+      "window": "tall",
+      "roof": "iron",
+      "bay_width_m": 4.2,
+      "floor_height_m": 3.3
+    },
+    "norrmalm": {
+      "colors": [
+        [
+          180,
+          177,
+          164
+        ],
+        [
+          213,
+          205,
+          176
+        ],
+        [
+          167,
+          143,
+          121
+        ],
+        [
+          145,
+          148,
+          141
+        ]
+      ],
+      "trim": [
+        210,
+        208,
+        192
+      ],
+      "door": [
+        58,
+        65,
+        65
+      ],
+      "window": "wide",
+      "roof": "iron",
+      "bay_width_m": 4.8,
+      "floor_height_m": 3.5,
+      "brick_variants": [
+        2
+      ]
+    },
+    "ostermalm": {
+      "colors": [
+        [
+          221,
+          206,
+          174
+        ],
+        [
+          199,
+          181,
+          151
+        ],
+        [
+          216,
+          188,
+          161
+        ],
+        [
+          182,
+          172,
+          150
+        ]
+      ],
+      "trim": [
+        232,
+        224,
+        205
+      ],
+      "door": [
+        70,
+        65,
+        50
+      ],
+      "window": "tall",
+      "roof": "copper",
+      "bay_width_m": 4.0,
+      "floor_height_m": 3.6
+    },
+    "sodermalm": {
+      "colors": [
+        [
+          204,
+          165,
+          93
+        ],
+        [
+          188,
+          134,
+          101
+        ],
+        [
+          207,
+          185,
+          145
+        ],
+        [
+          157,
+          109,
+          81
+        ]
+      ],
+      "trim": [
+        218,
+        209,
+        177
+      ],
+      "door": [
+        62,
+        73,
+        58
+      ],
+      "window": "tall",
+      "roof": "iron",
+      "bay_width_m": 4.0,
+      "floor_height_m": 3.2,
+      "brick_variants": [
+        3
+      ]
+    },
+    "djurgarden": {
+      "colors": [
+        [
+          220,
+          203,
+          143
+        ],
+        [
+          195,
+          181,
+          134
+        ],
+        [
+          169,
+          109,
+          78
+        ],
+        [
+          202,
+          187,
+          158
+        ]
+      ],
+      "trim": [
+        233,
+        222,
+        193
+      ],
+      "door": [
+        70,
+        88,
+        64
+      ],
+      "window": "tall",
+      "roof": "clay",
+      "bay_width_m": 3.8,
+      "floor_height_m": 3.2,
+      "brick_variants": [
+        2
+      ]
+    }
+  },
+  "roofs": {
+    "iron": [
+      75,
+      80,
+      78
+    ],
+    "copper": [
+      81,
+      116,
+      98
+    ],
+    "clay": [
+      130,
+      90,
+      65
+    ]
+  },
+  "sources": [
+    "https://stockholmskallan.stockholm.se/postfiles/SMF/SD/SSMB_0001065_01.pdf",
+    "https://www.visitstockholm.com/stockholms-districts/kungsholmen/",
+    "https://www.visitstockholm.com/stockholms-districts/norrmalm/",
+    "https://www.visitstockholm.com/see-do/attractions/district-guide-ostermalm/",
+    "https://www.visitstockholm.com/stockholms-districts/sodermalm/",
+    "https://www.visitstockholm.com/stockholms-districts/gamla-stan/",
+    "https://www.visitstockholm.com/stockholms-districts/djurgarden/"
+  ]
+}

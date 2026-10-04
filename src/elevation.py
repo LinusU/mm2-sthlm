@@ -276,7 +276,11 @@ def bridge_approaches(ordinary, elevated, length=20):
 
 def apply(city, terrain):
     bridges = set(city["bridge_ways"])
-    ordinary = [r for r in city["roads"] if r["id"] not in bridges]
+    ordinary = [
+        r
+        for r in city["roads"]
+        if r["id"] not in bridges and r["id"] not in set(city.get("tunnel_ways", []))
+    ]
     elevated = [r for r in city["roads"] if r["id"] in bridges]
     positions = {
         nid: p for r in city["roads"] for nid, p in zip(r["nodes"], r["points"])
@@ -421,7 +425,7 @@ def apply(city, terrain):
     from bridges import enforce_crossing_clearance
     from road_profiles import diagnostics
 
-    city["bridge_clearance"] = enforce_crossing_clearance(city["roads"], bridges)
+    city["bridge_clearance"] = enforce_crossing_clearance(ordinary + elevated, bridges)
     city["road_profile_diagnostics_after_clearance"] = diagnostics(ordinary)
     ground_segments, deck_segments, junctions, approaches = bridge_approaches(
         ordinary, elevated

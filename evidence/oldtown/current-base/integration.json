@@ -1,0 +1,23 @@
+{
+  "base_revision": "bd7566b",
+  "rebased_owned_commit": "f1af4b9",
+  "original_owned_commit": "bb15be4",
+  "hook_patch": "docs/oldtown-current-hooks.patch",
+  "hook_patch_sha256": "dc5fda224a9e4f9b879a7bb051a1d02102a71e60d6f433664d11dc46b11e841f",
+  "normalized_sha256": "2736c6ee2078c396e15200c8861b1a4b2e9f41a40065d5b1d03291b827ee018a",
+  "shared_source_hashes": {
+    "src/expanded.py": "8ca7c590117caa007a14494ef6962842ee94aaef42cd1af78a972b6a020f9c1b",
+    "src/sthlm.py": "9b0c975852ae621f557ce1f11066e58bed18ec5a6d45d9e25e15e89d33cdd5ee",
+    "src/road_surfaces.py": "e2776a776edebe611b2b989bb3f281180ddf1203a83246e89d25fcc55ee6d558"
+  },
+  "required_checks": {
+    "ruff_format": "pass",
+    "ruff_check": "pass",
+    "unit_tests": 124,
+    "offline_build": "pass",
+    "package_validate": "pass"
+  },
+  "native_drive_checks": "Both 8.78% Storkyrkobrinken directions pass finite,4/4grounded,zero impacts,zero resets using external b3d9804489bdcd576dd4b85b3f40fec75c545071. No engine modifications.",
+  "note": "Shared sources are an uncommitted local integration for coordinator patch application; this task does not alter primary main.",
+  "evidence_scope": "Full build/validate/native and recorded source hashes are PRE paving-overlap correction. See paving-correction.json and paving-correction-tests.log for corrected source acceptance scope."
+}

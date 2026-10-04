@@ -1,0 +1,31 @@
+mm2-smoke commit=b3d9804489bdcd576dd4b85b3f40fec75c545071
+2026-10-03T22:41:32.497597Z  WARN mm2_app::environment: lighting preset unavailable path=city/facade-probe.lt00 error=asset not found: city/facade-probe.lt00
+2026-10-03T22:41:32.497638Z  WARN mm2_app::environment: fog table unavailable path=city/facade-probe_fog.csv error=asset not found: city/facade-probe_fog.csv
+2026-10-03T22:41:32.497646Z  WARN mm2_app::environment: sky definition unavailable path=city/facade-probe.sky error=asset not found: city/facade-probe.sky
+2026-10-03T22:41:32.497653Z  WARN mm2_app::hudmap: hud map spec unavailable path=tune/facade-probe.mmhudmap error=asset not found: tune/facade-probe.mmhudmap
+2026-10-03T22:41:32.497662Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T22:41:32.497673Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T22:41:32.497680Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T22:41:32.497685Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T22:41:32.497689Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T22:41:32.497693Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T22:41:32.497697Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T22:41:32.497700Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T22:41:32.497703Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T22:41:32.497706Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T22:41:32.497710Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T22:41:32.497740Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T22:41:32.497747Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T22:41:32.497754Z  WARN mm2_app::audio: audio: aud/cardata/player/facade-probepolicesiren.csv: asset not found: aud/cardata/player/facade-probepolicesiren.csv
+2026-10-03T22:41:32.497758Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T22:41:32.498523Z  WARN mm2_app::audio: audio: aud/spchdata/facade-probe.csv: asset not found: aud/spchdata/facade-probe.csv
+2026-10-03T22:41:32.503055Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 567v0 with the <Enable the debug feature to see the name> component has a parent (566v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T22:41:32.503097Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 570v0 with the <Enable the debug feature to see the name> component has a parent (569v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T22:41:32.503103Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 573v0 with the <Enable the debug feature to see the name> component has a parent (572v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+2026-10-03T22:41:32.503108Z  WARN bevy_app::hierarchy: warning[B0004]: Entity 576v0 with the <Enable the debug feature to see the name> component has a parent (575v0 entity) without <Enable the debug feature to see the name>.
+This will cause inconsistent behaviors! See: https://bevy.org/learn/errors/b0004
+smoke=visual world=city/facade-probe.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-district-facades/mm2-sthlm/evidence/district-facades/native-door-probe.png bytes=2910975 aud=0h/0v/0s/0l/0a
+2026-10-03T22:41:33.029520Z  WARN bevy_winit::state: Skipped event Destroyed for unknown winit Window Id WindowId(37905433216)

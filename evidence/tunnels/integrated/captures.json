@@ -1,0 +1,72 @@
+{
+  "engine_sha256": "42761bd19d405f2c631db6aa68dec2d75de7b0b68ebbe27ab3cce58b6c0384b6",
+  "package_manifest_sha256": "386dbd0674c5e6ea5b8cd6923fe2eabcaa25cfa88d451d1f91e21b2bfc953090",
+  "captures": [
+    {
+      "name": "klara-interior",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=1391.696962610452,6.329698690902169,-739.2103166380781,68.04496291070079",
+        "--cam=1391.696962610452,6.529698690902169,-739.2103166380781,68.04496291070079,-2",
+        "--time-of-day",
+        "1",
+        "--no-hud",
+        "--parked",
+        "--frames",
+        "30",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/tunnels/integrated/klara-interior.png"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "klara-portal",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=1139.438716723829,11.240806109625286,-603.5291937620409,-162.872145305418",
+        "--cam=1139.438716723829,11.740806109625286,-603.5291937620409,-162.872145305418,-2",
+        "--time-of-day",
+        "1",
+        "--no-hud",
+        "--parked",
+        "--frames",
+        "30",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/tunnels/integrated/klara-portal.png"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "klara-above",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=1139.438716723829,11.240806109625286,-603.5291937620409,-162.872145305418",
+        "--cam=1191.918,52.71827335526589,-708.287,128,-65",
+        "--time-of-day",
+        "1",
+        "--no-hud",
+        "--parked",
+        "--frames",
+        "30",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/tunnels/integrated/klara-above.png"
+      ],
+      "exit": 0
+    }
+  ]
+}

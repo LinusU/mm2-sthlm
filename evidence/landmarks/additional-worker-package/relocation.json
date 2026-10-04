@@ -1,0 +1,65 @@
+{
+  "scope": "Isolated worker all-100-landmark package; not final combined-package evidence. Original commands retained in docs/ADDITIONAL-LANDMARK-QA.json.",
+  "files": [
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_120023281.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_120023281.png",
+      "sha256": "e1bbdb08808663f569c7a290e811ce017b3efa46741a467d78d29bd31012b10f"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_1356201195.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_1356201195.png",
+      "sha256": "21a8bcad224cf09b4cbcc9ff1ead49ffd7a714eb50de1edff74038d3cbd21187"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_137165681.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_137165681.png",
+      "sha256": "673bda48d26db4f41898da2a49c0a4649c27cf728d49832488173ca69bc22ca0"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_156840831.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_156840831.png",
+      "sha256": "32928e1a4f6e7339482dade79eef871f95f8aa065f1299be8b275b6875c333a9"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_33114307.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_33114307.png",
+      "sha256": "6c18b9138d9099b499accc65281242b55d92d932e7ffce84c6c15bca690384d2"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_33485731.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_33485731.png",
+      "sha256": "ed0270ed91b399553a414fbc26efa5b029b906ca734c895c3a91d6dcd71e1f0d"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_34838584.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_34838584.png",
+      "sha256": "928b0cb6654fb78d1c03c13ed303991e85d38ebf91ce2193f551912e5510c090"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_37299689.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_37299689.png",
+      "sha256": "5cb4a29a17bdf54f8829f25dc062d14fb41d0a6aec5e0f46586bd5739fc764c9"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_406181935.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_406181935.png",
+      "sha256": "ecaa1624a33fb9f49244dadfd12cdc3f946e70ce2fd51fd2f6b5b4b364bd830e"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_42037293.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_42037293.png",
+      "sha256": "4b45c8e548ac0ab9b52c80ba8bd0d9530130bde576c20f5b7bef28939eee1c3a"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_49744847.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_49744847.png",
+      "sha256": "6d4d4c23adc733e7bb66998fe4681fb7e863eb1392ef2e388db0e68c1f24212e"
+    },
+    {
+      "original": "/Users/linus/.codex/worktrees/overnight-more-landmarks/mm2-sthlm/.cache/additional-landmarks-native/way_771856432.png",
+      "retained": "evidence/landmarks/additional-worker-package/way_771856432.png",
+      "sha256": "f2655314a0fb3c17e025b11e6b6b264c9709851519a6c1280868439a32473df5"
+    }
+  ]
+}

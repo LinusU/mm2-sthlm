@@ -1,0 +1,50 @@
+[
+  {
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "evidence/shallow-water/native-probe/mods",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--headless",
+      "--frames",
+      "180",
+      "--spawn=-10,25.5,-10,270"
+    ],
+    "exit_code": 0,
+    "smoke": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=180 ticks=360 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=6.9m/s travel=3.4m sim=3.00s resets=0 controls=120t/0b/0s finite=true moved=4m wheels=4/4 final=(-7,24.8,-10) env=lt00(fallback) fog=none sky=none wtr=0.2/1r map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+  },
+  {
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "evidence/shallow-water/native-probe/mods",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--headless",
+      "--frames",
+      "260",
+      "--spawn=-10,25.5,-10,270"
+    ],
+    "exit_code": 0,
+    "smoke": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=260 ticks=520 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=13.2m/s travel=17.0m sim=4.33s resets=0 controls=280t/0b/0s finite=true moved=17m wheels=4/4 final=(7,24.5,-10) env=lt00(fallback) fog=none sky=none wtr=0.2/1r map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+  },
+  {
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "evidence/shallow-water/native-probe/mods",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--headless",
+      "--frames",
+      "600",
+      "--spawn=-10,25.5,-10,270"
+    ],
+    "exit_code": 0,
+    "smoke": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=600 ticks=1200 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=23.1m/s travel=74.9m sim=10.00s resets=0 controls=960t/0b/0s finite=true moved=75m wheels=4/4 final=(65,24.8,-10) env=lt00(fallback) fog=none sky=none wtr=0.2/1r map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x"
+  }
+]

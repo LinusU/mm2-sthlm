@@ -1,0 +1,1273 @@
+{
+  "schema": 1,
+  "reference_checked": "2026-10-04",
+  "snapshot_sha256": "18c1b3b750430d78bf3b6fb367856c14c3c43893172ee5f348a7c426caf82914",
+  "entries": [
+    {
+      "source_id": "relation/34395",
+      "name": "Riksdagshuset",
+      "kind": "attic",
+      "palette": "stone",
+      "body_height_m": 28.0,
+      "total_height_m": 39.0,
+      "roof_palette": "dark",
+      "silhouette": "monumental stone frontage with raised central attic",
+      "anchor_east_north_m": [
+        1307.75,
+        -44.74
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Riksdagshuset_i_Stockholm",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Riksdagshuset_i_Stockholm",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/279566",
+      "name": "Rosenbad",
+      "kind": "turrets",
+      "palette": "cream",
+      "body_height_m": 28.0,
+      "total_height_m": 38.0,
+      "roof_palette": "copper",
+      "silhouette": "pale waterfront block with corner roof turrets",
+      "anchor_east_north_m": [
+        1180.82,
+        62.83
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Rosenbad",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Rosenbad",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/279567",
+      "name": "Arvfurstens palats",
+      "kind": "pediment",
+      "palette": "ochre",
+      "body_height_m": 15.0,
+      "total_height_m": 20.0,
+      "roof_palette": "dark",
+      "silhouette": "yellow neoclassical palace with central pediment",
+      "anchor_east_north_m": [
+        1283.09,
+        116.22
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Arvfurstens_palats",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Arvfurstens_palats",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/141844590",
+      "name": "Sagerska huset",
+      "kind": "mansard",
+      "palette": "cream",
+      "body_height_m": 18.0,
+      "total_height_m": 24.0,
+      "roof_palette": "dark",
+      "silhouette": "pale French palace with steep dark mansard",
+      "anchor_east_north_m": [
+        1265.57,
+        84.82
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Sagerska_huset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Sagerska_huset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/174078",
+      "name": "Centralposthuset",
+      "kind": "clock",
+      "palette": "brick",
+      "body_height_m": 25.0,
+      "total_height_m": 40.0,
+      "roof_palette": "copper",
+      "silhouette": "red brick post palace with central green roof lantern",
+      "anchor_east_north_m": [
+        784.54,
+        492.73
+      ],
+      "reference_url": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/regeringsbyggnader/centralposthuset",
+      "reference_image_page": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/regeringsbyggnader/centralposthuset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/35473137",
+      "name": "Stockholms centralstation",
+      "kind": "pediment",
+      "palette": "ochre",
+      "body_height_m": 13.0,
+      "total_height_m": 20.0,
+      "roof_palette": "dark",
+      "silhouette": "long pale yellow station with central raised entrance",
+      "anchor_east_north_m": [
+        736.03,
+        240.66
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Stockholms_centralstation",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Stockholms_centralstation",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/18779654",
+      "name": "Norra Latin",
+      "kind": "pavilions",
+      "palette": "sand",
+      "body_height_m": 20.0,
+      "total_height_m": 28.0,
+      "roof_palette": "dark",
+      "silhouette": "symmetrical Renaissance school with two raised pavilions",
+      "anchor_east_north_m": [
+        690.85,
+        855.04
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Norra_Latin",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Norra_Latin",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/17075471",
+      "name": "Riksbanken",
+      "kind": "flat",
+      "palette": "dark",
+      "body_height_m": 24.0,
+      "total_height_m": 27.0,
+      "roof_palette": "dark",
+      "silhouette": "dark square stone bank with deeply recessed bays",
+      "anchor_east_north_m": [
+        1187.53,
+        430.58
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Riksbankshuset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Riksbankshuset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/1347756608",
+      "name": "NK",
+      "kind": "sign",
+      "palette": "stone",
+      "body_height_m": 26.0,
+      "total_height_m": 39.0,
+      "roof_palette": "dark",
+      "silhouette": "granite department store with round rooftop NK sign",
+      "anchor_east_north_m": [
+        1363.17,
+        571.6
+      ],
+      "reference_url": "https://stockholmskallan.stockholm.se/teman/foretagande-i-stockholm/nordiska-kompaniet/",
+      "reference_image_page": "https://stockholmskallan.stockholm.se/teman/foretagande-i-stockholm/nordiska-kompaniet/",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/2440883",
+      "name": "Hallwylska palatset",
+      "kind": "turrets",
+      "palette": "stone",
+      "body_height_m": 18.0,
+      "total_height_m": 27.0,
+      "roof_palette": "dark",
+      "silhouette": "carved stone Venetian palace with roof turrets",
+      "anchor_east_north_m": [
+        1676.88,
+        584.97
+      ],
+      "reference_url": "https://hallwylskamuseet.se/palatsets-historia/byggnaden/",
+      "reference_image_page": "https://hallwylskamuseet.se/palatsets-historia/byggnaden/",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/2171352",
+      "name": "Bååtska palatset",
+      "kind": "pediment",
+      "palette": "ochre",
+      "body_height_m": 16.0,
+      "total_height_m": 23.0,
+      "roof_palette": "dark",
+      "silhouette": "long yellow baroque palace with central pediment",
+      "anchor_east_north_m": [
+        1786.57,
+        285.08
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Bååtska_palatset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Bååtska_palatset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/280988",
+      "name": "Fersenska palatset",
+      "kind": "mansard",
+      "palette": "cream",
+      "body_height_m": 20.0,
+      "total_height_m": 27.0,
+      "roof_palette": "dark",
+      "silhouette": "pale terraced palace with dark hipped mansard",
+      "anchor_east_north_m": [
+        1676.48,
+        268.55
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Fersenska_palatset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Fersenska_palatset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/2524360",
+      "name": "Tändstickspalatset",
+      "kind": "flat",
+      "palette": "cream",
+      "body_height_m": 22.0,
+      "total_height_m": 25.0,
+      "roof_palette": "dark",
+      "silhouette": "restrained pale classical frontage with tall entrance bays",
+      "anchor_east_north_m": [
+        1380.2,
+        424.04
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Tändstickspalatset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Tändstickspalatset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/255059",
+      "name": "Börshuset",
+      "kind": "pediment",
+      "palette": "ochre",
+      "body_height_m": 19.0,
+      "total_height_m": 29.0,
+      "roof_palette": "dark",
+      "silhouette": "yellow square-facing frontage with clock pediment",
+      "anchor_east_north_m": [
+        1459.4,
+        -296.91
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Börshuset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Börshuset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/8049544",
+      "name": "Riddarhuset",
+      "kind": "mansard",
+      "palette": "brick",
+      "body_height_m": 19.0,
+      "total_height_m": 29.0,
+      "roof_palette": "copper",
+      "silhouette": "red brick noble palace with tall green mansard",
+      "anchor_east_north_m": [
+        1176.71,
+        -230.91
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Riddarhuspalatset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Riddarhuspalatset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/16095343",
+      "name": "Bondeska palatset",
+      "kind": "pavilions",
+      "palette": "ochre",
+      "body_height_m": 18.0,
+      "total_height_m": 28.0,
+      "roof_palette": "copper",
+      "silhouette": "yellow courtyard palace with capped corner pavilions",
+      "anchor_east_north_m": [
+        1218.14,
+        -194.07
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Bondeska_palatset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Bondeska_palatset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/41079299",
+      "name": "Tessinska palatset",
+      "kind": "hip",
+      "palette": "cream",
+      "body_height_m": 20.0,
+      "total_height_m": 26.0,
+      "roof_palette": "dark",
+      "silhouette": "pale Italian baroque palace with low hipped roof",
+      "anchor_east_north_m": [
+        1585.45,
+        -265.19
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Tessinska_palatset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Tessinska_palatset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/170363224",
+      "name": "Axel Oxenstiernas palats",
+      "kind": "hip",
+      "palette": "red",
+      "body_height_m": 18.0,
+      "total_height_m": 24.0,
+      "roof_palette": "dark",
+      "silhouette": "terracotta palace with pale horizontal stone courses",
+      "anchor_east_north_m": [
+        1398.25,
+        -230.36
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Axel_Oxenstiernas_palats",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Axel_Oxenstiernas_palats",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/229849",
+      "name": "Petersenska huset",
+      "kind": "stepped",
+      "palette": "brick",
+      "body_height_m": 22.0,
+      "total_height_m": 31.0,
+      "roof_palette": "dark",
+      "silhouette": "red Renaissance corner house with stepped roof gables",
+      "anchor_east_north_m": [
+        1263.69,
+        -401.94
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Petersenska_huset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Petersenska_huset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/170139121",
+      "name": "Grillska huset",
+      "kind": "curved-gable",
+      "palette": "ochre",
+      "body_height_m": 17.0,
+      "total_height_m": 24.0,
+      "roof_palette": "dark",
+      "silhouette": "yellow Stortorget house with rounded tall gable",
+      "anchor_east_north_m": [
+        1503.57,
+        -332.59
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Grillska_huset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Grillska_huset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/406181935",
+      "name": "Schantzska huset",
+      "kind": "stepped",
+      "palette": "red",
+      "body_height_m": 18.0,
+      "total_height_m": 26.0,
+      "roof_palette": "dark",
+      "silhouette": "red Stortorget house with high stepped gable",
+      "anchor_east_north_m": [
+        1434.88,
+        -347.34
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Schantzska_huset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Schantzska_huset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/34590001",
+      "name": "Birger Jarls torn",
+      "kind": "roundtower",
+      "palette": "cream",
+      "body_height_m": 15.0,
+      "total_height_m": 20.0,
+      "roof_palette": "dark",
+      "silhouette": "round white medieval waterfront tower with conical cap",
+      "anchor_east_north_m": [
+        944.44,
+        -235.62
+      ],
+      "reference_url": "https://hyresgast.sfv.se/vara-fastigheter/hyresgast-och-felanmalan/stockholms-lan/birger-jarls-torn/",
+      "reference_image_page": "https://hyresgast.sfv.se/vara-fastigheter/hyresgast-och-felanmalan/stockholms-lan/birger-jarls-torn/",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/21288970",
+      "name": "Schering Rosenhanes palats",
+      "kind": "hip",
+      "palette": "red",
+      "body_height_m": 20.0,
+      "total_height_m": 27.0,
+      "roof_palette": "dark",
+      "silhouette": "red baroque palace with pale trim and hipped roof",
+      "anchor_east_north_m": [
+        998.08,
+        -252.9
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Schering_Rosenhanes_palats",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Schering_Rosenhanes_palats",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/108507585",
+      "name": "Sparreska palatset",
+      "kind": "hip",
+      "palette": "ochre",
+      "body_height_m": 20.0,
+      "total_height_m": 26.0,
+      "roof_palette": "dark",
+      "silhouette": "yellow waterfront palace with dark hipped roof",
+      "anchor_east_north_m": [
+        1058.56,
+        -395.26
+      ],
+      "reference_url": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/riddarholmen/sparreska-palatset",
+      "reference_image_page": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/riddarholmen/sparreska-palatset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/108507592",
+      "name": "Kammarrättens hus",
+      "kind": "pediment",
+      "palette": "cream",
+      "body_height_m": 21.0,
+      "total_height_m": 27.0,
+      "roof_palette": "dark",
+      "silhouette": "pale neoclassical waterfront court with central pediment",
+      "anchor_east_north_m": [
+        1037.38,
+        -374.23
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Kammarrättens_hus",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Kammarrättens_hus",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/139295",
+      "name": "Gamla riksdagshuset",
+      "kind": "pediment",
+      "palette": "sand",
+      "body_height_m": 24.0,
+      "total_height_m": 31.0,
+      "roof_palette": "dark",
+      "silhouette": "long pale civic frontage with raised middle bays",
+      "anchor_east_north_m": [
+        1135.22,
+        -425.71
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Gamla_riksdagshuset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Gamla_riksdagshuset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/16095382",
+      "name": "Strömsborg",
+      "kind": "turrets",
+      "palette": "cream",
+      "body_height_m": 16.0,
+      "total_height_m": 23.0,
+      "roof_palette": "dark",
+      "silhouette": "small island palace with dark corner cupolas",
+      "anchor_east_north_m": [
+        1029.18,
+        -96.86
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Strömsborg",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Strömsborg",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/18489276",
+      "name": "Grand Hôtel",
+      "kind": "mansard",
+      "palette": "cream",
+      "body_height_m": 29.0,
+      "total_height_m": 37.0,
+      "roof_palette": "dark",
+      "silhouette": "cream waterfront hotel with raised central roof crest",
+      "anchor_east_north_m": [
+        1739.27,
+        205.08
+      ],
+      "reference_url": "https://grandhotel.se/om-grand-hotel/historia",
+      "reference_image_page": "https://grandhotel.se/om-grand-hotel/historia",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/93398",
+      "name": "Historiska museet",
+      "kind": "flat",
+      "palette": "brick",
+      "body_height_m": 14.0,
+      "total_height_m": 17.0,
+      "roof_palette": "dark",
+      "silhouette": "restrained low red brick museum court",
+      "anchor_east_north_m": [
+        2563.31,
+        760.91
+      ],
+      "reference_url": "https://historiska.se/besok-oss/",
+      "reference_image_page": "https://historiska.se/besok-oss/",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/120023281",
+      "name": "Östermalms Saluhall",
+      "kind": "turrets",
+      "palette": "brick",
+      "body_height_m": 13.0,
+      "total_height_m": 23.0,
+      "roof_palette": "dark",
+      "silhouette": "red brick market hall with corner turrets",
+      "anchor_east_north_m": [
+        1857.16,
+        883.37
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Östermalms_Saluhall",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Östermalms_Saluhall",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/124255734",
+      "name": "H M Konungens Hovstall",
+      "kind": "stepped",
+      "palette": "brick",
+      "body_height_m": 12.0,
+      "total_height_m": 20.0,
+      "roof_palette": "dark",
+      "silhouette": "red brick stable frontage with roof gables",
+      "anchor_east_north_m": [
+        1917.13,
+        549.93
+      ],
+      "reference_url": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/oevrigt/kungliga-hovstallet",
+      "reference_image_page": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/oevrigt/kungliga-hovstallet",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/15791780",
+      "name": "Radiohuset",
+      "kind": "modern",
+      "palette": "stone",
+      "body_height_m": 25.0,
+      "total_height_m": 29.0,
+      "roof_palette": "dark",
+      "silhouette": "long grey broadcast slab with horizontal glazing",
+      "anchor_east_north_m": [
+        3268.99,
+        698.18
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Radiohuset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Radiohuset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/19247595",
+      "name": "Filmhuset",
+      "kind": "brutalist",
+      "palette": "stone",
+      "body_height_m": 19.0,
+      "total_height_m": 22.0,
+      "roof_palette": "dark",
+      "silhouette": "long raw concrete filmstrip block with projecting end",
+      "anchor_east_north_m": [
+        3300.27,
+        1351.2
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Filmhuset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Filmhuset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/5174887",
+      "name": "Berwaldhallen",
+      "kind": "hip",
+      "palette": "brick",
+      "body_height_m": 10.0,
+      "total_height_m": 14.0,
+      "roof_palette": "dark",
+      "silhouette": "low brick concert hall with broad dark roof",
+      "anchor_east_north_m": [
+        3149.15,
+        592.95
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Berwaldhallen",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Berwaldhallen",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/10502251",
+      "name": "Sjöhistoriska museet",
+      "kind": "clock",
+      "palette": "cream",
+      "body_height_m": 11.0,
+      "total_height_m": 20.0,
+      "roof_palette": "copper",
+      "silhouette": "curved white museum wings and central copper lantern",
+      "anchor_east_north_m": [
+        4020.89,
+        501.93
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Sjöhistoriska_museet",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Sjöhistoriska_museet",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/10502303",
+      "name": "Etnografiska museet",
+      "kind": "hip",
+      "palette": "red",
+      "body_height_m": 8.0,
+      "total_height_m": 12.0,
+      "roof_palette": "dark",
+      "silhouette": "low red timber museum with dark pitched roofs",
+      "anchor_east_north_m": [
+        4300.59,
+        510.39
+      ],
+      "reference_url": "https://www.etnografiskamuseet.se/",
+      "reference_image_page": "https://www.etnografiskamuseet.se/",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/5192172",
+      "name": "Cirkus",
+      "kind": "rotunda",
+      "palette": "brick",
+      "body_height_m": 12.0,
+      "total_height_m": 23.0,
+      "roof_palette": "dark",
+      "silhouette": "round red brick circus hall with broad dark dome",
+      "anchor_east_north_m": [
+        3118.77,
+        -345.6
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Cirkus,_Stockholm",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Cirkus,_Stockholm",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/33114307",
+      "name": "Biologiska museet",
+      "kind": "stave",
+      "palette": "timber",
+      "body_height_m": 9.0,
+      "total_height_m": 20.0,
+      "roof_palette": "dark",
+      "silhouette": "dark timber Nordic stave museum with stacked steep roofs",
+      "anchor_east_north_m": [
+        2992.75,
+        -98.15
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Biologiska_museet,_Stockholm",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Biologiska_museet,_Stockholm",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/33114705",
+      "name": "Liljevalchs konsthall",
+      "kind": "skylight",
+      "palette": "brick",
+      "body_height_m": 10.0,
+      "total_height_m": 14.0,
+      "roof_palette": "dark",
+      "silhouette": "low red brick art hall with long roof skylight",
+      "anchor_east_north_m": [
+        2900.87,
+        -275.04
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Liljevalchs_konsthall",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Liljevalchs_konsthall",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/33275424",
+      "name": "Abbamuseet",
+      "kind": "modern",
+      "palette": "cream",
+      "body_height_m": 14.0,
+      "total_height_m": 17.0,
+      "roof_palette": "dark",
+      "silhouette": "pale contemporary museum frontage with flat roof",
+      "anchor_east_north_m": [
+        2927.49,
+        -343.76
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Abbamuseet",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Abbamuseet",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/145662484",
+      "name": "Rosendals slott",
+      "kind": "hip",
+      "palette": "ochre",
+      "body_height_m": 8.0,
+      "total_height_m": 13.0,
+      "roof_palette": "dark",
+      "silhouette": "small pink-ochre empire palace with low dark roof",
+      "anchor_east_north_m": [
+        4107.67,
+        101.71
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Rosendals_slott",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Rosendals_slott",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/34838584",
+      "name": "Waldemarsuddes oljekvarn",
+      "kind": "windmill",
+      "palette": "cream",
+      "body_height_m": 12.0,
+      "total_height_m": 19.0,
+      "roof_palette": "dark",
+      "silhouette": "pale octagonal historic mill with dark conical crown",
+      "anchor_east_north_m": [
+        4038.99,
+        -879.08
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Waldemarsuddes_oljekvarn",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Waldemarsuddes_oljekvarn",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/33407172",
+      "name": "Bredablick",
+      "kind": "battlements",
+      "palette": "brick",
+      "body_height_m": 28.0,
+      "total_height_m": 30.0,
+      "roof_palette": "dark",
+      "silhouette": "tall red brick lookout tower with crenellated crown",
+      "anchor_east_north_m": [
+        3583.62,
+        -76.91
+      ],
+      "reference_url": "https://www.nationalstadsparken.se/om-parken/slott-och-byggnader/bredablick-pa-skansen/",
+      "reference_image_page": "https://www.nationalstadsparken.se/om-parken/slott-och-byggnader/bredablick-pa-skansen/",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/33407223",
+      "name": "Seglora kyrka",
+      "kind": "timber-church",
+      "palette": "red",
+      "body_height_m": 8.0,
+      "total_height_m": 24.0,
+      "roof_palette": "dark",
+      "silhouette": "red timber church with white trim and western bell tower",
+      "anchor_east_north_m": [
+        3494.46,
+        -197.63
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Seglora_kyrka",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Seglora_kyrka",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/33485731",
+      "name": "Hällestadsstapeln",
+      "kind": "belfry",
+      "palette": "red",
+      "body_height_m": 13.0,
+      "total_height_m": 34.5,
+      "roof_palette": "dark",
+      "silhouette": "open red timber belfry legs, shuttered bell stage, broad shingle skirt and narrow spire",
+      "anchor_east_north_m": [
+        3482.44,
+        -349.26
+      ],
+      "reference_url": "https://commons.wikimedia.org/wiki/Category:Hällestadsstapeln",
+      "reference_image_page": "https://digitaltmuseum.se/021058588624/hallestadsstapeln",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/23620156",
+      "name": "Skogaholms herrgård",
+      "kind": "pavilions",
+      "palette": "ochre",
+      "body_height_m": 6.0,
+      "total_height_m": 10.0,
+      "roof_palette": "dark",
+      "silhouette": "low yellow manor with corner pavilions and dark roof",
+      "anchor_east_north_m": [
+        3396.19,
+        -248.9
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Skogaholms_herrgård",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Skogaholms_herrgård",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/49744847",
+      "name": "Kastellet",
+      "kind": "castle",
+      "palette": "brick",
+      "body_height_m": 9.0,
+      "total_height_m": 20.0,
+      "roof_palette": "dark",
+      "silhouette": "red brick flat wings with round central tower and white parapet",
+      "anchor_east_north_m": [
+        2565.02,
+        -601.55
+      ],
+      "reference_url": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/skepps-och-kastellholmen/kastellet-pa-kastellholmen",
+      "reference_image_page": "https://www.sfv.se/vara-fastigheter/sverige/stockholms-lan/skepps-och-kastellholmen/kastellet-pa-kastellholmen",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/93976580",
+      "name": "Gamla Sjökrigsskolan",
+      "kind": "clock",
+      "palette": "brick",
+      "body_height_m": 16.0,
+      "total_height_m": 25.0,
+      "roof_palette": "copper",
+      "silhouette": "red brick naval school with small central tower",
+      "anchor_east_north_m": [
+        2228.28,
+        -416.47
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Gamla_Sjökrigsskolan",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Gamla_Sjökrigsskolan",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "relation/1364108",
+      "name": "Kungliga Konsthögskolan",
+      "kind": "flat",
+      "palette": "cream",
+      "body_height_m": 18.0,
+      "total_height_m": 21.0,
+      "roof_palette": "dark",
+      "silhouette": "pale Skeppsholmen institute with restrained flat parapet",
+      "anchor_east_north_m": [
+        2160.67,
+        -418.49
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Kungliga_Konsthögskolan",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Kungliga_Konsthögskolan",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/43136289",
+      "name": "Reimers malmgård",
+      "kind": "hip",
+      "palette": "ochre",
+      "body_height_m": 7.0,
+      "total_height_m": 11.0,
+      "roof_palette": "dark",
+      "silhouette": "yellow island manor with a compact dark hipped roof",
+      "anchor_east_north_m": [
+        -1156.38,
+        -995.47
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Reimers_malmgård",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Reimers_malmgård",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/478436194",
+      "name": "Stora Bryggeriet",
+      "kind": "industrial",
+      "palette": "brick",
+      "body_height_m": 18.0,
+      "total_height_m": 29.0,
+      "roof_palette": "dark",
+      "silhouette": "ornamented brick brewery with high narrow chimney",
+      "anchor_east_north_m": [
+        -2314.07,
+        1117.88
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Stora_Bryggeriet",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Stora_Bryggeriet",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/1356201195",
+      "name": "Sportpalatset",
+      "kind": "terrace",
+      "palette": "mint",
+      "body_height_m": 28,
+      "total_height_m": 58,
+      "roof_palette": "copper",
+      "silhouette": "pale green stepped bridge-side building with central glazed copper cupola",
+      "anchor_east_north_m": [
+        -567.57,
+        941.05
+      ],
+      "reference_url": "https://stockholmskallan.stockholm.se/post/29483",
+      "reference_image_page": "https://stockholmskallan.stockholm.se/teman/arkitektur/tjugotalsklassicism/",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/1360293334",
+      "name": "Sankt Erikspalatset",
+      "kind": "corner-tower",
+      "palette": "brick",
+      "body_height_m": 28.0,
+      "total_height_m": 58.0,
+      "roof_palette": "dark",
+      "silhouette": "red brick bridge-side palace with central round domed tower",
+      "anchor_east_north_m": [
+        -641.32,
+        968.6
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Sankt_Erikspalatset",
+      "reference_image_page": "https://stockholmskallan.stockholm.se/post/707",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions.",
+      "tower_positions": [
+        [
+          0.5,
+          0.18
+        ]
+      ]
+    },
+    {
+      "source_id": "way/137165681",
+      "name": "Sven-Harrys konstmuseum",
+      "kind": "roof-house",
+      "palette": "gold",
+      "body_height_m": 18.0,
+      "total_height_m": 23.0,
+      "roof_palette": "dark",
+      "silhouette": "gold clad museum with a low red-roof house on top",
+      "anchor_east_north_m": [
+        -61.65,
+        1290.34
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Sven-Harrys_konstmuseum",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Sven-Harrys_konstmuseum",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/35205940",
+      "name": "Bonniers konsthall",
+      "kind": "glass",
+      "palette": "glass",
+      "body_height_m": 14.0,
+      "total_height_m": 17.0,
+      "roof_palette": "dark",
+      "silhouette": "tapering glass art hall with broad horizontal glazing",
+      "anchor_east_north_m": [
+        -143.49,
+        1008.84
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Bonniers_konsthall",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Bonniers_konsthall",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/23511958",
+      "name": "Wenner-Gren Center",
+      "kind": "slab",
+      "palette": "stone",
+      "body_height_m": 70.0,
+      "total_height_m": 74.0,
+      "roof_palette": "dark",
+      "silhouette": "slender grey scientific office tower with roof crown",
+      "anchor_east_north_m": [
+        212.04,
+        2564.49
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Wenner-Gren_Center",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Wenner-Gren_Center",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/771856432",
+      "name": "Stockholms gamla observatorium",
+      "kind": "observatory",
+      "palette": "ochre",
+      "body_height_m": 8.0,
+      "total_height_m": 15.0,
+      "roof_palette": "copper",
+      "silhouette": "yellow hilltop observatory with green telescope dome",
+      "anchor_east_north_m": [
+        548.91,
+        1505.74
+      ],
+      "reference_url": "https://sisab.se/sv/fastigheter/vara-fastigheter/norra-innerstaden/observatoriet2/",
+      "reference_image_page": "https://sisab.se/sv/fastigheter/vara-fastigheter/norra-innerstaden/observatoriet2/",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/42037293",
+      "name": "Sankt Johannes kyrka",
+      "kind": "gothic",
+      "palette": "brick",
+      "body_height_m": 22.0,
+      "total_height_m": 86.5,
+      "roof_palette": "dark",
+      "silhouette": "red brick church with needle spire",
+      "anchor_east_north_m": [
+        1118.9,
+        1263.96
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Sankt_Johannes_kyrka,_Stockholm",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Sankt_Johannes_kyrka,_Stockholm",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/156840831",
+      "name": "Maria Magdalena kyrka",
+      "kind": "baroque",
+      "palette": "ochre",
+      "body_height_m": 16.0,
+      "total_height_m": 45.0,
+      "roof_palette": "copper",
+      "silhouette": "yellow baroque church with square green lantern tower",
+      "anchor_east_north_m": [
+        1261.62,
+        -1003.46
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Maria_Magdalena_kyrka,_Stockholm",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Maria_Magdalena_kyrka,_Stockholm",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/37079917",
+      "name": "Stockholms moské",
+      "kind": "mosque",
+      "palette": "brick",
+      "body_height_m": 15.0,
+      "total_height_m": 21.0,
+      "roof_palette": "dark",
+      "silhouette": "red brick former power station with arched bays and roof cupola",
+      "anchor_east_north_m": [
+        1710.92,
+        -1353.77
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Stockholms_moské",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Stockholms_moské",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/37293917",
+      "name": "Laurinska huset",
+      "kind": "corner-tower",
+      "palette": "brick",
+      "body_height_m": 26.0,
+      "total_height_m": 41.0,
+      "roof_palette": "dark",
+      "silhouette": "red brick waterfront house with dominant round corner cap",
+      "anchor_east_north_m": [
+        1077.98,
+        -827.79
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Laurinska_huset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Laurinska_huset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/17392811",
+      "name": "Münchenbryggeriet",
+      "kind": "industrial",
+      "palette": "brick",
+      "body_height_m": 28.0,
+      "total_height_m": 39.0,
+      "roof_palette": "dark",
+      "silhouette": "long red brick brewery with tall stepped gables",
+      "anchor_east_north_m": [
+        497.2,
+        -808.98
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Münchenbryggeriet",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Münchenbryggeriet",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/37265277",
+      "name": "Södra stadshuset",
+      "kind": "pavilions",
+      "palette": "ochre",
+      "body_height_m": 12.0,
+      "total_height_m": 20.0,
+      "roof_palette": "dark",
+      "silhouette": "yellow U-plan civic house with broad hipped roof",
+      "anchor_east_north_m": [
+        1476.15,
+        -924.26
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Södra_stadshuset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Södra_stadshuset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/42672700",
+      "name": "Folksamhuset",
+      "kind": "slab",
+      "palette": "white",
+      "body_height_m": 77.0,
+      "total_height_m": 80.0,
+      "roof_palette": "dark",
+      "silhouette": "white high-rise with continuous dark window bands",
+      "anchor_east_north_m": [
+        1974.34,
+        -2430.75
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Folksamhuset",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Folksamhuset",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/37299689",
+      "name": "Söder Torn",
+      "kind": "round-slab",
+      "palette": "sand",
+      "body_height_m": 82.0,
+      "total_height_m": 86.0,
+      "roof_palette": "dark",
+      "silhouette": "pale round residential tower with recessed dark balcony bays",
+      "anchor_east_north_m": [
+        1401.07,
+        -1446.67
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Söder_torn",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Söder_torn",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/117481563",
+      "name": "Ersta kyrka",
+      "kind": "octagon",
+      "palette": "brick",
+      "body_height_m": 13.0,
+      "total_height_m": 24.0,
+      "roof_palette": "dark",
+      "silhouette": "octagonal red brick church with central dark lantern",
+      "anchor_east_north_m": [
+        2629.65,
+        -1286.63
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Ersta_kyrka",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Ersta_kyrka",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/108375151",
+      "name": "Allhelgonakyrkan",
+      "kind": "timber-church",
+      "palette": "red",
+      "body_height_m": 11.0,
+      "total_height_m": 34.0,
+      "roof_palette": "dark",
+      "silhouette": "red timber church with steep roof and slender bell tower",
+      "anchor_east_north_m": [
+        1459.16,
+        -2024.08
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Allhelgonakyrkan,_Stockholm",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Allhelgonakyrkan,_Stockholm",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/74757502",
+      "name": "Heleneborg",
+      "kind": "hip",
+      "palette": "ochre",
+      "body_height_m": 8.0,
+      "total_height_m": 13.0,
+      "roof_palette": "dark",
+      "silhouette": "yellow waterfront manor with dark hipped roof",
+      "anchor_east_north_m": [
+        -601.4,
+        -934.11
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Heleneborg",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Heleneborg",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/58264111",
+      "name": "Ekermanska malmgården",
+      "kind": "hip",
+      "palette": "red",
+      "body_height_m": 4.0,
+      "total_height_m": 8.0,
+      "roof_palette": "dark",
+      "silhouette": "low red wooden manor with dark pitched roof",
+      "anchor_east_north_m": [
+        408.77,
+        -1757.79
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Ekermanska_malmgården",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Ekermanska_malmgården",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    },
+    {
+      "source_id": "way/140046247",
+      "name": "Fåfängan",
+      "kind": "pavilion",
+      "palette": "ochre",
+      "body_height_m": 4.0,
+      "total_height_m": 7.0,
+      "roof_palette": "dark",
+      "silhouette": "low hilltop pavilion with four flagpoles",
+      "anchor_east_north_m": [
+        3201.85,
+        -1466.86
+      ],
+      "reference_url": "https://sv.wikipedia.org/wiki/Fåfängan",
+      "reference_image_page": "https://sv.wikipedia.org/wiki/Fåfängan",
+      "reference_status": "Reference page checked 2026-10-04; original approximate native silhouette, no image pixels copied.",
+      "dimensions_note": "Authored approximate silhouette heights; horizontal footprint from checked-in OSM snapshot. Not surveyed dimensions."
+    }
+  ]
+}

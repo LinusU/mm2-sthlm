@@ -1,0 +1,22 @@
+mm2-smoke commit=b3d9804489bdcd576dd4b85b3f40fec75c545071
+2026-10-03T22:46:30.057938Z  WARN mm2_app::environment: lighting preset unavailable path=city/triangle.lt00 error=asset not found: city/triangle.lt00
+2026-10-03T22:46:30.057953Z  WARN mm2_app::environment: fog table unavailable path=city/triangle_fog.csv error=asset not found: city/triangle_fog.csv
+2026-10-03T22:46:30.057955Z  WARN mm2_app::environment: sky definition unavailable path=city/triangle.sky error=asset not found: city/triangle.sky
+2026-10-03T22:46:30.057958Z  WARN mm2_app::hudmap: hud map spec unavailable path=tune/triangle.mmhudmap error=asset not found: tune/triangle.mmhudmap
+2026-10-03T22:46:30.057963Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-03T22:46:30.057970Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-03T22:46:30.057973Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-03T22:46:30.057974Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-03T22:46:30.057975Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-03T22:46:30.057976Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-03T22:46:30.057977Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-03T22:46:30.057978Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-03T22:46:30.057978Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-03T22:46:30.057980Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-03T22:46:30.057982Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-03T22:46:30.058003Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-03T22:46:30.058006Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-03T22:46:30.058008Z  WARN mm2_app::audio: audio: aud/cardata/player/trianglepolicesiren.csv: asset not found: aud/cardata/player/trianglepolicesiren.csv
+2026-10-03T22:46:30.058015Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-03T22:46:30.058831Z  WARN mm2_app::audio: audio: aud/spchdata/triangle.csv: asset not found: aud/spchdata/triangle.csv
+smoke=headless-physics world=city/triangle.psdl status=pass updates=800 ticks=1600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=44.8m/s travel=317.9m sim=13.33s resets=0 controls=1360t/0b/0s finite=true moved=318m wheels=4/4 final=(-0,2.8,-318) env=lt00(fallback) fog=none sky=none map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x

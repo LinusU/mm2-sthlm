@@ -1,0 +1,114 @@
+[
+  {
+    "name": "storkyrkobrinken-eastbound",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1356.1953518564483,11.326963133505927,251.65847310809397,-79.37227150135658",
+      "--headless",
+      "--frames",
+      "300"
+    ],
+    "returncode": 0,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=300 ticks=600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=17.7m/s travel=27.6m sim=5.00s resets=0 controls=360t/0b/0s finite=true moved=26m wheels=4/4 final=(1382,12.9,247) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3259d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "engine_revision_matches": true
+  },
+  {
+    "name": "storkyrkobrinken-westbound",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1390.231483812121,14.366664958740857,245.2717337937245,100.62772849864342",
+      "--headless",
+      "--frames",
+      "300"
+    ],
+    "returncode": 0,
+    "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=300 ticks=600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=22.4m/s travel=37.7m sim=5.00s resets=0 controls=360t/0b/0s finite=true moved=38m wheels=4/4 final=(1353,10.3,252) env=lt04(clear-noon) fog=none sky=none wtr=0.2/1754r map=inset/north/z1200/hudmap_stockholm.pkg/1t/1m bng=3259d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+    "engine_revision_matches": true
+  },
+  {
+    "name": "stortorget",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1482.1584985602717,16.75581942243919,339.15709260051693,0",
+      "--cam=1465.0941270417281,63.25581942243919,305.09042145953026,180,-50",
+      "--parked",
+      "--no-hud",
+      "--frames",
+      "80",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/evidence/oldtown/steep/stortorget.png"
+    ],
+    "returncode": 0,
+    "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/evidence/oldtown/steep/stortorget.png bytes=4965841 aud=0h/0v/0s/0l/0a",
+    "engine_revision_matches": true
+  },
+  {
+    "name": "junotappan",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1516.4738261206403,9.315837176629486,510.0929415482585,0",
+      "--cam=1534.9416377497205,55.815837176629486,455.37173403069255,180,-50",
+      "--parked",
+      "--no-hud",
+      "--frames",
+      "80",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/evidence/oldtown/steep/junotappan.png"
+    ],
+    "returncode": 0,
+    "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/evidence/oldtown/steep/junotappan.png bytes=3976529 aud=0h/0v/0s/0l/0a",
+    "engine_revision_matches": true
+  },
+  {
+    "name": "helgeand",
+    "command": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2",
+      "--mods",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/dist",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--time-of-day",
+      "1",
+      "--spawn=1399.3409297665173,9.546458374539599,-21.297644978299097,0",
+      "--cam=1391.2715547490905,56.0464583745396,-73.39584723750875,180,-50",
+      "--parked",
+      "--no-hud",
+      "--frames",
+      "80",
+      "--screenshot",
+      "/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/evidence/oldtown/steep/helgeand.png"
+    ],
+    "returncode": 0,
+    "record": "smoke=visual world=city/stockholm.psdl status=pass frames=done screenshot=/Users/linus/.codex/worktrees/overnight-gamla-stan/mm2-sthlm/evidence/oldtown/steep/helgeand.png bytes=6559019 aud=0h/0v/0s/0l/0a",
+    "engine_revision_matches": true
+  }
+]
