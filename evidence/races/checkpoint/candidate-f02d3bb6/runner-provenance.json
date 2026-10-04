@@ -1,0 +1,24 @@
+{
+  "source_runner": "/Users/linus/coding/mm2-sthlm/scripts/check-checkpoint-races.py",
+  "source_sha256": "5f6af87b484836da4cce556a6d8b51f2f7dcf9857b451f4167fa787238dce279",
+  "copy_sha256_before_format": "39fa823ecb3d53055cec69cf7fbb94fe62b69b6eca22ce00ee4a67589fd279b4",
+  "differences": [
+    "Royal event3 A/P scheduledfirst; allremainingevents naturalindexorder",
+    "PersistcaseJSON/identityimmediately so incomplete20matrix has exactexitcodes andscope",
+    "Explicit09:00+02:00deadline preventslaunchingnewcases;runningcasescompleteandunstartedcasesrecordedaspending,neverasnativeruns"
+  ],
+  "behaviour_preserved": [
+    "engine/packagecontent",
+    "nativeactorcounts",
+    "framebudgetcalculation",
+    "no speedcap",
+    "strictnativeComplete/positiveequalgates/reset/reanchor/escapeacceptance"
+  ],
+  "parent_authorization": "Royalfirst full20 workers2 unchangedbudgets/cap/nativecontent",
+  "copy_sha256": "194eea43e2c3905a9fe0f0d4c8ecb52ebdeea65801ebeeb535bb8675934ca175",
+  "wrapper_sha256": "34644b6993fe1427d1e565a1e67bf711e007edbdda643ac8bfb4879ee0ace0f2",
+  "engine_source_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_binary": "/private/tmp/checkpoint-acceptance-engine/mm2-recovery-occurrence1a822",
+  "engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "candidate_manifest_sha256": "f02d3bb6f52236bedf7633e91e8a420ead0568c8eca73f849c2eaf80196e8004"
+}

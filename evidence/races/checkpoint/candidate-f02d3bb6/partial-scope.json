@@ -1,0 +1,8 @@
+{
+  "scope": "Immutable f02 full-course matrix; active cases excluded until completed",
+  "completed_cases": 20,
+  "strict_pass_cases": 4,
+  "engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "package_manifest_sha256": "f02d3bb6f52236bedf7633e91e8a420ead0568c8eca73f849c2eaf80196e8004",
+  "pending_full_20_result": false
+}

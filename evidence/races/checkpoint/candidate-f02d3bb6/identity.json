@@ -1,0 +1,14 @@
+{
+  "family": "checkpoint",
+  "engine": "/private/tmp/checkpoint-acceptance-engine/mm2-recovery-occurrence1a822",
+  "engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "mods": "/private/tmp/checkpoint-coherent-f02d-mods",
+  "checksum_manifest_sha256": "f02d3bb6f52236bedf7633e91e8a420ead0568c8eca73f849c2eaf80196e8004",
+  "catalog_sha256": "6ef044ae3f86efe9893b1f4ac3da25560e18b91bf893234732524f7f423e0dc8",
+  "frames_override": null,
+  "player_speed_ceiling_mps": null,
+  "acceptance": "full_course_clean",
+  "record_eligible": false,
+  "notes": "Explicit QA guides retain native actor counts. No resets, reanchors or escapes are accepted. Impacts are disclosed separately. Initial legs do not establish full race completion.",
+  "native_parameter_table_sha256": "4090c5692799d77585171ffb44da49e9691be25f2f30c90ec555f333bd38139c"
+}

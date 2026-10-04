@@ -1,0 +1,8 @@
+test_actual_magnus_bridge_collision_wall_clears_source_road (test_building_bridges.BuildingBridgeTests.test_actual_magnus_bridge_collision_wall_clears_source_road) ... ok
+test_explicit_source_underside_has_priority (test_building_bridges.BuildingBridgeTests.test_explicit_source_underside_has_priority) ... ok
+test_ordinary_building_stays_on_original_foundation (test_building_bridges.BuildingBridgeTests.test_ordinary_building_stays_on_original_foundation) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+OK

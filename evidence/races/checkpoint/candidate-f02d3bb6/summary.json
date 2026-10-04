@@ -1,0 +1,434 @@
+{
+  "scope": "Completed immutable f02 full20 Checkpointmatrix, unchanged full-course budgets, native product actors retained",
+  "package_manifest_sha256": "f02d3bb6f52236bedf7633e91e8a420ead0568c8eca73f849c2eaf80196e8004",
+  "engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "completed_cases": 20,
+  "strict_pass_cases": 4,
+  "strict_fail_cases": 16,
+  "strict_pass_events": [
+    {
+      "index": 0,
+      "rank": "amateur"
+    },
+    {
+      "index": 0,
+      "rank": "professional"
+    },
+    {
+      "index": 1,
+      "rank": "amateur"
+    },
+    {
+      "index": 1,
+      "rank": "professional"
+    }
+  ],
+  "native_player_finished_cases": 14,
+  "pending_cases": [],
+  "record_eligible": false,
+  "cases": [
+    {
+      "index": 3,
+      "rank": "amateur",
+      "name": "Royal Appointment",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Complete",
+      "gates": "4/4",
+      "sim_seconds": "325.06s",
+      "resets": "2",
+      "player_recovery": "2r/8e",
+      "native_actor_finish_count": 5,
+      "native_actor_count": 5,
+      "log": "race3-a.log",
+      "log_sha256": "cda93a68beeea6f4bc5710a02d43f27451a52ed3f19198cafc71676d96851b6a",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 3,
+      "rank": "professional",
+      "name": "Royal Appointment",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Complete",
+      "gates": "4/4",
+      "sim_seconds": "305.46s",
+      "resets": "1",
+      "player_recovery": "1r/5e",
+      "native_actor_finish_count": 5,
+      "native_actor_count": 5,
+      "log": "race3-p.log",
+      "log_sha256": "079be72e10d87dea777742eccbcdeca708bcf7a998fe523b03704b75f097b447",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 0,
+      "rank": "amateur",
+      "name": "City Hall Shuffle",
+      "full_course_clean": true,
+      "native_player_finished": true,
+      "full_field_status": "Complete",
+      "gates": "2/2",
+      "sim_seconds": "107.68s",
+      "resets": "0",
+      "player_recovery": "none",
+      "native_actor_finish_count": 4,
+      "native_actor_count": 4,
+      "log": "race0-a.log",
+      "log_sha256": "0bb15dd9c395abb376899d854de1e7e8eb0513e2f95033b382ac1fd554bd2e62",
+      "rejection_reasons": []
+    },
+    {
+      "index": 0,
+      "rank": "professional",
+      "name": "City Hall Shuffle",
+      "full_course_clean": true,
+      "native_player_finished": true,
+      "full_field_status": "Complete",
+      "gates": "2/2",
+      "sim_seconds": "107.14s",
+      "resets": "0",
+      "player_recovery": "none",
+      "native_actor_finish_count": 4,
+      "native_actor_count": 4,
+      "log": "race0-p.log",
+      "log_sha256": "c19d3845d27d5681462aab53664d6d4b8f190c62579a301471bceab6dcb7b178",
+      "rejection_reasons": []
+    },
+    {
+      "index": 1,
+      "rank": "amateur",
+      "name": "Kungsholmen Calling",
+      "full_course_clean": true,
+      "native_player_finished": true,
+      "full_field_status": "Complete",
+      "gates": "3/3",
+      "sim_seconds": "110.58s",
+      "resets": "0",
+      "player_recovery": "none",
+      "native_actor_finish_count": 4,
+      "native_actor_count": 4,
+      "log": "race1-a.log",
+      "log_sha256": "6bd441b90ca3abcdf396784612855647bd822e4727a78d288001756c48318c34",
+      "rejection_reasons": []
+    },
+    {
+      "index": 1,
+      "rank": "professional",
+      "name": "Kungsholmen Calling",
+      "full_course_clean": true,
+      "native_player_finished": true,
+      "full_field_status": "Complete",
+      "gates": "3/3",
+      "sim_seconds": "110.68s",
+      "resets": "0",
+      "player_recovery": "none",
+      "native_actor_finish_count": 4,
+      "native_actor_count": 4,
+      "log": "race1-p.log",
+      "log_sha256": "5205ee735760a050ce2139492da123d083cd06d73f5778c60cf0f2c6f412b4bd",
+      "rejection_reasons": []
+    },
+    {
+      "index": 2,
+      "rank": "amateur",
+      "name": "City Lights",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Complete",
+      "gates": "3/3",
+      "sim_seconds": "163.88s",
+      "resets": "0",
+      "player_recovery": "0r/2e",
+      "native_actor_finish_count": 4,
+      "native_actor_count": 4,
+      "log": "race2-a.log",
+      "log_sha256": "288441adf0b8ed92d4a555fc3647b711f213bcc790186145efe352c99bc569da",
+      "rejection_reasons": [
+        "finite four-wheel traversal not established",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 2,
+      "rank": "professional",
+      "name": "City Lights",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Complete",
+      "gates": "3/3",
+      "sim_seconds": "157.19s",
+      "resets": "0",
+      "player_recovery": "0r/1e",
+      "native_actor_finish_count": 4,
+      "native_actor_count": 4,
+      "log": "race2-p.log",
+      "log_sha256": "159783d7d9850be9ba937dc309444d2188f04b474ffe78d20b50496722ba9950",
+      "rejection_reasons": [
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 4,
+      "rank": "amateur",
+      "name": "Museum Mile",
+      "full_course_clean": false,
+      "native_player_finished": false,
+      "full_field_status": "Running",
+      "gates": "1/5",
+      "sim_seconds": "850.30s",
+      "resets": "21",
+      "player_recovery": "21r/140e",
+      "native_actor_finish_count": 5,
+      "native_actor_count": 5,
+      "log": "race4-a.log",
+      "log_sha256": "540fe7a79c07cb5fffd018653c4a809dd2c02aedf5c1cbc19e6da9b2e4cf2abf",
+      "rejection_reasons": [
+        "finite four-wheel traversal not established",
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 4,
+      "rank": "professional",
+      "name": "Museum Mile",
+      "full_course_clean": false,
+      "native_player_finished": false,
+      "full_field_status": "Running",
+      "gates": "1/5",
+      "sim_seconds": "850.30s",
+      "resets": "11",
+      "player_recovery": "11r/144e",
+      "native_actor_finish_count": 5,
+      "native_actor_count": 5,
+      "log": "race4-p.log",
+      "log_sha256": "7b88ed6876ab23939e2b5bb222d68a459850f1b9658e573400ac5581ee36eb21",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 5,
+      "rank": "amateur",
+      "name": "South Side Story",
+      "full_course_clean": false,
+      "native_player_finished": false,
+      "full_field_status": "Running",
+      "gates": "1/4",
+      "sim_seconds": "1079.93s",
+      "resets": "25",
+      "player_recovery": "25r/165e",
+      "native_actor_finish_count": 0,
+      "native_actor_count": 5,
+      "log": "race5-a.log",
+      "log_sha256": "91f6b8500198dfd119accdfc3e156c33dee5622507cf6bc7b8d7563a3ab53e40",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 5,
+      "rank": "professional",
+      "name": "South Side Story",
+      "full_course_clean": false,
+      "native_player_finished": false,
+      "full_field_status": "Running",
+      "gates": "1/4",
+      "sim_seconds": "1079.93s",
+      "resets": "31",
+      "player_recovery": "31r/164e",
+      "native_actor_finish_count": 0,
+      "native_actor_count": 5,
+      "log": "race5-p.log",
+      "log_sha256": "cd19f12094926f7d448adf89cdb131f127003dfeb9a0f213307a7b310865c7be",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 6,
+      "rank": "amateur",
+      "name": "Northern Exposure",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Running",
+      "gates": "6/6",
+      "sim_seconds": "390.53s",
+      "resets": "0",
+      "player_recovery": "0r/1e",
+      "native_actor_finish_count": 4,
+      "native_actor_count": 6,
+      "log": "race6-a.log",
+      "log_sha256": "2553bc2b16bb9eb227c74353be0b81dc41715cd30fa93ca14f73701f7f2d4ef1",
+      "rejection_reasons": [
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 6,
+      "rank": "professional",
+      "name": "Northern Exposure",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Running",
+      "gates": "6/6",
+      "sim_seconds": "393.07s",
+      "resets": "0",
+      "player_recovery": "0r/1e",
+      "native_actor_finish_count": 3,
+      "native_actor_count": 6,
+      "log": "race6-p.log",
+      "log_sha256": "1f06556c7a8d0cbd8905c7bbb807161c660c216ebaf3b68f79a8a0f81efd48ab",
+      "rejection_reasons": [
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 7,
+      "rank": "amateur",
+      "name": "Two Banks",
+      "full_course_clean": false,
+      "native_player_finished": false,
+      "full_field_status": "Running",
+      "gates": "4/5",
+      "sim_seconds": "1344.20s",
+      "resets": "35",
+      "player_recovery": "30r/162e",
+      "native_actor_finish_count": 0,
+      "native_actor_count": 6,
+      "log": "race7-a.log",
+      "log_sha256": "d7efcb5285cf4aafcbe1e9789579924dd3c583cfdcd04ef6a2366151bcb34fb1",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 7,
+      "rank": "professional",
+      "name": "Two Banks",
+      "full_course_clean": false,
+      "native_player_finished": false,
+      "full_field_status": "Running",
+      "gates": "4/5",
+      "sim_seconds": "1344.20s",
+      "resets": "38",
+      "player_recovery": "34r/163e",
+      "native_actor_finish_count": 0,
+      "native_actor_count": 6,
+      "log": "race7-p.log",
+      "log_sha256": "6a679b699d4c9978510d7dfbc5d27ce819c53d021b635e302b74829d88620058",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 8,
+      "rank": "amateur",
+      "name": "Island Hopping",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Running",
+      "gates": "7/7",
+      "sim_seconds": "1110.13s",
+      "resets": "14",
+      "player_recovery": "11r/91e",
+      "native_actor_finish_count": 2,
+      "native_actor_count": 6,
+      "log": "race8-a.log",
+      "log_sha256": "633a57c94afdd1db06c1aba52e44dc0f423cfa1d860ee60af4fe37bf912731a2",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 8,
+      "rank": "professional",
+      "name": "Island Hopping",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Running",
+      "gates": "7/7",
+      "sim_seconds": "782.03s",
+      "resets": "4",
+      "player_recovery": "3r/29e",
+      "native_actor_finish_count": 3,
+      "native_actor_count": 6,
+      "log": "race8-p.log",
+      "log_sha256": "a1e019424f67983d5b04e0b05854244c0f392f1fe56df77454f1528ab46888e4",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 9,
+      "rank": "amateur",
+      "name": "Stockholm Grand Tour",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Running",
+      "gates": "9/9",
+      "sim_seconds": "953.13s",
+      "resets": "1",
+      "player_recovery": "0r/2e",
+      "native_actor_finish_count": 6,
+      "native_actor_count": 7,
+      "log": "race9-a.log",
+      "log_sha256": "5eee06490807c943376f70987f346b6fc77ab30b8d41d6011ce09ce9aa30ad36",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    },
+    {
+      "index": 9,
+      "rank": "professional",
+      "name": "Stockholm Grand Tour",
+      "full_course_clean": false,
+      "native_player_finished": true,
+      "full_field_status": "Running",
+      "gates": "9/9",
+      "sim_seconds": "1037.45s",
+      "resets": "2",
+      "player_recovery": "2r/17e",
+      "native_actor_finish_count": 3,
+      "native_actor_count": 7,
+      "log": "race9-p.log",
+      "log_sha256": "f90ececcea3a661069935ab886b9722466fddb91282d54278bb24ba20afc1c99",
+      "rejection_reasons": [
+        "player reset recorded or reset metric absent",
+        "player reanchor/escape recorded or malformed metric",
+        "complete clean native course not established"
+      ]
+    }
+  ],
+  "interpretation": "Only events0/1 amateur/professional pass strict full-course acceptance. Remaining cases are failures; playerfinished and full-fieldComplete are distinct. This matrix is f02, not newer ec0b mesh."
+}
