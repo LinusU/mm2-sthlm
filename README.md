@@ -5,6 +5,8 @@ and drive it in a **separately built** [rust-mm2](https://github.com/LinusU/rust
 No retail MM2 assets are needed. This repository contains no engine checkout
 or vehicle physics.
 
+Latest measured status and remaining defects: [2026-10-04 morning handoff](docs/MORNING-2026-10-04.md).
+
 The default map covers Kungsholmen, Södermalm, Djurgården and the central
 Stockholm mainland within the agreed boundary. It contains 8,025 sourced road
 ways, 10,770 building footprints, real RH2000 terrain, internal bridge decks,
