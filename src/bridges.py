@@ -813,8 +813,23 @@ def physical_bridge_groups(roads):
                 for r in components[k][1]
                 for p in r["elevated_points"]
             ]
-            if max(abs(profile(i, p) - profile(j, p)) for p in probes) > 2.5:
-                continue
+            gap = max(abs(profile(i, p) - profile(j, p)) for p in probes)
+            if gap > 2.5:
+                # Independently estimated arches can disagree inside one deck
+                # while their actual source shore anchors agree. Require both
+                # matching endpoint levels before accepting that exceptional
+                # span; independent stacked decks keep their own perimeter.
+                ends = [Point(axis.coords[k]) for k in (0, -1)]
+                other_ends = [Point(other_axis.coords[k]) for k in (0, -1)]
+                if sum(a.distance(b) for a, b in zip(ends, other_ends)) > sum(
+                    a.distance(b) for a, b in zip(ends, reversed(other_ends))
+                ):
+                    other_ends.reverse()
+                anchor_gap = max(
+                    abs(profile(i, a) - profile(j, b)) for a, b in zip(ends, other_ends)
+                )
+                if gap >= 4 or anchor_gap > 0.15:
+                    continue
             links[i].add(j)
             links[j].add(i)
     remaining, grouped = set(links), []

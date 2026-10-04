@@ -1,0 +1,50 @@
+{
+  "mode": "red",
+  "alignment": [],
+  "floors": [
+    {
+      "xz": [
+        1596.0148,
+        -96.75505
+      ],
+      "faces": 5,
+      "min_normal_y": 0.4692056801333452,
+      "floor_levels": [
+        3.3334149577660965
+      ],
+      "source_height": 6.373330782167732,
+      "highest_floor_error": -3.039915824401635
+    },
+    {
+      "xz": [
+        1598.18487,
+        -94.99115
+      ],
+      "faces": 37,
+      "min_normal_y": 0.4692056801333452,
+      "floor_levels": [
+        4.940069680588938
+      ],
+      "source_height": 6.324617671848831,
+      "highest_floor_error": -1.3845479912598924
+    },
+    {
+      "xz": [
+        1597.099835,
+        -95.8731
+      ],
+      "faces": 16,
+      "min_normal_y": 0.46881151501361057,
+      "floor_levels": [
+        3.3387510736490706
+      ],
+      "source_height": 6.348974227008281,
+      "highest_floor_error": -3.01022315335921
+    }
+  ]
+}
+Traceback (most recent call last):
+  File "/private/tmp/check-strom-composed-native.py", line 21, in <module>
+    print(json.dumps({'mode':sys.argv[1],'alignment':report,'floors':out},indent=2));Path('/private/tmp/strom-composed-native-'+sys.argv[1]+'.json').write_text(json.dumps(out,indent=2));assert all(q['min_normal_y']>.98 and abs(q['highest_floor_error'])<.04 for q in out)
+                                                                                                                                                                                                 ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
