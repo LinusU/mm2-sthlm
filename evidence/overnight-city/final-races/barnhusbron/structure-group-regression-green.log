@@ -1,0 +1,11 @@
+{
+  "source": "/Users/linus/.codex/worktrees/stockholm-blitz-races/mm2-sthlm/src/bridges.py",
+  "components": 1,
+  "nearest_join_rail_m": 0.19756268193096982
+}
+test_named_arch_landmark_is_actually_written_for_each_source_component (bridge_tests.BridgeStructureGroupTests.test_named_arch_landmark_is_actually_written_for_each_source_component) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.800s
+
+OK

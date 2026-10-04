@@ -1,0 +1,26 @@
+{
+  "scope": "Exact reported native cameras across staged generator repairs. Final junction captures use the independently packaged 261fc0b6 build; local native driving evidence is recorded separately, not full race acceptance.",
+  "engine_revision": "3a76ab37a871b20921b562b4ac1fabb854b27748",
+  "engine_sha256": "a794c0a8632fe99b17bf07038530770075936f4dd79bbade250ad52bf219da85",
+  "before_package_manifest_sha256": "25e13e8d2e56a15b8b3e817c6e96ea27d14a86ac63cbd2907a670e467011918f",
+  "join_only_package_manifest_sha256": "736f6e8f4cb515619fa8c58fc3e11f16fd8eada8d14600a164de9116d1d422ce",
+  "cameras": [
+    "76.2,18.1,-736.3,-16,-14",
+    "72.3,16.1,-719.1,7,-11"
+  ],
+  "commands": "ENGINE --mods FROZEN_MODS --city stockholm --car sthlm_racer --cam CAMERA --no-hud --frames 24 --screenshot OUTPUT --no-profile",
+  "images": {
+    "junction-camera2-native.png": "839706194e5e6a70675a6c936e8ae6a31f9bc8cd15779ec03c84bd5964552d85",
+    "join-only-camera1-native.png": "752718cb7fe3233351856503666754dd9dd652a14caef9873d70b01cef8377f7",
+    "before-camera2-native.png": "ded890ba88dfdba7bea8d6e3c16c33447bbfdb9c146f36635e172cc08245a4e4",
+    "rails-camera2-native.png": "b97ad61dbf5eb5e647ccbf9e74568b0d4fd58aad75b4c4bb58fc5805500774c0",
+    "join-only-camera2-native.png": "cf13944a7da0a2022e5df77b98c89859463dc5f84a4eb997c8b4dae6040bcfa1",
+    "rails-camera1-native.png": "135f0032f7967fb4f9b0ebfc4b8ca985b785a4215cf83e54ebaafa0f76730192",
+    "before-camera1-native.png": "252a5c4ad9352ab0163f69c22d532e9c0dcdf4d192367a2b635288c81a4f0971",
+    "junction-camera1-native.png": "3dece6bbcd223351bcc682fffdfdeb7f62ae2ebc094627671e9f3cc079ffe06f"
+  },
+  "junction_package_checksums_sha256": "261fc0b60a272afc7dbff62650956252f2271472b749c5efc78153bf556f185a",
+  "rails_package_checksums_sha256": "e09594cff9a07b5f9507aa8986b7f79ccd4c134723acc85f2e85ee6faf513e7b",
+  "junction_engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "junction_engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19"
+}

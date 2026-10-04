@@ -1,0 +1,15 @@
+{
+  "source": "/Users/linus/.codex/worktrees/stockholm-blitz-races/mm2-sthlm/src/bridges.py",
+  "centre_clearance_m": 4.467493657690108,
+  "sample_count": 21,
+  "clearance_min_m": 4.454641672480225,
+  "clearance_max_m": 4.467499999999992
+}
+test_equal_named_unconnected_stacked_spans_keep_separate_portals (bridge_tests.BridgeStructureGroupTests.test_equal_named_unconnected_stacked_spans_keep_separate_portals) ... ok
+test_named_arch_landmark_is_actually_written_for_each_source_component (bridge_tests.BridgeStructureGroupTests.test_named_arch_landmark_is_actually_written_for_each_source_component) ... ok
+test_source_connected_layer_change_keeps_rails_at_internal_join (bridge_tests.BridgeStructureGroupTests.test_source_connected_layer_change_keeps_rails_at_internal_join) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.743s
+
+OK

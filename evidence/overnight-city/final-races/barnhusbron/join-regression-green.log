@@ -1,0 +1,8 @@
+test_shared_source_plane_wins_equal_distance_partial_local_fit (join_tests.BridgeLayerJoinTests.test_shared_source_plane_wins_equal_distance_partial_local_fit) ... ok
+test_source_layer_change_has_no_raised_native_round_cap (join_tests.BridgeLayerJoinTests.test_source_layer_change_has_no_raised_native_round_cap) ... ok
+test_unconnected_stacked_bridge_crossing_stays_separated (join_tests.BridgeLayerJoinTests.test_unconnected_stacked_bridge_crossing_stays_separated) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.117s
+
+OK

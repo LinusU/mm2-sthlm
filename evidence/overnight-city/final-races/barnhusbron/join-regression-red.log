@@ -1,0 +1,26 @@
+test_source_layer_change_has_no_raised_native_round_cap (join_tests.BridgeLayerJoinTests.test_source_layer_change_has_no_raised_native_round_cap) ... 
+  test_source_layer_change_has_no_raised_native_round_cap (join_tests.BridgeLayerJoinTests.test_source_layer_change_has_no_raised_native_round_cap) (position=[78.0541880115536, -748.6070096047476]) ... FAIL
+  test_source_layer_change_has_no_raised_native_round_cap (join_tests.BridgeLayerJoinTests.test_source_layer_change_has_no_raised_native_round_cap) (position=[79.52226472878849, -753.3866278690036]) ... FAIL
+
+======================================================================
+FAIL: test_source_layer_change_has_no_raised_native_round_cap (join_tests.BridgeLayerJoinTests.test_source_layer_change_has_no_raised_native_round_cap) (position=[78.0541880115536, -748.6070096047476])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/linus/.codex/worktrees/stockholm-blitz-races/mm2-sthlm/tests/test_bridge_layer_join.py", line 68, in test_source_layer_change_has_no_raised_native_round_cap
+    self.assertLess(max(heights) - min(heights), 0.04)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.41923819065986834 not less than 0.04
+
+======================================================================
+FAIL: test_source_layer_change_has_no_raised_native_round_cap (join_tests.BridgeLayerJoinTests.test_source_layer_change_has_no_raised_native_round_cap) (position=[79.52226472878849, -753.3866278690036])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/linus/.codex/worktrees/stockholm-blitz-races/mm2-sthlm/tests/test_bridge_layer_join.py", line 68, in test_source_layer_change_has_no_raised_native_round_cap
+    self.assertLess(max(heights) - min(heights), 0.04)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.10261371483357706 not less than 0.04
+
+----------------------------------------------------------------------
+Ran 1 test in 0.069s
+
+FAILED (failures=2)

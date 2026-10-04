@@ -1,0 +1,194 @@
+{
+  "cap": {
+    "position": [
+      78.054,
+      0,
+      -748.607
+    ],
+    "floors": [
+      {
+        "height": 1.03767,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_1.psdl",
+        "room": 900
+      },
+      {
+        "height": 16.92414,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 597
+      },
+      {
+        "height": 16.94093,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 606
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "shared_join": {
+    "position": [
+      79.228656,
+      0,
+      -752.430702
+    ],
+    "floors": [
+      {
+        "height": 0.95473,
+        "texture": "paving",
+        "flags": 0,
+        "part": "part_0_1.psdl",
+        "room": 621
+      },
+      {
+        "height": 17.3404,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 597
+      },
+      {
+        "height": 17.34138,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 606
+      },
+      {
+        "height": 17.34138,
+        "texture": "sthlm_road_2_0_18",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 610
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "cap_south": {
+    "position": [
+      77.76,
+      0,
+      -747.651
+    ],
+    "floors": [
+      {
+        "height": 1.07354,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_1.psdl",
+        "room": 900
+      },
+      {
+        "height": 16.82689,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 597
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "cap_north": {
+    "position": [
+      78.348,
+      0,
+      -749.563
+    ],
+    "floors": [
+      {
+        "height": 1.02624,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_1.psdl",
+        "room": 900
+      },
+      {
+        "height": 17.02139,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 597
+      },
+      {
+        "height": 17.05213,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 606
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "span_north": {
+    "position": [
+      79.5226,
+      0,
+      -753.387
+    ],
+    "floors": [
+      {
+        "height": 0.7,
+        "texture": "water",
+        "flags": 4,
+        "part": "part_0_1.psdl",
+        "room": 1117
+      },
+      {
+        "height": 17.44203,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 597
+      },
+      {
+        "height": 17.44404,
+        "texture": "sthlm_road_2_0_18",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 610
+      }
+    ],
+    "water_rooms": [
+      {
+        "part": "part_0_1.psdl",
+        "room": 1117,
+        "bound": 0.699999988079071,
+        "flags": 4
+      }
+    ],
+    "near_vertical_facades": []
+  },
+  "approach_south": {
+    "position": [
+      76.75655,
+      0,
+      -744.3823
+    ],
+    "floors": [
+      {
+        "height": 1.25771,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_1.psdl",
+        "room": 900
+      },
+      {
+        "height": 16.47742,
+        "texture": "sthlm_road_2_0_18",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 641
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  }
+}

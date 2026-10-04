@@ -1,0 +1,27 @@
+{
+  "source": "/private/tmp/barnhus-join-base/src/bridges.py",
+  "components": 2,
+  "nearest_join_rail_m": 10.942391840687764
+}
+test_named_arch_landmark_is_actually_written_for_each_source_component (bridge_tests.BridgeStructureGroupTests.test_named_arch_landmark_is_actually_written_for_each_source_component) ... FAIL
+
+======================================================================
+FAIL: test_named_arch_landmark_is_actually_written_for_each_source_component (bridge_tests.BridgeStructureGroupTests.test_named_arch_landmark_is_actually_written_for_each_source_component)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/linus/.codex/worktrees/stockholm-blitz-races/mm2-sthlm/tests/test_bridge_structure_groups.py", line 106, in test_named_arch_landmark_is_actually_written_for_each_source_component
+    self.assertEqual(assets, {"sthlm_vasterbron", "sthlm_vasterbron_1"})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'sthlm_vasterbron'
+'sthlm_vasterbron_1'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+FAILED (failures=1)
+Traceback (most recent call last):
+  File "/private/tmp/bridge-component-regression-evidence.py", line 19, in <module>
+    assert dist<5, f'internal source join incorrectly loses rail for {dist:.3f}m'
+           ^^^^^^
+AssertionError: internal source join incorrectly loses rail for 10.942m

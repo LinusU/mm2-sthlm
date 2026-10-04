@@ -1,0 +1,24 @@
+{
+  "source": "/private/tmp/bridge-component-before-round-cap.py",
+  "centre_clearance_m": 0.19756268193096982,
+  "sample_count": 21,
+  "clearance_min_m": 0.19756268193096982,
+  "clearance_max_m": 4.467499999999988
+}
+test_equal_named_unconnected_stacked_spans_keep_separate_portals (bridge_tests.BridgeStructureGroupTests.test_equal_named_unconnected_stacked_spans_keep_separate_portals) ... ok
+test_named_arch_landmark_is_actually_written_for_each_source_component (bridge_tests.BridgeStructureGroupTests.test_named_arch_landmark_is_actually_written_for_each_source_component) ... ok
+test_source_connected_layer_change_keeps_rails_at_internal_join (bridge_tests.BridgeStructureGroupTests.test_source_connected_layer_change_keeps_rails_at_internal_join) ... FAIL
+
+======================================================================
+FAIL: test_source_connected_layer_change_keeps_rails_at_internal_join (bridge_tests.BridgeStructureGroupTests.test_source_connected_layer_change_keeps_rails_at_internal_join)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/linus/.codex/worktrees/stockholm-blitz-races/mm2-sthlm/tests/test_bridge_structure_groups.py", line 77, in test_source_connected_layer_change_keeps_rails_at_internal_join
+    self.assertGreater(clearance, 4.0)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+AssertionError: 0.19756268193096982 not greater than 4.0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.688s
+
+FAILED (failures=1)
