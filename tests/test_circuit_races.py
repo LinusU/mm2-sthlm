@@ -31,6 +31,13 @@ class CircuitDesignTests(unittest.TestCase):
             for a, b in zip(row["nodes"], row["nodes"][1:])
         }
 
+        cls.edge_owners = {}
+        for way in cls.ways.values():
+            if not way.get("tags", {}).get("highway"):
+                continue
+            for a, b in zip(way["nodes"], way["nodes"][1:]):
+                cls.edge_owners.setdefault(frozenset((a, b)), []).append(way)
+
     def test_inventory_matches_native_ordered_mode(self):
         self.assertEqual(self.config["native_rule"], "Ordered")
         self.assertEqual(len(self.config["events"]), 10)
@@ -87,10 +94,59 @@ class CircuitDesignTests(unittest.TestCase):
                 length, event["design"]["reference_length_m"], delta=0.01
             )
             lengths.append(length)
-        self.assertEqual(lengths, sorted(lengths))
+        self.assertLess(lengths[0], lengths[1])
+        self.assertLess(lengths[1], 2000)
+        self.assertTrue(all(3000 < length < 7000 for length in lengths[2:6]))
+        self.assertEqual(lengths[6:], sorted(lengths[6:]))
         self.assertLess(lengths[0], 700)
         self.assertGreater(lengths[-1], 30000)
         self.assertLess(lengths[-1], 42195)
+
+    def test_sofo_loop_obeys_source_directions_without_carriageway_hairpins(self):
+        anchors = self.config["events"][2]["route_via"]
+        ids = [anchor["node_id"] for anchor in anchors]
+        coords = [
+            project(self.nodes[node]["lon"], self.nodes[node]["lat"], [18.045, 59.328])
+            for node in ids
+        ]
+        turns = []
+        for index, node in enumerate(ids):
+            following = ids[(index + 1) % len(ids)]
+            owners = self.edge_owners[frozenset((node, following))]
+            legal = []
+            for way in owners:
+                forward = way["nodes"].index(following) > way["nodes"].index(node)
+                direction = way.get("tags", {}).get("oneway", "no")
+                legal.append(
+                    direction not in {"yes", "1", "true", "-1"}
+                    or (forward if direction != "-1" else not forward)
+                )
+            self.assertTrue(any(legal), (node, following))
+            previous, current, after = (
+                coords[index - 1],
+                coords[index],
+                coords[(index + 1) % len(ids)],
+            )
+            u = (current[0] - previous[0], current[1] - previous[1])
+            v = (after[0] - current[0], after[1] - current[1])
+            turns.append(
+                math.degrees(
+                    math.atan2(u[0] * v[1] - u[1] * v[0], u[0] * v[0] + u[1] * v[1])
+                )
+            )
+        self.assertLess(max(map(abs, turns)), 120)
+        for index, turn in enumerate(turns):
+            distance = 0
+            for offset in range(1, len(ids)):
+                a, b = (index + offset - 1) % len(ids), (index + offset) % len(ids)
+                distance += math.dist(coords[a], coords[b])
+                if distance > 25:
+                    break
+                other = turns[b]
+                self.assertFalse(
+                    turn * other > 0 and abs(turn + other) > 150,
+                    (ids[index], ids[b], distance, turn, other),
+                )
 
     def test_native_params_keep_circuits_free_of_cops_or_traffic(self):
         for event in self.config["events"]:

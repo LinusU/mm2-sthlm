@@ -787,61 +787,241 @@
         },
         {
           "node_id": 565868,
-          "way_id": 1281104434,
+          "way_id": 28230987,
           "label": "Östgötagatan"
         },
         {
-          "node_id": 11890950484,
-          "way_id": 40465089,
+          "node_id": 3647397709,
+          "way_id": 28230987,
           "label": "Östgötagatan"
         },
         {
-          "node_id": 3647397708,
-          "way_id": 40465089,
+          "node_id": 11890736918,
+          "way_id": 1281079189,
           "label": "Östgötagatan"
         },
         {
-          "node_id": 565873,
-          "way_id": 1281104431,
+          "node_id": 11890736917,
+          "way_id": 1281079188,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 11890736916,
+          "way_id": 1281079187,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 11890736919,
+          "way_id": 1281079190,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 1272886031,
+          "way_id": 1281079190,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 565869,
+          "way_id": 1281079203,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11890736930,
+          "way_id": 1281367670,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017154,
+          "way_id": 1281367667,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017155,
+          "way_id": 1281367668,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017152,
+          "way_id": 1281367665,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017153,
+          "way_id": 1281367666,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017157,
+          "way_id": 1281367669,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017156,
+          "way_id": 1281079201,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 194879,
+          "way_id": 1281079201,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017151,
+          "way_id": 1281367659,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017145,
+          "way_id": 1281367664,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017146,
+          "way_id": 1281367664,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017147,
+          "way_id": 1281367660,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017144,
+          "way_id": 1281367658,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017143,
+          "way_id": 1281367657,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017142,
+          "way_id": 1281367656,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017141,
+          "way_id": 1281367655,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017149,
+          "way_id": 1281367662,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 11893017148,
+          "way_id": 1281367661,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 12917703172,
+          "way_id": 1281367661,
+          "label": "Bondegatan"
+        },
+        {
+          "node_id": 194847,
+          "way_id": 42975465,
+          "label": "Nytorgsgatan"
+        },
+        {
+          "node_id": 12917703176,
+          "way_id": 42975465,
+          "label": "Nytorgsgatan"
+        },
+        {
+          "node_id": 11898137175,
+          "way_id": 1282104811,
+          "label": "Nytorgsgatan"
+        },
+        {
+          "node_id": 11898137176,
+          "way_id": 1282104812,
+          "label": "Nytorgsgatan"
+        },
+        {
+          "node_id": 25587793,
+          "way_id": 1281278433,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218033,
+          "way_id": 1281278432,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218032,
+          "way_id": 1281278435,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218035,
+          "way_id": 1281278434,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218034,
+          "way_id": 1281278436,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218036,
+          "way_id": 42975463,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 565867,
+          "way_id": 233761090,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 1276828367,
+          "way_id": 1282102761,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118974,
+          "way_id": 1282102760,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118975,
+          "way_id": 42975453,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 21661933,
+          "way_id": 1282102759,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118983,
+          "way_id": 1282102769,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118982,
+          "way_id": 1282102768,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118984,
+          "way_id": 1282102770,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 12460829419,
+          "way_id": 1282102770,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 565874,
+          "way_id": 16196579,
           "label": "Katarina Bangata"
         },
         {
-          "node_id": 11890950481,
-          "way_id": 1281104430,
-          "label": "Katarina Bangata"
-        },
-        {
-          "node_id": 11890950480,
-          "way_id": 1281104430,
-          "label": "Katarina Bangata"
-        },
-        {
-          "node_id": 11890950478,
-          "way_id": 1281104429,
-          "label": "Katarina Bangata"
-        },
-        {
-          "node_id": 11890950479,
-          "way_id": 1281104435,
-          "label": "Katarina Bangata"
-        },
-        {
-          "node_id": 3647397706,
-          "way_id": 1281104435,
-          "label": "Katarina Bangata"
-        },
-        {
-          "node_id": 11890950482,
-          "way_id": 1281104432,
-          "label": "Katarina Bangata"
-        },
-        {
-          "node_id": 11890950483,
-          "way_id": 1281104433,
-          "label": "Katarina Bangata"
-        },
-        {
-          "node_id": 11890950485,
+          "node_id": 12460829418,
           "way_id": 16196579,
           "label": "Katarina Bangata"
         },
@@ -851,9 +1031,154 @@
           "label": "Katarina Bangata"
         },
         {
-          "node_id": 12460829418,
-          "way_id": 16196579,
+          "node_id": 11890950485,
+          "way_id": 1281104433,
           "label": "Katarina Bangata"
+        },
+        {
+          "node_id": 11890950483,
+          "way_id": 1281104432,
+          "label": "Katarina Bangata"
+        },
+        {
+          "node_id": 11890950482,
+          "way_id": 1281104435,
+          "label": "Katarina Bangata"
+        },
+        {
+          "node_id": 3647397706,
+          "way_id": 1281104435,
+          "label": "Katarina Bangata"
+        },
+        {
+          "node_id": 11890950479,
+          "way_id": 1281104429,
+          "label": "Katarina Bangata"
+        },
+        {
+          "node_id": 11890950478,
+          "way_id": 1281104430,
+          "label": "Katarina Bangata"
+        },
+        {
+          "node_id": 11890950480,
+          "way_id": 1281104430,
+          "label": "Katarina Bangata"
+        },
+        {
+          "node_id": 11890950481,
+          "way_id": 1281104431,
+          "label": "Katarina Bangata"
+        },
+        {
+          "node_id": 565873,
+          "way_id": 40465089,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 3647397708,
+          "way_id": 40465089,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 11890950484,
+          "way_id": 1281104434,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 565868,
+          "way_id": 16196584,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218043,
+          "way_id": 1281278443,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218041,
+          "way_id": 1281278441,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218040,
+          "way_id": 1281278440,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218039,
+          "way_id": 1281278439,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218038,
+          "way_id": 1281278438,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218037,
+          "way_id": 1281278437,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11898118973,
+          "way_id": 1282102758,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11898118972,
+          "way_id": 1282102757,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11898118971,
+          "way_id": 1282102756,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 11892218042,
+          "way_id": 1281278442,
+          "label": "Skånegatan"
+        },
+        {
+          "node_id": 1276828367,
+          "way_id": 1282102761,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118974,
+          "way_id": 1282102760,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118975,
+          "way_id": 42975453,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 21661933,
+          "way_id": 1282102759,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118983,
+          "way_id": 1282102769,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118982,
+          "way_id": 1282102768,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11898118984,
+          "way_id": 1282102770,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 12460829419,
+          "way_id": 1282102770,
+          "label": "Södermannagatan"
         },
         {
           "node_id": 565874,
@@ -1092,33 +1417,18 @@
         },
         {
           "node_id": 25701380,
-          "way_id": 146789570,
-          "label": "Ringvägen"
-        },
-        {
-          "node_id": 1546340338,
-          "way_id": 609793170,
+          "way_id": 609793169,
           "label": "Götgatan"
         },
         {
-          "node_id": 1546340341,
-          "way_id": 609793170,
+          "node_id": 4755295143,
+          "way_id": 609793169,
           "label": "Götgatan"
         },
         {
-          "node_id": 1600236892,
-          "way_id": 609793170,
+          "node_id": 1600236893,
+          "way_id": 609793169,
           "label": "Götgatan"
-        },
-        {
-          "node_id": 7714005293,
-          "way_id": 609793170,
-          "label": "Götgatan"
-        },
-        {
-          "node_id": 1546340367,
-          "way_id": 353700901,
-          "label": "Ölandsgatan"
         },
         {
           "node_id": 1546340369,
@@ -1537,106 +1847,11 @@
         },
         {
           "node_id": 194850,
-          "way_id": 42980008,
-          "label": "Folkungagatan"
+          "way_id": 140726456,
+          "label": "Östgötagatan"
         },
         {
-          "node_id": 1501759773,
-          "way_id": 42980008,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 7714759525,
-          "way_id": 42980008,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888690000,
-          "way_id": 1280821689,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888689994,
-          "way_id": 1280821695,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 8125127344,
-          "way_id": 1280821695,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888689995,
-          "way_id": 1280821690,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888689996,
-          "way_id": 1280821691,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888689997,
-          "way_id": 1280821692,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888689999,
-          "way_id": 1280821693,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888689998,
-          "way_id": 1280821694,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888690001,
-          "way_id": 1280821696,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888690002,
-          "way_id": 1280821697,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 430207073,
-          "way_id": 1280821697,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 1546340640,
-          "way_id": 166994678,
-          "label": "Götgatan"
-        },
-        {
-          "node_id": 1501759737,
-          "way_id": 1243218624,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 1501759740,
-          "way_id": 1243218624,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 7714759529,
-          "way_id": 1243218624,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11554263146,
-          "way_id": 1280887896,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11889147520,
-          "way_id": 1280887897,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11889147521,
+          "node_id": 1501759784,
           "way_id": 136886858,
           "label": "Folkungagatan"
         },
@@ -1646,17 +1861,202 @@
           "label": "Folkungagatan"
         },
         {
-          "node_id": 1501759784,
-          "way_id": 136886858,
+          "node_id": 11889147521,
+          "way_id": 1280887897,
           "label": "Folkungagatan"
         },
         {
-          "node_id": 1501759785,
-          "way_id": 136886858,
+          "node_id": 11889147520,
+          "way_id": 1280887896,
           "label": "Folkungagatan"
         },
         {
-          "node_id": 7714759526,
+          "node_id": 11554263146,
+          "way_id": 1243218624,
+          "label": "Folkungagatan"
+        },
+        {
+          "node_id": 7714759529,
+          "way_id": 1243218624,
+          "label": "Folkungagatan"
+        },
+        {
+          "node_id": 1501759740,
+          "way_id": 1243218624,
+          "label": "Folkungagatan"
+        },
+        {
+          "node_id": 1501759737,
+          "way_id": 141258077,
+          "label": "Götgatan"
+        },
+        {
+          "node_id": 1501759754,
+          "way_id": 141258077,
+          "label": "Götgatan"
+        },
+        {
+          "node_id": 7714759530,
+          "way_id": 141258077,
+          "label": "Götgatan"
+        },
+        {
+          "node_id": 1348515064,
+          "way_id": 141258077,
+          "label": "Götgatan"
+        },
+        {
+          "node_id": 1546340648,
+          "way_id": 1280759586,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 115168689,
+          "way_id": 1280759586,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888174574,
+          "way_id": 1280759584,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888174572,
+          "way_id": 1280759583,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888174571,
+          "way_id": 1280759582,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888174570,
+          "way_id": 1280759581,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 158690550,
+          "way_id": 1280759581,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888174569,
+          "way_id": 8019352,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 719078280,
+          "way_id": 8019352,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 112345770,
+          "way_id": 8019352,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148267,
+          "way_id": 1280759579,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148268,
+          "way_id": 1280759580,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888174573,
+          "way_id": 1280759585,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 1261259316,
+          "way_id": 1280759585,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 194902,
+          "way_id": 1280759576,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148264,
+          "way_id": 1280759575,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148261,
+          "way_id": 1280759573,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148262,
+          "way_id": 1280759574,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148263,
+          "way_id": 23728095,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 194903,
+          "way_id": 23728095,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148259,
+          "way_id": 1280759571,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 4580199961,
+          "way_id": 1280759571,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148257,
+          "way_id": 1280759569,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148258,
+          "way_id": 1280759570,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148260,
+          "way_id": 1280759572,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 194900,
+          "way_id": 1280784818,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11888396190,
+          "way_id": 1280784817,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11888396189,
+          "way_id": 45523787,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 7222343463,
+          "way_id": 45523787,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 1501759886,
+          "way_id": 45523787,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 1501759839,
           "way_id": 136886858,
           "label": "Folkungagatan"
         },
@@ -1666,34 +2066,134 @@
           "label": "Folkungagatan"
         },
         {
+          "node_id": 7714759526,
+          "way_id": 136886858,
+          "label": "Folkungagatan"
+        },
+        {
+          "node_id": 1501759785,
+          "way_id": 136886858,
+          "label": "Folkungagatan"
+        },
+        {
+          "node_id": 1501759784,
+          "way_id": 136886898,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 1501759801,
+          "way_id": 136886898,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 11888148265,
+          "way_id": 1280759577,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 11888148266,
+          "way_id": 1280759578,
+          "label": "Östgötagatan"
+        },
+        {
+          "node_id": 194902,
+          "way_id": 1280759576,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148264,
+          "way_id": 1280759575,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148261,
+          "way_id": 1280759573,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148262,
+          "way_id": 1280759574,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148263,
+          "way_id": 23728095,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 194903,
+          "way_id": 23728095,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148259,
+          "way_id": 1280759571,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 4580199961,
+          "way_id": 1280759571,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148257,
+          "way_id": 1280759569,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148258,
+          "way_id": 1280759570,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 11888148260,
+          "way_id": 1280759572,
+          "label": "Tjärhovsgatan"
+        },
+        {
+          "node_id": 194900,
+          "way_id": 1280784818,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11888396190,
+          "way_id": 1280784817,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 11888396189,
+          "way_id": 45523787,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 7222343463,
+          "way_id": 45523787,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 1501759886,
+          "way_id": 45523787,
+          "label": "Södermannagatan"
+        },
+        {
           "node_id": 1501759839,
-          "way_id": 1280821667,
+          "way_id": 136886860,
+          "label": "Södermannagatan"
+        },
+        {
+          "node_id": 571152,
+          "way_id": 1280784816,
           "label": "Folkungagatan"
         },
         {
-          "node_id": 7714759522,
-          "way_id": 1280821667,
+          "node_id": 7714759518,
+          "way_id": 1280784816,
           "label": "Folkungagatan"
         },
         {
-          "node_id": 11888689971,
-          "way_id": 1280821666,
+          "node_id": 1501759909,
+          "way_id": 1280784816,
           "label": "Folkungagatan"
-        },
-        {
-          "node_id": 11888689972,
-          "way_id": 1180146193,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 1501759929,
-          "way_id": 1180146193,
-          "label": "Folkungagatan"
-        },
-        {
-          "node_id": 1501759934,
-          "way_id": 136886859,
-          "label": "Nytorgsgatan"
         },
         {
           "node_id": 194886,
@@ -1921,10 +2421,10 @@
       },
       "design": {
         "theme": "A southern district loop introduces tighter streets without traffic distractions.",
-        "flow": "Follow the sourced loop in order; the final leg returns to the same start node.",
+        "flow": "Connected SoFo blocks use the source carriageway directions. Folkungagatan approaches continue through Götgatan, Tjärhovsgatan and Södermannagatan instead of folding across paired carriageways.",
         "route_choice": "Circuit geometry has one authored itinerary. Visible gates mark progress; the dense source-node itinerary guides navigation between them.",
         "shortcut_policy": "No mandatory jumps, invented water crossings or reversal spurs. Alternate drivable lines between consecutive gates remain possible, but every ordered gate is required.",
-        "progression": "Event 3/10: 3.48 km per lap, 2 amateur / 3 professional laps.",
+        "progression": "A 5.05 km district loop adds navigation workload after the two compact starters; difficulty also depends on corners, rivals, weather and lap count, rather than strictly increasing each lap distance.",
         "landmarks": [
           "Folkungagatan",
           "Östgötagatan",
@@ -1934,7 +2434,7 @@
           "Götgatan",
           "Götgatan"
         ],
-        "reference_length_m": 3479.04
+        "reference_length_m": 5050.13
       }
     },
     {

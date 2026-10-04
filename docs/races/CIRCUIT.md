@@ -10,7 +10,7 @@ junction. These designs contain no copied retail race coordinates or artwork.
 | --- | --- | ---: | ---: | ---: |
 | 0 | Kungsholmen Warmup | 0.57 | 2 / 3 | 3 |
 | 1 | Vasaparken Lap | 1.70 | 2 / 3 | 7 |
-| 2 | SoFo Squares | 3.48 | 2 / 3 | 11 |
+| 2 | SoFo Squares | 5.05 | 2 / 3 | 11 |
 | 3 | Royal Rectangle | 3.55 | 2 / 3 | 10 |
 | 4 | City Crown | 5.79 | 2 / 2 | 14 |
 | 5 | Djurgården Sweep | 6.40 | 2 / 2 | 14 |
@@ -25,6 +25,12 @@ engine closes each ordered lap at that line. The config separates visible
 `start` / `checkpoints` from the dense `route_via` navigation itinerary. The
 latter contains the start once, with closure supplied by the exporter. Removing
 source-anchor spurs during design prevents forced reversing into a dead end.
+
+SoFo Squares follows the source carriageway directions through connected blocks,
+including continuous start-line closure. Its 5.05 km lap removes two paired
+carriageway hairpins while preserving all gameplay gates and race settings.
+The following Royal Rectangle is shorter; Karlaplan and Strandvägen corners,
+weather and rival workload determine difficulty alongside distance.
 
 The early daylight races teach corners, longer straights, then district-scale
 navigation. Later races introduce waterfront approaches, Södermalm elevation
@@ -64,7 +70,8 @@ Essingen islands, Hammarby sjöstad, Lidingö and outward bridges are not requir
 
 `tests/test_circuit_races.py` checks the ten native IDs, exact source anchors,
 closure on real edges, no immediate reversals, ordered sparse gates, measured
-length progression and native lap/traffic parameters. It runs offline without
+starter and endurance distance bands, native lap/traffic parameters, and SoFo
+source directions with no paired carriageway hairpins. It runs offline without
 retail content, an engine checkout or a GPU.
 
 Source graph and config checks alone establish topology and export intent.
@@ -79,3 +86,10 @@ before the road repair. Circuit1 exposed a Torsgränd road step/gap; Circuit2
 exposed a generic guide-occurrence bug and additional recovery hotspots. Those
 failed traversals are preserved. The full 20-case acceptance matrix remains
 pending a repaired coherent package; course topology alone is not acceptance.
+
+The focused SoFo source-flow prototype uses the original immutable `0c69b559`
+geometry with engine `3a76ab3` and a 12 m/s player evidence ceiling. Amateur
+completed two laps and all twelve native waypoint rows without player resets or
+recoveries; all three actual rivals finished, with six rival escapes disclosed.
+Professional exposed a separate Ringvägen corner-controller hotspot and remains
+pending. This source-flow result does not certify the final repaired package.
