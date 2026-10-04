@@ -528,7 +528,7 @@ def corridor_mesh(roads, city, height, cfg):
     """
     lanes = unary_union(
         [
-            LineString(r["points"]).buffer(r["width"] / 2, cap_style=2, join_style=2)
+            LineString(r["points"]).buffer(r["width"] / 2, cap_style=1, join_style=2)
             for r in roads
         ]
     )
@@ -688,6 +688,40 @@ def write_asset(out, name, groups, source):
     }
 
 
+def source_bridge_groups(roads):
+    """Same-named bridge components joined only by exact source nodes.
+
+    A local layer change does not open a road approach in the middle of one
+    sourced span. Unconnected equal-named stacked or parallel spans retain
+    their own railing boundaries and physical height ownership.
+    """
+    named = {}
+    for road in roads:
+        name = road["tags"].get("name", "Unnamed viaduct")
+        named.setdefault(name, []).append(road)
+    groups = []
+    for name, members in sorted(named.items()):
+        by_id = {road["id"]: road for road in members}
+        owners = {}
+        for road in members:
+            for node in road["nodes"]:
+                owners.setdefault(node, set()).add(road["id"])
+        remaining = set(by_id)
+        while remaining:
+            todo = [min(remaining)]
+            component = set()
+            while todo:
+                owner = todo.pop()
+                if owner in component:
+                    continue
+                component.add(owner)
+                for node in by_id[owner]["nodes"]:
+                    todo.extend(owners[node] - component)
+            remaining.difference_update(component)
+            groups.append((name, [by_id[owner] for owner in sorted(component)]))
+    return groups
+
+
 def write(out, city, deck_field, road_triangles=None):
     """Return static placement records for merging into props.write pathset."""
     cfg = json.loads(OVERRIDE.read_text())
@@ -719,18 +753,11 @@ def write(out, city, deck_field, road_triangles=None):
     inventory = json.loads(
         (ROOT / "config/overrides/bridge-structures.json").read_text()
     )
-    grouped = {}
-    for road in city["roads"]:
-        if road["id"] in city["bridge_ways"]:
-            grouped.setdefault(
-                (
-                    road["tags"].get("name", "Unnamed viaduct"),
-                    int(road["tags"].get("layer", 1)),
-                ),
-                [],
-            ).append(road)
+    grouped = source_bridge_groups(
+        [road for road in city["roads"] if road["id"] in city["bridge_ways"]]
+    )
     structures = []
-    for index, ((name, layer), source_roads) in enumerate(sorted(grouped.items())):
+    for index, (name, source_roads) in enumerate(grouped):
         if name == cfg["name"]:
             continue
         rule = inventory["bridges"].get(name, inventory["default"])
@@ -747,12 +774,13 @@ def write(out, city, deck_field, road_triangles=None):
                     "asset": asset["asset"],
                 }
             )
-    roads = grouped.get(cfg["name"], [])
-    if roads:
+    landmark_components = [roads for name, roads in grouped if name == cfg["name"]]
+    for index, roads in enumerate(landmark_components):
+        asset_name = "sthlm_vasterbron" if index == 0 else f"sthlm_vasterbron_{index}"
         instances.append(
             write_asset(
                 out,
-                "sthlm_vasterbron",
+                asset_name,
                 landmark_mesh(roads, source_height(roads, deck_field), cfg),
                 cfg["id"],
             )
