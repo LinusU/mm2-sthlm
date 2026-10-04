@@ -71,3 +71,11 @@ Source graph and config checks alone establish topology and export intent.
 They do not demonstrate engine driving, collision clearance, opponent behavior
 or visual gate placement. Native completion logs and inspected game screenshots
 must be recorded separately against a specific package hash and engine revision.
+
+The [native evidence record](../../evidence/overnight-city/circuit-races/README.md)
+contains an inspected, actually played Circuit0 two-lap finish with real rivals,
+exact commands, logs and hashes. This record is scoped to the immutable package
+before the road repair. Circuit1 exposed a Torsgränd road step/gap; Circuit2
+exposed a generic guide-occurrence bug and additional recovery hotspots. Those
+failed traversals are preserved. The full 20-case acceptance matrix remains
+pending a repaired coherent package; course topology alone is not acceptance.

@@ -1,0 +1,62 @@
+{
+  "date_utc": "2026-10-04",
+  "scope": "pre-road-repair 4cdd immutable fixture; partial Circuit acceptance, full 20-case matrix pending",
+  "played_finish": {
+    "cwd": "/private/tmp/mm2-sthlm-race-engine",
+    "env": {
+      "RUST_LOG": "warn,mm2_app::scripted=info"
+    },
+    "argv": [
+      "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-capture",
+      "--mods",
+      "/private/tmp/circuit-final/maps",
+      "--city",
+      "stockholm",
+      "--no-profile",
+      "--car",
+      "sthlm_racer",
+      "--event",
+      "circuit:0",
+      "--bot",
+      "--bot-route",
+      "/private/tmp/circuit-final/maps/stockholm/qa/races/circuit0-a-guide.opp",
+      "--bot-speed",
+      "10",
+      "--frames",
+      "9000",
+      "--screenshot",
+      "/private/tmp/circuit-final/screenshots/circuit0-amateur-played-finish.png"
+    ],
+    "engine_source": "f6551353cdc2819389242dd6c0bc8ead6d4a46b6",
+    "engine_sha256": "40d0511a2ec93572bb5761070ec51f5f46bc103dd41c8d5cff5f79d6cbd46000",
+    "package_manifest_sha256": "4cdd3f0ec92f9ba04343410951c2b2506755ee4a75488f9aabfd35802e81e457",
+    "image_sha256": "d4f2ce1387487ea9e846a560f6073781306c3da83d34ff4162613a9848e7bab3",
+    "image": "circuit0-amateur-played-finish.png",
+    "log": "logs/circuit0-a-played-finish.log",
+    "inspected": true,
+    "native_result": "player3rd/3 at112.3s; actualAI59.1s/66.6s; two amateur laps required; wheels attached; gates clear",
+    "counters": "no bounded escape/reanchor INFO traces; visual smoke does not print aggregate reset counters",
+    "fixtures": {
+      "circuit0-a-guide.opp": "9007bb42cc2ff2296e4b1929915c884d1d74988d0a29db8b39a26c0815edfa28",
+      "circuit0waypoints.csv": "cfdd2c39a8ac671d6e1a05ec3eacdc7a1205c80611743fa2a759407303442ada"
+    }
+  },
+  "latest_engine": {
+    "source": "73303b00cccb20859b53de0acaa05f09e48abaaf",
+    "binary_sha256": "bc89accaba0811c5085f9368bbaf05e687fb69431db8b9c48ea166faa30bdb65",
+    "patch_sha256": "815f2c280957bb11515cc0fba89b18c0af7c2c60aed2f62880a12a90a8adc03c",
+    "pr": "https://github.com/LinusU/rust-mm2/pull/6",
+    "tests_passed": 1862,
+    "old_road_baseline": {
+      "event": "circuit:1",
+      "level": "amateur",
+      "speed_ceiling_mps": 12,
+      "frames": 32681,
+      "package_manifest_sha256": "4cdd3f0ec92f9ba04343410951c2b2506755ee4a75488f9aabfd35802e81e457",
+      "log": "logs/circuit1-a-density-old-road.log",
+      "native": "Complete cp8/8 lap2/2; finite; resets0; p_rec0r/3e; impacts32;299.61s",
+      "opponents": "2/2 finish; escapes0/5; reanchors0/1",
+      "status": "fails clean traversal; all player escapes at sameTorsgr\u00e4nd source defect"
+    }
+  }
+}

@@ -16,3 +16,9 @@ A preserved copy of that corrected native frame and log is in
 [evidence/races/blitz/hud](../../evidence/races/blitz/hud/). Root inspected the
 frame: wheels are attached, the stopwatch is readable and the minimap and
 navigation arrow render. This is visual evidence only, not a race finish.
+
+The source-oriented native checkpoint banner, corrected car frame and parked
+timeout proof are retained in [the UI evidence manifest](../../evidence/races/blitz-native-ui-evidence.json).
+Root inspected the waterfront frame: the CHECKPOINT arch crosses the street,
+its label is readable below the stopwatch and the minimap/navigation arrow
+remain visible. These captures retain their isolated fixture hashes.
