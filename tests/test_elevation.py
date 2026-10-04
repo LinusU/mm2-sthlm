@@ -1,9 +1,11 @@
 import sys
 import math
+import json
 import unittest
 from pathlib import Path
 
-from shapely.geometry import LineString, Point, box, mapping, shape
+from shapely.geometry import LineString, Point, Polygon, box, mapping, shape
+from shapely.ops import unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from elevation import RoadField, apply, conforming_boundary
@@ -20,6 +22,48 @@ class Plane:
 
 
 class ElevationTests(unittest.TestCase):
+    def test_torsgrand_export_does_not_lift_lower_street_to_parallel_road(self):
+        from road_surfaces import render
+
+        roads = json.loads(
+            (Path(__file__).parent / "fixtures/torsgrand-height.json").read_text()
+        )["roads"]
+        field = RoadField(roads, Plane())
+        footprint = unary_union(
+            [LineString(r["points"]).buffer(r["width"] / 2) for r in roads]
+        ).intersection(box(-50, 1050, 80, 1160))
+        triangles = []
+        render(
+            PsdlWriter(),
+            {"roads": roads},
+            footprint,
+            field.ground,
+            road_height=lambda r, x, n: field.height_for_road(r, x, n),
+            station_height=field.height_at_station,
+            triangle_sink=triangles,
+        )
+        # Actual native collision triangles at a race recovery position and
+        # adjacent source centreline samples, not just the sampler's values.
+        for x, n in [(6.981, 1105.205), (10.398, 1103.944), (8.254, 1106.393)]:
+            hits = []
+            for a, b, c in triangles:
+                polygon = Polygon([(v[0], -v[2]) for v in (a, b, c)])
+                if not polygon.covers(Point(x, n)):
+                    continue
+                denominator = (b[2] - c[2]) * (a[0] - c[0]) + (c[0] - b[0]) * (
+                    a[2] - c[2]
+                )
+                u = (
+                    (b[2] - c[2]) * (x - c[0]) + (c[0] - b[0]) * (-n - c[2])
+                ) / denominator
+                v = (
+                    (c[2] - a[2]) * (x - c[0]) + (a[0] - c[0]) * (-n - c[2])
+                ) / denominator
+                hits.append(u * a[1] + v * b[1] + (1 - u - v) * c[1])
+            self.assertTrue(hits, "missing driveable collision surface")
+            for height in hits:
+                self.assertAlmostEqual(height, field.ground(x, n), delta=0.04)
+
     def road(self, id, nodes, points, bridge=False):
         return {
             "id": id,
@@ -224,9 +268,13 @@ class ElevationTests(unittest.TestCase):
         road = LineString([(-1030, -60), (-950, 29)]).buffer(4.5)
         shoulder = road.buffer(2).difference(road)
         meshes = []
+
+        def height(x, n):
+            return 0.02 * (x + 990) ** 2 + 0.02 * n * n
+
         for geom, is_road in [(road, True), (shoulder, False)]:
             writer = ChunkedWriter([-990, 0, 0])
-            writer.surface(geom, Plane().height, "road", road=is_road)
+            writer.surface(geom, height, "road", road=is_road)
             meshes.append(self.boundary_mesh(writer.parts.values(), road.boundary))
             self.assertGreater(len(writer.parts), 1)
         self.assertEqual(meshes[0], meshes[1])

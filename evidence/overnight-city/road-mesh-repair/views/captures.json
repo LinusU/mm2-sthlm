@@ -1,0 +1,41 @@
+{
+  "engine_binary_sha256": "bc89accaba0811c5085f9368bbaf05e687fb69431db8b9c48ea166faa30bdb65",
+  "package_manifest_sha256": "39f814e15b04bd88a9a2437511c2598a0bc1aa3b4e33a120cfb3689f8d63217e",
+  "scope": "Actual native game captures. Inspection is a separate recorded step; vehicle driving evidence is separate.",
+  "results": [
+    {
+      "name": "torsgrand-race-hotspot",
+      "camera": [
+        -5,
+        24,
+        -1123,
+        -146,
+        -18
+      ],
+      "scope": "Physical race recovery hotspot at source way2407293; diagnostic, not proof of repair.",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-density",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--parked",
+        "--no-hud",
+        "--spawn=-31.488166412776778,4.75469158322535,138.05843248238915,-90.69759070561142",
+        "--cam=-5,24,-1123,-146,-18",
+        "--frames",
+        "30",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/overnight-city/road-mesh-repair/views/torsgrand-race-hotspot.png"
+      ],
+      "exit_code": 0,
+      "captured": true,
+      "visually_inspected": true,
+      "screenshot_sha256": "1b979e7a591fcd0e1b056aaaf752ac2ab8cf55bfbbf668e2d0a550f937acba73",
+      "inspection_notes": "Lower road core is visibly smoother; blue slit on steep paving beside it remains. This is an inspected diagnostic, not complete visual repair."
+    }
+  ]
+}

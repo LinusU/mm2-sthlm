@@ -1,0 +1,13 @@
+{
+  "engine": "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-density",
+  "engine_binary_sha256": "bc89accaba0811c5085f9368bbaf05e687fb69431db8b9c48ea166faa30bdb65",
+  "engine_revision": "73303b00cccb20859b53de0acaa05f09e48abaaf",
+  "missing_chunk_rejected": true,
+  "package_manifest_sha256": "39f814e15b04bd88a9a2437511c2598a0bc1aa3b4e33a120cfb3689f8d63217e",
+  "race_fixture": "qa/waterfront copied into temporary event zero",
+  "second_map_record": "smoke=headless-physics world=city/triangle.psdl status=pass updates=800 ticks=1600 driver=hold diff=amateur phase=playing impacts=0 dropped=0 peak=44.8m/s travel=317.9m sim=13.33s resets=0 controls=1360t/0b/0s finite=true moved=318m wheels=4/4 final=(-0,2.8,-318) env=lt00(fallback) fog=none sky=none map=absent:missing-tune wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+1x",
+  "source_tree_beside_package": false,
+  "status": "pass",
+  "stockholm_record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=23380 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1557.4m sim=194.83s resets=0 controls=12082t/11298b/22892s finite=true moved=17m wheels=4/4 final=(-15,4.0,132) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/103m ind=on/0m/0b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+107x",
+  "working_directory": "empty temporary directory"
+}

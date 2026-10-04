@@ -72,6 +72,73 @@ def triangulate(geom):
                 yield pts
 
 
+def height_triangles(geom, level, *, interior=True):
+    """Refine curved height fields without opening shared material edges.
+
+    An edge's refinement depends only on its endpoints and height sampler, so
+    adjacent patches make identical splits. Interior centroid splits retain
+    those edges. In particular, a long triangle must not interpolate a nearby
+    upper street's height across the centre of a lower hillside street.
+    """
+    triangles = list(triangulate(geom))
+    edge_counts = {}
+    for tri in triangles:
+        for a, b in zip(tri, tri[1:] + tri[:1]):
+            key = tuple(sorted((a, b)))
+            edge_counts[key] = edge_counts.get(key, 0) + 1
+    boundary_edges = {edge for edge, count in edge_counts.items() if count == 1}
+    for _ in range(6):
+        refined = []
+        changed = False
+        for tri in triangles:
+            cuts = []
+            for a, b in zip(tri, tri[1:] + tri[:1]):
+                edge = tuple(sorted((a, b)))
+                if not interior and edge not in boundary_edges:
+                    continue
+                midpoint = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+                if (
+                    math.dist(a, b) > 0.25
+                    and abs(level(*midpoint) - (level(*a) + level(*b)) / 2) > 0.04
+                ):
+                    cuts.append((a, b, midpoint))
+                    if edge in boundary_edges:
+                        boundary_edges.update(
+                            [tuple(sorted((a, midpoint))), tuple(sorted((midpoint, b)))]
+                        )
+            children = [tri]
+            for a, b, midpoint in cuts:
+                split = []
+                for child in children:
+                    if a in child and b in child:
+                        c = next(p for p in child if p != a and p != b)
+                        split.extend([[a, midpoint, c], [midpoint, b, c]])
+                    else:
+                        split.append(child)
+                children = split
+            if interior and not cuts:
+                centre = tuple(sum(p[i] for p in tri) / 3 for i in (0, 1))
+                if (
+                    max(math.dist(a, b) for a, b in zip(tri, tri[1:] + tri[:1])) > 0.25
+                    and abs(level(*centre) - sum(level(*p) for p in tri) / 3) > 0.04
+                ):
+                    children = [
+                        [tri[0], tri[1], centre],
+                        [tri[1], tri[2], centre],
+                        [tri[2], tri[0], centre],
+                    ]
+            changed |= len(children) > 1
+            refined.extend(children)
+        triangles = refined
+        if not changed:
+            break
+    for pts in triangles:
+        a, b, c = pts
+        if (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]) < 0:
+            pts = list(reversed(pts))
+        yield pts
+
+
 def estimated_height(tags, feature_id, area=None):
     for tag, scale in [("height", 1), ("building:levels", 3.2)]:
         if tag in tags:
@@ -355,15 +422,19 @@ def normalize(source, cfg, boundary=None, water_override=None):
 
 
 class PsdlWriter:
-    def __init__(self):
+    def __init__(self, *, vertex_limit=65535):
         self.vertices, self.lookup, self.rooms, self.heights = [], {}, [], [0.0]
         self.textures = []
         self.water_rooms = []
+        self.vertex_limit = vertex_limit
 
     def vertex(self, p):
         key = (round(p[0], 5), round(p[1], 5), round(-p[2], 5))
         if key not in self.lookup:
-            if len(self.vertices) >= 65535:
+            if (
+                self.vertex_limit is not None
+                and len(self.vertices) >= self.vertex_limit
+            ):
                 raise ValueError("PSDL vertex-index limit reached; reduce slice")
             self.lookup[key] = len(self.vertices)
             self.vertices.append(key)
@@ -412,7 +483,20 @@ class PsdlWriter:
                             )
                         ]
                     emitted_area = 0.0
-                    for tri in (tri for patch in patches for tri in triangulate(patch)):
+                    for tri in (
+                        tri
+                        for patch in patches
+                        for tri in (
+                            height_triangles(
+                                patch,
+                                level,
+                                interior=road
+                                or texture in ("paving", "sthlm_oldtown_setts"),
+                            )
+                            if varying
+                            else triangulate(patch)
+                        )
+                    ):
                         a, b, c = tri
                         emitted_area += (
                             abs(
@@ -492,7 +576,79 @@ class PsdlWriter:
             ([self.vertex((x, base, z)) for x, z in coords[:-1]], attrs, 0)
         )
 
+    def vertex_pools(self, limit=65535):
+        """Partition complete rooms into stable native vertex pools."""
+        if not isinstance(limit, int) or not 1 <= limit <= 65535:
+            raise ValueError("Invalid native vertex pool limit")
+        water = set(self.water_rooms)
+        if any(not 1 <= room <= len(self.rooms) for room in water):
+            raise ValueError("Invalid water room reference")
+        pools = []
+        pool = None
+        mapping = {}
+        for room_id, (perimeter, attrs, flags) in enumerate(self.rooms, 1):
+            refs = list(perimeter)
+            slots = []
+            cursor = 0
+            while cursor < len(attrs):
+                code = attrs[cursor]
+                kind, subtype = (code >> 3) & 15, code & 7
+                if kind == 10:
+                    words, offsets = 1, ()
+                elif kind == 2 and subtype == 2:
+                    words, offsets = 4, (1, 2, 3, 4)
+                elif kind in (5, 6) and subtype == 1:
+                    words, offsets = 3, (1, 2, 3)
+                elif kind == 11 and subtype == 6:
+                    words, offsets = 6, (5, 6)
+                elif kind == 7 and subtype == 4:
+                    words, offsets = 4, (3, 4)
+                else:
+                    raise ValueError(f"Unsupported exported attribute {code}")
+                if cursor + words >= len(attrs):
+                    raise ValueError("Truncated exported attribute")
+                slots.extend(cursor + offset for offset in offsets)
+                refs.extend(attrs[cursor + offset] for offset in offsets)
+                cursor += words + 1
+            if any(
+                not isinstance(v, int) or not 0 <= v < len(self.vertices) for v in refs
+            ):
+                raise ValueError("Invalid source vertex reference")
+            unique = set(refs)
+            if len(unique) > limit:
+                raise ValueError("Single room exceeds native vertex pool limit")
+            if (
+                pool is None
+                or len(mapping) + sum(v not in mapping for v in unique) > limit
+                or len(pool.rooms) >= 65534
+            ):
+                pool = PsdlWriter()
+                pool.textures = list(self.textures)
+                pool.heights = list(self.heights)
+                pools.append(pool)
+                mapping = {}
+            for original in refs:
+                if original not in mapping:
+                    mapping[original] = len(pool.vertices)
+                    point = self.vertices[original]
+                    pool.vertices.append(point)
+                    pool.lookup[point] = mapping[original]
+            remapped = list(attrs)
+            for slot in slots:
+                remapped[slot] = mapping[attrs[slot]]
+            pool.rooms.append(([mapping[v] for v in perimeter], remapped, flags))
+            if room_id in water:
+                pool.water_rooms.append(len(pool.rooms))
+        # Small existing parts preserve their native indexing and bytes.
+        if len(pools) <= 1 and len(self.vertices) <= limit and len(self.rooms) <= 65534:
+            return [self]
+        return pools
+
     def write(self, path, center):
+        if len(self.vertices) > 65535 or len(self.rooms) >= 65535:
+            raise ValueError(
+                "PSDL pool exceeds native index limits; split before writing"
+            )
         out = bytearray(b"PSD0")
 
         def pack(fmt, *values):

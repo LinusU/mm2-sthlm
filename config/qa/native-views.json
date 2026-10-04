@@ -114,6 +114,17 @@
       ],
       "scope": "Local shallow basin; drive acceptance is separate",
       "source_id": "way/219139744"
+    },
+    {
+      "name": "torsgrand-race-hotspot",
+      "camera": [
+        -5,
+        24,
+        -1123,
+        -146,
+        -18
+      ],
+      "scope": "Physical race recovery hotspot at source way2407293; diagnostic, not proof of repair."
     }
   ]
 }

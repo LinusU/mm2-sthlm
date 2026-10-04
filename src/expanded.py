@@ -470,7 +470,7 @@ class ChunkedWriter:
     def part(self, x, n):
         key = (math.floor(x / self.PART_SIZE_M), math.floor(n / self.PART_SIZE_M))
         if key not in self.parts:
-            self.parts[key] = sthlm.PsdlWriter()
+            self.parts[key] = sthlm.PsdlWriter(vertex_limit=None)
         return self.parts[key]
 
     def surface(self, geom, y, texture, road=False, water=False):
@@ -552,23 +552,36 @@ class ChunkedWriter:
     def water_rooms(self):
         return self.parts[self.primary].water_rooms
 
-    def write(self, path, center):
-        if len(self.parts) > sthlm.CITY_PART_LIMIT:
+    def write(self, path, center, pool_limit=65535):
+        native = []
+        for key, part in sorted(
+            self.parts.items(), key=lambda kv: (kv[0][:2] != self.primary, kv[0])
+        ):
+            for spill, pool in enumerate(part.vertex_pools(pool_limit)):
+                spill += key[2] if len(key) == 3 else 0
+                native_key = key[:2] if spill == 0 else (*key[:2], spill)
+                dest = (
+                    path
+                    if key == self.primary and spill == 0
+                    else path.parent
+                    / "stockholm.parts"
+                    / (
+                        f"part_{key[0]}_{key[1]}"
+                        + (f"_spill_{spill}" if spill else "")
+                        + ".psdl"
+                    )
+                )
+                native.append((native_key, pool, dest))
+        if len(native) > sthlm.CITY_PART_LIMIT:
             raise ValueError("city chunk count exceeds native 129-part limit")
         paths = []
-        for key, part in sorted(
-            self.parts.items(), key=lambda kv: (kv[0] != self.primary, kv[0])
-        ):
-            dest = (
-                path
-                if key == self.primary
-                else path.parent / "stockholm.parts" / f"part_{key[0]}_{key[1]}.psdl"
-            )
-            part.write(dest, center)
+        for _, pool, dest in native:
+            pool.write(dest, center)
             dest.with_suffix(".water").write_text(
-                "0.2\n" + "".join(f"{i}\n" for i in part.water_rooms)
+                "0.2\n" + "".join(f"{i}\n" for i in pool.water_rooms)
             )
             paths.append(str(dest.relative_to(path.parent.parent)))
+        self.parts = {key: pool for key, pool, _ in native}
         path.with_suffix(".chunks").write_text(
             "MM2_CHUNKS 1\n" + "\n".join(paths[1:]) + "\n"
         )

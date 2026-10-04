@@ -1,0 +1,60 @@
+{
+  "scope": "Same-engine, unchanged-course native physical comparison; not acceptance of all thirty races.",
+  "engine_revision": "73303b00cccb20859b53de0acaa05f09e48abaaf",
+  "engine_binary_sha256": "bc89accaba0811c5085f9368bbaf05e687fb69431db8b9c48ea166faa30bdb65",
+  "guide_sha256": "b51d35ca0d7132320e477ce1be3ca41570830207e3e1fd5469061954ef3b2856",
+  "frames": 32681,
+  "bot_speed_mps": 12,
+  "event": "circuit:1",
+  "difficulty": "amateur",
+  "before": {
+    "manifest_sha256": "4cdd3f0ec92f9ba04343410951c2b2506755ee4a75488f9aabfd35802e81e457",
+    "log_sha256": "702b4065c382becdd1e7b932d9306d7fde5c9d4f26d78e2133e3762a055d7c15",
+    "completed_laps": 2,
+    "gates": 8,
+    "finish_seconds": 299.61,
+    "player_resets": 0,
+    "player_escapes": 3,
+    "impacts": 32,
+    "opponents_finished": 2,
+    "opponent_reanchors": 1,
+    "opponent_escapes": 5
+  },
+  "after": {
+    "manifest_sha256": "39f814e15b04bd88a9a2437511c2598a0bc1aa3b4e33a120cfb3689f8d63217e",
+    "log_sha256": "2e80dc745fb3d42b1c9e92165f1876a8c9a450e2224619707c70586d27eee0a3",
+    "completed_laps": 2,
+    "gates": 8,
+    "finish_seconds": 280.07,
+    "player_resets": 0,
+    "player_escapes": 0,
+    "impacts": 14,
+    "opponents_finished": 2,
+    "opponent_reanchors": 0,
+    "opponent_escapes": 1
+  },
+  "floor_samples": [
+    {
+      "x": 6.981,
+      "north": 1105.205,
+      "profile_y": 16.87376,
+      "before_mesh_y": 17.45653,
+      "after_mesh_y": 16.87311
+    },
+    {
+      "x": 10.398,
+      "north": 1103.944,
+      "profile_y": 16.79847,
+      "before_mesh_y": 18.00878,
+      "after_mesh_y": 16.80173
+    },
+    {
+      "x": 8.254,
+      "north": 1106.393,
+      "profile_y": 16.87507,
+      "before_mesh_y": 17.72917,
+      "after_mesh_y": 16.87384
+    }
+  ],
+  "known_visual_limitation": "Native after image still shows a blue slit beside the lower road. Shared vertices match; steep fan winding in the engine importer is being investigated separately."
+}
