@@ -1,0 +1,144 @@
+mm2-smoke commit=1a822c1cc472f6c04a25a6832e346b162bbb0ff5
+2026-10-04T05:59:22.791313Z  WARN mm2: wheel part whl0 geometry authored in place; recentring onto origin car=Some("sthlm_racer")
+2026-10-04T05:59:22.791337Z  WARN mm2: wheel part whl1 geometry authored in place; recentring onto origin car=Some("sthlm_racer")
+2026-10-04T05:59:22.791341Z  WARN mm2: wheel part whl2 geometry authored in place; recentring onto origin car=Some("sthlm_racer")
+2026-10-04T05:59:22.791343Z  WARN mm2: wheel part whl3 geometry authored in place; recentring onto origin car=Some("sthlm_racer")
+2026-10-04T05:59:23.483320Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-3_0.water skipped=0
+2026-10-04T05:59:23.825950Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_2.water skipped=0
+2026-10-04T05:59:23.828979Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_3.water skipped=0
+2026-10-04T05:59:23.979244Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_0.water skipped=0
+2026-10-04T05:59:24.114693Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_2.water skipped=0
+2026-10-04T05:59:24.161849Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_3.water skipped=0
+2026-10-04T05:59:24.275006Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_-2.water skipped=0
+2026-10-04T05:59:24.518294Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_2.water skipped=0
+2026-10-04T05:59:24.572573Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_3.water skipped=0
+2026-10-04T05:59:24.660007Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_-3.water skipped=0
+2026-10-04T05:59:24.746330Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_-2.water skipped=0
+2026-10-04T05:59:24.808148Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_-1.water skipped=0
+2026-10-04T05:59:25.021069Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_1.water skipped=0
+2026-10-04T05:59:25.095309Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_2.water skipped=0
+2026-10-04T05:59:25.151095Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_3.water skipped=0
+2026-10-04T05:59:25.269763Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_-3.water skipped=0
+2026-10-04T05:59:25.399825Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_-1.water skipped=0
+2026-10-04T05:59:25.519669Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_1.water skipped=0
+2026-10-04T05:59:25.573225Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_2.water skipped=0
+2026-10-04T05:59:25.594905Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_3.water skipped=0
+2026-10-04T05:59:25.869678Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_1.water skipped=0
+2026-10-04T05:59:25.917307Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_2.water skipped=0
+2026-10-04T05:59:25.956557Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_3.water skipped=0
+2026-10-04T05:59:26.125320Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_4_1.water skipped=0
+2026-10-04T05:59:26.159973Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_4_2.water skipped=0
+2026-10-04T05:59:26.434386Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_6_1.water skipped=0
+2026-10-04T05:59:26.661589Z  WARN mm2_app::object_sound: object sound table unreadable path=aud/ambient/ferry.csv error=asset not found: aud/ambient/ferry.csv
+2026-10-04T05:59:26.661617Z  WARN mm2_app::object_sound: object sound table unreadable path=aud/ambient/subwaycar.csv error=asset not found: aud/ambient/subwaycar.csv
+2026-10-04T05:59:26.664210Z  WARN mm2_app::environment: lighting preset validation issue path=city/stockholm.lt08 issue=OffGridName("evening")
+2026-10-04T05:59:26.664227Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-04T05:59:26.664232Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-04T05:59:26.682273Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-04T05:59:26.682297Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-04T05:59:26.682304Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-04T05:59:26.682307Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-04T05:59:26.682310Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-04T05:59:26.682313Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-04T05:59:26.682315Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-04T05:59:26.682318Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-04T05:59:26.682320Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-04T05:59:26.682322Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-04T05:59:26.682325Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-04T05:59:26.682552Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-04T05:59:26.682561Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-04T05:59:26.682566Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-04T05:59:26.682568Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-04T05:59:26.683487Z  WARN mm2_app::session: nav graph failed to load — opponent routes stay verbatim error=city/stockholm.bai: not found in the VFS
+2026-10-04T05:59:26.689823Z  INFO mm2_app::opponents: opponent roster spawned opponents=6
+2026-10-04T05:59:27.119976Z  WARN mm2_app::race_audio: audio: race cue startracelow: no wave matches stem "startracelow"
+2026-10-04T05:59:27.120021Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+2026-10-04T05:59:27.408508Z  WARN mm2_app::race_audio: audio: race cue startracelow: no wave matches stem "startracelow"
+2026-10-04T05:59:27.603272Z  WARN mm2_app::race_audio: audio: race cue startracelow: no wave matches stem "startracelow"
+2026-10-04T05:59:27.794830Z  WARN mm2_app::race_audio: audio: race cue startracehigh: no wave matches stem "startracehigh"
+2026-10-04T05:59:40.494257Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T05:59:54.375830Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:00:01.203921Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=1 from=Vec3(-555.1405, 7.148706, -1106.8511) to=Vec3(-544.2228, 16.350637, -1107.5999)
+2026-10-04T06:00:07.321503Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:00:20.688801Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:00:33.705153Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:00:44.341706Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=1 from=Vec3(2744.3992, -0.0007619262, -374.2674) to=Vec3(2769.4065, 4.0897746, -351.7062)
+2026-10-04T06:00:46.824157Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=1 from=Vec3(2770.5574, 3.5445986, -359.22473) to=Vec3(2765.2837, 3.6718423, -366.03168)
+2026-10-04T06:00:47.422226Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:00:51.712221Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=2 from=Vec3(2771.922, 3.9436407, -344.8121) to=Vec3(2768.5496, 4.0029173, -354.68347)
+2026-10-04T06:01:01.534876Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:01:14.509424Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:01:28.252209Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:01:42.071169Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:01:46.647012Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=64822 escapes=1 position=Vec3(2771.9849, 3.9550056, -344.286) speed=1.0396976470947266 heading_rad=-3.0386431217193604 bearing_rad=-0.14472579956054688 route_next=Some(1400) gate=Vec3(2926.0996, 4.97956, 45.58533) aim=Vec3(2775.1877, 4.2642, -331.61975)
+2026-10-04T06:01:47.558340Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=65236 escapes=2 position=Vec3(2771.5015, 3.8746798, -347.32065) speed=0.09077078849077225 heading_rad=-2.4131553173065186 bearing_rad=0.4978325068950653 route_next=Some(1400) gate=Vec3(2926.0996, 4.97956, 45.58533) aim=Vec3(2775.1877, 4.2642, -331.61975)
+2026-10-04T06:01:48.715032Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=65778 escapes=3 position=Vec3(2770.8867, 3.871222, -347.32867) speed=0.12499178946018219 heading_rad=-2.9348621368408203 bearing_rad=-0.06051509827375412 route_next=Some(1400) gate=Vec3(2926.0996, 4.97956, 45.58533) aim=Vec3(2775.1877, 4.2642, -331.61975)
+2026-10-04T06:01:49.614024Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=66192 escapes=4 position=Vec3(2770.729, 3.7991436, -349.87808) speed=0.052172139286994934 heading_rad=-2.41412615776062 bearing_rad=0.4879511892795563 route_next=Some(1400) gate=Vec3(2926.0996, 4.97956, 45.58533) aim=Vec3(2775.1877, 4.2642, -331.61975)
+2026-10-04T06:01:50.467210Z  INFO mm2_app::scripted: scripted player re-anchored onto its route after a bounded stuck tick=66594 reanchors=1 position=Vec3(2772.9614, 4.0709643, -340.41653) speed=9.495323181152344 heading_rad=-2.8780722618103027 route_next=1398 gate=Vec3(2926.0996, 4.97956, 45.58533) landing=Vec3(2770.4666, 4.197214, -348.02325)
+2026-10-04T06:01:52.001849Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=67298 escapes=5 position=Vec3(2776.3406, 4.37798, -330.13477) speed=-0.023740585893392563 heading_rad=-3.0610392093658447 bearing_rad=-0.14438407123088837 route_next=Some(1403) gate=Vec3(2926.0996, 4.97956, 45.58533) aim=Vec3(2779.2356, 4.67649, -317.48224)
+2026-10-04T06:01:55.533274Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=1 from=Vec3(1594.629, 3.7381518, -86.3053) to=Vec3(1598.037, 6.632728, -93.70592)
+2026-10-04T06:01:56.783337Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=1 from=Vec3(1598.2532, 4.749759, -127.56182) to=Vec3(1602.7964, 5.3759165, -135.09184)
+2026-10-04T06:02:00.223014Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=1 from=Vec3(1618.4543, 0.35422212, -156.62282) to=Vec3(1603.9949, 4.460902, -145.50761)
+2026-10-04T06:02:01.691995Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=2 from=Vec3(1610.1581, -0.2612236, -148.29941) to=Vec3(1602.9773, 5.2377706, -136.6644)
+2026-10-04T06:02:02.188948Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:02:09.045241Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=2 from=Vec3(1599.4293, 5.527303, -125.5266) to=Vec3(1602.8743, 5.3164544, -135.7687)
+2026-10-04T06:02:10.791818Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=2 from=Vec3(1595.5734, 4.8285303, -68.62522) to=Vec3(1598.1245, 6.657523, -94.46663)
+2026-10-04T06:02:13.922764Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=2 from=Vec3(1638.9164, 1.2045729, 777.2624) to=Vec3(1612.4797, 10.325164, 835.84155)
+2026-10-04T06:02:15.974878Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=3 from=Vec3(1641.3063, 0.8243642, 777.9266) to=Vec3(1614.612, 10.567604, 831.4611)
+2026-10-04T06:02:16.886422Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:02:17.682492Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=78466 escapes=6 position=Vec3(3245.529, 7.5101314, 471.39392) speed=0.009302999824285507 heading_rad=-0.20757144689559937 bearing_rad=-0.6074545383453369 route_next=Some(1638) gate=Vec3(3783.9805, 13.72842, 448.74) aim=Vec3(3243.933, 7.54075, 467.61792)
+2026-10-04T06:02:19.940915Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=3 from=Vec3(1634.6096, -0.088300526, 775.9272) to=Vec3(1616.701, 10.655929, 827.05994)
+2026-10-04T06:02:25.931745Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=3 from=Vec3(1639.2203, 1.1554999, 777.4298) to=Vec3(1612.4797, 10.325164, 835.84155)
+2026-10-04T06:02:31.344286Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:02:33.467111Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=3 from=Vec3(1647.0598, 0.80555147, 781.18964) to=Vec3(1624.9612, 10.873328, 809.5605)
+2026-10-04T06:02:44.839756Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:02:58.424930Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:03:11.658606Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:03:24.963972Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:03:37.709080Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:03:51.413315Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:03:53.445701Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=4 from=Vec3(-1223.3182, 15.0959425, 48.447533) to=Vec3(-1218.9683, 16.70308, 60.831493)
+2026-10-04T06:03:57.234204Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=4 from=Vec3(-1221.8438, 14.639334, 49.035713) to=Vec3(-1221.7573, 16.72912, 57.867477)
+2026-10-04T06:04:03.299873Z  INFO mm2_app::opponents: opponent re-anchored onto its route after a bounded stuck vehicle=sthlm_racer reanchors=4 from=Vec3(2556.5876, 4.286944, 1200.3315) to=Vec3(2531.854, 28.948227, 1228.0779)
+2026-10-04T06:04:04.772577Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:04:15.269664Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:04:30.038270Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:04:41.986426Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:04:42.864471Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=147178 escapes=7 position=Vec3(1595.9883, 3.332277, -96.73715) speed=0.009910887107253075 heading_rad=-2.9267520904541016 bearing_rad=0.13342095911502838 route_next=Some(3147) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1596.9833, 6.02368, -84.54359)
+2026-10-04T06:04:43.697767Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=147592 escapes=8 position=Vec3(1595.9443, 3.3252044, -97.30102) speed=0.08055660873651505 heading_rad=-2.852423667907715 bearing_rad=0.19910509884357452 route_next=Some(3147) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1597.0466, 6.02368, -85.09509)
+2026-10-04T06:04:44.780973Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=148124 escapes=9 position=Vec3(1596.8463, 3.2656362, -105.88873) speed=0.04613199457526207 heading_rad=-2.7833008766174316 bearing_rad=0.3309171199798584 route_next=Some(3147) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1597.3447, 6.17415, -87.68616)
+2026-10-04T06:04:46.589540Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=149006 escapes=10 position=Vec3(1594.7001, 3.39543, -87.689224) speed=0.01769198291003704 heading_rad=-2.7633707523345947 bearing_rad=0.2771688401699066 route_next=Some(3149) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1595.9393, 5.72275, -75.46756)
+2026-10-04T06:04:47.850213Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=149636 escapes=11 position=Vec3(1595.4025, 3.3444319, -95.48075) speed=0.11041489243507385 heading_rad=-2.5776262283325195 bearing_rad=0.5123093128204346 route_next=Some(3149) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1596.2828, 5.87321, -78.45332)
+2026-10-04T06:04:49.270466Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=150314 escapes=12 position=Vec3(1590.2338, 3.3162565, -100.41059) speed=0.008552725426852703 heading_rad=2.7020082473754883 bearing_rad=-0.708408772945404 route_next=Some(3149) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1596.2828, 5.87321, -78.45332)
+2026-10-04T06:04:50.942600Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=151062 escapes=13 position=Vec3(1595.9788, 3.31545, -99.36167) speed=-0.01626412570476532 heading_rad=-2.695983648300171 bearing_rad=0.43106669187545776 route_next=Some(3149) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1596.2828, 5.87321, -78.45332)
+2026-10-04T06:04:53.225005Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=152088 escapes=14 position=Vec3(1594.1244, 3.4630904, -79.19586) speed=0.028361011296510696 heading_rad=-3.0328617095947266 bearing_rad=0.039576075971126556 route_next=Some(3151) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1594.9678, 5.42181, -67.01973)
+2026-10-04T06:04:55.015482Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=152966 escapes=15 position=Vec3(1593.2522, 3.5255458, -70.445984) speed=0.018005164340138435 heading_rad=-3.116682291030884 bearing_rad=-0.03348433971405029 route_next=Some(3153) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1593.9631, 5.27134, -58.285133)
+2026-10-04T06:04:55.970952Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=153380 escapes=16 position=Vec3(1593.2592, 3.5196052, -70.45124) speed=0.011084932833909988 heading_rad=-3.1203083992004395 bearing_rad=-0.03660369664430618 route_next=Some(3153) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1593.9639, 5.27134, -58.29112)
+2026-10-04T06:04:56.891796Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=153794 escapes=17 position=Vec3(1593.503, 3.4832659, -75.24048) speed=0.716567873954773 heading_rad=2.8058948516845703 bearing_rad=-0.3786720335483551 route_next=Some(3153) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1594.1589, 5.27134, -59.987633)
+2026-10-04T06:04:58.054991Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=154362 escapes=18 position=Vec3(1594.0637, 3.4834778, -76.38571) speed=0.028945090249180794 heading_rad=3.099569797515869 bearing_rad=-0.04782925546169281 route_next=Some(3153) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1594.1589, 5.27134, -59.987633)
+2026-10-04T06:04:58.314838Z  INFO mm2_app::scripted: scripted player re-anchored onto its route after a bounded stuck tick=154492 reanchors=2 position=Vec3(1594.0386, 3.4826405, -78.78894) speed=0.03520159050822258 heading_rad=2.7765676975250244 route_next=3149 gate=Vec3(1724.2625, 2.43241, 482.993) landing=Vec3(1597.3583, 6.4403667, -87.80425)
+2026-10-04T06:04:59.184678Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=154908 escapes=19 position=Vec3(1597.137, 4.889615, -85.01516) speed=-0.03264409676194191 heading_rad=2.986764907836914 bearing_rad=-0.03207716718316078 route_next=Some(3150) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1595.6676, 5.72275, -73.10505)
+2026-10-04T06:05:01.807556Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=156184 escapes=20 position=Vec3(1593.5885, 4.437149, -52.597057) speed=-0.01184790674597025 heading_rad=2.964311361312866 bearing_rad=-0.039625804871320724 route_next=Some(3157) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1591.9414, 4.66947, -40.70739)
+2026-10-04T06:05:02.662850Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=156598 escapes=21 position=Vec3(1593.5232, 4.3983617, -52.65718) speed=-0.04185314103960991 heading_rad=3.0149354934692383 bearing_rad=0.0050208549946546555 route_next=Some(3157) gate=Vec3(1724.2625, 2.43241, 482.993) aim=Vec3(1591.9474, 4.66947, -40.759315)
+2026-10-04T06:05:15.344797Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:05:28.543528Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:05:41.008949Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:05:52.663351Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:06:06.557393Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:06:19.554122Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:06:32.043771Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:06:44.153443Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:06:56.733351Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:07:09.872349Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:07:22.046456Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:07:34.751421Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:07:47.286836Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:07:59.568657Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:08:12.891888Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:08:24.774901Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=256658 escapes=22 position=Vec3(-1190.14, 16.96102, -418.6046) speed=-0.026980362832546234 heading_rad=0.09139173477888107 bearing_rad=1.6063250303268433 route_next=Some(5387) gate=Vec3(-1138.1793, 16.61767, -420.309) aim=Vec3(-1187.1445, 16.956007, -418.77213)
+2026-10-04T06:08:26.985604Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:08:39.103233Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T06:08:51.844062Z  WARN mm2_app::race_audio: audio: race cue lastwaypoint: no wave matches stem "lastwaypoint"
+2026-10-04T06:09:02.549790Z  INFO mm2_app::scripted: scripted player started a bounded escape after sustained low-speed throttle tick=275196 escapes=23 position=Vec3(-219.72107, 8.088293, -82.46308) speed=-0.01158478856086731 heading_rad=-0.15492717921733856 bearing_rad=0.15574465692043304 route_next=Some(5779) gate=Vec3(-260.78107, 9.19056, -152.51883) aim=Vec3(-216.04314, 8.21183, -93.91837)
+2026-10-04T06:09:06.569928Z  WARN mm2_app::race_audio: audio: race cue endofracetag: no wave matches stem "endofracetag"
+smoke=headless-physics world=city/stockholm.psdl status=pass updates=198435 ticks=277079 driver=scripted diff=amateur phase=results impacts=1208 dropped=0 peak=12.1m/s travel=26113.0m sim=2308.99s resets=2 controls=165697t/108536b/52284s finite=true moved=18m wheels=4/4 final=(-278,8.7,-151) race=Complete cp=42/42 results=7 lap=1/1 pos=7/7 outcome=finished place=7 opp=6/6 opp_rec=18 opp_drv=152912m/22.0mps/3.7ipk/1.1xpk/0.2apk/0.07hpk opps=0:sthlm_racer/42c/1l/F/70e/4r/900w/28d,1:sthlm_racer/42c/1l/F/9e/2r/900w/33d,2:sthlm_racer/42c/1l/F/21e/4r/900w/30d,3:sthlm_racer/42c/1l/F/27e/3r/900w/28d,4:sthlm_racer/42c/1l/F/11e/1r/900w/29d,5:sthlm_racer/42c/1l/F/15e/4r/900w/33d p_rec=2r/23e env=lt08(evening) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/49m dash=absent:missing-spec+pkg trk=sized ind=on/6m/6b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3198d/20a/95s/36b bng_ev=8a/95s/36b bng_rec=45 rcv=27w/9f/36r wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+47x

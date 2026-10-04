@@ -1,0 +1,84 @@
+{
+  "circuit6_first": {
+    "position": [
+      -1189.9175,
+      16.959347,
+      -418.60782
+    ],
+    "floors": [
+      {
+        "height": 16.95859,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_-2_0.psdl",
+        "room": 155
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "circuit7_first": {
+    "position": [
+      1596.0148,
+      3.3344212,
+      -96.75505
+    ],
+    "floors": [
+      {
+        "height": 0.0,
+        "texture": "water",
+        "flags": 4,
+        "part": "part_2_0.psdl",
+        "room": 700
+      },
+      {
+        "height": 3.33342,
+        "texture": "sthlm_road_1_1_18",
+        "flags": 8,
+        "part": "part_2_0.psdl",
+        "room": 388
+      }
+    ],
+    "water_rooms": [
+      {
+        "part": "part_2_0.psdl",
+        "room": 700,
+        "bound": 0.2,
+        "flags": 4
+      }
+    ],
+    "near_vertical_facades": []
+  },
+  "circuit7_guide": {
+    "position": [
+      1598.18487,
+      6.32462,
+      -94.99115
+    ],
+    "floors": [
+      {
+        "height": 0.0,
+        "texture": "water",
+        "flags": 4,
+        "part": "part_2_0.psdl",
+        "room": 700
+      },
+      {
+        "height": 4.95154,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_2_0.psdl",
+        "room": 378
+      }
+    ],
+    "water_rooms": [
+      {
+        "part": "part_2_0.psdl",
+        "room": 700,
+        "bound": 0.2,
+        "flags": 4
+      }
+    ],
+    "near_vertical_facades": []
+  }
+}

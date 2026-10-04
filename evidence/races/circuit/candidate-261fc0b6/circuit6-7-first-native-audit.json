@@ -1,0 +1,112 @@
+{
+  "cohort_manifest_sha256": "261fc0b60a272afc7dbff62650956252f2271472b749c5efc78153bf556f185a",
+  "scope": "Read-only original candidate; no changes to source, physics, race gates or rosters",
+  "circuit6": {
+    "first_body": [
+      -1189.9175,
+      16.959347,
+      -418.60782
+    ],
+    "source_way": 1337580907,
+    "native_psdl_floor_y": 16.95859,
+    "wall_asset": "sthlm_tunnel_31062851",
+    "wall_chunk": "PART0_0_H",
+    "nearest_upright_xz_m": 1.90876878775,
+    "wall_y_range": [
+      12.4768576622,
+      17.4492478371
+    ],
+    "causal_limit": "Collision wall exists near car on continuous floor; oriented full body sweep/contact ID not captured"
+  },
+  "circuit7": {
+    "first_body": [
+      1596.0148,
+      3.3344212,
+      -96.75505
+    ],
+    "held_guide": [
+      1598.18487,
+      6.32461759475,
+      -94.99115
+    ],
+    "guide_native_psdl_floor_y": 4.95154,
+    "guide_native_room": 378,
+    "body_native_psdl_floor_y": 3.33342,
+    "body_native_room": 388,
+    "body_native_pkg_floor_y": 3.29341516599,
+    "public_way": 1337078899,
+    "private_parallel_way": 959169606,
+    "public_profile_at_body_y": 6.37333078217,
+    "private_profile_at_body_y": 3.33341274591,
+    "public_distance_m": 2.3574,
+    "private_distance_m": 3.0896,
+    "widths_m": [
+      9,
+      9
+    ],
+    "profile_groups": [
+      [
+        35969580,
+        1337078899
+      ],
+      [
+        959169606
+      ]
+    ],
+    "tags_shared": [
+      "name=Str\u00f6mbron",
+      "bridge=yes",
+      "layer=1"
+    ],
+    "body_upright_parts": [
+      {
+        "asset": "sthlm_bridge_76",
+        "chunk": "PART0",
+        "role": "upper rail",
+        "y_range": [
+          6.41033,
+          7.60911
+        ],
+        "nearest_xz_m": 2.11012
+      },
+      {
+        "asset": "sthlm_bridge_76",
+        "chunk": "PART1",
+        "role": "upper below-deck girder",
+        "y_range": [
+          5.19202,
+          5.82902
+        ],
+        "nearest_xz_m": 1.21762
+      },
+      {
+        "asset": "sthlm_bridge_77",
+        "chunk": "PART0",
+        "role": "lower rail",
+        "y_range": [
+          3.37361,
+          4.51822
+        ],
+        "nearest_xz_m": 1.37786
+      }
+    ],
+    "causal_limit": "First recovery body is already low; native authored-centerline floor mismatch independently demonstrates source surface conflict. No justification to remove legitimate upper girders."
+  },
+  "artifacts": {
+    "/private/tmp/circuit6-7-native-floor-query.json": {
+      "sha256": "ee61a54b8904c757f3a9e346d8b06e5624671b547ee3b97c76d6312cdcdebf19"
+    },
+    "/private/tmp/circuit6-7-native-guide-floor-query.json": {
+      "sha256": "0c05f13d75d15a55554ce99237fd0024fb20daf30f108d5cdebe0e759ea46a59"
+    },
+    "/private/tmp/circuit6-7-native-pkg-collision-query.json": {
+      "sha256": "46295a84efd9a25583db8ccbf8bebb9f1f3b0b3ff4bee271f73bd12084e43ffe"
+    },
+    "/private/tmp/circuit6-7-native-pkg-guide-query.json": {
+      "sha256": "090b55ef4bc205b91490bc26e73131206d46a6f573db374637137c247645f8dd"
+    },
+    "/private/tmp/circuit6-7-native-pkg-upper-query.json": {
+      "sha256": "609e4faf1bb934896f5ad74bfea939c24dd3f7c3605435e9dbd76ad491dffa9a"
+    }
+  }
+}

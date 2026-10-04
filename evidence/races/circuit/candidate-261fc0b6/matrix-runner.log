@@ -1,0 +1,17 @@
+circuit0-a: PASS 98.55s 4/4 gates
+circuit0-p: PASS 147.14s 4/4 gates
+circuit1-a: PASS 286.38s 8/8 gates
+circuit1-p: PASS 429.39s 8/8 gates
+circuit2-a: PASS 862.03s 12/12 gates
+circuit3-a: PASS 597.58s 11/11 gates
+circuit2-p: PASS 1292.58s 12/12 gates
+circuit3-p: PASS 897.69s 11/11 gates
+circuit4-a: FAIL 1505.08s 10/15 gates
+circuit4-p: FAIL 1245.35s 15/15 gates
+circuit5-a: FAIL 1143.72s 15/15 gates
+circuit5-p: FAIL 1191.99s 15/15 gates
+circuit6-a: FAIL 1493.07s 6/23 gates
+circuit7-a: FAIL 1857.12s 25/26 gates
+circuit6-p: FAIL 2929.13s 7/23 gates
+circuit7-p: FAIL 1307.58s 26/26 gates
+circuit8-a: FAIL 2308.99s 42/42 gates
