@@ -965,6 +965,7 @@ def build(output, minimal=False, profile="expanded"):
         from landmarks import replaces as landmark_replaces, export as export_landmarks
 
         import additional_landmarks
+        from building_passages import volume_for, export as export_building_passage
 
         for b in city["buildings"]:
             if expanded and (landmark_replaces(b) or additional_landmarks.replaces(b)):
@@ -972,6 +973,12 @@ def build(output, minimal=False, profile="expanded"):
             if expanded and b["id"] in {"way/24488933", "way/1049742528"}:
                 continue
             if b.get("street_detail"):
+                continue
+            passage = volume_for(b, city["roads"])
+            if passage is not None:
+                for poly in pieces(shape(b["geometry"])):
+                    export_building_passage(writer, poly, passage)
+                b["rendering"] = passage
                 continue
             index = int(hashlib.sha256(b["id"].encode()).hexdigest()[:8], 16) % 3
             manor_material = manor_material_for(b)

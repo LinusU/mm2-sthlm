@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "provenance": "Authored corrections to incomplete OSM vertical building information. Source footprint and road profiles retained; heights are schematic, not surveyed.",
+  "passages": [
+    {
+      "building_id": "way/424972071",
+      "road_ids": [4695823],
+      "name": "Herkuleskopplet entrance passage",
+      "clearance_m": 5.5,
+      "body_height_m": 1.5,
+      "reason": "Source footprint spans the highway ramp but has only building=yes, causing the estimated ground-founded body to block the road. Render a thin overhead volume instead.",
+      "evidence": "screenshots/1791068920549_cam_918.3,10.2,-154.8,125,-18.png",
+      "reference": "https://stockholmskallan.stockholm.se/post/5089",
+      "reference_scope": "Context for Herkulesgatan/Klaratunneln only; no photograph copied, no surveyed height inferred. Clearance/body height are authored gameplay approximations."
+    }
+  ]
+}

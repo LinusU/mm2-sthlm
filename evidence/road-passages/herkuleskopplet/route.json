@@ -1,0 +1,11 @@
+{
+  "source_road_ids": [
+    20152181,
+    20157662,
+    4695823
+  ],
+  "spawn": "935.49440,7.93547,-162.45373,124.10985",
+  "length_m": 157.66095228600472,
+  "baseline_checksums_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+  "scope": "Bounded approach to Herkuleskopplet; not a race completion or highway-wide acceptance test."
+}
