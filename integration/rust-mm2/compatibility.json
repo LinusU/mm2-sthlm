@@ -22,13 +22,14 @@
     "3a76ab37a871b20921b562b4ac1fabb854b27748",
     "9513edf3d52cd0c2d308eef9ea9f77518fcfacf7",
     "fe3f549493c97186591ee87869e3aa84e531b9b6",
-    "1a822c1cc472f6c04a25a6832e346b162bbb0ff5"
+    "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+    "cea77a5b9bcc34ca5af2bfaddaabbf94e5a0be47"
   ],
   "engine_changes": "Optional generic multi-part city loading with collision, unique room IDs and bounded per-part water. Includes prior continuous motion evidence fixes. Native HUD-map cameras preserve authored sRGB colors and opaque ocean backgrounds without writing back the world view.",
-  "tested_integration_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "tested_integration_revision": "cea77a5b9bcc34ca5af2bfaddaabbf94e5a0be47",
   "patch_sha256": "fe255460e79e9621e4c910a1c66a91d85b094cd75ba0b72bc89566cd2750e36b",
-  "engine_branch": "codex/stockholm-race-integration",
-  "pull_request": "https://github.com/LinusU/rust-mm2/pull/6",
+  "engine_branch": "main",
+  "pull_request": "Engine changes from PRs 1-6 now live on upstream main (those PRs are closed); no patch needs applying at this revision.",
   "expanded_revisions": [
     "392cc9be55a624f9c8cf64272103f987631c204d",
     "74c60897ef8472aceafea0bb871f2e46615a095c",
@@ -46,7 +47,8 @@
     "3a76ab37a871b20921b562b4ac1fabb854b27748",
     "9513edf3d52cd0c2d308eef9ea9f77518fcfacf7",
     "fe3f549493c97186591ee87869e3aa84e531b9b6",
-    "1a822c1cc472f6c04a25a6832e346b162bbb0ff5"
+    "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+    "cea77a5b9bcc34ca5af2bfaddaabbf94e5a0be47"
   ],
   "loader_patch": "multi-part-cities.patch",
   "loader_patch_sha256": "97d289f5a1bb504447fec01d7ce0b50c0eb2feec91e0c5611b4dfabce75cb53a",
@@ -56,7 +58,7 @@
   "hudmap_patch": "hudmap-presentation.patch",
   "hudmap_patch_sha256": "6ba7f165061c386c3c14354eaea9e132270e8ae042eb22021273fc661ab34113",
   "hudmap_pull_request": "https://github.com/LinusU/rust-mm2/pull/3",
-  "upstream_main_revision": "2dd688171553dd747339cc75e8ff40f6d455c3a7",
+  "upstream_main_revision": "cea77a5b9bcc34ca5af2bfaddaabbf94e5a0be47",
   "intact_prop_revision": "039edc98bab91a36aede5e4a5d8eae729d47deab",
   "intact_prop_base": "46f351b9186ad2d4d955e9d0d0a1ef1240d2332f",
   "intact_prop_branch": "codex/intact-banger-collision",
@@ -80,9 +82,10 @@
   "race_guide_density_revision": "73303b00cccb20859b53de0acaa05f09e48abaaf",
   "race_guide_density_binary_sha256": "bc89accaba0811c5085f9368bbaf05e687fb69431db8b9c48ea166faa30bdb65",
   "race_guide_density_status": "1862 engine workspace tests, strict Clippy and format pass. Dense-corner regression and physical two-lap fixture pass; full Stockholm matrix pending.",
-  "latest_upstream_status": "Latest 2dd6881 built with PR6 at 1a822c1. Full102-gate portability clean; Circuit2 Pro3laps player clean, all4AI finish with disclosed rival recovery. Full candidate race matrix pending.",
+  "latest_upstream_status": "Upstream main cea77a5 (contains the former PR6 engine changes) built with no patches. 1881 workspace tests, strict Clippy and formatting pass. Headless check-integration passes: portability and second-independent-city. Full candidate race matrix not re-run at this revision.",
   "race_guide_base": "2dd688171553dd747339cc75e8ff40f6d455c3a7",
   "race_guide_latest_binary_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
   "race_guide_latest_status": "1876 workspace tests, strict Clippy and formatting pass. Generic sharp-guide corners, directionless closed edges and recovery route occurrence regressions pass. Native102-gate portability passes. Full30-event acceptance remains pending source geometry fixes.",
-  "steep_heightfield_revision": "c4156b780969666f420375d9f5647f51913646a0"
+  "steep_heightfield_revision": "c4156b780969666f420375d9f5647f51913646a0",
+  "main_latest_binary_sha256": "afde3987eca563b94fbb4f59bb65ae58fab6a037b0aac4e5cd078e028bc351a9"
 }

@@ -1,8 +1,8 @@
 # Engine integration
 
-Latest upstream main was fetched over SSH at `2dd688171553dd747339cc75e8ff40f6d455c3a7`. The separate ready [PR #6](https://github.com/LinusU/rust-mm2/pull/6) now builds at `1a822c1cc472f6c04a25a6832e346b162bbb0ff5`. All 1,876 engine workspace tests, strict Clippy and formatting pass.
+Latest upstream main is `cea77a5b9bcc34ca5af2bfaddaabbf94e5a0be47`, built unpatched. It contains the engine changes formerly carried by PRs #1-#6 (now closed), so no patch needs applying at this revision. All 1,881 engine workspace tests, strict Clippy and formatting pass, and the headless `scripts/check-integration.py` portability and second-city checks pass. The full race matrix has not been re-run at this revision.
 
-The frozen binary is `.cache/engine/mm2-race-guide-recovery-occurrence`, SHA-256 `144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19`. Earlier c415, 3a76 and 9513 aliases retain their identities for causal comparisons. The latest generic changes keep guided vehicles within narrow sharp corners, ignore directionless closed-guide edges, and preserve the current route occurrence after actual AI recovery. Vehicle handling and native gate authority remain unchanged.
+The local binary is `.cache/engine/mm2`, SHA-256 `afde3987eca563b94fbb4f59bb65ae58fab6a037b0aac4e5cd078e028bc351a9`; it replaces the earlier `mm2` and is the one to use for play. The other `.cache/engine/mm2-race-guide-*` binaries are historical PR6-era builds kept only for causal comparisons, such as `mm2-race-guide-recovery-occurrence` at `1a822c1` (SHA-256 `144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19`).
 
 The independent e095 package passes all 102 waterfront gates with zero impacts, resets or recovery, plus second-city loading and missing-chunk rejection. On the unchanged old-geometry Circuit 2 flow prototype, Professional completes three laps and all twelve gates with zero player recovery/reset; all four rivals finish, with rival recovery disclosed in the report. These are scoped integration results: full thirty-event acceptance still depends on the repaired map geometry.
 
@@ -119,8 +119,8 @@ The original-slice local tested binary was:
 /private/tmp/mm2-sthlm-engine/target/debug/mm2
 ```
 
-A copy is retained in the ignored local map cache at `.cache/engine/mm2` for
-convenient play after temporary engine-source cleanup. Neither binary nor
+The ignored local map cache path `.cache/engine/mm2` originally held a copy of that
+binary and now holds the current upstream main build, for convenient play after temporary engine-source cleanup. Neither binary nor
 engine checkout is part of the repository/package; no sibling path dependency
 exists. Regeneration/tests need only Python, pinned dependencies and OSM fixture.
 
