@@ -34,3 +34,9 @@ human clock difficulty or progression eligibility.
 Acceptance requires native process success, finite four-wheel movement, positive physical distance, zero player resets, zero `p_rec` reanchors/escapes, positive matching gate counts, native `race=Complete`, and a finished outcome. A finish with any recovery is rejected. Impacts and native per-actor gate/finish/escape/reanchor counts remain separate diagnostics. Long budgets include post-finish coasting/AI impacts; native `sim` is the player finish time. Absence of `p_rec` is the native report convention for zero recovery.
 
 Each `report.json` records binary, checksum-manifest, catalog, guide and raw-log SHA-256 identities; exact commands; frame budgets; wall times; native smoke summaries; rejection reasons; and explicit initial-leg versus complete-course scope. It verifies binary/catalog/manifest immutability after the matrix. Preserve failed diagnostic runs under separate output directories instead of overwriting them.
+
+## 2026-10-04 morning measurement
+
+The frozen `f02d3bb6` package and separate engine `1a822c1` complete the full Blitz 20-case matrix with the original countdowns. All twenty native runs finish; twelve meet strict clean player acceptance (both ranks of events 0, 1, 2, 3, 5, 7). Events 4, 6, 8, 9 still have genuine escapes/resets. See [raw reports and commands](../../evidence/races/blitz/native-f02d3bb6/README.md).
+
+Full Checkpoint and Circuit acceptance remains incomplete. Targeted Circuit 5 Amateur now completes both laps with no player recovery, while Professional has one escape despite matching local native road floor and no nearby static collider. Actual AI recoveries and global contact counts are reported separately. This is repeatable native QA evidence, not a human playtest or blanket city acceptance. New generator repairs and immutable package identities are tracked in `docs/OVERNIGHT.md` and the final-races evidence directories.
