@@ -722,6 +722,118 @@ def source_bridge_groups(roads):
     return groups
 
 
+def physical_bridge_groups(roads):
+    """Perimeters for compatible parallel source components of one deck.
+
+    Exact source nodes still define each component. Nearby disconnected
+    carriageways can share one physical bridge edge, while their internal
+    buffer boundaries are not rail locations. Stacked layers, incompatible
+    profiles, branching components and distant equal names stay separate.
+    """
+    components = source_bridge_groups(roads)
+    axes = []
+    for _, members in components:
+        neighbours, positions = {}, {}
+        for road in members:
+            positions.update(zip(road["nodes"], road["points"]))
+            for a, b in zip(road["nodes"], road["nodes"][1:]):
+                neighbours.setdefault(a, set()).add(b)
+                neighbours.setdefault(b, set()).add(a)
+        ends = sorted(n for n, adjacent in neighbours.items() if len(adjacent) == 1)
+        if len(ends) != 2 or any(len(adjacent) > 2 for adjacent in neighbours.values()):
+            axes.append(None)
+            continue
+        path, previous, node = [], None, ends[0]
+        while True:
+            path.append(positions[node])
+            onward = neighbours[node] - {previous}
+            if not onward:
+                break
+            previous, node = node, next(iter(onward))
+        axes.append(LineString(path))
+
+    lines = [[LineString(r["points"]) for r in members] for _, members in components]
+    from elevation import RoadField
+
+    fields = [RoadField(members, None, bridge=True) for _, members in components]
+    layers = [
+        {int(r["tags"].get("layer", 1)) for r in members} for _, members in components
+    ]
+    links = {i: set() for i in range(len(components))}
+
+    def profile(index, point):
+        owner = min(
+            range(len(lines[index])), key=lambda k: lines[index][k].distance(point)
+        )
+        return fields[index].height_for_road(
+            components[index][1][owner], point.x, point.y
+        )
+
+    for i, (name, members) in enumerate(components):
+        axis = axes[i]
+        if axis is None or axis.length < 20:
+            continue
+        for j in range(i):
+            other_axis = axes[j]
+            if name != components[j][0] or layers[i] != layers[j] or other_axis is None:
+                continue
+            corridor = (
+                max(r["width"] for r in members)
+                + max(r["width"] for r in components[j][1])
+            ) / 2 + 2
+            if (
+                min(axis.length, other_axis.length)
+                / max(axis.length, other_axis.length)
+                < 0.8
+                or axis.hausdorff_distance(other_axis) > corridor + 20
+                or axis.intersection(other_axis.buffer(corridor)).length / axis.length
+                < 0.9
+                or other_axis.intersection(axis.buffer(corridor)).length
+                / other_axis.length
+                < 0.9
+            ):
+                continue
+            a, b = (
+                axis.interpolate(0.25, normalized=True),
+                axis.interpolate(0.75, normalized=True),
+            )
+            c, d = (
+                other_axis.interpolate(0.25, normalized=True),
+                other_axis.interpolate(0.75, normalized=True),
+            )
+            dx, dn, ox, on = b.x - a.x, b.y - a.y, d.x - c.x, d.y - c.y
+            cosine = abs(dx * ox + dn * on) / max(
+                math.hypot(dx, dn) * math.hypot(ox, on), 1e-9
+            )
+            if cosine < 0.95:
+                continue
+            probes = [
+                Point(p[:2])
+                for k in (i, j)
+                for r in components[k][1]
+                for p in r["elevated_points"]
+            ]
+            if max(abs(profile(i, p) - profile(j, p)) for p in probes) > 2.5:
+                continue
+            links[i].add(j)
+            links[j].add(i)
+    remaining, grouped = set(links), []
+    while remaining:
+        todo, component = [min(remaining)], set()
+        while todo:
+            i = todo.pop()
+            if i in component:
+                continue
+            component.add(i)
+            todo.extend(links[i] - component)
+        remaining.difference_update(component)
+        members = [r for i in sorted(component) for r in components[i][1]]
+        grouped.append(
+            (components[min(component)][0], sorted(members, key=lambda r: r["id"]))
+        )
+    return grouped
+
+
 def write(out, city, deck_field, road_triangles=None):
     """Return static placement records for merging into props.write pathset."""
     cfg = json.loads(OVERRIDE.read_text())
@@ -753,7 +865,7 @@ def write(out, city, deck_field, road_triangles=None):
     inventory = json.loads(
         (ROOT / "config/overrides/bridge-structures.json").read_text()
     )
-    grouped = source_bridge_groups(
+    grouped = physical_bridge_groups(
         [road for road in city["roads"] if road["id"] in city["bridge_ways"]]
     )
     structures = []

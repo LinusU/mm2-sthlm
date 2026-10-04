@@ -1,0 +1,15 @@
+{
+  "scope": "Offline emitted native PKG railing clearance regressions; rebuilt package driving not yet accepted. Preserve separate lower-deck girder classification.",
+  "rule": "Same-name and layer-compatible nonbranching source-connected spans, comparable lengths, at least90percent mutual corridor coverage, parallel axes and compatible deck profiles share a physical outside perimeter. Roads, topology and heights are unchanged by this structural operation.",
+  "stadshus_lane_clearance_before_m": 0.78148,
+  "stadshus_lane_clearance_after_m": 4.4675,
+  "lilla_lane_clearance_before_m": 2.56527,
+  "lilla_lane_clearance_after_m": 4.44645,
+  "source_junction_and_external_portals": "exact source components remain the input; real external approach openings retained",
+  "checksums": {
+    "physical-bridge-rails-green.log": "6cc3d4d06bcbfaa08be9b33173e37a2221d2de20e85415164263709765696ac3",
+    "bridge-perimeter-root-tests.log": "56ce4c25505b4164462f0dea11d04506e0fe479e23be03c34c766622ec843b80",
+    "physical-bridge-rails-red.log": "534d70f618d928a335623254308adf24702cfbf542247527ab432502eb8ce25c",
+    "physical-bridge-focused-green.log": "4a65057ff288183f84b4389faae4dee3cabefd32361f4e562a1d441d9306b0f3"
+  }
+}

@@ -1,0 +1,23 @@
+test_actual_parallel_and_segmented_decks_have_native_lane_clearance (test_structure_0.BridgePhysicalPerimeterTests.test_actual_parallel_and_segmented_decks_have_native_lane_clearance) ... ok
+test_true_stacked_and_distant_equal_names_keep_independent_perimeters (test_structure_0.BridgePhysicalPerimeterTests.test_true_stacked_and_distant_equal_names_keep_independent_perimeters) ... ok
+test_equal_named_unconnected_stacked_spans_keep_separate_portals (test_structure_1.BridgeStructureGroupTests.test_equal_named_unconnected_stacked_spans_keep_separate_portals) ... ok
+test_named_arch_landmark_is_actually_written_for_each_source_component (test_structure_1.BridgeStructureGroupTests.test_named_arch_landmark_is_actually_written_for_each_source_component) ... ok
+test_source_connected_layer_change_keeps_rails_at_internal_join (test_structure_1.BridgeStructureGroupTests.test_source_connected_layer_change_keeps_rails_at_internal_join) ... ok
+test_bridge_railing_keeps_real_approach_portals_open (test_structure_2.BridgeTests.test_bridge_railing_keeps_real_approach_portals_open) ... ok
+test_closed_member_winding (test_structure_2.BridgeTests.test_closed_member_winding) ... ok
+test_crossing_constraints_preserve_source_connectivity (test_structure_2.BridgeTests.test_crossing_constraints_preserve_source_connectivity) ... ok
+test_estimated_crossing_lift_blends_into_connected_approach (test_structure_2.BridgeTests.test_estimated_crossing_lift_blends_into_connected_approach) ... ok
+test_island_reference_anchors_retain_exact_source_bridge_topology (test_structure_2.BridgeTests.test_island_reference_anchors_retain_exact_source_bridge_topology) ... ok
+test_landmark_preserves_carriageways_and_has_two_spans (test_structure_2.BridgeTests.test_landmark_preserves_carriageways_and_has_two_spans) ... ok
+test_native_asset_world_mapping_and_chunk_limits (test_structure_2.BridgeTests.test_native_asset_world_mapping_and_chunk_limits) ... ok
+test_native_slab_t_junction_has_only_exterior_collision_walls (test_structure_2.BridgeTests.test_native_slab_t_junction_has_only_exterior_collision_walls) ... ok
+test_slab_boundary_keeps_stacked_levels_and_same_direction_exteriors (test_structure_2.BridgeTests.test_slab_boundary_keeps_stacked_levels_and_same_direction_exteriors) ... ok
+test_slab_t_junction_retains_uncovered_boundary_remainders (test_structure_2.BridgeTests.test_slab_t_junction_retains_uncovered_boundary_remainders) ... ok
+test_slab_uses_exact_road_triangles_across_profile_bends (test_structure_2.BridgeTests.test_slab_uses_exact_road_triangles_across_profile_bends) ... ok
+test_underside_has_downward_normals_and_follows_deck (test_structure_2.BridgeTests.test_underside_has_downward_normals_and_follows_deck) ... ok
+test_clearance_lift_preserves_interior_shared_source_junction (test_structure_2.InteriorBridgeJunctionTests.test_clearance_lift_preserves_interior_shared_source_junction) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.859s
+
+OK

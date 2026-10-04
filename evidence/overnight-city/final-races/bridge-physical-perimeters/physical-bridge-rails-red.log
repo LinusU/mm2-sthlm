@@ -1,0 +1,9 @@
+stadshus groups [[4647958], [680061607]] rail-at-query 1.8626275161956882e-06
+clearance 0.7814776253140732 9.569435740404344
+lilla groups [[30687722, 1338916516, 1338916517], [100905137]] rail-at-query 1.6057536482690775
+clearance 2.5652711356342563 2.5764650186318043
+Traceback (most recent call last):
+  File "/private/tmp/check-physical-bridge-rails.py", line 21, in <module>
+    assert not any(failures)
+           ^^^^^^^^^^^^^^^^^
+AssertionError
