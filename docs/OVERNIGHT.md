@@ -219,3 +219,34 @@ reverse or stop before crossing the finite plane. The Checkpoint agent is
 authoring through itineraries and source-connected finish runouts. These are
 remaining race-design fixes, not grounds to suppress opponents or claim
 blanket race acceptance.
+
+### 2026-10-04 04:25 local: native race iteration
+
+Validated increments are pushed through map commit `806faef`. The repaired
+39f814e1 package has 95 native parts, passes 222 offline tests, complete offline
+build/validation and portable native loading. The 102-gate waterfront check
+travels1557.4m with zero impacts/resets/recoveries and four wheel contacts.
+
+The same-engine unchanged Circuit1 comparison exposed a real collision mesh
+defect: coarse triangles lifted Torsgränd above its smooth road profile by up
+to1.21m. Adaptive road tessellation removes the reproduced height errors;
+whole-room native vertex spills keep the denser package portable. Circuit1
+now finishes two laps8/8 in280.07s without player recovery, compared with
+three escapes before repair. Racing contacts and an opponent escape remain
+disclosed separately. Tryckerigatan's formerly failing short probe is now
+clean; it does not establish a full race finish.
+
+Checkpoint paths now cross gates on through-driving corridors and continue
+60m past the finish on connected source roads. Checkpoint0's native pilot
+finishes first/5 with clean player traversal; all four rivals finish but three
+need escape manoeuvres. Blitz2/3 now flow along broad public streets. A later
+Checkpoint roundabout approach is being revised to remove an artificial
+hairpin. Full20-case matrices per mode remain pending the final coherent
+package and latest separately built engine; none of these scoped pilots
+establish all30-race acceptance.
+
+Latest rust-mm2 upstream `2dd6881` was fetched via SSH. Generic race-QA fixes
+are being replayed onto it in separate PR6. A measured blue slit beside
+Torsgränd is an importer winding defect, despite matching native shared
+vertices; its focused engine regression is red before the fix and green after.
+Actual native recapture is still required before claiming visual repair.
