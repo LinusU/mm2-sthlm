@@ -3,34 +3,41 @@
 Latest upstream main was fetched over SSH at
 `2dd688171553dd747339cc75e8ff40f6d455c3a7`. The separate ready
 [PR #6](https://github.com/LinusU/rust-mm2/pull/6) branch builds at
-`c4156b780969666f420375d9f5647f51913646a0`, including reusable native race QA
-controls and a focused steep-heightfield rendering fix. All 1,869 engine
-workspace tests, strict Clippy and formatting pass. The locally retained
-binary is `.cache/engine/mm2-race-guide-latest`; SHA-256 is
-`b2f82e39f58ab16032c4fbf59c6a2dc0851a4bbb871ebe32d984e6af788d8742`.
+`3a76ab37a871b20921b562b4ac1fabb854b27748`. Its generic native AI fix
+preserves nearby route corners instead of advancing five-metre samples with
+the old fourteen-metre threshold. Existing handling and widely spaced paths
+retain their behavior. A source-independent two-lap physical regression moves
+maximum corner error from 6.38 m to 4.17 m, inside the 9 m wide road.
 
-The guide supplies normal steering, throttle and braking to existing vehicle
-physics. Native gates, laps, clocks and opponents remain authoritative.
-Guided QA runs cannot earn player progression records. The engine contains no
-Stockholm map content; its checkout stays outside this repository. The exact
-base, revision, ready PR and cumulative patch checksum are recorded under
-`integration/rust-mm2/`.
+All 1,871 engine workspace tests, strict Clippy and formatting pass. The frozen
+binary is `.cache/engine/mm2-race-guide-ai-density`, SHA-256
+`a794c0a8632fe99b17bf07038530770075936f4dd79bbade250ad52bf219da85`.
+The previous `.cache/engine/mm2-race-guide-latest` remains the immutable c415
+baseline so active comparisons keep their recorded identities.
 
-The adaptive road package uses 95 portable native PSDL pools. The coherent
-0c69b559 package passes the full 102-gate waterfront drive on c4156b7 with zero
-impacts, resets or recovery, plus second-city loading and missing-chunk
-rejection. The same-engine unchanged Circuit1 comparison demonstrates the
-hillside collision repair. The native identical-camera steep-fan comparison
-also closes the former blue slit without altering map geometry. These reports
-retain their own package/engine hashes.
-Full race acceptance on the latest coherent package remains in progress;
-initial legs or finishes using player recovery do not count.
+The guide supplies normal controls to existing vehicle physics. Native gates,
+laps, clocks and opponents remain authoritative. Guided QA cannot earn player
+progression records. Engine changes stay in a separate checkout; exact base,
+revision, ready PR and cumulative patch are under `integration/rust-mm2/`.
+`./scripts/prepare-engine /absolute/new/external/checkout` selects this tested
+revision. Normal offline map CI requires no engine or proprietary content.
 
-Initial full race tests expose an actual opponent-driver issue: native AI
-advances five-metre route samples using a 14-metre reach threshold, skipping
-some corners/gate approaches. Rival escapes and an incomplete Professional
-Checkpoint event are retained as diagnostics. A focused generic engine
-follow-up is in progress; clean player pilots alone do not resolve it.
+The coherent 0c69 package uses 95 portable native PSDL pools. Its 102-gate
+waterfront drive passes on 3a76 with zero impacts/resets/recovery, plus
+second-city loading and missing-chunk rejection. Production opening Circuit
+Amateur/Professional events finish every rival with zero player/rival recovery;
+player contacts drop from 42/75 to 2/13. Checkpoint 0 Professional finishes all four
+rivals, including the previously lost actor; one rival retains a single
+backing escape. [Scoped pilots](../evidence/overnight-city/final-races/ai-density-pilots/pilots.json)
+and [portability](../evidence/overnight-city/final-races/ai-density-portability/portability.json)
+retain exact hashes and native reports.
+
+The same-engine Circuit1 comparison demonstrates the adaptive hillside
+collision repair. Identical-camera native renders also close the former blue
+slit through a focused steep-fan importer fix. Full 30-event, both-rank race
+acceptance remains in progress: source U-turns, Slottskajen paving and bridge
+water/floor failures are being diagnosed. Finishes using player recovery fail
+acceptance and remain visible in preserved diagnostics.
 
 The common optional runner is `scripts/check-races.py --family checkpoint`,
 `--family blitz` or `--family circuit`, documented in

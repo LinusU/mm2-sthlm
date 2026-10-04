@@ -1,0 +1,11 @@
+   Compiling mm2_app v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_app)
+    Finished `test` profile [optimized + debuginfo] target(s) in 19.47s
+     Running tests/app.rs (target/debug/deps/app-9c89f8ad2fddc28c)
+
+running 2 tests
+test opponents::native_dense_route_keeps_the_corner_ahead_for_speed_planning ... ok
+physical native dense AI worst_lateral=4.1720123
+test opponents::native_dense_opponent_physically_drives_two_tight_laps_without_recovery ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 718 filtered out; finished in 1.76s
+

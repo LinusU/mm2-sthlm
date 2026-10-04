@@ -1,9 +1,11 @@
 {
   "upstream_base": "2dd688171553dd747339cc75e8ff40f6d455c3a7",
-  "revision": "c4156b780969666f420375d9f5647f51913646a0",
+  "revision": "3a76ab37a871b20921b562b4ac1fabb854b27748",
   "tracked_status": "",
   "pr": "https://github.com/LinusU/rust-mm2/pull/6",
   "commits": [
+    "3a76ab37a871b20921b562b4ac1fabb854b27748 Attribute generated terrain regression fixture",
+    "6f9906e4fe044aaead0418349e00e7dd4e8b72ba Preserve corner progress on dense opponent routes",
     "c4156b780969666f420375d9f5647f51913646a0 Preserve upward steep heightfield faces",
     "fdd9916e0b2b67669f87e46c32b8f51870b9e661 Track dense guide progress through nearby corners",
     "18d83c5b5386916239ebb0a1a750cdd1a6a1f09b Allow explicit bot motion during visual captures",
@@ -19,7 +21,9 @@
     "occurrence": 1864,
     "capture": 1865,
     "density": 1867,
-    "importer": 1869
+    "importer": 1869,
+    "ai-density": 1871,
+    "fixture-provenance": 1871
   },
   "sha256": {
     "/private/tmp/mm2-bot-route-latest.patch": "d5e574285892b15bb57e0ce3399bbb7f8489a841b8fb0795435454ee13905347",
@@ -45,7 +49,19 @@
     "/private/tmp/latest-importer-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "/private/tmp/latest-importer-clippy.log": "0735e84a8e1d25d7646d0a0d71e49b55b551bb63e01bf3ab06873bab9b7a467b",
     "/private/tmp/latest-importer-workspace-tests.log": "dcbff5497cb4fa7d5d9ac0980541f908fc66e1b2fd57501c60d9da7436085e32",
-    "/private/tmp/latest-engine-build.log": "947cf76c595525809a7822be06320d9083a7772c4fb42f4d6ca97867ca5052d3"
+    "/private/tmp/latest-engine-build.log": "947cf76c595525809a7822be06320d9083a7772c4fb42f4d6ca97867ca5052d3",
+    "/private/tmp/mm2-bot-route-ai-density.patch": "f6ea445949dcbc5ce4c03f34ce986fbd374b685648724b08349e969a6473dc99",
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-ai-density": "a794c0a8632fe99b17bf07038530770075936f4dd79bbade250ad52bf219da85",
+    "/private/tmp/ai-density-build.log": "b7378f600812667d91341bb246b9cc6ac190fb611b3a4d3953716f6f7459f40d",
+    "/private/tmp/native-ai-dense-final-red.log": "6055f545b0f7babb4dc00ff9dc01e86c470e023d987b90c1f3b0878666002bbc",
+    "/private/tmp/native-ai-dense-final-green.log": "ef5b8629d22dc06656ad468694d00553b59351068a47db7aad32b5166a204355",
+    "/private/tmp/mm2-sthlm-race-engine/crates/mm2_app/tests/fixtures/steep-heightfield-paving.provenance.json": "dfb53bb7785a152e9eb41f1cfe008323821687985f32bb365c2bce61b65620d6",
+    "/private/tmp/ai-density-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/ai-density-clippy.log": "b60e35d93f124ffeadc4ebf076d1fae39b7f41cd3e230c1a35f9cba32b4a6ca5",
+    "/private/tmp/ai-density-workspace-tests.log": "7a9beed66c1291098aa5eb812c0a399da8271cc98b00e99d16aba85ac7ccbfd4",
+    "/private/tmp/fixture-provenance-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/fixture-provenance-clippy.log": "f869877d94617c8552bc4fb750451cb1c9ae5b2067b1128b5e72377aff504709",
+    "/private/tmp/fixture-provenance-workspace-tests.log": "65315c91a3e19a93d2868115d9aa4e94ab047785c62232fda0ae8a4f4d46bc3d"
   },
-  "native_acceptance": "Full final map matrix pending source cohort; this metadata records engine quality gates only."
+  "native_acceptance": "Independent0c69 package passes102-gate waterfront portability; actual production Circuit0A/P finish every opponent without recovery; Checkpoint0P finishes all four. Full30event/bothrank acceptance remains pending source repairs. Historical c415 failures are retained."
 }

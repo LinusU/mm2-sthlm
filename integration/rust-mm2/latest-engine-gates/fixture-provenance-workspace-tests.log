@@ -1,0 +1,2221 @@
+   Compiling mm2_app v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_app)
+   Compiling mm2_inspect v0.0.0 (/private/tmp/mm2-sthlm-race-engine/tools/mm2_inspect)
+    Finished `test` profile [optimized + debuginfo] target(s) in 10.86s
+     Running unittests src/lib.rs (target/debug/deps/mm2_app-2e2c6bf92bbb3035)
+
+running 119 tests
+test city::tests::asset_name_strips_state_prefixes_and_labels ... ok
+test city::tests::line_strip_zero_spacing_stamps_per_vertex ... ok
+test city::tests::directed_path_drops_a_lone_trailing_point ... ok
+test city::tests::expansion_is_bounded_by_the_stamp_budget ... ok
+test city::tests::line_strip_restarts_spacing_at_each_vertex ... ok
+test city::tests::non_finite_segments_stamp_nothing_but_stay_bounded ... ok
+test city::tests::points_path_stamps_one_unrotated_prop_per_vertex ... ok
+test city::tests::directed_degenerate_offset_leaves_prop_unrotated ... ok
+test city::tests::directed_path_stamps_pairs_yawed_about_y ... ok
+test city::tests::non_finite_points_stamp_nothing ... ok
+test city::tests::empty_and_unknown_kind_paths_stamp_nothing ... ok
+test city::tests::degenerate_triangles_leave_collision ... ok
+test city::tests::line_strip_zero_length_segments_stamp_nothing ... ok
+test city::tests::line_strip_stamps_every_spacing_and_caps_the_end ... ok
+test city::tests::custom_city_chunks_validate_paths_without_silent_fallback ... ok
+test city::tests::custom_city_report_aggregates_rejected_geometry ... ok
+test city::tests::road_surface_mirrors_texture_about_the_centre_line ... ok
+test city::tests::a_hostile_segment_is_capped_instead_of_hanging ... ok
+test city::tests::simple_placement_with_unit_heading_is_unrotated ... ok
+test city::tests::simple_placement_heading_rotates_and_scales ... ok
+test city::tests::single_vertex_strip_stamps_once ... ok
+test city::tests::walls_and_ceilings_stay_out_of_the_ground ... ok
+test decals::tests::ribbon_chains_sections_with_cumulative_v ... ok
+test decals::tests::ribbon_curved_strip_measures_centreline_v ... ok
+test decals::tests::ribbon_drops_an_odd_trailing_point ... ok
+test decals::tests::ribbon_is_deterministic ... ok
+test decals::tests::ribbon_pairs_interleaved_edges_into_quads ... ok
+test decals::tests::ribbon_skips_non_finite_and_degenerate_sections ... ok
+test decals::tests::ribbon_under_four_points_stamps_nothing ... ok
+test drawbridge::tests::closed_leaf_reaches_toward_its_partner ... ok
+test drawbridge::tests::angular_velocity_matches_the_pose_change ... ok
+test motion_evidence::tests::excludes_resets_and_new_sessions ... ok
+test net::tests::an_invalid_host_config_is_refused ... ok
+test motion_evidence::tests::retains_nonfinite_failure ... ok
+test net::tests::developer_overrides_are_never_advertised ... ok
+test net::tests::the_validator_on_empty_content_admits_only_the_dev_car ... ok
+test net::tests::picks_roundtrip_between_selection_and_wire ... ok
+test net::tests::a_dev_world_cruise_roundtrips ... ok
+test net::tests::a_full_config_roundtrips ... ok
+test net::tests::a_zero_laps_pick_fails_validation ... ok
+test net::tests::out_of_range_wire_values_are_rejected ... ok
+test net::tests::the_vehicle_validator_gates_picks_by_catalog ... ok
+test netdrive::tests::a_stream_reset_rebases_the_inbox_on_a_new_authority ... ok
+test netdrive::tests::a_stale_snap_drops_at_push_but_keeps_its_events ... ok
+test net::tests::garbage_params_do_not_decode ... ok
+test netdrive::tests::apply_present_drives_the_copy_state ... ok
+test netdrive::tests::apply_seat_moves_the_spawn_but_keeps_its_origin ... ok
+test netdrive::tests::breaks_tail_encodes_the_detached_mask ... ok
+test netdrive::tests::damage_tail_encodes_the_authority_fraction ... ok
+test netdrive::tests::drive_input_quantization_clamps ... ok
+test netdrive::tests::drive_input_quantization_round_trips ... ok
+test netdrive::tests::present_tail_encodes_the_engine_rpm ... ok
+test netdrive::tests::present_tail_encodes_the_sim_state ... ok
+test netdrive::tests::present_tail_saturates_and_airborne_freezes ... ok
+test netdrive::tests::race_rows_encode_and_order_the_lifecycle ... ok
+test contracts::tests::an_under_bound_share_lands_verbatim_and_counts_the_prior_spin ... ok
+test contracts::tests::a_huge_correction_share_clamps_at_the_banger_bound ... ok
+test netdrive::tests::seat_ids_rank_the_lobby_deterministically ... ok
+test netdrive::tests::seat_pose_fans_out_past_the_grid ... ok
+test netdrive::tests::seat_pose_takes_authored_slots_in_order ... ok
+test netdrive::tests::seat_pose_without_a_race_fans_off_the_base ... ok
+test netdrive::tests::surface_tail_encodes_the_resolved_contact ... ok
+test netdrive::tests::wire_rotations_are_sanitized ... ok
+test pvs::tests::overlapping_rooms_union_their_lists ... ok
+test pvs::tests::resolves_the_containing_room_and_culls_the_rest ... ok
+test hudmap::tests::authored_artwork_camera_owns_opaque_background_without_tone_curve ... ok
+test pvs::tests::unresolved_and_disabled_positions_show_everything ... ok
+test racing_line::tests::a_corner_ahead_limits_speed_by_braking_distance ... ok
+test racing_line::tests::a_straight_line_sets_no_limit ... ok
+test racing_line::tests::cursor_projects_onto_the_chased_leg ... ok
+test racing_line::tests::feelers_steer_away_from_a_wall ... ok
+test city::tests::shader_material_binds_the_clean_stem_of_a_dmg_texture ... ok
+test racing_line::tests::pace_lifts_or_brakes_by_the_authored_threshold ... ok
+test racing_line::tests::point_ahead_follows_the_line_past_anchors ... ok
+test netdrive::tests::a_predicted_trailer_copy_carries_damage_signals ... ok
+test racing_line::tests::point_ahead_wraps_a_closed_route ... ok
+test racing_line::tests::steer_toward_follows_the_arc_from_the_cars_geometry ... ok
+test scripted::speed_limit_tests::speed_ceiling_brakes_without_changing_steering ... ok
+test scripted::speed_limit_tests::reverse_recovery_is_preserved ... ok
+test city::tests::texel_binding_pairs_dmg_variants_into_a_per_vehicle_slot ... ok
+test smoke::tests::a_racing_participant_reports_no_outcome ... ok
+test smoke::tests::absent_player_is_transient_only_in_the_teardown_window ... ok
+test smoke::tests::field_driving_reports_rates_per_kilometre ... ok
+test smoke::tests::opponent_detail_reports_progress_and_recovery_per_slot ... ok
+test smoke::tests::outcome_scopes_to_the_session_generation ... ok
+test traffic::drape_tests::a_cambered_road_rolls_the_car_and_leaves_travel_level ... ok
+test traffic::drape_tests::a_corner_without_ground_keeps_the_lane_pose ... ok
+test smoke::tests::a_stale_capture_is_cleared_before_the_new_request ... ok
+test traffic::drape_tests::a_level_lane_on_a_hill_takes_its_pitch ... ok
+test traffic::drape_tests::a_lane_above_flat_ground_drops_onto_it_keeping_its_heading ... ok
+test traffic::drape_tests::ground_too_steep_to_stand_on_keeps_the_lane_pose ... ok
+test traffic::tests::an_empty_issue_list_partitions_empty ... ok
+test traffic::tests::no_vehicle_lanes_partition_out_of_the_warn_list ... ok
+test underground::tests::a_tunnel_under_a_street_is_told_apart_by_height ... ok
+test water::tests::an_elevated_room_binds_at_its_own_height ... ok
+test water::tests::a_ref_room_keeps_its_elevated_bound_over_an_sdl_mark ... ok
+test water::tests::chunk_water_retains_local_bounds_with_distinct_room_ids ... ok
+test water::tests::exposure_needs_the_room_and_the_bound ... ok
+test water::tests::no_surface_tables_skips_the_sdl_pass ... ok
+test water::tests::refs_are_one_based_room_ids ... ok
+test water::tests::sdl_mark_binds_through_the_first_texture_ref ... ok
+test water::tests::sdl_mark_requires_a_drowning_class_surface ... ok
+test water::tests::sdl_mark_ignores_non_first_texture_refs ... ok
+test water::tests::unresolvable_refs_are_skipped_not_reinterpreted ... ok
+test smoke::tests::the_headless_join_orders_the_apply_after_the_reconcile ... ok
+test pvs::tests::system_falls_back_to_the_player_vehicle ... ok
+test pvs::tests::system_ignores_2d_cameras ... ok
+test pvs::tests::system_hides_rooms_outside_the_source_list ... ok
+test hudmap::tests::inset_fullscreen_inset_preserves_camera_artwork_policy ... ok
+test netdrive::tests::a_terminal_edge_landed_before_the_release_still_resolves_the_session ... ok
+test pvs::tests::system_uses_a_child_cameras_world_pose ... ok
+test netdrive::tests::a_snap_held_through_the_load_arrives_whole ... ok
+test netdrive::tests::apply_snapshots_reports_the_stale_drops ... ok
+test netdrive::tests::reset_vehicle_events_bump_the_seat_epoch ... ok
+test netdrive::tests::a_race_row_on_a_raceless_session_drops ... ok
+test netdrive::tests::foreign_generation_impact_rows_drain_drop_at_the_session_gate ... ok
+test netdrive::tests::a_race_row_releases_the_predicted_countdown ... ok
+test netdrive::tests::a_progress_tail_mirrors_the_seats_race_standing ... ok
+test city::tests::a_road_kink_does_not_launch_a_car ... ok
+
+test result: ok. 119 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running unittests src/main.rs (target/debug/deps/mm2-544654852fc5d52a)
+
+running 4 tests
+test bot_route_cli_tests::bot_route_rejects_missing_file ... ok
+test bot_route_cli_tests::bot_route_rejects_parse_diagnostics ... ok
+test bot_route_cli_tests::bot_route_requires_bot_and_event ... ok
+test capture_input_tests::explicit_bot_capture_runs_evidence_but_keeps_keyboard_frozen ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/bin/mm2_host.rs (target/debug/deps/mm2_host-cd76d0777dbd79d6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/mm2_join.rs (target/debug/deps/mm2_join-17a3ba575cb1591f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/app.rs (target/debug/deps/app-9c89f8ad2fddc28c)
+
+running 720 tests
+test audio::a_dev_world_binds_no_commentary ... ok
+test audio::a_missing_wet_table_is_no_substitute_for_dry ... ok
+test audio::a_malformed_ambient_table_errors_instead_of_falling_back ... ok
+test audio::a_malformed_vehicle_table_falls_through_to_the_default ... ok
+test audio::a_remote_car_shifts_silently ... ok
+test audio::a_car_without_authored_audio_builds_no_rig ... ok
+test audio::a_gear_change_voices_the_authored_clutch ... ok
+test audio::a_multi_gear_jump_and_an_unchanged_gear_do_not_retrigger ... ok
+test audio::a_paused_shift_is_observed_not_voiced ... ok
+test audio::a_malformed_siren_table_is_no_program_not_a_substitute ... ok
+test audio::a_flagged_press_without_a_program_reports_failed ... ok
+test audio::a_sentinel_ambient_sample_is_authored_silence ... ok
+test audio::a_live_car_records_the_resolved_contact_for_the_wire ... ok
+test audio::a_missing_siren_wave_warns_once_per_activation ... ok
+test audio::a_per_vehicle_surface_table_wins_over_the_default ... ok
+test audio::a_held_brake_at_rest_and_airborne_wheels_stay_silent ... ok
+test audio::a_moving_car_rolls_the_authored_surface_loop ... ok
+test audio::a_flagged_press_toggles_the_authored_program ... ok
+test audio::a_missing_registry_counts_once_and_never_retries ... ok
+test audio::a_reverse_engagement_voices_the_clutch ... ok
+test audio::a_sentinel_clutch_is_silence_and_a_missing_wave_reports ... ok
+test audio::a_remote_participant_voices_on_the_authority ... ok
+test audio::a_replicated_impact_picks_the_struck_sides_authored_category ... ok
+test audio::a_remote_participant_spawns_no_voice_on_a_predicted_client ... ok
+test audio::a_replicated_impact_voices_the_remote_copy ... ok
+test audio::a_stale_generation_event_is_skipped ... ok
+test audio::a_sub_floor_touch_is_authored_silent ... ok
+test audio::a_two_vehicle_impact_voices_each_side_at_its_own_impulse ... ok
+test audio::a_remote_replica_replays_its_replicated_surface_contact ... ok
+test audio::an_absent_table_degrades_to_silence ... ok
+test audio::ambient_table_resolution_prefers_the_class_file_then_the_default ... ok
+test audio::a_sentinel_siren_sample_is_authored_silence ... ok
+test audio::a_wall_impact_picks_the_authored_band ... ok
+test audio::a_surface_switch_rebuilds_the_skid_after_the_dwell ... ok
+test audio::dry_weather_binds_no_ambience ... ok
+test audio::a_sliding_wheel_voices_the_covering_skid_band ... ok
+test audio::an_ambient_car_spawns_one_spatial_looping_voice ... ok
+test audio::decode_wave_reports_unsupported_and_unbounded ... ok
+test audio::a_missing_wave_counts_and_is_never_substituted ... ok
+test audio::a_rainy_session_binds_the_authored_rain_beds ... ok
+test audio::an_opponent_siren_is_a_spatial_child_voice ... ok
+test audio::a_city_session_plays_the_authored_weather_and_time_cues ... ok
+test audio::an_unresolvable_ambient_sample_fails_once_per_car ... ok
+test audio::bank_prefers_the_22k_variant ... ok
+test audio::an_unflagged_car_keeps_the_ordinary_horn ... ok
+test audio::dev_horn_fires_exactly_once ... ok
+test audio::engine_rig_spawns_one_loop_voice_per_drivable_row ... ok
+test audio::enter_press_spawns_the_authored_horn_voice ... ok
+test audio::engine_mix_tracks_the_sim_rpm ... ok
+test audio::missing_stem_and_malformed_wave_fail_visibly ... ok
+test audio::horn_press_needs_a_playing_session ... ok
+test audio::events_without_a_vehicle_participant_stay_silent ... ok
+test audio::dry_weathers_bind_the_dry_surface_table ... ok
+test audio::player_without_authored_audio_spawns_nothing ... ok
+test audio::opponent_loops_mix_off_their_own_rpm ... ok
+test audio::pad_left_thumb_fires_the_authored_horn ... ok
+test audio::opponent_rigs_are_spatial_and_the_players_is_not ... ok
+test audio::race_effects_missing_clip_is_counted_once_without_retries ... ok
+test audio::teardown_despawns_engine_voices_with_the_car ... ok
+test audio::teardown_despawns_live_voices_with_the_session ... ok
+test audio::teardown_sweeps_clutch_voices_with_the_session ... ok
+test audio::race_effects_circuit_route_progress_and_timeout_use_distinct_cues ... ok
+test audio::an_unresolvable_surface_and_an_absent_table_stay_silent ... ok
+test audio::teardown_sweeps_ambient_voices_with_the_session ... ok
+test audio::commentary_waits_for_the_pre_race_window ... ok
+test audio::siren_tables_load_per_city_and_role ... ok
+test audio::teardown_sweeps_impact_voices_with_the_session ... ok
+test audio::race_effects_hold_during_pause_ignore_remote_progress_and_scope_to_restart ... ok
+test audio::the_listener_follows_the_active_3d_camera ... ok
+test audio::the_clutch_voice_bound_caps_a_field_shift ... ok
+test audio::rainy_weather_binds_the_wet_surface_table ... ok
+test audio::race_effects_countdown_checkpoints_warning_and_finish_once ... ok
+test audio::the_ambient_mix_follows_the_authored_speed_bands ... ok
+test audio::the_ambient_voice_bound_caps_the_fleet ... ok
+test audio::an_overflowing_sufix_range_counts_failed_not_panics ... ok
+test audio::teardown_sweeps_the_weather_voices ... ok
+test audio::teardown_sweeps_surface_voices_with_the_session ... ok
+test audio::the_engine_voice_bound_caps_giant_tables ... ok
+test audio::an_authored_speaker_gap_counts_each_cue ... ok
+test audio::the_impact_voice_bound_caps_pile_ups ... ok
+test audio::teardown_sweeps_siren_voices_with_the_session ... ok
+test audio::the_drive_walks_the_authored_chain_on_the_session_tick ... ok
+test audio::the_rig_bound_caps_silent_cars ... ok
+test audio::a_missing_bed_stem_counts_failed_once ... ok
+test audio::the_struck_props_audio_id_selects_its_category ... ok
+test audio::the_voice_bound_drops_excess_presses ... ok
+test audio::unusable_rows_and_missing_waves_report_without_sinking_the_rig ... ok
+test audio::the_siren_bound_drops_past_max_sirens ... ok
+test audio::the_program_holds_while_the_session_tick_is_frozen ... ok
+test audio::the_surface_rig_bound_caps_resolving_cars ... ok
+test audio::teardown_sweeps_commentary_voices ... ok
+test banger::a_coincident_contact_and_bound_strike_charge_once ... ok
+test banger::banger_bodies_carry_solver_speed_bounds ... ok
+test banger::bound_pathset_names_stamp_as_dormant_bangers ... ok
+test banger::breakable_props_stamp_their_authored_pieces ... ok
+test banger::malformed_and_missing_records_fall_back_to_static_props ... ok
+test audio::the_second_cue_waits_for_the_first_clip ... ok
+test banger::a_runaway_banger_velocity_is_clamped ... ok
+test banger::a_bound_strike_charges_the_striker_its_momentum_share ... ok
+test banger::stamped_props_rest_their_bound_base_on_the_path_point ... ok
+test banger::a_light_prop_takes_only_its_momentum_share ... ok
+test audio::the_shelter_probe_crossfades_to_the_interior_bed ... ok
+test banger::vehicle_bundle_stamps_the_authored_bound_as_strike_surface ... ok
+test banger::a_parked_strike_bound_activates_nothing ... ok
+test banger::a_below_limit_strike_bound_overlap_leaves_the_prop_dormant ... ok
+test audio::the_cue_draw_replays_identically_for_the_same_seed ... ok
+test banger::a_strike_bound_overlap_activates_a_prop_the_hull_clears ... ok
+test bot::dense_guide_progress_keeps_the_corner_ahead_until_the_car_turns ... ok
+test bot::drive_target_tracks_the_live_objective ... ok
+test banger::a_hypervelocity_striker_cannot_launch_a_prop_past_the_bound ... ok
+test bot::explicit_bot_guide_overrides_roster_line_without_changing_roster ... ok
+test banger::the_pool_bounds_fragment_spawns ... ok
+test bot::explicit_bot_guide_rejects_invalid_evidence ... ok
+test banger::a_car_keeps_its_line_through_a_light_prop ... ok
+test bot::input_law_recovers_from_stuck ... ok
+test bot::input_law_steers_and_modulates_throttle ... ok
+test bot::invalid_bot_guide_fails_before_spawning_world_or_player ... ok
+test banger::a_monument_limit_never_activates ... ok
+test banger::predicted_sessions_never_transition_bangers ... ok
+test bot::pick_bot_route_prefers_the_nearest_staging ... ok
+test bot::planned_guide_aim_projects_onto_short_corner_and_stops_at_gate ... ok
+test bot::planned_guide_control_uses_existing_curvature_brakes_and_handling_steering ... ok
+test banger::the_pool_reclaims_oldest_first_at_capacity ... ok
+test bot::planned_guide_gate_ties_follow_forward_progress_on_revisited_streets ... ok
+test bot::route_aim_caps_advance_at_the_objective_anchor ... ok
+test bot::route_aim_chases_the_line_until_the_gate_anchor ... ok
+test bot::route_aim_closed_route_wraps_and_detects_behind ... ok
+test bot::route_aim_empty_route_aims_at_the_gate ... ok
+test bot::route_aim_gate_behind_aims_direct ... ok
+test bot::route_aim_lookahead_bends_around_the_apex ... ok
+test bot::route_distance_sees_height_not_just_footprint ... ok
+test bot::scripted_drive_honors_the_countdown_lock ... ok
+test bot::tuned_input_law_scales_throttle_and_corner_floor ... ok
+test breakaway::a_car_with_no_authored_rig_detaches_nothing ... ok
+test breakaway::a_panel_detaches_once_and_its_node_hides ... ok
+test breakaway::a_part_with_no_render_node_cannot_detach ... ok
+test breakaway::a_pool_bound_part_still_leaves_the_rig ... ok
+test breakaway::a_predicted_session_detaches_nothing_locally ... ok
+test breakaway::a_remote_seats_rig_sheds_on_the_authority ... ok
+test breakaway::a_reset_without_repair_keeps_the_parts_off ... ok
+test breakaway::below_the_authored_limit_the_panel_stays ... ok
+test breakaway::detached_panels_stay_hidden_across_cockpit_cycles ... ok
+test breakaway::each_part_weighs_its_own_limit ... ok
+test breakaway::mesh_children_respawn_under_the_fragment ... ok
+test banger::pieces_without_collision_tip_over_instead ... ok
+test breakaway::stale_generation_impacts_detach_nothing ... ok
+test breakaway::repair_restores_the_rig_and_retires_the_fragment ... ok
+test camtrack::cam_cycle_at_advances_the_chain_at_its_tick ... ok
+test camtrack::cam_cycle_at_before_its_tick_is_inert ... ok
+test camtrack::cam_cycle_at_skips_modes_without_cameras ... ok
+test camtrack::chain_orders_all_four_views ... ok
+test camtrack::chain_reaches_far_when_bound ... ok
+test camtrack::chain_skips_far_when_unbound ... ok
+test camtrack::authored_lens_drives_boom_and_projection ... ok
+test banger::restart_restores_stamped_placements_after_a_break ... ok
+test camtrack::drive_views_steer_and_free_detaches ... ok
+test camtrack::first_track_lands_on_the_boom ... ok
+test camtrack::lens_transition_stays_smooth ... ok
+test camtrack::load_track_cams_binds_what_ships ... ok
+test camtrack::mode_reentry_snaps_the_stale_boom ... ok
+test camtrack::non_finite_authored_fields_fall_back_to_the_designed_boom ... ok
+test camtrack::collide_type_pulls_boom_in ... ok
+test camtrack::overflowing_authored_fields_fall_back_to_the_designed_boom ... ok
+test bot::falling_bot_reanchors_after_bounded_recoveries ... ok
+test camtrack::pad_walks_the_same_chain ... ok
+test camtrack::report_names_the_bound_lenses ... ok
+test audio::thunder_fires_on_the_seeded_schedule ... ok
+test camtrack::small_displacements_stay_smooth ... ok
+test camtrack::collide_type_zero_ignores_occluder ... ok
+test camtrack::sized_lens_drives_the_fallback_boom ... ok
+test camtrack::undrawable_authored_fov_falls_back_to_the_designed_lens ... ok
+test camtrack::teleport_snaps_the_boom ... ok
+test camtrack::speed_window_extends_boom ... ok
+test camtrack::other_trailer_still_occludes ... ok
+test contracts::a_speculative_near_miss_is_not_an_impact ... ok
+test camtrack::own_trailer_is_not_an_occluder ... ok
+test contracts::a_contact_that_starts_speculative_still_lands ... ok
+test banger::a_midrange_limit_discriminates_the_impact ... ok
+test banger::an_authored_tree_limit_demands_speed_not_just_mass ... ok
+test damage::a_car_without_authored_damage_is_undamageable ... ok
+test damage::a_damaged_car_carries_engine_impairment ... ok
+test damage::a_predicted_session_drains_the_pipeline_without_applying ... ok
+test contracts::each_wheel_reports_the_material_of_the_collider_under_it ... ok
+test damage::accepted_impacts_accumulate_tiers_and_emit_events ... ok
+test contracts::telemetry_publishes_a_stamped_snapshot_each_step ... ok
+test damage::disabled_in_blitz_queues_the_session_restart ... ok
+test damage::an_opponent_disabled_resets_in_place_without_restarting_the_race ... ok
+test damage::disabled_in_circuit_penalizes_the_clock_and_resets_in_place ... ok
+test damage::disabled_in_cruise_resets_to_spawn_and_repairs ... ok
+test contracts::a_quiet_touch_does_not_suppress_a_real_reimpact ... ok
+test damage::repair_restores_full_engine_output ... ok
+test damage::duplicate_and_stale_impact_ids_never_double_apply ... ok
+test damage::stale_generation_impacts_are_ignored ... ok
+test damage::sub_threshold_and_garbage_impacts_never_accumulate ... ok
+test damage::two_disabling_impacts_in_one_tick_resolve_once ... ok
+test bot::explicit_bot_guide_preserves_blitz_countdown_and_deadline ... ok
+test damage::the_authority_impairs_and_resolves_a_remote_driver ... ok
+test damage_fx::a_damaged_vehicle_smokes_from_its_authored_pivots ... ok
+test damage_fx::billboards_face_the_active_camera ... ok
+test damage_fx::a_remote_participant_smokes_from_its_carried_state ... ok
+test damage_fx::missing_smoke_assets_emit_nothing ... ok
+test damage_fx::an_intact_vehicle_never_smokes ... ok
+test damage_fx::puff_transforms_track_position_radius_and_alpha ... ok
+test damage_fx::puffs_carry_the_session_stamp_and_bounded_frame ... ok
+test dash::cam_pose_reports_a_child_cameras_world_pose ... ok
+test dash::camera_cycle_binds_the_cockpit ... ok
+test damage_fx::emission_freezes_while_the_session_is_paused ... ok
+test dash::camera_cycle_uses_markers_and_skips_absent_cockpit ... ok
+test dash::camera_cycle_without_session_cameras_is_a_no_op ... ok
+test dash::cockpit_near_clip_is_capped_for_the_interior ... ok
+test dash::cockpit_view_splits_visibility ... ok
+test dash::cockpit_split_respects_other_visibility_owners ... ok
+test dash::needles_track_authoritative_state ... ok
+test dash::hostile_asnode_reads_unauthored ... ok
+test dash::non_finite_authored_pov_fields_fall_back ... ok
+test dash::overflowing_asnode_reads_unauthored ... ok
+test dash::overflowing_dash_mtx_origin_reads_unauthored ... ok
+test dash::numpad_look_glances_and_reverses ... ok
+test damage_fx::smoke_stops_once_the_damage_is_repaired ... ok
+test dash::spawn_dash_reports_absent_without_authored_records ... ok
+test dash::undrawable_authored_fov_falls_back_to_the_designed_lens ... ok
+test dash::pad_look_releases_while_unfocused ... ok
+test dash::wheel_and_gear_follow_the_sim ... ok
+test dash::pad_stick_glances_and_reverses ... ok
+test environment::a_city_without_sky_reports_absent ... ok
+test environment::a_degenerate_sky_reports_absent ... ok
+test environment::a_dome_with_fewer_paint_jobs_wraps_the_slot ... ok
+test environment::a_missing_dome_texture_draws_the_fallback ... ok
+test environment::an_unparseable_sky_reports_absent ... ok
+test environment::an_unresolvable_dome_model_reports_absent ... ok
+test environment::authored_event_conditions_take_precedence ... ok
+test environment::authored_event_conditions_select_the_fog_row ... ok
+test environment::authored_fog_binds_onto_the_cameras ... ok
+test environment::configured_conditions_bind_the_authored_preset ... ok
+test environment::authored_sky_binds_a_session_dome ... ok
+test environment::authored_rainy_event_wets_the_session_tires ... ok
+test environment::degenerate_fog_row_binds_nothing ... ok
+test environment::customized_event_conditions_take_precedence ... ok
+test environment::missing_preset_reports_the_fallback ... ok
+test environment::off_schema_fields_count_as_issues_not_fallback ... ok
+test environment::dome_follows_a_vehicle_child_camera ... ok
+test environment::dome_follows_the_active_camera ... ok
+test environment::rainy_weather_wets_the_session_tires ... ok
+test environment::the_traction_pin_overrides_weather_wetness ... ok
+test event::a_joined_client_seats_the_local_car_on_its_grid_row ... ok
+test event::authored_event_loads_into_countdown ... ok
+test event::authored_strtpnts_yaw_faces_the_player_spawn ... ok
+test damage_fx::puffs_expire_on_their_authored_life_and_stay_bounded ... ok
+test event::event_pathset_classification_counts_every_path ... ok
+test event::event_pathset_overlay_spawns_session_owned_props ... ok
+test event::incomplete_event_fails_the_session ... ok
+test event::markers_hide_cleared_gates_and_reveal_the_finish ... ok
+test contracts::a_hard_landing_emits_bounded_impacts_with_stable_participants ... ok
+test event::restarting_the_event_respawns_its_overlay_once ... ok
+test event::unknown_event_row_fails_the_session ... ok
+test event::restart_rebuilds_the_event_session ... ok
+test hud::h_toggles_only_in_the_live_phases ... ok
+test event::zero_strtpnts_yaw_falls_back_to_the_course ... ok
+test hud::pad_dpad_up_toggles_the_layer ... ok
+test hud::the_dash_cluster_hides_with_the_layer ... ok
+test hud::the_gate_survives_session_teardown ... ok
+test hud::the_indicator_markers_hide_with_the_layer ... ok
+test hud::the_instrument_line_hides_with_the_layer ... ok
+test hud::the_map_camera_parks_with_the_layer ... ok
+test hud::the_race_instruments_hide_with_the_layer ... ok
+test contracts::paused_session_publishes_nothing_and_drains_contact_edges ... ok
+test damage::a_roof_drop_damages_through_the_real_pipeline ... ok
+test contracts::wheel_and_impact_surfaces_report_the_environment_modifier ... ok
+test hudmap::city_session_binds_authored_map ... ok
+test import_pipeline::emit_psdl_groups_colliders_by_authored_surface ... ok
+test import_pipeline::emits_counted_attributes_meshes_colliders_and_report ... ok
+test import_pipeline::numbered_frames_load_as_a_texture_sequence ... ok
+test import_pipeline::retail_london_imports_driveable_geometry ... ok
+test import_pipeline::steep_heightfield_fan_keeps_upward_visual_side ... ok
+test import_pipeline::texture_override_prefers_later_mount_through_shared_path ... ok
+test import_pipeline::vertical_building_fan_still_faces_room_exterior ... ok
+test import_pipeline::vfs_to_city_binds_the_water_record ... ok
+test import_pipeline::vfs_to_city_loads_without_a_water_record ... ok
+test import_pipeline::vfs_to_city_marks_colliders_with_their_authored_surfaces ... ok
+test import_pipeline::vfs_to_city_rejects_a_water_record_with_no_resolvable_refs ... ok
+test import_pipeline::vfs_to_city_spawns_meshes_colliders_and_props ... ok
+test import_pipeline::vfs_to_city_stamps_decal_ribbons ... ok
+test import_pipeline::vfs_to_city_stamps_prop_rule_props ... ok
+test import_pipeline::vfs_to_city_with_a_broken_table_pair_marks_everything_unspecified ... ok
+test input::free_camera_detaches_the_pad ... ok
+test input::non_playing_phase_zeroes_the_pad ... ok
+test input::pad_axes_drive_the_player ... ok
+test hud::no_hud_records_the_gate ... ok
+test hudmap::city_without_map_content_reports_absent ... ok
+test menu::a_click_on_a_disabled_row_shows_its_reason ... ok
+test menu::a_failed_launch_returns_to_the_menu_with_the_reason ... ok
+test menu::a_right_click_backs_out_without_clobbering_the_restored_focus ... ok
+test menu::an_empty_install_reports_instead_of_faking ... ok
+test menu::a_fresh_profile_opens_records_to_the_empty_state ... ok
+test menu::circuit_options_carry_authored_laps_and_opponents ... ok
+test menu::circuit_customized_launch_carries_the_race_picks ... ok
+test menu::circuit_laps_and_opponents_rows_cycle_in_bounds ... ok
+test hudmap::dev_world_has_no_map_field ... ok
+test menu::cruise_options_launch_a_customized_session ... ok
+test menu::circuit_options_returned_to_seed_launch_a_default_run ... ok
+test menu::cruise_launches_then_quit_returns_to_the_menu ... ok
+test menu::customized_event_launch_carries_the_picks ... ok
+test menu::event_options_unlock_only_after_the_race_is_beaten ... ok
+test menu::event_rows_carry_real_availability ... ok
+test menu::event_rows_mark_won_races ... ok
+test menu::event_rows_show_authored_race_names ... ok
+test menu::garage_picks_carry_through_launch ... ok
+test menu::locked_vehicles_name_their_unlock_requirement ... ok
+test menu::new_driver_entry_refuses_empty_and_cancels ... ok
+test menu::new_driver_entry_bounds_and_filters_input ... ok
+test menu::new_driver_entry_types_edits_and_binds ... ok
+test menu::options_sit_to_the_right_of_their_row ... ok
+test menu::quick_race_replays_the_last_event ... ok
+test menu::profiles_bind_create_and_delete ... ok
+test menu::records_filters_narrow_and_widen_the_list ... ok
+test menu::showroom_renders_the_actual_vehicle_on_an_isolated_layer ... ok
+test menu::restart_in_menu_mode_leaves_the_shell_closed ... ok
+test menu::quick_race_reports_an_unresolvable_last_event ... ok
+test menu::the_app_boots_into_the_menu ... ok
+test menu::the_mouse_hovers_and_clicks_options_cells ... ok
+test menu::the_mouse_focuses_rows_and_clicks_drive_the_same_commands ... ok
+test menu::the_menu_draws_into_its_own_camera ... ok
+test mirror::backspace_toggles_the_strip_while_driving ... ok
+test mirror::free_camera_suppresses_the_strip ... ok
+test mirror::non_finite_authored_pov_fields_fall_back ... ok
+test mirror::overflowing_authored_pov_fields_fall_back ... ok
+test mirror::pad_east_toggles_the_strip_while_driving ... ok
+test mirror::spawn_binds_the_authored_eye_rear_facing ... ok
+test mirror::the_key_stays_with_the_overlay_phases ... ok
+test event::event_countdown_releases_into_playing ... ok
+test mirror::the_strip_arms_during_countdown ... ok
+test mirror::the_strip_is_never_the_hud_target ... ok
+test mirror::the_visibility_split_never_claims_the_strip ... ok
+test mirror::the_strip_is_never_the_world_camera ... ok
+test mirror::undrawable_authored_fov_falls_back_to_the_designed_lens ... ok
+test nav_overlay::a_route_probe_highlights_the_routes_lanes ... ok
+test nav_overlay::city_nav_is_none_without_the_flag_or_a_city_or_a_graph ... ok
+test nav_overlay::city_nav_loads_graph_overrides_and_route_through_the_vfs ... ok
+test nav_overlay::closed_roads_draw_in_the_closed_class ... ok
+test nav_overlay::direction_chevrons_point_along_each_lanes_travel ... ok
+test nav_overlay::lanes_are_classified_by_kind_and_direction_and_lifted ... ok
+test navarrow3d::arrow_is_a_solid_horizontal_extrusion ... ok
+test navarrow3d::arrow_turns_on_the_ground_plane_preserves_paints_and_excludes_its_camera ... ok
+test navarrow::authored_pair_binds_and_spawns ... ok
+test navarrow::best_lod_chunk_rasterizes_alone ... ok
+test navarrow::cruise_shows_no_arrow ... ok
+test menu::the_records_screen_shows_persisted_results_and_relaunches ... ok
+test nav_overlay::session_loads_and_tears_down_the_nav_resource ... ok
+test navarrow::event_family_selects_its_authored_package ... ok
+test menu::unresolvable_records_stay_listed_with_their_reasons ... ok
+test navarrow::h_gate_hides_the_arrow_but_keeps_reporting ... ok
+test navarrow::live_target_drives_the_ahead_sprite ... ok
+test navarrow::missing_package_reports_absent ... ok
+test menu::unchanged_options_launch_a_default_run ... ok
+test navarrow::missing_texture_reports_absent ... ok
+test navarrow::out_of_range_indices_report_no_geometry ... ok
+test navarrow::rear_target_swaps_to_the_behind_sprite ... ok
+test navarrow::released_states_hide_the_arrow ... ok
+test navarrow::single_paint_package_reuses_the_ahead_sprite ... ok
+test navarrow::sprites_rasterize_the_authored_mesh ... ok
+test navarrow::unparseable_package_reports_absent ... ok
+test bot::penned_bot_reanchor_lands_clear_of_a_parked_participant ... ok
+test oppind::i_toggles_only_in_the_live_phases ... ok
+test oppind::markers_ride_only_live_opponents ... ok
+test oppind::missing_tri_package_reports_absent ... ok
+test oppind::pad_dpad_down_toggles_the_indicators ... ok
+test event::authored_blitz_limit_times_out_the_race ... ok
+test hudmap::pause_map_records_the_fullscreen_state ... ok
+test opponents::a_networked_event_spawns_no_ai_opponents ... ok
+test navarrow::dev_world_has_no_arrow_field ... ok
+test opponents::authored_avoid_flags_gate_the_corridor ... ok
+test oppind::dev_world_has_no_indicator_field ... ok
+test navarrow::event_session_without_the_package_reports_absent ... ok
+test banger::a_breakable_prop_shatters_into_its_authored_pieces ... ok
+test navarrow::event_session_records_the_bound_arrow ... ok
+test oppind::event_session_reports_the_bound_pool ... ok
+test opponents::authored_tail_binds_the_driver_tuning ... ok
+test banger::a_hard_impact_activates_then_settles_once ... ok
+test event::driving_the_authored_course_finishes_the_race ... ok
+test opponents::checkpoint_markers_track_the_local_participant ... ok
+test opponents::circuit_race_picks_apply_to_the_session_definition_and_roster ... ok
+test opponents::circuit_race_picks_never_exceed_the_wired_roster ... ok
+test opponents::catch_up_lifts_a_trailing_opponents_demand ... ok
+test opponents::countdown_locks_opponent_input ... ok
+test opponents::a_faster_car_passes_a_slower_moving_blocker ... ok
+test opponents::drive_stats_count_driving_but_not_jumps ... ok
+test opponents::gap_brake_bites_only_inside_the_comfort_gap ... ok
+test opponents::initial_chase_index_skips_anchors_behind_the_staging ... ok
+test opponents::authored_staging_heading_faces_the_spawn ... ok
+test opponents::native_dense_route_keeps_the_corner_ahead_for_speed_planning ... ok
+test opponents::nearest_blocker_reads_only_the_corridor_ahead ... ok
+test opponents::authored_look_ahead_sets_the_sensing_distance ... ok
+test opponents::authored_max_throttle_measures_on_track ... ok
+test opponents::dead_route_reference_spawns_but_holds_still ... ok
+test opponents::an_overturned_opponent_self_rights_and_resumes ... ok
+test opponents::a_junction_miss_rejoins_the_route ... ok
+test opponents::pick_pass_side_prefers_the_open_side ... ok
+test opponents::authored_avoid_players_decides_the_parked_player ... ok
+test opponents::ordered_route_less_opponent_binds_no_gate_line ... ok
+test opponents::reanchor_pose_bounds_a_collapsed_closed_route ... ok
+test opponents::reanchor_pose_bounds_a_nonfinite_route ... ok
+test opponents::reanchor_pose_handles_degenerate_routes ... ok
+test opponents::reanchor_pose_projects_onto_the_chased_leg ... ok
+test opponents::reanchor_pose_walks_back_out_of_uncleared_triggers ... ok
+test opponents::reanchor_pose_wraps_closed_and_clamps_open ... ok
+test opponents::rear_end_guard_brakes_for_the_closure_it_must_shed ... ok
+test opponents::restart_respawns_the_lineup ... ok
+test opponents::authored_avoid_opponents_decides_the_parked_ai ... ok
+test opponents::roster_spawns_distinct_ai_participants ... ok
+test opponents::route_target_advances_past_reached_points ... ok
+test opponents::route_target_closed_route_loops_to_nearest ... ok
+test opponents::route_target_open_route_completes ... ok
+test opponents::route_target_skips_a_point_the_car_drove_past ... ok
+test opponents::session_difficulty_fields_the_authored_variant ... ok
+test bot::bot_drives_a_turning_course_to_the_finish ... ok
+test opponents::spawn_pose_faces_the_authored_staging_heading ... ok
+test opponents::spawn_pose_on_a_headless_grid_slot_uses_the_route_facing ... ok
+test opponents::spawn_pose_prefers_the_authored_grid_then_the_route_anchor ... ok
+test opponents::unloadable_vehicle_skips_only_its_slot ... ok
+test precip::cover_probe_suppresses_sheltered_spawns ... ok
+test precip::drops_land_on_contact_and_expire_on_life ... ok
+test precip::dry_weather_binds_no_precipitation ... ok
+test precip::missing_rule_reports_the_absence ... ok
+test opponents::competing_reanchors_land_clear_of_each_other ... ok
+test opponents::reanchor_dispatches_through_the_production_reset_path ... ok
+test precip::rainy_weather_binds_the_authored_rule ... ok
+test precip::rainy_weather_binds_the_authored_ambience ... ok
+test precip::unparseable_rule_reports_the_absence ... ok
+test profile::a_failed_session_records_no_event ... ok
+test profile::a_session_writes_only_the_bound_profile ... ok
+test profile::an_interrupted_save_recovers_through_the_bind ... ok
+test profile::choose_launch_merges_flags_over_remembered_selections ... ok
+test profile::corrupt_active_marker_degrades_to_profile_less ... ok
+test profile::create_request_allocates_and_marks_active ... ok
+test profile::cruise_without_a_car_keeps_remembered_selections ... ok
+test profile::implicit_bind_uses_the_active_marker ... ok
+test precip::rainy_session_emits_bounded_camera_relative_drops ... ok
+test profile::recovered_backup_heals_the_main_file ... ok
+test precip::restart_reloads_the_precipitation_rig ... ok
+test profile::select_by_id_binds_and_marks_active ... ok
+test profile::select_by_name_resolves_only_when_unique ... ok
+test profile::session_start_persists_selections ... ok
+test progression::a_bot_driven_finish_records_nothing ... ok
+test progression::a_dev_world_event_records_nothing ... ok
+test progression::a_gated_vehicle_selection_reports_its_note ... ok
+test progression::a_locked_event_launches_with_its_gate_visible ... ok
+test progression::a_modded_session_records_nothing ... ok
+test progression::a_non_local_result_is_not_applied ... ok
+test progression::a_sandbox_profile_never_progresses ... ok
+test progression::a_timed_out_result_records_nothing ... ok
+test progression::a_repeat_finish_never_reawards ... ok
+test race::a_departed_wire_seat_releases_the_deferred_authority ... ok
+test race::a_non_local_resolution_does_not_end_the_local_race ... ok
+test race::a_wire_seat_holds_the_authority_in_playing_until_it_resolves ... ok
+test race::a_wire_seat_joining_a_running_race_starts_racing ... ok
+test race::an_unresolved_participant_does_not_block_the_local_result ... ok
+test race::arrow_arms_the_finish_then_cleans_up ... ok
+test race::arrow_is_live_during_countdown ... ok
+test race::arrow_pick_cycles_through_input ... ok
+test race::arrow_pick_cycles_through_the_pad ... ok
+test race::arrow_tracks_the_live_objective ... ok
+test race::checkpoint_clears_at_the_gantry_line_not_on_approach ... ok
+test race::checkpoint_gantries_follow_progress_and_teardown ... ok
+test race::countdown_banner_counts_digits_then_flashes_go ... ok
+test race::countdown_banner_go_belongs_to_a_live_playing_session ... ok
+test race::countdown_banner_ignores_stale_race_and_despawns ... ok
+test race::countdown_completes_while_session_already_playing ... ok
+test race::countdown_releases_control_exactly_once ... ok
+test race::crossing_at_the_wrong_height_does_not_count ... ok
+test race::finish_on_the_expiry_tick_still_counts ... ok
+test race::finish_records_one_result_with_provenance ... ok
+test race::high_speed_crossing_cannot_be_skipped ... ok
+test race::live_order_tracks_progress_and_locks_finished_places ... ok
+test race::local_finish_moves_the_session_to_results ... ok
+test race::local_timeout_moves_the_session_to_results ... ok
+test race::low_time_warning_ignores_other_participants_deadlines ... ok
+test race::low_time_warning_pulses_on_the_race_clock ... ok
+test race::low_time_warning_waits_for_the_running_phase ... ok
+test race::ordered_finish_line_is_inert_until_it_is_next ... ok
+test race::ordered_last_lap_tie_records_both_deterministically ... ok
+test race::ordered_multi_lap_participants_stay_independent_and_order ... ok
+test race::ordered_overlapping_closing_gate_banks_one_lap_once ... ok
+test race::ordered_race_shows_no_arrow ... ok
+test race::ordered_reset_over_the_line_still_owes_the_crossing ... ok
+test race::ordered_skipped_gate_clears_nothing_until_revisited_in_order ... ok
+test race::ordered_spawn_inside_the_line_grants_nothing ... ok
+test race::pause_freezes_the_race ... ok
+test race::progress_advance_is_the_shared_step ... ok
+test race::quit_during_countdown_unloads_to_menu ... ok
+test race::remote_authority_does_not_simulate ... ok
+test race::repeated_crossing_counts_once ... ok
+test race::reset_while_paused_cannot_sweep_checkpoints ... ok
+test race::restart_from_results_rebegins_the_session ... ok
+test race::restart_removes_the_race_resource ... ok
+test race::teleport_breaks_the_swept_segment ... ok
+test race::the_deadline_resolves_the_field_behind_the_results_screen ... ok
+test race::the_deadline_resolves_the_wire_seats_and_releases_results ... ok
+test race::the_field_races_on_behind_the_results_screen ... ok
+test race::tied_finishes_record_separately ... ok
+test race::timeout_records_one_timed_out_result_and_completes ... ok
+test race::timeout_resolves_an_unreleased_participant ... ok
+test race::untimed_race_never_warns_and_teardown_cleans_up ... ok
+test race::vehicle_reset_breaks_the_swept_segment ... ok
+test racestat::checkpoint_list_marks_cleared_and_armed ... ok
+test racestat::complete_and_stale_races_hide_the_cluster ... ok
+test racestat::cruise_session_shows_no_stats ... ok
+test bot::bot_follows_the_authored_route_off_the_gate_line ... ok
+test opponents::native_dense_opponent_physically_drives_two_tight_laps_without_recovery ... ok
+test racestat::dev_world_has_no_stats_field ... ok
+test racestat::finish_entry_arms_when_all_gates_clear ... ok
+test racestat::full_glyph_set_binds_and_spawns ... ok
+test racestat::gate_slots_compose ... ok
+test racestat::h_gate_hides_the_cluster_but_keeps_composing ... ok
+test racestat::live_race_composes_place_and_checkpoint_list ... ok
+test racestat::missing_glyphs_report_absent ... ok
+test racestat::ordered_definition_spawns_the_lap_row ... ok
+test racestat::ordered_race_composes_lap_and_next_gate ... ok
+test racestat::pair_slots_compose ... ok
+test racestat::partial_glyph_set_reports_absent ... ok
+test racestat::solo_field_hides_the_place_row ... ok
+test racestat::teardown_despawns_the_cluster ... ok
+test racetime::complete_and_stale_races_hide_the_timer ... ok
+test racetime::countdown_phase_arms_the_timer ... ok
+test racetime::cruise_session_shows_no_timer ... ok
+test racestat::event_session_without_glyphs_reports_absent ... ok
+test racetime::dev_world_has_no_timer_field ... ok
+test racetime::event_session_without_glyphs_reports_absent ... ok
+test racetime::full_glyph_set_binds_and_spawns ... ok
+test racetime::h_gate_hides_the_row_but_keeps_composing ... ok
+test racetime::missing_glyphs_report_absent ... ok
+test racetime::partial_glyph_set_reports_absent ... ok
+test racetime::slots_compose_minutes_seconds_centiseconds ... ok
+test racetime::timed_race_counts_down ... ok
+test racetime::untimed_race_counts_up ... ok
+test opponents::blocked_route_drives_around_the_parked_car ... ok
+test recovery::a_below_grade_road_outside_the_rooms_never_drowns ... ok
+test racestat::event_session_records_the_bound_stats ... ok
+test opponents::opponents_drive_routes_and_finish ... ok
+test recovery::a_deck_above_the_bound_inside_a_deadly_room_stays_dry ... ok
+test opponents::ordered_route_credit_covers_a_gate_the_authored_line_misses ... ok
+test recovery::a_car_on_deep_water_recovers_to_the_last_dry_anchor ... ok
+test recovery::a_disabled_wreck_is_not_recovery_observed ... ok
+test recovery::a_dry_floor_inside_a_deadly_water_room_still_drowns ... ok
+test racetime::event_session_records_the_bound_timer ... ok
+test recovery::an_airborne_car_under_a_deadly_rooms_bound_drowns ... ok
+test recovery::a_legitimate_big_drop_lands_instead_of_firing ... ok
+test recovery::a_predicted_session_never_tracks_or_recovers ... ok
+test recovery::a_trailer_rig_recovers_with_the_tractor ... ok
+test recovery::a_remote_driver_is_tracked_and_recovered_by_the_authority ... ok
+test recovery::stale_generation_events_are_ignored ... ok
+test results::dev_finish_sweeps_to_the_results_screen ... ok
+test recovery::a_fall_off_the_world_recovers_to_the_anchor ... ok
+test results::results_phase_ignores_stray_keys ... ok
+test results::results_reports_a_profileless_run ... ok
+test results::results_continue_quits_through_teardown ... ok
+test results::results_reports_recorded_rewards ... ok
+test results::results_restart_replays_the_event ... ok
+test results::results_screen_marks_unresolved_participants ... ok
+test results::results_screen_shows_the_outcome_and_the_field ... ok
+test results::results_screen_reports_a_timeout ... ok
+test sequence::a_restart_starts_the_program_over ... ok
+test opponents::opponents_race_on_behind_the_results_screen ... ok
+test sequence::the_countdown_lock_holds_the_program ... ok
+test session::a_dev_world_mounts_the_authored_surface_tables ... ok
+test opponents::session_difficulty_measures_on_track ... ok
+test session::a_networked_restart_returns_to_menu_without_a_local_begin ... ok
+test session::cockpit_without_authored_camera_falls_back_to_an_active_chase ... ok
+test session::city_water_does_not_leak_across_restart ... ok
+test session::dev_banger_pool_override_bounds_the_active_pool ... ok
+test recovery::recovery_is_not_a_repair ... ok
+test session::dev_spawn_override_pins_the_player_pose ... ok
+test sequence::stage_boundaries_bank_the_drivetrain_mix_and_clutch_counts ... ok
+test session::esc_quits_when_the_authority_cannot_pause ... ok
+test recovery::reaching_dry_ground_inside_the_dwell_escapes ... ok
+test session::failed_load_leaves_no_player_simulation ... ok
+test recovery::recovery_disarms_an_armed_stuck_episode ... ok
+test session::fullscreen_map_clears_itself_outside_pause ... ok
+test session::dev_pause_pauses_once_at_playing ... ok
+test session::f4_restarts_and_backspace_is_the_mirror ... ok
+test session::pad_buttons_drive_the_map_controls ... ok
+test session::pause_map_owns_the_keys_while_the_menu_is_hidden ... ok
+test session::pause_menu_restart_reloads_clean ... ok
+test session::quit_unloads_to_menu_and_writes_app_exit ... ok
+test session::pause_map_dev_override_respects_pause_authority ... ok
+test session::reseat_towed_trailers_follows_any_tractor_reset ... ok
+test session::pause_menu_rows_drive_the_session ... ok
+test session::esc_pauses_then_resumes_a_frozen_world ... ok
+test progression::an_authored_finish_grants_the_event_unlocks ... ok
+test session::restart_leaves_exactly_one_session ... ok
+test recovery::wading_shallow_water_never_starts_the_dwell ... ok
+test bot::bot_laps_an_ordered_circuit_twice has been running for over 60 seconds
+test bot::dense_guide_drives_a_short_tight_two_lap_circuit_without_reanchors has been running for over 60 seconds
+test session::pad_north_resets_the_player_to_spawn ... ok
+test session::spawn_resets_is_the_player_row ... ok
+test bot::explicit_bot_guide_drives_two_real_laps_without_opponents has been running for over 60 seconds
+test session::unfocused_window_gates_the_pad_map ... ok
+test session::world_floor_does_not_leak_across_restart ... ok
+test session::restart_resets_the_impact_stream ... ok
+test session::r_is_inert_under_remote_authority ... ok
+test bot::dense_guide_drives_a_short_tight_two_lap_circuit_without_reanchors ... ok
+test bot::penned_bot_reanchors_onto_the_route_and_resumes has been running for over 60 seconds
+test opponents::progressing_opponents_never_reanchor ... ok
+test bot::planned_guide_drives_a_short_tight_two_lap_circuit_without_reanchors has been running for over 60 seconds
+test session::reset_at_beyond_the_run_never_fires ... ok
+test bot::planned_guide_drives_a_short_tight_two_lap_circuit_without_reanchors ... ok
+test smoke::record_lines_distinguish_kinds_and_statuses ... ok
+test session::fixed_tick_driving_is_update_rate_independent ... ok
+test smoke::requested_missing_city_is_an_explicit_failure ... ok
+test session::reset_at_is_inert_under_remote_authority ... ok
+test session::reset_at_teleports_the_player_back_to_spawn ... ok
+test session::self_right_is_inert_under_remote_authority ... ok
+test spark_fx::a_remote_participant_never_sparks_locally_on_a_predicted_client ... ok
+test spark_fx::a_remote_participant_sparks_on_the_authority ... ok
+test spark_fx::a_replicated_impact_sparks_the_remote_copy ... ok
+test spark_fx::a_reportable_impact_sparks_at_the_contact_point ... ok
+test spark_fx::both_rigged_participants_spark_on_their_own_sides ... ok
+test spark_fx::missing_spark_assets_emit_nothing ... ok
+test spark_fx::sparks_expire_on_their_designed_life ... ok
+test spark_fx::stale_events_drain_without_emitting ... ok
+test spark_fx::streaks_track_velocity_and_fade ... ok
+test spark_fx::the_pool_stays_bounded_under_a_burst_heavy_feed ... ok
+test spark_fx::unrigged_participants_spark_nothing ... ok
+test speedometer::dial_reads_ground_speed_reverse_rpm_and_hud_gate ... ok
+test stuck::a_car_that_drives_away_escapes_the_window ... ok
+test stuck::a_car_wedged_past_its_turn_bound_keeps_counting ... ok
+test stuck::a_disabled_wreck_is_not_stuck_observed ... ok
+test smoke::a_cruise_reset_is_counted_once_with_later_travel_preserved ... ok
+test stuck::a_predicted_session_never_arms_or_recovers ... ok
+test stuck::a_parked_car_after_an_impact_recovers_in_place_once ... ok
+test bot::bot_laps_an_ordered_circuit_twice ... ok
+test bot::explicit_bot_guide_drives_two_real_laps_without_opponents ... ok
+test stuck::a_remote_driver_is_armed_and_recovered_by_the_authority ... ok
+test stuck::a_real_impact_arms_the_detector ... ok
+test smoke::descending_below_spawn_is_not_a_world_fall ... ok
+test stuck::stale_generation_stuck_events_are_ignored ... ok
+test surface::a_ray_into_each_region_reports_its_authored_surface ... ok
+test surface::a_texture_swap_does_not_move_the_physics_surface ... ok
+test surface::colliders_carry_the_normalized_tire_surface_of_their_material ... ok
+test surface::colliders_carry_the_scaled_contact_restitution_of_their_material ... ok
+test texel_fx::a_car_without_a_damage_record_or_pairs_carries_no_rig ... ok
+test stuck::a_roofed_car_is_righted_in_place ... ok
+test texel_fx::a_clean_byte_never_erases_a_splat ... ok
+test stuck::a_trailer_rig_recovers_with_the_tractor ... ok
+test texel_fx::a_delayed_pre_repair_row_drops_against_the_repair_ledger ... ok
+test texel_fx::a_predicted_clients_own_seat_splats_off_the_local_stream ... ok
+test texel_fx::a_post_repair_impact_still_splats ... ok
+test texel_fx::a_pre_repair_impact_row_never_splats_after_the_wipe ... ok
+test texel_fx::a_remote_copy_ignores_the_local_stream_on_a_predicted_client ... ok
+test texel_fx::a_remote_seat_splats_off_the_local_stream_on_the_authority ... ok
+test texel_fx::a_replicated_impact_splats_the_remote_copy ... ok
+test texel_fx::a_replicated_repair_restores_the_own_seats_skin ... ok
+test texel_fx::the_rig_binds_paired_slots_and_skips_unpaired_ones ... ok
+test texel_fx::an_impact_splats_the_clone_and_a_repair_restores_it ... ok
+test texel_fx::a_replicated_repair_restores_the_splats ... ok
+test stuck::an_opponent_stuck_recovers_without_touching_the_session ... ok
+test smoke::dev_world_headless_smoke_passes_without_mm2_data ... ok
+test opponents::restart_restores_the_circuit_grid_counters_and_objects ... ok
+test smoke::dev_world_headless_smoke_follows_player_across_restart ... ok
+test traffic::a_light_striker_shares_the_exchange_not_its_speed ... ok
+test traffic::a_networked_session_spawns_no_ambient_traffic ... ok
+test traffic::a_mutual_follower_edge_charges_the_exchange_once ... ok
+test traffic::a_participant_striker_takes_damage_and_names_the_class ... ok
+test smoke::dev_world_parked_driver_stays_parked ... ok
+test stuck::an_unimpacted_car_never_detects ... ok
+test traffic::a_hard_hit_hands_the_follower_to_dynamics ... ok
+test smoke::dev_world_surface_voices_resolve_off_the_authored_default ... ok
+test traffic::a_remote_players_bubble_holds_traffic_the_local_player_left ... ok
+test traffic::a_same_tick_chain_charges_the_middle_car ... ok
+test smoke::restart_at_beyond_the_run_never_fires ... ok
+test smoke::record_names_the_configured_difficulty ... ok
+test traffic::a_light_touch_leaves_the_car_lane_following ... ok
+test traffic::a_same_tick_three_striker_pileup_flips_the_car_once ... ok
+test smoke::restart_at_defers_the_restart_to_the_configured_tick ... ok
+test progression::two_profiles_isolate_progress_across_a_restart ... ok
+test traffic::a_wild_signal_origin_drops_and_stays_counted ... ok
+test traffic::a_wreck_striker_counts_as_ambient ... ok
+test traffic::a_lane_follower_crosses_the_junction_interior_without_a_jump ... ok
+test opponents::permanently_stuck_opponent_reanchors_and_resumes ... ok
+test traffic::a_same_tick_pileup_flips_the_car_once ... ok
+test smoke::restart_at_fires_once_not_once_per_generation ... ok
+test traffic::authored_signals_spawn_at_their_origins_and_despawn_on_teardown ... ok
+test traffic::a_same_tick_second_arrival_waits_for_the_committed_crossing ... ok
+test traffic::a_rolled_back_free_flow_entry_keeps_the_committed_claim ... ok
+test traffic::a_traffic_light_admits_only_the_green_member_road ... ok
+test traffic::a_penned_car_is_recycled_after_the_stuck_window ... ok
+test traffic::respawns_draw_inside_a_remote_players_band ... ok
+test traffic::one_striker_pays_both_cars_it_flips ... ok
+test traffic::event_aimap_density_zero_authors_traffic_off ... ok
+test traffic::session_spawns_the_seeded_plan_on_authored_lanes ... ok
+test traffic::signal_heads_track_the_junction_phase ... ok
+test traffic::teardown_removes_traffic_and_restart_replans ... ok
+test trailer::despawning_the_trailer_takes_the_hitch_joint_with_it ... ok
+test traffic::a_parked_participant_holds_traffic_and_clearing_releases_it ... ok
+test wheel_fx::a_dark_surface_pair_emits_nothing ... ok
+test wheel_fx::a_missing_atlas_flags_the_report_and_still_emits ... ok
+test wheel_fx::a_missing_rule_counts_failed_and_stays_dark ... ok
+test wheel_fx::a_parked_wheel_stays_dark_even_on_water ... ok
+test traffic::an_always_stop_end_never_releases_while_the_never_stop_flows ... ok
+test wheel_fx::a_session_binds_the_eight_effect_rules ... ok
+test traffic::ambient_cars_queue_behind_a_blocker ... ok
+test traffic::an_occupied_exit_lane_holds_the_transfer_at_the_lane_end ... ok
+test trailer::the_hitch_joint_disables_car_trailer_contacts ... ok
+test wheel_fx::a_reground_re_fires_the_initial_blast ... ok
+test wheel_fx::a_slipping_wheel_emits_both_authored_channels_at_its_contact ... ok
+test wheel_fx::an_out_of_table_index_stays_dark ... ok
+test wheel_fx::an_unmarked_contact_reads_the_default_material ... ok
+test traffic::an_ambient_car_in_the_box_yields_the_stop_sign_head ... ok
+test wheel_fx::the_surface_table_resolves_the_authored_channels ... ok
+test wheel_fx::restart_rebinds_the_table_and_sweeps_puffs ... ok
+test traffic::respawns_reject_space_a_participant_occupies ... ok
+test wheel_fx::remote_or_unidentified_cars_stay_dark ... ok
+test wheel_fx::the_authored_threshold_gates_each_channel ... ok
+test traffic::a_signal_wait_shorter_than_the_window_never_recovers ... ok
+test traffic::respawns_reject_space_a_live_car_occupies ... ok
+test wheel_fx::emission_replays_identically_for_the_same_object_id ... ok
+test wheel_fx::the_pool_stays_bounded_and_puffs_expire ... ok
+test traffic::maintain_ambient_holds_during_pause ... ok
+test traffic::a_stop_sign_serialises_competing_approaches_in_arrival_order ... ok
+test traffic::a_knocked_wreck_occupies_the_junction_box ... ok
+test traffic::a_participant_in_the_box_yields_the_green_approach ... ok
+test traffic::a_red_window_holds_the_approach_until_its_road_greens ... ok
+test traffic::a_queued_follower_reaches_the_line_and_takes_its_turn ... ok
+test traffic::cars_drive_the_network_and_dead_ends_recycle ... ok
+test sequence::the_sequence_drives_the_staged_program_on_the_dev_world ... ok
+test bot::penned_bot_reanchors_onto_the_route_and_resumes ... ok
+
+test result: ok. 720 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 89.96s
+
+     Running tests/network.rs (target/debug/deps/network-e1d4de90ab999703)
+
+running 80 tests
+test net_app::a_host_generation_is_adopted_but_never_regresses ... ok
+test net_app::a_menu_quit_stays_inside_the_lobby ... ok
+test net_app::a_menu_quit_stays_inside_the_hosted_lobby ... ok
+test net_app::a_hosted_start_begins_the_session_for_everyone ... ok
+test net_app::a_joiners_held_snap_resolves_the_terminal_edge_after_the_load ... ok
+test net_app::a_remote_copys_engine_voice_mixes_off_the_replicated_rpm ... ok
+test net_app::a_remote_copy_replays_the_replicated_surface_contact ... ok
+test net_app::a_snap_progress_tail_mirrors_and_resolves_the_joined_client ... ok
+test net_app::a_client_streams_inputs_and_applies_the_host_snapshot ... ok
+test net_app::a_snap_race_row_releases_the_joined_clients_countdown ... ok
+test net_app::a_snap_reconciles_the_remote_copys_breakaway_rig ... ok
+test net_app::a_snapshot_drives_a_remote_rigs_trailer ... ok
+test net_app::a_remote_drivers_reset_request_resets_its_seat ... ok
+test net_app::a_snap_carries_the_remote_cars_drive_state ... ok
+test net_app::a_snapshot_feeds_the_remote_impact_stream ... ok
+test net_app::a_start_begins_the_wired_session_under_the_lobby_generation ... ok
+test net_app::a_snap_carries_the_sessions_impact_rows ... ok
+test net_app::a_snap_publishes_the_authoritys_race_state ... ok
+test net_app::a_snap_publishes_the_seats_race_progress ... ok
+test net_app::a_start_mid_session_parks_until_teardown_lands ... ok
+test net_app::a_zero_generation_start_is_refused ... ok
+test net_app::a_cancel_returns_the_session_to_the_lobby ... ok
+test net_app::a_trailer_rows_grounded_bit_drives_the_copys_suspension ... ok
+test net_app::a_hosted_session_end_cancels_the_wire_session ... ok
+test net_app::an_unrunnable_session_is_refused_with_a_clean_leave ... ok
+test net_app::f4_restart_is_a_local_authority_binding ... ok
+test net_app::joining_surfaces_the_lobby_without_starting_a_session ... ok
+test net_app::leaving_the_lobby_reports_quit_and_exits_cleanly ... ok
+test net_app::a_start_with_an_unready_peer_is_refused ... ok
+test net_app::a_never_live_wire_seat_is_retired_after_the_join_grace ... ok
+test net_app::a_departing_wire_seat_releases_the_deferred_authority ... ok
+test net_app::an_authored_remote_picks_engine_voice_publishes_its_rpm ... ok
+test net_app::host_input_keys_ride_the_command_channel ... ok
+test net_app::a_dead_authoritys_watermark_dies_with_the_link ... ok
+test net_app::a_dead_host_loop_tears_down_and_exits ... ok
+test net_app::a_start_resets_the_stream_without_a_close ... ok
+test net_app::r_under_a_remote_session_asks_the_authority ... ok
+test net_app::a_wire_seats_surface_contact_publishes_in_its_snap ... ok
+test net_app::the_hosted_roster_mirrors_remote_players_only ... ok
+test net_check::check_accepts_a_retail_session ... ok
+test net_check::check_accepts_runnable_sessions ... ok
+test net_check::check_bounds_customization_picks ... ok
+test net_check::check_refuses_unrunnable_sessions ... ok
+test net_app::losing_the_host_tears_down_and_exits ... ok
+test net_app::a_stranded_client_recovers_when_the_host_dies ... ok
+test net_app::quitting_the_host_cancels_the_session_and_exits ... ok
+test net_app::the_deferred_authority_delivers_the_wire_seats_terminal_edge ... ok
+error: the argument '--join <addr>' cannot be used with '--city <CITY>'
+
+Usage: mm2 --join <addr>
+
+For more information, try '--help'.
+error: the argument '--dev-world' cannot be used with '--join <addr>'
+
+Usage: mm2 --mm2-path <MM2_PATH> --dev-world --headless --host
+
+For more information, try '--help'.
+test net_edge::a_killed_host_closes_a_parked_client ... ok
+test net_edge::a_killed_host_closes_a_started_client ... ok
+error: the argument '--headless' cannot be used with '--menu'
+
+Usage: mm2 --mm2-path <MM2_PATH> --dev-world --headless --host
+
+For more information, try '--help'.
+error: the argument '--join <addr>' cannot be used with '--dev-world'
+
+Usage: mm2 --join <addr>
+
+For more information, try '--help'.
+test net_app::mm2_join_reports_a_lost_host ... ok
+error: the following required arguments were not provided:
+  --host
+
+Usage: mm2 --host --mm2-path <MM2_PATH> --dev-world --headless --bind <BIND>
+
+For more information, try '--help'.
+error: the argument '--join <addr>' cannot be used with '--menu'
+
+Usage: mm2 --join <addr>
+
+For more information, try '--help'.
+error: the following required arguments were not provided:
+  --host
+
+Usage: mm2 --host --mm2-path <MM2_PATH> --dev-world --headless --seed <SEED>
+
+For more information, try '--help'.
+test net_app::mm2_host_flag_gates_are_named_exits ... ok
+error: the argument '--join <addr>' cannot be used with '--event <table:row>'
+
+Usage: mm2 --join <addr>
+
+For more information, try '--help'.
+test net_app::mm2_join_failures_and_conflicts_are_named_exits ... ok
+test net_app::mm2_hosted_lobby_refuses_a_start_against_an_unready_peer ... ok
+test net_edge::an_unreachable_address_fails_the_join ... ok
+test net_edge::a_rostered_peer_speaking_for_the_host_is_dropped ... ok
+test net_app::a_remote_players_inputs_drive_the_hosted_car ... ok
+test net_host::a_dedicated_host_process_runs_start_and_cancel ... ok
+test net_host::a_dedicated_host_process_serves_an_advertised_lobby ... ok
+test net_edge::a_rejoined_client_gets_a_fresh_slot ... ok
+test net_edge::the_door_bounds_garbage_frames ... ok
+test net_host::an_unrunnable_event_is_refused_at_flag_time ... ok
+test net_join::a_client_process_refuses_a_session_it_cannot_run ... ok
+test net_join::a_client_process_reports_a_refused_join ... ok
+test net_join::separate_client_processes_pick_ready_and_start ... ok
+test net_join::a_client_process_accepts_a_runnable_event ... ok
+test net_app::an_impaired_link_still_converges_the_data_plane ... ok
+test net_host::an_event_host_closes_joins_at_start ... ok
+test net_app::a_stalled_wire_seat_is_retired_and_releases_the_deferred_authority ... ok
+test net_edge::a_killed_host_ends_a_driving_client ... ok
+test net_app::mm2_join_returns_to_the_lobby_on_cancel ... ok
+test net_app::a_lobby_start_loads_the_wired_world_headless ... ok
+test net_app::a_headless_host_runs_the_advertised_session ... ok
+test net_app::mm2_hosted_lobby_runs_the_in_app_session ... ok
+test net_app::mm2_join_loads_the_hosts_started_session ... ok
+test net_edge::a_silent_peer_is_refused_on_the_deadline ... ok
+test net_drive::two_mm2_processes_relay_a_live_resolved_surface_contact ... ok
+test net_drive::two_mm2_processes_drive_one_session_over_loopback ... ok
+test net_drive::an_impaired_two_process_session_still_converges ... ok
+test net_app::the_impairment_matrix_records_each_recipe_cell ... ok
+test net_drive::the_process_level_impairment_matrix_records_each_recipe_cell ... ok
+
+test result: ok. 80 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 38.58s
+
+     Running unittests src/lib.rs (target/debug/deps/mm2_assets-7b4ffcb137dc1397)
+
+running 14 tests
+test tests::rejects_traversal ... ok
+test manifest::tests::rejects_missing_section ... ok
+test manifest::tests::parses_minimal_manifest ... ok
+test tests::normalizes_separators_and_case ... ok
+test vfs::tests::case_insensitive_lookup ... ok
+test vfs::tests::case_collision_is_deterministic ... ok
+test vfs::tests::rejects_traversal ... ok
+test vfs::tests::same_source_prefers_listed_extension ... ok
+test vfs::tests::deterministic_priority ... ok
+test vfs::tests::manifest_not_exposed_as_asset ... ok
+test vfs::tests::source_priority_beats_extension_preference ... ok
+test vfs::tests::resolved_reads_keep_their_source ... ok
+test vfs::tests::symlinks_are_not_followed ... ok
+test vfs::tests::mod_overrides_original_and_falls_back ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/mm2_content-a8c39314a58d81c9)
+
+running 23 tests
+test assemble::tests::a_wheel_count_mismatch_is_rejected ... ok
+test assemble::tests::override_replaces_handling_but_repins_the_rig ... ok
+test city_info::tests::missing_names_fall_through ... ok
+test convert::tests::suspension_damping_lands_in_the_playable_band ... ok
+test city_info::tests::names_follow_table_row_order ... ok
+test convert::tests::clear_underside_opens_up_a_slammed_floor ... ok
+test convert::tests::clear_underside_leaves_a_very_low_body_a_hull_to_be ... ok
+test convert::tests::suspension_damping_scales_with_the_corner_it_carries ... ok
+test expect::tests::roster_sizes_match_retail_audit ... ok
+test fingerprint::tests::gameplay_paths_classified ... ok
+test convert::tests::center_of_gravity_z_points_the_other_way_from_the_model ... ok
+test convert::tests::only_a_stubby_tall_car_gets_pitch_resistance ... ok
+test model::tests::a_degenerate_trailer_wheel_part_is_visual_only ... ok
+test model::tests::full_size_trailer_wheels_all_simulate ... ok
+test model::tests::unusable_geometry_measurements_read_unauthored ... ok
+test model::tests::unusable_mtx_fields_read_unauthored ... ok
+test model::tests::usable_mtx_fields_bind_verbatim ... ok
+test model::tests::wheels_beyond_four_are_back_back_followers ... ok
+test assemble::tests::car_audio_loads_from_the_side_dir ... ok
+test assemble::tests::car_audio_absence_and_misuse_are_soft ... ok
+test fingerprint::tests::a_mod_override_moves_the_fingerprint ... ok
+test fingerprint::tests::cosmetic_only_change_does_not_move_the_fingerprint ... ok
+test fingerprint::tests::gameplay_changes_move_the_fingerprint ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/availability.rs (target/debug/deps/availability-c441e4b0b270d84f)
+
+running 5 tests
+test an_out_of_range_midterm_tag_is_open_and_diagnosed ... ok
+test a_midterm_without_lessons_is_open_and_diagnosed ... ok
+test checkpoint_rows_gate_in_sets_of_three ... ok
+test blitz_and_circuit_are_always_open ... ok
+test crash_course_gates_follow_the_authored_tags ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/catalog.rs (target/debug/deps/catalog-d1cddfca558fef6c)
+
+running 1 test
+test display_stats_read_verbatim_from_info ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/crashcourse.rs (target/debug/deps/crashcourse-6d5e71be59dd5011)
+
+running 6 tests
+test lesson_stage_parses_authored_tags ... ok
+test objective_decode_covers_the_retail_enum ... ok
+test a_missing_course_table_yields_no_lessons ... ok
+test table_parse_diagnostics_stay_visible_on_the_lesson ... ok
+test complete_lesson_builds_the_full_view ... ok
+test incomplete_and_unresolved_lessons_report_not_fail ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/damage.rs (target/debug/deps/damage-c47ee6c788521ca1)
+
+running 4 tests
+test load_vehicle_attaches_the_records_with_provenance ... ok
+test the_audit_counts_every_discovered_record ... ok
+test a_malformed_record_warns_instead_of_sinking_the_load ... ok
+test a_bad_gyro_never_sinks_the_car ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/events.rs (target/debug/deps/events-3da7a8fd9d405eee)
+
+running 6 tests
+test empty_install_reports_not_panics ... ok
+test malformed_table_is_a_table_error_not_a_panic ... ok
+test reward_table_normalizes_the_catalog ... ok
+test crash_course_links_and_rewards ... ok
+test resolve_validates_dependencies ... ok
+test catalog_indexes_rows_and_dependencies ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/garage.rs (target/debug/deps/garage-045884e3262e6160)
+
+running 3 tests
+test grants_off_the_catalog_diagnose ... ok
+test authored_grants_gate_the_right_rows ... ok
+test scan_garage_unions_every_citys_rewards ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/nav.rs (target/debug/deps/nav-777df21a7c50ad0e)
+
+running 5 tests
+test missing_bai_is_a_resolve_error ... ok
+test an_absent_aimap_is_no_overrides_not_an_error ... ok
+test nav_graph_loads_through_the_vfs ... ok
+test a_malformed_aimap_is_an_error_not_empty_overrides ... ok
+test aimap_overrides_distill_exceptions_and_speed_limit ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/opponents.rs (target/debug/deps/opponents-7f98e01336045ee1)
+
+running 10 tests
+test a_dead_route_ref_keeps_the_authored_slot ... ok
+test missing_p_variant_falls_back_to_the_only_authored_lineup ... ok
+test a_route_ref_tagged_for_the_wrong_difficulty_is_flagged ... ok
+test amateur_roster_wires_the_aimap_variant ... ok
+test professional_prefers_aimap_p_and_p_tagged_routes ... ok
+test report_covers_events_extras_and_vehicle_resolution ... ok
+test unreferenced_routes_are_scoped_to_the_selected_variant ... ok
+test incomplete_events_and_crash_course_are_rejected ... ok
+test count_mismatch_is_an_issue_not_an_error ... ok
+test a_degenerate_route_is_reported_not_wired ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/race_def.rs (target/debug/deps/race_def-4ee6539b6d7a0ff6)
+
+running 15 tests
+test report_records_table_errors_and_an_empty_catalog ... ok
+test derived_start_slot_sits_on_the_line_facing_the_course ... ok
+test report_flags_a_failure_on_one_difficulty_only ... ok
+test blitz_binds_the_authored_time_limit_and_event_params ... ok
+test incomplete_event_is_rejected_not_run_empty ... ok
+test circuit_is_ordered_with_the_start_line_as_each_laps_last_gate ... ok
+test checkpoint_event_produces_anyorder_gates_and_a_finish ... ok
+test authored_strtpnts_become_the_start_slots ... ok
+test too_few_rows_is_an_explicit_error ... ok
+test crash_course_is_explicitly_unsupported ... ok
+test zero_strtpnts_angle_is_no_authored_heading ... ok
+test non_blitz_events_stay_untimed ... ok
+test report_audits_every_event_at_both_difficulties ... ok
+test unusable_params_fail_the_build_explicitly ... ok
+test circuit_num_laps_is_a_checked_authored_value ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/surface.rs (target/debug/deps/surface-336400c0041ccfc7)
+
+running 8 tests
+test an_absent_pair_returns_none ... ok
+test a_complete_pair_loads_and_classifies_every_slot_kind ... ok
+test an_unparseable_half_fails_the_pair ... ok
+test resolve_psdl_reports_each_slot_and_the_unmapped_set ... ok
+test contact_restitution_scales_elasticity_into_the_bounce_cap ... ok
+test tire_surface_carries_the_authored_wading_drag ... ok
+test a_half_pair_is_a_missing_error_not_an_absent_feature ... ok
+test tire_surface_normalizes_friction_against_the_default_material ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/traffic.rs (target/debug/deps/traffic-9f81dfc1148e3ea3)
+
+running 5 tests
+test audit_missing_city_aimap_reports_cleanly ... ok
+test missing_and_malformed_tuning_stay_in_the_table ... ok
+test roster_builds_from_city_aimap_and_resolves_tuning ... ok
+test audit_finds_event_overrides_and_bad_event_aimaps ... ok
+test audit_reports_assets_unrostered_and_missing_expected ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/mm2_formats-e936ecd6f184676b)
+
+running 250 tests
+test aimap::tests::comments_and_blanks_are_ignored ... ok
+test aimap::tests::malformed_section_header_is_an_error ... ok
+test aimap::tests::data_before_first_section_is_an_error ... ok
+test aimap::tests::count_mismatch_is_an_error ... ok
+test aimap::tests::malformed_rows_are_diagnostics_not_panics ... ok
+test aimap::tests::missing_sections_are_absent_not_errors ... ok
+test aimap::tests::unknown_sections_are_preserved_and_flagged ... ok
+test aimap::tests::validate_reports_value_anomalies ... ok
+test bai::tests::rejects_implausible_counts ... ok
+test bai::tests::rejects_bad_magic ... ok
+test bai::tests::parses_minimal_file ... ok
+test bai::tests::validate_catches_back_reference_mismatch ... ok
+test aimap::tests::parses_retail_shaped_file ... ok
+test bai::tests::rejects_trailing_bytes ... ok
+test bai::tests::rejects_truncation ... ok
+test bai::tests::validate_catches_dangling_references ... ok
+test bai::tests::validate_flags_non_finite_curve_vertices ... ok
+test banger::tests::flags_missing_birth_rule ... ok
+test banger::tests::flags_glow_offset_without_num_glows ... ok
+test banger::tests::geometry_owner_resolution ... ok
+test banger::tests::flags_negative_and_nonfinite ... ok
+test banger::tests::accepts_as_birth_rule_with_warning ... ok
+test banger::tests::parses_retail_shaped_record ... ok
+test banger::tests::flags_glow_count_mismatch ... ok
+test banger::tests::parses_standalone_rain_rule ... ok
+test banger::tests::parses_standalone_snow_rule ... ok
+test banger::tests::rejects_missing_required_field ... ok
+test banger::tests::rejects_non_integer_id_field ... ok
+test banger::tests::rejects_wrong_root_block ... ok
+test banger::tests::standalone_defaults_absent_effects_fields ... ok
+test banger::tests::standalone_rejects_a_malformed_effects_field ... ok
+test banger::tests::standalone_rejects_a_malformed_optional_field ... ok
+test banger::tests::standalone_captures_the_effects_superset_fields ... ok
+test banger::tests::standalone_rejects_a_non_particle_root ... ok
+test banger::tests::standalone_warns_on_unknown_fields ... ok
+test banger::tests::standalone_rejects_a_missing_required_field ... ok
+test banger::tests::stem_role_classification ... ok
+test banger::tests::tolerates_missing_optional_fields ... ok
+test camtrack::tests::beyond_bound_fields_are_named_and_read_unauthored ... ok
+test camtrack::tests::rejects_wrong_block ... ok
+test camtrack::tests::short_offset_is_treated_absent ... ok
+test camtrack::tests::parses_track_cam_spec ... ok
+test camtrack::tests::non_finite_fields_are_named_and_read_unauthored ... ok
+test camtrack::tests::tolerates_sparse_records ... ok
+test cardata::tests::ambient_container_lists_siblings ... ok
+test camtrack::tests::undrawable_camera_fov_is_named_and_reads_unauthored ... ok
+test cardata::tests::ambient_engine_parses_speed_bands ... ok
+test cardata::tests::ambient_horn_parses_honk_sequences ... ok
+test cardata::tests::band_tables_parse ... ok
+test cardata::tests::car_audio_empty_is_an_error ... ok
+test cardata::tests::car_audio_count_mismatch_is_an_issue ... ok
+test cardata::tests::classify_covers_retail_paths ... ok
+test cardata::tests::engineparams_ascii_names_still_parse ... ok
+test cardata::tests::engineparams_preserves_binary_name_prefix ... ok
+test cardata::tests::engineparams_tolerates_commas_inside_name_blob ... ok
+test cardata::tests::car_audio_parses_the_compact_work_file_schema ... ok
+test cardata::tests::impacts_missing_terminator_and_stray_content ... ok
+test cardata::tests::impacts_parse_retail_sections ... ok
+test cardata::tests::impacts_quoted_separators_in_work_copies ... ok
+test cardata::tests::car_audio_parses_retail_vpbug ... ok
+test cardata::tests::object_audio_parses_subway ... ok
+test cardata::tests::object_audio_parses_vectorpoints ... ok
+test cardata::tests::semidata_parses ... ok
+test cardata::tests::sirens_parse_explosion_variant ... ok
+test cardata::tests::sirens_parse_retail_program ... ok
+test cardata::tests::surfaces_parse_retail_blocks ... ok
+test cardata::tests::surfaces_report_short_rows_and_trailing_content ... ok
+test cardata::tests::vehtypes_parses_groups ... ok
+test cardata::tests::surfaces_parse_the_player_extended_schema ... ok
+test cpvs::tests::fill_run_decodes ... ok
+test cpvs::tests::pvshist_rows_validate ... ok
+test cpvs::tests::rejects_bad_inputs ... ok
+test cpvs::tests::round_trip_and_codes ... ok
+test crashdata::tests::fractional_density_parses ... ok
+test cpvs::tests::validate_flags_unknown_codes_and_self_invisible ... ok
+test crashdata::tests::integer_columns_reject_non_integral_cells ... ok
+test crashdata::tests::malformed_rows_are_diagnostics_not_panics ... ok
+test crashdata::tests::named_extra_columns_parse ... ok
+test crashdata::tests::non_finite_decimal_cells_are_diagnostics ... ok
+test crashdata::tests::rejects_wrong_header ... ok
+test crashdata::tests::parses_retail_shaped_table ... ok
+test crashdata::tests::retail_header_variants_parse ... ok
+test dash::tests::beyond_bound_fields_are_named_and_read_unauthored ... ok
+test dash::tests::dash_spec_non_finite_fields_are_named ... ok
+test dash::tests::parses_dash_spec ... ok
+test dash::tests::parses_pov_cam_spec ... ok
+test dash::tests::pov_cam_spec_non_finite_fields_read_unauthored ... ok
+test dash::tests::rejects_wrong_blocks ... ok
+test dash::tests::tolerates_sparse_records ... ok
+test dave::tests::decompresses_entries ... ok
+test dave::tests::foreign_entry_range_is_validated ... ok
+test dave::tests::find_is_case_and_separator_insensitive ... ok
+test dave::tests::parses_entries ... ok
+test dave::tests::rejects_bad_magic ... ok
+test dave::tests::rejects_out_of_bounds_data ... ok
+test dave::tests::rejects_out_of_bounds_name ... ok
+test dave::tests::rejects_truncated_table ... ok
+test dave::tests::inflate_is_bounded ... ok
+test fog::tests::empty_input_is_an_error ... ok
+test fog::tests::full_grid_indexes_positionally ... ok
+test fog::tests::headerless_first_row_is_data ... ok
+test fog::tests::malformed_lines_are_diagnostics_not_panics ... ok
+test fog::tests::parses_retail_shape ... ok
+test fog::tests::validate_flags_bad_values ... ok
+test hudmap::tests::missing_field_fails ... ok
+test hudmap::tests::degenerate_values_validate ... ok
+test hudmap::tests::parses_retail_shape ... ok
+test hudmap::tests::qualifier_words_are_not_values ... ok
+test hudmap::tests::wrong_root_block_fails ... ok
+test inst::tests::parses_coordinate_component ... ok
+test inst::tests::parses_simple_component ... ok
+test inst::tests::rejects_truncated_record ... ok
+test ldef::tests::parses_retail_shape ... ok
+test ldef::tests::rejects_empty_and_non_integer ... ok
+test ldef::tests::single_ref_only_is_fine ... ok
+test lighting::tests::measured_index_grid ... ok
+test lighting::tests::non_finite_angle_and_negative_color_validate ... ok
+test lighting::tests::missing_field_fails ... ok
+test lighting::tests::parses_retail_shape ... ok
+test lighting::tests::off_grid_name_and_extra_fields_validate ... ok
+test lighting::tests::recovered_light_direction ... ok
+test lmap::tests::parses_retail_shape ... ok
+test lmap::tests::rejects_bad_inputs ... ok
+test materials::tests::csv_duplicate_and_header_issues ... ok
+test materials::tests::parses_csv_map ... ok
+test materials::tests::parses_mtl_blocks ... ok
+test materials::tests::ptx_accessor_rejects_malformed_channels ... ok
+test materials::tests::rejects_garbage_outside_blocks ... ok
+test materials::tests::ptx_accessor_reads_the_authored_channels ... ok
+test materials::tests::undefined_refs_ignores_none ... ok
+test materials::tests::validate_reports_def_problems ... ok
+test materials::tests::validate_reports_missing_field ... ok
+test mtx::tests::validate_names_unusable_fields_verbatim ... ok
+test opp::tests::malformed_rows_are_diagnostics_not_panics ... ok
+test opp::tests::parses_retail_shaped_file ... ok
+test opp::tests::rejects_wrong_header ... ok
+test pathset::tests::names_use_all_32_bytes_when_unterminated ... ok
+test pathset::tests::parses_all_three_kinds ... ok
+test pathset::tests::rejects_absurd_counts ... ok
+test pathset::tests::rejects_bad_magic ... ok
+test pathset::tests::rejects_trailing_bytes ... ok
+test pathset::tests::rejects_truncated_points ... ok
+test pathset::tests::validate_reports_authored_anomalies ... ok
+test pathset::tests::zero_point_paths_are_legal ... ok
+test ped::tests::anim_parses_retail_shape ... ok
+test ped::tests::anim_rejects_trailing_bytes ... ok
+test ped::tests::anim_rejects_truncated_and_oversized ... ok
+test ped::tests::anim_validate_flags_odd_headers ... ok
+test ped::tests::mod_flags_mixed_dialect_and_missing_fields ... ok
+test ped::tests::mod_diagnoses_bad_records ... ok
+test ped::tests::mod_parses_flat_dialect ... ok
+test ped::tests::mod_parses_packet_dialect ... ok
+test ped::tests::mod_rejects_missing_version ... ok
+test ped::tests::mod_validate_flags_index_and_partition_errors ... ok
+test ped::tests::mod_validate_flags_packet_errors ... ok
+test ped::tests::mod_validate_reports_overdeclared_material_counts ... ok
+test ped::tests::mod_validate_survives_unbounded_authored_counts ... ok
+test ped::tests::rays_diagnose_short_files_and_ragged_grid ... ok
+test ped::tests::rays_parse_retail_shape ... ok
+test ped::tests::remap_flags_count_mismatch ... ok
+test ped::tests::remap_parses_retail_shape ... ok
+test ped::tests::skel_diagnoses_bad_records ... ok
+test ped::tests::skel_flags_duplicate_names ... ok
+test ped::tests::skel_parses_retail_shape ... ok
+test ped::tests::skel_rejects_missing_header ... ok
+test ped::tests::states_flag_dangling_next_and_duplicates ... ok
+test ped::tests::states_diagnose_short_rows_and_bad_numbers ... ok
+test ped::tests::states_parse_retail_shape ... ok
+test pkg::tests::keeps_unknown_chunks_raw ... ok
+test pkg::tests::out_of_range_triangle_indices_degrade_to_raw ... ok
+test pkg::tests::parses_geometry_chunk ... ok
+test pkg::tests::parses_shaders ... ok
+test pkg::tests::rejects_bad_magic ... ok
+test pkg::tests::tolerates_truncated_chunk ... ok
+test proprules::tests::parses_retail_shaped_propdefs ... ok
+test proprules::tests::parses_retail_shaped_proprules ... ok
+test pkg::tests::parses_standalone_shaders_file ... ok
+test proprules::tests::prop_groups_flags_duplicates_and_bad_rows ... ok
+test proprules::tests::prop_groups_tolerates_mislabeled_dev_header ... ok
+test proprules::tests::prop_lod_stats_parse ... ok
+test proprules::tests::propdefs_diagnostics_and_issues ... ok
+test proprules::tests::propdefs_non_finite_fields_are_named ... ok
+test proprules::tests::proprules_diagnostics_and_issues ... ok
+test proprules::tests::rejects_wrong_propdefs_header ... ok
+test proprules::tests::rule_key_rejects_non_conforming_names ... ok
+test psdl::tests::attribute_word_layout ... ok
+test psdl::tests::fan_with_explicit_count ... ok
+test psdl::tests::fan_with_inline_count ... ok
+test psdl::tests::last_flag_is_preserved ... ok
+test psdl::tests::road_with_explicit_count ... ok
+test psdl::tests::road_with_inline_count ... ok
+test psdl::tests::unknown_attribute_stops_decoding ... ok
+test racedata::tests::malformed_rows_are_diagnostics_not_panics ... ok
+test racedata::tests::rejects_empty_input ... ok
+test racedata::tests::parses_retail_shaped_table ... ok
+test racedata::tests::rejects_wrong_header ... ok
+test racefiles::tests::opp_difficulty_tags ... ok
+test racefiles::tests::race_file_classification ... ok
+test reader::tests::eof_is_an_error ... ok
+test reader::tests::lp_string_requires_nul ... ok
+test reader::tests::reads_primitives ... ok
+test rewards::tests::malformed_rows_are_diagnostics_not_panics ... ok
+test rewards::tests::message_keeps_commas_and_drops_record_terminator ... ok
+test rewards::tests::parses_retail_shaped_table ... ok
+test sky::tests::parses_retail_shape ... ok
+test rewards::tests::rejects_wrong_header ... ok
+test sky::tests::rejects_wrong_arity_and_non_numeric ... ok
+test sky::tests::validate_flags_non_finite ... ok
+test spchdata::tests::a_missing_column_header_is_flagged_but_parsed ... ok
+test spchdata::tests::a_row_outside_any_section_is_flagged ... ok
+test spchdata::tests::malformed_rows_are_diagnostics_not_panics ... ok
+test spchdata::tests::parses_a_weather_prerace_table ... ok
+test spchdata::tests::parses_retail_shaped_cue_table ... ok
+test spchdata::tests::parses_the_city_announcer_registry ... ok
+test spchdata::tests::preserves_the_cops_and_robbers_extra_column ... ok
+test spchdata::tests::registry_diagnostics_cover_missing_fields ... ok
+test spchdata::tests::tolerates_the_bare_index_table_as_diagnostics ... ok
+test spchdata::tests::validate_flags_an_unrepresentable_sufix_range ... ok
+test spchdata::tests::validate_flags_bad_draw_ranges ... ok
+test tex::tests::frame_base_stem_strips_only_four_digits ... ok
+test tex::tests::parses_a1r5g5b5 ... ok
+test tex::tests::honoring_alpha_reads_p8_palette_alpha ... ok
+test tex::tests::parses_p8_with_palette ... ok
+test tex::tests::parses_rgba8888 ... ok
+test tex::tests::preserves_unknown_type ... ok
+test tex::tests::reads_mip_levels ... ok
+test tex::tests::rejects_truncated_pixels ... ok
+test tex::tests::rejects_zero_size ... ok
+test water::tests::parses_retail_shape ... ok
+test water::tests::rejects_bad_input ... ok
+test water::tests::validate_flags_duplicates_and_negatives ... ok
+test wav::tests::fmt_and_rate_inconsistencies_are_issues ... ok
+test wav::tests::lookup_stem_strips_dir_extension_and_rate_suffix ... ok
+test wav::tests::missing_fmt_is_structural ... ok
+test wav::tests::missing_or_duplicate_chunks_are_issues ... ok
+test wav::tests::non_pcm_tag_is_reported_not_rejected ... ok
+test wav::tests::odd_sized_chunks_pad_to_even ... ok
+test wav::tests::parses_retail_shape_16bit_mono_22k ... ok
+test wav::tests::rejects_non_riff_and_non_wave ... ok
+test wav::tests::riff_form_type_reads_form_word ... ok
+test wav::tests::riff_size_mismatch_is_a_finding ... ok
+test wav::tests::trailing_bytes_are_a_finding ... ok
+test wav::tests::truncated_chunk_is_an_error_not_a_wrap ... ok
+test waypoints::tests::malformed_rows_are_diagnostics_not_panics ... ok
+test waypoints::tests::msg_keeps_commas ... ok
+test waypoints::tests::parses_blitz_radius_variant ... ok
+test waypoints::tests::parses_headerless_start_points ... ok
+test waypoints::tests::parses_poly_count_variant_with_typo ... ok
+test waypoints::tests::rejects_wrong_header ... ok
+test waypoints::tests::start_points_reject_headered_input ... ok
+
+test result: ok. 250 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vehicle_formats.rs (target/debug/deps/vehicle_formats-9bb76b2b8676f110)
+
+running 24 tests
+test aivehicledata_decodes_the_retail_field_set ... ok
+test aivehicledata_decodes_msvc_non_finite_literals ... ok
+test info_parses_keys_with_spaces_and_lists ... ok
+test bnd_rejects_bad_input ... ok
+test bnd_parses_verts_materials_polys ... ok
+test info_reports_bad_lines_and_duplicates ... ok
+test mtx_parses_48_byte_records ... ok
+test aivehicledata_rejects_non_finite_scalars ... ok
+test tune_rejects_malformed_input ... ok
+test aivehicledata_tolerates_absent_cg_and_flags_garbage ... ok
+test vehcardamage_tolerates_absent_mirror_pivot ... ok
+test tune_parses_nested_blocks_and_fields ... ok
+test vehcarsim_rejects_missing_required_fields ... ok
+test vehcardamage_decodes_the_retail_field_set ... ok
+test vehcardamage_rejects_wrong_root_and_missing_fields ... ok
+test vehcardamage_warns_on_unknown_fields ... ok
+test vehcarsim_decodes_typed_fields ... ok
+test vehcardamage_validate_flags_bad_ordering_and_values ... ok
+test vehgyro_decodes_optional_fields ... ok
+test vehstuck_decodes_and_validates ... ok
+test vehtrailer_decodes_hitch_offsets ... ok
+test vehcarsim_vec3_fields_must_be_finite ... ok
+test vehcarsim_rejects_non_finite_scalars ... ok
+test vehcarsim_bounds_gear_counts ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/mm2_game-8d80208b1c1a5309)
+
+running 115 tests
+test audio::tests::an_unrepresentable_cue_window_is_undrawable_not_a_panic ... ok
+test audio::tests::a_flagged_car_is_the_siren_binding ... ok
+test audio::tests::a_siren_program_survives_malformed_steps ... ok
+test audio::tests::an_uncovered_speed_clamps_to_the_nearest_tight_edge ... ok
+test audio::tests::ambient_engine_resolves_sample_volume_and_bands ... ok
+test audio::tests::an_out_of_range_next_index_ends_the_program ... ok
+test audio::tests::an_unclassifiable_skid_header_resolves_no_skid_half ... ok
+test audio::tests::rainy_is_the_only_wet_surface_variant ... ok
+test audio::tests::divisor_schema_rows_do_not_resolve ... ok
+test audio::tests::prerace_stems_follow_the_exe_order ... ok
+test audio::tests::frequency_weights_the_covering_samples ... ok
+test audio::tests::rolling_mix_ramps_volume_and_pitch_with_speed ... ok
+test audio::tests::sentinel_samples_and_bad_authored_cells_degrade_honestly ... ok
+test audio::tests::idle_rpm_sounds_only_the_low_loops ... ok
+test audio::tests::retail_rows_resolve_to_fade_window_specs ... ok
+test audio::tests::degenerate_windows_cut_instead_of_dividing_by_zero ... ok
+test audio::tests::the_audio_id_selects_the_authored_category ... ok
+test audio::tests::non_finite_rpm_and_values_are_safe ... ok
+test audio::tests::the_cue_suffix_draw_stays_inside_the_authored_range ... ok
+test audio::tests::the_canonical_schema_resolves_both_halves ... ok
+test audio::tests::rising_rpm_crossfades_and_pitch_shifts ... ok
+test audio::tests::the_cue_wave_stem_matches_the_authored_naming ... ok
+test audio::tests::the_divisor_schema_skips_rolling_but_keeps_speed_bands ... ok
+test audio::tests::the_first_covering_band_beats_the_catch_all ... ok
+test audio::tests::the_force_band_selects_and_the_floor_stays_silent ... ok
+test audio::tests::the_opponent_program_cycles_forever_until_stopped ... ok
+test audio::tests::the_siren_machine_walks_the_authored_chain ... ok
+test audio::tests::the_siren_spec_resolves_the_authored_programs ... ok
+test audio::tests::the_skid_gain_interpolates_inside_the_covering_band ... ok
+test audio::tests::the_slip_band_selects_and_the_floor_stays_silent ... ok
+test audio::tests::the_speaker_draw_covers_the_authored_count ... ok
+test audio::tests::the_volume_draw_stays_inside_the_authored_range ... ok
+test audio::tests::tire_slippage_is_the_larger_slide_saturated_at_one ... ok
+test banger::tests::angular_kick_is_finite_and_reasonable ... ok
+test banger::tests::from_record_sanitizes_authored_junk ... ok
+test banger::tests::huge_limits_never_activate ... ok
+test banger::tests::limit_zero_activates_on_any_approach ... ok
+test banger::tests::midrange_limits_discriminate ... ok
+test config::tests::event_ref_parses_the_cli_grammar ... ok
+test config::tests::event_ref_rejects_malformed_selectors ... ok
+test drawbridge::tests::hinges_pair_the_outer_points ... ok
+test drawbridge::tests::mode_prefixes_decode_case_insensitively ... ok
+test drawbridge::tests::open_and_inactive_leaves_never_move ... ok
+test drawbridge::tests::proximity_leaf_waits_for_its_trigger ... ok
+test drawbridge::tests::timed_leaf_cycles_wait_open_hold_close ... ok
+test hudmap::tests::corner_views_frame_a_quarter_of_the_authored_distance ... ok
+test hudmap::tests::fullscreen_map_uses_the_fs_pair ... ok
+test hudmap::tests::icon_scale_interpolates_between_the_authored_pair ... ok
+test hudmap::tests::starts_inset_north_up_at_the_authored_zoom_level ... ok
+test hudmap::tests::tab_cycles_two_views_and_off ... ok
+test hudmap::tests::toggle_orientation_and_smoke_detail ... ok
+test movers::tests::follower_runs_backwards_too ... ok
+test movers::tests::follower_speed_is_about_its_metres_per_second ... ok
+test movers::tests::rotation_faces_local_z_along_travel_and_stays_upright ... ok
+test movers::tests::sailboat_speeds_spread_one_metre_per_second ... ok
+test hudmap::tests::zoom_eases_to_the_toggled_level ... ok
+test movers::tests::train_cars_ride_level_with_the_rails ... ok
+test movers::tests::two_point_paths_park ... ok
+test object_audio::tests::a_zero_window_one_shot_refires_every_tick_until_switched_off ... ok
+test movers::tests::train_shuttles_end_to_end ... ok
+test object_audio::tests::active_loops_sound_and_horns_refire_in_their_window ... ok
+test object_audio::tests::loops_respect_the_speed_window ... ok
+test object_audio::tests::falloff_is_linear_in_squared_distance_between_min_and_max ... ok
+test object_audio::tests::an_ambience_table_stands_at_its_point_nearest_the_listener ... ok
+test object_audio::tests::table_rows_decode ... ok
+test object_audio::tests::the_audible_area_gates_on_the_listener_being_underground ... ok
+test parked::tests::about_a_third_of_the_bays_stay_empty ... ok
+test parked::tests::rng_matches_the_msvc_sequence ... ok
+test parked::tests::spacing_is_floored_at_five_metres ... ok
+test parked::tests::rolls_pick_an_empty_bay_or_one_of_two_models ... ok
+test ped::tests::animator_clamps_authored_overshoot_window ... ok
+test ped::tests::animator_refuses_unknown_targets_and_idle_dt ... ok
+test ped::tests::animator_routes_requests_through_authored_transitions ... ok
+test ped::tests::animator_saturates_hostile_frame_windows ... ok
+test ped::tests::animator_switches_directly_without_an_authored_transition ... ok
+test ped::tests::animator_steps_the_window_and_wraps_on_self_loop ... ok
+test ped::tests::euler_triple_composes_fixed_axis_x_then_y_then_z ... ok
+test ped::tests::pose_lerp_blends_translations_and_rotations ... ok
+test ped::tests::rig_flattens_pre_order_and_fk_accumulates_bind_offsets ... ok
+test ped::tests::rig_rejects_empty_and_multi_root_skeletons ... ok
+test ped::tests::sample_clamps_frame_and_rejects_bad_shapes ... ok
+test ped::tests::sample_lerps_channels_between_frames ... ok
+test ped::tests::sample_maps_channels_to_bones_and_root_translation ... ok
+test movers::tests::follower_passes_through_the_points_and_loops ... ok
+test ped::tests::skin_assembles_flat_dialect_and_deforms_at_bind ... ok
+test ped::tests::skin_assembles_packet_dialect_and_deforms_at_bind ... ok
+test ped::tests::skin_buckets_indices_past_a_saturating_mtxv_count ... ok
+test ped::tests::skin_deform_bounds_world_input ... ok
+test ped::tests::skin_deform_rotates_corners_about_their_bone ... ok
+test ped::tests::skin_records_degraded_primitives_and_mtxn_disagreement ... ok
+test props::tests::a_curved_kerb_follows_the_authored_strip ... ok
+test props::tests::a_flush_authored_outer_edge_keeps_its_height ... ok
+test props::tests::a_kerb_side_stamp_stands_on_the_sidewalk_top ... ok
+test props::tests::a_multi_room_path_walks_the_interior_boundary_marks ... ok
+test ped::tests::skin_rejects_unfaithful_geometry ... ok
+test props::tests::a_no_sidewalk_walkway_stamps_at_its_authored_height ... ok
+test props::tests::a_room_without_a_kerb_strip_stamps_the_building_line ... ok
+test props::tests::a_single_room_path_stamps_both_sides ... ok
+test props::tests::carriageways_covers_fans_and_crosswalks ... ok
+test props::tests::carriageways_extracts_divided_road_as_two_strips ... ok
+test props::tests::carriageways_extracts_the_road_band_only ... ok
+test props::tests::carriageways_skips_malformed_attributes ... ok
+test props::tests::directed_expansion_faces_pair_targets ... ok
+test props::tests::line_strip_restarts_spacing_per_segment ... ok
+test props::tests::object_pathsets_try_the_event_override_first ... ok
+test props::tests::points_expansion_marks_unrotated_sites ... ok
+test props::tests::non_finite_points_stamp_nothing ... ok
+test props::tests::start_beyond_the_curb_and_max_use_bound_the_row ... ok
+test props::tests::the_budget_caps_and_counts ... ok
+test props::tests::walkable_surfaces_adds_the_raised_sidewalk_tops ... ok
+test props::tests::walkable_surfaces_keeps_walkways_at_authored_height ... ok
+test props::tests::walkable_surfaces_lifts_strips_and_reads_fan_normals ... ok
+test props::tests::zero_rules_bad_refs_and_undefined_bytes_are_counted ... ok
+test props::tests::zero_spacing_and_unknown_kinds_stamp_minimally ... ok
+test props::tests::hostile_propdefs_skip_and_report_instead_of_stamping_nan ... ok
+
+test result: ok. 115 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/breakaway.rs (target/debug/deps/breakaway-5f29bebbbf4a814f)
+
+running 6 tests
+test garbage_speeds_never_detach ... ok
+test already_detached_parts_are_not_re_reported ... ok
+test restore_reattaches_and_drains_fragments ... ok
+test detach_is_bounded_and_bad_indices_do_nothing ... ok
+test detachable_reads_each_parts_own_authored_limit ... ok
+test the_rig_carries_the_authored_specs_verbatim ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/contracts.rs (target/debug/deps/contracts-a6a15e96e260c3e1)
+
+running 12 tests
+test authority_role_follows_session_authority ... ok
+test live_order_ranks_ordered_participants ... ok
+test impact_policy_bounds_emission ... ok
+test ids_from_an_older_generation_are_detectably_stale ... ok
+test result_ids_are_unique_and_ledger_deduplicates ... ok
+test object_ids_are_unique_within_a_generation ... ok
+test live_order_any_order_ranks_by_objective ... ok
+test result_ids_carry_the_event_and_survive_restart ... ok
+test surface_state_defaults_to_unmodified ... ok
+test standings_order_by_finish_then_participant ... ok
+test impact_dedup_collapses_pair_flapping ... ok
+test local_and_other_player_identities_coexist ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/damage.rs (target/debug/deps/damage-fdf5b99c9128613a)
+
+running 11 tests
+test disabled_outcome_is_per_mode ... ok
+test the_spec_reads_the_authored_bounds ... ok
+test impairment_steps_down_at_the_smoke_gate_and_ramps_to_max ... ok
+test sub_threshold_and_garbage_impacts_never_accumulate ... ok
+test regeneration_heals_but_never_below_zero ... ok
+test repair_and_reset_restore_full_health ... ok
+test replicated_fractions_write_the_total_without_touching_impacts ... ok
+test vehicle_damage_wraps_the_state_against_its_authored_spec ... ok
+test impairment_degenerates_to_full_output_never_a_stall ... ok
+test damage_accumulates_through_the_tiers_and_saturates ... ok
+test vehicle_damage_rejects_duplicate_and_stale_impact_ids ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/effects.rs (target/debug/deps/effects-092ba031aafe0d62)
+
+running 39 tests
+test advance_integrates_the_authored_fields ... ok
+test alpha_fades_in_byte_space ... ok
+test burst_count_scales_with_severity_and_clamps ... ok
+test bursts_are_deterministic_and_bounded ... ok
+test precip_drop_advances_and_expires ... ok
+test precip_drop_alpha_drifts_and_clamps ... ok
+test precip_drop_frame_sweeps_the_authored_tiles ... ok
+test birth_rule_maps_into_the_particle_spec ... ok
+test precip_bound_clamps_degenerate_specs ... ok
+test precip_declines_an_unrepresentable_flipbook_window ... ok
+test emission_respects_the_live_bound ... ok
+test precip_draw_respects_the_live_bound ... ok
+test double_pivot_emits_every_pivot_per_burst ... ok
+test precip_draws_at_the_authored_rate ... ok
+test garbage_dt_emits_and_ages_nothing ... ok
+test emission_accumulates_and_alternates_the_pivots ... ok
+test frames_clamp_into_the_atlas_tile_space ... ok
+test precip_initial_blast_front_loads_emission ... ok
+test ptx_rule_names_match_the_retail_string_table ... ok
+test precip_spew_time_limit_cuts_emission ... ok
+test precip_drops_draw_inside_the_authored_envelopes ... ok
+test rate_gates_on_the_med_tier_and_ramps_to_max ... ok
+test pivots_resolve_per_the_gate_fields ... ok
+test puffs_draw_authored_fields_deterministically ... ok
+test spark_advance_falls_and_expires ... ok
+test spec_carries_the_authored_fields_verbatim ... ok
+test standalone_spec_carries_the_effects_extras ... ok
+test unrepresentable_flipbook_windows_decline_without_drawing ... ok
+test wheel_ptx_emission_is_seeded ... ok
+test wheel_ptx_garbage_dt_emits_nothing ... ok
+test wheel_ptx_missing_rule_and_dark_slots_emit_nothing ... ok
+test wheel_ptx_pool_bound_drops_overflow ... ok
+test wheel_ptx_spews_while_held ... ok
+test wheel_ptx_reground_re_fires_the_blast ... ok
+test wheel_ptx_threshold_gates_and_blasts_once ... ok
+test wheel_ptx_surface_change_rebinds ... ok
+test wheel_puff_advances_and_expires ... ok
+test wheel_ptx_threshold_zero_still_needs_work ... ok
+test wheel_puffs_draw_at_the_contact_inside_the_authored_envelopes ... ok
+
+test result: ok. 39 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/nav.rs (target/debug/deps/nav-98db2993168ddc89)
+
+running 35 tests
+test a_dangling_intersection_road_is_an_issue_not_a_panic ... ok
+test ambient_types_forbid_vehicle_arcs ... ok
+test curved_lane_samples_along_the_curve ... ok
+test dead_ends_are_reported_not_invented ... ok
+test degenerate_lanes_drop_out_but_do_not_break_the_arc ... ok
+test elevation_is_preserved_in_sampling ... ok
+test authored_reversed_lane_vertices_normalize_to_section_order ... ok
+test densify_route_keeps_corridor_legs_verbatim ... ok
+test disconnected_islands_fail_specifically ... ok
+test non_monotone_authored_distances_are_recomputed ... ok
+test densify_route_keeps_unroutable_legs_authored ... ok
+test one_way_road_yields_a_single_arc ... ok
+test cross_intersection_turn_kinds_and_no_uturn ... ok
+test densify_route_rejects_repaths_that_drop_a_gate_the_leg_crossed ... ok
+test lane_position_governs_legal_turns ... ok
+test closed_roads_are_never_entered ... ok
+test densify_route_keeps_repaths_that_still_cross_the_gate ... ok
+test reachable_arcs_follow_only_authored_turns ... ok
+test densify_route_wrap_leg_keeps_the_loop_closed ... ok
+test densify_route_repaths_legs_off_the_road ... ok
+test reachable_arcs_shrink_under_road_closures ... ok
+test route_candidates_prefers_the_near_level ... ok
+test route_candidates_enters_the_goalward_direction ... ok
+test route_search_is_bounded ... ok
+test route_path_samples_the_lane_walk ... ok
+test routes_cross_intersections_and_respect_direction ... ok
+test seeded_exit_choice_is_deterministic ... ok
+test sidewalks_and_rails_are_queryable_but_not_routable ... ok
+test speed_limit_resolution_prefers_exception_then_default_then_base ... ok
+test stacked_levels_snap_by_height_not_proximity ... ok
+test straight_road_yields_two_directed_arcs ... ok
+test t_junction_falls_back_to_straightest_exit ... ok
+test unresolved_end_degrades_to_dead_end ... ok
+test two_cursors_share_one_graph_independently ... ok
+test zero_density_exceptions_close_roads_to_routing ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/opponent.rs (target/debug/deps/opponent-54a0988b36c50de9)
+
+running 4 tests
+test skill_is_the_first_authored_param_only ... ok
+test route_length_sums_segment_distances ... ok
+test drive_params_decodes_the_authored_tail ... ok
+test resolved_routes_counts_only_wired_lines ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/profile.rs (target/debug/deps/profile-b97cf89b72737c44)
+
+running 20 tests
+test invalid_names_are_rejected ... ok
+test the_last_profile_cannot_be_deleted ... ok
+test fully_corrupt_profile_reports_and_preserves_files ... ok
+test malformed_ids_are_rejected_before_any_path_probe ... ok
+test create_save_load_round_trip ... ok
+test unsorted_or_duplicate_event_records_are_corrupt ... ok
+test duplicate_display_names_get_distinct_ids ... ok
+test a_complete_tmp_is_newer_than_the_main_it_never_replaced ... ok
+test unknown_fields_survive_a_round_trip ... ok
+test corrupt_main_recovers_from_backup ... ok
+test sandbox_profiles_do_not_record_progress ... ok
+test unsupported_schema_version_is_rejected ... ok
+test delete_removes_only_that_profile ... ok
+test profiles_are_isolated ... ok
+test interrupted_write_recovers_the_backup ... ok
+test active_marker_tracks_the_selection ... ok
+test file_naming_a_different_id_is_corrupt ... ok
+test an_orphaned_backup_still_owns_its_id ... ok
+test deleted_ids_are_never_reused ... ok
+test listing_orders_ids_numerically ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.56s
+
+     Running tests/progression.rs (target/debug/deps/progression-77b7f747814c9c41)
+
+running 20 tests
+test record_eligibility_refuses_customized_conditions ... ok
+test record_eligibility_gates_dev_and_modded_sessions ... ok
+test record_eligibility_refuses_networked_sessions ... ok
+test a_sandbox_profile_sees_everything_unlocked ... ok
+test a_paint_unlock_opens_exactly_that_index ... ok
+test a_sandbox_profile_selects_everything ... ok
+test a_midterm_reports_its_lesson_group ... ok
+test a_fresh_profile_sees_gates ... ok
+test an_uncatalogued_vehicle_has_no_garage_row ... ok
+test an_uncatalogued_key_has_no_availability ... ok
+test checkpoint_sets_gate_on_the_previous_set ... ok
+test repeat_application_grants_once ... ok
+test a_beaten_event_opens_its_customization ... ok
+test milestones_count_beaten_events_in_the_family ... ok
+test place_criterion_is_rank_dependent ... ok
+test variant_zero_is_the_car_nonzero_a_paint ... ok
+test indexed_rewards_attach_to_their_event ... ok
+test timeout_records_nothing ... ok
+test a_vehicle_unlock_opens_the_car_not_gated_paints ... ok
+test unknown_unlock_ids_change_nothing ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running tests/race.rs (target/debug/deps/race-adfd91df78d236ed)
+
+running 45 tests
+test a_participant_outside_racing_cannot_advance ... ok
+test any_order_clears_independently_and_once ... ok
+test arrow_tracks_the_armed_finish ... ok
+test arrow_pick_wins_until_its_gate_is_cleared ... ok
+test arrow_defaults_to_nearest_uncleared_gate ... ok
+test catch_up_factor_is_bounded_one_directional_and_safe ... ok
+test break_segment_reanchors_after_teleport ... ok
+test course_progress_any_order_banks_cleared_gates ... ok
+test course_progress_ordered_banks_laps_and_the_leg_fraction ... ok
+test course_progress_degenerate_inputs_stay_finite ... ok
+test course_yaw_faces_the_first_real_trigger ... ok
+test crossing_rejects_wrong_height ... ok
+test cycling_walks_remaining_gates_and_wraps ... ok
+test definition_validation_rejects_non_finite_authored_values ... ok
+test definition_validation_rejects_unusable_shapes ... ok
+test effective_conditions_prefers_the_authored_event ... ok
+test direction_flag_rejects_reverse_crossings ... ok
+test effective_conditions_prefers_the_player_customization ... ok
+test finish_trigger_waits_for_full_clearance ... ok
+test late_join_starts_racing ... ok
+test mean_gate_spacing_averages_consecutive_gates ... ok
+test oblique_gate_uses_its_drawn_plane_and_finite_width ... ok
+test one_line_crossing_cannot_bank_multiple_laps ... ok
+test one_segment_consumes_every_ordered_checkpoint_it_crosses ... ok
+test only_rainy_weather_binds_a_precipitation_rule ... ok
+test only_rainy_weather_wets_the_tires ... ok
+test ordered_definitions_have_no_arrow ... ok
+test ordered_requires_sequence_and_wraps_laps ... ok
+test progress_replication_round_trips_the_rule_counters ... ok
+test race_picks_clamp_to_the_wired_roster ... ok
+test race_picks_ignore_laps_off_ordered ... ok
+test race_picks_rewrite_ordered_laps ... ok
+test race_state_tracks_generation_and_lock ... ok
+test reanchor_resyncs_a_boundary_crossing_walk_back ... ok
+test relative_bearing_is_signed_on_the_driver_frame ... ok
+test route_binding_credits_a_gate_the_line_misses ... ok
+test route_credit_cannot_invent_a_second_open_traversal ... ok
+test route_credit_does_not_apply_to_any_order ... ok
+test route_credit_never_double_counts_a_triggered_gate ... ok
+test route_credit_wraps_laps_on_a_closed_route ... ok
+test route_measure_is_negative_behind_a_closed_route_origin ... ok
+test swept_crossing_cannot_be_skipped_by_speed ... ok
+test the_lap_line_only_closes_a_completed_sequence ... ok
+test time_remaining_counts_down_and_saturates ... ok
+test zero_laps_customization_fails_validation ... ok
+
+test result: ok. 45 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/recovery.rs (target/debug/deps/recovery-b4d4b41d665c724e)
+
+running 9 tests
+test a_dry_contact_anchors_the_car_and_stays_clear ... ok
+test a_non_finite_pose_recovers_to_the_anchor_at_once ... ok
+test a_fall_past_the_margin_fires_once_until_grounded ... ok
+test a_spawn_straight_onto_water_reports_no_landing ... ok
+test garbage_dt_and_zero_dwell_edges ... ok
+test reaching_dry_ground_inside_the_dwell_escapes ... ok
+test a_legitimate_drop_lands_before_the_margin ... ok
+test recovered_clears_the_episode_and_reanchors ... ok
+test submersion_fires_once_per_dwell ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/session.rs (target/debug/deps/session-5e9821fc5153f7fb)
+
+running 15 tests
+test a_u64_max_generation_never_overflows_or_regresses ... ok
+test a_zero_wire_generation_is_refused ... ok
+test failed_load_unloads_before_restart ... ok
+test full_lifecycle_menu_to_menu ... ok
+test begin_validates_and_enters_loading ... ok
+test difficulty_selects_the_authored_param_block ... ok
+test quit_mid_session_unloads_to_menu ... ok
+test event_ref_points_at_a_table_row ... ok
+test selectors_are_bounded_to_authored_range ... ok
+test networked_authority_cannot_pause ... ok
+test illegal_transitions_are_rejected_without_moving ... ok
+test config_validation_rejects_bad_fields ... ok
+test session_entities_despawn_but_persistent_entities_survive ... ok
+test older_generation_entities_are_cleaned_too ... ok
+test session_tick_counts_fixed_steps_not_updates ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/stuck.rs (target/debug/deps/stuck-046942f27d3a5991)
+
+running 9 tests
+test a_parked_pose_inside_the_bound_fires_at_time_thresh ... ok
+test a_past_turn_rotation_restarts_the_settle_window ... ok
+test a_pi_turn_never_exempts_a_settled_pose ... ok
+test an_unarmed_detector_never_fires ... ok
+test escaping_past_move_thresh_disarms ... ok
+test every_new_impact_re_anchors_the_episode ... ok
+test garbage_observations_never_fire_or_panic ... ok
+test the_hysteresis_band_holds_without_accruing ... ok
+test the_spec_carries_the_authored_fields_verbatim ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/texel.rs (target/debug/deps/texel-72ade4727c33d267)
+
+running 8 tests
+test a_wide_radius_splats_every_near_tri ... ok
+test degenerate_tris_can_still_splat_but_never_panic ... ok
+test garbage_impacts_splat_nothing ... ok
+test splats_hit_only_tris_within_the_radius ... ok
+test splats_replay_identically_for_a_seed ... ok
+test the_blit_clips_to_bounds ... ok
+test the_blit_stamps_a_centered_disc_from_the_damage_texture ... ok
+test the_blit_is_deterministic_per_seed ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/traffic.rs (target/debug/deps/traffic-0fbdcc6337801b1f)
+
+running 39 tests
+test corridor_reports_the_nearest_in_band_blocker ... ok
+test a_committed_entry_holds_the_box_for_the_rest_of_the_tick ... ok
+test a_stop_sign_admits_the_first_arrival_after_its_dwell ... ok
+test a_crossing_preserves_lane_rank ... ok
+test a_gapped_lane_end_commits_a_crossing_then_lands ... ok
+test cursor_advances_then_turns_then_dead_ends ... ok
+test a_step_spanning_the_whole_interior_still_reports_the_commit ... ok
+test cursor_faces_the_authored_travel_direction ... ok
+test draw_spawn_rejects_occupied_space ... ok
+test crossing_path_bridges_the_lane_end_to_the_landing_start ... ok
+test cursor_keeps_its_lane_rank_across_a_turn ... ok
+test follow_speed_brakes_to_the_gap_and_resumes ... ok
+test a_committed_entry_closes_a_green_approach_and_not_free_flow ... ok
+test cursor_never_enters_a_closed_road ... ok
+test a_stop_sign_head_yields_but_a_never_stop_flows ... ok
+test a_green_member_yields_while_the_box_is_occupied ... ok
+test exit_light_carries_the_authored_marker_verbatim ... ok
+test junction_gate_binds_the_authored_end_rule ... ok
+test a_traffic_light_cycles_one_member_road_at_a_time ... ok
+test junction_speed_brakes_to_the_stop_line_and_never_accelerates ... ok
+test junction_zone_spans_member_ends_with_margin_and_rise ... ok
+test nav_rng_next_f32_stays_in_unit_range ... ok
+test plan_bounds_output_and_scales_with_density ... ok
+test plan_drops_directives_past_a_lane_s_capacity ... ok
+test plan_flags_unspawnable_and_empty_rosters ... ok
+test plan_honours_closed_roads_and_pedestrian_only_sides ... ok
+test plan_keeps_same_lane_spawns_clear_of_each_other ... ok
+test plan_is_deterministic_and_seed_sensitive ... ok
+test plan_never_spawns_beyond_the_recycle_radius ... ok
+test plan_never_spawns_inside_the_player_bubble ... ok
+test roster_reports_non_monotone_weights_but_allows_repeat_ids ... ok
+test select_respects_cumulative_weight_boundaries ... ok
+test plan_skips_non_finite_lane_geometry ... ok
+test plan_populates_through_any_interest_area ... ok
+test signal_aspect_follows_the_authoritative_phase ... ok
+test signals_lists_every_lit_resolved_end ... ok
+test spawn_band_is_the_union_of_player_interest_areas ... ok
+test spawn_occupied_boxes_the_sample_tangent ... ok
+test stuck_window_resets_on_progress_and_expires_stationary ... ok
+
+test result: ok. 39 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/mm2_inspect-b960c277f2187607)
+
+running 42 tests
+test audio::tests::stem_strips_rate_suffix ... ok
+test bind::tests::classify_source_buckets ... ok
+test event::tests::parses_event_specs ... ok
+test inventory::tests::race_file_classification ... ok
+test inventory::tests::empty_install_never_passes_strict ... ok
+test event::tests::crash_course_reports_unsupported_not_failed ... ok
+test inventory::tests::fingerprint_changes_with_catalog ... ok
+test audio::tests::coverage_reports_uncovered_and_orphan_ids ... ok
+test crashcourse::tests::a_city_without_a_course_table_reports_the_empty_denominator ... ok
+test crashcourse::tests::complete_course_has_no_failures_and_every_wire_resolves ... ok
+test crashcourse::tests::a_wire_to_an_unknown_vehicle_is_a_cross_check_failure ... ok
+test audio::tests::audit_reports_failures_and_mismatches ... ok
+test peds::tests::audit_a_complete_archetype ... ok
+test audio::tests::audit_counts_waves_tables_and_refs ... ok
+test placement::tests::a_stamp_under_the_sidewalk_is_sunk ... ok
+test placement::tests::degenerate_triangles_never_report ... ok
+test placement::tests::depth_measures_distance_from_the_boundary ... ok
+test placement::tests::footprint_catches_the_rotation_the_origin_misses ... ok
+test placement::tests::measure_counts_stamps_and_hits ... ok
+test placement::tests::sloped_surface_reports_the_local_height ... ok
+test placement::tests::stamp_inside_at_surface_height_is_on_road ... ok
+test placement::tests::stamps_outside_the_footprint_are_clear ... ok
+test placement::tests::sunk_measurement_respects_its_limits ... ok
+test placement::tests::sunk_winner_is_the_lowest_surface_over_the_stamp ... ok
+test placement::tests::the_height_band_bounds_the_verdict ... ok
+test event::tests::incomplete_event_reports_but_fails_strict ... ok
+test event::tests::sweep_empty_catalog_is_a_failure ... ok
+test event::tests::unresolved_wired_vehicle_is_reported ... ok
+test event::tests::unknown_event_is_a_lookup_error ... ok
+test peds::tests::audit_flags_a_non_standing_bind_shape ... ok
+test event::tests::inspects_a_complete_event ... ok
+test event::tests::malformed_aimap_is_a_record_failure ... ok
+test event::tests::sweep_reports_every_cataloged_event ... ok
+test event::tests::sweep_surfaces_a_record_failure ... ok
+test peds::tests::audit_degrades_zero_frame_clips_and_extreme_windows ... ok
+test peds::tests::audit_assembles_and_deforms_skins ... ok
+test peds::tests::audit_flags_missing_clip_and_channel_mismatch ... ok
+test peds::tests::audit_survives_hostile_mod_partition_counts ... ok
+test peds::tests::audit_flags_rays_skel_mismatch_and_parse_failures ... ok
+test peds::tests::audit_flags_broken_and_unreferenced_content ... ok
+test peds::tests::audit_reports_mod_and_flags_mismatches ... ok
+test inventory::tests::synthetic_install_counts ... ok
+
+test result: ok. 42 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running unittests src/lib.rs (target/debug/deps/mm2_net-d2921306992ca837)
+
+running 80 tests
+test frame::tests::oversize_length_is_rejected_before_allocation ... ok
+test frame::tests::roundtrip ... ok
+test frame::tests::truncated_payload_is_eof ... ok
+test frame::tests::empty_stream_is_eof ... ok
+test impair::tests::a_deferred_frame_emits_at_its_hold_deadline ... ok
+test impair::tests::a_transparent_lane_passes_frames_in_order ... ok
+test impair::tests::delay_holds_frames_until_their_release ... ok
+test impair::tests::decisions_replay_from_the_seed ... ok
+test impair::tests::full_duplicate_emits_adjacent_copies ... ok
+test conn::tests::peers_are_loopback ... ok
+test impair::tests::full_loss_drops_every_frame ... ok
+test impair::tests::full_reorder_swaps_each_pair ... ok
+test impair::tests::the_pending_queue_is_bounded ... ok
+test conn::tests::an_oversize_frame_does_not_allocate ... ok
+test conn::tests::content_mismatch_is_rejected ... ok
+test conn::tests::version_mismatch_is_rejected_with_a_reason ... ok
+test conn::tests::matching_peers_complete_the_handshake ... ok
+test conn::tests::a_non_hello_first_message_is_rejected ... ok
+test conn::tests::the_handshake_helpers_install_the_default_deadline ... ok
+test lobby::tests::a_closed_session_refuses_joins ... ok
+test lobby::tests::a_cancel_outside_a_session_is_a_noop ... ok
+test lobby::tests::a_client_sending_vehicle_refused_is_dropped ... ok
+test lobby::tests::a_client_ctl_drives_the_lobby_from_another_thread ... ok
+test lobby::tests::a_broadcasted_snapshot_reaches_every_peer ... ok
+test lobby::tests::a_control_handle_drives_the_loop_from_another_thread ... ok
+test lobby::tests::a_failed_broadcast_disconnects_the_peer ... ok
+test lobby::tests::a_cancel_returns_everyone_to_a_fresh_lobby ... ok
+test lobby::tests::a_ctl_leave_quits_and_ends_the_recv_loop ... ok
+test lobby::tests::a_clean_leave_and_a_drop_report_different_causes ... ok
+test impair::tests::a_clean_proxy_relays_frames_in_order ... ok
+test lobby::tests::a_departed_players_reset_request_is_pruned ... ok
+test lobby::tests::a_full_lobby_rejects_with_lobby_full ... ok
+test lobby::tests::a_host_without_a_validator_accepts_any_pick ... ok
+test impair::tests::upstream_reorder_swaps_pairs_on_the_wire ... ok
+test impair::tests::upstream_duplicate_doubles_frames_on_the_wire ... ok
+test impair::tests::duplicated_frames_really_do_double_on_the_wire ... ok
+test lobby::tests::a_join_takes_a_slot_and_sees_itself_in_the_roster ... ok
+test lobby::tests::a_newcomer_sees_the_session_before_its_first_roster ... ok
+test lobby::tests::a_lobby_without_a_session_sends_none ... ok
+test lobby::tests::a_start_without_a_session_is_refused ... ok
+test lobby::tests::a_refused_pick_leaves_the_roster_and_informs_the_peer ... ok
+test lobby::tests::an_empty_lobby_may_start_a_session ... ok
+test lobby::tests::a_handshake_flood_is_bounded_at_the_door ... ok
+test lobby::tests::a_ready_change_rebroadcasts_to_everyone ... ok
+test lobby::tests::a_second_join_broadcasts_the_grown_roster_to_everyone ... ok
+test lobby::tests::an_over_cap_max_clients_is_rejected ... ok
+test lobby::tests::a_rejoin_mints_a_fresh_slot ... ok
+test lobby::tests::an_incompatible_peer_never_touches_the_roster ... ok
+test lobby::tests::a_departed_players_input_is_pruned ... ok
+test lobby::tests::a_start_broadcasts_the_session_under_a_fresh_generation ... ok
+test lobby::tests::an_identical_pick_is_a_noop ... ok
+test lobby::tests::a_session_change_rebroadcasts_to_everyone ... ok
+test lobby::tests::an_oversize_session_is_refused_before_the_wire ... ok
+test lobby::tests::reset_requests_collapse_newest_wins_and_stay_bounded ... ok
+test lobby::tests::a_vehicle_pick_lands_on_the_roster ... ok
+test lobby::tests::reset_requests_keep_the_newest_generation ... ok
+test lobby::tests::the_mailbox_never_exceeds_the_player_cap ... ok
+test proto::tests::admit_gates_version_and_content ... ok
+test lobby::tests::an_overlong_refusal_reason_still_reaches_the_peer ... ok
+test proto::tests::an_oversize_roster_does_not_encode ... ok
+test proto::tests::an_oversize_session_does_not_encode ... ok
+test proto::tests::decode_rejects_garbage ... ok
+test proto::tests::an_oversize_snapshot_does_not_encode ... ok
+test lobby::tests::an_open_session_drops_a_joiner_straight_into_it ... ok
+test lobby::tests::host_shutdown_disconnects_everyone ... ok
+test proto::tests::roundtrip_all_variants ... ok
+test lobby::tests::out_of_turn_messages_drop_the_peer ... ok
+test lobby::tests::client_sent_lifecycle_messages_drop_the_peer ... ok
+test lobby::tests::the_start_gate_names_the_blocker ... ok
+test lobby::tests::the_roster_stays_live_mid_session ... ok
+test lobby::tests::an_older_seq_never_regresses_the_mailbox ... ok
+test lobby::tests::reset_requests_absorb_into_the_mailbox ... ok
+test lobby::tests::input_frames_land_latest_wins_in_the_mailbox ... ok
+test impair::tests::a_delay_recipe_holds_frames_for_the_latency ... ok
+test impair::tests::a_lobbys_mailbox_stays_fresh_under_reorder ... ok
+test impair::tests::upstream_loss_drops_whole_frames ... ok
+test impair::tests::impairment_is_per_direction_and_retunable ... ok
+test conn::tests::a_silent_client_cannot_stall_accept_hello ... ok
+test conn::tests::a_silent_host_cannot_stall_send_hello ... ok
+test impair::tests::a_seeded_recipe_replays_identically ... ok
+
+test result: ok. 80 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.62s
+
+     Running unittests src/lib.rs (target/debug/deps/mm2_vehicle-f26d76f3e7467117)
+
+running 22 tests
+test analysis::tests::a_low_slung_hull_between_distant_axles_has_a_shallow_breakover ... ok
+test analysis::tests::a_pogo_suspension_is_reported ... ok
+test analysis::tests::a_tall_narrow_car_is_reported_as_tippy ... ok
+test analysis::tests::default_config_settles_on_its_springs ... ok
+test analysis::tests::com_height_is_measured_from_the_settled_contact_patch ... ok
+test analysis::tests::roll_resistance_is_what_keeps_the_default_car_on_its_wheels ... ok
+test config::tests::default_config_is_valid ... ok
+test config::tests::rejects_bad_numbers ... ok
+test config::tests::rejects_empty_wheels_and_gears ... ok
+test sim::tests::a_grippier_car_is_allowed_more_lock ... ok
+test sim::tests::engine_torque_curve_shape ... ok
+test sim::tests::gear_selection_shifts_up_and_down ... ok
+test sim::tests::grip_limited_lock_falls_off_with_the_square_of_speed ... ok
+test sim::tests::lateral_force_opposes_slip_and_saturates ... ok
+test sim::tests::lazy_front_tires_are_allowed_the_slip_they_need ... ok
+test sim::tests::longitudinal_force_limits_and_falls_off ... ok
+test sim::tests::max_angle_drops_with_speed ... ok
+test config::tests::toml_round_trip ... ok
+test sim::tests::slip_angle_sign ... ok
+test sim::tests::steer_steps_toward_target ... ok
+test sim::tests::steering_response_is_symmetric ... ok
+test sim::tests::yaw_damp_loosens_with_slip_handbrake_and_drift ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/drive.rs (target/debug/deps/drive-735f8ed2c990baeb)
+
+running 19 tests
+test a_car_thrown_nose_down_lands_level ... ok
+test airborne_state_clears_and_landing_is_stable ... ok
+test reset_teleports_and_clears_motion ... ok
+test an_upended_car_stays_down_without_reset_authority ... ok
+test an_upended_car_flops_back_onto_its_wheels ... ok
+test a_car_on_its_wheels_is_never_self_righted ... ok
+test flat_out_through_a_corner_still_turns ... ok
+test car_settles_on_suspension ... ok
+test brake_holds_then_reverses ... ok
+test engine_load_tracks_delivered_demand ... ok
+test car_accelerates_forward ... ok
+test car_brakes_to_a_stop ... ok
+test grip_limited_steering_still_reaches_the_tires_grip ... ok
+test pitch_resistance_keeps_a_stubby_car_off_its_tail ... ok
+test simulation_is_deterministic_across_update_batching ... ok
+test car_turns_left_and_right ... ok
+test forced_gear_pins_the_gearbox ... ok
+test a_hard_turn_slides_instead_of_rolling_the_car_over ... ok
+test reverse_speed_stays_bounded_at_the_reverse_gear ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.64s
+
+     Running tests/gyro.rs (target/debug/deps/gyro-fc1baa29743e4715)
+
+running 7 tests
+test authored_pitch_and_roll_right_the_car_in_the_air ... ok
+test steering_the_other_way_mid_spin_re_arms ... ok
+test the_reverse180_rate_drives_the_j_turn ... ok
+test a_tap_doses_the_spin ... ok
+test a_car_with_no_gyro_record_latches_nothing ... ok
+test authored_drift_relief_holds_the_slide ... ok
+test a_held_maneuver_spins_the_car_around ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.25s
+
+     Running tests/impairment.rs (target/debug/deps/impairment-f8a41c71c2ac9d86)
+
+running 4 tests
+test zero_scale_delivers_no_drive_but_the_car_stays_healthy ... ok
+test impairment_only_scales_engine_output_not_brakes ... ok
+test an_impaired_engine_accelerates_slower_but_still_drives ... ok
+test full_scale_and_absent_component_are_identical ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.90s
+
+     Running tests/surface.rs (target/debug/deps/surface-6925218551b82592)
+
+running 8 tests
+test an_airborne_wheel_reports_neutral_grip ... ok
+test the_environment_modifier_multiplies_the_materials_grip ... ok
+test the_environment_modifier_scales_an_unmarked_surface_too ... ok
+test each_wheel_reports_the_grip_of_the_collider_under_it ... ok
+test each_wheel_reports_the_drag_of_the_collider_under_it ... ok
+test a_wet_environment_limits_delivered_drive_force ... ok
+test a_slippery_surface_limits_delivered_drive_force ... ok
+test a_wading_surface_measurably_slogs_the_car ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.52s
+
+   Doc-tests mm2_app
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests mm2_assets
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests mm2_content
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests mm2_formats
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests mm2_game
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests mm2_net
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests mm2_vehicle
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

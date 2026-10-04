@@ -1,0 +1,23 @@
+{
+  "scope": "Production authored event/roster/player/rival handling unchanged. These three pilots and portability establish the new engine integration, not acceptance of all30events. Circuit bot ceiling12m/s; Checkpoint default8m/s. Native result/allopponent completion authoritative; actual actor recovery remains in raw reports.",
+  "package_manifest_sha256": "0c69b55937d4f44ee400220f68a94728338aed55e35409f37f3d1f081f5cf04e",
+  "engine_revision": "3a76ab37a871b20921b562b4ac1fabb854b27748",
+  "engine_sha256": "a794c0a8632fe99b17bf07038530770075936f4dd79bbade250ad52bf219da85",
+  "reports": [
+    {
+      "name": "circuit0-a-ai-density.log",
+      "sha256": "7d28be92f82f9531d46cefc968d2fe80c93b77092453d4c33c66b251995803dc",
+      "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=12105 ticks=11041 driver=scripted diff=amateur phase=results impacts=2 dropped=0 peak=12.1m/s travel=1088.3m sim=92.01s resets=0 controls=6667t/4374b/2668s finite=true moved=80m wheels=4/4 final=(-323,13.0,-277) race=Complete cp=4/4 results=3 lap=2/2 pos=3/3 outcome=finished place=3 opp=2/2 opp_drv=1911m/16.0mps/2.1ipk/0.0xpk/1.0apk/0.00hpk opps=0:sthlm_racer/4c/2l/F/93w/4d,1:sthlm_racer/4c/2l/F/94w/6d env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/7m dash=absent:missing-spec+pkg trk=sized ind=on/2m/2b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+13x"
+    },
+    {
+      "name": "circuit0-p-ai-density.log",
+      "sha256": "70f6e8426e611e6d1dce7afecad8d3f948240afa70238b50b0995d6a34179a8a",
+      "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=16357 ticks=16764 driver=scripted diff=professional phase=results impacts=13 dropped=0 peak=12.1m/s travel=1635.9m sim=139.70s resets=0 controls=10328t/6436b/4274s finite=true moved=91m wheels=4/4 final=(-312,12.6,-276) race=Complete cp=4/4 results=4 lap=3/3 pos=4/4 outcome=finished place=4 opp=3/3 opp_drv=4509m/16.8mps/3.3ipk/0.0xpk/0.4apk/0.00hpk opps=0:sthlm_racer/4c/3l/F/93w/6d,1:sthlm_racer/4c/3l/F/94w/10d,2:sthlm_racer/4c/3l/F/132w/6d env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/3m/3b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+17x"
+    },
+    {
+      "name": "checkpoint-newai0c69-race0-p.log",
+      "sha256": "9cea0fdfbc3279d8eb1f6c45e33c856b365c5e0bcd00344cf0ba7f0dcc174933",
+      "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=20758 ticks=11029 driver=scripted diff=professional phase=results impacts=16 dropped=0 peak=30.1m/s travel=2237.5m sim=91.91s resets=0 controls=6575t/762b/2308s finite=true moved=148m wheels=4/4 final=(410,3.4,16) race=Complete cp=2/2 results=5 pos=1/5 outcome=finished place=1 opp=4/4 opp_drv=9430m/22.2mps/1.2ipk/0.1xpk/0.0apk/0.00hpk opps=0:sthlm_racer/2c/F/1e/457w,1:sthlm_racer/2c/F/106w,2:sthlm_racer/2c/F/106w,3:sthlm_racer/2c/F/106w env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/4m/4b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3240d/1a/1s/0b bng_ev=2a/1s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+8x"
+    }
+  ]
+}
