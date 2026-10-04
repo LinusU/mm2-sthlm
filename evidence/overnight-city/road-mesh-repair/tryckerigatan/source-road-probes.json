@@ -1,0 +1,103 @@
+{
+  "engine_binary_sha256": "bc89accaba0811c5085f9368bbaf05e687fb69431db8b9c48ea166faa30bdb65",
+  "package_manifest_sha256": "39f814e15b04bd88a9a2437511c2598a0bc1aa3b4e33a120cfb3689f8d63217e",
+  "scope": "Open source-road courses, not complete race loops. Temporary race fixtures alter only the CSV; main package is unchanged.",
+  "reports": [
+    {
+      "case": "30678772:1:64.215",
+      "gates": [
+        [
+          1074.5764300210392,
+          4.68686265317226,
+          235.10726635548363
+        ],
+        [
+          1070.9606400415535,
+          5.245400897680224,
+          238.56067956913904
+        ],
+        [
+          1067.3448500620675,
+          5.771097531965059,
+          242.01409278279445
+        ],
+        [
+          1063.7290600825818,
+          6.320578949650261,
+          245.46750599644983
+        ],
+        [
+          1060.1132701030958,
+          6.919521622868239,
+          248.92091921010524
+        ],
+        [
+          1056.49748012361,
+          7.596049074853657,
+          252.37433242376065
+        ],
+        [
+          1052.8816901441241,
+          8.363834050409272,
+          255.82774563741606
+        ],
+        [
+          1049.2659001646384,
+          9.222013311499005,
+          259.28115885107144
+        ],
+        [
+          1045.6501101851525,
+          10.094386522468698,
+          262.7345720647269
+        ],
+        [
+          1042.0343202056667,
+          10.914579576685778,
+          266.18798527838226
+        ],
+        [
+          1040.2225519260376,
+          11.670635809992085,
+          270.80849293681365
+        ],
+        [
+          1038.5547444612669,
+          12.35765291306804,
+          275.52213465638204
+        ],
+        [
+          1036.8869369964964,
+          12.973938824868963,
+          280.2357763759504
+        ],
+        [
+          1035.814536796649,
+          13.330401354602175,
+          283.2666480016329
+        ]
+      ],
+      "course_csv_sha256": "ad969914decafa98c913f846a0de6fe884abbaf3e280f0f6b653fd1c7960f8c7",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-density",
+        "--mods",
+        "/var/folders/92/jcnfw3dd4_j6c2hqjrdsql_m0000gn/T/sthlm-road-probes-b9_luqgb",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--spawn=1074.5764300210392,6.18686265317226,235.10726635548363,133.68417027311267",
+        "--event",
+        "circuit:0",
+        "--bot",
+        "--bot-speed",
+        "6.0",
+        "--headless",
+        "--frames",
+        "1000"
+      ],
+      "record": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1000 ticks=1640 driver=scripted diff=amateur phase=playing impacts=0 dropped=0 peak=6.2m/s travel=76.3m sim=13.67s resets=0 controls=1112t/528b/626s finite=true moved=66m wheels=4/4 final=(1041,14.5,291) race=Running cp=13/14 results=0 lap=1/1 pos=1/1 env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/15m ind=on/0m/0b tmr=22g/0:13:66 arr=hudarrow01/off sta=10g/-/l1of1/c13of14 bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+18x",
+      "passed": true,
+      "minimum_travel_m": 31.6075
+    }
+  ]
+}
