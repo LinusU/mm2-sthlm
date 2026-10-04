@@ -38,11 +38,16 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--engine", required=True, type=Path)
     p.add_argument(
+        "--package",
+        type=Path,
+        help="Immutable generated package; defaults to dist/stockholm",
+    )
+    p.add_argument(
         "--output", type=Path, help="Evidence directory; keeps historical runs separate"
     )
     args = p.parse_args()
     engine = args.engine.resolve()
-    package = sthlm.ROOT / "dist/stockholm"
+    package = (args.package or sthlm.ROOT / "dist/stockholm").resolve()
     sthlm.validate(package)
     meta = json.loads((package / "map.json").read_text())
     output = args.output or sthlm.ROOT / (
