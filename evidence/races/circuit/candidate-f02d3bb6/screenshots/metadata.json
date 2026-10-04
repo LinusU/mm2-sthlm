@@ -1,0 +1,77 @@
+{
+  "date_utc": "2026-10-04",
+  "scope": "Actually played native Circuit0 Amateur on immutable f02 coherent bridge cohort, not later final geometry; source-native two laps/four gates",
+  "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "checksum_manifest_sha256": "f02d3bb6f52236bedf7633e91e8a420ead0568c8eca73f849c2eaf80196e8004",
+  "guide_sha256": "9007bb42cc2ff2296e4b1929915c884d1d74988d0a29db8b39a26c0815edfa28",
+  "waypoints_sha256": "cfdd2c39a8ac671d6e1a05ec3eacdc7a1205c80611743fa2a759407303442ada",
+  "native_params_sha256": "48106a5630749413c272abe04a71c22c3d1eac58783a5d384c20b9b89dd8e1fd",
+  "cwd": "/private/tmp/mm2-sthlm-race-engine",
+  "env": {
+    "RUST_LOG": "warn,mm2_app::scripted=info,mm2_app::opponents=info"
+  },
+  "record_eligible": false,
+  "player_speed_ceiling_mps": 12,
+  "captures": [
+    {
+      "image": "circuit0-a-played-finish.png",
+      "image_sha256": "402cc719f6df412238768105434b39e6592525f5799b4cc54670fd66963aaf8c",
+      "log": "circuit0-a-played-finish.log",
+      "log_sha256": "92bf8bed7637cccd29313951e9429c7c4cd30e8fd513d033ef85a25b630449c3",
+      "argv": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-recovery-occurrence",
+        "--mods",
+        "/private/tmp/circuit-bridge-f02d3bb6/mods",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--car",
+        "sthlm_racer",
+        "--event",
+        "circuit:0",
+        "--bot",
+        "--bot-route",
+        "/private/tmp/circuit-bridge-f02d3bb6/mods/stockholm/qa/races/circuit0-a-guide.opp",
+        "--bot-speed",
+        "12",
+        "--frames",
+        "9000",
+        "--screenshot",
+        "/private/tmp/circuit-bridge-f02d3bb6/screenshots/circuit0-a-played-finish.png"
+      ],
+      "inspected": true,
+      "native_result": "Inspected native FINISHED3rd/3 at98.3s; actual AI58.9s/59.9s; attachedwheels4/4; readableResults/minimap"
+    },
+    {
+      "image": "circuit0-a-active-lap.png",
+      "image_sha256": "e37c9429d6763aff0de9f6f63d93e2693174087a87612a8785c39ecd1f53a063",
+      "log": "circuit0-a-active-lap.log",
+      "log_sha256": "7d8202f898d0980638e2c61793c4ea3b20ae6d4b48200b1e100c22f968a00a65",
+      "argv": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-recovery-occurrence",
+        "--mods",
+        "/private/tmp/circuit-bridge-f02d3bb6/mods",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--car",
+        "sthlm_racer",
+        "--event",
+        "circuit:0",
+        "--bot",
+        "--bot-route",
+        "/private/tmp/circuit-bridge-f02d3bb6/mods/stockholm/qa/races/circuit0-a-guide.opp",
+        "--bot-speed",
+        "12",
+        "--frames",
+        "1200",
+        "--screenshot",
+        "/private/tmp/circuit-bridge-f02d3bb6/screenshots/circuit0-a-active-lap.png"
+      ],
+      "inspected": true,
+      "native_result": "Inspected native lap1/2 cp1/4 place2/3 clock14.3s; visible red/blue opponent markers; HUDcheckpoint2 highlighted; attached wheels4/4 and minimap"
+    }
+  ],
+  "counter_limit": "Visual smoke does not print aggregate reset counters. No player recovery INFO trace in either capture; full clean traversal is separately assessed by native headless summaries."
+}
