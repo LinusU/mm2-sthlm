@@ -1,0 +1,9 @@
+# Native race acceptance remains in progress
+
+The baseline Blitz matrix uses immutable package `0c69b55937d4f44ee400220f68a94728338aed55e35409f37f3d1f081f5cf04e` and engine c4156b7. Ten of twenty variants satisfy strict clean full-course acceptance. Recovered finishes and timeouts are failures, retained in `baseline-blitz-0c69/report.json`. The Checkpoint baseline is explicitly partial: nine cases ran, recorded in `baseline-checkpoint-0c69-partial/partial-report.json`.
+
+`blitz-native-semantics` contains separate native rules diagnostics: alternate checkpoint order, an early finish crossing that does not complete the event, and a stationary timeout. The early-finish guide has a steering escape before the crossing and is not clean driving evidence. `blitz-early-clock-probes` retains two clean opening-event pilots with explicit input speed ceilings; these do not establish that every clock is suitable for human players.
+
+`continuous-surface-build` records 232 passing offline unit tests, the full export and native-format validation. Its package manifest is `25e13e8d2e56a15b8b3e817c6e96ea27d14a86ac63cbd2907a670e467011918f`. It includes road field blending, strip seam continuity, same-level bridge overlap handling, internal slab wall cancellation and the Circuit 2 source-flow repair. It does **not** yet include the Barnhusbron cross-layer cap repair. These are map-generation checks, not a clean full-city driving claim.
+
+`source-diagnostics/barnhus-*` retains the exact source-connected layer transition and native floor queries behind the user-reported rounded lip. At the cap the continuous-surface baseline still has overlapping asphalt floors at 16.92213 m and 17.34138 m. Barnhusbron remains open until the repaired export is checked in the native engine at both reported cameras and driven across.

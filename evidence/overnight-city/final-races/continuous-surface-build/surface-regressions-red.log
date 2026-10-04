@@ -1,0 +1,49 @@
+test_slottskajen_road_shoulders_have_no_nearest_owner_step (test_elevation.ElevationTests.test_slottskajen_road_shoulders_have_no_nearest_owner_step) ... FAIL
+test_slottskajen_native_shoulders_do_not_emit_collision_needles (test_elevation.ElevationTests.test_slottskajen_native_shoulders_do_not_emit_collision_needles) ... FAIL
+test_marked_strip_profile_carries_into_neighbouring_native_fan (test_road_surfaces.RoadSurfaceTests.test_marked_strip_profile_carries_into_neighbouring_native_fan) ... FAIL
+test_vasabron_same_level_carriageways_have_one_collision_floor (test_road_surfaces.RoadSurfaceTests.test_vasabron_same_level_carriageways_have_one_collision_floor) ... FAIL
+
+======================================================================
+FAIL: test_slottskajen_road_shoulders_have_no_nearest_owner_step (test_elevation.ElevationTests.test_slottskajen_road_shoulders_have_no_nearest_owner_step)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/linus/coding/mm2-sthlm/tests/test_elevation.py", line 34, in test_slottskajen_road_shoulders_have_no_nearest_owner_step
+    self.assertLess(abs(after - before), 0.005)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.760756973133816 not less than 0.005
+
+======================================================================
+FAIL: test_slottskajen_native_shoulders_do_not_emit_collision_needles (test_elevation.ElevationTests.test_slottskajen_native_shoulders_do_not_emit_collision_needles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/linus/coding/mm2-sthlm/tests/test_elevation.py", line 65, in test_slottskajen_native_shoulders_do_not_emit_collision_needles
+    self.assertGreater(
+    ~~~~~~~~~~~~~~~~~~^
+        abs(ny) / math.sqrt(nx * nx + ny * ny + nz * nz), 0.75
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: 0.02169786147373321 not greater than 0.75
+
+======================================================================
+FAIL: test_marked_strip_profile_carries_into_neighbouring_native_fan (test_road_surfaces.RoadSurfaceTests.test_marked_strip_profile_carries_into_neighbouring_native_fan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/linus/coding/mm2-sthlm/tests/test_road_surfaces.py", line 47, in test_marked_strip_profile_carries_into_neighbouring_native_fan
+    self.assertGreater(abs(ny) / math.sqrt(nx * nx + ny * ny + nz * nz), 0.95)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.3959962331879605 not greater than 0.95
+
+======================================================================
+FAIL: test_vasabron_same_level_carriageways_have_one_collision_floor (test_road_surfaces.RoadSurfaceTests.test_vasabron_same_level_carriageways_have_one_collision_floor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/linus/coding/mm2-sthlm/tests/test_road_surfaces.py", line 81, in test_vasabron_same_level_carriageways_have_one_collision_floor
+    self.assertLess(max(heights) - min(heights), 0.04)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.5375772182121032 not less than 0.04
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.289s
+
+FAILED (failures=4)
