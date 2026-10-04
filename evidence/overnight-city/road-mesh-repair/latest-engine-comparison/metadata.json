@@ -1,0 +1,78 @@
+{
+  "engine_revision": "c4156b780969666f420375d9f5647f51913646a0",
+  "upstream_base": "2dd688171553dd747339cc75e8ff40f6d455c3a7",
+  "environment": {
+    "RUST_LOG": "warn,mm2_app::scripted=info"
+  },
+  "frames": 32681,
+  "bot_speed_mps": 12,
+  "event": "circuit:1",
+  "rank": "amateur",
+  "sha256": {
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-latest": "b2f82e39f58ab16032c4fbf59c6a2dc0851a4bbb871ebe32d984e6af788d8742",
+    "/private/tmp/mm2-bot-route-latest.patch": "d5e574285892b15bb57e0ce3399bbb7f8489a841b8fb0795435454ee13905347",
+    "/private/tmp/circuit-final/maps/stockholm/checksums.json": "4cdd3f0ec92f9ba04343410951c2b2506755ee4a75488f9aabfd35802e81e457",
+    "/private/tmp/circuit-final/maps/stockholm/qa/races/circuit1-a-guide.opp": "b51d35ca0d7132320e477ce1be3ca41570830207e3e1fd5469061954ef3b2856",
+    "/private/tmp/circuit-final/maps/stockholm/race/stockholm/circuit1waypoints.csv": "ae451ceb2db0769b3ab6bd9d3b75a257bc9b1984a838e9cc35578c3e5a86aaf9",
+    "/private/tmp/circuit-repaired-mods/stockholm/checksums.json": "39f814e15b04bd88a9a2437511c2598a0bc1aa3b4e33a120cfb3689f8d63217e",
+    "/private/tmp/circuit-repaired-mods/stockholm/qa/races/circuit1-a-guide.opp": "b51d35ca0d7132320e477ce1be3ca41570830207e3e1fd5469061954ef3b2856",
+    "/private/tmp/circuit-repaired-mods/stockholm/race/stockholm/circuit1waypoints.csv": "ae451ceb2db0769b3ab6bd9d3b75a257bc9b1984a838e9cc35578c3e5a86aaf9",
+    "/private/tmp/circuit-final/maps/stockholm/race/stockholm/mmcircuitdata.csv": "48106a5630749413c272abe04a71c22c3d1eac58783a5d384c20b9b89dd8e1fd",
+    "/private/tmp/circuit-repaired-mods/stockholm/race/stockholm/mmcircuitdata.csv": "48106a5630749413c272abe04a71c22c3d1eac58783a5d384c20b9b89dd8e1fd",
+    "/private/tmp/circuit-latest-pair/circuit1-a-old4cdd.log": "74b3ec01d1504201bbd9788a6dacfc21fb1920c4dc4f20fcc89eb51e8abf3fbb",
+    "/private/tmp/circuit-latest-pair/circuit1-a-repaired39f8.log": "82f490020409772d775f61c6bee730e74fb800641dcf4d8d3ce1a3ab6f60384b"
+  },
+  "status": "paired source regression complete; repaired Circuit1 amateur clean player finish; full final cohort matrix pending",
+  "commands": [
+    {
+      "argv": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-latest",
+        "--mods",
+        "/private/tmp/circuit-final/maps",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--car",
+        "sthlm_racer",
+        "--event",
+        "circuit:1",
+        "--bot",
+        "--bot-route",
+        "/private/tmp/circuit-final/maps/stockholm/qa/races/circuit1-a-guide.opp",
+        "--bot-speed",
+        "12",
+        "--headless",
+        "--frames",
+        "32681"
+      ],
+      "log": "circuit1-a-old4cdd.log"
+    },
+    {
+      "argv": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-latest",
+        "--mods",
+        "/private/tmp/circuit-repaired-mods",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--car",
+        "sthlm_racer",
+        "--event",
+        "circuit:1",
+        "--bot",
+        "--bot-route",
+        "/private/tmp/circuit-repaired-mods/stockholm/qa/races/circuit1-a-guide.opp",
+        "--bot-speed",
+        "12",
+        "--headless",
+        "--frames",
+        "32681"
+      ],
+      "log": "circuit1-a-repaired39f8.log"
+    }
+  ],
+  "results": {
+    "old4cdd": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=32681 ticks=35953 driver=scripted diff=amateur phase=results impacts=32 dropped=0 peak=12.1m/s travel=3403.5m sim=299.61s resets=0 controls=21469t/14484b/6054s finite=true moved=25m wheels=4/4 final=(-346,16.2,-1321) race=Complete cp=8/8 results=3 lap=2/2 pos=3/3 outcome=finished place=3 opp=2/2 opp_rec=1 opp_drv=6699m/19.5mps/3.3ipk/0.9xpk/0.0apk/0.00hpk opps=0:sthlm_racer/8c/2l/F/108w/16d,1:sthlm_racer/8c/2l/F/5e/1r/900w/10d p_rec=0r/3e env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/11m dash=absent:missing-spec+pkg trk=sized ind=on/2m/2b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3239d/1a/2s/0b bng_ev=3a/2s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+21x",
+    "repaired39f8": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=32681 ticks=33608 driver=scripted diff=amateur phase=results impacts=14 dropped=0 peak=12.1m/s travel=3339.1m sim=280.07s resets=0 controls=19568t/14040b/4130s finite=true moved=14m wheels=4/4 final=(-341,16.3,-1335) race=Complete cp=8/8 results=3 lap=2/2 pos=3/3 outcome=finished place=3 opp=2/2 opp_drv=6410m/21.2mps/1.6ipk/0.2xpk/0.0apk/0.00hpk opps=0:sthlm_racer/8c/2l/F/108w/16d,1:sthlm_racer/8c/2l/F/1e/370w/16d env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/11m dash=absent:missing-spec+pkg trk=sized ind=on/2m/2b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3240d/1a/1s/0b bng_ev=2a/1s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+21x"
+  }
+}

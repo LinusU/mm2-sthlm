@@ -1,0 +1,161 @@
+mm2-smoke commit=c4156b780969666f420375d9f5647f51913646a0
+2026-10-04T02:41:38.147065Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-3_0.water skipped=0
+2026-10-04T02:41:38.575987Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_2.water skipped=0
+2026-10-04T02:41:38.579787Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-2_3.water skipped=0
+2026-10-04T02:41:38.765379Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_0.water skipped=0
+2026-10-04T02:41:38.930919Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_2.water skipped=0
+2026-10-04T02:41:38.991805Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_-1_3.water skipped=0
+2026-10-04T02:41:39.130820Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_-2.water skipped=0
+2026-10-04T02:41:39.437797Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_2.water skipped=0
+2026-10-04T02:41:39.505062Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_0_3.water skipped=0
+2026-10-04T02:41:39.615496Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_-3.water skipped=0
+2026-10-04T02:41:39.719537Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_-2.water skipped=0
+2026-10-04T02:41:39.788160Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_-1.water skipped=0
+2026-10-04T02:41:39.849028Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_-1_spill_1.water skipped=0
+2026-10-04T02:41:39.967470Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_0_spill_1.water skipped=0
+2026-10-04T02:41:40.068792Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_1.water skipped=0
+2026-10-04T02:41:40.074512Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_1_spill_1.water skipped=0
+2026-10-04T02:41:40.172640Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_2.water skipped=0
+2026-10-04T02:41:40.245473Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_1_3.water skipped=0
+2026-10-04T02:41:40.397315Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_-3.water skipped=0
+2026-10-04T02:41:40.559035Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_-1.water skipped=0
+2026-10-04T02:41:40.742193Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_1.water skipped=0
+2026-10-04T02:41:40.816608Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_2.water skipped=0
+2026-10-04T02:41:40.844554Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_2_3.water skipped=0
+2026-10-04T02:41:41.201572Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_1.water skipped=0
+2026-10-04T02:41:41.260405Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_2.water skipped=0
+2026-10-04T02:41:41.315479Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_3_3.water skipped=0
+2026-10-04T02:41:41.527271Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_4_1.water skipped=0
+2026-10-04T02:41:41.566931Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_4_2.water skipped=0
+2026-10-04T02:41:41.913284Z  WARN mm2_app::city: water refs resolved no rooms; deadly water off path=city/stockholm.parts/part_6_1.water skipped=0
+2026-10-04T02:41:42.105565Z  WARN mm2_app::object_sound: object sound table unreadable path=aud/ambient/ferry.csv error=asset not found: aud/ambient/ferry.csv
+2026-10-04T02:41:42.105575Z  WARN mm2_app::object_sound: object sound table unreadable path=aud/ambient/subwaycar.csv error=asset not found: aud/ambient/subwaycar.csv
+2026-10-04T02:41:42.105622Z  WARN mm2_app::environment: lighting preset validation issue path=city/stockholm.lt04 issue=OffGridName("noon")
+2026-10-04T02:41:42.105626Z  WARN mm2_app::environment: fog table unavailable path=city/stockholm_fog.csv error=asset not found: city/stockholm_fog.csv
+2026-10-04T02:41:42.105628Z  WARN mm2_app::environment: sky definition unavailable path=city/stockholm.sky error=asset not found: city/stockholm.sky
+2026-10-04T02:41:42.125027Z  WARN mm2_app::damage_fx: smoke atlas unresolved — untextured puffs texture="fxpt2"
+2026-10-04T02:41:42.125040Z  WARN mm2_app::spark_fx: spark texture unresolved — untextured streaks texture="spark"
+2026-10-04T02:41:42.125046Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dirt" path=tune/effects/dirt.asbirthrule
+2026-10-04T02:41:42.125048Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="dust" path=tune/effects/dust.asbirthrule
+2026-10-04T02:41:42.125056Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="grass" path=tune/effects/grass.asbirthrule
+2026-10-04T02:41:42.125058Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="leaf" path=tune/effects/leaf.asbirthrule
+2026-10-04T02:41:42.125059Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="smoke" path=tune/effects/smoke.asbirthrule
+2026-10-04T02:41:42.125061Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="snow" path=tune/effects/snow.asbirthrule
+2026-10-04T02:41:42.125062Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="splash" path=tune/effects/splash.asbirthrule
+2026-10-04T02:41:42.125063Z  WARN mm2_app::wheel_fx: wheel effect unavailable rule="rock" path=tune/effects/rock.asbirthrule
+2026-10-04T02:41:42.125065Z  WARN mm2_app::wheel_fx: wheel atlas unresolved — untextured puffs texture="ptx_wheel"
+2026-10-04T02:41:42.125322Z  WARN mm2_app::audio: audio: aud/cardata/player/default_impacts.csv: asset not found: aud/cardata/player/default_impacts.csv
+2026-10-04T02:41:42.125326Z  WARN mm2_app::audio: audio: aud/cardata/player/default_surfacedry.csv: asset not found: aud/cardata/player/default_surfacedry.csv
+2026-10-04T02:41:42.125328Z  WARN mm2_app::audio: audio: aud/cardata/player/stockholmpolicesiren.csv: asset not found: aud/cardata/player/stockholmpolicesiren.csv
+2026-10-04T02:41:42.125329Z  WARN mm2_app::audio: audio: aud/cardata/opponent/policesiren.csv: asset not found: aud/cardata/opponent/policesiren.csv
+2026-10-04T02:41:42.126091Z  WARN mm2_app::session: nav graph failed to load — opponent routes stay verbatim error=city/stockholm.bai: not found in the VFS
+2026-10-04T02:41:42.126096Z  WARN mm2_app::opponents: opponent roster issue issue=route record circuit0-a-0.opp is wired to no opponent
+2026-10-04T02:41:42.126098Z  WARN mm2_app::opponents: opponent roster issue issue=route record circuit0-a-1.opp is wired to no opponent
+2026-10-04T02:41:42.753107Z  WARN mm2_app::race_audio: audio: race cue startracelow: no wave matches stem "startracelow"
+2026-10-04T02:41:42.753133Z  WARN mm2_app::audio: audio: aud/spchdata/stockholm.csv: asset not found: aud/spchdata/stockholm.csv
+2026-10-04T02:41:43.167026Z  WARN mm2_app::race_audio: audio: race cue startracelow: no wave matches stem "startracelow"
+2026-10-04T02:41:43.458839Z  WARN mm2_app::race_audio: audio: race cue startracelow: no wave matches stem "startracelow"
+2026-10-04T02:41:43.749097Z  WARN mm2_app::race_audio: audio: race cue startracehigh: no wave matches stem "startracehigh"
+2026-10-04T02:41:44.571235Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:45.175384Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:45.780030Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:46.389276Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:47.033602Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:47.658143Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:48.286168Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:48.945311Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:49.573211Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:50.196371Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:50.827895Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:51.449614Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:52.049327Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:52.669555Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:53.328028Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:53.943968Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:54.652637Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:55.354175Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:55.949674Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:56.543736Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:57.135910Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:57.764796Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:58.368559Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:58.967362Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:41:59.583364Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:00.200726Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:00.824374Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:01.442759Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:02.066501Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:02.687771Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:03.299312Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:03.929974Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:04.602456Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:05.209886Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:05.848055Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:06.470788Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:07.114704Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:07.758634Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:08.306005Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:08.946592Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:09.559848Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:10.175687Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:10.819333Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:11.443934Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:12.066063Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:12.753540Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:13.365719Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:13.991961Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:14.628511Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:15.249053Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:15.863934Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:16.503367Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:17.133647Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:17.771428Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:18.391726Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:19.034452Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:19.660182Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:20.291103Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:20.938740Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:21.559930Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:22.173039Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:22.798541Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:23.428480Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:24.077684Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:24.709408Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:25.337874Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:25.996684Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:26.635293Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:27.340517Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:28.011696Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:28.641368Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:29.254544Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:29.881257Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:30.494244Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:31.104446Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:31.696582Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:32.294769Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:32.907402Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:33.523749Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:34.146196Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:34.764121Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:35.348593Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:35.963612Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:36.560114Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:37.142827Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:37.731672Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:38.327164Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:38.962408Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:39.623854Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:40.222887Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:40.879107Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:41.488150Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:42.014362Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:42.614059Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:43.198874Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:43.794393Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:44.424882Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:45.056375Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:45.666725Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:46.267646Z  WARN mm2_app::race_audio: audio: race cue waypoint: no wave matches stem "waypoint"
+2026-10-04T02:42:46.895150Z  WARN mm2_app::race_audio: audio: race cue lastwaypoint: no wave matches stem "lastwaypoint"
+2026-10-04T02:42:47.393109Z  WARN mm2_app::race_audio: audio: race cue endofracetag: no wave matches stem "endofracetag"
+smoke=headless-physics world=city/stockholm.psdl status=pass updates=15000 ticks=23380 driver=scripted diff=amateur phase=results impacts=0 dropped=0 peak=8.2m/s travel=1557.4m sim=194.83s resets=0 controls=12082t/11298b/22892s finite=true moved=17m wheels=4/4 final=(-15,4.0,132) race=Complete cp=102/102 results=1 lap=1/1 pos=1/1 outcome=finished place=1 env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/103m ind=on/0m/0b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+107x

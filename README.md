@@ -73,10 +73,15 @@ calibration are still in progress; see [race export](docs/races/EXPORT.md),
 and [Circuit designs](docs/races/CIRCUIT.md).
 
 ```sh
-/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --event blitz:0
-/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --event checkpoint:0
-/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --event circuit:0
+/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --car sthlm_racer --event blitz:0
+/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --car sthlm_racer --event checkpoint:0
+/absolute/path/to/mm2 --mods "$PWD/dist" --city stockholm --no-profile --car sthlm_racer --event circuit:0
 ```
+
+Event indices run from `0` to `9`; add `--pro` for Professional. These commands
+use the original generated race car and normal player controls. Optional guided
+native QA matrices are documented in [race acceptance](docs/races/MATRIX.md);
+their bot runs are separate from player progression records.
 
 The package is `dist/stockholm/`. Copy that folder beneath an arbitrary mod
 parent and load it from any working directory:

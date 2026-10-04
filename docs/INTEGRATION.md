@@ -1,24 +1,44 @@
-# Race integration in progress
+# Current race integration
 
-Upstream main was pulled and built at `069768a11af7d2ff37546e77aea2baef49f58fe7`.
-The original map engine fixes are now available in that upstream tree. The
-isolated `codex/stockholm-race-integration` branch adds a reusable explicit bot
-route input in [PR #6](https://github.com/LinusU/rust-mm2/pull/6); the first tested
-revision is `2cca18d595d711b47d82bde531e5706a67b47ea2`. It supplies normal steering,
-throttle and braking to the existing vehicle simulation. Native checkpoint,
-lap, clock and opponent behavior remain authoritative. Guided evidence runs
-are ineligible for player records.
+Latest upstream main was fetched over SSH at
+`2dd688171553dd747339cc75e8ff40f6d455c3a7`. The separate ready
+[PR #6](https://github.com/LinusU/rust-mm2/pull/6) branch builds at
+`c4156b780969666f420375d9f5647f51913646a0`, including reusable native race QA
+controls and a focused steep-heightfield rendering fix. All 1,869 engine
+workspace tests, strict Clippy and formatting pass. The locally retained
+binary is `.cache/engine/mm2-race-guide-latest`; SHA-256 is
+`b2f82e39f58ab16032c4fbf59c6a2dc0851a4bbb871ebe32d984e6af788d8742`.
 
-`.cache/engine/mm2-races` is the separately built upstream binary;
-`.cache/engine/mm2-race-guide` is the initial PR binary. The older
-`.cache/engine/mm2` is preserved for historical comparisons. Exact identities
-and the reusable patch are under `integration/rust-mm2/`. A controller follow-up
-and the full thirty-course driving matrix are still in progress. Initial race
-runs requiring resets or recovery moves are diagnostics, not clean acceptance.
+The guide supplies normal steering, throttle and braking to existing vehicle
+physics. Native gates, laps, clocks and opponents remain authoritative.
+Guided QA runs cannot earn player progression records. The engine contains no
+Stockholm map content; its checkout stays outside this repository. The exact
+base, revision, ready PR and cumulative patch checksum are recorded under
+`integration/rust-mm2/`.
 
-The combined city uses 90 PSDL pools. The map remains portable and contains no
-engine checkout. The following reports describe earlier packages at their
-recorded hashes; they do not certify the final race package.
+The adaptive road package uses 95 portable native PSDL pools. The coherent
+0c69b559 package passes the full 102-gate waterfront drive on c4156b7 with zero
+impacts, resets or recovery, plus second-city loading and missing-chunk
+rejection. The same-engine unchanged Circuit1 comparison demonstrates the
+hillside collision repair. The native identical-camera steep-fan comparison
+also closes the former blue slit without altering map geometry. These reports
+retain their own package/engine hashes.
+Full race acceptance on the latest coherent package remains in progress;
+initial legs or finishes using player recovery do not count.
+
+Initial full race tests expose an actual opponent-driver issue: native AI
+advances five-metre route samples using a 14-metre reach threshold, skipping
+some corners/gate approaches. Rival escapes and an incomplete Professional
+Checkpoint event are retained as diagnostics. A focused generic engine
+follow-up is in progress; clean player pilots alone do not resolve it.
+
+The common optional runner is `scripts/check-races.py --family checkpoint`,
+`--family blitz` or `--family circuit`, documented in
+[races/MATRIX.md](races/MATRIX.md). It checks both ranks, native parameter
+CSV identities, actual Circuit lap counts, all gates and clean player physics.
+Racing impacts and opponent recovery remain visible in the report.
+
+The sections below are historical evidence at their recorded identities.
 
 # Earlier expanded terrain integration
 

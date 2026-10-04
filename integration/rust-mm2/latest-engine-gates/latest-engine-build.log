@@ -1,0 +1,4 @@
+   Compiling mm2_app v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_app)
+   Compiling mm2_game v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_game)
+   Compiling mm2_content v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_content)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 27.78s

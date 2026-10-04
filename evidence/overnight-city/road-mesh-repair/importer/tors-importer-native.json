@@ -1,0 +1,44 @@
+{
+  "engine_source": "c4156b780969666f420375d9f5647f51913646a0",
+  "engine_binary_sha256": "b2f82e39f58ab16032c4fbf59c6a2dc0851a4bbb871ebe32d984e6af788d8742",
+  "package_checksums_sha256": "39f814e15b04bd88a9a2437511c2598a0bc1aa3b4e33a120cfb3689f8d63217e",
+  "before_png_sha256": "1b979e7a591fcd0e1b056aaaf752ac2ab8cf55bfbbf668e2d0a550f937acba73",
+  "after_png_sha256": "ca9d97a01516a0afd3a4d2ad0ddce31c7887ba4e867ee512515efe60e84b5c0b",
+  "exit_code": 0,
+  "captured": true,
+  "visually_inspected": true,
+  "command": [
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-latest",
+    "--mods",
+    "/private/tmp/stockholm-coherent-mesh39f8/mods",
+    "--city",
+    "stockholm",
+    "--no-profile",
+    "--time-of-day",
+    "1",
+    "--parked",
+    "--no-hud",
+    "--spawn=-31.488166412776778,4.75469158322535,138.05843248238915,-90.69759070561142",
+    "--cam=-5,24,-1123,-146,-18",
+    "--frames",
+    "30",
+    "--screenshot",
+    "/private/tmp/stockholm-tors-importer-evidence/torsgrand-after-native.png"
+  ],
+  "scope": "Actual native game, parked identical Torsgrand diagnostic camera on immutable coherent39f8. Proves only visible importer winding repair after manual inspection. Does not prove driving or road playability.",
+  "inspection": "Identical actual native camera: former blue slit at native pixels roughly669\u2013714,638\u2013840 is closed by paving triangles. Road heights and package geometry unchanged. Full road/driving acceptance is separate.",
+  "before_blue_pixels_in_seam_region": 1760,
+  "after_blue_pixels_in_seam_region": 0,
+  "native_image_size": [
+    2560,
+    1440
+  ],
+  "seam_pixel_region": [
+    669,
+    638,
+    714,
+    840
+  ],
+  "coordinator_visually_inspected": true,
+  "coordinator_inspection": "Viewed the full after-native PNG: former blue slit is closed, continuous road core and paving/retaining slope visible. Simplified hillside walls remain; this does not certify all city visuals."
+}

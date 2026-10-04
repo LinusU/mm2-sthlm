@@ -1,0 +1,181 @@
+{
+  "normalized_sha256": "f4b471f91cfd1b7276632f0ec49fc2ccef594fe380597e197b6931ac5f58378a",
+  "catalog_sha256": "9ad8d947601b5b1298d2c8f721c788479eb26bd7d02cc9d9b2141f223b6198cc",
+  "plans": [
+    {
+      "event": 0,
+      "plan": 0,
+      "length_m": 2287.6857692102144,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 40.26103630411599
+    },
+    {
+      "event": 0,
+      "plan": 1,
+      "length_m": 2460.7474001195296,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 40.26103630411599
+    },
+    {
+      "event": 1,
+      "plan": 0,
+      "length_m": 2552.080239107291,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 40.42721966480774
+    },
+    {
+      "event": 2,
+      "plan": 0,
+      "length_m": 3276.3565595776167,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 40.04409438057216
+    },
+    {
+      "event": 2,
+      "plan": 1,
+      "length_m": 4109.4584432420015,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 40.04409438057216
+    },
+    {
+      "event": 3,
+      "plan": 0,
+      "length_m": 5619.807543283979,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 17.895187752049495
+    },
+    {
+      "event": 3,
+      "plan": 1,
+      "length_m": 6427.047181045059,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 17.895187752049495
+    },
+    {
+      "event": 4,
+      "plan": 0,
+      "length_m": 6346.396496188697,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 39.78437920351764
+    },
+    {
+      "event": 4,
+      "plan": 1,
+      "length_m": 7825.832581693119,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 39.78437920351764
+    },
+    {
+      "event": 4,
+      "plan": 2,
+      "length_m": 6837.237040048382,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 39.78437920351764
+    },
+    {
+      "event": 5,
+      "plan": 0,
+      "length_m": 8183.402547966583,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 25.1933620141916
+    },
+    {
+      "event": 5,
+      "plan": 1,
+      "length_m": 8146.2809403588,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 25.1933620141916
+    },
+    {
+      "event": 5,
+      "plan": 2,
+      "length_m": 8556.103257877712,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 25.1933620141916
+    },
+    {
+      "event": 6,
+      "plan": 0,
+      "length_m": 9387.941431863295,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 39.780643817459286
+    },
+    {
+      "event": 6,
+      "plan": 1,
+      "length_m": 11695.454793826597,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 39.780643817459286
+    },
+    {
+      "event": 6,
+      "plan": 2,
+      "length_m": 10448.217554862402,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 39.780643817459286
+    },
+    {
+      "event": 7,
+      "plan": 0,
+      "length_m": 10297.495635986406,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 18.66475256103461
+    },
+    {
+      "event": 7,
+      "plan": 1,
+      "length_m": 11198.704834139891,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 18.66475256103461
+    },
+    {
+      "event": 7,
+      "plan": 2,
+      "length_m": 10015.734471574375,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 18.66475256103461
+    },
+    {
+      "event": 8,
+      "plan": 0,
+      "length_m": 15579.186023748396,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 37.85562673530909
+    },
+    {
+      "event": 8,
+      "plan": 1,
+      "length_m": 19135.24746885081,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 37.85562673530909
+    },
+    {
+      "event": 8,
+      "plan": 2,
+      "length_m": 15574.07520479209,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 37.85562673530909
+    },
+    {
+      "event": 9,
+      "plan": 0,
+      "length_m": 22391.765862087927,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 38.056437004361925
+    },
+    {
+      "event": 9,
+      "plan": 1,
+      "length_m": 22492.75356324803,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 38.056437004361925
+    },
+    {
+      "event": 9,
+      "plan": 2,
+      "length_m": 22458.93354954364,
+      "runout_m": 60.0,
+      "minimum_through_plane_margin_m": 38.056437004361925
+    }
+  ]
+}

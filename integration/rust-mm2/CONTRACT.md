@@ -12,8 +12,10 @@ spawn explicitly; the PSDL bounds center is also placed by that spawn.
 Units: metres. Export X east, Y up, Z south. Processing X east/N north; the
 writer converts north to negative Z exactly once. Surface triangles are
 counterclockwise in processing XY, which yields upward normals after that
-conversion. PSDL uses a shared uint16-index vertex pool; the exporter fails
-rather than wrapping at 65535 vertices. Room 0 is the reserved sentinel.
+conversion. PSDL uses a shared uint16-index vertex pool. Oversized spatial
+chunks spill whole rooms into additional native pools, remapping all vertex
+references and local water IDs. No index wraps; a single oversized room or
+more than 129 total parts fails before export. Room 0 is the reserved sentinel.
 Names are byte-length-prefixed, NUL-terminated PSDL texture stems.
 
 Road and junction polygons are unioned then constrained-triangulated with
@@ -75,6 +77,28 @@ The native resource names do not establish vanilla compatibility for the
 expanded city; its multi-part geometry still requires the separate loader.
 
 ## Current upstream integration
+
+Latest upstream is `2dd688171553dd747339cc75e8ff40f6d455c3a7`.
+The separate ready [PR #6](https://github.com/LinusU/rust-mm2/pull/6) revision
+`c4156b780969666f420375d9f5647f51913646a0` adds explicit QA guides through
+the existing native driving controls, occurrence-aware dense guide progress,
+normal moving captures when explicitly requested, and a stricter distinction
+between vertical walls and steep upward terrain. Its complete patch is
+`bot-route-guide.patch`; checksum and base are in `compatibility.json`.
+All 1,869 engine workspace tests, strict Clippy and formatting pass. Final
+coherent city race acceptance is still being measured separately.
+
+Build the exact revision outside the map repository:
+
+```sh
+git clone git@github.com:LinusU/rust-mm2.git /tmp/rust-mm2-races
+cd /tmp/rust-mm2-races
+git checkout c4156b780969666f420375d9f5647f51913646a0
+RUSTC_WRAPPER= cargo build --locked -p mm2_app --bin mm2
+```
+
+The following prop/slope reports describe earlier tested revisions. Their
+patches remain historical, even though their PRs are now merged upstream.
 
 Upstream main was fetched over SSH and built at
 `46f351b9186ad2d4d955e9d0d0a1ef1240d2332f`; the previous multipart and

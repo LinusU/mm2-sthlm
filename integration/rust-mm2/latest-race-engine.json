@@ -1,0 +1,51 @@
+{
+  "upstream_base": "2dd688171553dd747339cc75e8ff40f6d455c3a7",
+  "revision": "c4156b780969666f420375d9f5647f51913646a0",
+  "tracked_status": "",
+  "pr": "https://github.com/LinusU/rust-mm2/pull/6",
+  "commits": [
+    "c4156b780969666f420375d9f5647f51913646a0 Preserve upward steep heightfield faces",
+    "fdd9916e0b2b67669f87e46c32b8f51870b9e661 Track dense guide progress through nearby corners",
+    "18d83c5b5386916239ebb0a1a750cdd1a6a1f09b Allow explicit bot motion during visual captures",
+    "aacf980264493355e7d8bdd11d9482155969485f Follow future gate occurrences on revisited streets",
+    "3b83f4930e83f59a9400d20ea02520ea12bd041d Trace scripted recovery locations",
+    "f2710ee73a7c95ab9e772e7e1bf5d2b005fe1a78 Reuse racing line control for guided bots",
+    "5d74ba590f57d73bd1274a35f8985469c9477c56 Add explicit evidence route guides"
+  ],
+  "quality_gate_test_counts": {
+    "guide": 1860,
+    "planner": 1863,
+    "trace": 1863,
+    "occurrence": 1864,
+    "capture": 1865,
+    "density": 1867,
+    "importer": 1869
+  },
+  "sha256": {
+    "/private/tmp/mm2-bot-route-latest.patch": "d5e574285892b15bb57e0ce3399bbb7f8489a841b8fb0795435454ee13905347",
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-latest": "b2f82e39f58ab16032c4fbf59c6a2dc0851a4bbb871ebe32d984e6af788d8742",
+    "/private/tmp/latest-guide-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/latest-guide-clippy.log": "31c2e72df12c89ccbdd569ef5384556f44752e8587b266fa9d4f8204e9473a13",
+    "/private/tmp/latest-guide-workspace-tests.log": "79f7013b5fcdf23601fb3cc430c510c8f931b1d882ae131be655819582459c98",
+    "/private/tmp/latest-planner-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/latest-planner-clippy.log": "e5b39a21146135540ce604991d97b545479c69847c5890c99849a0254515bebb",
+    "/private/tmp/latest-planner-workspace-tests.log": "30e1d63ee42a78d2e8eba67cafb0f4bfdc51e5e7ab408f1fb05588393c199698",
+    "/private/tmp/latest-trace-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/latest-trace-clippy.log": "c4405554865f2062dcfc95803f13fe23a4b3103747d3cd65d2356347d7219c96",
+    "/private/tmp/latest-trace-workspace-tests.log": "97111d62e4859b941e210046fbf25eaaa5b4e33785adbb45591f800f5f9e391b",
+    "/private/tmp/latest-occurrence-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/latest-occurrence-clippy.log": "fb8fd722bf1563dc5cb3464142b19117c0376ae43e5d3b2bb27daf19320c50f3",
+    "/private/tmp/latest-occurrence-workspace-tests.log": "5aab1a1fa4a2fbac139bcf838a778de430a0e1916c6ce68da166516a12dda3df",
+    "/private/tmp/latest-capture-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/latest-capture-clippy.log": "60f09ab1ef74b72977871d660b139f72a81e4d9a8841b693612d1c46c1f40469",
+    "/private/tmp/latest-capture-workspace-tests.log": "cd8e64cf946e56980aedd8af587e4548d3a71a066e01d614cd63d9c4be39af7b",
+    "/private/tmp/latest-density-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/latest-density-clippy.log": "61c89f1d5939db172e8eb0fbef7b67950dd415796bcb20dcc7a81fa2c6a9987e",
+    "/private/tmp/latest-density-workspace-tests.log": "12a29c0c11465819190a61f36ad87c092b7960d0e1e614a89d4c9b14d091a3be",
+    "/private/tmp/latest-importer-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/latest-importer-clippy.log": "0735e84a8e1d25d7646d0a0d71e49b55b551bb63e01bf3ab06873bab9b7a467b",
+    "/private/tmp/latest-importer-workspace-tests.log": "dcbff5497cb4fa7d5d9ac0980541f908fc66e1b2fd57501c60d9da7436085e32",
+    "/private/tmp/latest-engine-build.log": "947cf76c595525809a7822be06320d9083a7772c4fb42f4d6ca97867ca5052d3"
+  },
+  "native_acceptance": "Full final map matrix pending source cohort; this metadata records engine quality gates only."
+}
