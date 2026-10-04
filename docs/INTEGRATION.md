@@ -1,19 +1,10 @@
-# Current race integration
+# Engine integration
 
-Latest upstream main was fetched over SSH at
-`2dd688171553dd747339cc75e8ff40f6d455c3a7`. The separate ready
-[PR #6](https://github.com/LinusU/rust-mm2/pull/6) branch builds at
-`3a76ab37a871b20921b562b4ac1fabb854b27748`. Its generic native AI fix
-preserves nearby route corners instead of advancing five-metre samples with
-the old fourteen-metre threshold. Existing handling and widely spaced paths
-retain their behavior. A source-independent two-lap physical regression moves
-maximum corner error from 6.38 m to 4.17 m, inside the 9 m wide road.
+Latest upstream main was fetched over SSH at `2dd688171553dd747339cc75e8ff40f6d455c3a7`. The separate ready [PR #6](https://github.com/LinusU/rust-mm2/pull/6) now builds at `1a822c1cc472f6c04a25a6832e346b162bbb0ff5`. All 1,876 engine workspace tests, strict Clippy and formatting pass.
 
-All 1,871 engine workspace tests, strict Clippy and formatting pass. The frozen
-binary is `.cache/engine/mm2-race-guide-ai-density`, SHA-256
-`a794c0a8632fe99b17bf07038530770075936f4dd79bbade250ad52bf219da85`.
-The previous `.cache/engine/mm2-race-guide-latest` remains the immutable c415
-baseline so active comparisons keep their recorded identities.
+The frozen binary is `.cache/engine/mm2-race-guide-recovery-occurrence`, SHA-256 `144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19`. Earlier c415, 3a76 and 9513 aliases retain their identities for causal comparisons. The latest generic changes keep guided vehicles within narrow sharp corners, ignore directionless closed-guide edges, and preserve the current route occurrence after actual AI recovery. Vehicle handling and native gate authority remain unchanged.
+
+The independent e095 package passes all 102 waterfront gates with zero impacts, resets or recovery, plus second-city loading and missing-chunk rejection. On the unchanged old-geometry Circuit 2 flow prototype, Professional completes three laps and all twelve gates with zero player recovery/reset; all four rivals finish, with rival recovery disclosed in the report. These are scoped integration results: full thirty-event acceptance still depends on the repaired map geometry.
 
 The guide supplies normal controls to existing vehicle physics. Native gates,
 laps, clocks and opponents remain authoritative. Guided QA cannot earn player

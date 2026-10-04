@@ -1,0 +1,42 @@
+   Compiling mm2_app v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_app)
+    Finished `test` profile [optimized + debuginfo] target(s) in 4.85s
+     Running tests/app.rs (target/debug/deps/app-9c89f8ad2fddc28c)
+
+running 33 tests
+test bot::input_law_steers_and_modulates_throttle ... ok
+test bot::input_law_recovers_from_stuck ... ok
+test bot::drive_target_tracks_the_live_objective ... ok
+test bot::planned_guide_aim_projects_onto_short_corner_and_stops_at_gate ... ok
+test bot::pick_bot_route_prefers_the_nearest_staging ... ok
+test bot::planned_guide_gate_ties_follow_forward_progress_on_revisited_streets ... ok
+test bot::route_aim_caps_advance_at_the_objective_anchor ... ok
+test bot::dense_guide_progress_keeps_the_corner_ahead_until_the_car_turns ... ok
+test bot::planned_guide_control_uses_existing_curvature_brakes_and_handling_steering ... ok
+test bot::route_aim_chases_the_line_until_the_gate_anchor ... ok
+test bot::route_aim_closed_route_wraps_and_detects_behind ... ok
+test bot::route_aim_empty_route_aims_at_the_gate ... ok
+test bot::route_aim_gate_behind_aims_direct ... ok
+test bot::route_aim_lookahead_bends_around_the_apex ... ok
+test bot::route_distance_sees_height_not_just_footprint ... ok
+test bot::sharp_corner_guidance_preserves_straights_and_smooth_bends ... ok
+test bot::sharp_corner_guidance_retains_aim_and_pace_after_dense_progress_crosses_vertex ... ok
+test bot::tuned_input_law_scales_throttle_and_corner_floor ... ok
+test bot::explicit_bot_guide_rejects_invalid_evidence ... ok
+test bot::invalid_bot_guide_fails_before_spawning_world_or_player ... ok
+test bot::explicit_bot_guide_overrides_roster_line_without_changing_roster ... ok
+test bot::scripted_drive_honors_the_countdown_lock ... ok
+test bot::falling_bot_reanchors_after_bounded_recoveries ... ok
+test bot::explicit_bot_guide_preserves_blitz_countdown_and_deadline ... ok
+test bot::penned_bot_reanchor_lands_clear_of_a_parked_participant ... ok
+test bot::bot_drives_a_turning_course_to_the_finish ... ok
+sharp116 physical worst_lateral=3.3344724 state=Finished { race_ticks: 6292, result: ResultId { generation: 1, participant: PlayerId(0), event: Some(EventRef { city: "testcity", table: Circuit, index: 0 }), sequence: 0 } } lap=2
+test bot::dense_guide_physically_keeps_a_sharp_corner_inside_a_nine_metre_road ... ok
+test bot::planned_guide_drives_a_short_tight_two_lap_circuit_without_reanchors ... ok
+test bot::dense_guide_drives_a_short_tight_two_lap_circuit_without_reanchors ... ok
+test bot::bot_laps_an_ordered_circuit_twice ... ok
+test bot::explicit_bot_guide_drives_two_real_laps_without_opponents ... ok
+test bot::bot_follows_the_authored_route_off_the_gate_line ... ok
+test bot::penned_bot_reanchors_onto_the_route_and_resumes ... ok
+
+test result: ok. 33 passed; 0 failed; 0 ignored; 0 measured; 690 filtered out; finished in 32.91s
+

@@ -1,0 +1,21 @@
+   Compiling mm2_app v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_app)
+    Finished `test` profile [optimized + debuginfo] target(s) in 7.07s
+     Running tests/app.rs (target/debug/deps/app-9c89f8ad2fddc28c)
+
+running 1 test
+
+thread 'opponents::native_reanchor_preserves_revisited_street_occurrence' (113837443) panicked at crates/mm2_app/tests/opponents.rs:3040:5:
+assertion `left == right` failed: the landing belongs to the later occurrence
+  left: 3
+ right: 7
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test opponents::native_reanchor_preserves_revisited_street_occurrence ... FAILED
+
+failures:
+
+failures:
+    opponents::native_reanchor_preserves_revisited_street_occurrence
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 724 filtered out; finished in 0.20s
+
+error: test failed, to rerun pass `-p mm2_app --test app`

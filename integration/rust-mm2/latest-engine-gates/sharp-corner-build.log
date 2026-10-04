@@ -1,0 +1,6 @@
+   Compiling mm2_formats v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_formats)
+   Compiling mm2_app v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_app)
+   Compiling mm2_assets v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_assets)
+   Compiling mm2_game v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_game)
+   Compiling mm2_content v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_content)
+    Finished `release` profile [optimized] target(s) in 32.40s

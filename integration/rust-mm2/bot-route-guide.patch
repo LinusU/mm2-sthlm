@@ -284,7 +284,7 @@ index dd1fc62..c4eaf68 100644
 +    }
 +}
 diff --git a/crates/mm2_app/src/opponents.rs b/crates/mm2_app/src/opponents.rs
-index f20bd1b..fee7af0 100644
+index f20bd1b..98a9458 100644
 --- a/crates/mm2_app/src/opponents.rs
 +++ b/crates/mm2_app/src/opponents.rs
 @@ -458,10 +458,21 @@ impl OpponentDriver {
@@ -391,8 +391,248 @@ index f20bd1b..fee7af0 100644
              break;
          }
          next += 1;
+@@ -629,13 +696,30 @@ pub fn reanchor_pose(
+     yaw: f32,
+     blocked: impl Fn(Vec3) -> bool,
+ ) -> (Vec3, f32) {
++    let (position, yaw, _) = reanchor_pose_with_progress(route, next, pos, yaw, blocked);
++    (position, yaw)
++}
++
++/// The same bounded landing walk, retaining its exact authored leg occurrence.
++/// Revisited streets cannot be disambiguated by a fresh-spawn position search.
++pub fn reanchor_pose_with_progress(
++    route: &OpponentRoute,
++    next: usize,
++    pos: Vec3,
++    yaw: f32,
++    blocked: impl Fn(Vec3) -> bool,
++) -> (Vec3, f32, usize) {
+     let n = route.points.len();
+     if n == 0 || !pos.is_finite() {
+-        return (pos, yaw);
++        return (pos, yaw, next.min(n.saturating_sub(1)));
+     }
+     if n == 1 {
+         let p = route.points[0].position;
+-        return if p.is_finite() { (p, yaw) } else { (pos, yaw) };
++        return if p.is_finite() {
++            (p, yaw, 0)
++        } else {
++            (pos, yaw, 0)
++        };
+     }
+     let closed = route_is_closed(route);
+     let leg_count = if closed { n } else { n - 1 };
+@@ -713,7 +797,7 @@ pub fn reanchor_pose(
+         }
+         let pose = point_on(leg, d);
+         if !pose.is_finite() {
+-            return (pos, yaw);
++            return (pos, yaw, next.min(n.saturating_sub(1)));
+         }
+         if remaining > 0.0
+             || steps >= REANCHOR_MAX_STEPS
+@@ -721,7 +805,7 @@ pub fn reanchor_pose(
+             || walked >= REANCHOR_WALK
+             || (leg == 0 && d <= 0.0 && !closed)
+         {
+-            return (pose, facing(leg, yaw));
++            return (pose, facing(leg, yaw), (leg + 1) % n);
+         }
+         remaining = REANCHOR_BACK;
+     }
+@@ -1341,13 +1425,14 @@ pub fn opponent_drive(
+                         traffic.iter().map(|t| t.pos).chain(claimed.iter().copied()),
+                     )
+                 };
+-                let (mut pose, ryaw) = reanchor_pose(&route, driver.next, pos.0, yaw, |p| {
+-                    gates.iter().any(|g| {
+-                        let dx = p.x - g.center.x;
+-                        let dz = p.z - g.center.z;
+-                        dx * dx + dz * dz < g.radius * g.radius
+-                    }) || occupied(p)
+-                });
++                let (mut pose, ryaw, resync_next) =
++                    reanchor_pose_with_progress(&route, driver.next, pos.0, yaw, |p| {
++                        gates.iter().any(|g| {
++                            let dx = p.x - g.center.x;
++                            let dz = p.z - g.center.z;
++                            dx * dx + dz * dz < g.radius * g.radius
++                        }) || occupied(p)
++                    });
+                 // The same hull clearance the spawn applies.
+                 let hull_min_y = vehicle
+                     .config
+@@ -1361,7 +1446,6 @@ pub fn opponent_drive(
+                     position: pose,
+                     yaw: ryaw,
+                 });
+-                let resync_next = initial_route_index(&route, pose, ryaw);
+                 // The walk-back can land a closed-route car across
+                 // the route boundary — resync the traversal count so
+                 // the teleport cannot bank arc it did not drive.
+diff --git a/crates/mm2_app/src/racing_line.rs b/crates/mm2_app/src/racing_line.rs
+index 51ab74a..a2bc6ab 100644
+--- a/crates/mm2_app/src/racing_line.rs
++++ b/crates/mm2_app/src/racing_line.rs
+@@ -247,6 +247,154 @@ impl RouteCursor {
+     }
+ }
+ 
++// Discrete junction policy for explicit evidence guides. These are pursuit
++// geometry margins, not road width, authored speed or vehicle-physics edits.
++const SHARP_TURN_MIN: f32 = std::f32::consts::FRAC_PI_3;
++const CORNER_AIM_ROLLOUT: f32 = 3.0;
++const CORNER_LINE_CUT: f32 = 2.0;
++
++fn junction_turn(route: &OpponentRoute, leg: usize, legs: usize) -> f32 {
++    // Closed native guides may repeat the starting point, producing a zero-
++    // length wrap leg. It has no direction; use its actual neighbouring legs
++    // so atan2(0, 0) cannot invent a world-axis junction at the lap boundary.
++    let heading = |candidate| {
++        let (a, b) = leg_ends(route, candidate);
++        (xz_len(a, b) > 1e-3).then(|| (b.z - a.z).atan2(b.x - a.x))
++    };
++    let incoming = (0..legs).find_map(|offset| heading((leg + legs - offset) % legs));
++    let outgoing = (1..=legs).find_map(|offset| heading((leg + offset) % legs));
++    match (incoming, outgoing) {
++        (Some(a), Some(b)) => wrap_angle(b - a).abs(),
++        _ => 0.0,
++    }
++}
++
++/// Keep the pursuit chord near a sharp vertex until the car has traversed its
++/// outgoing tangent. Advancing a dense cursor does not mean the body has yet
++/// completed its turn. Straight lines and smooth bends keep ordinary lookahead.
++pub fn corner_aim_distance(route: &OpponentRoute, cursor: RouteCursor, wanted: f32) -> f32 {
++    let closed = route_is_closed(route);
++    let legs = leg_count(route.points.len(), closed);
++    let mut behind = cursor.along;
++    for offset in 0..legs {
++        if !closed && offset >= cursor.leg {
++            break;
++        }
++        let incoming = (cursor.leg + legs - 1 - offset) % legs;
++        if junction_turn(route, incoming, legs) >= SHARP_TURN_MIN && behind < wanted {
++            return wanted.min(CORNER_AIM_ROLLOUT);
++        }
++        let (a, b) = leg_ends(route, incoming);
++        behind += xz_len(a, b);
++        if behind >= wanted {
++            break;
++        }
++    }
++    let mut distance = -cursor.along;
++    for offset in 0..legs {
++        let leg = (cursor.leg + offset) % legs;
++        let (a, b) = leg_ends(route, leg);
++        distance += xz_len(a, b);
++        if distance > wanted || (!closed && leg + 1 >= legs) {
++            break;
++        }
++        if junction_turn(route, leg, legs) >= SHARP_TURN_MIN {
++            return wanted.min(distance.max(0.0) + CORNER_AIM_ROLLOUT);
++        }
++    }
++    wanted
++}
++
++/// Radius, speed and tangent length of a rounded discrete junction. A circle's
++/// closest-line inset is radius * (1 - cos(turn/2)); cap that inset while
++/// respecting the car's mechanical steering radius. The steering-speed cap
++/// inverts this car's existing speed-dependent lock, leaving 2% for corrections.
++fn junction_geometry(turn: f32, limits: &CarLimits) -> (f32, f32) {
++    let radius = (CORNER_LINE_CUT / (1.0 - (turn * 0.5).cos()))
++        .max(limits.wheelbase / (limits.lock_low * 0.98).tan().max(0.1));
++    let angle = (limits.wheelbase / radius).atan();
++    let steering_speed = if limits.lock_low > limits.lock_high && angle > limits.lock_high {
++        limits.lock_speed
++            * ((limits.lock_low - angle) / (limits.lock_low - limits.lock_high)).clamp(0.0, 1.0)
++    } else {
++        f32::INFINITY
++    };
++    let speed = (limits.corner_accel * radius)
++        .sqrt()
++        .min(steering_speed)
++        .max(1.0);
++    (speed, (radius * (turn * 0.5).tan()).min(HORIZON_SLACK))
++}
++
++/// Brake to the entry tangent of a sharp junction, then retain its handling-
++/// limited speed through the outgoing tangent. The broad smooth-bend window
++/// cannot represent a discrete street corner's entry or steering-lock demand.
++pub fn sharp_corner_plan(
++    route: &OpponentRoute,
++    cursor: RouteCursor,
++    speed: f32,
++    limits: &CarLimits,
++) -> SpeedPlan {
++    let closed = route_is_closed(route);
++    let legs = leg_count(route.points.len(), closed);
++    let mut plan = SpeedPlan {
++        limit: f32::INFINITY,
++        demand: 0.0,
++    };
++    let mut behind = cursor.along;
++    for offset in 0..legs {
++        if !closed && offset >= cursor.leg {
++            break;
++        }
++        let incoming = (cursor.leg + legs - 1 - offset) % legs;
++        let turn = junction_turn(route, incoming, legs);
++        if turn >= SHARP_TURN_MIN {
++            let (corner, tangent) = junction_geometry(turn, limits);
++            if behind < tangent + limits.wheelbase {
++                plan.limit = plan.limit.min(corner);
++                if speed > corner {
++                    plan.demand = plan.demand.max(1.0);
++                }
++            }
++        }
++        let (a, b) = leg_ends(route, incoming);
++        behind += xz_len(a, b);
++        if behind > HORIZON_SLACK {
++            break;
++        }
++    }
++    let mut distance = -cursor.along;
++    for offset in 0..legs {
++        let leg = (cursor.leg + offset) % legs;
++        let (a, b) = leg_ends(route, leg);
++        distance += xz_len(a, b);
++        if distance > limits.braking_distance(speed) + HORIZON_SLACK || (!closed && leg + 1 >= legs)
++        {
++            break;
++        }
++        let turn = junction_turn(route, leg, legs);
++        if turn < SHARP_TURN_MIN {
++            continue;
++        }
++        let (corner, tangent) = junction_geometry(turn, limits);
++        let entry = (distance - tangent).max(0.0);
++        // Reserve the normal pace actuator share in the entry-distance budget;
++        // once over the envelope, brake rather than waiting to reach the vertex.
++        let reachable =
++            (corner * corner + 2.0 * limits.brake_accel * CORNER_BRAKE_DEFAULT * entry).sqrt();
++        plan.limit = plan.limit.min(reachable);
++        if speed > reachable {
++            plan.demand = plan.demand.max(1.0);
++        }
++        if speed > corner {
++            plan.demand = plan.demand.max(
++                (speed * speed - corner * corner) / (2.0 * entry.max(1.0) * limits.max_brake_accel),
++            );
++        }
++    }
++    plan
++}
++
+ /// Scan the line ahead of `cursor` out to braking distance from
+ /// `speed` and work out what its corners ask: the highest speed the car
+ /// may carry now and still brake to each corner's grip-limited speed,
 diff --git a/crates/mm2_app/src/scripted.rs b/crates/mm2_app/src/scripted.rs
-index 65d101d..dc298c6 100644
+index 65d101d..b45f50f 100644
 --- a/crates/mm2_app/src/scripted.rs
 +++ b/crates/mm2_app/src/scripted.rs
 @@ -6,7 +6,8 @@
@@ -405,23 +645,24 @@ index 65d101d..dc298c6 100644
  //! ([`ScriptedRoute`], F15-B.5 — an implementation choice; retail
  //! assigns routes to AI opponents, never to the player), with no
  //! opponent AI beyond that, just enough control to finish authored
-@@ -32,9 +33,13 @@ use mm2_game::{
+@@ -32,9 +33,14 @@ use mm2_game::{
  use mm2_vehicle::{ResetVehicle, Vehicle, VehicleInput, VehicleState};
  use tracing::info;
  
 +use crate::racing_line::{
-+    CORNER_BRAKE_DEFAULT, CarLimits, RouteCursor, SpeedPlan, pace, plan_speed, steer_toward,
++    CORNER_BRAKE_DEFAULT, CarLimits, RouteCursor, SpeedPlan, corner_aim_distance, pace, plan_speed,
++    sharp_corner_plan, steer_toward,
 +};
 +
  use crate::opponents::{
 -    REANCHOR_DIST, REANCHOR_FRAMES, SPAWN_LIFT, initial_route_index, point_reached,
 -    reanchor_occupied, reanchor_pose, route_is_closed,
 +    REANCHOR_DIST, REANCHOR_FRAMES, SPAWN_LIFT, aim_distance, initial_route_index, point_reached,
-+    reanchor_occupied, reanchor_pose, route_is_closed, spacing_point_reached,
++    reanchor_occupied, reanchor_pose_with_progress, route_is_closed, spacing_point_reached,
  };
  
  /// Presence enables the scripted driver: `--bot` inserts it, and
-@@ -93,7 +98,7 @@ impl Default for ScriptedBot {
+@@ -93,7 +99,7 @@ impl Default for ScriptedBot {
  /// drops it with everything else the session owns.
  #[derive(Component, Debug, Clone)]
  pub struct ScriptedRoute {
@@ -430,7 +671,7 @@ index 65d101d..dc298c6 100644
      pub route: OpponentRoute,
      /// The route anchor currently being chased — the same convention
      /// as `OpponentDriver::next`.
-@@ -129,6 +134,8 @@ pub struct ScriptedRoute {
+@@ -129,6 +135,8 @@ pub struct ScriptedRoute {
      /// Bounded re-anchors this session — the observable count, the
      /// same disclosure `OpponentDriver::reanchors` gives AI drivers.
      pub reanchors: u32,
@@ -439,15 +680,15 @@ index 65d101d..dc298c6 100644
  }
  
  impl ScriptedRoute {
-@@ -146,10 +153,77 @@ impl ScriptedRoute {
+@@ -146,8 +154,75 @@ impl ScriptedRoute {
              recoveries: 0,
              progress_stamp: 0,
              reanchors: 0,
 +            limits: None,
-         }
-     }
- }
- 
++        }
++    }
++}
++
 +/// Load an explicit diagnostic guide without wiring a fake opponent. Unlike
 +/// retail roster parsing, evidence input is strict: malformed rows cannot be
 +/// silently skipped, every field must be finite, and every XZ leg must advance.
@@ -490,7 +731,7 @@ index 65d101d..dc298c6 100644
 +                path.display(),
 +                row.line
 +            ));
-+        }
+         }
 +        points.push(mm2_game::OpponentRoutePoint {
 +            position: Vec3::from_array(row.position),
 +            brake: row.brake,
@@ -500,7 +741,7 @@ index 65d101d..dc298c6 100644
 +            speed_start: row.speed_start,
 +            side_start: row.side_start,
 +        });
-+    }
+     }
 +    if points.windows(2).any(|pair| {
 +        let delta = pair[1].position - pair[0].position;
 +        let length = delta.x.hypot(delta.z);
@@ -512,12 +753,10 @@ index 65d101d..dc298c6 100644
 +        ));
 +    }
 +    Ok(OpponentRoute { points })
-+}
-+
+ }
+ 
  /// Pick the scripted driver's driving line out of the wired roster:
- /// the resolved route whose authored staging point (`.opp` row 0) is
- /// nearest the player spawn — every wired route covers the course, so
-@@ -203,7 +277,30 @@ pub fn pick_bot_route(roster: &OpponentRoster, spawn: Vec3) -> Option<OpponentRo
+@@ -203,7 +278,30 @@ pub fn pick_bot_route(roster: &OpponentRoster, spawn: Vec3) -> Option<OpponentRo
  /// band scrub speed before an edge instead of after it.
  ///
  /// Returns the updated `next` and this frame's aim point.
@@ -549,7 +788,7 @@ index 65d101d..dc298c6 100644
      let n = route.points.len();
      if n == 0 {
          return (0, gate);
-@@ -211,15 +308,27 @@ pub fn route_aim(route: &OpponentRoute, mut next: usize, pos: Vec3, gate: Vec3)
+@@ -211,15 +309,27 @@ pub fn route_aim(route: &OpponentRoute, mut next: usize, pos: Vec3, gate: Vec3)
      if next >= n {
          next = n - 1;
      }
@@ -578,7 +817,7 @@ index 65d101d..dc298c6 100644
      let behind = if closed {
          (gate_idx + n - next) % n > n / 2
      } else {
-@@ -228,7 +337,13 @@ pub fn route_aim(route: &OpponentRoute, mut next: usize, pos: Vec3, gate: Vec3)
+@@ -228,15 +338,40 @@ pub fn route_aim(route: &OpponentRoute, mut next: usize, pos: Vec3, gate: Vec3)
      if behind {
          return (next, gate);
      }
@@ -593,8 +832,15 @@ index 65d101d..dc298c6 100644
          next = if closed { (next + 1) % n } else { next + 1 };
      }
      if next == gate_idx {
-@@ -236,7 +351,19 @@ pub fn route_aim(route: &OpponentRoute, mut next: usize, pos: Vec3, gate: Vec3)
+         return (next, gate);
      }
++    let distance = if project {
++        RouteCursor::locate(route, next, pos).map_or(distance, |cursor| {
++            corner_aim_distance(route, cursor, distance)
++        })
++    } else {
++        distance
++    };
      (
          next,
 -        lookahead_aim(route, next, gate_idx, closed, pos, gate),
@@ -614,7 +860,7 @@ index 65d101d..dc298c6 100644
      )
  }
  
-@@ -304,10 +431,11 @@ fn lookahead_aim(
+@@ -304,10 +439,11 @@ fn lookahead_aim(
      closed: bool,
      pos: Vec3,
      gate: Vec3,
@@ -627,7 +873,7 @@ index 65d101d..dc298c6 100644
      loop {
          let at_gate_leg = i == gate_idx;
          let target = if at_gate_leg {
-@@ -643,6 +771,7 @@ pub fn scripted_drive(
+@@ -643,6 +779,7 @@ pub fn scripted_drive(
              }
          };
          let mut target = gate;
@@ -635,7 +881,40 @@ index 65d101d..dc298c6 100644
          if let Some(rs) = bot_route.as_mut() {
              // The bounded last resort — the same disclosed contract
              // `opponent_drive` holds (`reanchors`/`Teleported`/`blocked`
-@@ -750,7 +879,14 @@ pub fn scripted_drive(
+@@ -717,14 +854,15 @@ pub fn scripted_drive(
+                             occupants.iter().copied().chain(claimed.iter().copied()),
+                         )
+                     };
+-                    let (mut pose, ryaw) = reanchor_pose(&rs.route, rs.next, pos.0, yaw, |p| {
+-                        gates.iter().any(|g| {
+-                            let dx = p.x - g.center.x;
+-                            let dz = p.z - g.center.z;
+-                            dx * dx + dz * dz < g.radius * g.radius
+-                        }) || !supported(p)
+-                            || occupied(p)
+-                    });
++                    let (mut pose, ryaw, resync_next) =
++                        reanchor_pose_with_progress(&rs.route, rs.next, pos.0, yaw, |p| {
++                            gates.iter().any(|g| {
++                                let dx = p.x - g.center.x;
++                                let dz = p.z - g.center.z;
++                                dx * dx + dz * dz < g.radius * g.radius
++                            }) || !supported(p)
++                                || occupied(p)
++                        });
+                     // The same hull clearance the spawn applies.
+                     let hull_min_y = vehicle
+                         .config
+@@ -738,7 +876,7 @@ pub fn scripted_drive(
+                         position: pose,
+                         yaw: ryaw,
+                     });
+-                    rs.next = initial_route_index(&rs.route, pose, ryaw);
++                    rs.next = resync_next;
+                     *bot = ScriptedBot {
+                         escapes: bot.escapes,
+                         ..ScriptedBot::default()
+@@ -750,7 +888,14 @@ pub fn scripted_drive(
                      rs.reanchors += 1;
                      claimed.push(pose);
                      info!(
@@ -650,7 +929,7 @@ index 65d101d..dc298c6 100644
                          "scripted player re-anchored onto its route after a bounded stuck"
                      );
                      *input = VehicleInput::default();
-@@ -762,18 +898,88 @@ pub fn scripted_drive(
+@@ -762,18 +907,94 @@ pub fn scripted_drive(
                  rs.offroute_frames = 0;
                  rs.recoveries = 0;
              }
@@ -667,7 +946,13 @@ index 65d101d..dc298c6 100644
 +                    limit: f32::INFINITY,
 +                    demand: 0.0,
 +                },
-+                |cursor| plan_speed(&rs.route, cursor, speed, &limits),
++                |cursor| {
++                    let mut plan = plan_speed(&rs.route, cursor, speed, &limits);
++                    let sharp = sharp_corner_plan(&rs.route, cursor, speed, &limits);
++                    plan.limit = plan.limit.min(sharp.limit);
++                    plan.demand = plan.demand.max(sharp.demand);
++                    plan
++                },
 +            );
 +            planned = Some((limits, plan));
          }
@@ -811,10 +1096,10 @@ index 8011f45..4f73a66 100644
                          spawn.yaw,
                      ));
 diff --git a/crates/mm2_app/tests/bot.rs b/crates/mm2_app/tests/bot.rs
-index 4140f56..55f5317 100644
+index 4140f56..411f676 100644
 --- a/crates/mm2_app/tests/bot.rs
 +++ b/crates/mm2_app/tests/bot.rs
-@@ -1157,3 +1157,356 @@ fn penned_bot_reanchor_lands_clear_of_a_parked_participant() {
+@@ -1157,3 +1157,522 @@ fn penned_bot_reanchor_lands_clear_of_a_parked_participant() {
          "the teleport itself banked nothing"
      );
  }
@@ -1021,8 +1306,8 @@ index 4140f56..55f5317 100644
 +    );
 +    assert!((aim.x - 20.0).abs() < 1e-5);
 +    assert!(
-+        (aim.z - 6.0).abs() < 1e-5,
-+        "speed-scaled 22m pursuit follows the projected source corner: {aim:?}"
++        (aim.z - 3.0).abs() < 1e-5,
++        "pursuit stays three metres beyond the projected sharp corner: {aim:?}"
 +    );
 +    let (_, aim) = scripted::planned_route_aim(
 +        &route,
@@ -1131,7 +1416,7 @@ index 4140f56..55f5317 100644
 +        let (next, aim) =
 +            scripted::planned_route_aim(&route, 4, Vec3::new(100.0, 0.0, 40.0), gate, 10.0);
 +        assert_eq!(next, 4);
-+        assert_eq!(aim, Vec3::new(100.0, 0.0, 25.0));
++        assert_eq!(aim, Vec3::new(100.0, 0.0, 37.0));
 +        let (_, aim) =
 +            scripted::planned_route_aim(&route, 1, Vec3::new(10.0, 0.0, 0.0), gate, 10.0);
 +        assert_eq!(
@@ -1169,7 +1454,173 @@ index 4140f56..55f5317 100644
 +        next, 5,
 +        "an actually rounded corner follows its outgoing leg"
 +    );
-+    assert_eq!(aim, Vec3::new(20.0, 0.0, 18.0));
++    assert_eq!(aim, Vec3::new(20.0, 0.0, 6.0));
++}
++
++#[test]
++fn dense_guide_physically_keeps_a_sharp_corner_inside_a_nine_metre_road() {
++    let tmp = circuit_install();
++    let corners = [
++        Vec3::new(0., 0., 140.),
++        Vec3::new(60., 0., 140.),
++        Vec3::new(34., 0., 86.),
++        Vec3::new(-26., 0., 86.),
++    ];
++    let mut gates = format!("{WAYPOINTS}0,0,140,0,5,0,0,0,\n");
++    let mut text = OPP_HEADER.to_string();
++    for (i, a) in corners.iter().enumerate() {
++        let b = corners[(i + 1) % corners.len()];
++        let gate = a.lerp(b, 0.5);
++        gates.push_str(&format!("{},0,{},0,5,0,0,0,\n", gate.x, gate.z));
++        let count = (a.distance(b) / 4.).ceil() as usize;
++        for k in 0..count {
++            let p = a.lerp(b, k as f32 / count as f32);
++            text.push_str(&format!("{},0,{},0,0,0,17.8,0,0\n", p.x, p.z));
++        }
++    }
++    text.push_str("0,0,140,0,0,0,17.8,0,0\n");
++    write(tmp.path(), "race/testcity/circuit0waypoints.csv", &gates);
++    let guide = tmp.path().join("sharp-corner.opp");
++    std::fs::write(&guide, text).unwrap();
++    let mut config = event_config(EventTableKind::Circuit);
++    config.dev.bot_route = Some(guide);
++    config.dev.bot_speed = Some(12.);
++    let mut app = bot_app(config, vfs_of(tmp.path()));
++    app.update();
++    let entity = car(&mut app);
++    let mut worst = 0.0_f32;
++    for _ in 0..5400 {
++        app.update();
++        let pos = app.world().get::<Position>(entity).unwrap().0;
++        assert!(pos.is_finite());
++        let state = app
++            .world()
++            .get::<mm2_vehicle::VehicleState>(entity)
++            .unwrap();
++        assert_eq!(state.wheels.len(), 4);
++        assert!(state.forward_speed.is_finite());
++        assert!(
++            state
++                .wheels
++                .iter()
++                .all(|wheel| wheel.contact_point.is_finite()
++                    && wheel.contact_normal.is_finite()
++                    && wheel.compression.is_finite())
++        );
++        let lateral = corners
++            .iter()
++            .enumerate()
++            .map(|(i, a)| {
++                let b = corners[(i + 1) % corners.len()];
++                let ab = b - *a;
++                let t = ((pos - *a).dot(ab) / ab.length_squared()).clamp(0., 1.);
++                (pos - (*a + ab * t)).xz().length()
++            })
++            .fold(f32::INFINITY, f32::min);
++        // The grid begins outside the loop; measure after the first gate.
++        if app
++            .world()
++            .get::<RaceProgress>(entity)
++            .unwrap()
++            .cleared_count()
++            > 0
++        {
++            worst = worst.max(lateral);
++        }
++        if matches!(
++            app.world().get::<RaceProgress>(entity).unwrap().state,
++            ParticipantState::Finished { .. }
++        ) {
++            break;
++        }
++    }
++    let progress = app.world().get::<RaceProgress>(entity).unwrap();
++    println!(
++        "sharp116 physical worst_lateral={worst} state={:?} lap={}",
++        progress.state, progress.lap
++    );
++    assert!(matches!(progress.state, ParticipantState::Finished { .. }));
++    assert_eq!(progress.lap, 2);
++    assert_eq!(
++        app.world().get::<ScriptedRoute>(entity).unwrap().reanchors,
++        0
++    );
++    assert_eq!(app.world().get::<ScriptedBot>(entity).unwrap().escapes, 0);
++    // 4.5m half-road minus a conservative 1m half-body envelope.
++    assert!(
++        worst < 3.5,
++        "sharp corner lost body clearance on nine-metre road: {worst}"
++    );
++}
++
++#[test]
++fn sharp_corner_guidance_preserves_straights_and_smooth_bends() {
++    use mm2_app::racing_line::{CarLimits, RouteCursor, corner_aim_distance, sharp_corner_plan};
++    let straight = route_of(&[(0., 0., 0.), (50., 0., 0.), (100., 0., 0.)]);
++    let smooth: Vec<_> = (0..=18)
++        .map(|i| {
++            let angle = (i as f32 * 5.).to_radians();
++            (50. * angle.sin(), 0., 50. * (1. - angle.cos()))
++        })
++        .collect();
++    for route in [straight, route_of(&smooth)] {
++        let cursor = RouteCursor { leg: 0, along: 1. };
++        assert_eq!(corner_aim_distance(&route, cursor, 20.), 20.);
++        let plan = sharp_corner_plan(
++            &route,
++            cursor,
++            25.,
++            &CarLimits::of(&VehicleConfig::default(), None),
++        );
++        assert!(plan.limit.is_infinite());
++        assert_eq!(plan.demand, 0.);
++    }
++}
++
++#[test]
++fn sharp_corner_guidance_retains_aim_and_pace_after_dense_progress_crosses_vertex() {
++    use mm2_app::racing_line::{CarLimits, RouteCursor, corner_aim_distance, sharp_corner_plan};
++    let points: Vec<_> = (0..=15)
++        .map(|i| (i as f32 * 4., 0., 0.))
++        .chain((1..=15).map(|i| {
++            let t = i as f32 / 15.;
++            (60. - 26. * t, 0., -54. * t)
++        }))
++        .collect();
++    let route = route_of(&points);
++    let before = RouteCursor { leg: 14, along: 0. };
++    assert_eq!(corner_aim_distance(&route, before, 20.), 7.);
++    let after = RouteCursor { leg: 15, along: 2. };
++    assert_eq!(corner_aim_distance(&route, after, 20.), 3.);
++    let limits = CarLimits::of(&VehicleConfig::default(), None);
++    let plan = sharp_corner_plan(&route, after, 12., &limits);
++    assert!(plan.limit < 7. && plan.demand > 0.);
++    let clear = RouteCursor { leg: 19, along: 1. };
++    assert!(
++        sharp_corner_plan(&route, clear, 12., &limits)
++            .limit
++            .is_infinite()
++    );
++}
++
++#[test]
++fn repeated_closed_guide_start_keeps_its_real_straight_heading() {
++    use mm2_app::racing_line::{RouteCursor, corner_aim_distance};
++    let route = route_of(&[
++        (0., 0., 0.),
++        (-10., 0., 10.),
++        (-20., 0., 20.),
++        (-20., 0., -20.),
++        (20., 0., -20.),
++        (10., 0., -10.),
++        (0., 0., 0.),
++    ]);
++    let cursor = RouteCursor { leg: 0, along: 1. };
++    assert_eq!(
++        corner_aim_distance(&route, cursor, 12.),
++        12.,
++        "a repeated start is not a zero-heading corner"
++    );
 +}
 diff --git a/crates/mm2_app/tests/fixtures/steep-heightfield-paving.json b/crates/mm2_app/tests/fixtures/steep-heightfield-paving.json
 new file mode 100644
@@ -1442,10 +1893,38 @@ index eb0b16e..2854785 100644
 +    }
 +}
 diff --git a/crates/mm2_app/tests/opponents.rs b/crates/mm2_app/tests/opponents.rs
-index 735d10b..de51727 100644
+index 735d10b..a7c0827 100644
 --- a/crates/mm2_app/tests/opponents.rs
 +++ b/crates/mm2_app/tests/opponents.rs
-@@ -2884,3 +2884,126 @@ fn ordered_route_less_opponent_binds_no_gate_line() {
+@@ -17,7 +17,7 @@ use bevy::time::TimeUpdateStrategy;
+ use mm2_app::opponents::{
+     Blocker, DriveStats, OpponentDriver, REANCHOR_CLEAR, REANCHOR_FRAMES, Traffic, apply_gap_brake,
+     apply_rear_end_guard, initial_route_index, nearest_blocker, opponent_drive, pick_pass_side,
+-    reanchor_pose, rear_end_demand, route_target, spawn_pose,
++    reanchor_pose, reanchor_pose_with_progress, rear_end_demand, route_target, spawn_pose,
+ };
+ use mm2_app::racing_line::CarLimits;
+ use mm2_app::scripted::{ScriptedBot, ScriptedTuning};
+@@ -1906,6 +1906,18 @@ fn reanchor_pose_wraps_closed_and_clamps_open() {
+     );
+     assert!(yaw.abs() < 1e-4, "the −Z wrap leg keeps yaw 0, got {yaw}");
+ 
++    let (landing, _, next) =
++        reanchor_pose_with_progress(&r, 0, Vec3::new(5.0, 0.0, 1.0), 0.0, |_| false);
++    assert_eq!(next, 0, "the closing leg still targets the first point");
++    assert!((landing.z - 5.0).abs() < 1e-4);
++    let (landing, _, next) =
++        reanchor_pose_with_progress(&r, 1, Vec3::new(1.0, 0.0, 0.0), 0.0, |_| false);
++    assert_eq!(
++        next, 0,
++        "walking across the lap boundary retains the selected closing leg"
++    );
++    assert!((landing.z - 3.0).abs() < 1e-4);
++
+     // Open route (60 m leg > ROUTE_LOOP, so not closed), car behind
+     // the first anchor chasing it (next=0): leg 0 is the approach
+     // line, and the walk clamps at its start.
+@@ -2884,3 +2896,190 @@ fn ordered_route_less_opponent_binds_no_gate_line() {
      );
      assert_eq!(progress.route_clears, 0);
  }
@@ -1572,6 +2051,70 @@ index 735d10b..de51727 100644
 +        "dense line lost at a corner: {worst_lateral}"
 +    );
 +}
++
++/// Recovery resumes the authored occurrence on revisited streets, rather
++/// than choosing the first globally forward anchor from a fresh spawn.
++#[test]
++fn native_reanchor_preserves_revisited_street_occurrence() {
++    let tmp = roster_install(
++        "",
++        &[(
++            "race0-a-0.opp",
++            opp_file(&[
++                [-100.0, 0.0, 140.0],
++                [-50.0, 0.0, 140.0],
++                [0.0, 0.0, 140.0],
++                [50.0, 0.0, 140.0],
++                [50.0, 0.0, 50.0],
++                [0.0, 0.0, 50.0],
++                [0.0, 0.0, 140.0],
++                [50.0, 0.0, 140.0],
++                [100.0, 0.0, 140.0],
++                [180.0, 0.0, 140.0],
++            ]),
++        )],
++    );
++    let mut app = event_app(event_config(), vfs_of(tmp.path()));
++    app.update();
++    let vpt = opponent_by_vehicle(&mut app, "vpt");
++    run(&mut app, 260);
++    let before = Vec3::new(25.0, 0.8, 140.0);
++    app.world_mut().get_mut::<Position>(vpt).unwrap().0 = before;
++    app.world_mut().get_mut::<Rotation>(vpt).unwrap().0 =
++        Quat::from_rotation_y(-std::f32::consts::FRAC_PI_2);
++    app.world_mut().get_mut::<LinearVelocity>(vpt).unwrap().0 = Vec3::ZERO;
++    {
++        let mut d = app.world_mut().get_mut::<OpponentDriver>(vpt).unwrap();
++        d.next = 7;
++        d.stuck_pos = before;
++        d.stuck_frames = REANCHOR_FRAMES - 1;
++    }
++    let cleared = app
++        .world()
++        .get::<RaceProgress>(vpt)
++        .unwrap()
++        .cleared_count();
++    run(&mut app, 4);
++    let d = app.world().get::<OpponentDriver>(vpt).unwrap();
++    assert_eq!(d.reanchors, 1);
++    assert_eq!(d.next, 7, "the landing belongs to the later occurrence");
++    assert_eq!(
++        app.world()
++            .get::<RaceProgress>(vpt)
++            .unwrap()
++            .cleared_count(),
++        cleared,
++        "recovery must not bank checkpoint credits"
++    );
++    run(&mut app, 1800);
++    assert!(
++        matches!(
++            app.world().get::<RaceProgress>(vpt).unwrap().state,
++            ParticipantState::Finished { .. }
++        ),
++        "the actual AI resumes physical traversal to finish"
++    );
++}
 diff --git a/crates/mm2_game/src/config.rs b/crates/mm2_game/src/config.rs
 index eca6e3b..8b552ae 100644
 --- a/crates/mm2_game/src/config.rs
@@ -1618,7 +2161,7 @@ index e5c0fe6..4c04dd2 100644
      assert_eq!(
          record_eligibility(&config),
 diff --git a/docs/original-rules.md b/docs/original-rules.md
-index 88fa20b..ca2695d 100644
+index 88fa20b..2fa4ef5 100644
 --- a/docs/original-rules.md
 +++ b/docs/original-rules.md
 @@ -346,7 +346,7 @@ Retail install: `/Users/linus/coding/rust-mm2/retail`, enumerated
@@ -1626,7 +2169,7 @@ index 88fa20b..ca2695d 100644
  | DSN-64 | Pedestrian animation playback policies (F19-A.3): `mm2_game::ped` samples `.anim` clips onto the flattened `.skel` rig — the clip's channel-0 triple is the root's world translation and channel `i+1` is bone `i`'s Euler rotation, lerped between adjacent frames as raw channel floats (mm2hook `crAnimFrame::Blend(fraction, first, second)` is exactly that buffer shape; its call sites are unrecovered). `PedAnimator` steps the authored csv state machine at a designed `PED_STATE_FPS` = 30 fps — the original's rate is unrecovered; 30 puts man walk/run at plausible cadence. A window occupies frames `first..=min(last, frames-1)` so the authored `frames+1` overshoot ends clamp rather than index out of the clip; a self-loop wrap preserves sub-frame phase, a state change lands on the entered state's first frame. `request(target)` enters the authored `{CUR}_{TGT}` transition state immediately when one exists, else switches directly to the target (the original's interruption timing is unrecovered); unknown targets are refused. | `mm2_game::ped` (`PedRig`/`PedPose`/`PedAnimator`/`PED_STATE_FPS`), `mm2-inspect peds` pose-sample leg |
  | DSN-65 | Race feedback effects: mounted `startracelow`/`startracehigh` countdown, `waypoint`/`lastwaypoint` progress, `timerwarning` at the existing 10-second warning band, `endofracetag` finish and `youlose` timeout. Local authoritative/replicated progress edges only; batched clears coalesce, terminal cues take priority, pause freezes tracking, restarts reset it. Gain 0.85; non-spatial session-owned one-shots. Sample presence is measured; trigger timing/gain are designed, not recovered original rules. | `mm2_app::race_audio`; `docs/research/audio.md` (2026-10-03 retail VFS inventory) |
 -| DSN-66 | Opponent racing line (F15): the original opponent controller is unrecovered (UNK-11), so how an opponent follows its `.opp` line is designed. Pure-pursuit aim: the driver projects itself onto the leg into its chase index (`racing_line::RouteCursor`) and steers at the point `aim_distance(speed)` further down the polyline — 8 m + 0.7 s of travel, bounded 12–40 m — instead of at the next raw anchor (retail anchors sit 40–200 m apart, so the raw chase only saw a corner inside the 14 m reach radius, and a car shoved off the line aimed straight across the block at a far anchor). An open route still approaching its first anchor keeps the anchor as its aim. Planned pace: `racing_line::plan_speed` samples the line every 4 m out to braking distance (+40 m, ≤320 m), reads each stretch's radius from its heading change across a ±12 m window, and caps the speed the car may carry now at the speed from which it can still brake to every corner's grip speed (≥7 m/s). The car's own handling sets the numbers (`CarLimits::of`): corner grip is 0.7 of `HandlingMetrics`' peak lateral g (or the tip threshold if lower) scaled by the authored `cornerSpeedMultiplier / 2.0` (clamped 0.5–1.2), braking 0.6 of the brakes' or tires' straight-line limit. `racing_line::pace` drives at the throttle ceiling under the cap, holds inside a 0.5 m/s deadband, and over it consumes `cornerBrakingThreshold` as R3's brake-demand floor: a corner needing less than that share of full braking is made by lifting off, one needing more by braking at its demand (threshold capped at 0.9). The bearing law's fixed 16 m/s corner brake and 30 m/s cap no longer apply to opponents. Steering (`racing_line::steer_toward`) is pure pursuit from the car's own geometry: the arc through the aim point (curvature `2·sin(bearing)/distance`) becomes a wheel angle through the wheelbase, plus the front tires' peak slip angle scaled by the share of their grip the arc uses at the current speed, divided by the car's speed-interpolated steering lock and passed through the inverse of its input shaping; an aim behind the car takes full lock toward it. The chase index, reach radius, re-anchor and route-bound progress are unchanged. Wall feelers (`racing_line::sense_walls`): each frame four horizontal rays from 0.5 m above the body origin — ±0.3 rad reaching 6 m + 0.6 s of travel (≤30 m) and ±0.8 rad reaching 3 m + 0.15 s — against static bodies only (other cars and dynamic props are the corridor's and the recovery law's); a hit whose normal points more than 0.6 up is ground, not wall. Each side's closeness is the worst `(1 − hit/len)²`, and the steering gains `0.8 × (left − right)` away from the closer wall. A freshly armed reverse-and-turn escape turns toward the side the feelers see as open instead of alternating blind. Rear-end guard: a fellow opponent the authored `avoidOpponents=0` leaves unsensed is still looked for straight ahead (the corridor's ±2.4 m), out to the driver's stopping distance at the planned deceleration plus 20 m (capped at its look-ahead). The guard commits no pass — the flag keeps deciding whether the driver manoeuvres around the field — and only answers a closure: the demand `closing² / (2 × (gap − 5 m))` over the car's full braking lifts off from 0.15 and brakes at the demand from 0.3, and a standing car approached under 2 m/s is left to the escape and the feelers so the guard cannot pen the driver behind it. The human participant is not covered — `avoidPlayers=0` drivers still ram the player. Measured on the 16-event parked-Pro benchmark: hard (≥5 m/s) AI-on-AI impacts 203 → 112 while the total contact count stayed level, the hits replaced by low-speed nudges. | `mm2_app::racing_line` (`RouteCursor`, `CarLimits`, `plan_speed`, `pace`, `steer_toward`, `sense_walls`), `mm2_app::opponents` (`aim_distance`, `opponent_drive`) |
-+| DSN-66 | Opponent racing line (F15): the original opponent controller is unrecovered (UNK-11), so how an opponent follows its `.opp` line is designed. Pure-pursuit aim: the driver projects itself onto the leg into its chase index (`racing_line::RouteCursor`) and steers at the point `aim_distance(speed)` further down the polyline — 8 m + 0.7 s of travel, bounded 12–40 m — instead of at the next raw anchor (retail anchors sit 40–200 m apart, so the raw chase only saw a corner inside the 14 m reach radius, and a car shoved off the line aimed straight across the block at a far anchor). An open route still approaching its first anchor keeps the anchor as its aim. Planned pace: `racing_line::plan_speed` samples the line every 4 m out to braking distance (+40 m, ≤320 m), reads each stretch's radius from its heading change across a ±12 m window, and caps the speed the car may carry now at the speed from which it can still brake to every corner's grip speed (≥7 m/s). The car's own handling sets the numbers (`CarLimits::of`): corner grip is 0.7 of `HandlingMetrics`' peak lateral g (or the tip threshold if lower) scaled by the authored `cornerSpeedMultiplier / 2.0` (clamped 0.5–1.2), braking 0.6 of the brakes' or tires' straight-line limit. `racing_line::pace` drives at the throttle ceiling under the cap, holds inside a 0.5 m/s deadband, and over it consumes `cornerBrakingThreshold` as R3's brake-demand floor: a corner needing less than that share of full braking is made by lifting off, one needing more by braking at its demand (threshold capped at 0.9). The bearing law's fixed 16 m/s corner brake and 30 m/s cap no longer apply to opponents. Steering (`racing_line::steer_toward`) is pure pursuit from the car's own geometry: the arc through the aim point (curvature `2·sin(bearing)/distance`) becomes a wheel angle through the wheelbase, plus the front tires' peak slip angle scaled by the share of their grip the arc uses at the current speed, divided by the car's speed-interpolated steering lock and passed through the inverse of its input shaping; an aim behind the car takes full lock toward it. The chase index, reach radius, re-anchor and route-bound progress are unchanged. Wall feelers (`racing_line::sense_walls`): each frame four horizontal rays from 0.5 m above the body origin — ±0.3 rad reaching 6 m + 0.6 s of travel (≤30 m) and ±0.8 rad reaching 3 m + 0.15 s — against static bodies only (other cars and dynamic props are the corridor's and the recovery law's); a hit whose normal points more than 0.6 up is ground, not wall. Each side's closeness is the worst `(1 − hit/len)²`, and the steering gains `0.8 × (left − right)` away from the closer wall. A freshly armed reverse-and-turn escape turns toward the side the feelers see as open instead of alternating blind. Rear-end guard: a fellow opponent the authored `avoidOpponents=0` leaves unsensed is still looked for straight ahead (the corridor's ±2.4 m), out to the driver's stopping distance at the planned deceleration plus 20 m (capped at its look-ahead). The guard commits no pass — the flag keeps deciding whether the driver manoeuvres around the field — and only answers a closure: the demand `closing² / (2 × (gap − 5 m))` over the car's full braking lifts off from 0.15 and brakes at the demand from 0.3, and a standing car approached under 2 m/s is left to the escape and the feelers so the guard cannot pen the driver behind it. The human participant is not covered — `avoidPlayers=0` drivers still ram the player. Measured on the 16-event parked-Pro benchmark: hard (≥5 m/s) AI-on-AI impacts 203 → 112 while the total contact count stayed level, the hits replaced by low-speed nudges. Authored routes with local samples closer than the legacy 14 m anchor reach use spacing-bounded reach plus adjacent-leg physical projection, retaining upcoming bends for the speed planner; widely spaced routes preserve the original 14 m reach/plane heuristic. This designed sampling correction does not alter authored speed demands, physics or race credit. Guided evidence-player steering also reuses this planner: speed-scaled projected lookahead is capped at the live player checkpoint, handling-derived steering and curvature pace issue ordinary inputs, and the existing bounded scripted recovery is retained. This does not give the player route-bound AI checkpoint credit, catch-up assistance or authored opponent tuning. | `mm2_app::racing_line` (`RouteCursor`, `CarLimits`, `plan_speed`, `pace`, `steer_toward`, `sense_walls`), `mm2_app::opponents` (`aim_distance`, `opponent_drive`), `mm2_app::scripted` (`planned_route_aim`, `planned_input`) |
++| DSN-66 | Opponent racing line (F15): the original opponent controller is unrecovered (UNK-11), so how an opponent follows its `.opp` line is designed. Pure-pursuit aim: the driver projects itself onto the leg into its chase index (`racing_line::RouteCursor`) and steers at the point `aim_distance(speed)` further down the polyline — 8 m + 0.7 s of travel, bounded 12–40 m — instead of at the next raw anchor (retail anchors sit 40–200 m apart, so the raw chase only saw a corner inside the 14 m reach radius, and a car shoved off the line aimed straight across the block at a far anchor). An open route still approaching its first anchor keeps the anchor as its aim. Planned pace: `racing_line::plan_speed` samples the line every 4 m out to braking distance (+40 m, ≤320 m), reads each stretch's radius from its heading change across a ±12 m window, and caps the speed the car may carry now at the speed from which it can still brake to every corner's grip speed (≥7 m/s). The car's own handling sets the numbers (`CarLimits::of`): corner grip is 0.7 of `HandlingMetrics`' peak lateral g (or the tip threshold if lower) scaled by the authored `cornerSpeedMultiplier / 2.0` (clamped 0.5–1.2), braking 0.6 of the brakes' or tires' straight-line limit. `racing_line::pace` drives at the throttle ceiling under the cap, holds inside a 0.5 m/s deadband, and over it consumes `cornerBrakingThreshold` as R3's brake-demand floor: a corner needing less than that share of full braking is made by lifting off, one needing more by braking at its demand (threshold capped at 0.9). The bearing law's fixed 16 m/s corner brake and 30 m/s cap no longer apply to opponents. Steering (`racing_line::steer_toward`) is pure pursuit from the car's own geometry: the arc through the aim point (curvature `2·sin(bearing)/distance`) becomes a wheel angle through the wheelbase, plus the front tires' peak slip angle scaled by the share of their grip the arc uses at the current speed, divided by the car's speed-interpolated steering lock and passed through the inverse of its input shaping; an aim behind the car takes full lock toward it. The chase index, reach radius, re-anchor and route-bound progress are unchanged. Wall feelers (`racing_line::sense_walls`): each frame four horizontal rays from 0.5 m above the body origin — ±0.3 rad reaching 6 m + 0.6 s of travel (≤30 m) and ±0.8 rad reaching 3 m + 0.15 s — against static bodies only (other cars and dynamic props are the corridor's and the recovery law's); a hit whose normal points more than 0.6 up is ground, not wall. Each side's closeness is the worst `(1 − hit/len)²`, and the steering gains `0.8 × (left − right)` away from the closer wall. A freshly armed reverse-and-turn escape turns toward the side the feelers see as open instead of alternating blind. Rear-end guard: a fellow opponent the authored `avoidOpponents=0` leaves unsensed is still looked for straight ahead (the corridor's ±2.4 m), out to the driver's stopping distance at the planned deceleration plus 20 m (capped at its look-ahead). The guard commits no pass — the flag keeps deciding whether the driver manoeuvres around the field — and only answers a closure: the demand `closing² / (2 × (gap − 5 m))` over the car's full braking lifts off from 0.15 and brakes at the demand from 0.3, and a standing car approached under 2 m/s is left to the escape and the feelers so the guard cannot pen the driver behind it. The human participant is not covered — `avoidPlayers=0` drivers still ram the player. Measured on the 16-event parked-Pro benchmark: hard (≥5 m/s) AI-on-AI impacts 203 → 112 while the total contact count stayed level, the hits replaced by low-speed nudges. Authored routes with local samples closer than the legacy 14 m anchor reach use spacing-bounded reach plus adjacent-leg physical projection, retaining upcoming bends for the speed planner; widely spaced routes preserve the original 14 m reach/plane heuristic. This designed sampling correction does not alter authored speed demands, physics or race credit. Guided evidence-player steering also reuses this planner: speed-scaled projected lookahead is capped at the live player checkpoint, handling-derived steering and curvature pace issue ordinary inputs, and the existing bounded scripted recovery is retained. This does not give the player route-bound AI checkpoint credit, catch-up assistance or authored opponent tuning. Explicit evidence guides additionally retain short pursuit through discrete sharp-junction tangents, with entry braking and a corner speed derived from the existing car steering lock and grip; straight and smoothly sampled bends keep the normal planner. This designed narrow-junction correction changes player inputs only, preserving native opponent policy, checkpoint authority, timers and vehicle physics. | `mm2_app::racing_line` (`RouteCursor`, `CarLimits`, `plan_speed`, `pace`, `steer_toward`, `sense_walls`), `mm2_app::opponents` (`aim_distance`, `opponent_drive`), `mm2_app::scripted` (`planned_route_aim`, `planned_input`) |
  | DSN-67 | Listener room for object audio: the original copies the camera room's `Subterranean` flag into the audio manager (WLD-29), but `FindRoomId` is unrecovered and London stacks tunnels under streets. `underground::ListenerRooms` takes, among the rooms whose perimeter contains the listener in plan, the highest whose floor (lowest perimeter vertex) is at most 1 m above the listener — else the lowest — and reads its flag; inside no room is above ground. | designed | `crates/mm2_app/src/underground.rs` |
  
  ## Open questions (unknown until evidenced)

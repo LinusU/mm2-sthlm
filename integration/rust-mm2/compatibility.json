@@ -19,10 +19,13 @@
     "73303b00cccb20859b53de0acaa05f09e48abaaf",
     "2dd688171553dd747339cc75e8ff40f6d455c3a7",
     "c4156b780969666f420375d9f5647f51913646a0",
-    "3a76ab37a871b20921b562b4ac1fabb854b27748"
+    "3a76ab37a871b20921b562b4ac1fabb854b27748",
+    "9513edf3d52cd0c2d308eef9ea9f77518fcfacf7",
+    "fe3f549493c97186591ee87869e3aa84e531b9b6",
+    "1a822c1cc472f6c04a25a6832e346b162bbb0ff5"
   ],
   "engine_changes": "Optional generic multi-part city loading with collision, unique room IDs and bounded per-part water. Includes prior continuous motion evidence fixes. Native HUD-map cameras preserve authored sRGB colors and opaque ocean backgrounds without writing back the world view.",
-  "tested_integration_revision": "3a76ab37a871b20921b562b4ac1fabb854b27748",
+  "tested_integration_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
   "patch_sha256": "fe255460e79e9621e4c910a1c66a91d85b094cd75ba0b72bc89566cd2750e36b",
   "engine_branch": "codex/stockholm-race-integration",
   "pull_request": "https://github.com/LinusU/rust-mm2/pull/6",
@@ -40,7 +43,10 @@
     "73303b00cccb20859b53de0acaa05f09e48abaaf",
     "2dd688171553dd747339cc75e8ff40f6d455c3a7",
     "c4156b780969666f420375d9f5647f51913646a0",
-    "3a76ab37a871b20921b562b4ac1fabb854b27748"
+    "3a76ab37a871b20921b562b4ac1fabb854b27748",
+    "9513edf3d52cd0c2d308eef9ea9f77518fcfacf7",
+    "fe3f549493c97186591ee87869e3aa84e531b9b6",
+    "1a822c1cc472f6c04a25a6832e346b162bbb0ff5"
   ],
   "loader_patch": "multi-part-cities.patch",
   "loader_patch_sha256": "97d289f5a1bb504447fec01d7ce0b50c0eb2feec91e0c5611b4dfabce75cb53a",
@@ -63,10 +69,10 @@
   "sloped_fan_patch": "sloped-city-fans.patch",
   "sloped_fan_patch_sha256": "12038790e6dfdfe14b2c5b9d2469fa21b8b5a62c2ed8a8d53800f78c5271c03e",
   "sloped_fan_pull_request": "https://github.com/LinusU/rust-mm2/pull/5",
-  "race_guide_revision": "3a76ab37a871b20921b562b4ac1fabb854b27748",
+  "race_guide_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
   "race_guide_branch": "codex/stockholm-race-integration",
   "race_guide_patch": "bot-route-guide.patch",
-  "race_guide_patch_sha256": "f6ea445949dcbc5ce4c03f34ce986fbd374b685648724b08349e969a6473dc99",
+  "race_guide_patch_sha256": "c6c9f11e02c33aeea94677399c91a33c571ddc4bb45aefdf3924e32213cc49ea",
   "race_guide_pull_request": "https://github.com/LinusU/rust-mm2/pull/6",
   "race_guide_status": "Generic QA controls, native-AI dense progress and steep-heightfield import implemented; full city race acceptance remains in progress.",
   "race_guide_controller_revision": "ab5ad9ad98e317aaebeb503305154bb980946bcb",
@@ -74,9 +80,9 @@
   "race_guide_density_revision": "73303b00cccb20859b53de0acaa05f09e48abaaf",
   "race_guide_density_binary_sha256": "bc89accaba0811c5085f9368bbaf05e687fb69431db8b9c48ea166faa30bdb65",
   "race_guide_density_status": "1862 engine workspace tests, strict Clippy and format pass. Dense-corner regression and physical two-lap fixture pass; full Stockholm matrix pending.",
-  "latest_upstream_status": "Latest2dd6881 built with PR6 at3a76ab3. Full102-gate portability clean. Actual-AI pilots nowfinish all rivals; broader race validation retains unresolved source course/bridge diagnostics.",
+  "latest_upstream_status": "Latest 2dd6881 built with PR6 at 1a822c1. Full102-gate portability clean; Circuit2 Pro3laps player clean, all4AI finish with disclosed rival recovery. Full candidate race matrix pending.",
   "race_guide_base": "2dd688171553dd747339cc75e8ff40f6d455c3a7",
-  "race_guide_latest_binary_sha256": "a794c0a8632fe99b17bf07038530770075936f4dd79bbade250ad52bf219da85",
-  "race_guide_latest_status": "Clean build atop2dd6881;1871tests/strictClippy/fmtpass. Source-independent dense actual-AI physical regression passes; production Circuit0A/P everyAI clean.102-gate independent-package portability clean. Full race matrix pending source repairs.",
+  "race_guide_latest_binary_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "race_guide_latest_status": "1876 workspace tests, strict Clippy and formatting pass. Generic sharp-guide corners, directionless closed edges and recovery route occurrence regressions pass. Native102-gate portability passes. Full30-event acceptance remains pending source geometry fixes.",
   "steep_heightfield_revision": "c4156b780969666f420375d9f5647f51913646a0"
 }

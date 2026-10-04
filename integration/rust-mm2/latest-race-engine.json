@@ -1,9 +1,12 @@
 {
   "upstream_base": "2dd688171553dd747339cc75e8ff40f6d455c3a7",
-  "revision": "3a76ab37a871b20921b562b4ac1fabb854b27748",
+  "revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
   "tracked_status": "",
   "pr": "https://github.com/LinusU/rust-mm2/pull/6",
   "commits": [
+    "1a822c1cc472f6c04a25a6832e346b162bbb0ff5 Preserve recovery route occurrences",
+    "fe3f549493c97186591ee87869e3aa84e531b9b6 Ignore directionless closed guide edges",
+    "9513edf3d52cd0c2d308eef9ea9f77518fcfacf7 Keep guided vehicles on narrow junctions",
     "3a76ab37a871b20921b562b4ac1fabb854b27748 Attribute generated terrain regression fixture",
     "6f9906e4fe044aaead0418349e00e7dd4e8b72ba Preserve corner progress on dense opponent routes",
     "c4156b780969666f420375d9f5647f51913646a0 Preserve upward steep heightfield faces",
@@ -23,7 +26,10 @@
     "density": 1867,
     "importer": 1869,
     "ai-density": 1871,
-    "fixture-provenance": 1871
+    "fixture-provenance": 1871,
+    "sharp-corner": 1874,
+    "closed-guide": 1875,
+    "recovery-occurrence": 1876
   },
   "sha256": {
     "/private/tmp/mm2-bot-route-latest.patch": "d5e574285892b15bb57e0ce3399bbb7f8489a841b8fb0795435454ee13905347",
@@ -61,7 +67,86 @@
     "/private/tmp/ai-density-workspace-tests.log": "7a9beed66c1291098aa5eb812c0a399da8271cc98b00e99d16aba85ac7ccbfd4",
     "/private/tmp/fixture-provenance-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "/private/tmp/fixture-provenance-clippy.log": "f869877d94617c8552bc4fb750451cb1c9ae5b2067b1128b5e72377aff504709",
-    "/private/tmp/fixture-provenance-workspace-tests.log": "65315c91a3e19a93d2868115d9aa4e94ab047785c62232fda0ae8a4f4d46bc3d"
+    "/private/tmp/fixture-provenance-workspace-tests.log": "65315c91a3e19a93d2868115d9aa4e94ab047785c62232fda0ae8a4f4d46bc3d",
+    "/private/tmp/mm2-bot-route-sharp-corners.patch": "1ef9b2873107d497ae9e6b0099d1b8beb0ab476852774cb8162c53aed6fac5fd",
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-sharp-corners": "95ef318bef95aa2a2186cb63bdfd15058c1ffccd81e6df9742c9676c49893495",
+    "/private/tmp/sharp-corner-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/sharp-corner-clippy.log": "207c82463767944d057b521437aba440270a27735916efa71e3106b69f680b61",
+    "/private/tmp/sharp-corner-workspace-tests.log": "d1f6a9c55b8d6ba66d2e264849c489c1d6150581d57964f8789486387fe51787",
+    "/private/tmp/sharp-corner-build.log": "f9d1b70974bd0a7b4b82ce5fd93c2979221a95b9ecf861cfa0c44753a70b6375",
+    "/private/tmp/sharp-corner-final-red.log": "a946512f09ffb700eda07b853e2484476a11a00d4166d42d9e2b5a1eb0868b59",
+    "/private/tmp/sharp-corner-final-green.log": "4d4c519fae9f957435c83eade1dd5fc432ffc0e4f9e9c78aa72e81eaa33315b2",
+    "/private/tmp/sharp-corner-bot-suite.log": "276abbdd5dc91a34df90b3101488919ea6e64b98714f8c96a508c088c3c0e59a",
+    "/private/tmp/mm2-bot-route-recovery-occurrence.patch": "c6c9f11e02c33aeea94677399c91a33c571ddc4bb45aefdf3924e32213cc49ea",
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-recovery-occurrence": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+    "/private/tmp/closed-guide-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/closed-guide-clippy.log": "2c2a69e1d8ee38db892c523342a92c0dcf93c00f66f36f2147432d024bbc51c6",
+    "/private/tmp/closed-guide-workspace-tests.log": "3b2c5654f779036e3b883c8f2401263b03ba54ce13564e92922de91f3af43d6c",
+    "/private/tmp/reanchor-occurrence-fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/private/tmp/reanchor-occurrence-clippy.log": "97c254c7451b3912aef868827b68fd0e2c548103f4e8444b740f9099f894c03f",
+    "/private/tmp/reanchor-occurrence-workspace-tests.log": "477a247968e732d06b2517296d5467223884352596f3ec70358c7bc7ab8e924f",
+    "/private/tmp/reanchor-occurrence-red.log": "fc699d53eb1f003ec7231568e5415ab5b41801e59c518342287ffbba02e5aee3",
+    "/private/tmp/reanchor-occurrence-green.log": "d45ced9072ac8f6ffb8c846238f6babb7f57c115a9a3d8cf2533c2967186be8a",
+    "/private/tmp/reanchor-occurrence-build.log": "c26d1b21bf83d1cbcac2cf0044e4242216c432893d6e78cfcbece7365ef5ce72"
   },
-  "native_acceptance": "Independent0c69 package passes102-gate waterfront portability; actual production Circuit0A/P finish every opponent without recovery; Checkpoint0P finishes all four. Full30event/bothrank acceptance remains pending source repairs. Historical c415 failures are retained."
+  "native_acceptance": "e095 package 102-gate independent portability passes. Oldgeometry4fc01e Circuit2 Pro native3laps12/12, zero player recovery/reset, all4 actual rivals finish with recovery disclosed. Intermediate geometry failures remain preserved; full30-event candidate matrix pending.",
+  "base": "2dd688171553dd747339cc75e8ff40f6d455c3a7",
+  "source_status": "clean",
+  "binary": {
+    "path": "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-sharp-corners",
+    "sha256": "95ef318bef95aa2a2186cb63bdfd15058c1ffccd81e6df9742c9676c49893495"
+  },
+  "patch": {
+    "path": "/private/tmp/mm2-bot-route-sharp-corners.patch",
+    "sha256": "1ef9b2873107d497ae9e6b0099d1b8beb0ab476852774cb8162c53aed6fac5fd"
+  },
+  "gates": {
+    "fmt": {
+      "path": "/private/tmp/sharp-corner-fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "pass"
+    },
+    "clippy": {
+      "path": "/private/tmp/sharp-corner-clippy.log",
+      "sha256": "207c82463767944d057b521437aba440270a27735916efa71e3106b69f680b61",
+      "status": "pass"
+    },
+    "workspace-tests": {
+      "path": "/private/tmp/sharp-corner-workspace-tests.log",
+      "sha256": "d1f6a9c55b8d6ba66d2e264849c489c1d6150581d57964f8789486387fe51787",
+      "status": "pass"
+    },
+    "build": {
+      "path": "/private/tmp/sharp-corner-build.log",
+      "sha256": "f9d1b70974bd0a7b4b82ce5fd93c2979221a95b9ecf861cfa0c44753a70b6375",
+      "status": "pass"
+    }
+  },
+  "workspace_tests_passed": 1874,
+  "sharp_corner_regression": {
+    "test": "dense_guide_physically_keeps_a_sharp_corner_inside_a_nine_metre_road",
+    "same_current_physics_and_car": true,
+    "road_width_m": 9,
+    "centreline_allowance_after_body_m": 3.5,
+    "red": {
+      "revision": "3a76ab37a871b20921b562b4ac1fabb854b27748",
+      "log": "/private/tmp/sharp-corner-final-red.log",
+      "worst_lateral_m": 10.415701,
+      "state": "Racing",
+      "lap": 1
+    },
+    "green": {
+      "log": "/private/tmp/sharp-corner-final-green.log",
+      "worst_lateral_m": 3.3344724,
+      "state": "Finished",
+      "lap": 2,
+      "escapes": 0,
+      "reanchors": 0,
+      "finite_wheels": 4
+    },
+    "normal_straight_and_smooth_tests": "pass",
+    "native_matrix_status": "pending actual retries"
+  },
+  "recovery_regression": "actual production AI on a revisited street: RED next7 becomes3, GREEN retains7, zero reset checkpoint credits, physically finishes; closed-lap walkback progress retained",
+  "native_latest_status": "pending same-geometry Circuit2 Pro retry and Royal5actor retry; 9513 Blitz7 four clean actual runs are prior-revision evidence"
 }

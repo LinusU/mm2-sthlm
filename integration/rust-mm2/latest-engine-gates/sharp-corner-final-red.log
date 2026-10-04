@@ -1,0 +1,20 @@
+   Compiling mm2_app v0.0.0 (/private/tmp/mm2-sthlm-race-engine/crates/mm2_app)
+    Finished `test` profile [optimized + debuginfo] target(s) in 16.22s
+     Running tests/app.rs (target/debug/deps/app-9c89f8ad2fddc28c)
+
+running 1 test
+sharp116 physical worst_lateral=10.415701 state=Racing lap=1
+
+thread 'bot::dense_guide_physically_keeps_a_sharp_corner_inside_a_nine_metre_road' (113771778) panicked at crates/mm2_app/tests/bot.rs:1596:5:
+assertion failed: matches!(progress.state, ParticipantState::Finished { .. })
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test bot::dense_guide_physically_keeps_a_sharp_corner_inside_a_nine_metre_road ... FAILED
+
+failures:
+
+failures:
+    bot::dense_guide_physically_keeps_a_sharp_corner_inside_a_nine_metre_road
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 720 filtered out; finished in 4.08s
+
+error: test failed, to rerun pass `-p mm2_app --test app`
