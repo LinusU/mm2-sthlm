@@ -1,0 +1,16 @@
+test_authored_upper_ground_junction_keeps_retaining_wall_below_road (test_tunnel_wall_caps.TunnelWallCapsTest.test_authored_upper_ground_junction_keeps_retaining_wall_below_road) ... FAIL
+test_covered_shell_or_lower_road_does_not_change (test_tunnel_wall_caps.TunnelWallCapsTest.test_covered_shell_or_lower_road_does_not_change) ... ok
+
+======================================================================
+FAIL: test_authored_upper_ground_junction_keeps_retaining_wall_below_road (test_tunnel_wall_caps.TunnelWallCapsTest.test_authored_upper_ground_junction_keeps_retaining_wall_below_road)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/circuit-tunnel-wall-guard/test_tunnel_wall_caps.py", line 37, in test_authored_upper_ground_junction_keeps_retaining_wall_below_road
+    self.assertLess(max(v[1] for t in near for v in t), 16.95859)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 17.40418444338225 not less than 16.95859
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.014s
+
+FAILED (failures=1)

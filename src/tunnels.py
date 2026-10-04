@@ -12,6 +12,7 @@ import numpy as np
 from PIL import Image
 from shapely.geometry import LineString, mapping, shape
 from shapely.ops import unary_union
+from shapely.strtree import STRtree
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES = ROOT / "config/overrides/tunnel-profiles.json"
@@ -316,7 +317,34 @@ def write_roads(writer, city, terrain):
                 )
 
 
-def shell_mesh(road, cfg, openings=(), closed_nodes=()):
+def surface_wall_caps(city):
+    """Exact upper ground-road profiles that can cap exposed retaining walls.
+
+    This changes shell collision only; it never connects crossed source ways
+    or alters underground floors, covered roofs or profile headroom.
+    """
+    from elevation import RoadField
+
+    ids = set(city.get("tunnel_ways", []))
+    records = [
+        (road_surface(road), RoadField([road], None, bridge=True))
+        for road in city["roads"]
+        if road["id"] not in ids
+        and road["tags"].get("bridge") != "yes"
+        and road.get("elevated_points")
+    ]
+
+    tree = STRtree([surface for surface, _ in records])
+
+    def candidates(edge):
+        return [
+            records[int(index)] for index in tree.query(edge, predicate="intersects")
+        ]
+
+    return candidates
+
+
+def shell_mesh(road, cfg, openings=(), closed_nodes=(), surface_caps=()):
     """Open-ended inward facing shell following exact floor cross sections."""
     wall, roof, lamps = [], [], []
     points = road["elevated_points"]
@@ -349,6 +377,32 @@ def shell_mesh(road, cfg, openings=(), closed_nodes=()):
                 bb[2],
             )
             edge = LineString([(aa[0], -aa[2]), (bb[0], -bb[2])])
+            # An exposed retaining wall can rise through a separately authored
+            # upper ground junction. Cap only its protruding top, following the
+            # exact upper road profile, while keeping the tunnel floor intact.
+            if (
+                min(covers[i], covers[i + 1])
+                < cfg["clearance_m"] + cfg["roof_thickness_m"]
+            ):
+                candidates = (
+                    surface_caps(edge) if callable(surface_caps) else surface_caps
+                )
+                for surface, field in candidates:
+                    overlap = edge.intersection(surface)
+                    if overlap.is_empty:
+                        continue
+                    probes = [overlap.representative_point()]
+                    if overlap.geom_type == "LineString":
+                        probes.extend(overlap.boundary.geoms)
+                    cap = min(field(p.x, p.y) for p in probes) - 0.05
+                    # A lower or same-level road is not an upper retaining-wall
+                    # datum. Restrict this to a small protrusion at its top.
+                    if (
+                        max(aa[1], bb[1]) + 0.12 < cap
+                        and min(upa[1], upb[1]) - 1.0 <= cap
+                    ):
+                        upa = (upa[0], min(upa[1], cap), upa[2])
+                        upb = (upb[0], min(upb[1], cap), upb[2])
             # A branch can intersect the end of a five-metre wall panel even
             # when its midpoint is outside the aperture. Open the entire
             # touched panel so a turn cannot meet an invisible half-wall.
@@ -431,6 +485,7 @@ def write(out, city):
         )
         image.save(out / f"texture/{name}.png")
     instances = []
+    caps = surface_wall_caps(city)
     ids = set(city.get("tunnel_ways", []))
     for road in city["roads"]:
         if road["id"] not in ids:
@@ -449,6 +504,7 @@ def write(out, city):
                     and set(other["nodes"]) & set(road["nodes"])
                 ],
                 city.get("tunnel_closed_nodes", []),
+                caps,
             ),
             f"way/{road['id']}",
         )
