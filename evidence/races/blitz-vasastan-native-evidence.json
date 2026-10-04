@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "scope": "Native course-flow before/after diagnosis; final common finish-runout matrix and timer calibration remain pending. Headless records are physics/race evidence, not screenshots.",
+  "engine_source": "5ce8a8a9a37cf278f1601a612f91f183810c5868",
+  "engine_binary_sha256": "234aef8f82e52634e112f7a398ad63d252bf131d11e9d3048d02f6a24ea76d15",
+  "before_package_checksums_sha256": "4cdd3f0ec92f9ba04343410951c2b2506755ee4a75488f9aabfd35802e81e457",
+  "after_package_checksums_sha256": "c4a2361345e291dc3f37e801d5fb853de48811b21e9fea287affc12678db464c",
+  "before": {
+    "amateur_seconds": 187.31,
+    "reanchors": 0,
+    "escapes": 8,
+    "impacts": 18
+  },
+  "after": {
+    "amateur": {
+      "seconds": 134.16,
+      "checkpoints": "3/3",
+      "remaining_seconds": 140.8,
+      "resets": 0,
+      "reanchors": 0,
+      "escapes": 0,
+      "impacts": 9
+    },
+    "professional": {
+      "seconds": 119.66,
+      "checkpoints": "3/3",
+      "remaining_seconds": 85.3,
+      "resets": 0,
+      "reanchors": 0,
+      "escapes": 0,
+      "impacts": 13
+    }
+  },
+  "bot_speed_caps_mps": {
+    "amateur": 24,
+    "professional": 28
+  },
+  "no_profile": true,
+  "diagnostic_limit": "The old driver stalled 4\u20136 m off road centrelines near original building footprints; avoiding those turns does not prove the avoided geometry smooth. Native contacts remain in after runs and are reported, not suppressed.",
+  "files": {
+    "blitz-vasastan-after-amateur-native.log": "31bbbf6c44639ff58ab4dbbdc7adf56b04e71e3163b9b68272474a7577122dc0",
+    "blitz-vasastan-after-professional-native.log": "36c5cc7f64ef707bccc61e8308c2f5f339f1af78625644cdd75d8c59263760cd",
+    "blitz-vasastan-before-native.log": "e0b1d2ecde9358821e32428e79f38145388d2ee01221ccb604b0b3666c022cd9"
+  }
+}

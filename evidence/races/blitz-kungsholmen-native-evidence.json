@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "scope": "Native before/after course-flow diagnosis, before common finish runout and final timer matrix. Headless records do not provide visual evidence.",
+  "engine_source": "5ce8a8a9a37cf278f1601a612f91f183810c5868",
+  "engine_binary_sha256": "234aef8f82e52634e112f7a398ad63d252bf131d11e9d3048d02f6a24ea76d15",
+  "before_package_checksums_sha256": "4cdd3f0ec92f9ba04343410951c2b2506755ee4a75488f9aabfd35802e81e457",
+  "after_package_checksums_sha256": "a14566a9b21c233f323c11941237deeb6a42fd2adb29c4907b93752facbbbd50",
+  "bot_speed_caps_mps": {
+    "amateur": 24,
+    "professional": 28
+  },
+  "no_profile": true,
+  "before": {
+    "seconds": 201.26,
+    "resets": 2,
+    "escapes": 7,
+    "impacts": 61
+  },
+  "after": {
+    "amateur": {
+      "seconds": 161.41,
+      "checkpoints": "3/3",
+      "resets": 0,
+      "escapes": 0,
+      "impacts": 4
+    },
+    "professional": {
+      "seconds": 145.61,
+      "checkpoints": "3/3",
+      "resets": 0,
+      "escapes": 0,
+      "impacts": 5
+    }
+  },
+  "diagnostic_limit": "Removing the gate-side144-degree turn and avoiding the recovery hotspots does not certify the avoided roads or colliders. Contacts are still reported.",
+  "files": {
+    "blitz-kungsholmen-after-amateur-native.log": "b56c9be3402f08427db8ba42e467ab45ca96b12d86d5460ea4493d50fc5a554a",
+    "blitz-kungsholmen-after-professional-native.log": "9be1740a037fd71cfe278abd678deb7308fbf73f4780ca88746c40095855cec3",
+    "blitz-kungsholmen-before-native.log": "5b055fd536526ee40265e99e2f78d095190ff844687fe8aff92c7123cdde6f3c"
+  }
+}

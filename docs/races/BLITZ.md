@@ -6,8 +6,8 @@ Ten original Stockholm time trials use the native MM2 AnyOrder rule: cross every
 | --- | --- | ---: | ---: | ---: |
 | 1 | Quayside Quickstep | 1.10 | 1 | 115 / 85 |
 | 2 | Courthouse Courier | 1.98 | 2 | 185 / 140 |
-| 3 | Vasastan Coffee Run | 3.00 | 3 | 270 / 205 |
-| 4 | Kungsholmen Pocket | 3.38 | 3 | 290 / 220 |
+| 3 | Vasastan Coffee Run | 3.06 | 3 | 275 / 205 |
+| 4 | Kungsholmen Pocket | 3.65 | 3 | 310 / 235 |
 | 5 | Old Town Dispatch | 4.44 | 3 | 365 / 275 |
 | 6 | Royal Waterfront | 5.52 | 3 | 445 / 335 |
 | 7 | Västerbron Dash | 5.63 | 4 | 450 / 340 |
@@ -19,9 +19,15 @@ The course descriptions in `config/races/blitz.json` explain the driving rhythm 
 
 Clocks currently use the actual source-connected route lengths, target average speeds of 14–15.6 m/s Amateur and 17–19 m/s Professional, eight seconds for the launch, two seconds per gate for braking, then a rank-dependent margin (Amateur 24% falling to 16.8%; Professional 12% falling to 6.6%) rounded up to five seconds. These are transparent initial engineering budgets, **not measured native driving calibration**. Driving acceptance must replace this status with per-event measured completion times, remaining clock, native gate counts and a timeout loss. Traffic settings remain native metadata; their presence is not evidence that traffic was instantiated.
 
+Native driving exposed repeated backing manoeuvres on the initial Vasastan itinerary at tight hill-side block turns. Its suggested route now continues east along Odengatan before descending Sveavägen. The sparse Sveavägen gate moved onto that through street. This course-flow change avoids the traced hotspots; it does not certify the avoided roads or their colliders.
+
 ## Primary provenance
 
 Microsoft's 2000 [Midtown Madness 2 manual](https://oldgamesdownload.com/manual/midtown-madness-2-windows-manual-english/) names the classic modes and says the compass points to the nearest checkpoint in Blitz and Checkpoint. Native AnyOrder semantics and separate start/middle/finish rows follow [rust-mm2 race_def.rs at 069768a](https://github.com/LinusU/rust-mm2/blob/069768a/crates/mm2_content/src/race_def.rs), inspected locally. That primary implementation explicitly marks the original retail row conventions as inferred from geometry (WPT-2) and seconds as strongly inferred (BLZ-3); these provenance limits are retained. The same revision's primary [original-rules ledger](https://github.com/LinusU/rust-mm2/blob/069768a/docs/original-rules.md), inspected locally, records ten Blitz rows per original city (RACE-9), no opponents or police (BLZ-2), any-order countdown play from original Help (BLZ-1), and original authored clocks of 25–120/18–103 (BLZ-3). Stockholm clocks are longer map-specific engineering budgets, not copied original clocks. This project relies on that provenance ledger and does not claim a fresh retail-installation audit. No original race layouts or retail assets are redistributed here.
+
+The isolated native before/after run recorded 187.31 s with eight backing escapes on the old route, then 134.16 s Amateur and 119.66 s Professional with all three gates, no resets or recoveries on the arterial route. Native contacts remained (9/13); these are not collision-free runs. [Logs and fixture hashes](../../evidence/races/blitz-vasastan-native-evidence.json) scope this proof to the course-flow revision, before the common finish-runout update and final clock calibration.
+
+Kungsholmen Pocket now continues west to Fridhemsgatan and returns via Scheelegatan. Its Hantverkargatan gate lies on a through segment, avoiding the old 144-degree turn. Native before/after records changed from 201.26 s with 2 reanchors/7 escapes/61 contacts to 161.41/145.61 s A/P with all gates and zero resets/recoveries (4/5 contacts). [Scoped logs and hashes](../../evidence/races/blitz-kungsholmen-native-evidence.json) preserve the avoided-road limitation.
 
 ## Acceptance
 

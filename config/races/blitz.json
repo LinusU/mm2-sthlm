@@ -842,13 +842,13 @@
           "road_width_m": 9.0
         },
         {
-          "node_id": 1363066780,
-          "way_id": 4700202,
+          "node_id": 7819950889,
+          "way_id": 135200003,
           "label": "Sveav\u00e4gen",
           "street": "Sveav\u00e4gen",
           "east_north_m": [
-            1023.283,
-            886.07
+            870.805,
+            1203.275
           ],
           "road_width_m": 9.0
         }
@@ -1142,358 +1142,238 @@
         },
         {
           "node_id": 155577,
-          "way_id": 41527693,
-          "label": "Upplandsgatan"
+          "way_id": 40924323,
+          "label": "Odengatan"
         },
         {
-          "node_id": 6992127713,
-          "way_id": 41527693,
-          "label": "Upplandsgatan"
+          "node_id": 413504554,
+          "way_id": 40924323,
+          "label": "Odengatan"
         },
         {
-          "node_id": 10801583356,
-          "way_id": 41527693,
-          "label": "Upplandsgatan"
+          "node_id": 1989647,
+          "way_id": 40924323,
+          "label": "Odengatan"
         },
         {
-          "node_id": 3419360068,
-          "way_id": 41527693,
-          "label": "Upplandsgatan"
+          "node_id": 5086330306,
+          "way_id": 40924323,
+          "label": "Odengatan"
         },
         {
-          "node_id": 7172897,
-          "way_id": 1242676579,
-          "label": "Observatoriegatan"
+          "node_id": 413502974,
+          "way_id": 40924323,
+          "label": "Odengatan"
         },
         {
-          "node_id": 3419360067,
-          "way_id": 1242676579,
-          "label": "Observatoriegatan"
+          "node_id": 1605184274,
+          "way_id": 336125356,
+          "label": "Odengatan"
         },
         {
-          "node_id": 3419360074,
-          "way_id": 1242676579,
-          "label": "Observatoriegatan"
+          "node_id": 1989656,
+          "way_id": 336125356,
+          "label": "Odengatan"
         },
         {
-          "node_id": 7529974,
-          "way_id": 1242676579,
-          "label": "Observatoriegatan"
+          "node_id": 4649507782,
+          "way_id": 135200001,
+          "label": "Odengatan"
         },
         {
-          "node_id": 3419360069,
-          "way_id": 1242676579,
-          "label": "Observatoriegatan"
+          "node_id": 12255820177,
+          "way_id": 135200001,
+          "label": "Odengatan"
         },
         {
-          "node_id": 7172898,
-          "way_id": 4490982,
-          "label": "Drottninggatan"
+          "node_id": 5086330299,
+          "way_id": 135200001,
+          "label": "Odengatan"
         },
         {
-          "node_id": 1812845655,
-          "way_id": 4490982,
-          "label": "Drottninggatan"
+          "node_id": 1484973707,
+          "way_id": 135200001,
+          "label": "Odengatan"
         },
         {
-          "node_id": 1457186394,
-          "way_id": 4490982,
-          "label": "Drottninggatan"
+          "node_id": 1484973713,
+          "way_id": 135200001,
+          "label": "Odengatan"
         },
         {
-          "node_id": 7172899,
-          "way_id": 4490982,
-          "label": "Drottninggatan"
+          "node_id": 5086454838,
+          "way_id": 135200001,
+          "label": "Odengatan"
         },
         {
-          "node_id": 21718823,
-          "way_id": 4490982,
-          "label": "Drottninggatan"
+          "node_id": 1484973732,
+          "way_id": 135200001,
+          "label": "Odengatan"
         },
         {
-          "node_id": 472687407,
-          "way_id": 4490982,
-          "label": "Drottninggatan"
+          "node_id": 1484973740,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 3424938502,
-          "way_id": 4490982,
-          "label": "Drottninggatan"
+          "node_id": 1431277521,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 155580,
-          "way_id": 23089562,
-          "label": "Kungstensgatan"
+          "node_id": 11037929387,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 7051667998,
-          "way_id": 23089562,
-          "label": "Kungstensgatan"
+          "node_id": 1431277501,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 11037929385,
-          "way_id": 23089562,
-          "label": "Kungstensgatan"
+          "node_id": 11037929390,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 11037929384,
-          "way_id": 23089562,
-          "label": "Kungstensgatan"
+          "node_id": 1431277492,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 7172908,
-          "way_id": 328378894,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277468,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 11037929383,
-          "way_id": 328378894,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 193894,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 11037929386,
-          "way_id": 328378894,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 11034020029,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 851306924,
-          "way_id": 444137470,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277442,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 1403941996,
-          "way_id": 444137470,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277428,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 7172909,
-          "way_id": 444137469,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277417,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 3126122795,
-          "way_id": 444137469,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 9897415141,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 3221573462,
-          "way_id": 444137469,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277383,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 7529995,
-          "way_id": 1279250398,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277367,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 3221572260,
-          "way_id": 1279250398,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277362,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 11875746990,
-          "way_id": 1279250393,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 7819950889,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 11875746985,
-          "way_id": 1279250394,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277340,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 11875746986,
-          "way_id": 1279250395,
-          "label": "Holl\u00e4ndargatan"
+          "node_id": 1431277338,
+          "way_id": 135200003,
+          "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 11875746987,
-          "way_id": 1279250396,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11875746988,
-          "way_id": 1279250397,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11875746989,
-          "way_id": 4494027,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 3476327671,
-          "way_id": 4494027,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 10466411,
-          "way_id": 1279574570,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11878365853,
-          "way_id": 1279574569,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11878365852,
-          "way_id": 1279574571,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11878365854,
-          "way_id": 1767273,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 7821150465,
-          "way_id": 1767273,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 169911,
-          "way_id": 1767273,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11877493909,
-          "way_id": 1279473653,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11877493907,
-          "way_id": 1279473654,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11877493908,
-          "way_id": 1279473655,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 11877493910,
-          "way_id": 1279473656,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 1754905933,
-          "way_id": 1279473656,
-          "label": "Holl\u00e4ndargatan"
-        },
-        {
-          "node_id": 1754906035,
-          "way_id": 340405797,
-          "label": "Adolf Fredriks Kyrkogata"
-        },
-        {
-          "node_id": 7821150463,
-          "way_id": 340405797,
-          "label": "Adolf Fredriks Kyrkogata"
-        },
-        {
-          "node_id": 11877493913,
-          "way_id": 1279473660,
-          "label": "Adolf Fredriks Kyrkogata"
-        },
-        {
-          "node_id": 11877493911,
-          "way_id": 1279473658,
-          "label": "Adolf Fredriks Kyrkogata"
-        },
-        {
-          "node_id": 11877493912,
-          "way_id": 1279473659,
-          "label": "Adolf Fredriks Kyrkogata"
-        },
-        {
-          "node_id": 11877493914,
-          "way_id": 1279473661,
-          "label": "Adolf Fredriks Kyrkogata"
-        },
-        {
-          "node_id": 392345560,
-          "way_id": 38048757,
-          "label": "Olofsgatan"
-        },
-        {
-          "node_id": 7821150464,
-          "way_id": 38048757,
-          "label": "Olofsgatan"
-        },
-        {
-          "node_id": 11873745928,
-          "way_id": 1279023702,
-          "label": "Olofsgatan"
-        },
-        {
-          "node_id": 11873745925,
-          "way_id": 1279023699,
-          "label": "Olofsgatan"
-        },
-        {
-          "node_id": 11873745927,
-          "way_id": 1279023701,
-          "label": "Olofsgatan"
-        },
-        {
-          "node_id": 11873745926,
-          "way_id": 1279023700,
-          "label": "Olofsgatan"
-        },
-        {
-          "node_id": 11873745929,
-          "way_id": 1279023703,
-          "label": "Olofsgatan"
-        },
-        {
-          "node_id": 7820374149,
-          "way_id": 1279023703,
-          "label": "Olofsgatan"
-        },
-        {
-          "node_id": 21665015,
-          "way_id": 190803736,
-          "label": "Olof Palmes Gata"
-        },
-        {
-          "node_id": 2014176510,
-          "way_id": 190803736,
-          "label": "Olof Palmes Gata"
-        },
-        {
-          "node_id": 9897415147,
-          "way_id": 190803736,
-          "label": "Olof Palmes Gata"
-        },
-        {
-          "node_id": 2014176511,
-          "way_id": 190803736,
-          "label": "Olof Palmes Gata"
-        },
-        {
-          "node_id": 2014176512,
+          "node_id": 1431277336,
           "way_id": 121854794,
           "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 473524438,
+          "node_id": 9897415144,
           "way_id": 121854794,
           "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 9562823809,
+          "node_id": 1363066809,
           "way_id": 121854794,
           "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 1363066783,
-          "way_id": 121854794,
+          "node_id": 193930,
+          "way_id": 403119116,
+          "label": "Adolf Fredriks Kyrkogata"
+        },
+        {
+          "node_id": 1363066807,
+          "way_id": 724521707,
           "label": "Sveav\u00e4gen"
         },
         {
-          "node_id": 1363066780,
-          "way_id": 444128351,
-          "label": "Apelbergsgatan"
+          "node_id": 1363066804,
+          "way_id": 724521707,
+          "label": "Sveav\u00e4gen"
+        },
+        {
+          "node_id": 9897415146,
+          "way_id": 724521707,
+          "label": "Sveav\u00e4gen"
+        },
+        {
+          "node_id": 1363066796,
+          "way_id": 724521707,
+          "label": "Sveav\u00e4gen"
+        },
+        {
+          "node_id": 1409026070,
+          "way_id": 121854793,
+          "label": "Sveav\u00e4gen"
+        },
+        {
+          "node_id": 1363066792,
+          "way_id": 121854793,
+          "label": "Sveav\u00e4gen"
+        },
+        {
+          "node_id": 2014176513,
+          "way_id": 121854793,
+          "label": "Sveav\u00e4gen"
+        },
+        {
+          "node_id": 1363066789,
+          "way_id": 121854793,
+          "label": "Sveav\u00e4gen"
+        },
+        {
+          "node_id": 9897415149,
+          "way_id": 121854793,
+          "label": "Sveav\u00e4gen"
+        },
+        {
+          "node_id": 1363066784,
+          "way_id": 121854793,
+          "label": "Sveav\u00e4gen"
         },
         {
           "node_id": 193928,
@@ -1565,7 +1445,7 @@
         "Ambient": 0.064,
         "Peds": 0.02,
         "NumLaps": 3,
-        "TimeLimit": 270,
+        "TimeLimit": 275,
         "Difficulty": 1
       },
       "professional": {
@@ -1584,9 +1464,9 @@
         "amateur": 14.8,
         "professional": 18.0
       },
-      "suggested_route_length_m": 2999,
+      "suggested_route_length_m": 3061,
       "design": {
-        "flow": "Trade the riverside for north-city avenues. Broad acceleration zones alternate with deliberate junction turns and a southbound descent.",
+        "flow": "Continue east along Odengatan before descending Sveav\u00e4gen. This avenue run avoids repeated hill-side block turns while retaining deliberate braking at Sankt Eriksplan and the final Kungsgatan approach.",
         "route_choice": "Gates may be visited in any order. This source-connected itinerary is a suggested clean run; plan a shorter street route if it saves the clock.",
         "shortcut_policy": "Retained shared OSM-node streets only; no proximity joins, water jumps or parks required.",
         "progression": "Set 3: junction workload, traffic and shrinking clock margin increase; late courses remain compact city dashes."
@@ -1621,15 +1501,15 @@
           "road_width_m": 9.0
         },
         {
-          "node_id": 1673767211,
-          "way_id": 2001733,
+          "node_id": 318680087,
+          "way_id": 154922240,
           "label": "Hantverkargatan",
           "street": "Hantverkargatan",
           "east_north_m": [
-            -836.66,
-            360.063
+            -698.242,
+            302.578
           ],
-          "road_width_m": 9.0
+          "road_width_m": 12.0
         },
         {
           "node_id": 9730278,
@@ -1952,37 +1832,132 @@
         },
         {
           "node_id": 21736094,
-          "way_id": 41519533,
-          "label": "Sankt Eriksgatan"
+          "way_id": 252557001,
+          "label": "Norr M\u00e4larstrand"
         },
         {
-          "node_id": 21736059,
-          "way_id": 154922246,
-          "label": "Sankt Eriksgatan"
+          "node_id": 320554132,
+          "way_id": 252557001,
+          "label": "Norr M\u00e4larstrand"
         },
         {
-          "node_id": 301071550,
-          "way_id": 4491050,
-          "label": "Sankt Eriksgatan"
+          "node_id": 1551579462,
+          "way_id": 252557001,
+          "label": "Norr M\u00e4larstrand"
         },
         {
-          "node_id": 1673767196,
-          "way_id": 4491050,
-          "label": "Sankt Eriksgatan"
+          "node_id": 247881608,
+          "way_id": 252557001,
+          "label": "Norr M\u00e4larstrand"
         },
         {
-          "node_id": 21736102,
-          "way_id": 154922232,
+          "node_id": 21736098,
+          "way_id": 4672551,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 3234496662,
+          "way_id": 4672551,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 7603886337,
+          "way_id": 4672551,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 3234496663,
+          "way_id": 4672551,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 4227067873,
+          "way_id": 4672551,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 4827287,
+          "way_id": 41519146,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 4227067876,
+          "way_id": 41519146,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 9764336041,
+          "way_id": 41519146,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 9764336040,
+          "way_id": 41519146,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 3234757788,
+          "way_id": 41519146,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 1194125014,
+          "way_id": 4672568,
+          "label": "Sysslomansgatan"
+        },
+        {
+          "node_id": 4237565799,
+          "way_id": 424309923,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 4237565800,
+          "way_id": 424309923,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 4237565801,
+          "way_id": 424309923,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 12916982466,
+          "way_id": 424309923,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 4827307,
+          "way_id": 30180992,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 1801024166,
+          "way_id": 30180992,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 1801024170,
+          "way_id": 30180992,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 1194132237,
+          "way_id": 30180992,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 1801024172,
+          "way_id": 30180992,
+          "label": "Fridhemsgatan"
+        },
+        {
+          "node_id": 332558316,
+          "way_id": 2001733,
           "label": "Hantverkargatan"
         },
         {
-          "node_id": 1673767206,
-          "way_id": 154922232,
-          "label": "Hantverkargatan"
-        },
-        {
-          "node_id": 6616528630,
-          "way_id": 154922232,
+          "node_id": 1551579487,
+          "way_id": 2001733,
           "label": "Hantverkargatan"
         },
         {
@@ -2152,103 +2127,123 @@
         },
         {
           "node_id": 9731336,
-          "way_id": 39176408,
-          "label": "Kungsholmsgatan"
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 10992506266,
-          "way_id": 39176408,
-          "label": "Kungsholmsgatan"
+          "node_id": 548788570,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 9731335,
-          "way_id": 1183746221,
-          "label": "Pipersgatan"
+          "node_id": 309123632,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 4353026904,
-          "way_id": 1183746221,
-          "label": "Pipersgatan"
+          "node_id": 2680566422,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 10992614443,
-          "way_id": 1497693785,
-          "label": "Pipersgatan"
+          "node_id": 309123749,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 13716483497,
-          "way_id": 4352606,
-          "label": "Pipersgatan"
+          "node_id": 7904912698,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 266273608,
-          "way_id": 4352606,
-          "label": "Pipersgatan"
+          "node_id": 245318,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 309124037,
-          "way_id": 4352606,
-          "label": "Pipersgatan"
+          "node_id": 7904912700,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 9929444694,
-          "way_id": 4352606,
-          "label": "Pipersgatan"
+          "node_id": 6311773169,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 245319,
-          "way_id": 754355049,
-          "label": "Bergsgatan"
+          "node_id": 3110416981,
+          "way_id": 4231068,
+          "label": "Scheelegatan"
         },
         {
-          "node_id": 33167853,
-          "way_id": 754355050,
-          "label": "Bergsgatan"
+          "node_id": 21734786,
+          "way_id": 41519530,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 13718036448,
-          "way_id": 754355050,
-          "label": "Bergsgatan"
+          "node_id": 21734784,
+          "way_id": 252472363,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 2296297644,
-          "way_id": 328219906,
-          "label": "Bergsgatan"
+          "node_id": 12843684852,
+          "way_id": 252472363,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 33168694,
-          "way_id": 328219906,
-          "label": "Bergsgatan"
+          "node_id": 3110416979,
+          "way_id": 252472363,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 33168677,
-          "way_id": 328219906,
-          "label": "Bergsgatan"
+          "node_id": 6311773170,
+          "way_id": 252472363,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 1717479739,
-          "way_id": 328219906,
-          "label": "Bergsgatan"
+          "node_id": 10084394528,
+          "way_id": 252472363,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 4363274180,
-          "way_id": 328219906,
-          "label": "Bergsgatan"
+          "node_id": 21734787,
+          "way_id": 252472363,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 33168664,
-          "way_id": 4996012,
-          "label": "Kaplansbacken"
+          "node_id": 6314324912,
+          "way_id": 252472363,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 4369912144,
-          "way_id": 4996012,
-          "label": "Kaplansbacken"
+          "node_id": 469283958,
+          "way_id": 39176409,
+          "label": "Hantverkargatan"
         },
         {
-          "node_id": 6314324914,
-          "way_id": 4996012,
-          "label": "Kaplansbacken"
+          "node_id": 21734767,
+          "way_id": 377337316,
+          "label": "Hantverkargatan"
+        },
+        {
+          "node_id": 9450232320,
+          "way_id": 377337316,
+          "label": "Hantverkargatan"
+        },
+        {
+          "node_id": 4363274170,
+          "way_id": 377337316,
+          "label": "Hantverkargatan"
+        },
+        {
+          "node_id": 676764,
+          "way_id": 377337317,
+          "label": "Hantverkargatan"
+        },
+        {
+          "node_id": 2296297673,
+          "way_id": 328220336,
+          "label": "Hantverkargatan"
         },
         {
           "node_id": 33168665,
@@ -2270,7 +2265,7 @@
         "Ambient": 0.076,
         "Peds": 0.02,
         "NumLaps": 3,
-        "TimeLimit": 290,
+        "TimeLimit": 310,
         "Difficulty": 1
       },
       "professional": {
@@ -2282,16 +2277,16 @@
         "Ambient": 0.136,
         "Peds": 0.02,
         "NumLaps": 4,
-        "TimeLimit": 220,
+        "TimeLimit": 235,
         "Difficulty": 1
       },
       "target_speed_mps": {
         "amateur": 15.2,
         "professional": 18.5
       },
-      "suggested_route_length_m": 3377,
+      "suggested_route_length_m": 3648,
       "design": {
-        "flow": "A waterfront leg opens into a compact island weave; the return gate makes a straight-line shortcut through the block pointless.",
+        "flow": "Continue around the quay to Fridhemsgatan, then follow Hantverkargatan and Polhemsgatan into the northern pocket. Return through Scheelegatan onto Hantverkargatan for a clean City Hall approach.",
         "route_choice": "Gates may be visited in any order. This source-connected itinerary is a suggested clean run; plan a shorter street route if it saves the clock.",
         "shortcut_policy": "Retained shared OSM-node streets only; no proximity joins, water jumps or parks required.",
         "progression": "Set 4: junction workload, traffic and shrinking clock margin increase; late courses remain compact city dashes."
