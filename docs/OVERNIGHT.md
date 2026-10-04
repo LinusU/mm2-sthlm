@@ -250,3 +250,11 @@ are being replayed onto it in separate PR6. A measured blue slit beside
 Torsgränd is an importer winding defect, despite matching native shared
 vertices; its focused engine regression is red before the fix and green after.
 Actual native recapture is still required before claiming visual repair.
+
+### 07:30 bridge verification continuation
+
+Barnhusbron is repaired and pushed through `b1ee2f8`: exact reported native cameras, complete 222.13 m source-connected span traversal with forward departure, 495.1 m total travel, zero resets or player recoveries. Immutable package checksum `261fc0b60a272afc7dbff62650956252f2271472b749c5efc78153bf556f185a`, separate engine `1a822c1cc472f6c04a25a6832e346b162bbb0ff5` from PR6. Evidence is under `evidence/overnight-city/final-races/barnhusbron`; 241 offline tests/build/validate passed.
+
+Circuit full20 native matrix is running with two workers at unchanged12m/s on that immutable package; first seven variants pass strict player completion. Actual opponent recoveries are separately disclosed. Checkpoint Royal A/P still fail clean traversal although all five real opponents now finish after the generic route-occurrence engine repair. Their exact failures and source diagnostics are under `evidence/races/checkpoint/candidate-261fc0b6`.
+
+A pending opposite-carriageway profile alignment passes244 unit tests but the full rebuilt package FAILS shared-source junction validation at Vasabron/Strömsborgsbron and two Klarabergsviadukten joins. Do not commit or accept that prototype. Checkpoint worker is repairing this consistency while Blitz worker fixes confirmed same-level parallel bridge railing intrusions on Stadshusbron and Lilla Västerbron. Lilla has a separate later deck-fan spike; removing rail intrusions alone does not establish clean driving there. New race matrices await the validated structural/profile package. Current root tracked elevation edits are authorized integration work; do not discard them or mistake them for unrelated user edits.

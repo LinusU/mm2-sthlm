@@ -1,0 +1,81 @@
+{
+  "scope": "Preserved failed original-roster RoyalA/P candidate diagnostics; no clean race acceptance claim. Diagnosis source and actual native collider data kept separately.",
+  "files": [
+    {
+      "path": "checkpoint-junction261f-royal-a-cap12-kungs-report.json",
+      "sha256": "89ddbd4a0ad511f60d6265cb3c8fafa55536ed94692ee38e162504b69bbb29dc"
+    },
+    {
+      "path": "checkpoint-junction261f-royal-a-cap12-kungs.log",
+      "sha256": "3e1f37f9ea21f9e85074bf46489505f5ff1097190f52bc2083597dd2b2b35458"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-cap12-kungs-collision-query.json",
+      "sha256": "99f43edbe8d40e62bd81c60b7c4e999992cc4aafc5214d2507a707e70c2f99e9"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-cap12-kungs-contact-audit.json",
+      "sha256": "4e71371df75064c1224ffbc8eaf99648fa403553f9395b213f3cc405171e4cf2"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-cap12-kungs-floor-query.json",
+      "sha256": "12e83860b21afe78aa77e222cd420cd787c2e57cea4b1dd638e2e3c2e60d23bd"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-cap12-kungs-source.json",
+      "sha256": "8334eaee874a9b9800760d24976d7aeae6847179e9c3b8ac8b0cc3af0be29cca"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-kungs-collision-query.json",
+      "sha256": "736942a1ccdc6f6c45dcd18f687bf7b6bdd6cccbaf6eb4823f0b798c411d525c"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-kungs-guide-floor-query.json",
+      "sha256": "a83e7deb5a10b8a01352bad359fab01d3bd1d7b58aec7cdac5a4f510231dbc2c"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-kungs-rail-contact-audit.json",
+      "sha256": "50c16c77b00d5d28ee4a0814b8f5e298e3f408b4e6d41af507647a5bc41e0617"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-kungs-return-source.json",
+      "sha256": "ab02cbfbb34a097ab6bdfc424aabd2c0b12797e19a22459b41d229423b31e08d"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-royal-stall-floor-query.json",
+      "sha256": "fb8d4cec01c06508b09eeabd0c5c29ee88e6160750ec6cf39ffae3e160a1ee1d"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-stadshus-collision-query.json",
+      "sha256": "9d14d95bd433f5c0283826d960005a2ef3a14b5c66725481d3ffee435ee89f1c"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-stadshus-contact-audit.json",
+      "sha256": "2db91e57e386103db991c0bef2d07934f82fd1a2140d2f0ef21f014907fd01d5"
+    },
+    {
+      "path": "diagnosis/checkpoint-junction261f-stadshus-floor-query.json",
+      "sha256": "f358c8bbcf33e75cd862e64a5f79d41fdd72bc1ad875037eb015ae8e597fb585"
+    },
+    {
+      "path": "diagnosis/stadshus-parallel-rail-intrusion-fixture.json",
+      "sha256": "a9fc59c32ff5388f32af48fba7ac49cedf85d1ffafc89122e4026758929ef4dd"
+    },
+    {
+      "path": "royal-a-report.json",
+      "sha256": "ac0463733a1a06fc89a76c6355927d392f5d68ee0e24a6d47b6c0bab5b78efef"
+    },
+    {
+      "path": "royal-a.log",
+      "sha256": "98b6c17d559bd1b1f9572370f5af349ed0bdc5c95433b39386e35a9248c586d7"
+    },
+    {
+      "path": "royal-p-report.json",
+      "sha256": "ff99b8474688150c1bfa2db665820484748f039a58fd95c97d7d4ba30ca873c4"
+    },
+    {
+      "path": "royal-p.log",
+      "sha256": "09fb7c29d4d3b828f19db7fd10db2e343c84f186b97b1c1f97cd8036c63d85ce"
+    }
+  ]
+}

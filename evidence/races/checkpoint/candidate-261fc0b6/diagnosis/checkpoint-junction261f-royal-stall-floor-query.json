@@ -1,0 +1,113 @@
+{
+  "kungs_return_stall": {
+    "position": [
+      408.5969,
+      9.180177,
+      -525.7081
+    ],
+    "floors": [
+      {
+        "height": 9.32315,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_0.psdl",
+        "room": 1067
+      },
+      {
+        "height": 11.56215,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 556
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "kungs_aim": {
+    "position": [
+      397.4326,
+      10.50133,
+      -521.2798
+    ],
+    "floors": [
+      {
+        "height": 8.57708,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_0.psdl",
+        "room": 1060
+      },
+      {
+        "height": 10.07201,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 552
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "kungs_landing": {
+    "position": [
+      422.94852,
+      13.486417,
+      -532.8181
+    ],
+    "floors": [
+      {
+        "height": 9.38979,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_0.psdl",
+        "room": 1067
+      },
+      {
+        "height": 13.26409,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 556
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "city_stall": {
+    "position": [
+      69.49442,
+      8.405979,
+      -365.57428
+    ],
+    "floors": [
+      {
+        "height": 8.41619,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 141
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "oldtown_approach_stall": {
+    "position": [
+      72.32545,
+      6.223337,
+      14.904636
+    ],
+    "floors": [
+      {
+        "height": 6.22719,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_-1.psdl",
+        "room": 11
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  }
+}

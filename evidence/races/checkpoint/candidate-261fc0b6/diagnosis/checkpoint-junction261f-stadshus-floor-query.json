@@ -1,0 +1,98 @@
+{
+  "stadshus_stall": {
+    "position": [
+      625.7962,
+      4.393819,
+      -12.919755
+    ],
+    "floors": [
+      {
+        "height": 0.7,
+        "texture": "water",
+        "flags": 4,
+        "part": "part_0_0.psdl",
+        "room": 1130
+      },
+      {
+        "height": 4.39441,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 541
+      }
+    ],
+    "water_rooms": [
+      {
+        "part": "part_0_0.psdl",
+        "room": 1130,
+        "bound": 0.699999988079071,
+        "flags": 4
+      }
+    ],
+    "near_vertical_facades": []
+  },
+  "stadshus_water": {
+    "position": [
+      628.0,
+      0.5,
+      -9.0
+    ],
+    "floors": [
+      {
+        "height": 0.7,
+        "texture": "water",
+        "flags": 4,
+        "part": "part_0_0.psdl",
+        "room": 1130
+      },
+      {
+        "height": 4.43256,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 541
+      }
+    ],
+    "water_rooms": [
+      {
+        "part": "part_0_0.psdl",
+        "room": 1130,
+        "bound": 0.699999988079071,
+        "flags": 4
+      }
+    ],
+    "near_vertical_facades": []
+  },
+  "stadshus_aim": {
+    "position": [
+      637.57416,
+      4.36578,
+      -15.2219095
+    ],
+    "floors": [
+      {
+        "height": 0.7,
+        "texture": "water",
+        "flags": 4,
+        "part": "part_0_0.psdl",
+        "room": 1130
+      },
+      {
+        "height": 4.31209,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 541
+      }
+    ],
+    "water_rooms": [
+      {
+        "part": "part_0_0.psdl",
+        "room": 1130,
+        "bound": 0.699999988079071,
+        "flags": 4
+      }
+    ],
+    "near_vertical_facades": []
+  }
+}

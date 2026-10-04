@@ -1,0 +1,142 @@
+[
+  {
+    "source_edge": {
+      "from": 150501,
+      "to": 1412544364,
+      "way_id": 4491179
+    },
+    "guide_range": [
+      453,
+      455
+    ],
+    "road": {
+      "elevated_points": [
+        [
+          350.7935062165352,
+          501.72807695412695,
+          10.37735751505745
+        ],
+        [
+          341.9575121790625,
+          498.4886797721535,
+          12.029514283714352
+        ],
+        [
+          335.6655575558596,
+          496.1732343634879,
+          12.029379271505885
+        ]
+      ],
+      "id": 4491179,
+      "nodes": [
+        150501,
+        1412544364,
+        1412544359
+      ],
+      "points": [
+        [
+          350.7935062165352,
+          501.72807695412695
+        ],
+        [
+          341.9575121790625,
+          498.4886797721535
+        ],
+        [
+          335.6655575558596,
+          496.1732343634879
+        ]
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:left": "no",
+        "cycleway:right": "track",
+        "destination": "Kungsholmen",
+        "foot": "use_sidepath",
+        "highway": "secondary",
+        "lanes": "1",
+        "layer": "2",
+        "lit": "yes",
+        "maxspeed": "40",
+        "maxweight:signed": "no",
+        "name": "Kungsbron",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "wikidata": "Q6444547",
+        "wikipedia": "sv:Kungsbron"
+      },
+      "width": 9.0
+    },
+    "body_lateral_m": 0.73805116841609
+  },
+  {
+    "source_edge": {
+      "from": 1412544364,
+      "to": 1412544359,
+      "way_id": 4491179
+    },
+    "guide_range": [
+      455,
+      457
+    ],
+    "road": {
+      "elevated_points": [
+        [
+          350.7935062165352,
+          501.72807695412695,
+          10.37735751505745
+        ],
+        [
+          341.9575121790625,
+          498.4886797721535,
+          12.029514283714352
+        ],
+        [
+          335.6655575558596,
+          496.1732343634879,
+          12.029379271505885
+        ]
+      ],
+      "id": 4491179,
+      "nodes": [
+        150501,
+        1412544364,
+        1412544359
+      ],
+      "points": [
+        [
+          350.7935062165352,
+          501.72807695412695
+        ],
+        [
+          341.9575121790625,
+          498.4886797721535
+        ],
+        [
+          335.6655575558596,
+          496.1732343634879
+        ]
+      ],
+      "tags": {
+        "bridge": "yes",
+        "cycleway:left": "no",
+        "cycleway:right": "track",
+        "destination": "Kungsholmen",
+        "foot": "use_sidepath",
+        "highway": "secondary",
+        "lanes": "1",
+        "layer": "2",
+        "lit": "yes",
+        "maxspeed": "40",
+        "maxweight:signed": "no",
+        "name": "Kungsbron",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "wikidata": "Q6444547",
+        "wikipedia": "sv:Kungsbron"
+      },
+      "width": 9.0
+    },
+    "body_lateral_m": 0.73805116841609
+  }
+]

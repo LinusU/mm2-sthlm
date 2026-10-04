@@ -1,0 +1,27 @@
+{
+  "cap12_kungs_late_stall": {
+    "position": [
+      343.84332,
+      11.373788,
+      -499.96613
+    ],
+    "floors": [
+      {
+        "height": 2.39036,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_0.psdl",
+        "room": 1052
+      },
+      {
+        "height": 11.2609,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_0.psdl",
+        "room": 653
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  }
+}
