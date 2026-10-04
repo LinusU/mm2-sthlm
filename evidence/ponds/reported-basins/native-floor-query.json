@@ -1,0 +1,280 @@
+{
+  "basins": [
+    {
+      "id": "way/338452356",
+      "position": [
+        510.715764043225,
+        1091.1313848573081
+      ],
+      "water_level_m": 24.860188618661688,
+      "floor_level_m": 24.66018861866169,
+      "native_floors": [
+        {
+          "y_m": 24.66019058227539,
+          "material": "sthlm_pond_floor",
+          "room": 1105,
+          "deadly": false
+        }
+      ]
+    },
+    {
+      "id": "way/697302459",
+      "position": [
+        513.9057872835089,
+        1107.9350619923653
+      ],
+      "water_level_m": 26.247008031957122,
+      "floor_level_m": 26.047008031957123,
+      "native_floors": [
+        {
+          "y_m": 26.04701042175293,
+          "material": "sthlm_pond_floor",
+          "room": 1107,
+          "deadly": false
+        }
+      ]
+    }
+  ],
+  "route_samples": [
+    {
+      "x": 510,
+      "north": 1081,
+      "y_m": 23.422243758671062,
+      "material": "grass",
+      "room": 1056,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1083,
+      "y_m": 23.96668905367431,
+      "material": "grass",
+      "room": 1056,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1085,
+      "y_m": 24.521591851722096,
+      "material": "paving",
+      "room": 1115,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1087,
+      "y_m": 24.816018416023333,
+      "material": "paving",
+      "room": 1115,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1089,
+      "y_m": 24.740779436250232,
+      "material": "sthlm_pond_floor",
+      "room": 1106,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1091,
+      "y_m": 24.66019058227539,
+      "material": "sthlm_pond_floor",
+      "room": 1105,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1093,
+      "y_m": 24.66019058227539,
+      "material": "sthlm_pond_floor",
+      "room": 1105,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1095,
+      "y_m": 24.81493215154104,
+      "material": "sthlm_pond_floor",
+      "room": 1106,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1097,
+      "y_m": 25.061789977268802,
+      "material": "paving",
+      "room": 1115,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1099,
+      "y_m": 25.45571340408254,
+      "material": "paving",
+      "room": 1115,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1101,
+      "y_m": 25.756704844913013,
+      "material": "paving",
+      "room": 1116,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1103,
+      "y_m": 26.124272718141356,
+      "material": "paving",
+      "room": 1116,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1105,
+      "y_m": 26.201575887571707,
+      "material": "sthlm_pond_floor",
+      "room": 1108,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1107,
+      "y_m": 26.04701042175293,
+      "material": "sthlm_pond_floor",
+      "room": 1107,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1109,
+      "y_m": 26.04701042175293,
+      "material": "sthlm_pond_floor",
+      "room": 1107,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1111,
+      "y_m": 26.14511986882891,
+      "material": "sthlm_pond_floor",
+      "room": 1108,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1113,
+      "y_m": 26.28343373473645,
+      "material": "paving",
+      "room": 1116,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1115,
+      "y_m": 26.55170988962046,
+      "material": "paving",
+      "room": 1116,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1117,
+      "y_m": 26.77172992735187,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1119,
+      "y_m": 26.887956374666818,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1121,
+      "y_m": 27.029584141893274,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1123,
+      "y_m": 27.19204312380308,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1125,
+      "y_m": 27.35450210571289,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1127,
+      "y_m": 27.67622318345492,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1129,
+      "y_m": 27.730368317015326,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1131,
+      "y_m": 27.769289614329324,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1133,
+      "y_m": 27.706267172116785,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1135,
+      "y_m": 27.54239845873788,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1137,
+      "y_m": 27.37852974535897,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    },
+    {
+      "x": 510,
+      "north": 1139,
+      "y_m": 27.214661031980068,
+      "material": "grass",
+      "room": 1060,
+      "deadly": false
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "source_revision": "eb5c7f299fa1922f08e1105ead5f423887820a92",
+  "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_binary_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "engine_pr": "https://github.com/LinusU/rust-mm2/pull/6",
+  "package_checksums_sha256": "8dc0d56c21efd44b786661756135d7942525e8cc494d2a62a30589ba872bd187",
+  "frozen_package": "/private/tmp/stockholm-herkules-8dc0d56c/mods/stockholm",
+  "map_code_changes": false,
+  "engine_code_changes": false,
+  "evidence_checksums": {
+    "README.md": "a249abfb97158a817bb71cfa5c663715852ca394e3ac89539044bfddd1590349",
+    "both-basins-driving-trace.log": "df1c17817bdfebe619e51b4015f20486f88afdfade6c92c365fdd0aa8a6d9bf6",
+    "both-basins-driving.log": "2ebaba80ebb2654a115fc62eec6a9746178a03f0c34ce64319ef6a979fc93774",
+    "current-native.log": "2660c9fef1d82c307d02ce8bd73c126ff13a4373f2804fddeebda937d51f3858",
+    "current-native.png": "1665eb514377b2c305e21aad245d9fa657bcce4679e4ddfc54cd5153ee123d76",
+    "direct-crossing-600.log": "9ad21384e89ca4f8d3efa2d6fa97050dbd6716b549af9a5bb2e8b97070e4d57c",
+    "direct-crossing.log": "1ad09255b48f24c0343a4d8f4d0e47b966f6748207028adb4aed7dc9cc9768c2",
+    "native-floor-query.json": "b8e1a9e07fc0daea9b0c3a740718c1cab7d38ee23860c542eb1570a2da36ce46",
+    "northbound-rejected-guide.opp": "4dcc8e49adadb9f069a903ba2e4b6b65205c9b56657608d5094bcca8cb10eb04",
+    "probe-native.py": "6f096810e509aae86aeb41f6463f57b8f3c3f06bca6284cb148982993a8f1ec6",
+    "source-guide.opp": "4dcc8e49adadb9f069a903ba2e4b6b65205c9b56657608d5094bcca8cb10eb04"
+  }
+}
