@@ -7,7 +7,7 @@ Ten original Stockholm events graduate from the City Hall neighbourhood to a ful
 | 0 | City Hall Shuffle | 2 | 2.29 | 4 |
 | 1 | Kungsholmen Calling | 3 | 2.55 | 4 |
 | 2 | City Lights | 3 | 3.28 | 4 |
-| 3 | Royal Appointment | 4 | 5.62 | 5 |
+| 3 | Royal Appointment | 4 | 5.78 | 5 |
 | 4 | Museum Mile | 5 | 6.35 | 5 |
 | 5 | South Side Story | 4 | 8.18 | 5 |
 | 6 | Northern Exposure | 6 | 9.39 | 6 |
@@ -42,3 +42,5 @@ Opponent plans now use exact-node `route_via` and `opponent_route_via` itinerari
 AI/main QA itineraries exclude unnamed service driveways and non-car path classes; named waterfront service roads remain available where their retained width is at least five metres. The shortest public-street City Hall alternative is the primary guide; native AI traversed that alternative without recovery in the recorded pre-adaptive-surface fixture. Full source heights and coherent-package physical acceptance remain separate requirements.
 
 Northern Exposure approaches Sergels Torg from the connected Hamngatan carriageway and the west side of the source roundabout. All three AI plans preserve their gate permutations; the Sveavägen junction at source node 938308570 now turns 12–13 degrees instead of 155 degrees. The primary itinerary gains 58 m, retaining progressive distance between South Side Story and Two Banks.
+
+Royal Appointment replaces the 139-degree Vasagatan median reversal with a connected block through Barnhusgatan, Östra Järnvägsgatan and Olof Palmes Gata. The splice adds 162 m, has no repeated source nodes, and keeps its largest turn below 94 degrees. Both rival orders, all gates, the grid, five opponents and native parameters are preserved. The Kungsbron source itineraries outside the splice remain unchanged; this route improvement does not establish clean native acceptance of the bridge.

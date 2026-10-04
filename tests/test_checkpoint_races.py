@@ -110,6 +110,50 @@ class CheckpointCatalogTests(unittest.TestCase):
                 visits += 1
         self.assertEqual(visits, 4)
 
+    def test_royal_block_avoids_median_foldback_without_skipping_kungsbron(self):
+        event = self.catalog["events"][3]
+        self.assertEqual(event["opponent_orders"], [[3, 2, 1, 0], [2, 3, 1, 0]])
+        self.assertEqual(event["start"]["node_id"], 846210750)
+        self.assertEqual(event["finish"]["node_id"], 11882982382)
+        self.assertEqual(
+            [a["node_id"] for a in event["checkpoints"]],
+            [1262150300, 486067715, 11888690008, 9300440263],
+        )
+        for rank in ("amateur", "professional"):
+            self.assertEqual(event[rank]["Opponents"], 5)
+            self.assertEqual(event[rank]["TimeLimit"], 0)
+        for index, plan in enumerate(event["opponent_route_via"]):
+            nodes = [a["node_id"] for a in plan]
+            start = nodes.index(9982693744)
+            end = nodes.index(1503361290, start)
+            block = nodes[start : end + 1]
+            self.assertEqual(len(block), len(set(block)))
+            streets = {
+                self.ways[a["way_id"]]["tags"].get("name") for a in plan[start:end]
+            }
+            self.assertTrue(
+                {"Barnhusgatan", "Östra Järnvägsgatan", "Olof Palmes Gata"} <= streets
+            )
+            for a, b, c in zip(
+                nodes[start - 1 : end], block, nodes[start + 1 : end + 2]
+            ):
+                pa, pb, pc = [self.positions[n] for n in (a, b, c)]
+                incoming = [pb[k] - pa[k] for k in range(2)]
+                outgoing = [pc[k] - pb[k] for k in range(2)]
+                cosine = sum(x * y for x, y in zip(incoming, outgoing)) / (
+                    math.hypot(*incoming) * math.hypot(*outgoing)
+                )
+                self.assertGreater(cosine, math.cos(math.radians(105)))
+            # Keep the physical bridge that failed; the override must not
+            # evade that source-owned approach to make acceptance pass.
+            direction = (266274647, 214896914) if index == 0 else (214896914, 266274647)
+            self.assertTrue(
+                any(
+                    (a["node_id"], b["node_id"]) == direction and a["way_id"] == 4488522
+                    for a, b in zip(plan, plan[1:])
+                )
+            )
+
     def test_source_turnaround_in_through_plan_is_rejected(self):
         bad = copy.deepcopy(self.catalog)
         plan = bad["events"][0]["opponent_route_via"][0]
