@@ -300,6 +300,108 @@ def _anchors(event, family, order=None):
     return [event["start"], *(gates[i] for i in order), event["finish"]]
 
 
+def through_margins(graph, driving, gates, reach_m=14.0):
+    """Audit source gate traversal beyond the native AI point-reach distance."""
+    points = driving["points"]
+    stations = _stations([[p[0], p[2]] for p in points])
+    result = []
+    for anchor in gates:
+        center = graph.node_point(anchor["node_id"], anchor["way_id"])
+        angle = math.radians(gate_heading(graph, anchor))
+        normal = [-math.sin(angle), math.cos(angle)]
+        margin = None
+        for index, point in enumerate(points):
+            if (
+                math.hypot(point[0] - center[0], point[2] - center[2]) > 0.05
+                or abs(point[1] - center[1]) > 1
+            ):
+                continue
+            before = max(0, bisect.bisect_left(stations, stations[index] - 40) - 1)
+            after = min(
+                len(points) - 1, bisect.bisect_left(stations, stations[index] + 40)
+            )
+            signed = [
+                (p[0] - center[0]) * normal[0] + (p[2] - center[2]) * normal[1]
+                for p in (points[before], points[after])
+            ]
+            if signed[0] * signed[1] < 0 and min(abs(v) for v in signed) > reach_m:
+                margin = {
+                    "label": anchor["label"],
+                    "node_id": anchor["node_id"],
+                    "way_id": anchor["way_id"],
+                    "before_m": abs(signed[0]),
+                    "after_m": abs(signed[1]),
+                    "minimum_plane_margin_m": min(abs(v) for v in signed),
+                }
+                break
+        if margin is None:
+            raise ValueError(
+                f"No through crossing beyond {reach_m:g} m reach: {anchor['label']}"
+            )
+        result.append(margin)
+    return result
+
+
+def finish_runout(graph, driving, distance_m=60.0):
+    """Continue beyond the finish using retained source edges and owned heights."""
+    points = list(driving["points"])
+    node = driving["nodes"][-1]
+    visited = set(driving["nodes"][-2:])
+    desired = [points[-1][0] - points[-2][0], points[-1][2] - points[-2][2]]
+    edges = []
+    walked = 0.0
+    while walked < distance_m:
+        choices = []
+        for neighbor in graph.adjacency.get(node, {}):
+            if neighbor in visited:
+                continue
+            dx = graph.positions[neighbor][0] - graph.positions[node][0]
+            dz = -(graph.positions[neighbor][1] - graph.positions[node][1])
+            norm = math.hypot(dx, dz) * math.hypot(*desired)
+            score = (dx * desired[0] + dz * desired[1]) / norm if norm else -1
+            if score < -0.01:
+                continue
+            for owner in graph.edges[(node, neighbor)]:
+                if graph.roads[owner]["width"] < 5:
+                    continue
+                samples = graph.samples(node, neighbor, owner)
+                if abs(samples[0][1] - points[-1][1]) <= 1:
+                    choices.append((score, -neighbor, -owner, neighbor, owner, samples))
+        if not choices:
+            raise ValueError("Finish has no forward source-connected driving runout")
+        _, _, _, neighbor, owner, samples = max(choices)
+        edges.append({"from": node, "to": neighbor, "way_id": owner})
+        for point in samples[1:]:
+            previous = points[-1]
+            span = math.hypot(point[0] - previous[0], point[2] - previous[2])
+            remaining = distance_m - walked
+            if span >= remaining:
+                t = remaining / span
+                points.append(
+                    [previous[k] + (point[k] - previous[k]) * t for k in range(3)]
+                )
+                walked = distance_m
+                break
+            points.append(point)
+            walked += span
+        desired = [
+            graph.positions[neighbor][0] - graph.positions[node][0],
+            -(graph.positions[neighbor][1] - graph.positions[node][1]),
+        ]
+        node = neighbor
+        visited.add(node)
+    return {
+        **driving,
+        "points": points,
+        "length_m": driving["length_m"] + walked,
+        "finish_runout": {
+            "length_m": walked,
+            "edges": edges,
+            "end_position": points[-1],
+        },
+    }
+
+
 def gate_heading(graph, anchor):
     """Gate plane normal follows its owning source road, in waypoint convention."""
     road = graph.roads[anchor["way_id"]]
@@ -419,6 +521,9 @@ def write(out, city, catalog_paths=None, opponent_vehicle_geo="sthlm_racer"):
                     raise ValueError(
                         f"Driving guide misses gameplay gate: {anchor['label']}"
                     )
+            guide = dense if family == "circuit" else finish_runout(graph, dense)
+            if event.get("opponent_route_via"):
+                through_margins(graph, guide, visible[1:])
             maximum = max(
                 event[rank]["Opponents"] for rank in ("amateur", "professional")
             )
@@ -465,23 +570,36 @@ def write(out, city, catalog_paths=None, opponent_vehicle_geo="sthlm_racer"):
                             ]
                         )
                         + "\n"
-                        for j, point in enumerate(dense["points"])
+                        for j, point in enumerate(guide["points"])
                     )
                 )
                 count = params["Opponents"]
                 orders = event.get("opponent_orders", [event.get("suggested_order")])
                 roster = []
                 lengths = []
+                margins = []
                 for opponent in range(count):
-                    order = orders[opponent % len(orders)]
+                    plan_index = opponent % len(orders)
+                    order = orders[plan_index]
+                    authored_plans = event.get("opponent_route_via")
                     driving = (
-                        dense
-                        if family == "circuit"
-                        or event.get("route_via")
-                        or order is None
-                        or order == event.get("suggested_order")
-                        else route(city, _anchors(event, family, order), graph=graph)
+                        route(city, authored_plans[plan_index], graph=graph)
+                        if authored_plans
+                        else (
+                            dense
+                            if family == "circuit"
+                            or event.get("route_via")
+                            or order is None
+                            or order == event.get("suggested_order")
+                            else route(
+                                city, _anchors(event, family, order), graph=graph
+                            )
+                        )
                     )
+                    if family != "circuit":
+                        driving = finish_runout(graph, driving)
+                    if authored_plans:
+                        margins.append(through_margins(graph, driving, visible[1:]))
                     name = f"{stem}-{tag}-{opponent}.opp"
                     speed = event.get("target_speed_mps", {}).get(rank, 18.0)
                     (race_dir / name).write_text(
@@ -522,6 +640,7 @@ def write(out, city, catalog_paths=None, opponent_vehicle_geo="sthlm_racer"):
                     "qa_guide": str(guide_path.relative_to(out)),
                     "opponents": count,
                     "opponent_route_lengths_m": lengths,
+                    "source_through_margins": margins,
                     "time_limit_s": params["TimeLimit"] if family == "blitz" else None,
                     "target_speed_goal_mps": event.get("target_speed_mps", {}).get(
                         rank
@@ -553,6 +672,7 @@ def write(out, city, catalog_paths=None, opponent_vehicle_geo="sthlm_racer"):
                         for a in resolved
                     ],
                     "route": dense,
+                    "finish_runout": guide.get("finish_runout"),
                     "grid": grid,
                     "variants": variant_reports,
                 }

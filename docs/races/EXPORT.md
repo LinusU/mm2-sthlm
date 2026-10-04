@@ -12,7 +12,7 @@ Every mode also emits `qa/races/<stem>-a-guide.opp` and `-p-guide.opp` outside t
 
 ## Verification
 
-Ten offline tests cover source crossing isolation, boundary holes, bridge/underpass height ownership, directional profile sampling, incompatible height joins, all three native record sets a dense guide missing its gameplay gate, road-width trigger bounds, overlapping visible gate rejection, and source-owner gate normal convention. Full suite: 131 tests passed; required Ruff checks, baseline offline map build and validation passed. Final root integration rebuild is still required after installing all mode catalogs and the shared hook.
+Thirteen offline tests cover source crossing isolation, boundary holes, bridge/underpass height ownership, directional profile sampling, incompatible height joins, all three native record sets, a dense guide missing its gameplay gate, road-width trigger bounds, overlapping visible gate rejection, source-owner gate normal convention, source-connected finish height/runout, and through-plane margins beyond native AI point reach. The combined root suite now passes 218 tests; required Ruff checks, complete offline city build and package validation pass. Native full-course acceptance is tracked separately from these offline checks.
 
 Native parser audit on the stable combined 8,025-road graph: 30 events ready, 60 difficulty definitions and 60 rosters built, zero strict failures, zero extra stems. Original car loads with four physical wheels. Inspector source checkout `46f351b9186ad2d4d955e9d0d0a1ef1240d2332f`, inspector SHA-256 `ad924ee64bc3158ddb32f195fcede7e9193893a0ebc9af1f14fa07f9bc326983`. Audit log: `evidence/native-event-audit.txt`. Native records are generated from source; no retail files are used.
 
@@ -27,3 +27,7 @@ mm2 --mods dist --city stockholm --car sthlm_racer --event blitz:0 --headless --
 Create the empty install directory before inspection. Scripted driving and parser audits do not establish in-engine visual quality or player progression records. Marker/start screenshots and native timer/gate/finish progression must accompany final integrated acceptance.
 
 Native gate planes use each exact owning road’s local tangent. Their normal convention is X = −sin(a), Z = +cos(a), distinct from vehicle spawn yaw (Z = −cos(a)); a shared grid heading must never orient every gameplay gate.
+
+Non-circuit QA guides and opponent paths append 60 m of forward retained-road runout beyond the finish, sampling the exact owning source profile. `route.length_m` remains the gameplay itinerary; `finish_runout` records the continuation separately. Missing forward connectivity fails closed. `opponent_route_via` contains authored exact-node plans aligned with `opponent_orders`, independent of the primary `route_via`; each sparse gate stays on a through-driving corridor.
+
+`through_margins` audits each authored Checkpoint plan at every required source-owned gate and finish, requiring opposite signed plane sides with more than 14 m margin. Its evidence is geometric; it does not claim collision-free physical driving. The reproducible full native matrix is documented in [MATRIX.md](MATRIX.md).

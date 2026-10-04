@@ -8,7 +8,16 @@ import unittest
 from shapely.geometry import Polygon, mapping
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from races import gate_heading, gate_radius, resolve_anchor, route, source_graph, write  # noqa: E402
+from races import (
+    finish_runout,
+    gate_heading,
+    gate_radius,
+    resolve_anchor,
+    route,
+    source_graph,
+    through_margins,
+    write,
+)  # noqa: E402
 
 
 def road(way, nodes, points, heights=None, width=9):
@@ -29,6 +38,44 @@ def anchor(node, way=10):
 
 
 class SourceRaceRoutingTests(unittest.TestCase):
+    def test_through_audit_requires_signed_margin_beyond_ai_reach(self):
+        city = {"roads": [road(10, [1, 2, 3], [[0, 0], [50, 0], [100, 0]])]}
+        graph = source_graph(city)
+        forward = route(city, [anchor(1), anchor(3)], graph=graph)
+        margins = through_margins(graph, forward, [anchor(2)])
+        self.assertGreater(margins[0]["minimum_plane_margin_m"], 14)
+        turnaround = route(city, [anchor(1), anchor(3), anchor(1)], graph=graph)
+        with self.assertRaisesRegex(ValueError, "No through crossing"):
+            through_margins(graph, turnaround, [anchor(3)])
+
+    def test_finish_runout_preserves_source_owner_height_beyond_marker(self):
+        city = {
+            "roads": [
+                road(10, [1, 2], [[0, 0], [100, 0]], [14, 14]),
+                road(20, [2, 3], [[100, 0], [200, 0]], [14, 18]),
+            ]
+        }
+        graph = source_graph(city)
+        original = route(city, [anchor(1), anchor(2)], graph=graph)
+        extended = finish_runout(graph, original)
+        self.assertEqual(original["points"][-1], [100, 14, 0])
+        self.assertEqual(extended["points"][-1], [160, 16.4, 0])
+        self.assertEqual(
+            extended["finish_runout"]["edges"], [{"from": 2, "to": 3, "way_id": 20}]
+        )
+        self.assertEqual(extended["length_m"], 160)
+
+    def test_finish_runout_cannot_jump_to_nearby_unconnected_road(self):
+        city = {
+            "roads": [
+                road(10, [1, 2], [[0, 0], [100, 0]]),
+                road(20, [3, 4], [[100, 0], [200, 0]]),
+            ]
+        }
+        graph = source_graph(city)
+        with self.assertRaisesRegex(ValueError, "source-connected"):
+            finish_runout(graph, route(city, [anchor(1), anchor(2)], graph=graph))
+
     def test_gate_normal_uses_waypoint_convention_and_owned_tangent(self):
         city = {
             "roads": [
