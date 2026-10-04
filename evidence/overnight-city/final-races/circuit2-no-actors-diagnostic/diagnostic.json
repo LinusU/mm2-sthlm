@@ -1,0 +1,37 @@
+{
+  "scope": "Isolated source diagnosis ONLY; opponent count set to zero in copied native CSV/AI maps. Not production race acceptance. All native city/car/guide/gate geometry unchanged.",
+  "parent_manifest_sha256": "0c69b55937d4f44ee400220f68a94728338aed55e35409f37f3d1f081f5cf04e",
+  "engine_revision": "c4156b780969666f420375d9f5647f51913646a0",
+  "engine_sha256": "b2f82e39f58ab16032c4fbf59c6a2dc0851a4bbb871ebe32d984e6af788d8742",
+  "guide_sha256": "73933b235736461abfd0722ee5c23a87c113ee42d18ff15d015518ccfd3cd772",
+  "command": [
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-latest",
+    "--mods",
+    "/private/tmp/circuit2-no-actors0c69/mods",
+    "--city",
+    "stockholm",
+    "--car",
+    "sthlm_racer",
+    "--event",
+    "circuit:2",
+    "--headless",
+    "--bot",
+    "--bot-route",
+    "/private/tmp/circuit2-no-actors0c69/mods/stockholm/qa/races/circuit2-a-guide.opp",
+    "--bot-speed",
+    "12",
+    "--frames",
+    "55786",
+    "--no-profile"
+  ],
+  "trace_filter": "warn,mm2_app::scripted=info",
+  "modified_fixture_sha256": {
+    "race/stockholm/mmcircuitdata.csv": "48106a5630749413c272abe04a71c22c3d1eac58783a5d384c20b9b89dd8e1fd",
+    "race/stockholm/circuit2.aimap": "52fe7ffb8071a0cc84e2819105c626c03547db67dc7c6383675c92d3321d4769",
+    "race/stockholm/circuit2.aimap_p": "2ebc5572bd2241256299b78afbe6d39040636f1272f0d805e5c748019e880be7"
+  },
+  "exit_code": 0,
+  "wall_seconds": 395.3932031248696,
+  "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=55786 ticks=69920 driver=scripted diff=amateur phase=results impacts=2 dropped=0 peak=12.1m/s travel=6845.9m sim=582.67s resets=0 controls=41400t/28288b/14762s finite=true moved=8m wheels=4/4 final=(2022,24.2,1741) race=Complete cp=12/12 results=1 lap=2/2 pos=1/1 outcome=finished place=1 p_rec=0r/2e env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/13m dash=absent:missing-spec+pkg trk=sized ind=on/0m/0b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+29x",
+  "log_sha256": "0f5a4999a9bc142660cf2fd72541ca4db278e61cd887732373f8ae325679f821"
+}

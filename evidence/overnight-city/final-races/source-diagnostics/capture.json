@@ -1,0 +1,35 @@
+{
+  "scope": "Native static visual source diagnosis; parked player, no driving acceptance. Root inspected both images. Visible jagged paving near the exact stuck location warrants a wider collider/floor audit. Nearby facade bounds alone do not explain the stall.",
+  "engine_revision": "c4156b780969666f420375d9f5647f51913646a0",
+  "engine_sha256": "b2f82e39f58ab16032c4fbf59c6a2dc0851a4bbb871ebe32d984e6af788d8742",
+  "package_manifest_sha256": "0c69b55937d4f44ee400220f68a94728338aed55e35409f37f3d1f081f5cf04e",
+  "camera": [
+    1573,
+    35,
+    30,
+    0,
+    -70
+  ],
+  "spawn": [
+    1572.914,
+    4.6,
+    8.045,
+    -110
+  ],
+  "flags": [
+    "--car",
+    "sthlm_racer",
+    "--no-profile",
+    "--parked",
+    "--no-hud",
+    "--frames",
+    "30"
+  ],
+  "nearest_facade_bound_distance_m": 9.012524333776629,
+  "sha256": {
+    "slottskajen-context-native.log": "aeab5119b35a37f1a620b74e5ce2c09c8e0c61c27466d65bda10007eff86c275",
+    "slottskajen-overhead-native.png": "ad96037980a514e1f50abf88a55afefb6104f2a0951d44c5a6a8d96067ad9828",
+    "slottskajen-overhead-native.log": "1b0a376767f43517d3322fe269779307ae51df17de233fec23ab629447e96c4a",
+    "slottskajen-native-walls.json": "7606efbe5105370614910eb93d4e836343c858450b917e6bc235ce8fe286db08"
+  }
+}

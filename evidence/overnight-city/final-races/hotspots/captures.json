@@ -1,0 +1,40 @@
+{
+  "engine_binary_sha256": "234aef8f82e52634e112f7a398ad63d252bf131d11e9d3048d02f6a24ea76d15",
+  "package_manifest_sha256": "4cdd3f0ec92f9ba04343410951c2b2506755ee4a75488f9aabfd35802e81e457",
+  "scope": "Actual native game captures. Inspection is a separate recorded step; vehicle driving evidence is separate.",
+  "results": [
+    {
+      "name": "torsgrand-race-hotspot",
+      "camera": [
+        -5,
+        24,
+        -1123,
+        -146,
+        -18
+      ],
+      "scope": "Physical race recovery hotspot at source way2407293; diagnostic, not proof of repair.",
+      "command": [
+        "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-trace",
+        "--mods",
+        "/Users/linus/coding/mm2-sthlm/dist",
+        "--city",
+        "stockholm",
+        "--no-profile",
+        "--time-of-day",
+        "1",
+        "--parked",
+        "--no-hud",
+        "--spawn=-31.488166412776778,4.75469158322535,138.05843248238915,-90.69759070561142",
+        "--cam=-5,24,-1123,-146,-18",
+        "--frames",
+        "30",
+        "--screenshot",
+        "/Users/linus/coding/mm2-sthlm/evidence/overnight-city/final-races/hotspots/torsgrand-race-hotspot.png"
+      ],
+      "exit_code": 0,
+      "captured": true,
+      "visually_inspected": false,
+      "screenshot_sha256": "81521f62cf0eed7312fcf29cd19dc13c901d411456bf8e231813e47f6c4eb738"
+    }
+  ]
+}
