@@ -33,8 +33,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "e42b183abdb635eb549a8a4738779a82ec8453b198dc101f34944f4a4b8802c0"
+      "visually_inspected": true,
+      "screenshot_sha256": "e42b183abdb635eb549a8a4738779a82ec8453b198dc101f34944f4a4b8802c0",
+      "inspection": "Two brick/copper church towers, roof and arched facade visible; simplified silhouette."
     },
     {
       "name": "library",
@@ -66,8 +67,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "5cd4003a52986ed51d8e878e3e33a7cde447301d65be20fb3858803d1da9549e"
+      "visually_inspected": true,
+      "screenshot_sha256": "5cd4003a52986ed51d8e878e3e33a7cde447301d65be20fb3858803d1da9549e",
+      "inspection": "Library rotunda and lower wings visible; distant massing only."
     },
     {
       "name": "cultural-waterfront",
@@ -99,8 +101,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "aa6048372dd15f4d4e86e70760b34f8cec5af61aabf50dd7e2cdff979f23624a"
+      "visually_inspected": true,
+      "screenshot_sha256": "aa6048372dd15f4d4e86e70760b34f8cec5af61aabf50dd7e2cdff979f23624a",
+      "inspection": "Waterfront cultural massing and shore/bridge decks visible."
     },
     {
       "name": "konserthuset-accepted",
@@ -132,8 +135,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "d13b52b1c37f5b2708c6903cd1a6e442ab76601022695ce1391be5f769815800"
+      "visually_inspected": true,
+      "screenshot_sha256": "d13b52b1c37f5b2708c6903cd1a6e442ab76601022695ce1391be5f769815800",
+      "inspection": "Blue concert hall and columned front visible; simplified massing."
     },
     {
       "name": "door-kungsholmen",
@@ -166,8 +170,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "f1f4f60bcece25e5e5913ca74cbeda07b50fb36e3fc9f525089257235eb94410"
+      "visually_inspected": true,
+      "screenshot_sha256": "f1f4f60bcece25e5e5913ca74cbeda07b50fb36e3fc9f525089257235eb94410",
+      "inspection": "Ground-floor door panels/handle distinct from adjacent repeated windows."
     },
     {
       "name": "door-gamla_stan",
@@ -200,8 +205,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "cb3abb3806e18a9f03fa5ea951d7ece8422aa16d200bfb25c34caed1d2ab5fa2"
+      "visually_inspected": true,
+      "screenshot_sha256": "cb3abb3806e18a9f03fa5ea951d7ece8422aa16d200bfb25c34caed1d2ab5fa2",
+      "inspection": "Door above stone pavement, adjacent tall windows and warm facade visible."
     },
     {
       "name": "door-ostermalm",
@@ -234,8 +240,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "2b14dcbe83aa04ea3bf1172c679c6d8a3a814897ee82528343776a40840cebfe"
+      "visually_inspected": true,
+      "screenshot_sha256": "2b14dcbe83aa04ea3bf1172c679c6d8a3a814897ee82528343776a40840cebfe",
+      "inspection": "Door distinct from tall facade windows, sill meets local ground."
     },
     {
       "name": "stortorget",
@@ -267,8 +274,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "49a94e427a7fa90d477224f131ae709a4fefd0a6398066737d4e77670f98785e"
+      "visually_inspected": true,
+      "screenshot_sha256": "49a94e427a7fa90d477224f131ae709a4fefd0a6398066737d4e77670f98785e",
+      "inspection": "Stone plaza, warm facades and pitched roofs visible; no grass overlap."
     },
     {
       "name": "junotappan",
@@ -300,8 +308,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "b9f90dfedd7ece89488b6aee45298627797cfa20bc8dcbf85af89ac00c7ec77b"
+      "visually_inspected": true,
+      "screenshot_sha256": "b9f90dfedd7ece89488b6aee45298627797cfa20bc8dcbf85af89ac00c7ec77b",
+      "inspection": "Designated green park remains amid stone alleys."
     },
     {
       "name": "forumdammen",
@@ -334,8 +343,9 @@
       ],
       "exit_code": 0,
       "captured": true,
-      "visually_inspected": false,
-      "screenshot_sha256": "e2cbc76cc791b34b7ff350f773633be1d4bc46d3009ffa5f84bdb85d54aa29ce"
+      "visually_inspected": true,
+      "screenshot_sha256": "e2cbc76cc791b34b7ff350f773633be1d4bc46d3009ffa5f84bdb85d54aa29ce",
+      "inspection": "Local cyan water plane and paved banks visible, no sea-level drop."
     }
   ]
 }
