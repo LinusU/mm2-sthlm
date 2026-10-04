@@ -396,27 +396,42 @@ def render(
                 ]
             )
     strip_tree = STRtree(footprints) if footprints else None
+    strip_edges = [
+        [
+            LineString([points[a], points[b]])
+            for a, b in ((0, 1), (1, 3), (3, 2), (2, 0))
+        ]
+        for _, points, _, _ in strips
+    ]
 
     def seam_height(x, n):
         point = Point(x, n)
-        if strip_tree is not None:
-            nearest = int(strip_tree.nearest(point))
-            poly = footprints[nearest]
-            if poly.boundary.distance(point) < 0.0001:
-                coords = strips[nearest][1]
-                levels = strip_levels[nearest]
-                edges = [(0, 1), (1, 3), (3, 2), (2, 0)]
-                best = min(
-                    edges,
-                    key=lambda e: LineString([coords[e[0]], coords[e[1]]]).distance(
-                        point
-                    ),
-                )
-                a, b = best
-                edge = LineString([coords[a], coords[b]])
-                t = edge.project(point) / edge.length
-                return round(levels[a] + t * (levels[b] - levels[a]), 5)
-        return height(x, n) if callable(height) else height
+        base = height(x, n) if callable(height) else height
+        if strip_tree is None:
+            return base
+        weighted = total = strength = 0.0
+        for index in map(int, strip_tree.query(point, predicate="dwithin", distance=3)):
+            edges = strip_edges[index]
+            best = min(range(4), key=lambda k: edges[k].distance(point))
+            edge = edges[best]
+            distance = edge.distance(point)
+            if distance >= 3:
+                continue
+            a, b = ((0, 1), (1, 3), (3, 2), (2, 0))[best]
+            levels = strip_levels[index]
+            t = edge.project(point) / edge.length
+            seam = round(levels[a] + t * (levels[b] - levels[a]), 5)
+            # An isolated exact-boundary override creates a vertical needle
+            # whenever the surrounding owner profile differs. Carry the strip
+            # plane continuously into its neighbouring fan for three metres.
+            fade = (1 - distance / 3) ** 2
+            weight = fade / max(distance, 1e-7) ** 2
+            weighted += seam * weight
+            total += weight
+            strength = max(strength, fade)
+        return (
+            base if not total else base * (1 - strength) + weighted / total * strength
+        )
 
     # Capture just rooms emitted by this layer, for exact bridge underside art.
     before = (
@@ -536,7 +551,10 @@ def render_bridge_layers(writer, city, terrain, *, triangle_sink=None):
                 if overlap.area < 1e-6:
                     continue
                 point = overlap.representative_point()
-                if abs(fields[i](point.x, point.y) - fields[j](point.x, point.y)) > 0.5:
+                # Small profile differences between adjacent same-level
+                # carriageways need one stitched surface, not overlapping
+                # half-metre steps. Separate physically stacked road decks.
+                if abs(fields[i](point.x, point.y) - fields[j](point.x, point.y)) > 2.5:
                     conflicts[i].add(j)
                     conflicts[j].add(i)
         colors = {}
@@ -566,7 +584,7 @@ def render_bridge_layers(writer, city, terrain, *, triangle_sink=None):
             writer,
             local_city,
             surface,
-            field,
+            field.blended,
             road_height=field.height_for_road,
             station_height=field.height_at_station,
             bridge=True,

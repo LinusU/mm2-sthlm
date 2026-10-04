@@ -1,4 +1,6 @@
 import sys
+import math
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -20,6 +22,64 @@ def road(index=1, points=None, nodes=None, tags=None, width=9):
 
 
 class RoadSurfaceTests(unittest.TestCase):
+    def test_marked_strip_profile_carries_into_neighbouring_native_fan(self):
+        from shapely.geometry import Polygon
+
+        triangles = []
+        road_surfaces.render(
+            sthlm.PsdlWriter(),
+            {"roads": [road()]},
+            box(-10, -10, 110, 10),
+            lambda x, n: 10.0,
+            road_height=lambda r, x, n: 10.4,
+            station_height=lambda r, station: 10.4,
+            triangle_sink=triangles,
+        )
+        # A body just outside a strip boundary must meet a continuous fan.
+        # Previously the exact boundary pin dropped 40 cm within 1 cm.
+        heights = []
+        for a, b, c in triangles:
+            if not Polygon([(v[0], v[2]) for v in (a, b, c)]).covers(Point(25, -4.49)):
+                continue
+            ux, uy, uz = (b[i] - a[i] for i in range(3))
+            vx, vy, vz = (c[i] - a[i] for i in range(3))
+            nx, ny, nz = uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx
+            self.assertGreater(abs(ny) / math.sqrt(nx * nx + ny * ny + nz * nz), 0.95)
+            heights.append(a[1] - (nx * (25 - a[0]) + nz * (-4.49 - a[2])) / ny)
+        self.assertTrue(heights)
+        for h in heights:
+            self.assertAlmostEqual(h, 10.4, delta=0.02)
+
+    def test_vasabron_same_level_carriageways_have_one_collision_floor(self):
+        from shapely.geometry import Polygon
+
+        fixture = json.loads(
+            (Path(__file__).parent / "fixtures/vasabron-overlap.json").read_text()
+        )
+
+        class Terrain:
+            def height(self, x, n):
+                return 0.9
+
+        triangles = []
+        road_surfaces.render_bridge_layers(
+            sthlm.PsdlWriter(),
+            {**fixture["city"], "roads": fixture["roads"]},
+            Terrain(),
+            triangle_sink=triangles,
+        )
+        x, z = 1128.0331, 114.072074
+        heights = []
+        for a, b, c in triangles:
+            if not Polygon([(v[0], v[2]) for v in (a, b, c)]).covers(Point(x, z)):
+                continue
+            denominator = (b[2] - c[2]) * (a[0] - c[0]) + (c[0] - b[0]) * (a[2] - c[2])
+            u = ((b[2] - c[2]) * (x - c[0]) + (c[0] - b[0]) * (z - c[2])) / denominator
+            v = ((c[2] - a[2]) * (x - c[0]) + (a[0] - c[0]) * (z - c[2])) / denominator
+            heights.append(u * a[1] + v * b[1] + (1 - u - v) * c[1])
+        self.assertTrue(heights)
+        self.assertLess(max(heights) - min(heights), 0.04)
+
     def test_stacked_bridge_levels_survive_native_export(self):
         from shapely.geometry import Polygon
 

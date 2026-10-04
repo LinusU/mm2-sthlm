@@ -22,6 +22,50 @@ class Plane:
 
 
 class ElevationTests(unittest.TestCase):
+    def test_slottskajen_road_shoulders_have_no_nearest_owner_step(self):
+        roads = json.loads(
+            (Path(__file__).parent / "fixtures/slottskajen-height.json").read_text()
+        )["roads"]
+        field = RoadField(roads, Plane())
+        # The source profiles are smooth; changing nearest road at the edge
+        # formerly created a 76 cm jump across just one centimetre.
+        before = field.ground(1574.281006, -12.61408)
+        after = field.ground(1574.281006, -12.62408)
+        self.assertLess(abs(after - before), 0.005)
+        # Keep the driven centreline pinned to its own road profile.
+        x, n = 1572.9136, -8.044669
+        self.assertAlmostEqual(field.ground(x, n), field.nearest(x, n)[0])
+
+    def test_slottskajen_native_shoulders_do_not_emit_collision_needles(self):
+        roads = json.loads(
+            (Path(__file__).parent / "fixtures/slottskajen-height.json").read_text()
+        )["roads"]
+        writer = PsdlWriter()
+        writer.surface(
+            box(1570, -16, 1578, -8),
+            RoadField(roads, Plane()).ground,
+            "sthlm_oldtown_setts",
+        )
+        self.assertTrue(writer.rooms)
+        for _, attrs, _ in writer.rooms:
+            for offset in range(2, len(attrs), 4):
+                a, b, c = (writer.vertices[i] for i in attrs[offset + 1 : offset + 4])
+                footprint = Polygon([(v[0], v[2]) for v in (a, b, c)])
+                if (
+                    min(
+                        footprint.distance(Point(1572.9136, 8.044669)),
+                        footprint.distance(Point(1572.3104, 11.680937)),
+                    )
+                    > 2
+                ):
+                    continue
+                ux, uy, uz = (b[i] - a[i] for i in range(3))
+                vx, vy, vz = (c[i] - a[i] for i in range(3))
+                nx, ny, nz = uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx
+                self.assertGreater(
+                    abs(ny) / math.sqrt(nx * nx + ny * ny + nz * nz), 0.75
+                )
+
     def test_torsgrand_export_does_not_lift_lower_street_to_parallel_road(self):
         from road_surfaces import render
 

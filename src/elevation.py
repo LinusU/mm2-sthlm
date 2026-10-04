@@ -85,6 +85,7 @@ class RoadField:
         self.segments = []
         self.values = []
         self.widths = []
+        self.ends = []
         self.by_road = {}
         self._source_cache = {}
         self.road_ids = []
@@ -97,7 +98,9 @@ class RoadField:
                     self.values.append((a[2], b[2]))
                     self.road_ids.append(r.get("id"))
                     self.widths.append(r["width"] / 2)
+                    self.ends.append((a[:2], b[:2]))
         self.tree = STRtree(self.segments)
+        self.max_half_width = max(self.widths, default=0)
         self.planes = junction_planes(roads)
         for seam in junctions:
             if len(seam) == 7:
@@ -191,16 +194,49 @@ class RoadField:
         return self.nearest(x, n)[0]
 
     def ground(self, x, n):
+        return self.blended(x, n, ground=True)
+
+    def blended(self, x, n, *, ground=False):
+        """Continuous profiles within one pre-separated physical height layer."""
         if not self.segments:
             return self.terrain.height(x, n)
-        road, distance, half_width = self._sample(x, n)
-        # Match the roadway at its edge, then blend the shoulder into real land.
-        shoulder_edge = half_width + 2
-        weight = max(0, min(1, (shoulder_edge + 7 - distance) / 7))
-        if weight == 1:
-            return road
-        raw = self.terrain.height(x, n)
-        return raw * (1 - weight) + road * weight
+        point = Point(x, n)
+        nearest = int(self.tree.nearest(point))
+        distance = self.segments[nearest].distance(point)
+        if ground and distance >= self.max_half_width + 9:
+            return self.terrain.height(x, n)
+        # A single nearest street changes discontinuously at its Voronoi edge.
+        # Blend the closest profile of each nearby source way across a 3 m
+        # band. Centreline samples remain exact whenever other streets are
+        # farther than the band. Raised decks stay in their separate field.
+        candidates = self.tree.query(point, predicate="dwithin", distance=distance + 3)
+        owners = {}
+        for i in map(int, candidates):
+            d = self.segments[i].distance(point)
+            owner = self.road_ids[i]
+            if owner not in owners or d < owners[owner][0]:
+                owners[owner] = (d, i)
+        total = weighted = 0.0
+        raw = None
+        for d, i in owners.values():
+            influence = max(0.0, 1 - (d - distance) / 3) ** 2
+            if not influence:
+                continue
+            a, b = self.ends[i]
+            dx, dn = b[0] - a[0], b[1] - a[1]
+            t = max(
+                0.0, min(1.0, ((x - a[0]) * dx + (n - a[1]) * dn) / (dx * dx + dn * dn))
+            )
+            h0, h1 = self.values[i]
+            height = self.planar_height(h0 + (h1 - h0) * t, x, n, self.road_ids[i])
+            shoulder = max(0.0, min(1.0, (self.widths[i] + 9 - d) / 7))
+            if ground and shoulder < 1:
+                if raw is None:
+                    raw = self.terrain.height(x, n)
+                height = height * shoulder + raw * (1 - shoulder)
+            weighted += height * influence
+            total += influence
+        return weighted / total
 
 
 def distances(graph, ends):
