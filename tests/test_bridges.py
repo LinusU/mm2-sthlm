@@ -98,6 +98,55 @@ class BridgeTests(unittest.TestCase):
                 )
         self.assertEqual(set(found), set(expected))
 
+    def test_native_slab_t_junction_has_only_exterior_collision_walls(self):
+        def vertex(x, z, level=8):
+            return (x, level + x * 0.05 + z * 0.02, z)
+
+        # One ten-metre strip edge meets two five-metre fan edges.
+        triangles = []
+        for x0, x1, z0, z1 in [(0, 5, 0, 10), (5, 10, 0, 5), (5, 10, 5, 10)]:
+            a, b, c, d = [
+                vertex(x, z) for x, z in [(x0, z0), (x1, z0), (x1, z1), (x0, z1)]
+            ]
+            triangles.extend([(a, b, c), (a, c, d)])
+        mesh = bridges.native_slab_mesh(triangles)
+        floors = [t for t in mesh if abs(normal(t)[1]) > 0.001]
+        walls = [t for t in mesh if abs(normal(t)[1]) <= 0.001]
+        self.assertEqual(len(floors), len(triangles) * 2)
+        self.assertAlmostEqual(sum(abs(normal(t)[1]) / 2 for t in floors), 200)
+        for triangle in walls:
+            self.assertTrue(
+                any(
+                    all(abs(vertex[axis] - value) < 1e-8 for vertex in triangle)
+                    for axis, value in [(0, 0), (0, 10), (2, 0), (2, 10)]
+                ),
+                f"Interior collision wall: {triangle}",
+            )
+        # Vertical wall area is exactly perimeter times slab thickness.
+        self.assertAlmostEqual(
+            sum(math.sqrt(sum(v * v for v in normal(t))) / 2 for t in walls), 28
+        )
+        for road, top, bottom in zip(triangles, mesh[::2], mesh[1::2]):
+            # Top/underside native facets keep their exact original vertices.
+            self.assertEqual(set(top), {(x, y - 0.04, z) for x, y, z in road})
+            self.assertEqual(set(bottom), {(x, y - 0.04 - 0.7, z) for x, y, z in road})
+
+    def test_slab_t_junction_retains_uncovered_boundary_remainders(self):
+        edges = [((0, 8, 0), (0, 8, 10)), ((0, 8, 7), (0, 8, 3))]
+        self.assertEqual(
+            list(bridges.slab_boundary_segments(edges)),
+            [((0, 8, 0), (0, 8, 3)), ((0, 8, 7), (0, 8, 10))],
+        )
+
+    def test_slab_boundary_keeps_stacked_levels_and_same_direction_exteriors(self):
+        edges = [
+            ((0, 8, 0), (0, 8, 10)),
+            ((0, 18, 10), (0, 18, 0)),
+            ((0, 8, 2), (0, 8, 7)),
+            ((0, 8.01, 10), (0, 8.01, 0)),
+        ]
+        self.assertEqual(list(bridges.slab_boundary_segments(edges)), edges)
+
     def test_island_reference_anchors_retain_exact_source_bridge_topology(self):
         root = Path(__file__).resolve().parents[1]
         anchors = json.loads(

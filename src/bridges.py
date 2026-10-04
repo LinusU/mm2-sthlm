@@ -114,12 +114,60 @@ def native_slab_mesh(road_triangles, thickness=0.7):
             key = tuple(sorted((a, b)))
             count, _ = edges.get(key, (0, (a, b)))
             edges[key] = (count + 1, (a, b))
-    for count, (a, b) in edges.values():
-        if count != 1:
-            continue
+    dangling = [edge for count, edge in edges.values() if count == 1]
+    for a, b in slab_boundary_segments(dangling):
         c, d = (b[0], b[1] - thickness, b[2]), (a[0], a[1] - thickness, a[2])
         mesh.extend([(a, c, b), (a, d, c)])
     return mesh
+
+
+def slab_boundary_segments(edges, tolerance=0.0001):
+    """Remove internal T-junction edges without merging stacked deck levels.
+
+    A strip can share one long edge with several shorter fan edges. Exact
+    endpoint counting leaves all of them exposed. Opposite directed edges on
+    the same 3D line cancel their overlapping intervals; any uncovered ends
+    remain real slab boundaries. Identically directed exterior edges and
+    vertically separate roads retain their collision faces.
+    """
+    lines = [LineString([(a[0], a[2]), (b[0], b[2])]) for a, b in edges]
+    tree = STRtree(lines)
+    for index, (a, b) in enumerate(edges):
+        dx, dz = b[0] - a[0], b[2] - a[2]
+        squared = dx * dx + dz * dz
+        if squared <= tolerance * tolerance:
+            continue
+        length = math.sqrt(squared)
+        covered = []
+        for other in tree.query(lines[index].buffer(tolerance)):
+            if other == index:
+                continue
+            c, d = edges[other]
+            if dx * (d[0] - c[0]) + dz * (d[2] - c[2]) >= 0:
+                continue
+            projected = []
+            for point in (c, d):
+                px, pz = point[0] - a[0], point[2] - a[2]
+                t = (px * dx + pz * dz) / squared
+                if (
+                    abs(px * dz - pz * dx) / length > tolerance
+                    or abs(point[1] - (a[1] + t * (b[1] - a[1]))) > tolerance
+                ):
+                    break
+                projected.append(t)
+            if len(projected) != 2:
+                continue
+            lo, hi = max(0, min(projected)), min(1, max(projected))
+            if (hi - lo) * length > tolerance:
+                covered.append((lo, hi))
+        cursor = 0.0
+        for lo, hi in sorted(covered) + [(1.0, 1.0)]:
+            if lo > cursor and (lo - cursor) * length > tolerance:
+                yield (
+                    tuple(a[k] + cursor * (b[k] - a[k]) for k in range(3)),
+                    tuple(a[k] + lo * (b[k] - a[k]) for k in range(3)),
+                )
+            cursor = max(cursor, hi)
 
 
 def captured_decks(surface, height, spawn, thickness=0.7):
