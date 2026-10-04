@@ -1,0 +1,11 @@
+Description,CarType,TimeofDay,Weather,Opponents,Cops,Ambient,Peds,NumLaps,TimeLimit,Difficulty,CarType,TimeofDay,Weather,Opponents,Cops,Ambient,Peds,NumLaps,TimeLimit,Difficulty
+Quayside Quickstep,0,1,0,0,0,0.04,0.02,3,115,1,0,1,0,0,0,0.1,0.02,4,85,1
+Courthouse Courier,0,1,0,0,0,0.052,0.02,3,185,1,0,1,0,0,0,0.112,0.02,4,140,1
+Vasastan Coffee Run,0,1,0,0,0,0.064,0.02,3,275,1,0,1,0,0,0,0.124,0.02,4,205,1
+Kungsholmen Pocket,0,1,0,0,0,0.076,0.02,3,310,1,0,1,0,0,0,0.136,0.02,4,235,1
+Old Town Dispatch,0,1,0,0,0,0.088,0.02,3,365,1,0,1,0,0,0,0.148,0.02,4,275,1
+Royal Waterfront,0,1,0,0,0,0.1,0.02,3,445,1,0,1,0,0,0,0.16,0.02,4,335,1
+Västerbron Dash,0,1,0,0,0,0.112,0.02,3,450,1,0,1,0,0,0,0.172,0.02,4,340,1
+Söder Clockwork,0,1,0,0,0,0.124,0.02,3,410,1,0,1,0,0,0,0.184,0.02,4,310,1
+Bridge Landing Express,0,1,0,0,0,0.136,0.02,3,460,1,0,1,0,0,0,0.196,0.02,4,345,1
+Stockholm Grand Blitz,0,1,0,0,0,0.148,0.02,3,475,1,0,1,0,0,0,0.208,0.02,4,360,1

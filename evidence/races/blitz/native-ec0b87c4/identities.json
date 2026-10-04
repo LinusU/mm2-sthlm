@@ -1,0 +1,156 @@
+{
+  "engine_source": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "checksum_manifest_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+  "catalog_sha256": "b6ad826cab736db32e2174a7b06b6811892d584130a3b6eeeeea918aa1b60597",
+  "native_parameter_table_sha256": "c0964ce3dd881b238d21bce98dc994120b45eed5163f48ffb219aa0e09a6ea75",
+  "record_eligible": false,
+  "strict_clean": 2,
+  "completed_runs": 8,
+  "native_parameters": [
+    {
+      "index": 4,
+      "rank": "amateur",
+      "parameters": {
+        "CarType": "0",
+        "TimeofDay": "1",
+        "Weather": "0",
+        "Opponents": "0",
+        "Cops": "0",
+        "Ambient": "0.088",
+        "Peds": "0.02",
+        "NumLaps": "3",
+        "TimeLimit": "365",
+        "Difficulty": "1"
+      },
+      "guide_sha256": "c43646cebf3850a1fe2440ac9e299f908a9d352db958ccc86675b5c60477f811",
+      "log_sha256": "5967b32eabea36b9118f8417eb925079f2f42cc0c98551df23eb126257d6ec24"
+    },
+    {
+      "index": 4,
+      "rank": "professional",
+      "parameters": {
+        "CarType": "0",
+        "TimeofDay": "1",
+        "Weather": "0",
+        "Opponents": "0",
+        "Cops": "0",
+        "Ambient": "0.148",
+        "Peds": "0.02",
+        "NumLaps": "4",
+        "TimeLimit": "275",
+        "Difficulty": "1"
+      },
+      "guide_sha256": "aa8822a8e1596692802c5ae2a5227f6a529c1e785f51bfd8b2c656c6ba878fa3",
+      "log_sha256": "40e7fbf6445785b78798c2a388d0e4dd0ae003bf6449567c784dba6464dc8531"
+    },
+    {
+      "index": 6,
+      "rank": "amateur",
+      "parameters": {
+        "CarType": "0",
+        "TimeofDay": "1",
+        "Weather": "0",
+        "Opponents": "0",
+        "Cops": "0",
+        "Ambient": "0.112",
+        "Peds": "0.02",
+        "NumLaps": "3",
+        "TimeLimit": "450",
+        "Difficulty": "1"
+      },
+      "guide_sha256": "bbeea20a0b974d9e084a2133e2f4522b3864dbe95cdc38207f3727adf5c6eba7",
+      "log_sha256": "b7f5db7387538156aded5451171a48b0ee6007f8f21ecfe3b699a039ea63d4f1"
+    },
+    {
+      "index": 6,
+      "rank": "professional",
+      "parameters": {
+        "CarType": "0",
+        "TimeofDay": "1",
+        "Weather": "0",
+        "Opponents": "0",
+        "Cops": "0",
+        "Ambient": "0.172",
+        "Peds": "0.02",
+        "NumLaps": "4",
+        "TimeLimit": "340",
+        "Difficulty": "1"
+      },
+      "guide_sha256": "12263015f339e0d212730cb156e12a3ce8f7cd4cf11209e29f37b4d3066de03b",
+      "log_sha256": "e4be74d651aa6e5b3205836b597b5f597d0f98eb509dd0877d826e1f4576780e"
+    },
+    {
+      "index": 8,
+      "rank": "amateur",
+      "parameters": {
+        "CarType": "0",
+        "TimeofDay": "1",
+        "Weather": "0",
+        "Opponents": "0",
+        "Cops": "0",
+        "Ambient": "0.136",
+        "Peds": "0.02",
+        "NumLaps": "3",
+        "TimeLimit": "460",
+        "Difficulty": "1"
+      },
+      "guide_sha256": "1c6c648d30beaa09ebd308581497b23004b94af9943a6f02b661a9c8e5321d5a",
+      "log_sha256": "158c2107d729deec2fc8e89745e24f3cec8d9722a14e06c05df18a0faa7e12fb"
+    },
+    {
+      "index": 8,
+      "rank": "professional",
+      "parameters": {
+        "CarType": "0",
+        "TimeofDay": "1",
+        "Weather": "0",
+        "Opponents": "0",
+        "Cops": "0",
+        "Ambient": "0.196",
+        "Peds": "0.02",
+        "NumLaps": "4",
+        "TimeLimit": "345",
+        "Difficulty": "1"
+      },
+      "guide_sha256": "28deff5f8eb98cc30e6f89459e0654ba1894d345f82d4bfacc14f3eed22613e3",
+      "log_sha256": "825e853f461439fc6c8a8077485c8e0d8e6ad16f8ada6da6b56486dcd2bf4ad6"
+    },
+    {
+      "index": 9,
+      "rank": "amateur",
+      "parameters": {
+        "CarType": "0",
+        "TimeofDay": "1",
+        "Weather": "0",
+        "Opponents": "0",
+        "Cops": "0",
+        "Ambient": "0.148",
+        "Peds": "0.02",
+        "NumLaps": "3",
+        "TimeLimit": "475",
+        "Difficulty": "1"
+      },
+      "guide_sha256": "a7c44d01a2f37bf49c6e2972be2bd5e61a0d6be970c8977c3afaeac38355aa8a",
+      "log_sha256": "6a885331beccad95372687992175a375868742446ea7a0ae341a1710f1687861"
+    },
+    {
+      "index": 9,
+      "rank": "professional",
+      "parameters": {
+        "CarType": "0",
+        "TimeofDay": "1",
+        "Weather": "0",
+        "Opponents": "0",
+        "Cops": "0",
+        "Ambient": "0.208",
+        "Peds": "0.02",
+        "NumLaps": "4",
+        "TimeLimit": "360",
+        "Difficulty": "1"
+      },
+      "guide_sha256": "7c983a92956bc922be7f8c04429ae632cd3da0cb85f25f7b231e5d4c217c4f84",
+      "log_sha256": "1f8b45907bf0af5f1eeb70caa366e16e0d71eff00ceedffbbe0755ad8e798e2a"
+    }
+  ]
+}
