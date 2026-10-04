@@ -1,0 +1,20 @@
+{
+  "circuit6_first": {
+    "position": [
+      -1189.9175,
+      16.959347,
+      -418.60782
+    ],
+    "floors": [
+      {
+        "height": 16.95859,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_-2_0.psdl",
+        "room": 155
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "261 offline tests, full offline export and validation passed; native tests are separate",
+  "package_checksums_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+  "frozen_package": "/private/tmp/stockholm-final-repairs-ec0b87c4/mods/stockholm",
+  "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_binary_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "source_sha256": {
+    "src/sthlm.py": "90ace6da0ebb1519459dcd11de15269833ae3c3ca3a2a473c3c6418ee674adc0",
+    "src/bridges.py": "9dd4be2c7e6d27362c9c4942818b9e121f87399825530d5f4fcf959fac873c24",
+    "src/tunnels.py": "3c3a734f1e466d762cb0c64b37534a065ff22b85d8a8f83d315342231e63bf58"
+  },
+  "logs_sha256": {
+    "bridge-composed-root-validate.log": "25af12b24caa5176bd3c5da3c2feb6ddc4eb3b685135df230a9a4e5371c956a8",
+    "bridge-composed-root-build.log": "09c5f27185a3a0476a32cf3a0d29a4a3caf069eabddc9b4506c3ae493d22cf9f",
+    "bridge-composed-root-tests.log": "866275f852b30bc9e312af28281506173a6b6e8dfa31117b26e6375656387d19"
+  }
+}

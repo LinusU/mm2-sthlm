@@ -1,0 +1,112 @@
+{
+  "scope": "Actual emitted native PSDL facet audit, no driving acceptance",
+  "before_manifest_sha256": "f02d3bb6f52236bedf7633e91e8a420ead0568c8eca73f849c2eaf80196e8004",
+  "after_manifest_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+  "result": "Improved, remaining steep faces; not complete physical cure",
+  "sites": {
+    "slotts": {
+      "before_steep_face_count": 80,
+      "after_steep_face_count": 13,
+      "before_min_normal_y": 0.0353303442768357,
+      "after_min_normal_y": 0.03812945519995258,
+      "before_nearest_steep_face": {
+        "distance_xz": 0.5169353136999412,
+        "normal_y": 0.8757923109511253,
+        "texture": "sthlm_oldtown_setts",
+        "room": 59,
+        "triangle": [
+          [
+            1574.4383544921875,
+            4.369379997253418,
+            11.243559837341309
+          ],
+          [
+            1574.4608154296875,
+            4.343480110168457,
+            10.3710298538208
+          ],
+          [
+            1574.370849609375,
+            4.410429954528809,
+            11.492549896240234
+          ]
+        ]
+      },
+      "after_nearest_steep_face": {
+        "distance_xz": 0.9647964074916298,
+        "normal_y": 0.38427089339688236,
+        "texture": "sthlm_oldtown_setts",
+        "room": 59,
+        "triangle": [
+          [
+            1574.94384765625,
+            4.511189937591553,
+            11.744729995727539
+          ],
+          [
+            1574.98876953125,
+            4.351329803466797,
+            9.999670028686523
+          ],
+          [
+            1574.9326171875,
+            4.369569778442383,
+            10.996700286865234
+          ]
+        ]
+      }
+    },
+    "puste": {
+      "before_steep_face_count": 15,
+      "after_steep_face_count": 5,
+      "before_min_normal_y": 0.006300032240650366,
+      "after_min_normal_y": 0.4116421429190697,
+      "before_nearest_steep_face": {
+        "distance_xz": 2.074195432887282,
+        "normal_y": 0.009265483156045301,
+        "texture": "sthlm_asphalt",
+        "room": 293,
+        "triangle": [
+          [
+            1273.693603515625,
+            3.6122000217437744,
+            816.0425415039062
+          ],
+          [
+            1273.4439697265625,
+            3.4837100505828857,
+            814.8885498046875
+          ],
+          [
+            1274.19677734375,
+            4.018310070037842,
+            818.375
+          ]
+        ]
+      },
+      "after_nearest_steep_face": {
+        "distance_xz": 2.088150322117965,
+        "normal_y": 0.8731700357523446,
+        "texture": "sthlm_asphalt",
+        "room": 293,
+        "triangle": [
+          [
+            1273.6728515625,
+            3.5850300788879395,
+            815.92041015625
+          ],
+          [
+            1273.689453125,
+            3.60657000541687,
+            816.0181274414062
+          ],
+          [
+            1273.9017333984375,
+            3.841599941253662,
+            816.9523315429688
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "circuit6_new_first": {
+    "position": [
+      -1165.4661,
+      14.847858,
+      -424.60352
+    ],
+    "floors": [
+      {
+        "height": 14.8418,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_-2_0.psdl",
+        "room": 36
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "circuit6_new_guide225": {
+    "position": [
+      -1160.97605,
+      16.72262,
+      -419.65345
+    ],
+    "floors": [
+      {
+        "height": 16.72278,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_-2_0.psdl",
+        "room": 155
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  }
+}

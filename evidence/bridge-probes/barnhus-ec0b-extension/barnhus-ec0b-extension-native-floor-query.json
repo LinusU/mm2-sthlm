@@ -1,0 +1,45 @@
+{
+  "extension_stall": {
+    "position": [
+      352.75272,
+      11.938531,
+      -909.2431
+    ],
+    "floors": [
+      {
+        "height": 12.12358,
+        "texture": "grass",
+        "flags": 0,
+        "part": "part_0_1.psdl",
+        "room": 929
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  },
+  "extension_aim": {
+    "position": [
+      355.70334,
+      13.50081,
+      -897.8096
+    ],
+    "floors": [
+      {
+        "height": 13.4696,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 27
+      },
+      {
+        "height": 13.50146,
+        "texture": "sthlm_asphalt",
+        "flags": 8,
+        "part": "part_0_1.psdl",
+        "room": 599
+      }
+    ],
+    "water_rooms": [],
+    "near_vertical_facades": []
+  }
+}

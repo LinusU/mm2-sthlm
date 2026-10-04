@@ -1,0 +1,273 @@
+{
+  "scope": "No clean full extended-departure claim; original261 clean bounded bridge evidence remains separate",
+  "runs": [
+    {
+      "native_actors": [
+        {
+          "index": 0,
+          "vehicle": "sthlm_racer",
+          "gates_cleared": 0,
+          "finished": false,
+          "escapes": 0,
+          "reanchors": 0
+        },
+        {
+          "index": 1,
+          "vehicle": "sthlm_racer",
+          "gates_cleared": 1,
+          "finished": false,
+          "escapes": 0,
+          "reanchors": 0
+        },
+        {
+          "index": 2,
+          "vehicle": "sthlm_racer",
+          "gates_cleared": 0,
+          "finished": false,
+          "escapes": 0,
+          "reanchors": 0
+        },
+        {
+          "index": 3,
+          "vehicle": "sthlm_racer",
+          "gates_cleared": 1,
+          "finished": false,
+          "escapes": 0,
+          "reanchors": 0
+        }
+      ],
+      "native_actor_finish_count": 0,
+      "summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=1900 ticks=3440 driver=scripted diff=amateur phase=playing impacts=3 dropped=0 peak=30.1m/s travel=496.1m sim=28.67s resets=0 controls=2692t/324b/934s finite=true moved=344m wheels=0/4 final=(348,16.4,-910) race=Running cp=0/2 results=0 pos=5/5 opp=0/4 cu=3 opp_drv=2479m/21.6mps/0.4ipk/0.0xpk/0.0apk/0.00hpk opps=0:sthlm_racer/0c/106w,1:sthlm_racer/1c/106w,2:sthlm_racer/0c/106w,3:sthlm_racer/1c/106w env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/4m/4b tmr=22g/0:28:66 arr=hudarrow01/ahead sta=10g/p5of5/-/c0of2 bng=3241d/0a/1s/0b bng_ev=1a/1s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+5x",
+      "metrics": {
+        "smoke": "headless-physics",
+        "world": "city/stockholm.psdl",
+        "status": "pass",
+        "updates": "1900",
+        "ticks": "3440",
+        "driver": "scripted",
+        "diff": "amateur",
+        "phase": "playing",
+        "impacts": "3",
+        "dropped": "0",
+        "peak": "30.1m/s",
+        "travel": "496.1m",
+        "sim": "28.67s",
+        "resets": "0",
+        "controls": "2692t/324b/934s",
+        "finite": "true",
+        "moved": "344m",
+        "wheels": "0/4",
+        "final": "(348,16.4,-910)",
+        "race": "Running",
+        "cp": "0/2",
+        "results": "0",
+        "pos": "5/5",
+        "opp": "0/4",
+        "cu": "3",
+        "opp_drv": "2479m/21.6mps/0.4ipk/0.0xpk/0.0apk/0.00hpk",
+        "opps": "0:sthlm_racer/0c/106w,1:sthlm_racer/1c/106w,2:sthlm_racer/0c/106w,3:sthlm_racer/1c/106w",
+        "env": "lt04(noon)",
+        "fog": "none",
+        "sky": "none",
+        "wtr": "0.2/1698r",
+        "map": "inset/north/z1200/hudmap_stockholm.pkg/1t/8m",
+        "dash": "absent:missing-spec+pkg",
+        "trk": "sized",
+        "ind": "on/4m/4b",
+        "tmr": "22g/0:28:66",
+        "arr": "hudarrow01/ahead",
+        "sta": "10g/p5of5/-/c0of2",
+        "bng": "3241d/0a/1s/0b",
+        "bng_ev": "1a/1s/0b",
+        "wfx": "0r/0e/0x+8f+ut",
+        "aud": "0h/0v/0s/0l/0a/0r+5x"
+      },
+      "initial_leg_clean": false,
+      "full_course_clean": false,
+      "rejection_reasons": [
+        "finite four-wheel traversal not established"
+      ],
+      "scope": "Bounded local diagnostic across the full Barnhusbron source span and onward source-connected departure; not a race finish. The extended departure is not clean.",
+      "updates_budget": 1900,
+      "package_checksums_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+      "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+      "log": "barnhus-ec0b-native-driving.log",
+      "log_sha256": "e71f87c181da123fec3eac8eb6f3a7d165ca7e7b2690a6247fe51c3ed36f41c2",
+      "guide": "../barnhusbron/native-driving-261fc0b6/barnhus-source-guide.opp",
+      "original_spawn": [
+        67.05361,
+        13.410921,
+        -712.533797,
+        344.302051
+      ],
+      "original_bridge_north_endpoint": [
+        153.267017,
+        21.381048,
+        -915.88111
+      ],
+      "command": [
+        ".cache/engine/mm2-race-guide-recovery-occurrence",
+        "--mods",
+        "/private/tmp/stockholm-final-repairs-ec0b87c4/mods",
+        "--city",
+        "stockholm",
+        "--car",
+        "sthlm_racer",
+        "--event",
+        "checkpoint:0",
+        "--headless",
+        "--bot",
+        "--bot-route",
+        "evidence/overnight-city/final-races/barnhusbron/native-driving-261fc0b6/barnhus-source-guide.opp",
+        "--spawn",
+        "67.053610,13.410921,-712.533797,344.302051",
+        "--frames",
+        "1900",
+        "--no-profile"
+      ]
+    },
+    {
+      "native_actors": [
+        {
+          "index": 0,
+          "vehicle": "sthlm_racer",
+          "gates_cleared": 1,
+          "finished": false,
+          "escapes": 0,
+          "reanchors": 0
+        },
+        {
+          "index": 1,
+          "vehicle": "sthlm_racer",
+          "gates_cleared": 1,
+          "finished": false,
+          "escapes": 0,
+          "reanchors": 0
+        },
+        {
+          "index": 2,
+          "vehicle": "sthlm_racer",
+          "gates_cleared": 1,
+          "finished": false,
+          "escapes": 0,
+          "reanchors": 0
+        },
+        {
+          "index": 3,
+          "vehicle": "sthlm_racer",
+          "gates_cleared": 1,
+          "finished": false,
+          "escapes": 0,
+          "reanchors": 0
+        }
+      ],
+      "native_actor_finish_count": 0,
+      "summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=2400 ticks=4440 driver=scripted diff=amateur phase=playing impacts=8 dropped=0 peak=30.1m/s travel=506.0m sim=37.00s resets=0 controls=3548t/468b/1934s finite=true moved=347m wheels=3/4 final=(353,11.9,-909) race=Running cp=0/2 results=0 pos=5/5 opp=0/4 cu=3 opp_drv=3349m/22.6mps/0.9ipk/0.0xpk/0.0apk/0.00hpk opps=0:sthlm_racer/1c/106w,1:sthlm_racer/1c/106w,2:sthlm_racer/1c/106w,3:sthlm_racer/1c/106w p_rec=0r/1e env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/4m/4b tmr=22g/0:37:00 arr=hudarrow01/ahead sta=10g/p5of5/-/c0of2 bng=3241d/0a/1s/0b bng_ev=1a/1s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+5x",
+      "metrics": {
+        "smoke": "headless-physics",
+        "world": "city/stockholm.psdl",
+        "status": "pass",
+        "updates": "2400",
+        "ticks": "4440",
+        "driver": "scripted",
+        "diff": "amateur",
+        "phase": "playing",
+        "impacts": "8",
+        "dropped": "0",
+        "peak": "30.1m/s",
+        "travel": "506.0m",
+        "sim": "37.00s",
+        "resets": "0",
+        "controls": "3548t/468b/1934s",
+        "finite": "true",
+        "moved": "347m",
+        "wheels": "3/4",
+        "final": "(353,11.9,-909)",
+        "race": "Running",
+        "cp": "0/2",
+        "results": "0",
+        "pos": "5/5",
+        "opp": "0/4",
+        "cu": "3",
+        "opp_drv": "3349m/22.6mps/0.9ipk/0.0xpk/0.0apk/0.00hpk",
+        "opps": "0:sthlm_racer/1c/106w,1:sthlm_racer/1c/106w,2:sthlm_racer/1c/106w,3:sthlm_racer/1c/106w",
+        "p_rec": "0r/1e",
+        "env": "lt04(noon)",
+        "fog": "none",
+        "sky": "none",
+        "wtr": "0.2/1698r",
+        "map": "inset/north/z1200/hudmap_stockholm.pkg/1t/8m",
+        "dash": "absent:missing-spec+pkg",
+        "trk": "sized",
+        "ind": "on/4m/4b",
+        "tmr": "22g/0:37:00",
+        "arr": "hudarrow01/ahead",
+        "sta": "10g/p5of5/-/c0of2",
+        "bng": "3241d/0a/1s/0b",
+        "bng_ev": "1a/1s/0b",
+        "wfx": "0r/0e/0x+8f+ut",
+        "aud": "0h/0v/0s/0l/0a/0r+5x"
+      },
+      "initial_leg_clean": false,
+      "full_course_clean": false,
+      "rejection_reasons": [
+        "finite four-wheel traversal not established",
+        "player reanchor/escape recorded or malformed metric"
+      ],
+      "scope": "Bounded local diagnostic across the full Barnhusbron source span and onward source-connected departure; not a race finish. The extended departure is not clean.",
+      "updates_budget": 2400,
+      "package_checksums_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+      "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+      "log": "barnhus-ec0b-native-driving-2400.log",
+      "log_sha256": "826acc02a368ef12ed75da26acbe9cf7e184f194a32c0d1b94e7318daef48599",
+      "guide": "../barnhusbron/native-driving-261fc0b6/barnhus-source-guide.opp",
+      "original_spawn": [
+        67.05361,
+        13.410921,
+        -712.533797,
+        344.302051
+      ],
+      "original_bridge_north_endpoint": [
+        153.267017,
+        21.381048,
+        -915.88111
+      ],
+      "command": [
+        ".cache/engine/mm2-race-guide-recovery-occurrence",
+        "--mods",
+        "/private/tmp/stockholm-final-repairs-ec0b87c4/mods",
+        "--city",
+        "stockholm",
+        "--car",
+        "sthlm_racer",
+        "--event",
+        "checkpoint:0",
+        "--headless",
+        "--bot",
+        "--bot-route",
+        "evidence/overnight-city/final-races/barnhusbron/native-driving-261fc0b6/barnhus-source-guide.opp",
+        "--spawn",
+        "67.053610,13.410921,-712.533797,344.302051",
+        "--frames",
+        "2400",
+        "--no-profile"
+      ]
+    }
+  ],
+  "extended_stall_classification": {
+    "body": [
+      352.75272,
+      11.938531,
+      -909.2431
+    ],
+    "nearest_road": "Dalagatan way35105925",
+    "source_lateral_m": 5.843,
+    "road_width_m": 9,
+    "native_body_floor": "grass12.12358; no road or water at body",
+    "guide_target_native_floor_m": [
+      13.4696,
+      13.50146
+    ],
+    "scope": "Later car departure from road, beyond Barnhusbron span; not a demonstrated bridge-floor defect"
+  }
+}

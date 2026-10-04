@@ -1,0 +1,142 @@
+{
+  "scope": "Bounded native Circuit6 local diagnostic only; 12000 updates, not a full-course/lap acceptance. Original authored route and native actors retained.",
+  "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "checksum_manifest_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+  "player_speed_ceiling_mps": 12,
+  "frame_budget": 12000,
+  "native": {
+    "native_actors": [
+      {
+        "index": 0,
+        "vehicle": "sthlm_racer",
+        "gates_cleared": 8,
+        "finished": false,
+        "escapes": 1,
+        "reanchors": 0
+      },
+      {
+        "index": 1,
+        "vehicle": "sthlm_racer",
+        "gates_cleared": 8,
+        "finished": false,
+        "escapes": 4,
+        "reanchors": 0
+      },
+      {
+        "index": 2,
+        "vehicle": "sthlm_racer",
+        "gates_cleared": 8,
+        "finished": false,
+        "escapes": 0,
+        "reanchors": 0
+      },
+      {
+        "index": 3,
+        "vehicle": "sthlm_racer",
+        "gates_cleared": 7,
+        "finished": false,
+        "escapes": 3,
+        "reanchors": 0
+      },
+      {
+        "index": 4,
+        "vehicle": "sthlm_racer",
+        "gates_cleared": 7,
+        "finished": false,
+        "escapes": 10,
+        "reanchors": 2
+      }
+    ],
+    "native_actor_finish_count": 0,
+    "summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=12000 ticks=23640 driver=scripted diff=amateur phase=playing impacts=84 dropped=0 peak=12.1m/s travel=2199.3m sim=197.00s resets=0 controls=14366t/8970b/5780s finite=true moved=613m wheels=4/4 final=(-519,3.1,41) race=Running cp=4/23 results=0 lap=1/1 pos=6/6 opp=0/5 opp_rec=2 cu=4 opp_drv=20045m/20.3mps/4.1ipk/1.0xpk/0.2apk/0.10hpk opps=0:sthlm_racer/8c/1l/1e/552w/4d,1:sthlm_racer/8c/1l/4e/549w/4d,2:sthlm_racer/8c/1l/302w/3d,3:sthlm_racer/7c/1l/3e/457w/4d,4:sthlm_racer/7c/1l/10e/2r/900w/2d p_rec=0r/2e env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/29m dash=absent:missing-spec+pkg trk=sized ind=on/5m/5b tmr=22g/3:17:00 arr=hudarrow01/off sta=10g/p6of6/l1of1/c4of23 bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+9x",
+    "metrics": {
+      "smoke": "headless-physics",
+      "world": "city/stockholm.psdl",
+      "status": "pass",
+      "updates": "12000",
+      "ticks": "23640",
+      "driver": "scripted",
+      "diff": "amateur",
+      "phase": "playing",
+      "impacts": "84",
+      "dropped": "0",
+      "peak": "12.1m/s",
+      "travel": "2199.3m",
+      "sim": "197.00s",
+      "resets": "0",
+      "controls": "14366t/8970b/5780s",
+      "finite": "true",
+      "moved": "613m",
+      "wheels": "4/4",
+      "final": "(-519,3.1,41)",
+      "race": "Running",
+      "cp": "4/23",
+      "results": "0",
+      "lap": "1/1",
+      "pos": "6/6",
+      "opp": "0/5",
+      "opp_rec": "2",
+      "cu": "4",
+      "opp_drv": "20045m/20.3mps/4.1ipk/1.0xpk/0.2apk/0.10hpk",
+      "opps": "0:sthlm_racer/8c/1l/1e/552w/4d,1:sthlm_racer/8c/1l/4e/549w/4d,2:sthlm_racer/8c/1l/302w/3d,3:sthlm_racer/7c/1l/3e/457w/4d,4:sthlm_racer/7c/1l/10e/2r/900w/2d",
+      "p_rec": "0r/2e",
+      "env": "lt04(noon)",
+      "fog": "none",
+      "sky": "none",
+      "wtr": "0.2/1698r",
+      "map": "inset/north/z1200/hudmap_stockholm.pkg/1t/29m",
+      "dash": "absent:missing-spec+pkg",
+      "trk": "sized",
+      "ind": "on/5m/5b",
+      "tmr": "22g/3:17:00",
+      "arr": "hudarrow01/off",
+      "sta": "10g/p6of6/l1of1/c4of23",
+      "bng": "3242d/0a/0s/0b",
+      "bng_ev": "0a/0s/0b",
+      "wfx": "0r/0e/0x+8f+ut",
+      "aud": "0h/0v/0s/0l/0a/0r+9x"
+    },
+    "initial_leg_clean": false,
+    "full_course_clean": false,
+    "rejection_reasons": [
+      "player reanchor/escape recorded or malformed metric"
+    ],
+    "scope": "initial leg only"
+  },
+  "log_sha256": "a6af92cc66aed62fca573048fb6feb2906b60bfd66c25e57f12ad7d0a0734ebc",
+  "static_wall_result": {
+    "old_native_top_y": 17.404184818,
+    "new_native_top_y": 16.901186466,
+    "unchanged_upper_road_y": 16.95859,
+    "above_grade_triangles": 0,
+    "remaining_underpass_wall_triangles": 8
+  },
+  "physical_result": "FAILED clean bounded traversal: player0resets0reanchors2escapes,4/23gates,finite4w. First later escape at next225; body5.077m from9m uppergroundroad (outside4.5m footprint) and2.378m from8.4m tunnel. Actual lowerfloor14.8418 matches fallenbody14.8479; authored guide centre floor16.72278 matchesguide16.72262. Cause of trajectory leaving upperroad unresolved; no claim of missing centreline floor.",
+  "impact_counter_scope": "Global scene-wide emitted impacts, not player-only.",
+  "date_utc": "2026-10-04",
+  "argv": [
+    "/Users/linus/coding/mm2-sthlm/.cache/engine/mm2-race-guide-recovery-occurrence",
+    "--mods",
+    "/private/tmp/circuit-final-ec0b87c4/mods",
+    "--city",
+    "stockholm",
+    "--car",
+    "sthlm_racer",
+    "--event",
+    "circuit:6",
+    "--headless",
+    "--bot",
+    "--bot-route",
+    "/private/tmp/circuit-final-ec0b87c4/mods/stockholm/qa/races/circuit6-a-guide.opp",
+    "--frames",
+    "12000",
+    "--no-profile",
+    "--bot-speed",
+    "12"
+  ],
+  "env": {
+    "RUST_LOG": "warn,mm2_app::scripted=info,mm2_app::opponents=info"
+  },
+  "guide_sha256": "4e8af8e6dff2df590119e6c52aa5ea5a48c80b7c88fed6a3d8815fd87e5f7c84"
+}

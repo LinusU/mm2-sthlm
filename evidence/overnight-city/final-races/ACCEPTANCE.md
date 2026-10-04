@@ -15,3 +15,11 @@ The baseline Blitz matrix uses immutable package `0c69b55937d4f44ee400220f68a947
 The bounded native physics probe traverses the complete 222.13 m source-connected bridge, then departs forwards: 495.1 m total travel, zero resets, no player escapes or reanchors, finite vehicle state and four grounded wheels at the final sample. Two contacts occurred over the whole probe. Four original AI actors remain in the diagnostic. This is bridge traversal evidence, not a completed race or a full-city clean-driving claim. The 241-test offline build and validation also passed. Broader race acceptance remains in progress.
 
 The same verified Barnhusbron package also passes the portable 102-gate waterfront integration check with engine1a822, loads a separately generated second city, and rejects a missing required chunk. Exact commands and identities are under `junction-portability-261fc0b6`. This benchmark does not replace the individual race matrix.
+
+## Final composed generator repairs
+
+`composed-repairs-ec0b87c4` records 261 passing offline tests, full export/validation, and final immutable package checksum `ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81`. The same separate engine1a822 passes the portable102-gate waterfront benchmark:1556.7m, zero resets/recoveries/global contacts, finite4/4 wheels; second independently generated city loading and missing-chunk rejection also pass.
+
+The reported Barnhusbron view is captured again in the actual native engine. Repeating the source-connected bridge probe traverses the span with no reset/recovery by1900updates, but the final sample is airborne farther along the departure street. Extending to2400updates produces one escape at Dalagatan, roughly200m beyond the bridge endpoint, after the car leaves the9mroad by5.843m lateral distance and falls onto grass. Both raw runs and exact floor/source queries are retained; the extended departure is **not** clean. The earlier261 clean bridge diagnostic remains separately identified.
+
+Final Slottskajen/Pustegränd native triangulation improves without eliminating every steep facet. Both defaultBlitz4 difficulty retries finish cleanly on identical QA guide bytes, engine, routes and original clocks; broader final-cohort acceptance is reported by individual race evidence. No all-city or all30-race clean claim is made.

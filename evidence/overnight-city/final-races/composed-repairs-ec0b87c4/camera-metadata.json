@@ -1,0 +1,25 @@
+{
+  "scope": "Actual native engine camera capture, viewed after generation; visual evidence only",
+  "package_checksums_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+  "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "camera": "72.3,16.1,-719.1,7,-11",
+  "command": [
+    ".cache/engine/mm2-race-guide-recovery-occurrence",
+    "--mods",
+    "/private/tmp/stockholm-final-repairs-ec0b87c4/mods",
+    "--city",
+    "stockholm",
+    "--car",
+    "sthlm_racer",
+    "--cam",
+    "72.3,16.1,-719.1,7,-11",
+    "--no-hud",
+    "--frames",
+    "24",
+    "--screenshot",
+    "evidence/overnight-city/final-races/composed-repairs-ec0b87c4/barnhus-camera2-native.png",
+    "--no-profile"
+  ],
+  "image_sha256": "ca0242a3573f8cbcce5b29b5d3cae4fb22001751d55d1c98bb94c38a0ae14734",
+  "log_sha256": "b7706e6a07ceb060900efa411e4a51c2580dd1ad8e52ea13ca788064ba651c02"
+}

@@ -1,0 +1,12 @@
+{
+  "probe-ec0b-continuation.py": "ebeeea00cdb67c39ebb28a652cb167c8a2c053f65359f3dd2ee800b9cc2b9fc1",
+  "puste-ec0b-native-footprint-audit.json": "b1159e9b76d9e8f735fe5ffb431d716ca3c7d61e226f2f967da75634e42ab6c8",
+  "slotts-ec0b-unapplied-continuation.log": "1b0b220ab4ded867f82db7f948dca7a2667864770bfaa6b4d878d37da4006a75",
+  "audit-puste-native.py": "4573e2d75afedc4f3a5eee8a4950340cb2716de5d457ab2a06dbd41196fbcbab",
+  "puste-f02-native-footprint-audit.json": "a69b34dc2345e3a08f9d6fc3b31bfe46e88b94586ce6c49e05e0e9e63df8a9ef",
+  "comparison.json": "eac97c19f00c47e822914fa29fa81d2d87a03a7be5cacc57e70e274522dd0eed",
+  "slotts-f02-native-footprint-audit.json": "ca142892c5d351ab48a2f12ce08ef0b8ad930503d892ac2f16260b9ed49a8fb3",
+  "continuation-scope.json": "b55783d32d48fadd9714944b1853a81a1a16aa5e9d08c551dbc25e6cad3834f9",
+  "audit-slotts-native.py": "f40687ddcdab1c84cf34a0a88f2907805397344525c4507d22ff3fc4fda68729",
+  "slotts-ec0b-native-footprint-audit.json": "fe13da63a1f588d2d513b498934a687ec8dcd40a2411f3371a962251681a2873"
+}

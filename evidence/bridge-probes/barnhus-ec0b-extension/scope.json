@@ -1,0 +1,9 @@
+{
+  "package_manifest_sha256": "ec0b87c443269deb3337d9fc662b430fb0928b1f19be57b3b385f8c106e03d81",
+  "scope": "Parent native source-connected Barnhus span/departure probe; query of later extension departure",
+  "engine_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "1900_updates": "Bridge and departure physically crossed without resets/recovery; final0/4wheels means full extended strict traversal is not accepted",
+  "2400_updates": "Escape on grass ~200m beyond original bridge endpoint, nearestsource Dalagatan centre5.843m away outside9mroadwidth; no water/native road underneath",
+  "claimed_complete_clean_extended_traversal": false,
+  "attribution": "\u00a9 OpenStreetMap contributors (ODbL); elevation Lantm\u00e4teriet per project metadata"
+}

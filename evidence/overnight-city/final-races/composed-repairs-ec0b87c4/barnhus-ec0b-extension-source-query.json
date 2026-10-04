@@ -1,0 +1,193 @@
+{
+  "stall": {
+    "xz": [
+      352.75272,
+      -909.2431
+    ],
+    "nearest_source_roads": [
+      {
+        "lateral_m": 5.843346507288465,
+        "id": 35105925,
+        "tags": {
+          "highway": "residential",
+          "lit": "yes",
+          "maxspeed": "30",
+          "maxweight": "12",
+          "name": "Dalagatan",
+          "parking:both": "no",
+          "sidewalk": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q10466054",
+          "wikipedia": "sv:Dalagatan"
+        },
+        "width": 9.0
+      },
+      {
+        "lateral_m": 8.10350101377318,
+        "id": 112791730,
+        "tags": {
+          "bridge": "yes",
+          "highway": "residential",
+          "layer": "1",
+          "lit": "yes",
+          "maxspeed": "30",
+          "maxweight": "12",
+          "name": "Dalagatan",
+          "parking:both": "no",
+          "sidewalk": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q10466054",
+          "wikipedia": "sv:Dalagatan"
+        },
+        "width": 9.0
+      },
+      {
+        "lateral_m": 10.12006398000301,
+        "id": 1279036173,
+        "tags": {
+          "highway": "residential",
+          "lit": "yes",
+          "maxspeed": "30",
+          "maxweight": "12",
+          "name": "Dalagatan",
+          "parking:left": "lane",
+          "parking:left:disabled": "designated",
+          "parking:left:fee": "yes",
+          "parking:left:fee:zone": "Taxa 2",
+          "parking:left:orientation": "parallel",
+          "parking:left:restriction:conditional": "no_parking @ (Tu 00:00-06:00)",
+          "parking:left:restriction:reason:conditional": "street_cleaning @ (Tu 00:00-06:00)",
+          "parking:left:zone": "Ci",
+          "parking:right": "no",
+          "parking:right:restriction": "no_parking",
+          "sidewalk": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q10466054",
+          "wikipedia": "sv:Dalagatan"
+        },
+        "width": 9.0
+      },
+      {
+        "lateral_m": 11.163002413303433,
+        "id": 4491325,
+        "tags": {
+          "highway": "residential",
+          "lit": "yes",
+          "maxheight:signed": "no",
+          "maxspeed": "30",
+          "name": "Kammakargatan",
+          "oneway": "yes",
+          "sidewalk": "separate",
+          "smoothness": "excellent",
+          "source": "survey",
+          "surface": "asphalt",
+          "wikidata": "Q10543155",
+          "wikipedia": "sv:Kammakargatan"
+        },
+        "width": 9.0
+      }
+    ]
+  },
+  "aim": {
+    "xz": [
+      355.70334,
+      -897.8096
+    ],
+    "nearest_source_roads": [
+      {
+        "lateral_m": 3.94167847779843e-05,
+        "id": 1279036173,
+        "tags": {
+          "highway": "residential",
+          "lit": "yes",
+          "maxspeed": "30",
+          "maxweight": "12",
+          "name": "Dalagatan",
+          "parking:left": "lane",
+          "parking:left:disabled": "designated",
+          "parking:left:fee": "yes",
+          "parking:left:fee:zone": "Taxa 2",
+          "parking:left:orientation": "parallel",
+          "parking:left:restriction:conditional": "no_parking @ (Tu 00:00-06:00)",
+          "parking:left:restriction:reason:conditional": "street_cleaning @ (Tu 00:00-06:00)",
+          "parking:left:zone": "Ci",
+          "parking:right": "no",
+          "parking:right:restriction": "no_parking",
+          "sidewalk": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q10466054",
+          "wikipedia": "sv:Dalagatan"
+        },
+        "width": 9.0
+      },
+      {
+        "lateral_m": 1.7766765497892607,
+        "id": 1279036172,
+        "tags": {
+          "highway": "residential",
+          "lit": "yes",
+          "maxspeed": "30",
+          "name": "Wallingatan",
+          "name:etymology:wikidata": "Q1355965",
+          "parking:left": "lane",
+          "parking:left:disabled": "designated",
+          "parking:left:fee": "yes",
+          "parking:left:fee:zone": "Taxa 2",
+          "parking:left:orientation": "parallel",
+          "parking:left:restriction:conditional": "no_parking @ (Tu 00:00-06:00)",
+          "parking:left:restriction:reason:conditional": "street_cleaning @ (Tu 00:00-06:00)",
+          "parking:left:zone": "Ci",
+          "parking:right": "no",
+          "parking:right:restriction": "no_parking",
+          "sidewalk": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q10719196",
+          "wikipedia": "sv:Wallingatan"
+        },
+        "width": 9.0
+      },
+      {
+        "lateral_m": 2.7333812994720557,
+        "id": 35105925,
+        "tags": {
+          "highway": "residential",
+          "lit": "yes",
+          "maxspeed": "30",
+          "maxweight": "12",
+          "name": "Dalagatan",
+          "parking:both": "no",
+          "sidewalk": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q10466054",
+          "wikipedia": "sv:Dalagatan"
+        },
+        "width": 9.0
+      },
+      {
+        "lateral_m": 7.990444411970552,
+        "id": 1279036171,
+        "tags": {
+          "highway": "residential",
+          "lit": "yes",
+          "maxspeed": "30",
+          "name": "Wallingatan",
+          "name:etymology:wikidata": "Q1355965",
+          "parking:left": "lane",
+          "parking:left:fee": "yes",
+          "parking:left:fee:zone": "Taxa 2",
+          "parking:left:orientation": "parallel",
+          "parking:left:restriction:conditional": "no_parking @ (Tu 00:00-06:00)",
+          "parking:left:restriction:reason:conditional": "street_cleaning @ (Tu 00:00-06:00)",
+          "parking:left:zone": "Ci",
+          "parking:right": "no",
+          "parking:right:restriction": "no_parking",
+          "sidewalk": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q10719196",
+          "wikipedia": "sv:Wallingatan"
+        },
+        "width": 9.0
+      }
+    ]
+  }
+}
