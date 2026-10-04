@@ -1,0 +1,16 @@
+{
+  "scope": "Offline local retriangulation of actual exported native Slottskajen room59 facets; not native driving acceptance or a new full export",
+  "package_manifest_sha256": "f02d3bb6f52236bedf7633e91e8a420ead0568c8eca73f849c2eaf80196e8004",
+  "attribution": [
+    "\u00a9 OpenStreetMap contributors; source street geometry and source-node IDs under ODbL",
+    "Elevation source Lantm\u00e4teriet; retain project elevation source attribution and license metadata"
+  ],
+  "faces": 326,
+  "vertices_before": 186,
+  "vertices_after": 186,
+  "native_original_vertex_heights_unchanged": true,
+  "original_min_normal_y": 0.0353303442768357,
+  "retriangulated_min_normal_y": 0.922691468783992,
+  "new_full_export_native_audit": "Pending root build, do not infer from this offline result",
+  "patch_sha256": "772dd8fc0255f0be522caf221069313862f713b0cb0ff6de0801b27e42686799"
+}

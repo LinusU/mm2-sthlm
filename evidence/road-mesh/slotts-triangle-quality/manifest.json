@@ -1,0 +1,6 @@
+{
+  "slotts-native-triangle-quality-evidence.json": "8e8e65dd4292db0cc267c07b7282c5798d98ca9cff1c7278af9eae79b248f592",
+  "reproduce-native-vertex-normals.py": "90c1b92153499dcdf65dcd72bf31aa1c9e0d76b7726697556737d9bb5d7bc54b",
+  "slotts-native-triangle-quality-focused-tests.log": "3ae7762b8528eba8f5ef4deefcb55d6027bb27a203980ad06c66c8171a877a95",
+  "slotts-native-triangle-quality.patch": "772dd8fc0255f0be522caf221069313862f713b0cb0ff6de0801b27e42686799"
+}

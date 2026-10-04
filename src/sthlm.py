@@ -72,6 +72,58 @@ def triangulate(geom):
                 yield pts
 
 
+def improve_triangle_angles(triangles):
+    """Flip only convex interior edges; preserve samples and boundary coverage.
+
+    Midpoint refinement can leave nearly collinear children whose curved vertex
+    heights become a steep transverse plane. A bounded quality pass reconnects
+    the same samples without altering the height field or material boundaries.
+    """
+    triangles = list(triangles)
+
+    def area(tri):
+        a, b, c = tri
+        return abs((b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]))
+
+    def quality(tri):
+        return area(tri) / max(
+            math.dist(a, b) ** 2 for a, b in zip(tri, tri[1:] + tri[:1])
+        )
+
+    # Each pass is linear in face count, with disjoint flips within a pass.
+    for _ in range(12):
+        edges = {}
+        for index, tri in enumerate(triangles):
+            for a, b in zip(tri, tri[1:] + tri[:1]):
+                edges.setdefault(tuple(sorted((a, b))), []).append(index)
+        used = set()
+        changed = False
+        for (a, b), owners in edges.items():
+            if len(owners) != 2 or any(owner in used for owner in owners):
+                continue
+            i, j = owners
+            c = next(v for v in triangles[i] if v not in (a, b))
+            d = next(v for v in triangles[j] if v not in (a, b))
+            replacement = [[c, d, a], [c, d, b]]
+            before = area(triangles[i]) + area(triangles[j])
+            after = sum(area(tri) for tri in replacement)
+            # Equality of the two diagonal areas proves convexity. Reject
+            # degenerate or overlapping replacements at concave boundaries.
+            if abs(before - after) > max(1e-9, before * 1e-8):
+                continue
+            if (
+                min(map(quality, replacement))
+                <= min(quality(triangles[i]), quality(triangles[j])) + 1e-8
+            ):
+                continue
+            triangles[i], triangles[j] = replacement
+            used.update(owners)
+            changed = True
+        if not changed:
+            break
+    return triangles
+
+
 def height_triangles(geom, level, *, interior=True):
     """Refine curved height fields without opening shared material edges.
 
@@ -132,7 +184,7 @@ def height_triangles(geom, level, *, interior=True):
         triangles = refined
         if not changed:
             break
-    for pts in triangles:
+    for pts in improve_triangle_angles(triangles) if interior else triangles:
         a, b, c = pts
         if (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]) < 0:
             pts = list(reversed(pts))
