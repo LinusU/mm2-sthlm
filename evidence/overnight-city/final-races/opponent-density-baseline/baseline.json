@@ -1,0 +1,18 @@
+{
+  "engine_revision": "c4156b780969666f420375d9f5647f51913646a0",
+  "engine_binary_sha256": "b2f82e39f58ab16032c4fbf59c6a2dc0851a4bbb871ebe32d984e6af788d8742",
+  "package_manifest_sha256": "0c69b55937d4f44ee400220f68a94728338aed55e35409f37f3d1f081f5cf04e",
+  "scope": "Rejected rival-progress diagnostics. Clean player finish does not establish healthy native opponents; matrix exact commands will be recorded in final reports.",
+  "reports": [
+    {
+      "log": "checkpoint0-professional.log",
+      "sha256": "3764263e949fb522619a381916786772733dfc611606da8247276e4d0fa34d7e",
+      "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=20758 ticks=11019 driver=scripted diff=professional phase=results impacts=330 dropped=0 peak=30.1m/s travel=2236.8m sim=91.83s resets=0 controls=6563t/762b/2480s finite=true moved=153m wheels=4/4 final=(412,3.4,11) race=Running cp=2/2 results=4 pos=1/5 outcome=finished place=1 opp=3/4 opp_rec=2 opp_drv=9593m/19.2mps/5.7ipk/1.8xpk/1.4apk/0.31hpk opps=0:sthlm_racer/2c/F/5e/1r/900w,1:sthlm_racer/2c/F/5e/1r/900w,2:sthlm_racer/1c/3e/784w,3:sthlm_racer/2c/F/2e/525w env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/4m/4b tmr=22g/5:42:96 arr=hudarrow01/off sta=10g/p1of5/-/c2of2 bng=3217d/15a/52s/21b bng_ev=4a/52s/21b bng_rec=33 wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+8x"
+    },
+    {
+      "log": "circuit0-professional.log",
+      "sha256": "5e6f9b0b57375a0d294bf2e57c0c8f41998ab6f73e09293059f32661eb815a0b",
+      "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=16357 ticks=16536 driver=scripted diff=professional phase=results impacts=75 dropped=0 peak=12.1m/s travel=1633.3m sim=137.80s resets=0 controls=10016t/6520b/4000s finite=true moved=92m wheels=4/4 final=(-311,12.6,-273) race=Complete cp=4/4 results=4 lap=3/3 pos=1/4 outcome=finished place=1 opp=3/3 opp_rec=4 opp_drv=6419m/10.7mps/12.9ipk/6.4xpk/1.2apk/0.62hpk opps=0:sthlm_racer/4c/3l/F/17e/2r/900w/12d,1:sthlm_racer/4c/3l/F/6e/567w/12d,2:sthlm_racer/4c/3l/F/14e/2r/900w/8d env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/3m/3b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3242d/0a/0s/0b bng_ev=0a/0s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+17x"
+    }
+  ]
+}
