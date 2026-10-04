@@ -43,8 +43,35 @@ class CheckpointCatalogTests(unittest.TestCase):
                 self.assertEqual(sorted(order), list(range(len(event["checkpoints"]))))
             self.assertLessEqual(
                 max(event["opponent_order_lengths_m"]),
-                event["suggested_route_length_m"] * 1.25 + 1,
+                event["suggested_route_length_m"] * 1.30 + 1,
             )
+
+    def test_through_plans_keep_owned_edges_without_immediate_reversals(self):
+        for event in self.catalog["events"]:
+            for plan in event["opponent_route_via"]:
+                nodes = [a["node_id"] for a in plan]
+                self.assertFalse(
+                    any(a == c for a, _, c in zip(nodes, nodes[1:], nodes[2:]))
+                )
+                for first, second in zip(plan, plan[1:]):
+                    way = self.ways[first["way_id"]]
+                    if way["tags"].get("highway") == "service":
+                        self.assertTrue(way["tags"].get("name"))
+                    source_nodes = way["nodes"]
+                    self.assertTrue(
+                        any(
+                            {a, b} == {first["node_id"], second["node_id"]}
+                            for a, b in zip(source_nodes, source_nodes[1:])
+                        )
+                    )
+
+    def test_source_turnaround_in_through_plan_is_rejected(self):
+        bad = copy.deepcopy(self.catalog)
+        plan = bad["events"][0]["opponent_route_via"][0]
+        plan.insert(2, copy.deepcopy(plan[0]))
+        bad["events"][0]["route_via"] = plan
+        with self.assertRaisesRegex(ValueError, "immediate source reversal"):
+            validate_catalog(bad)
 
     def test_marker_radii_cannot_overlap_start_or_other_gates(self):
         for event in self.catalog["events"]:

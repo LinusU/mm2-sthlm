@@ -90,6 +90,42 @@ def validate_catalog(catalog, roads=None):
                     )
                 if road["width"] < 5:
                     raise ValueError("Checkpoint anchor is on an unsafe narrow road")
+        plans = event.get("opponent_route_via")
+        if plans is not None:
+            if len(plans) != len(event["opponent_orders"]):
+                raise ValueError("Every opponent order requires a through itinerary")
+            if event.get("route_via") != plans[0]:
+                raise ValueError("Suggested guide must equal the first authored plan")
+            for plan in plans:
+                plan_nodes = [a["node_id"] for a in plan]
+                if (
+                    not plan_nodes
+                    or plan_nodes[0] != event["start"]["node_id"]
+                    or plan_nodes[-1] != event["finish"]["node_id"]
+                ):
+                    raise ValueError(
+                        "Through itinerary must keep source start and finish"
+                    )
+                if not set(nodes[1:-1]).issubset(plan_nodes):
+                    raise ValueError("Through itinerary must visit every gameplay gate")
+                if any(
+                    a == c
+                    for a, _, c in zip(plan_nodes, plan_nodes[1:], plan_nodes[2:])
+                ):
+                    raise ValueError(
+                        "Through itinerary contains an immediate source reversal"
+                    )
+                if owned is not None:
+                    for a in plan:
+                        road = owned.get(a["way_id"])
+                        if (
+                            road is None
+                            or a["node_id"] not in road["nodes"]
+                            or road["width"] < 5
+                        ):
+                            raise ValueError(
+                                "Through itinerary has invalid drivable source ownership"
+                            )
         for rank in ("amateur", "professional"):
             params = event[rank]
             if set(params) != set(PARAMETERS):

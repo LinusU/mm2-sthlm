@@ -1,0 +1,45 @@
+{
+  "scope": "Checkpoint 0 amateur diagnostic comparisons; no accepted 20-course physical matrix yet",
+  "engine_source": "02cbe4db5d6d7fc27d2c0b2410ffeb4d05876bb7 for through/service and public; ab5ad9ad98e317aaebeb503305154bb980946bcb for original-source-gates",
+  "occurrence_binary_sha256": "c3845ec36ffb2ed8b031faff6e609a68cf49b6263c32693ed68686ad334f4216",
+  "public_package_manifest_sha256": "5990c759b52992a779ed05f88ef3db4ce184bc270f7762b7359538b04d4a86b7",
+  "public_command": [
+    "/private/tmp/checkpoint-acceptance-engine/mm2-occurrence",
+    "--mods",
+    "/private/tmp/checkpoint-public-mods",
+    "--city",
+    "stockholm",
+    "--car",
+    "sthlm_racer",
+    "--event",
+    "checkpoint:0",
+    "--headless",
+    "--bot",
+    "--bot-route",
+    "/private/tmp/checkpoint-public-mods/stockholm/qa/races/checkpoint0-a-guide.opp",
+    "--frames",
+    "18000",
+    "--no-profile"
+  ],
+  "interpretation": "All four real AI finish on the public-street candidate; actor 1 has zero escapes/reanchors. Its 2288m alternate becomes the final authored primary. Player still records recovery, so traversal fails clean acceptance. Current source catalog differs by that primary/alternate reorder. Await coherent road surface and generic guide controller before full matrix.",
+  "records": [
+    {
+      "case": "original-source-gates",
+      "log_path": "/private/tmp/checkpoint-final-planned-ai0.log",
+      "log_sha256": "cb144b4c90774ec3bc6bd4074a826e2dc5a204d87d4ce2fcd7c8106fe9d81875",
+      "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=6000 ticks=8002 driver=scripted diff=amateur phase=results impacts=435 dropped=0 peak=30.1m/s travel=1442.6m sim=66.68s resets=0 controls=5034t/516b/1394s finite=true moved=137m wheels=4/4 final=(399,3.5,22) race=Running cp=2/2 results=1 pos=1/5 outcome=finished place=1 opp=0/4 cu=1 opp_drv=5640m/17.3mps/6.0ipk/2.1xpk opps=0:sthlm_racer/0c/2e/539w,1:sthlm_racer/1c/1e/219w,2:sthlm_racer/0c/2e/599w,3:sthlm_racer/0c/7e/789w p_rec=0r/1e env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/4m/4b tmr=22g/1:37:00 arr=hudarrow01/off sta=10g/p1of5/-/c2of2 bng=3203d/15a/98s/37b bng_ev=2a/98s/37b bng_rec=78 wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+8x"
+    },
+    {
+      "case": "through-service-drive-slow",
+      "log_path": "/private/tmp/checkpoint-through-speed12.log",
+      "log_sha256": "bdb9a54a25f7e8ab6cbb9b670be9a158b223ab2b82236180ad2b0abc311b5019",
+      "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=18000 ticks=21858 driver=scripted diff=amateur phase=results impacts=1009 dropped=0 peak=12.2m/s travel=1945.1m sim=182.15s resets=0 controls=13672t/8186b/6964s finite=true moved=125m wheels=4/4 final=(368,3.7,18) race=Complete cp=2/2 results=5 pos=3/5 outcome=finished place=3 opp=4/4 opp_rec=1 opp_drv=8989m/14.3mps/13.7ipk/3.6xpk opps=0:sthlm_racer/2c/F/11e/1r/900w,1:sthlm_racer/2c/F/3e/669w,2:sthlm_racer/2c/F/3e/320w,3:sthlm_racer/2c/F/14e/675w p_rec=0r/4e env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/4m/4b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3181d/20a/157s/58b bng_ev=3a/157s/58b bng_rec=112 wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+8x"
+    },
+    {
+      "case": "public-street-through",
+      "log_path": "/private/tmp/checkpoint-public0.log",
+      "log_sha256": "011ff329691cf725ef7e578808dcd09e148848ad8dab9d009cf92ca115e3cac3",
+      "native_summary": "smoke=headless-physics world=city/stockholm.psdl status=pass updates=18000 ticks=31753 driver=scripted diff=amateur phase=results impacts=55 dropped=0 peak=30.1m/s travel=4842.5m sim=264.61s resets=2 controls=20995t/3108b/12552s finite=true moved=133m wheels=4/4 final=(401,3.6,29) race=Complete cp=2/2 results=5 pos=5/5 outcome=finished place=5 opp=4/4 opp_drv=9433m/20.1mps/2.5ipk/0.7xpk opps=0:sthlm_racer/2c/F/1e/376w,1:sthlm_racer/2c/F/106w,2:sthlm_racer/2c/F/1e/369w,3:sthlm_racer/2c/F/5e/570w p_rec=2r/11e env=lt04(noon) fog=none sky=none wtr=0.2/1698r map=inset/north/z1200/hudmap_stockholm.pkg/1t/8m dash=absent:missing-spec+pkg trk=sized ind=on/4m/4b tmr=22g/off arr=hudarrow01/off sta=10g/-/-/- bng=3240d/0a/2s/0b bng_ev=2a/2s/0b wfx=0r/0e/0x+8f+ut aud=0h/0v/0s/0l/0a/0r+8x"
+    }
+  ]
+}
