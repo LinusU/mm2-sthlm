@@ -1,0 +1,27 @@
+test_exact_source_bridge_fan_has_no_interior_near_vertical_triangles (test_plane_0.BridgeJunctionFanTests.test_exact_source_bridge_fan_has_no_interior_near_vertical_triangles) ... ok
+test_overlapping_junction_fits_do_not_switch_height_at_nearest_boundary (test_plane_0.BridgeJunctionFanTests.test_overlapping_junction_fits_do_not_switch_height_at_nearest_boundary) ... ok
+test_actual_parallel_deck_has_smooth_native_floor_at_all_three_stalls (test_plane_1.BridgeParallelProfileTests.test_actual_parallel_deck_has_smooth_native_floor_at_all_three_stalls) ... ok
+test_interior_source_approach_anchor_is_not_moved_without_join_alignment (test_plane_1.BridgeParallelProfileTests.test_interior_source_approach_anchor_is_not_moved_without_join_alignment) ... ok
+test_unconnected_stacked_or_distant_equal_named_decks_remain_independent (test_plane_1.BridgeParallelProfileTests.test_unconnected_stacked_or_distant_equal_named_decks_remain_independent) ... ok
+test_approach_seam_belongs_only_to_its_source_road (test_plane_2.ElevationTests.test_approach_seam_belongs_only_to_its_source_road) ... ok
+test_bridge_approach_partition_has_shared_height_plane (test_plane_2.ElevationTests.test_bridge_approach_partition_has_shared_height_plane) ... ok
+test_bridge_deck_matches_ends_without_flattening_underpass (test_plane_2.ElevationTests.test_bridge_deck_matches_ends_without_flattening_underpass) ... ok
+test_bridge_end_anchors_uphill_road_instead_of_bank_dtm (test_plane_2.ElevationTests.test_bridge_end_anchors_uphill_road_instead_of_bank_dtm) ... ok
+test_bridge_near_end_keeps_lower_crossing_road (test_plane_2.ElevationTests.test_bridge_near_end_keeps_lower_crossing_road) ... ok
+test_height_surface_samples_inside_large_polygons (test_plane_2.ElevationTests.test_height_surface_samples_inside_large_polygons) ... ok
+test_material_boundaries_keep_identical_mesh_edges (test_plane_2.ElevationTests.test_material_boundaries_keep_identical_mesh_edges) ... ok
+test_material_boundaries_match_across_chunk_clipping (test_plane_2.ElevationTests.test_material_boundaries_match_across_chunk_clipping) ... ok
+test_shared_road_junction_uses_one_height (test_plane_2.ElevationTests.test_shared_road_junction_uses_one_height) ... ok
+test_slottskajen_native_shoulders_do_not_emit_collision_needles (test_plane_2.ElevationTests.test_slottskajen_native_shoulders_do_not_emit_collision_needles) ... ok
+test_slottskajen_road_shoulders_have_no_nearest_owner_step (test_plane_2.ElevationTests.test_slottskajen_road_shoulders_have_no_nearest_owner_step) ... ok
+test_torsgrand_export_does_not_lift_lower_street_to_parallel_road (test_plane_2.ElevationTests.test_torsgrand_export_does_not_lift_lower_street_to_parallel_road) ... ok
+test_trees_are_separate_grounded_breakable_assets (test_plane_2.ElevationTests.test_trees_are_separate_grounded_breakable_assets) ... ok
+test_wide_road_matches_ground_at_roadway_edge (test_plane_2.ElevationTests.test_wide_road_matches_ground_at_roadway_edge) ... ok
+test_shared_source_plane_wins_equal_distance_partial_local_fit (test_plane_3.BridgeLayerJoinTests.test_shared_source_plane_wins_equal_distance_partial_local_fit) ... ok
+test_source_layer_change_has_no_raised_native_round_cap (test_plane_3.BridgeLayerJoinTests.test_source_layer_change_has_no_raised_native_round_cap) ... ok
+test_unconnected_stacked_bridge_crossing_stays_separated (test_plane_3.BridgeLayerJoinTests.test_unconnected_stacked_bridge_crossing_stays_separated) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.305s
+
+OK

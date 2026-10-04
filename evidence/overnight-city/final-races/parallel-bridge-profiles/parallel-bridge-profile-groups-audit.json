@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Sankt Eriksbron",
+    "source_ways": [
+      4491048,
+      155195596
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 0.030744
+  },
+  {
+    "name": "Stadshusbron",
+    "source_ways": [
+      4647958,
+      680061607
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 0.056229
+  },
+  {
+    "name": "Djurg\u00e5rdsbron",
+    "source_ways": [
+      23620161,
+      1088248978,
+      1088248984
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 0.231185
+  },
+  {
+    "name": "Kungsbron",
+    "source_ways": [
+      28217634,
+      127674505
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 0.475157
+  },
+  {
+    "name": "V\u00e4sterbron",
+    "source_ways": [
+      28274837,
+      49778495
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 0.814613
+  },
+  {
+    "name": "Vasabron",
+    "source_ways": [
+      28345891,
+      162142154
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 2.443299
+  },
+  {
+    "name": "Klarabergsviadukten",
+    "source_ways": [
+      42559454,
+      755966582
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 0.23306
+  },
+  {
+    "name": "Ringv\u00e4gen",
+    "source_ways": [
+      110107914,
+      151083829
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 0.241158
+  },
+  {
+    "name": "Klarabergsviadukten",
+    "source_ways": [
+      546431431,
+      614158962
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 2.316626
+  },
+  {
+    "name": "Klarabergsviadukten",
+    "source_ways": [
+      1278777111,
+      1278777112
+    ],
+    "rule": "shared upper longitudinal datum; exact approach anchors retained",
+    "max_raise_m": 0.143027
+  }
+]

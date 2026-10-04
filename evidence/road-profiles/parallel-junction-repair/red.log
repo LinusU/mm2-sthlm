@@ -1,0 +1,56 @@
+test_exact_stromsborg_connector_lift_is_smooth_not_one_raised_vertex (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_exact_stromsborg_connector_lift_is_smooth_not_one_raised_vertex) ... FAIL
+test_exact_vasa_source_connector_emits_continuous_native_facets (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_exact_vasa_source_connector_emits_continuous_native_facets) ... FAIL
+test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved) ... 
+  test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved) (node=180946) ... FAIL
+  test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved) (node=8795682915) ... FAIL
+  test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved) (node=11871446956) ... FAIL
+
+======================================================================
+FAIL: test_exact_stromsborg_connector_lift_is_smooth_not_one_raised_vertex (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_exact_stromsborg_connector_lift_is_smooth_not_one_raised_vertex)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/checkpoint-profile-repair/tests/test_bridge_alignment_junctions.py", line 66, in test_exact_stromsborg_connector_lift_is_smooth_not_one_raised_vertex
+    self.assertGreater(min(lifts), 0.7)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0.0 not greater than 0.7
+
+======================================================================
+FAIL: test_exact_vasa_source_connector_emits_continuous_native_facets (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_exact_vasa_source_connector_emits_continuous_native_facets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/checkpoint-profile-repair/tests/test_bridge_alignment_junctions.py", line 93, in test_exact_vasa_source_connector_emits_continuous_native_facets
+    self.assertGreater(min(normals), 0.9)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.12984337594160422 not greater than 0.9
+
+======================================================================
+FAIL: test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved) (node=180946)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/checkpoint-profile-repair/tests/test_bridge_alignment_junctions.py", line 47, in test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved
+    self.assertLess(max(values) - min(values), 1e-8)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.9929600086408357 not less than 1e-08
+
+======================================================================
+FAIL: test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved) (node=8795682915)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/checkpoint-profile-repair/tests/test_bridge_alignment_junctions.py", line 47, in test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved
+    self.assertLess(max(values) - min(values), 1e-8)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.006584943599310833 not less than 1e-08
+
+======================================================================
+FAIL: test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved) (node=11871446956)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/checkpoint-profile-repair/tests/test_bridge_alignment_junctions.py", line 47, in test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved
+    self.assertLess(max(values) - min(values), 1e-8)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.8743386411223479 not less than 1e-08
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.042s
+
+FAILED (failures=5)

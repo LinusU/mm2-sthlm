@@ -1,0 +1,43 @@
+{
+  "mode": "green",
+  "alignment": [
+    {
+      "name": "Vasabron",
+      "source_ways": [
+        28345891,
+        162142154
+      ],
+      "rule": "shared upper longitudinal datum; exact approach anchors retained",
+      "max_raise_m": 2.443299
+    }
+  ],
+  "native_floors": [
+    {
+      "body": [
+        1060.7212,
+        6.7827826,
+        23.614555
+      ],
+      "face_count": 6,
+      "minimum_normal_y": 0.9985424186287561
+    },
+    {
+      "body": [
+        1070.2966,
+        7.221368,
+        36.25343
+      ],
+      "face_count": 6,
+      "minimum_normal_y": 0.9985425829166031
+    },
+    {
+      "body": [
+        1087.5679,
+        8.5007925,
+        56.986816
+      ],
+      "face_count": 8,
+      "minimum_normal_y": 0.9908992454649311
+    }
+  ]
+}

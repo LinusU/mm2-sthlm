@@ -1,0 +1,50 @@
+{
+  "scope": "Offline source-profile and emitted-native-facet regressions. Read-only actual192crossing audit on immutable261fc0b6 before/after composedsegmentedalignment+exactsourcejoin guard. No native drive acceptance inferred.",
+  "normalized_sha256": "68d6b74de7bd497ea2e9686c911bce2cb95fd842ed00a227af6ac4b9b58bf6e2",
+  "files": [
+    {
+      "path": "check-clearance.py",
+      "sha256": "8bdb17e48146e28f5febd95f816f51f9aed28456efa5d5e2c8cdd7e620b92345"
+    },
+    {
+      "path": "check-segmented-clearance.py",
+      "sha256": "9ce6dc04c203d4fac35e074e4b611d8dac38c7b02235a1db5ca4eda6196abe89"
+    },
+    {
+      "path": "checkpoint-bridge-coherent-datum-guard.patch",
+      "sha256": "89f36d4f2ea53ac8b4f2952717e64a0f81eac939f1504774a6d3ea70a0f1b2e0"
+    },
+    {
+      "path": "checkpoint-bridge-profile-clearance-analysis.json",
+      "sha256": "beae8f1d52027f78a69e71a2f81c7ed74ffd8aaa6d1896d5a375fa2ee42e988e"
+    },
+    {
+      "path": "checkpoint-bridge-profile-segmented-clearance-analysis.json",
+      "sha256": "686f7dca07f584066fa7d1425a5dd02807dc082745cf7fe09234faa0abe5013b"
+    },
+    {
+      "path": "checkpoint-lilla-coherent-composed-native-green.json",
+      "sha256": "651103294e033fe7aaa93581fbebafcd55ffb8cee4c79b668deefee6067d963c"
+    },
+    {
+      "path": "elevation-lilla-composed.py",
+      "sha256": "4985393742aef4717c48fc591eaa9c873fb644fe7e2e2e85a183b9311cd4dc41"
+    },
+    {
+      "path": "green.log",
+      "sha256": "e86999d9859f41561e2cce64ddb5de5a73b46a75efa50d1ceb48142d286c67c5"
+    },
+    {
+      "path": "lilla-composed-green.log",
+      "sha256": "a7e00097b6178bd16ba9ad4da09f37e7633a2acf17005f26ca0bdd2244f36f2f"
+    },
+    {
+      "path": "red.log",
+      "sha256": "c5e1f5d35a7898ee64e9b5e1948dd9a7a152fe04d8831120793b90898fb06efb"
+    },
+    {
+      "path": "worktree-coherent-tests.log",
+      "sha256": "f70bd5983539df08c80853069513302155d2201cb0063169252ba91383d879b2"
+    }
+  ]
+}

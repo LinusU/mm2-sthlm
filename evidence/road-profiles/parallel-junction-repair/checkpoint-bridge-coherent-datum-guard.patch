@@ -1,0 +1,75 @@
+--- a/src/elevation.py
++++ b/src/elevation.py
+@@ -450,6 +450,7 @@
+         {},
+         {},
+     )
++    aligned_minimum = []
+     for road in roads:
+         source = {tuple(p): n for n, p in zip(road["nodes"], road["points"])}
+         chain = []
+@@ -463,10 +464,12 @@
+                 positions.append(point[:2])
+                 baseline.append(old[2])
+                 levels.append(point[2])
++                aligned_minimum.append(point[2])
+                 graph.append({})
+             vertex = keys[key]
+             baseline[vertex] = max(baseline[vertex], old[2])
+             levels[vertex] = max(levels[vertex], point[2])
++            aligned_minimum[vertex] = min(aligned_minimum[vertex], point[2])
+             owners.setdefault(vertex, set()).add(road["id"])
+             chain.append(vertex)
+         chains[road["id"]] = chain
+@@ -480,6 +483,7 @@
+         for key, vertex in keys.items()
+         if key[0] == "node"
+         and len(owners[vertex]) > 1
++        and levels[vertex] - aligned_minimum[vertex] > 1e-8
+         and vertex not in anchors
+         and levels[vertex] > baseline[vertex] + 1e-8
+     ]
+--- a/tests/test_bridge_alignment_junctions.py
++++ b/tests/test_bridge_alignment_junctions.py
+@@ -10,7 +10,10 @@
+ from shapely.geometry import Point, Polygon, box, mapping
+ 
+ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+-from elevation import align_parallel_bridge_profiles  # noqa: E402
++from elevation import (  # noqa: E402
++    align_parallel_bridge_profiles,
++    _reconcile_bridge_profile_junctions,
++)
+ from road_surfaces import render_bridge_layers  # noqa: E402
+ from sthlm import PsdlWriter  # noqa: E402
+ 
+@@ -36,6 +39,29 @@
+             for node, point in zip(road["nodes"], road["points"]):
+                 heights.setdefault(node, []).append(profiles[tuple(point)])
+         return heights
++
++    def test_already_coherent_shared_datum_is_not_raised_again(self):
++        roads = [
++            {
++                "id": owner,
++                "nodes": [1, 2, 3],
++                "points": [[0, 0], [50, 0], [100, 0]],
++                "elevated_points": [
++                    [x, 0, y]
++                    for x, y in zip(
++                        [0, 25, 45, 50, 55, 75, 100],
++                        [5, 5.2, 5.8, 6, 5.8, 5.2, 5],
++                    )
++                ],
++            }
++            for owner in (1, 2)
++        ]
++        original = {r["id"]: [[*p[:2], 5] for p in r["elevated_points"]] for r in roads}
++        before = copy.deepcopy(roads)
++        self.assertEqual(
++            _reconcile_bridge_profile_junctions(roads, original, {1, 3}), []
++        )
++        self.assertEqual(roads, before)
+ 
+     def test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved(self):
+         fixture = self.fixture()

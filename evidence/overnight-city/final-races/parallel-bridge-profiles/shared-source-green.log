@@ -1,0 +1,8 @@
+test_exact_stromsborg_connector_lift_is_smooth_not_one_raised_vertex (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_exact_stromsborg_connector_lift_is_smooth_not_one_raised_vertex) ... ok
+test_exact_vasa_source_connector_emits_continuous_native_facets (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_exact_vasa_source_connector_emits_continuous_native_facets) ... ok
+test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved (test_bridge_alignment_junctions.BridgeAlignmentJunctionTests.test_global_shared_nodes_and_fixed_ordinary_anchors_are_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.046s
+
+OK

@@ -1,0 +1,24 @@
+{
+  "scope": "Offline exported bridge facet regression against three exact native Vasabron stall footprints; final rebuilt-package driving still pending. Heights are estimated, not surveyed bridge deck heights.",
+  "rule": "Named nearby opposite carriageways on the same OSM layer, within compatible height range; common upper longitudinal envelope with 20 m approach taper. Source-connected approach anchors stay exact; different-layer, distant or genuinely stacked decks remain independent.",
+  "original_package_checksums_sha256": "736f6e8f4cb515619fa8c58fc3e11f16fd8eada8d14600a164de9116d1d422ce",
+  "minimum_normal_y_before": [
+    0.76553,
+    0.68887,
+    0.56067
+  ],
+  "minimum_normal_y_after": [
+    0.99854,
+    0.99854,
+    0.9909
+  ],
+  "max_vasabron_profile_raise_m": 2.443299,
+  "checksums": {
+    "parallel-bridge-profile-groups-audit.json": "0108c0f5f20047134d8a52cec852e722800c573bab502a7049dfee62cc4951ea",
+    "vasa-alignment-native-green.log": "99143ffcae847e5ce5fd498a96a5bffdf9aa1bc1759460dad2cb100947e6266f",
+    "vasa-alignment-native-red.log": "5313fe554706e343d39db21b48b049d1f5cfefdb6f94ccde67d7d7cada60592c",
+    "parallel-bridge-root-tests.log": "c279d38b4272eb24db4f3ca8917e4a95c2c5a3d3df3210d84418664e7351096d",
+    "vasa-minimal-strip-seam-query.json": "5a0a2181b59b9c7530c05a5797d24ed65c97301268921b9f691e4a33550ee5bb",
+    "bridge-parallel-alignment-green.log": "a14ac76456b58ff1a4e72b6a28765bb49504d333ae870d86857c5452fc472f6a"
+  }
+}
