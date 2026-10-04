@@ -499,7 +499,7 @@ def render_bridge_layers(writer, city, terrain, *, triangle_sink=None):
     profiles have correct clearance. Union only ways sharing an OSM layer;
     approach pieces inherit their connected deck's layer, keeping local seams.
     """
-    from elevation import RoadField, bridge_approaches
+    from elevation import RoadField, bridge_approaches, junction_planes
 
     bridge_ids = set(city.get("bridge_ways", []))
     by_id = {r["id"]: r for r in city["roads"]}
@@ -517,6 +517,15 @@ def render_bridge_layers(writer, city, terrain, *, triangle_sink=None):
         for node, position in zip(road["nodes"], road["points"]):
             node_layers[node].add(layer)
             positions[tuple(position)] = node
+    # Layer tags describe local stacking, so a continuous source bridge can
+    # change its tag at a shared node. Separate round end caps otherwise clamp
+    # to different endpoint profiles and float above the connected approach.
+    shared_points = {
+        position for position, node in positions.items() if len(node_layers[node]) > 1
+    }
+    shared_planes = [
+        plane for plane in junction_planes(pieces) if plane[:2] in shared_points
+    ]
     layers = defaultdict(list)
     for piece in pieces:
         road = by_id[piece["id"]]
@@ -566,7 +575,13 @@ def render_bridge_layers(writer, city, terrain, *, triangle_sink=None):
     reports = {}
     for (layer, color), local_pieces in sorted(groups.items()):
         ids = {r["id"] for r in local_pieces}
-        field = RoadField(local_pieces, terrain, bridge=True, junctions=seams)
+        field = RoadField(
+            local_pieces,
+            terrain,
+            bridge=True,
+            junctions=seams,
+            shared_planes=shared_planes,
+        )
         surface = unary_union(
             [
                 LineString([p[:2] for p in r["elevated_points"]]).buffer(

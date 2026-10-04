@@ -80,7 +80,7 @@ def junction_planes(roads):
 
 
 class RoadField:
-    def __init__(self, roads, terrain, bridge=False, junctions=()):
+    def __init__(self, roads, terrain, bridge=False, junctions=(), shared_planes=()):
         self.terrain = terrain
         self.segments = []
         self.values = []
@@ -101,7 +101,9 @@ class RoadField:
                     self.ends.append((a[:2], b[:2]))
         self.tree = STRtree(self.segments)
         self.max_half_width = max(self.widths, default=0)
-        self.planes = junction_planes(roads)
+        # A source-connected join can cross independently rendered layer groups.
+        # Its complete tangent fit must win an equal-distance local fit.
+        self.planes = [*shared_planes, *junction_planes(roads)]
         for seam in junctions:
             if len(seam) == 7:
                 x, n, h, radius, owner, gx, gn = seam
