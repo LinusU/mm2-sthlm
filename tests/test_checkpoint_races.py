@@ -9,6 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from races_checkpoint import anchors, itinerary, load, validate_catalog  # noqa: E402
+from sthlm import project  # noqa: E402
 
 
 class CheckpointCatalogTests(unittest.TestCase):
@@ -18,6 +19,12 @@ class CheckpointCatalogTests(unittest.TestCase):
         with gzip.open(ROOT / "sources/expanded/osm.json.gz", "rt") as handle:
             source = json.load(handle)
         cls.ways = {e["id"]: e for e in source["elements"] if e["type"] == "way"}
+        origin = json.loads((ROOT / "config/expanded.json").read_text())["origin"]
+        cls.positions = {
+            e["id"]: project(e["lon"], e["lat"], origin)
+            for e in source["elements"]
+            if e["type"] == "node"
+        }
 
     def test_exact_source_ownership_for_every_gate(self):
         for event in self.catalog["events"]:
@@ -64,6 +71,44 @@ class CheckpointCatalogTests(unittest.TestCase):
                             for a, b in zip(source_nodes, source_nodes[1:])
                         )
                     )
+
+    def test_route_lengths_match_source_plans_with_progressive_distances(self):
+        lengths = []
+        for event in self.catalog["events"]:
+            for index, plan in enumerate(event["opponent_route_via"]):
+                length = sum(
+                    math.dist(
+                        self.positions[a["node_id"]], self.positions[b["node_id"]]
+                    )
+                    for a, b in zip(plan, plan[1:])
+                )
+                self.assertAlmostEqual(
+                    length, event["opponent_order_lengths_m"][index], delta=1
+                )
+                if index == 0:
+                    self.assertEqual(plan, event["route_via"])
+                    self.assertAlmostEqual(
+                        length, event["suggested_route_length_m"], delta=1
+                    )
+                    lengths.append(length)
+        self.assertTrue(all(a < b for a, b in zip(lengths, lengths[1:])))
+
+    def test_northern_exposure_roundabout_uses_smooth_source_approaches(self):
+        event = self.catalog["events"][6]
+        visits = 0
+        for plan in event["opponent_route_via"]:
+            for before, center, after in zip(plan, plan[1:], plan[2:]):
+                if center["node_id"] != 938308570:
+                    continue
+                points = [self.positions[a["node_id"]] for a in (before, center, after)]
+                incoming = [points[1][k] - points[0][k] for k in range(2)]
+                outgoing = [points[2][k] - points[1][k] for k in range(2)]
+                cosine = sum(a * b for a, b in zip(incoming, outgoing)) / (
+                    math.hypot(*incoming) * math.hypot(*outgoing)
+                )
+                self.assertGreater(cosine, 0.9)
+                visits += 1
+        self.assertEqual(visits, 4)
 
     def test_source_turnaround_in_through_plan_is_rejected(self):
         bad = copy.deepcopy(self.catalog)

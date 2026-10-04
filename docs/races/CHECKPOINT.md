@@ -10,7 +10,7 @@ Ten original Stockholm events graduate from the City Hall neighbourhood to a ful
 | 3 | Royal Appointment | 4 | 5.62 | 5 |
 | 4 | Museum Mile | 5 | 6.35 | 5 |
 | 5 | South Side Story | 4 | 8.18 | 5 |
-| 6 | Northern Exposure | 6 | 9.33 | 6 |
+| 6 | Northern Exposure | 6 | 9.39 | 6 |
 | 7 | Two Banks | 5 | 10.30 | 6 |
 | 8 | Island Hopping | 7 | 15.58 | 6 |
 | 9 | Stockholm Grand Tour | 9 | 22.39 | 7 |
@@ -40,3 +40,5 @@ Offline source-ownership/schema tests (121 complete repository tests passed at a
 Opponent plans now use exact-node `route_via` and `opponent_route_via` itineraries with at least 45 m of approach/departure corridor around each gate and no immediate source-edge reversal. Four gates move 23.6–59.5 m along their same named street to gain through access. These guides do not constrain player order. Native AI advances route points within 14 m, so a gate must not sit at a mandatory turnaround or the driving endpoint. A separate 60 m source-connected runout carries each non-circuit guide beyond the visible finish; it is excluded from the gameplay distance.
 
 AI/main QA itineraries exclude unnamed service driveways and non-car path classes; named waterfront service roads remain available where their retained width is at least five metres. The shortest public-street City Hall alternative is the primary guide; native AI traversed that alternative without recovery in the recorded pre-adaptive-surface fixture. Full source heights and coherent-package physical acceptance remain separate requirements.
+
+Northern Exposure approaches Sergels Torg from the connected Hamngatan carriageway and the west side of the source roundabout. All three AI plans preserve their gate permutations; the Sveavägen junction at source node 938308570 now turns 12–13 degrees instead of 155 degrees. The primary itinerary gains 58 m, retaining progressive distance between South Side Story and Two Banks.

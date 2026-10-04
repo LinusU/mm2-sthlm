@@ -12,7 +12,7 @@
         "label": "Stadshuset start",
         "node_id": 4372203152,
         "way_id": 439570812,
-        "street": "Norr M\u00e4larstrand",
+        "street": "Norr Mälarstrand",
         "east_north_m": [
           318.749,
           -132.37
@@ -24,7 +24,7 @@
           "label": "Waterfront gate",
           "node_id": 9343975897,
           "way_id": 1259514204,
-          "street": "Norr M\u00e4larstrand",
+          "street": "Norr Mälarstrand",
           "east_north_m": [
             -144.369,
             -137.491
@@ -90,7 +90,7 @@
       "design": {
         "theme": "City Hall Shuffle",
         "route_choice": "Read the map before following the nearest arrow. Two gates invite either waterfront-first or courthouse-first; returning uphill costs more braking.",
-        "flow": "A compact welcome near Stadshuset and R\u00e5dhuset, generous asphalt and just two route decisions.",
+        "flow": "A compact welcome near Stadshuset and Rådhuset, generous asphalt and just two route decisions.",
         "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
         "progression": "Set 1; 2 any-order gates. Opponent pressure and route planning increase with catalog rank."
       },
@@ -395,7 +395,7 @@
         "label": "Pavilion start",
         "node_id": 1551579462,
         "way_id": 252557001,
-        "street": "Norr M\u00e4larstrand",
+        "street": "Norr Mälarstrand",
         "east_north_m": [
           -976.298,
           129.665
@@ -407,7 +407,7 @@
           "label": "Waterfront promenade",
           "node_id": 9347241459,
           "way_id": 28981549,
-          "street": "Norr M\u00e4larstrand",
+          "street": "Norr Mälarstrand",
           "east_north_m": [
             -254.853,
             -120.114
@@ -737,10 +737,10 @@
           "road_width_m": 9.0
         },
         {
-          "label": "Sveav\u00e4gen north",
+          "label": "Sveavägen north",
           "node_id": 1431277418,
           "way_id": 122041454,
-          "street": "Sveav\u00e4gen",
+          "street": "Sveavägen",
           "east_north_m": [
             798.51,
             1377.245
@@ -763,7 +763,7 @@
         "label": "Nybro finish",
         "node_id": 1482940821,
         "way_id": 215489613,
-        "street": "Strandv\u00e4gen",
+        "street": "Strandvägen",
         "east_north_m": [
           1955.588,
           448.217
@@ -806,7 +806,7 @@
       "suggested_route_length_m": 3276,
       "design": {
         "theme": "City Lights",
-        "route_choice": "The tempting nearest Kungsgatan gate should be weighed against clearing the long Sveav\u00e4gen arm first; Hamngatan is the natural last gate.",
+        "route_choice": "The tempting nearest Kungsgatan gate should be weighed against clearing the long Sveavägen arm first; Hamngatan is the natural last gate.",
         "flow": "A first Norrmalm fan with boulevard speed interrupted by three distinct turning zones.",
         "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
         "progression": "Set 1; 3 any-order gates. Opponent pressure and route planning increase with catalog rank."
@@ -1378,7 +1378,7 @@
           "label": "City Hall shore",
           "node_id": 11888690008,
           "way_id": 1280821702,
-          "street": "Norr M\u00e4larstrand",
+          "street": "Norr Mälarstrand",
           "east_north_m": [
             138.656,
             -134.719
@@ -2492,7 +2492,7 @@
         "label": "Nybro start",
         "node_id": 1649379183,
         "way_id": 26625899,
-        "street": "Strandv\u00e4gen",
+        "street": "Strandvägen",
         "east_north_m": [
           1887.393,
           470.804
@@ -2501,10 +2501,10 @@
       },
       "checkpoints": [
         {
-          "label": "Djurg\u00e5rden bridge",
+          "label": "Djurgården bridge",
           "node_id": 9970689131,
           "way_id": 215480625,
-          "street": "Djurg\u00e5rdsbron",
+          "street": "Djurgårdsbron",
           "east_north_m": [
             2769.056,
             376.416
@@ -2515,7 +2515,7 @@
           "label": "Karlaplan approach",
           "node_id": 1716393599,
           "way_id": 4700241,
-          "street": "Karlav\u00e4gen",
+          "street": "Karlavägen",
           "east_north_m": [
             2796.217,
             968.847
@@ -2537,7 +2537,7 @@
           "label": "Library boulevard",
           "node_id": 1755176153,
           "way_id": 138481203,
-          "street": "Karlav\u00e4gen",
+          "street": "Karlavägen",
           "east_north_m": [
             1203.376,
             1760.585
@@ -2557,10 +2557,10 @@
         }
       ],
       "finish": {
-        "label": "Strandv\u00e4gen finish",
+        "label": "Strandvägen finish",
         "node_id": 5565382988,
         "way_id": 215489613,
-        "street": "Strandv\u00e4gen",
+        "street": "Strandvägen",
         "east_north_m": [
           2461.04,
           419.741
@@ -2605,8 +2605,8 @@
       "suggested_route_length_m": 6346,
       "design": {
         "theme": "Museum Mile",
-        "route_choice": "Djurg\u00e5rdsbron is an intentional out-and-back spur rather than a fake island jump. The northern gate pair rewards a single loop rather than chasing the nearest arrow.",
-        "flow": "Five gates contrast the museum waterfront with \u00d6stermalm boulevards and a northern turn back.",
+        "route_choice": "Djurgårdsbron is an intentional out-and-back spur rather than a fake island jump. The northern gate pair rewards a single loop rather than chasing the nearest arrow.",
+        "flow": "Five gates contrast the museum waterfront with Östermalm boulevards and a northern turn back.",
         "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
         "progression": "Set 2; 5 any-order gates. Opponent pressure and route planning increase with catalog rank."
       },
@@ -3940,10 +3940,10 @@
       },
       "checkpoints": [
         {
-          "label": "S\u00f6der waterfront",
+          "label": "Söder waterfront",
           "node_id": 4314024764,
           "way_id": 106080045,
-          "street": "S\u00f6der M\u00e4larstrand",
+          "street": "Söder Mälarstrand",
           "east_north_m": [
             225.863,
             -773.003
@@ -3965,7 +3965,7 @@
           "label": "Medborgarplatsen",
           "node_id": 7714759528,
           "way_id": 1288178518,
-          "street": "G\u00f6tgatan",
+          "street": "Götgatan",
           "east_north_m": [
             1621.007,
             -1556.681
@@ -3976,7 +3976,7 @@
           "label": "Tantolunden approach",
           "node_id": 7704400166,
           "way_id": 109764446,
-          "street": "Ringv\u00e4gen",
+          "street": "Ringvägen",
           "east_north_m": [
             727.01,
             -1896.728
@@ -4032,8 +4032,8 @@
       "suggested_route_length_m": 8183,
       "design": {
         "theme": "South Side Story",
-        "route_choice": "Choose whether to clear the waterfront before descending through S\u00f6der or keep it for the return; the diagonal grid shortcuts save distance but add junctions.",
-        "flow": "Four gates span S\u00f6dermalm hills, waterfront recovery straights and a western finish.",
+        "route_choice": "Choose whether to clear the waterfront before descending through Söder or keep it for the return; the diagonal grid shortcuts save distance but add junctions.",
+        "flow": "Four gates span Södermalm hills, waterfront recovery straights and a western finish.",
         "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
         "progression": "Set 2; 4 any-order gates. Opponent pressure and route planning increase with catalog rank."
       },
@@ -5518,7 +5518,7 @@
           "label": "Valhalla east",
           "node_id": 197391220,
           "way_id": 1337695413,
-          "street": "Valhallav\u00e4gen",
+          "street": "Valhallavägen",
           "east_north_m": [
             2721.503,
             1380.351
@@ -5526,10 +5526,10 @@
           "road_width_m": 9.0
         },
         {
-          "label": "\u00d6stermalm south",
+          "label": "Östermalm south",
           "node_id": 5565382988,
           "way_id": 215489613,
-          "street": "Strandv\u00e4gen",
+          "street": "Strandvägen",
           "east_north_m": [
             2461.04,
             419.741
@@ -5540,7 +5540,7 @@
           "label": "City centre",
           "node_id": 1363066772,
           "way_id": 121752189,
-          "street": "Sveav\u00e4gen",
+          "street": "Sveavägen",
           "east_north_m": [
             1084.266,
             760.256
@@ -5595,13 +5595,14 @@
         "amateur": 17.4,
         "professional": 21.0
       },
-      "suggested_route_length_m": 9330,
+      "suggested_route_length_m": 9388,
       "design": {
         "theme": "Northern Exposure",
         "route_choice": "The western bridge and northern gate are a natural pair. The long eastern arm should be cleared before the centre; driving the arrow directly causes avoidable retracing.",
-        "flow": "Six gates demand a plan across Kungsholmen, Vasastan and \u00d6stermalm; no E20 tunnel gate is forced.",
+        "flow": "Six gates demand a plan across Kungsholmen, Vasastan and Östermalm; no E20 tunnel gate is forced.",
         "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
-        "progression": "Set 3; 6 any-order gates. Opponent pressure and route planning increase with catalog rank."
+        "progression": "Set 3; 6 any-order gates. Opponent pressure and route planning increase with catalog rank.",
+        "reference_length_m": 9388
       },
       "opponent_orders": [
         [
@@ -5630,9 +5631,9 @@
         ]
       ],
       "opponent_order_lengths_m": [
-        9330,
-        11638,
-        10390
+        9388,
+        11695,
+        10448
       ],
       "route_via": [
         {"node_id": 1901193101, "way_id": 179695931, "label": "Driving itinerary"},
@@ -5951,32 +5952,43 @@
         {"node_id": 8660094226, "way_id": 71022279, "label": "Driving itinerary"},
         {"node_id": 6034517160, "way_id": 71022279, "label": "Driving itinerary"},
         {"node_id": 1386641625, "way_id": 71022279, "label": "Driving itinerary"},
-        {"node_id": 1386641597, "way_id": 212085619, "label": "Driving itinerary"},
-        {"node_id": 1386641576, "way_id": 212085619, "label": "Driving itinerary"},
-        {"node_id": 846210750, "way_id": 212085619, "label": "Driving itinerary"},
-        {"node_id": 6267534890, "way_id": 212085619, "label": "Driving itinerary"},
-        {"node_id": 1386641517, "way_id": 212085619, "label": "Driving itinerary"},
-        {"node_id": 2459905183, "way_id": 212085619, "label": "Driving itinerary"},
-        {"node_id": 1386641494, "way_id": 215480629, "label": "Driving itinerary"},
-        {"node_id": 21665861, "way_id": 1088497468, "label": "Driving itinerary"},
-        {"node_id": 5879571034, "way_id": 1088497468, "label": "Driving itinerary"},
-        {"node_id": 9972638848, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 5879571033, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 7139084141, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 5879571032, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 9972638855, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 7139084142, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 7139084143, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 5879571031, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 7139084144, "way_id": 622465146, "label": "Driving itinerary"},
-        {"node_id": 5879571059, "way_id": 622465159, "label": "Driving itinerary"},
-        {"node_id": 9972638866, "way_id": 622465159, "label": "Driving itinerary"},
-        {"node_id": 5879571060, "way_id": 622465159, "label": "Driving itinerary"},
-        {"node_id": 7139084145, "way_id": 622465159, "label": "Driving itinerary"},
-        {"node_id": 5879571061, "way_id": 622465159, "label": "Driving itinerary"},
-        {"node_id": 5879571062, "way_id": 622465159, "label": "Driving itinerary"},
-        {"node_id": 7139084147, "way_id": 622465159, "label": "Driving itinerary"},
-        {"node_id": 7139084146, "way_id": 622465159, "label": "Driving itinerary"},
+        {"node_id": 1386641597, "way_id": 129019108, "label": "Driving itinerary"},
+        {"node_id": 1386641572, "way_id": 1102226821, "label": "Driving itinerary"},
+        {"node_id": 1386641551, "way_id": 1102226821, "label": "Driving itinerary"},
+        {"node_id": 6034517162, "way_id": 1102226821, "label": "Driving itinerary"},
+        {"node_id": 1600660838, "way_id": 215480634, "label": "Driving itinerary"},
+        {"node_id": 1386641513, "way_id": 215480634, "label": "Driving itinerary"},
+        {"node_id": 6267534891, "way_id": 215480634, "label": "Driving itinerary"},
+        {"node_id": 2459905184, "way_id": 215480634, "label": "Driving itinerary"},
+        {"node_id": 1386641471, "way_id": 185828579, "label": "Driving itinerary"},
+        {"node_id": 1386641436, "way_id": 4490202, "label": "Driving itinerary"},
+        {"node_id": 1386641429, "way_id": 4490202, "label": "Driving itinerary"},
+        {"node_id": 8629323526, "way_id": 4490202, "label": "Driving itinerary"},
+        {"node_id": 12385101078, "way_id": 1338927566, "label": "Driving itinerary"},
+        {"node_id": 479369191, "way_id": 1338927566, "label": "Driving itinerary"},
+        {"node_id": 289980697, "way_id": 1088497467, "label": "Driving itinerary"},
+        {"node_id": 9972638821, "way_id": 622466357, "label": "Driving itinerary"},
+        {"node_id": 9972638487, "way_id": 622466357, "label": "Driving itinerary"},
+        {"node_id": 9972638847, "way_id": 622466357, "label": "Driving itinerary"},
+        {"node_id": 7524087, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 942951630, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 942951629, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 385652935, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 942951603, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 267091928, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 942951520, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 942951498, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 3602616046, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 942951481, "way_id": 167816643, "label": "Driving itinerary"},
+        {"node_id": 35979400, "way_id": 42559625, "label": "Driving itinerary"},
+        {"node_id": 942951451, "way_id": 42559625, "label": "Driving itinerary"},
+        {"node_id": 942951426, "way_id": 42559625, "label": "Driving itinerary"},
+        {"node_id": 942951417, "way_id": 42559625, "label": "Driving itinerary"},
+        {"node_id": 385652963, "way_id": 42559625, "label": "Driving itinerary"},
+        {"node_id": 942951408, "way_id": 42559625, "label": "Driving itinerary"},
+        {"node_id": 942951364, "way_id": 42559625, "label": "Driving itinerary"},
+        {"node_id": 942951356, "way_id": 42559625, "label": "Driving itinerary"},
+        {"node_id": 213130169, "way_id": 167816644, "label": "Driving itinerary"},
         {"node_id": 938308570, "way_id": 1088497465, "label": "Driving itinerary"},
         {"node_id": 9972638872, "way_id": 1088497465, "label": "Driving itinerary"},
         {"node_id": 7139106132, "way_id": 1088497465, "label": "Driving itinerary"},
@@ -6356,32 +6368,43 @@
           {"node_id": 8660094226, "way_id": 71022279, "label": "Driving itinerary"},
           {"node_id": 6034517160, "way_id": 71022279, "label": "Driving itinerary"},
           {"node_id": 1386641625, "way_id": 71022279, "label": "Driving itinerary"},
-          {"node_id": 1386641597, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 1386641576, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 846210750, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 6267534890, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 1386641517, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 2459905183, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 1386641494, "way_id": 215480629, "label": "Driving itinerary"},
-          {"node_id": 21665861, "way_id": 1088497468, "label": "Driving itinerary"},
-          {"node_id": 5879571034, "way_id": 1088497468, "label": "Driving itinerary"},
-          {"node_id": 9972638848, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571033, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084141, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571032, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 9972638855, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084142, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084143, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571031, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084144, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571059, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 9972638866, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571060, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084145, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571061, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571062, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084147, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084146, "way_id": 622465159, "label": "Driving itinerary"},
+          {"node_id": 1386641597, "way_id": 129019108, "label": "Driving itinerary"},
+          {"node_id": 1386641572, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 1386641551, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 6034517162, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 1600660838, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 1386641513, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 6267534891, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 2459905184, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 1386641471, "way_id": 185828579, "label": "Driving itinerary"},
+          {"node_id": 1386641436, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 1386641429, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 8629323526, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 12385101078, "way_id": 1338927566, "label": "Driving itinerary"},
+          {"node_id": 479369191, "way_id": 1338927566, "label": "Driving itinerary"},
+          {"node_id": 289980697, "way_id": 1088497467, "label": "Driving itinerary"},
+          {"node_id": 9972638821, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 9972638487, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 9972638847, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 7524087, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951630, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951629, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 385652935, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951603, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 267091928, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951520, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951498, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 3602616046, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951481, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 35979400, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951451, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951426, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951417, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 385652963, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951408, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951364, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951356, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 213130169, "way_id": 167816644, "label": "Driving itinerary"},
           {"node_id": 938308570, "way_id": 1088497465, "label": "Driving itinerary"},
           {"node_id": 9972638872, "way_id": 1088497465, "label": "Driving itinerary"},
           {"node_id": 7139106132, "way_id": 1088497465, "label": "Driving itinerary"},
@@ -6847,32 +6870,43 @@
           {"node_id": 8660094226, "way_id": 71022279, "label": "Driving itinerary"},
           {"node_id": 6034517160, "way_id": 71022279, "label": "Driving itinerary"},
           {"node_id": 1386641625, "way_id": 71022279, "label": "Driving itinerary"},
-          {"node_id": 1386641597, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 1386641576, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 846210750, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 6267534890, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 1386641517, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 2459905183, "way_id": 212085619, "label": "Driving itinerary"},
-          {"node_id": 1386641494, "way_id": 215480629, "label": "Driving itinerary"},
-          {"node_id": 21665861, "way_id": 1088497468, "label": "Driving itinerary"},
-          {"node_id": 5879571034, "way_id": 1088497468, "label": "Driving itinerary"},
-          {"node_id": 9972638848, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571033, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084141, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571032, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 9972638855, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084142, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084143, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571031, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084144, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571059, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 9972638866, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571060, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084145, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571061, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571062, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084147, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084146, "way_id": 622465159, "label": "Driving itinerary"},
+          {"node_id": 1386641597, "way_id": 129019108, "label": "Driving itinerary"},
+          {"node_id": 1386641572, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 1386641551, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 6034517162, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 1600660838, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 1386641513, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 6267534891, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 2459905184, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 1386641471, "way_id": 185828579, "label": "Driving itinerary"},
+          {"node_id": 1386641436, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 1386641429, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 8629323526, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 12385101078, "way_id": 1338927566, "label": "Driving itinerary"},
+          {"node_id": 479369191, "way_id": 1338927566, "label": "Driving itinerary"},
+          {"node_id": 289980697, "way_id": 1088497467, "label": "Driving itinerary"},
+          {"node_id": 9972638821, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 9972638487, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 9972638847, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 7524087, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951630, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951629, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 385652935, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951603, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 267091928, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951520, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951498, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 3602616046, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951481, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 35979400, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951451, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951426, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951417, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 385652963, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951408, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951364, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951356, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 213130169, "way_id": 167816644, "label": "Driving itinerary"},
           {"node_id": 938308570, "way_id": 1088497465, "label": "Driving itinerary"},
           {"node_id": 9972638872, "way_id": 1088497465, "label": "Driving itinerary"},
           {"node_id": 7139106132, "way_id": 1088497465, "label": "Driving itinerary"},
@@ -7124,32 +7158,44 @@
           {"node_id": 1121948650, "way_id": 1088497465, "label": "Driving itinerary"},
           {"node_id": 7139106132, "way_id": 1088497465, "label": "Driving itinerary"},
           {"node_id": 9972638872, "way_id": 1088497465, "label": "Driving itinerary"},
-          {"node_id": 938308570, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084146, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084147, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571062, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571061, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 7139084145, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571060, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 9972638866, "way_id": 622465159, "label": "Driving itinerary"},
-          {"node_id": 5879571059, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084144, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571031, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084143, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084142, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 9972638855, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571032, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 7139084141, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 5879571033, "way_id": 622465146, "label": "Driving itinerary"},
-          {"node_id": 9972638848, "way_id": 1088497468, "label": "Driving itinerary"},
-          {"node_id": 5879571034, "way_id": 1088497468, "label": "Driving itinerary"},
-          {"node_id": 21665861, "way_id": 1088497470, "label": "Driving itinerary"},
-          {"node_id": 5158922870, "way_id": 1088497470, "label": "Driving itinerary"},
-          {"node_id": 8629323527, "way_id": 124626942, "label": "Driving itinerary"},
-          {"node_id": 527259430, "way_id": 124626942, "label": "Driving itinerary"},
-          {"node_id": 6267534889, "way_id": 124626942, "label": "Driving itinerary"},
-          {"node_id": 1349078862, "way_id": 124626942, "label": "Driving itinerary"},
-          {"node_id": 25616574, "way_id": 212085582, "label": "Driving itinerary"},
+          {"node_id": 938308570, "way_id": 167816644, "label": "Driving itinerary"},
+          {"node_id": 213130169, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951356, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951364, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951408, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 385652963, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951417, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951426, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 942951451, "way_id": 42559625, "label": "Driving itinerary"},
+          {"node_id": 35979400, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951481, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 3602616046, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951498, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951520, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 267091928, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951603, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 385652935, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951629, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 942951630, "way_id": 167816643, "label": "Driving itinerary"},
+          {"node_id": 7524087, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 9972638847, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 9972638487, "way_id": 622466357, "label": "Driving itinerary"},
+          {"node_id": 9972638821, "way_id": 1088497467, "label": "Driving itinerary"},
+          {"node_id": 289980697, "way_id": 1338927566, "label": "Driving itinerary"},
+          {"node_id": 479369191, "way_id": 1338927566, "label": "Driving itinerary"},
+          {"node_id": 12385101078, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 8629323526, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 1386641429, "way_id": 4490202, "label": "Driving itinerary"},
+          {"node_id": 1386641436, "way_id": 185828579, "label": "Driving itinerary"},
+          {"node_id": 1386641471, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 2459905184, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 6267534891, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 1386641513, "way_id": 215480634, "label": "Driving itinerary"},
+          {"node_id": 1600660838, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 6034517162, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 1386641551, "way_id": 1102226821, "label": "Driving itinerary"},
+          {"node_id": 1386641572, "way_id": 129019108, "label": "Driving itinerary"},
+          {"node_id": 1386641597, "way_id": 185828580, "label": "Driving itinerary"},
           {"node_id": 1386641652, "way_id": 41516158, "label": "Driving itinerary"},
           {"node_id": 6034517159, "way_id": 41516158, "label": "Driving itinerary"},
           {"node_id": 8660094225, "way_id": 41516158, "label": "Driving itinerary"},
@@ -7426,10 +7472,10 @@
       "name": "Two Banks",
       "difficulty_rank": 8,
       "start": {
-        "label": "S\u00f6der shore start",
+        "label": "Söder shore start",
         "node_id": 119033,
         "way_id": 1300,
-        "street": "S\u00f6der M\u00e4larstrand",
+        "street": "Söder Mälarstrand",
         "east_north_m": [
           -517.184,
           -899.884
@@ -7438,10 +7484,10 @@
       },
       "checkpoints": [
         {
-          "label": "S\u00f6der east shore",
+          "label": "Söder east shore",
           "node_id": 8059584605,
           "way_id": 744152233,
-          "street": "S\u00f6der M\u00e4larstrand",
+          "street": "Söder Mälarstrand",
           "east_north_m": [
             1045.668,
             -764.72
@@ -7452,7 +7498,7 @@
           "label": "City Hall bank",
           "node_id": 4318566014,
           "way_id": 377337321,
-          "street": "Norr M\u00e4larstrand",
+          "street": "Norr Mälarstrand",
           "east_north_m": [
             257.198,
             -128.696
@@ -7463,7 +7509,7 @@
           "label": "Kungsholmen west",
           "node_id": 1551579462,
           "way_id": 252557001,
-          "street": "Norr M\u00e4larstrand",
+          "street": "Norr Mälarstrand",
           "east_north_m": [
             -976.298,
             129.665
@@ -7494,10 +7540,10 @@
         }
       ],
       "finish": {
-        "label": "S\u00f6der shore finish",
+        "label": "Söder shore finish",
         "node_id": 7005008823,
         "way_id": 106080045,
-        "street": "S\u00f6der M\u00e4larstrand",
+        "street": "Söder Mälarstrand",
         "east_north_m": [
           25.298,
           -809.148
@@ -7542,7 +7588,7 @@
       "suggested_route_length_m": 10297,
       "design": {
         "theme": "Two Banks",
-        "route_choice": "Two banks offer opposite sweep directions. Route through sourced V\u00e4sterbron or the central crossings; collect same-bank gates together to avoid extra water crossings.",
+        "route_choice": "Two banks offer opposite sweep directions. Route through sourced Västerbron or the central crossings; collect same-bank gates together to avoid extra water crossings.",
         "flow": "Bridge strategy becomes decisive with five gates and a return finish on the southern bank.",
         "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
         "progression": "Set 3; 5 any-order gates. Opponent pressure and route planning increase with catalog rank."
@@ -9230,7 +9276,7 @@
         "label": "City Hall start",
         "node_id": 4318566014,
         "way_id": 377337321,
-        "street": "Norr M\u00e4larstrand",
+        "street": "Norr Mälarstrand",
         "east_north_m": [
           257.198,
           -128.696
@@ -9242,7 +9288,7 @@
           "label": "Kungsholmen west",
           "node_id": 1551579462,
           "way_id": 252557001,
-          "street": "Norr M\u00e4larstrand",
+          "street": "Norr Mälarstrand",
           "east_north_m": [
             -976.298,
             129.665
@@ -9264,7 +9310,7 @@
           "label": "South ring",
           "node_id": 1639252177,
           "way_id": 198727728,
-          "street": "Ringv\u00e4gen",
+          "street": "Ringvägen",
           "east_north_m": [
             1150.326,
             -2203.057
@@ -9272,7 +9318,7 @@
           "road_width_m": 9.0
         },
         {
-          "label": "S\u00f6der east",
+          "label": "Söder east",
           "node_id": 1501760143,
           "way_id": 1282193551,
           "street": "Folkungagatan",
@@ -9297,7 +9343,7 @@
           "label": "Museum bridge",
           "node_id": 9970689131,
           "way_id": 215480625,
-          "street": "Djurg\u00e5rdsbron",
+          "street": "Djurgårdsbron",
           "east_north_m": [
             2769.056,
             376.416
@@ -9305,10 +9351,10 @@
           "road_width_m": 9.0
         },
         {
-          "label": "\u00d6stermalm north",
+          "label": "Östermalm north",
           "node_id": 1716951508,
           "way_id": 4700178,
-          "street": "Karlav\u00e4gen",
+          "street": "Karlavägen",
           "east_north_m": [
             2264.519,
             1209.687
@@ -9367,7 +9413,7 @@
       "suggested_route_length_m": 15579,
       "design": {
         "theme": "Island Hopping",
-        "route_choice": "Choose a western-first island sweep or clear \u00d6stermalm before the southern loop. The finish favours reserving the northeast pair for last.",
+        "route_choice": "Choose a western-first island sweep or clear Östermalm before the southern loop. The finish favours reserving the northeast pair for last.",
         "flow": "Seven gates form a citywide itinerary with bridge ownership, southern hills and the museum bridge spur.",
         "shortcut_policy": "Only retained connected source streets are validated shortcuts; no parks, water leaps or proximity joins are prescribed.",
         "progression": "Set 3; 7 any-order gates. Opponent pressure and route planning increase with catalog rank."
@@ -12367,7 +12413,7 @@
         "label": "City Hall start",
         "node_id": 266272278,
         "way_id": 151653373,
-        "street": "Norr M\u00e4larstrand",
+        "street": "Norr Mälarstrand",
         "east_north_m": [
           299.527,
           -137.101
@@ -12379,7 +12425,7 @@
           "label": "Kungsholmen far shore",
           "node_id": 4227067875,
           "way_id": 4672570,
-          "street": "Norr M\u00e4larstrand",
+          "street": "Norr Mälarstrand",
           "east_north_m": [
             -1152.143,
             249.011
@@ -12412,7 +12458,7 @@
           "label": "Eastern boulevard",
           "node_id": 3133957592,
           "way_id": 176751894,
-          "street": "Valhallav\u00e4gen",
+          "street": "Valhallavägen",
           "east_north_m": [
             3056.555,
             1232.529
@@ -12423,7 +12469,7 @@
           "label": "Museum bridge",
           "node_id": 9970689131,
           "way_id": 215480625,
-          "street": "Djurg\u00e5rdsbron",
+          "street": "Djurgårdsbron",
           "east_north_m": [
             2769.056,
             376.416
@@ -12442,7 +12488,7 @@
           "road_width_m": 9.0
         },
         {
-          "label": "S\u00f6der east",
+          "label": "Söder east",
           "node_id": 1323470825,
           "way_id": 136886853,
           "street": "Folkungagatan",
@@ -12453,10 +12499,10 @@
           "road_width_m": 9.0
         },
         {
-          "label": "S\u00f6der south",
+          "label": "Söder south",
           "node_id": 266473484,
           "way_id": 250434513,
-          "street": "Ringv\u00e4gen",
+          "street": "Ringvägen",
           "east_north_m": [
             1198.566,
             -2188.218
