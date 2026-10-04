@@ -31,6 +31,21 @@
       "evidence": "screenshots/1791069666416_cam_1381.5,21.3,931.1,-165,-17.png",
       "reference": "https://trafiken.nu/stockholm/trafikinformation/11700738/hornsgatan-vid-pafart-soderledstunneln-fr-hornsg-mot-medb-platsen/",
       "reference_scope": "Confirms Hornsgatan tunnel ramp location; clearance and opening margins are authored gameplay estimates, not surveyed architecture."
+    },
+    {
+      "building_id": "way/37280553",
+      "mode": "cutout",
+      "road_ids": [
+        27351663
+      ],
+      "name": "Noe Arksgränden Söderledstunneln entrance",
+      "clearance_m": 5.5,
+      "margin_m": 0.6,
+      "facade": "ochre",
+      "roof": "roof",
+      "reason": "Source-connected Noe Arksgränden tunnel turns north beneath Göta Arkhuset; retain lower wings outside the corridor and preserve upper storeys.",
+      "evidence": "screenshots/1791069767680_cam_1526.3,26.9,1381.9,102,-18.png",
+      "reference_scope": "OSM tunnel=yes and shared source nodes confirm the branch. Opening dimensions are authored gameplay estimates."
     }
   ]
 }

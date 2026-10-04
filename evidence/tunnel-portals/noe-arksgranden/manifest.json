@@ -1,0 +1,50 @@
+{
+  "source_base_revision": "59411f24a74590df536206a2d497a7351883d740",
+  "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_binary_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "engine_pr": "https://github.com/LinusU/rust-mm2/pull/6",
+  "engine_code_changes": false,
+  "before_package_checksums_sha256": "2f8f1b0b46e1cccf7f38afbb370c33d875b71125e268f790df83737cc8bc58a4",
+  "after_package_checksums_sha256": "6c59b2a2cf9fcd594338473966d1b0ae99657e71ecc88a4557090b68060f49f9",
+  "frozen_after_package": "/private/tmp/stockholm-noe-arks-6c59b2a2/mods/stockholm",
+  "source_checksums": {
+    "src/tunnels.py": "a7cee5feaaa12d5a81f46621f0712fa5da866a76eea6501db153bd77f7583915",
+    "config/overrides/tunnel-profiles.json": "b1c43036813599183fbcf0eabd493a06f8ba778c11c5c95f42edac2e2ea5ff05",
+    "config/overrides/building-passages.json": "0903f23acb209d97462b8cdcacd4865dbfa54415ac6040731065ba7316243907",
+    "tests/test_tunnels.py": "62ea059bbba2dfbb80d70ddecb8c13b1fb2398b15a0d64a289660999a43f4348",
+    "tests/test_building_passages.py": "9bb26a91f9e655ac6995506e44ff8dd933698dff8012315c3cd8c8d239b1c7c2",
+    "tests/fixtures/noe-arksgranden-portal.json": "8b42f0bbf1e85b86d6f798de5736961cf2aab19d737a6d86cb8a1a8a47607403"
+  },
+  "evidence_checksums": {
+    "README.md": "8516ed09299b7f71c688a3ab11eb4c4bfaed2fce00e2b99bfe402e9f5f8c12c2",
+    "after-approach-driving.log": "050b49aa2183ec2fb3c0e37f38ca3d1972b746c19a3897cbeb8e40a834bfd727",
+    "after-colliders.json": "a8dbb6ee1d167df9e8f54c3f50be2305de8afb9e06df20c1eec04ba9135d31cd",
+    "after-driving.log": "60928272a2df50831088637e97319dc7b16e33f8c5c8060bb3b5982208ceecc6",
+    "after-native.log": "c36f782232a09e5707f3aa482d01bf748ddc788fc66e95e4c23353b1bf0ffeed",
+    "after-native.png": "95c4859409c3278c66a38f728abdaedfe99c58ecdd0474e8f4e68bf7dc3b38ad",
+    "after-slow-driving.log": "74e2fda442619d0865020371ffd42af360f81dcd7d6ce11251895509966626f0",
+    "audit-native.py": "9b03379a4cfe54c81a3bfd3dc29fb4bb103219502c24b7163cf2462641329cb3",
+    "before-colliders.json": "1c9f304302dad1e8d2f7d2200049a674c1e2937d969597d641b10dd1bfaa4637",
+    "before-driving.log": "bc65262fa0bcbf3c470385455c90fd45f13e291f6f392da7aa45adfec38f3e6b",
+    "before-native.log": "56e192911209d72620e7ac932b288cb4c29d565078548a2a365cf40401481985",
+    "before-native.png": "85fed39825db317cbdc8a7010644584befec72f28ee558510bfa42ee1a9b4765",
+    "bore-native.log": "ea91cddd73a4d3ed4e7dc083cb1f786261593fa69e39897804801c78fe24edc6",
+    "bore-native.png": "ba99957b65832f3b9b2c91cef550e19761b15b00328f67d3d2b88022f44b714a",
+    "entrance-native.log": "44dd0b81a71fe59e19f911d6cfb483768a3a1e7ccc156c0e5aed928aff606d42",
+    "entrance-native.png": "6ba2391b6c3d63e33a053ba0f6f36bf92c092092bffe3367f8c846ef25e9a667",
+    "root-build.log": "da0e46dadd931aab6bca9d2b25c143a93057bf109da0cc0757a070da721e03db",
+    "root-format.log": "ea2969fd741733e33c490fb6696583f5d6e29e16cae5e536952236a31cf615b1",
+    "root-lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "root-tests.log": "d91c569f27a2f683239d40cd745ae307b576b6fb86f1958eaf06b8bc2191a881",
+    "root-validate.log": "ba2be69d62500767f8f66e8016b8ef105890d6df2cc6176c39e6d2fc09ec16d1",
+    "route.json": "4a1790164acbfb0a3d408cf16c9bbf1020eea381958fdb7cb969c71baceb5748",
+    "source-guide.opp": "a627a0587651cc8e58af37fc3fec127d989f60c6fd04b491f4ae224695d4cbd1"
+  },
+  "spawn": "1534.91892,24.70179,1377.95718,104.99829",
+  "driving_frames": 1600,
+  "driving_speeds_m_s": [
+    6,
+    4
+  ],
+  "scope": "Noe Arksgränden bend and bounded inward driving; two impacts remain. No full-network acceptance claim."
+}

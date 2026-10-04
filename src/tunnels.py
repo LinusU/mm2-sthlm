@@ -151,6 +151,14 @@ def prepare(city, terrain):
     tunnels = [r for r in city["roads"] if r["id"] in ids]
     for road in tunnels:
         tags = road["tags"]
+        override = cfg.get("road_overrides", {}).get(str(road["id"]))
+        if override:
+            width = override["width_m"]
+            if not math.isfinite(width) or not 3 <= width <= 14:
+                raise ValueError("invalid authored tunnel width")
+            road["width"] = width
+            road["tunnel_width_rule"] = override["reason"]
+            continue
         # The ordinary-city nine-metre default can make the walls of paired
         # one-lane bores intersect the opposite lane at close OSM alignments.
         # Respect explicit source widths; otherwise infer bounded lane width.

@@ -7,5 +7,11 @@
   "roof_thickness_m": 0.5,
   "fairing_iterations": 800,
   "datum": "Map-relative metres; authored estimates, not surveyed tunnel levels",
-  "provenance": "OSM shared-node corridor geometry from checked-in snapshot. Stockholm city Klaratunneln renovation description confirms two tubes and branch topology. Wall/roof appearance is original simplified concrete art."
+  "provenance": "OSM shared-node corridor geometry from checked-in snapshot. Stockholm city Klaratunneln renovation description confirms two tubes and branch topology. Wall/roof appearance is original simplified concrete art.",
+  "road_overrides": {
+    "27351663": {
+      "width_m": 7.5,
+      "reason": "Authored width for the tight Noe Arksgränden turn and its single-lane branch. Extra lateral room prevents the schematic shell from obstructing the vehicle swept path; not a surveyed cross-section."
+    }
+  }
 }

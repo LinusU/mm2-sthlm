@@ -36,6 +36,21 @@ def road(wid, nodes, points, tunnel=False):
 
 
 class TunnelTests(unittest.TestCase):
+    def test_authored_noe_arksgranden_width_preserves_source_connection(self):
+        city = self.city()
+        city["roads"][0]["id"] = 27351663
+        city["tunnel_ways"][0] = 27351663
+        prepare(city, Flat())
+        branch = city["roads"][0]
+        self.assertEqual(branch["width"], 7.5)
+        self.assertIn("swept path", branch["tunnel_width_rule"])
+        self.assertEqual(branch["points"], [(0, 0), (200, 0)])
+        self.assertEqual(branch["elevated_points"][0], [0, 0, 12])
+        self.assertEqual(
+            branch["elevated_points"][-1], city["roads"][1]["elevated_points"][0]
+        )
+        self.assertEqual(city["roads"][1]["width"], 8)
+
     def city(self):
         return {
             "roads": [

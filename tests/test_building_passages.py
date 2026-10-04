@@ -14,6 +14,30 @@ from expanded import ChunkedWriter
 
 
 class BuildingPassageTests(unittest.TestCase):
+    def test_noe_arksgranden_bend_opens_lower_storey_preserves_roof(self):
+        f = json.loads(
+            (Path(__file__).parent / "fixtures/noe-arksgranden-portal.json").read_text()
+        )
+        building, roads = f["building"], f["roads"]
+        roads[0]["width"] = 7.5
+        volume = volume_for(building, roads)
+        opening = shape(volume["opening_geometry"])
+        lower = shape(volume["lower_geometry"])
+        line = LineString(roads[0]["points"])
+        self.assertGreater(line.intersection(opening).length, 20)
+        self.assertTrue(line.intersection(lower).is_empty)
+        self.assertEqual(volume["top_y_m"], building["base_y"] + building["height"])
+        field = RoadField(roads, None, bridge=True)
+        for x, n, _ in roads[0]["elevated_points"]:
+            if opening.covers(Point(x, n)):
+                self.assertGreaterEqual(
+                    volume["underside_y_m"] - field.height_for_road(27351663, x, n),
+                    5.5 - 1e-6,
+                )
+        writer = PsdlWriter()
+        export(writer, shape(building["geometry"]), volume)
+        self.assertTrue(writer.rooms)
+
     def fixture(self):
         return json.loads(
             (
