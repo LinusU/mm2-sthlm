@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 import unittest
 
-from shapely.geometry import Point, shape
+from shapely.geometry import LineString, Point, shape
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from building_passages import export, volume_for
@@ -76,3 +76,47 @@ class BuildingPassageTests(unittest.TestCase):
     def test_stale_authored_road_identity_fails_instead_of_hiding_blocker(self):
         with self.assertRaisesRegex(ValueError, "lacks road"):
             volume_for(self.fixture()["building"], [])
+
+    def test_hornsgatan_cutouts_preserve_office_above_two_tunnel_ramps(self):
+        f = json.loads(
+            (
+                Path(__file__).parent / "fixtures/hornsgatan-building-cutout.json"
+            ).read_text()
+        )
+        original = copy.deepcopy(f)
+        building, roads = f["building"], f["roads"]
+        poly = shape(building["geometry"])
+        volume = volume_for(building, roads)
+        lower, opening = (
+            shape(volume["lower_geometry"]),
+            shape(volume["opening_geometry"]),
+        )
+        self.assertAlmostEqual(lower.union(opening).area, poly.area)
+        self.assertAlmostEqual(lower.intersection(opening).area, 0)
+        self.assertGreater(lower.area, poly.area / 2)
+        self.assertEqual(volume["top_y_m"], building["base_y"] + building["height"])
+        writer = ChunkedWriter((0, 0, 0))
+        export(writer, poly, volume)
+        part = writer.parts[(1, -2)]
+        counts = {10: 1, 2: 4, 5: 3, 6: 3, 11: 6, 7: 4}
+        walls = []
+        for _, attrs, _ in part.rooms:
+            cursor = 0
+            while cursor < len(attrs):
+                kind = (attrs[cursor] >> 3) & 15
+                words = attrs[cursor + 1 : cursor + 1 + counts[kind]]
+                if kind == 7:
+                    walls.append([part.vertices[v] for v in words[2:4]])
+                cursor += counts[kind] + 1
+        self.assertTrue(walls)
+        crossing_walls = 0
+        for road in roads:
+            line = LineString(road["points"])
+            self.assertGreater(line.intersection(opening).length, 5)
+            for a, b in walls:
+                wall = LineString([(a[0], -a[2]), (b[0], -b[2])])
+                if wall.intersects(line):
+                    crossing_walls += 1
+                    self.assertGreaterEqual(a[1], volume["underside_y_m"] - 1e-5)
+        self.assertGreater(crossing_walls, 0)
+        self.assertEqual(f, original)

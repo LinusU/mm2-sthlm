@@ -1,0 +1,52 @@
+{
+  "source_base_revision": "811c16e7f693b382e75f0217d671bd7e602255ef",
+  "engine_revision": "1a822c1cc472f6c04a25a6832e346b162bbb0ff5",
+  "engine_binary_sha256": "144389d3eae590932dffc6cf55667c093bd4a6a67e905b0bc11e8c91728bec19",
+  "engine_pr": "https://github.com/LinusU/rust-mm2/pull/6",
+  "engine_code_changes": false,
+  "before_package_checksums_sha256": "8dc0d56c21efd44b786661756135d7942525e8cc494d2a62a30589ba872bd187",
+  "after_package_checksums_sha256": "2f8f1b0b46e1cccf7f38afbb370c33d875b71125e268f790df83737cc8bc58a4",
+  "frozen_after_package": "/private/tmp/stockholm-hornsgatan-2f8f1b0b/mods/stockholm",
+  "source_checksums": {
+    "src/building_passages.py": "d64c296a0529dbdf69b68348c66fa4ff1147ee902c33e8ba6a6b3b589ff07872",
+    "config/overrides/building-passages.json": "c57b0dbde255e3134d18bfa24a6219164c18575c853a0a6a884883ab529d1e9c",
+    "tests/test_building_passages.py": "1066efc7fc7a590b9f703e4efcda643658c713bedb9ffbfe0cec578489b45853",
+    "tests/fixtures/hornsgatan-building-cutout.json": "25ca3ae31c75ff8649cfdbb36aa2225ecc92f4441ed6e27e74a79c91b814522e"
+  },
+  "evidence_checksums": {
+    "README.md": "f2cce70269c3a71ccb68c002803b1e38fe1222005f339b6dd1d6528debfc19c8",
+    "after-driving.log": "ddcc733a6ebd78126f000a7ee59c82add9bf414bc137660f449df3c14b3b4eba",
+    "after-native-collision.json": "1ec59134e7f913560c2d0dc72d84d25ca13f96c2a87e4d294a04a0e5e33bacc0",
+    "after-native.log": "b2bdb7dd56212cf039dbd448c621a373a659e38a52a11638b37a598f0570241d",
+    "after-native.png": "fb1cc2959f0c50de59719440d1963927364fce3fe0dcede1c8bc173dcb9c6e68",
+    "after-west-driving.log": "b16eb12737e1d1a12283ccd28a40ab3438e4b976621e3d3d77dd97c7583e181b",
+    "audit-native.py": "8bde3963a19247cb6d022f83d7334a72ea875a8eb420c87169a6639864fbcade",
+    "before-driving.log": "e94e3ff4d1f002a307c547b510968236c6c4ee0495a29a90697c35a52b0d2445",
+    "before-native-collision.json": "cfd48177a8d30bc50ca891291f902f282635f6e28be6dab8f46c86a89f711a48",
+    "before-native.log": "b2193ca98622b5af45956134f0c7ff5fd15e5d07fbb76e422fbf3699cc665acc",
+    "before-native.png": "9c481be69cf8f8bdf02751c3982447302e5191dfcdb90d8e25c6b343fb342ea0",
+    "before-west-driving.log": "288a4711ed71f656b1c18accab98e5483d0192323ae0f6cf250b37db0fca5f2c",
+    "root-build.log": "8640bc3a2827de492b75632efb7e7f71c80f481c9f6476a73f82f62dcb42eca1",
+    "root-format.log": "ea2969fd741733e33c490fb6696583f5d6e29e16cae5e536952236a31cf615b1",
+    "root-lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "root-tests.log": "7c2ade772f33e48cd098b584a8ddb2f612a8406cd46da70a20f39bdaa2702445",
+    "root-validate.log": "d44271b2f2e54a449e3e9edfbfb37ba89d88dac786817a73692bd334097026e2",
+    "upper-storeys-native.log": "5dbe67d78e94d1bef97001b612df118266c8f0e28c9bc5802554464348a4d559",
+    "upper-storeys-native.png": "35be8177b42a9fe3d6d019a1988a7b956ba7ca9b45406aab80c72e6517f73dfd"
+  },
+  "shared_driving_arguments": [
+    "--city",
+    "stockholm",
+    "--car",
+    "sthlm_racer",
+    "--headless",
+    "--frames",
+    "600",
+    "--no-profile"
+  ],
+  "spawn_arguments": {
+    "reported": "1381.2,19.28,931.1,195",
+    "west_onramp": "1342.29596,20.61367,941.45676,194.38292"
+  },
+  "scope": "Two source-connected ramp openings in one building; not an all-city or full-network claim."
+}

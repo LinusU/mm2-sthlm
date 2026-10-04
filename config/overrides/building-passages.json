@@ -4,7 +4,9 @@
   "passages": [
     {
       "building_id": "way/424972071",
-      "road_ids": [4695823],
+      "road_ids": [
+        4695823
+      ],
       "name": "Herkuleskopplet entrance passage",
       "clearance_m": 5.5,
       "body_height_m": 1.5,
@@ -12,6 +14,23 @@
       "evidence": "screenshots/1791068920549_cam_918.3,10.2,-154.8,125,-18.png",
       "reference": "https://stockholmskallan.stockholm.se/post/5089",
       "reference_scope": "Context for Herkulesgatan/Klaratunneln only; no photograph copied, no surveyed height inferred. Clearance/body height are authored gameplay approximations."
+    },
+    {
+      "building_id": "way/27738982",
+      "mode": "cutout",
+      "road_ids": [
+        17151920,
+        1244140460
+      ],
+      "name": "Hornsgatan Söderledstunneln portals",
+      "clearance_m": 5.5,
+      "margin_m": 0.6,
+      "facade": "cream",
+      "roof": "roof",
+      "reason": "Road-sized openings in lower storeys for source-connected tunnel ramps; retain footprint outside passage and original upper building height.",
+      "evidence": "screenshots/1791069666416_cam_1381.5,21.3,931.1,-165,-17.png",
+      "reference": "https://trafiken.nu/stockholm/trafikinformation/11700738/hornsgatan-vid-pafart-soderledstunneln-fr-hornsg-mot-medb-platsen/",
+      "reference_scope": "Confirms Hornsgatan tunnel ramp location; clearance and opening margins are authored gameplay estimates, not surveyed architecture."
     }
   ]
 }
